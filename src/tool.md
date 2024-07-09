@@ -1,0 +1,1 @@
+swagger-markdown -i .\aos-swagger.yaml -o .\aos\audit.md
