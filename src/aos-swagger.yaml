@@ -1,0 +1,327 @@
+x-generator: NSwag v14.0.3.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))
+swagger: '2.0'
+info:
+  title: My Title
+  version: 1.0.0
+produces:
+  - text/plain
+  - application/json
+  - text/json
+paths:
+  /audit:
+    get:
+      tags:
+        - Audit
+      summary: >-
+        Gets the audit records for activities within your AvePoint Online
+        Services tenant.
+      operationId: AuditLog_GetUserActivityLogs
+      parameters:
+        - type: string
+          name: StartTime
+          in: query
+          description: Specifies the start time for getting the audit records.
+          format: date-time
+          x-nullable: false
+        - type: string
+          name: EndTime
+          in: query
+          description: |-
+            Specifies the end time for getting the audit records.
+            StartTime and EndTime must be no more than 7 days apart.
+          format: date-time
+          x-nullable: false
+        - type: array
+          name: ProductTypes
+          in: query
+          description: |-
+            Specifies the products for which you want to get audit records.
+            Valid values are: 
+               Office365Management: Cloud Management
+               Office365Backup: Cloud Backup for Microsoft 365
+               GovernanceAutomation: Cloud Governance
+               Portal: Confidence Platform Portal
+               PolicyEnforcer: Policies for Microsoft 365
+               CPManagement: Insights for Microsoft 365
+               SMP: EnPower
+            By default, audit records for all products are retrieved.
+          collectionFormat: multi
+          x-nullable: true
+          items:
+            type: string
+        - type: array
+          name: GeoLocations
+          in: query
+          description: >-
+            Specifies the data center from which to retrieve the audit records.
+
+            Valid values are:
+               PrimaryGeoLocation: Central AOS location
+               NAM: North America
+               EUR: Europe/Middle East/Africa
+               GBR: United Kingdom
+               JPN: Japan
+               APC: Asia-Pacific
+               AUS: Australia
+               CAN: Canada
+               IND: India
+               FRA: France
+               ARE: United Arab Emirates
+               ZAF: South Africa
+               CHE: Switzerland
+               KOR: Korea
+               DEU: Germany
+               BRA: Brazil
+               NOR: Norway
+               SWE: Sweden
+               QAT: Qatar
+               POL: Poland
+               ITA: Italy
+            By default, audit records for all locations are retrieved. This
+            parameter is only available when the AOS tenant supports Multi-Geo.
+          collectionFormat: multi
+          x-nullable: true
+          items:
+            type: string
+        - type: string
+          name: SkipToken
+          in: query
+          description: >-
+            When a response contains more data than can be returned in a single
+            call, the API provides a SkipToken in the response. This token can
+            then be passed as a parameter in subsequent requests to retrieve the
+            next set of results.
+          x-nullable: true
+      responses:
+        '200':
+          x-nullable: false
+          description: ''
+          schema:
+            $ref: >-
+              #/definitions/ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel
+        '400':
+          x-nullable: false
+          description: ''
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+definitions:
+  ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel:
+    type: object
+    properties:
+      nextLink:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/UserActivityAuditLogItemModel'
+  UserActivityAuditLogItemModel:
+    type: object
+    properties:
+      actionName:
+        type: string
+        description: Operation name
+      actionUser:
+        type: string
+        description: Operation user
+      actionParameters:
+        type: string
+        description: Operation parameters
+      actionTime:
+        type: string
+        description: Operation time
+      controllerName:
+        type: string
+        description: Operation controller name
+      product:
+        type: string
+        description: Product name
+      geoLocation:
+        type: string
+        description: Geo location
+      previousValue:
+        type: string
+        description: Previous value
+      currentValue:
+        type: string
+        description: Current value
+      partnerTenantOwner:
+        type: string
+        description: Partner tenant owner
+      status:
+        type: string
+        description: Operation status
+      comment:
+        type: string
+        description: Operation comment
+      objectType:
+        type: string
+        description: Operation object type
+      operationType:
+        type: string
+        description: Operation type
+      module:
+        type: string
+        description: Operation module
+      functionality:
+        type: string
+        description: Operation functionality
+      objectName:
+        type: string
+        description: Operation object name
+      action:
+        type: string
+        description: Operation name (for Cloud Governance only)
+      clientIP:
+        type: string
+        description: IP
+      additionalDetails:
+        type: object
+        description: for confide
+        additionalProperties:
+          type: string
+  ErrorResponse:
+    type: object
+    required:
+      - date
+      - statusCode
+    properties:
+      requestId:
+        type: string
+      date:
+        type: string
+        format: date-time
+      statusCode:
+        $ref: '#/definitions/HttpStatusCode'
+  HttpStatusCode:
+    type: integer
+    description: ''
+    x-enumNames:
+      - Continue
+      - SwitchingProtocols
+      - Processing
+      - EarlyHints
+      - OK
+      - Created
+      - Accepted
+      - NonAuthoritativeInformation
+      - NoContent
+      - ResetContent
+      - PartialContent
+      - MultiStatus
+      - AlreadyReported
+      - IMUsed
+      - MultipleChoices
+      - Ambiguous
+      - MovedPermanently
+      - Moved
+      - Found
+      - Redirect
+      - SeeOther
+      - RedirectMethod
+      - NotModified
+      - UseProxy
+      - Unused
+      - TemporaryRedirect
+      - RedirectKeepVerb
+      - PermanentRedirect
+      - BadRequest
+      - Unauthorized
+      - PaymentRequired
+      - Forbidden
+      - NotFound
+      - MethodNotAllowed
+      - NotAcceptable
+      - ProxyAuthenticationRequired
+      - RequestTimeout
+      - Conflict
+      - Gone
+      - LengthRequired
+      - PreconditionFailed
+      - RequestEntityTooLarge
+      - RequestUriTooLong
+      - UnsupportedMediaType
+      - RequestedRangeNotSatisfiable
+      - ExpectationFailed
+      - MisdirectedRequest
+      - UnprocessableEntity
+      - UnprocessableContent
+      - Locked
+      - FailedDependency
+      - UpgradeRequired
+      - PreconditionRequired
+      - TooManyRequests
+      - RequestHeaderFieldsTooLarge
+      - UnavailableForLegalReasons
+      - InternalServerError
+      - NotImplemented
+      - BadGateway
+      - ServiceUnavailable
+      - GatewayTimeout
+      - HttpVersionNotSupported
+      - VariantAlsoNegotiates
+      - InsufficientStorage
+      - LoopDetected
+      - NotExtended
+      - NetworkAuthenticationRequired
+    enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 205
+      - 206
+      - 207
+      - 208
+      - 226
+      - 300
+      - 301
+      - 302
+      - 303
+      - 304
+      - 305
+      - 306
+      - 307
+      - 308
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 407
+      - 408
+      - 409
+      - 410
+      - 411
+      - 412
+      - 413
+      - 414
+      - 415
+      - 416
+      - 417
+      - 421
+      - 422
+      - 423
+      - 424
+      - 426
+      - 428
+      - 429
+      - 431
+      - 451
+      - 500
+      - 501
+      - 502
+      - 503
+      - 504
+      - 505
+      - 506
+      - 507
+      - 508
+      - 510
+      - 511
