@@ -1,0 +1,73 @@
+openapi: 3.0.1
+info:
+  title: OpenApi Apis
+  version: v1
+paths:
+  /api/OpenApi/GetJobs:
+    post:
+      tags:
+        - OpenApi
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dynamics365.Model.Request.JobFilterModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Dynamics365.Model.Request.JobFilterModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Dynamics365.Model.Request.JobFilterModel'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Dynamics365.Enums.BackupRestoreType:
+      enum:
+        - 0
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+      type: integer
+      format: int32
+    Dynamics365.Model.PageModel:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Dynamics365.Model.Request.JobFilterModel:
+      type: object
+      properties:
+        pageInfo:
+          $ref: '#/components/schemas/Dynamics365.Model.PageModel'
+        type:
+          $ref: '#/components/schemas/Dynamics365.Enums.BackupRestoreType'
+        startTime:
+          type: string
+          format: date-time
+          nullable: true
+        endTime:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        organizationId:
+          type: string
+          format: uuid
+          nullable: true
+        objectType:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false

@@ -1,1 +1,3 @@
-swagger-markdown -i .\aos-swagger.yaml -o .\aos\audit.md
+- swagger-markdown -i .\aos-swagger.yaml -o .\aos\audit.md
+- or
+- npx openapi-to-md .\src\azurebackup.yaml .\azure\api.md
