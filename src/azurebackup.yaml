@@ -1,0 +1,262 @@
+x-generator: NSwag v14.0.8.0 (NJsonSchema v11.0.1.0 (Newtonsoft.Json v13.0.0.0))
+openapi: 3.0.0
+info:
+  title: My Title
+  version: 1.0.0
+paths:
+  /api/public/jobreport:
+    post:
+      tags:
+        - PublicAPI
+      summary: Use this POST api/public/jobreport API to retrieve the job information.
+      operationId: PublicAPI_GetAllJobDetails
+      requestBody:
+        x-name: requestModel
+        description: >-
+          In this request body, supply one object with type of
+          ReportJobRequestModel.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportJobRequestModel'
+        required: true
+        x-position: 1
+      responses:
+        '200':
+          description: >-
+            If successful, this method returns 200 OK response code and report
+            job object in the response body.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportJobModel'
+components:
+  schemas:
+    ReportJobModel:
+      type: object
+      description: Represents the returned jobs collection.
+      additionalProperties: false
+      properties:
+        totalCount:
+          type: integer
+          description: Total count of current request.
+          format: int32
+        jobs:
+          type: array
+          description: Returned jobs collection according to current page.
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Jobs'
+    Jobs:
+      type: object
+      description: Represents a job in product.
+      additionalProperties: false
+      properties:
+        jobId:
+          type: string
+          description: The job Id in current job.
+          nullable: true
+        state:
+          description: The job state in current job.
+          oneOf:
+            - $ref: '#/components/schemas/CommonStatus'
+        failedCount:
+          type: integer
+          description: The failed objects count in current job.
+          format: int32
+        successfulCount:
+          type: integer
+          description: The successful objects count in current job.
+          format: int32
+        skippedCount:
+          type: integer
+          description: The skipped objects count in current job.
+          format: int32
+        totalCount:
+          type: integer
+          description: The total objects cunt in current job.
+          format: int32
+        startTime:
+          type: integer
+          description: The start time of current job.
+          format: int64
+        finishTime:
+          type: integer
+          description: The end time of current job.
+          format: int64
+        duration:
+          type: integer
+          description: The duration of current job.
+          format: int64
+        comments:
+          type: string
+          description: Some comments in current job.
+          nullable: true
+    ReportJobRequestModel:
+      type: object
+      description: Request model of job information.
+      additionalProperties: false
+      properties:
+        searchText:
+          type: string
+          description: Searches by job ID or description.
+          nullable: true
+        startTime:
+          type: integer
+          description: Sets a start time (UTC time) for the time range.
+          format: int64
+        finishTime:
+          type: integer
+          description: Sets an end time (UTC time) for the time range.
+          format: int64
+        serviceType:
+          description: Sets the service type of the jobs to get.
+          oneOf:
+            - $ref: '#/components/schemas/ProductModel'
+        jobType:
+          description: Sets the job types that you want to get.
+          oneOf:
+            - $ref: '#/components/schemas/JobType'
+        pagination:
+          description: Sets the request page information.
+          nullable: true
+          oneOf:
+            - $ref: '#/components/schemas/PaginationModel'
+    CommonStatus:
+      type: integer
+      description: ''
+      x-enumNames:
+        - NotStarted
+        - InProgress
+        - Successful
+        - Skipped
+        - Exception
+        - Failed
+        - Waiting
+        - Stopped
+      enum:
+        - 0
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+        - 32
+        - 64
+    JobType:
+      type: integer
+      description: ''
+      x-enumNames:
+        - Backup
+        - Restore
+        - Export
+        - Report
+        - VMSync
+        - Initliaze
+        - GenIndex
+        - AADCompare
+        - Retention
+        - AADBackup
+        - AADRestore
+        - AADExport
+        - FileSync
+        - FileBackup
+        - FileRestore
+        - FileExport
+        - LicenseSync
+        - AOSUpdate
+        - AKSBackup
+        - AKSSync
+        - AKSRestore
+        - APSettingBackup
+        - APSettingExport
+        - APSettingSync
+        - APSettingRestore
+        - ExportCleanUp
+        - EC2Backup
+        - EC2Restore
+        - SQLSync
+        - SQLBackup
+        - SQLRestore
+        - DevOpsBackup
+        - DevOpsRestore
+        - SoftDelete
+        - HardDelete
+      enum:
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+        - 32
+        - 33
+        - 34
+        - 64
+        - 128
+        - 256
+        - 257
+        - 512
+        - 1024
+        - 2048
+        - 4096
+        - 8192
+        - 16384
+        - 20000
+        - 20001
+        - 20002
+        - 20003
+        - 20004
+        - 20005
+        - 20006
+        - 20007
+        - 20009
+        - 20010
+        - 20011
+        - 20012
+        - 20013
+        - 20014
+        - 20015
+        - 30000
+        - 30001
+    ProductModel:
+      type: integer
+      description: ''
+      x-enumNames:
+        - VM
+        - AAD
+        - AzureFile
+        - FileShare
+        - BlobStorage
+        - AKS
+        - APSetting
+        - Common
+        - AmazonEC2
+        - AzureSQL
+        - AzureDevOps
+      enum:
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+        - 32
+        - 64
+        - 128
+        - 256
+        - 512
+        - 1024
+    PaginationModel:
+      type: object
+      description: Representing one page information for one request.
+      additionalProperties: false
+      properties:
+        pageNumber:
+          type: integer
+          description: Sets the starting number of the page. The default value is 0.
+          format: int32
+        pageSize:
+          type: integer
+          description: >-
+            Sets the number of objects to display on one page. The default value
+            is 10.
+          format: int32
