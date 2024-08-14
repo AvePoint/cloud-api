@@ -1,5 +1,7 @@
 - name: AOS
   href: docs/aos/
+- name: AOSP
+  href: docs/aosp/
 - name: Azure
   href: docs/azure/
 - name: Dynamics
