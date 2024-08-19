@@ -6,7 +6,8 @@ Retrieve a list of jobs from Cloud Backup for Dynamics 365.
 
 ## Permission
 
-The following permission is required to call this API.
+The following permission is required to call this API.  
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](../).
 
 | API method    | Permission required | Permission type |
 |-------------------|---------------|----------------------|
@@ -17,9 +18,9 @@ The following permission is required to call this API.
 
 | Method | Path | Description |
 | --- | --- | --- |
-| POST | [/api/OpenApi/GetJobs](#postapiopenapigetjobs) | Gets job collection. |
+| POST | [/api/OpenApi/GetJobs](#examples) | Gets job collection. |
 
-## Reference Table
+## Properties
 
 | Name | Path | Description |
 | --- | --- | --- |
@@ -27,19 +28,27 @@ The following permission is required to call this API.
 | Dynamics365.Model.PageModel | [#/components/schemas/Dynamics365.Model.PageModel](#componentsschemasdynamics365modelpagemodel) | Sets the starting page and page size for the job information to retrieve. |
 | Dynamics365.Model.Request.JobFilterModel | [#/components/schemas/Dynamics365.Model.Request.JobFilterModel](#componentsschemasdynamics365modelrequestjobfiltermodel) | Sets the job filter, including the startTime, finishTime, status, organizationId, and objectType. |
 
-## Path Details
+## Property Details
 
-|Path |Elements|Type|Required?
+|Property |Elements|Description | Type|Required?|
 |---|---|---|---|
-|#/components/schemas/Dynamics365.Enums.BackupRestoreType |type|Enum </br>Valid values: </br> - 0 for all.  - 1 for backup.  - 2 for restore.  |Yes|
+|#/components/schemas/Dynamics365.Enums.BackupRestoreType |type|Sets the job types that you want to get.|Enum </br> Valid values:</br> - 0 for all.</br> - 1 for backup. </br> - 2 for restore.  |Yes|
+|#/components/schemas/Dynamics365.Model.PageModel|currentPage|Sets the starting number of the page to get the jobs. The default value is 1.|int|Yes|
+|#/components/schemas/Dynamics365.Model.PageModel|pageSize|Sets the number of jobs to display on one page. The default value is 10.|int|Yes|
+|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|startTime|Sets a start time (UTC time) for the time range.|long|Yes|
+|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|finishTime|Sets an end time (UTC time) for the time range.|long|Yes|
+|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|status|
+Sets the job status.|Enum </br> 2 for In progress</br> 3 for Finished</br>4 for Failed </br>7 for Finished with Exception</br>|Yes|
+|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|organizationId|Sets the organization that you want to get.|GUID|Yes|
+|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|objectType|Sets the module type of the jobs to get.|Enum|Yes|
 
+## Examples
 
+Refer to the following examples calling this API.
 
-## [POST]/api/OpenApi/GetJobs
+### Request body  
 
-### Request body
-
-- application/json
+Content-type: application/json
 
 ```ts
 {
@@ -92,7 +101,7 @@ The following permission is required to call this API.
 
 ### Responses
 
-- 200 OK
+If successful, this method returns a 200 OK response code and a collection of  jobs in the response body.
 
 ## References
 
@@ -137,4 +146,4 @@ The following permission is required to call this API.
   organizationId?: string
   objectType?: integer
 }
-```  
+```
