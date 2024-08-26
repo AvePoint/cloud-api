@@ -4,9 +4,11 @@ _layout: landing
 
 # Overview of AvePoint Graph Modern API
 
-The AvePoint Graph Modern API is a powerful suite of tools designed to provide seamless integration and robust functionalities for managing and optimizing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities. The current version of the AvePoint Graph API encompasses two primary components: AvePoint Confidence Platform and Elements for Partners.  
+The AvePoint Graph Modern API is a powerful suite of tools designed to provide seamless integration and robust functionalities for managing and optimizing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities. The current version of the AvePoint Graph Modern API encompasses two primary components: AvePoint Confidence Platform and Elements for Partners.  
 
 ## What's in AvePoint Graph Modern API
+
+AvePoint Graph Modern API offers a single endpoint, https://graph.avepointonlineservices.com, to provide access to AvePoint services data.
 
 ### Introduction
 

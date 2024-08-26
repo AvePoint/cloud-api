@@ -30,17 +30,16 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Property Details
 
-|Property |Elements|Description | Type|Required?|
-|---|---|---|---|
+|Property |Elements|Description | Type|Required?|   
+|---|---|---|---|---|    
 |#/components/schemas/Dynamics365.Enums.BackupRestoreType |type|Sets the job types that you want to get.|Enum </br> Valid values:</br> - 0 for all.</br> - 1 for backup. </br> - 2 for restore.  |Yes|
 |#/components/schemas/Dynamics365.Model.PageModel|currentPage|Sets the starting number of the page to get the jobs. The default value is 1.|int|Yes|
-|#/components/schemas/Dynamics365.Model.PageModel|pageSize|Sets the number of jobs to display on one page. The default value is 10.|int|Yes|
+||pageSize|Sets the number of jobs to display on one page. The default value is 10.|int|Yes|
 |#/components/schemas/Dynamics365.Model.Request.JobFilterModel|startTime|Sets a start time (UTC time) for the time range.|long|Yes|
-|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|finishTime|Sets an end time (UTC time) for the time range.|long|Yes|
-|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|status|
-Sets the job status.|Enum </br> 2 for In progress</br> 3 for Finished</br>4 for Failed </br>7 for Finished with Exception</br>|Yes|
-|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|organizationId|Sets the organization that you want to get.|GUID|Yes|
-|#/components/schemas/Dynamics365.Model.Request.JobFilterModel|objectType|Sets the module type of the jobs to get.|Enum|Yes|
+||finishTime|Sets an end time (UTC time) for the time range.|long|Yes|
+||status| Sets the job status.|Enum </br> 2 for In progress</br> 3 for Finished</br>4 for Failed </br>7 for Finished with Exception</br>|Yes|  
+||organizationId|Sets the organization that you want to get.|GUID|Yes|
+||objectType|Sets the module type of the jobs to get.|Enum|Yes|
 
 ## Examples
 
