@@ -1,6 +1,8 @@
 - name: AvePoint Online Services
   href: docs/aos/
-- name: Cloud Backup for IaaS + PaaS
+- name: AOSP
+  href: docs/aosp/
+- name: Azure
   href: docs/azure/
 - name: Cloud Backup for Dynamics 365
   href: docs/dynamics/

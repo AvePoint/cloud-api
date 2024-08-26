@@ -1,0 +1,667 @@
+{
+    "openapi": "1.1",
+    "info": {
+        "title": "Open Api",
+        "description": "Open Api HTTP API v1.1",
+        "version": "v1.1"
+    },
+    "paths": {
+        "/api/V1.1/Customers": {
+            "get": {
+                "description": "Get the general information of the customers that you manage.",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({id})": {
+            "get": {
+                "description": "Get the general information of a specific customer that you manage.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({Id})/Jobs": {
+            "get": {
+				"description": "Get the job details of the backup services of a specific customer that you manage.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "JobType",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "JobModule",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({Id})/Jobs(JobType={JobType},JobModule={JobModule})": {
+            "get": {
+				"description": "Get the job details of a specific job type and module of backup service for a customer that you manage.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "JobType",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "JobModule",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({id})/Protected": {
+            "get": {
+                "description": "Get your customers’ protected data information of Cloud Backup for Microsoft 365. ",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({id})/ScanProfiles": {
+            "get": {
+                "description": "Get the information of all scan profiles configured in AvePoint Online Services for a customer.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({id})/ScanProfilesDailyNew(ProfileId={ProfileId})": {
+            "get": {
+                "description": "Get the daily scan profile changes in AvePoint Online Services for a customer.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "profileId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({id})/ScanProfilesDailyNewDetail(ProfileId={ProfileId})": {
+            "get": {
+                "description": "Get the daily scan profile change details in AvePoint Online Services for a customer.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "profileId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Customers({id})/ScanProfilesDetails(ProfileId={ProfileId})": {
+            "get": {
+                "description": "Get a scan profile information configured in AvePoint Online Services for a customer.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "profileId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Services": {
+            "get": {
+                "description": "Get the license details of different services for the customers that you manage.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/V1.1/Services({id})": {
+            "get": {
+                "description": "Get the license details of different services for a specific customer that you manage.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Microsoft.OData.Edm.EdmContainerElementKind": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "type": "integer",
+                "description": "* `None` = 0\r\n* `EntitySet` = 1\r\n* `ActionImport` = 2\r\n* `FunctionImport` = 3\r\n* `Singleton` = 4\r\n",
+                "format": "int32"
+            },
+            "Microsoft.OData.Edm.EdmExpressionKind": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25
+                ],
+                "type": "integer",
+                "description": "* `None` = 0\r\n* `BinaryConstant` = 1\r\n* `BooleanConstant` = 2\r\n* `DateTimeOffsetConstant` = 3\r\n* `DecimalConstant` = 4\r\n* `FloatingConstant` = 5\r\n* `GuidConstant` = 6\r\n* `IntegerConstant` = 7\r\n* `StringConstant` = 8\r\n* `DurationConstant` = 9\r\n* `Null` = 10\r\n* `Record` = 11\r\n* `Collection` = 12\r\n* `Path` = 13\r\n* `If` = 14\r\n* `Cast` = 15\r\n* `IsType` = 16\r\n* `FunctionApplication` = 17\r\n* `LabeledExpressionReference` = 18\r\n* `Labeled` = 19\r\n* `PropertyPath` = 20\r\n* `NavigationPropertyPath` = 21\r\n* `DateConstant` = 22\r\n* `TimeOfDayConstant` = 23\r\n* `EnumMember` = 24\r\n* `AnnotationPath` = 25\r\n",
+                "format": "int32"
+            },
+            "Microsoft.OData.Edm.EdmSchemaElementKind": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "type": "integer",
+                "description": "* `None` = 0\r\n* `TypeDefinition` = 1\r\n* `Term` = 2\r\n* `Action` = 3\r\n* `EntityContainer` = 4\r\n* `Function` = 5\r\n",
+                "format": "int32"
+            },
+            "Microsoft.OData.Edm.EdmTypeKind": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                ],
+                "type": "integer",
+                "description": "* `None` = 0\r\n* `Primitive` = 1\r\n* `Entity` = 2\r\n* `Complex` = 3\r\n* `Collection` = 4\r\n* `EntityReference` = 5\r\n* `Enum` = 6\r\n* `TypeDefinition` = 7\r\n* `Untyped` = 8\r\n* `Path` = 9\r\n",
+                "format": "int32"
+            },
+            "Microsoft.OData.Edm.IEdmEntityContainer": {
+                "type": "object",
+                "properties": {
+                    "elements": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainerElement"
+                        },
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "schemaElementKind": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind"
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.IEdmEntityContainerElement": {
+                "type": "object",
+                "properties": {
+                    "containerElementKind": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.EdmContainerElementKind"
+                    },
+                    "container": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainer"
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.IEdmExpression": {
+                "type": "object",
+                "properties": {
+                    "expressionKind": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.EdmExpressionKind"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.IEdmModel": {
+                "type": "object",
+                "properties": {
+                    "schemaElements": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmSchemaElement"
+                        },
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "vocabularyAnnotations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotation"
+                        },
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "referencedModels": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmModel"
+                        },
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "declaredNamespaces": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "directValueAnnotationsManager": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmDirectValueAnnotationsManager"
+                    },
+                    "entityContainer": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainer"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.IEdmSchemaElement": {
+                "type": "object",
+                "properties": {
+                    "schemaElementKind": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind"
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.IEdmType": {
+                "type": "object",
+                "properties": {
+                    "typeKind": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.EdmTypeKind"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.IEdmTypeReference": {
+                "type": "object",
+                "properties": {
+                    "isNullable": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "definition": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmType"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.Vocabularies.IEdmDirectValueAnnotationsManager": {
+                "type": "object",
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.Vocabularies.IEdmTerm": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmTypeReference"
+                    },
+                    "appliesTo": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "defaultValue": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "schemaElementKind": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind"
+                    },
+                    "namespace": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotatable": {
+                "type": "object",
+                "additionalProperties": false
+            },
+            "Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotation": {
+                "type": "object",
+                "properties": {
+                    "qualifier": {
+                        "type": "string",
+                        "nullable": true,
+                        "readOnly": true
+                    },
+                    "term": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmTerm"
+                    },
+                    "target": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotatable"
+                    },
+                    "value": {
+                        "$ref": "#/components/schemas/Microsoft.OData.Edm.IEdmExpression"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.ODataEntitySetInfo": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "typeAnnotation": {
+                        "$ref": "#/components/schemas/Microsoft.OData.ODataTypeAnnotation"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.ODataFunctionImportInfo": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "typeAnnotation": {
+                        "$ref": "#/components/schemas/Microsoft.OData.ODataTypeAnnotation"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.ODataServiceDocument": {
+                "type": "object",
+                "properties": {
+                    "entitySets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Microsoft.OData.ODataEntitySetInfo"
+                        },
+                        "nullable": true
+                    },
+                    "singletons": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Microsoft.OData.ODataSingletonInfo"
+                        },
+                        "nullable": true
+                    },
+                    "functionImports": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Microsoft.OData.ODataFunctionImportInfo"
+                        },
+                        "nullable": true
+                    },
+                    "typeAnnotation": {
+                        "$ref": "#/components/schemas/Microsoft.OData.ODataTypeAnnotation"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.ODataSingletonInfo": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "nullable": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "typeAnnotation": {
+                        "$ref": "#/components/schemas/Microsoft.OData.ODataTypeAnnotation"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Microsoft.OData.ODataTypeAnnotation": {
+                "type": "object",
+                "properties": {
+                    "typeName": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "http",
+                "description": "JWT Authorization header using the Bearer scheme.",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}
