@@ -2,11 +2,13 @@
 _layout: landing
 ---
 
-# AvePoint Graph API Overview  
+# Overview of AvePoint Graph Modern API
 
-The AvePoint Graph API is a powerful suite of tools designed to provide seamless integration and robust functionalities for managing and optimizing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities. The current version of the AvePoint Graph API encompasses two primary components: AvePoint Confidence Platform and Elements for Partners.  
+The AvePoint Graph Modern API is a powerful suite of tools designed to provide seamless integration and robust functionalities for managing and optimizing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities. The current version of the AvePoint Graph Modern API encompasses two primary components: AvePoint Confidence Platform and Elements for Partners.  
 
-## About AvePoint Graph API
+## What's in AvePoint Graph Modern API
+
+AvePoint Graph Modern API offers a single endpoint, https://graph.avepointonlineservices.com, to provide access to AvePoint services data.
 
 ### Introduction
 
@@ -14,7 +16,7 @@ The AvePoint Graph API is a powerful suite of tools designed to provide seamless
 
 ### Use Cases
 
-## Use AvePoint Graph API
+## Use AvePoint Graph Modern API
 
 ### Namespace
 
@@ -24,7 +26,7 @@ Unless explicitly specified in the corresponding topic, assume types, methods, a
 
 ### Authentication and Authorization
 
-### Call an AvePoint Graph API Method
+### Call an API Method
 
 To read from or write to a resource such as a user or an email message, you construct a request that looks like the following:  
 
@@ -69,3 +71,8 @@ In some cases, the actual write request size limit is lower than 4 MB. For examp
 Requests exceeding the size limit fail with the status code HTTP 413, and the error message "Request entity too large" or "Payload too large".
 
 Reference [Use the API > Overview](https://learn.microsoft.com/en-us/graph/use-the-api).  
+
+https://developer.microsoft.com/en-us/graph/quick-start  
+
+
+## API Changelog

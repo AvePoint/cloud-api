@@ -1,42 +1,51 @@
-# AOS
-## Version: 1.0.0
+# AvePoint Online Services
 
----
-### /audit
+## Permissions
 
-#### GET
-##### Summary
+The following table indicates the permissions required by API operations.
 
-Gets the audit records for activities within your AvePoint Online Services tenant.
+| API operation    | Permission required | Permission type |
+|-------------------|---------------|----------------------|
+| [GET](#get) audit records | audit.read.all           | Application       |
+-------------------------------------------
 
-##### Parameters
+## GET
+
+Gets the audit records for activities in your AvePoint Online Services tenant within a time range.
+
+### Optional query parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
-| StartTime | query | Specifies the start time for getting the audit records. | No | dateTime |
-| EndTime | query | Specifies the end time for getting the audit records. StartTime and EndTime must be no more than 7 days apart. | No | dateTime |
-| ProductTypes | query | Specifies the products for which you want to get audit records. Valid values are:     Office365Management: Cloud Management    Office365Backup: Cloud Backup for Microsoft 365    GovernanceAutomation: Cloud Governance    Portal: Confidence Platform Portal    PolicyEnforcer: Policies for Microsoft 365    CPManagement: Insights for Microsoft 365    SMP: EnPower By default, audit records for all products are retrieved. | No | [ string ] |
-| GeoLocations | query | Specifies the data center from which to retrieve the audit records. Valid values are:    PrimaryGeoLocation: Central AOS location    NAM: North America    EUR: Europe/Middle East/Africa    GBR: United Kingdom    JPN: Japan    APC: Asia-Pacific    AUS: Australia    CAN: Canada    IND: India    FRA: France    ARE: United Arab Emirates    ZAF: South Africa    CHE: Switzerland    KOR: Korea    DEU: Germany    BRA: Brazil    NOR: Norway    SWE: Sweden    QAT: Qatar    POL: Poland    ITA: Italy By default, audit records for all locations are retrieved. This parameter is only available when the AOS tenant supports Multi-Geo. | No | [ string ] |
-| SkipToken | query | When a response contains more data than can be returned in a single call, the API provides a SkipToken in the response. This token can then be passed as a parameter in subsequent requests to retrieve the next set of results. | No | string |
+| StartTime | query | Sets a start time for the time range. | No | dateTime |
+| EndTime | query | Sets an end time for the time range. The time range between StartTime and EndTime must be no more than 7 days. | No | dateTime |
+| ProductTypes | query | If no value is set for this parameter, this method retrieves the audit records for all products in your AOS tenant. To get audit records from specific products, use the following values:     <ul><li>**Office365Management** (Cloud Management)</li> <li>**Office365Backup** (Cloud Backup for Microsoft 365)</li> <li>**GovernanceAutomation** (Cloud Governance)</li> <li>**Portal** (AvePoint Online Services)</li> <li>**PolicyEnforcer** (Policies for Microsoft 365)</li> <li>**CPManagement** (Insights for Microsoft 365)</li> <li>**SMP** (EnPower)</li></ul> | No |  string  |
+| GeoLocations | query | This parameter is only available for the AOS tenant that supports Multi-Geo. If no value is set for this parameter, this method retrieves the audit records from all locations in your AOS tenant. To get audit records from specific data centers, use the following values: <ul><li>**PrimaryGeoLocation** (Central AOS location)</li> <li>**NAM** (North America)</li> <li>**EUR** (Europe/Middle East/Africa)</li> <li>**GBR** (United Kingdom)</li> <li>**JPN** (Japan)</li> <li>**APC** (Asia-Pacific)</li> <li>**AUS** (Australia)</li> <li>**CAN** (Canada)</li> <li>**IND** (India)</li> <li>**FRA** (France)</li>    <li>**ARE** (United Arab Emirates)</li> <li>**ZAF** (South Africa)</li> <li>**CHE** (Switzerland)</li> <li>**KOR** (Korea)</li> <li>**DEU** (Germany)</li> <li>**BRA** (Brazil)</li> <li>**NOR** (Norway)</li> <li>**SWE** (Sweden)</li> <li>**QAT** (Qatar)</li> <li>**POL** (Poland)</li> <li>**ITA** (Italy)</li></ul>  | No |  string  |
+| SkipToken | query | During a query, if the results are too large to be returned in a single response, a **SkipToken** is included in the response. This token allows you to retrieve the next set of results by appending it into the query URL in a subsequent request. | No | string |
 
-##### Responses
+### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 |  | [ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel](#apiquerywithskiptokenresultofuseractivityauditlogitemmodel) |
-| 400 |  | [ErrorResponse](#errorresponse) |
+| 200 | If successful, the method returns this code. | [ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel](#apiquerywithskiptokenresultofuseractivityauditlogitemmodel) |
+| 400 | If an error occurs, the method returns this code. | [ErrorResponse](#errorresponse) |
 
----
 ### Models
 
+The following sections describe the response models to get audit records.
+
 #### ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel
+
+Response model to get audit records successfully.
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | nextLink | string |  | No |
-| data | [ [UserActivityAuditLogItemModel](#useractivityauditlogitemmodel) ] |  | No |
+| data | [UserActivityAuditLogItemModel](#useractivityauditlogitemmodel)  |  | No |
 
 #### UserActivityAuditLogItemModel
+
+If successful, the following objects are displayed in the response body.
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
@@ -59,9 +68,11 @@ Gets the audit records for activities within your AvePoint Online Services tenan
 | objectName | string | Operation object name | No |
 | action | string | Operation name (for Cloud Governance only) | No |
 | clientIP | string | IP | No |
-| additionalDetails | object | for confide | No |
+| additionalDetails | object | Operation name (for Confide only) | No |
 
 #### ErrorResponse
+
+If an error occurs, the following information is displayed in the response body.
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
