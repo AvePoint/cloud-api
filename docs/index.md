@@ -2,9 +2,18 @@
 _layout: landing
 ---
 
-# Overview of AvePoint Graph Modern API
+# Overview of AvePoint Graph API
 
-The AvePoint Graph Modern API is a powerful suite of tools designed to provide seamless integration and robust functionalities for managing and optimizing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities. The current version of the AvePoint Graph Modern API encompasses two primary components: AvePoint Confidence Platform and Elements for Partners.  
+The AvePoint Graph API is a powerful suite of tools designed to provide seamless integration and robust functionalities for managing and optimizing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities. 
+
+Below is a comprehensive overview of the available APIs:  
+
+- Legacy API - The Legacy API includes functionalities such as retrieving audit records, importing objects, registering a partner's customer, and obtaining Cloud Backup for Microsoft 365 job information. For details, refer to . 
+- Modern API - The Modern API offers advanced authentication methods, including client secret and certificate authentication.  
+- Partner API - The Partner API is designed for managing multiple customers under a single partner registration.  
+
+By leveraging these APIs, you can efficiently manage and interact with your cloud data in AvePoint Confidence Platform, ensuring seamless integration and enhanced productivity.  
+
 
 ## What's in AvePoint Graph Modern API
 
