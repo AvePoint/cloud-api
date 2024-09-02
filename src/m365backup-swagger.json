@@ -1,0 +1,293 @@
+{
+  "x-generator": "NSwag v14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Cloud Backup for Office 365 Web Api 2",
+    "description": "This is Cloud Backup for Office 365 Web Api",
+    "contact": {
+      "name": "AvePoint Cloud Backup for Office 365",
+      "url": "https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-backup-for-office365/index.htm",
+      "email": "ACB@avepoint.com"
+    },
+    "license": {
+      "name": "ACB License",
+      "url": "https://test.sharepointguild.com/"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://10.2.156.34:12580"
+    }
+  ],
+  "paths": {
+    "/api/PublicApi/cloudbackup/licenseconsumption": {
+      "get": {
+        "tags": [
+          "PublicApi"
+        ],
+        "operationId": "PublicApi_GetCloudBackupLicenseConsumption",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicenseConsumption"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PublicApi/cloudbackup/jobs": {
+      "post": {
+        "tags": [
+          "PublicApi"
+        ],
+        "operationId": "PublicApi_GetCloudBackupJobs",
+        "requestBody": {
+          "x-name": "filter",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CloudBackupJobFilter"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloudBackupJobResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LicenseConsumption": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "outOfPolicyTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "purchasedUserSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "assignedUserSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "purchasedStorageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "protectedSize": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CloudBackupJobResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jobs": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CloudBackupJob"
+            }
+          }
+        }
+      },
+      "CloudBackupJob": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "finishTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "backupDetails": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BackupDetails"
+              }
+            ]
+          }
+        }
+      },
+      "BackupDetails": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "failedCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "successfulCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "skippedCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CloudBackupJobFilter": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "finishTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "jobType": {
+            "$ref": "#/components/schemas/BackupJobType"
+          },
+          "objectType": {
+            "$ref": "#/components/schemas/CloudBackupJobObjectType"
+          },
+          "jobState": {
+            "$ref": "#/components/schemas/CloudBackupJobState"
+          },
+          "pageIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "BackupJobType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "All",
+          "Backup",
+          "Restore",
+          "Export",
+          "Delete",
+          "Retention"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "CloudBackupJobObjectType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "All",
+          "ExchangeOnline",
+          "SharePointOnline",
+          "OneDrive",
+          "Groups",
+          "ProjectOnline",
+          "PublicFolder",
+          "Teams",
+          "YammerGroup",
+          "PersonalChat",
+          "PowerBI",
+          "PowerAutomate",
+          "PowerApps"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "CloudBackupJobState": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "All",
+          "InProgress",
+          "Finished",
+          "Failed",
+          "FinishedException",
+          "PartiallyFinished"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Please enter into field the word 'Bearer' followed by a space and the JWT value",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
