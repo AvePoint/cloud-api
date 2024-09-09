@@ -1,810 +1,330 @@
-# Open Api
+# Elements Open API
 
 > Version v1.1
 
-Open Api HTTP API v1.1
+Elements provides APIs to retrieve information of your customers, including services, job details, and scan profiles.
 
 ## Path Table
 
 | Method | Path | Description |
 | --- | --- | --- |
-| GET | [/api/V1.1/Customers](#getapiv11customers) |  |
-| GET | [/api/V1.1/Customers({id})](#getapiv11customersid) |  |
-| GET | [/api/V1.1/Customers({Id})/Jobs](#getapiv11customersidjobs) |  |
-| GET | [/api/V1.1/Customers({Id})/Jobs(JobType={JobType},JobModule={JobModule})](#getapiv11customersidjobsjobtypejobtypejobmodulejobmodule) |  |
-| GET | [/api/V1.1/Customers({id})/Protected](#getapiv11customersidprotected) |  |
-| GET | [/api/V1.1/Customers({id})/ScanProfiles](#getapiv11customersidscanprofiles) |  |
-| GET | [/api/V1.1/Customers({id})/ScanProfilesDailyNew(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdailynewprofileidprofileid) |  |
-| GET | [/api/V1.1/Customers({id})/ScanProfilesDailyNewDetail(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdailynewdetailprofileidprofileid) |  |
-| GET | [/api/V1.1/Customers({id})/ScanProfilesDetails(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdetailsprofileidprofileid) |  |
-| GET | [/api/V1.1/Services](#getapiv11services) |  |
-| GET | [/api/V1.1/Services({id})](#getapiv11servicesid) |  |
-
-## Reference Table
-
-| Name | Path | Description |
-| --- | --- | --- |
-| Microsoft.OData.Edm.EdmContainerElementKind | [#/components/schemas/Microsoft.OData.Edm.EdmContainerElementKind](#componentsschemasmicrosoftodataedmedmcontainerelementkind) | * `None` = 0
-* `EntitySet` = 1
-* `ActionImport` = 2
-* `FunctionImport` = 3
-* `Singleton` = 4
- |
-| Microsoft.OData.Edm.EdmExpressionKind | [#/components/schemas/Microsoft.OData.Edm.EdmExpressionKind](#componentsschemasmicrosoftodataedmedmexpressionkind) | * `None` = 0
-* `BinaryConstant` = 1
-* `BooleanConstant` = 2
-* `DateTimeOffsetConstant` = 3
-* `DecimalConstant` = 4
-* `FloatingConstant` = 5
-* `GuidConstant` = 6
-* `IntegerConstant` = 7
-* `StringConstant` = 8
-* `DurationConstant` = 9
-* `Null` = 10
-* `Record` = 11
-* `Collection` = 12
-* `Path` = 13
-* `If` = 14
-* `Cast` = 15
-* `IsType` = 16
-* `FunctionApplication` = 17
-* `LabeledExpressionReference` = 18
-* `Labeled` = 19
-* `PropertyPath` = 20
-* `NavigationPropertyPath` = 21
-* `DateConstant` = 22
-* `TimeOfDayConstant` = 23
-* `EnumMember` = 24
-* `AnnotationPath` = 25
- |
-| Microsoft.OData.Edm.EdmSchemaElementKind | [#/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind](#componentsschemasmicrosoftodataedmedmschemaelementkind) | * `None` = 0
-* `TypeDefinition` = 1
-* `Term` = 2
-* `Action` = 3
-* `EntityContainer` = 4
-* `Function` = 5
- |
-| Microsoft.OData.Edm.EdmTypeKind | [#/components/schemas/Microsoft.OData.Edm.EdmTypeKind](#componentsschemasmicrosoftodataedmedmtypekind) | * `None` = 0
-* `Primitive` = 1
-* `Entity` = 2
-* `Complex` = 3
-* `Collection` = 4
-* `EntityReference` = 5
-* `Enum` = 6
-* `TypeDefinition` = 7
-* `Untyped` = 8
-* `Path` = 9
- |
-| Microsoft.OData.Edm.IEdmEntityContainer | [#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainer](#componentsschemasmicrosoftodataedmiedmentitycontainer) |  |
-| Microsoft.OData.Edm.IEdmEntityContainerElement | [#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainerElement](#componentsschemasmicrosoftodataedmiedmentitycontainerelement) |  |
-| Microsoft.OData.Edm.IEdmExpression | [#/components/schemas/Microsoft.OData.Edm.IEdmExpression](#componentsschemasmicrosoftodataedmiedmexpression) |  |
-| Microsoft.OData.Edm.IEdmModel | [#/components/schemas/Microsoft.OData.Edm.IEdmModel](#componentsschemasmicrosoftodataedmiedmmodel) |  |
-| Microsoft.OData.Edm.IEdmSchemaElement | [#/components/schemas/Microsoft.OData.Edm.IEdmSchemaElement](#componentsschemasmicrosoftodataedmiedmschemaelement) |  |
-| Microsoft.OData.Edm.IEdmType | [#/components/schemas/Microsoft.OData.Edm.IEdmType](#componentsschemasmicrosoftodataedmiedmtype) |  |
-| Microsoft.OData.Edm.IEdmTypeReference | [#/components/schemas/Microsoft.OData.Edm.IEdmTypeReference](#componentsschemasmicrosoftodataedmiedmtypereference) |  |
-| Microsoft.OData.Edm.Vocabularies.IEdmDirectValueAnnotationsManager | [#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmDirectValueAnnotationsManager](#componentsschemasmicrosoftodataedmvocabulariesiedmdirectvalueannotationsmanager) |  |
-| Microsoft.OData.Edm.Vocabularies.IEdmTerm | [#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmTerm](#componentsschemasmicrosoftodataedmvocabulariesiedmterm) |  |
-| Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotatable | [#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotatable](#componentsschemasmicrosoftodataedmvocabulariesiedmvocabularyannotatable) |  |
-| Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotation | [#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotation](#componentsschemasmicrosoftodataedmvocabulariesiedmvocabularyannotation) |  |
-| Microsoft.OData.ODataEntitySetInfo | [#/components/schemas/Microsoft.OData.ODataEntitySetInfo](#componentsschemasmicrosoftodataodataentitysetinfo) |  |
-| Microsoft.OData.ODataFunctionImportInfo | [#/components/schemas/Microsoft.OData.ODataFunctionImportInfo](#componentsschemasmicrosoftodataodatafunctionimportinfo) |  |
-| Microsoft.OData.ODataServiceDocument | [#/components/schemas/Microsoft.OData.ODataServiceDocument](#componentsschemasmicrosoftodataodataservicedocument) |  |
-| Microsoft.OData.ODataSingletonInfo | [#/components/schemas/Microsoft.OData.ODataSingletonInfo](#componentsschemasmicrosoftodataodatasingletoninfo) |  |
-| Microsoft.OData.ODataTypeAnnotation | [#/components/schemas/Microsoft.OData.ODataTypeAnnotation](#componentsschemasmicrosoftodataodatatypeannotation) |  |
-| Bearer | [#/components/securitySchemes/Bearer](#componentssecurityschemesbearer) | JWT Authorization header using the Bearer scheme. |
+| GET | [/api/V1.1/Customers](#getapiv11customers) |Get the general information of all customers that you manage.  |
+| GET | [/api/V1.1/Customers({id})](#getapiv11customersid) |Get the general information of a specific customer that you manage.  |
+| GET | [/api/V1.1/Customers({Id})/Jobs](#getapiv11customersidjobs) | Get your customer's job details for the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported. |
+| GET | [/api/V1.1/Customers({Id})/Jobs(JobType={JobType},JobModule={JobModule})](#getapiv11customersidjobsjobtypejobtypejobmodulejobmodule) |Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the cusotmer has the subscription for are supported.  |
+| GET | [/api/V1.1/Customers({id})/Protected](#getapiv11customersidprotected) | Get your cusomter's protected data information of Cloud Backup for Microsoft 365.<br>Note that only the customers that have the Cloud Backup for Microsoft 365 subscription are supported.|
+| GET | [/api/V1.1/Customers({id})/ScanProfiles](#getapiv11customersidscanprofiles) | Get your customer's information for all scan profiles configured in AvePoint Online Services. |
+| GET | [/api/V1.1/Customers({id})/ScanProfilesDailyNew(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdailynewprofileidprofileid) |Get your cusomter's daily scan profile changes in AvePoint Online Services.|
+| GET | [/api/V1.1/Customers({id})/ScanProfilesDailyNewDetail(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdailynewdetailprofileidprofileid) |Get your customer's daily scan profile change details in AvePoint Online Services.  |
+| GET | [/api/V1.1/Customers({id})/ScanProfilesDetails(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdetailsprofileidprofileid) | Get your cusotmer's information for a specific scan profile configured in AvePoint Online Services.  |
+| GET | [/api/V1.1/Services](#getapiv11services) |Get the service subscription details of all customers that you manage.|
+| GET | [/api/V1.1/Services({id})](#getapiv11servicesid) | Get the service subscription details of a specific customer that you manage. |
 
 ## Path Details
 
-***
-
 ### [GET]/api/V1.1/Customers
 
-- Description  
-Get the general information of the customers that you manage.
+Get the general information of all customers that you manage.
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
+| Organization | The organization name of the customer. | String |
+| OwnerEmail | The tenant owner email address of the customer. | String |
+| JobStatus | The status of the customer’s tenant. | String |
+| CountryOrRegion | The country or region name of the customer. | String |
 
 ***
 
 ### [GET]/api/V1.1/Customers({id})
 
-- Description  
 Get the general information of a specific customer that you manage.
+
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
+| Organization | The organization name of the customer. | String |
+| OwnerEmail | The tenant owner email address of the customer. | String |
+| JobStatus | The status of the customer’s tenant. | String |
+| CountryOrRegion | The country or region name of the customer. | String |
 
 ***
 
 ### [GET]/api/V1.1/Customers({Id})/Jobs
 
-- Description  
-Get the job details of the backup services of a specific customer that you manage.
+Get your customer's job details for the backup services.<br>Note that only the job details for the backup services that the cusotmer has the subscription for are supported. 
 
-#### Parameters(Query)
-
-```ts
-JobType?: string
-```
-
-```ts
-JobModule?: string
-```
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| JobType | The service type of the job. | String |
+| JobModule | The service module of the job. | String |
+| Status | The job status. | String |
+| JobId | The job ID. | String |
+| Name | The job name. | String |
+| TotalCount | The count of the objects that have been processed by the job. | Int |
+| FailedCount | The count of the failed objects. | Int |
+| SuccessfulCount | The count of the successful objects. | Int |
+| SkippedCount | The count of the skipped objects. | Int |
+| WarningCount | The count of the warning objects. | Int |
+| BackupSize | The size of the backed-up objects. | String |
+| StartTime | The start time of the job. | DateTime |
+| EndTime | The end time of the job. | DateTime |
+| JobDuration | The job duration. | String |
+| LastModifyTime | The last modified time of the job. | DateTime |
 
 ***
 
 ### [GET]/api/V1.1/Customers({Id})/Jobs(JobType={JobType},JobModule={JobModule})
 
-- Description  
-Get the job details of a specific job type and module of backup service for a customer that you manage.
+Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported.
 
-#### Parameters(Query)
-
-```ts
-JobType?: string
-```
-
-```ts
-JobModule?: string
-```
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
+| JobType | The service type of the job. | String |
+| JobModule | The service module of the job. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| JobType | The service type of the job. | String |
+| JobModule | The service module of the job. | String |
+| Status | The job status. | String |
+| JobId | The job ID. | String |
+| Name | The job name. | String |
+| TotalCount | The count of the objects that have been processed by the job. | Int |
+| FailedCount | The count of the failed objects. | Int |
+| SuccessfulCount | The count of the successful objects. | Int |
+| SkippedCount | The count of the skipped objects. | Int |
+| WarningCount | The count of the warning objects. | Int |
+| BackupSize | The size of the backed-up objects. | String |
+| StartTime | The start time of the job. | DateTime |
+| EndTime | The end time of the job. | DateTime |
+| JobDuration | The job duration. | String |
+| LastModifyTime | The last modified time of the job. | DateTime |
 
 ***
 
 ### [GET]/api/V1.1/Customers({id})/Protected
 
-- Description  
-Get your customers’ protected data information of Cloud Backup for Microsoft 365. 
+Get your customer's protected data information of Cloud Backup for Microsoft 365.<br>Note that only the customers that have the Cloud Backup for Microsoft 365 subscription are supported.
+
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| CustomerId | The tenant owner ID of the customer. | String |
+| Customer | The tenant owner email address of the customer. | String |
+| ServiceType | The Cloud Backup for Microsoft 365 service that the customer has the subscription for. | String |
+| ServiceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | String |
+| TotalScannedObjects | The number of the scanned objects. | Int |
+| TotalProtectedObjects | The number of the backed-up objects. | Int |
+| DataSizeStoredInAvePoint | The size of the backed-up objects stored in the AvePoint storage. | Int |
+| DataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | Int |
 
 ***
 
 ### [GET]/api/V1.1/Customers({id})/ScanProfiles
 
-- Description  
-Get the information of all scan profiles configured in AvePoint Online Services for a customer.
+Get your cusomter's information for all scan profiles configured in AvePoint Online Services.
+
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| ProfileName | The name of the scan profile. | String |
+| ProfileId | The ID of the scan profile. | String |
+| ScanMode | The scan mode of the scan profile:<br> <ul><li> **0** represents **Express mode**</li><li> **1** represents **Advanced mode** | Int |
+| ModifiedTime | The last modified time of the scan profile. | String |
 
 ***
 
 ### [GET]/api/V1.1/Customers({id})/ScanProfilesDailyNew(ProfileId={ProfileId})
 
-- Description  
-Get the daily scan profile changes in AvePoint Online Services for a customer.
+Get your cusomter's daily scan profile changes in AvePoint Online Services.
+
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
+| ProfileId | The ID of the scan profile. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| ProfileName | The name of the scan profile. | String |
+| ProfileId | The ID of the scan profile. | String |
+| TenantDomain | The tenant domain of the scan profile. | String |
+| TenantId | The tenant ID the scan profile. | String |
+| Description | The description of the scan profile. | String |
+| ScanMode | The scan mode of the scan profile:<br> <ul><li>**0** represents **Express mode**<li>**1** represents **Advanced mode**| Int |
+| ModifiedTime | The last modified time of the scan profile. | String |
+| LastUpdateTime | The time of generating the daily report for the scan profile. If no daily report has been generated, the time will be the last modified time of the scan profile. | String |
+| LastScanStatus | The last scan job status of the scan profile:<br><ul><li>**2** represents **Finished**<li>**3** represents **Failed**<li>**4** represents **Finished with exception**<li>**5** represents **Skipped**<li>**10** represents **Stopped** | Int |
+| NewRegistedContentCount | The number of newly registered objects in the daily report of the scan profile. | Int |
+| MovedToAnotherContainer | The number of objects moved to another container in the daily report of the scan profile. | Int |
+| RemovedFromMicrosoft365OrOutofPolicy | The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | Int |
 
 ***
 
 ### [GET]/api/V1.1/Customers({id})/ScanProfilesDailyNewDetail(ProfileId={ProfileId})
 
-- Description  
-Get the daily scan profile change details in AvePoint Online Services for a customer.
+Get your customer's daily scan profile change details in AvePoint Online Services.
+
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
+| ProfileId | The ID of the scan profile. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| ProfileName | The name of the scan profile. | String |
+| ProfileId | The ID of the scan profile. | String |
+| TenantDomain | The tenant domain of the scan profile. | String |
+| TenantId | The tenant ID the scan profile. | String |
+| LastUpdateTime | The time of generating the daily report for the scan profile. If no daily report has been generated, the time will be the last modified time of the scan profile. | String |
+| NewRegistedContent | The details of newly registered objects in the daily report of the scan profile. | String |
+| RemovedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | String |
+| MovedToAnotherContainerObjects | The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | String |
 
 ***
 
 ### [GET]/api/V1.1/Customers({id})/ScanProfilesDetails(ProfileId={ProfileId})
 
-- Description  
-Get a scan profile information configured in AvePoint Online Services for a customer.
+Get your customer's information for a specific scan profile configured in AvePoint Online Services.
+
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
+| ProfileId | The ID of the scan profile. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| ProfileId | The ID of the scan profile. | String |
+| ProfileName | The name of the scan profile. | String |
+| Description | The description of the scan profile. | String |
+| TenantId | The tenant ID of the scan profile. | String |
+| TenantDomain | The tenant domain of the scan profile. | String |
+| ScanMode | The scan mode of the scan profile:<br><ul><li>**0** represents **Express mode**<li>**1** represents **Advanced mode** | Int |
+| ModifiedTime | The last modified time of the scan profile. | String |
+| CreatedTime | The created time of the scan profile. | String |
+| ImpersonationAccount | The impersonation account configured in the scan profile. | String |
+| ScanInplaceArchivedMailboxes | Whether the **Scan in-place archived mailboxes** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
+| IgnoreTheLockedObjectsWhenUpdatingTheJobStatus | Whether the **Ignore the locked objects when updating the job status** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
+| EnableDailyScan | Whether the **Enable daily scan** setting is enabled in the scan profile:<br><ul><li>**No** represents  **Disabled**<li>**hh:mm** represents the time of the daily scan, for example, 01:59 | String |
+| SendAnemailNotificationToTheFollowIngRecipientsWhenObjectsAreMovedTooTherContainerOrRemovedFromAnyContainers | Whether the **Send an email notification to the following recipients when objects are moved to other containers or removed from any containers** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
+| Containers | The container details of the scan profile. | String |
 
 ***
 
 ### [GET]/api/V1.1/Services
 
-- Description  
-Get the license details of different services for the customers that you manage.
+Get the service subscription details for the customers that you manage.
 
-#### Parameters(Query)
-
-```ts
-id?: string
-```
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| CustomerId | The tenant owner ID of the customer. | String |
+| Organization | The organization name of the customer. | String |
+| Customer | The tenant owner email address of the customer. | String |
+| TenantId | The tenant ID of the customer. | String |
+| Service | The service that the customer has subscriptions for. | String |
+| SubscriptionModel | The subscription model of the customer’s service. | String |
+| PurchasedUserSeats | The number of purchased user seats of the customer. | String |
+| MicrosoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
+| MicrosoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
+| PurchasedCapacity | The purchased capacity of the customer. | String |
+| Storage | The storage type of the customer. | String |
+| Retention | The data retention period of the customer. | String |
+| ConsumedStorage | The consumed storage size of the customer. | String |
+| expirationDate | The expiration date of the customer’s service. | String |
+| Change | The user seats changes in the pooled license compared with the first day of the current month. | String |
 
 ***
 
 ### [GET]/api/V1.1/Services({id})
 
-- Description  
-Get the license details of different services for a specific customer that you manage.
+Get the service subscription details for a specific customer that you manage.
+
+#### Parameters (Query)
+| Parameter | Description | Type |
+| --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String |
 
 #### Responses
 
-- 200 OK
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
 
-## References
-
-### #/components/schemas/Microsoft.OData.Edm.EdmContainerElementKind
-
-```ts
-{
-  "enum": [
-    0,
-    1,
-    2,
-    3,
-    4
-  ],
-  "type": "integer",
-  "description": "* `None` = 0\r\n* `EntitySet` = 1\r\n* `ActionImport` = 2\r\n* `FunctionImport` = 3\r\n* `Singleton` = 4\r\n",
-  "format": "int32"
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.EdmExpressionKind
-
-```ts
-{
-  "enum": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25
-  ],
-  "type": "integer",
-  "description": "* `None` = 0\r\n* `BinaryConstant` = 1\r\n* `BooleanConstant` = 2\r\n* `DateTimeOffsetConstant` = 3\r\n* `DecimalConstant` = 4\r\n* `FloatingConstant` = 5\r\n* `GuidConstant` = 6\r\n* `IntegerConstant` = 7\r\n* `StringConstant` = 8\r\n* `DurationConstant` = 9\r\n* `Null` = 10\r\n* `Record` = 11\r\n* `Collection` = 12\r\n* `Path` = 13\r\n* `If` = 14\r\n* `Cast` = 15\r\n* `IsType` = 16\r\n* `FunctionApplication` = 17\r\n* `LabeledExpressionReference` = 18\r\n* `Labeled` = 19\r\n* `PropertyPath` = 20\r\n* `NavigationPropertyPath` = 21\r\n* `DateConstant` = 22\r\n* `TimeOfDayConstant` = 23\r\n* `EnumMember` = 24\r\n* `AnnotationPath` = 25\r\n",
-  "format": "int32"
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind
-
-```ts
-{
-  "enum": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "type": "integer",
-  "description": "* `None` = 0\r\n* `TypeDefinition` = 1\r\n* `Term` = 2\r\n* `Action` = 3\r\n* `EntityContainer` = 4\r\n* `Function` = 5\r\n",
-  "format": "int32"
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.EdmTypeKind
-
-```ts
-{
-  "enum": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
-  ],
-  "type": "integer",
-  "description": "* `None` = 0\r\n* `Primitive` = 1\r\n* `Entity` = 2\r\n* `Complex` = 3\r\n* `Collection` = 4\r\n* `EntityReference` = 5\r\n* `Enum` = 6\r\n* `TypeDefinition` = 7\r\n* `Untyped` = 8\r\n* `Path` = 9\r\n",
-  "format": "int32"
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.IEdmEntityContainer
-
-```ts
-{
-  elements: {
-    // * `None` = 0
-    // * `EntitySet` = 1
-    // * `ActionImport` = 2
-    // * `FunctionImport` = 3
-    // * `Singleton` = 4
-    // 
-    containerElementKind?: enum[0, 1, 2, 3, 4]
-    container: {
-      elements:#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainerElement[]
-      // * `None` = 0
-      // * `TypeDefinition` = 1
-      // * `Term` = 2
-      // * `Action` = 3
-      // * `EntityContainer` = 4
-      // * `Function` = 5
-      // 
-      schemaElementKind?: enum[0, 1, 2, 3, 4, 5]
-      namespace?: string
-      name?: string
-    }
-    name?: string
-  }[]
-  schemaElementKind:#/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind
-  namespace?: string
-  name?: string
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.IEdmEntityContainerElement
-
-```ts
-{
-  // * `None` = 0
-  // * `EntitySet` = 1
-  // * `ActionImport` = 2
-  // * `FunctionImport` = 3
-  // * `Singleton` = 4
-  // 
-  containerElementKind?: enum[0, 1, 2, 3, 4]
-  container: {
-    elements: {
-      containerElementKind:#/components/schemas/Microsoft.OData.Edm.EdmContainerElementKind
-      container:#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainer
-      name?: string
-    }[]
-    // * `None` = 0
-    // * `TypeDefinition` = 1
-    // * `Term` = 2
-    // * `Action` = 3
-    // * `EntityContainer` = 4
-    // * `Function` = 5
-    // 
-    schemaElementKind?: enum[0, 1, 2, 3, 4, 5]
-    namespace?: string
-    name?: string
-  }
-  name?: string
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.IEdmExpression
-
-```ts
-{
-  // * `None` = 0
-  // * `BinaryConstant` = 1
-  // * `BooleanConstant` = 2
-  // * `DateTimeOffsetConstant` = 3
-  // * `DecimalConstant` = 4
-  // * `FloatingConstant` = 5
-  // * `GuidConstant` = 6
-  // * `IntegerConstant` = 7
-  // * `StringConstant` = 8
-  // * `DurationConstant` = 9
-  // * `Null` = 10
-  // * `Record` = 11
-  // * `Collection` = 12
-  // * `Path` = 13
-  // * `If` = 14
-  // * `Cast` = 15
-  // * `IsType` = 16
-  // * `FunctionApplication` = 17
-  // * `LabeledExpressionReference` = 18
-  // * `Labeled` = 19
-  // * `PropertyPath` = 20
-  // * `NavigationPropertyPath` = 21
-  // * `DateConstant` = 22
-  // * `TimeOfDayConstant` = 23
-  // * `EnumMember` = 24
-  // * `AnnotationPath` = 25
-  // 
-  expressionKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.IEdmModel
-
-```ts
-{
-  schemaElements: {
-    // * `None` = 0
-    // * `TypeDefinition` = 1
-    // * `Term` = 2
-    // * `Action` = 3
-    // * `EntityContainer` = 4
-    // * `Function` = 5
-    // 
-    schemaElementKind?: enum[0, 1, 2, 3, 4, 5]
-    namespace?: string
-    name?: string
-  }[]
-  vocabularyAnnotations: {
-    qualifier?: string
-    term: {
-      type: {
-        isNullable?: boolean
-        definition: {
-          // * `None` = 0
-          // * `Primitive` = 1
-          // * `Entity` = 2
-          // * `Complex` = 3
-          // * `Collection` = 4
-          // * `EntityReference` = 5
-          // * `Enum` = 6
-          // * `TypeDefinition` = 7
-          // * `Untyped` = 8
-          // * `Path` = 9
-          // 
-          typeKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        }
-      }
-      appliesTo?: string
-      defaultValue?: string
-      schemaElementKind:#/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind
-      namespace?: string
-      name?: string
-    }
-    target: {
-    }
-    value: {
-      // * `None` = 0
-      // * `BinaryConstant` = 1
-      // * `BooleanConstant` = 2
-      // * `DateTimeOffsetConstant` = 3
-      // * `DecimalConstant` = 4
-      // * `FloatingConstant` = 5
-      // * `GuidConstant` = 6
-      // * `IntegerConstant` = 7
-      // * `StringConstant` = 8
-      // * `DurationConstant` = 9
-      // * `Null` = 10
-      // * `Record` = 11
-      // * `Collection` = 12
-      // * `Path` = 13
-      // * `If` = 14
-      // * `Cast` = 15
-      // * `IsType` = 16
-      // * `FunctionApplication` = 17
-      // * `LabeledExpressionReference` = 18
-      // * `Labeled` = 19
-      // * `PropertyPath` = 20
-      // * `NavigationPropertyPath` = 21
-      // * `DateConstant` = 22
-      // * `TimeOfDayConstant` = 23
-      // * `EnumMember` = 24
-      // * `AnnotationPath` = 25
-      // 
-      expressionKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-    }
-  }[]
-  referencedModels: {
-    schemaElements:#/components/schemas/Microsoft.OData.Edm.IEdmSchemaElement[]
-    vocabularyAnnotations:#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotation[]
-    referencedModels:#/components/schemas/Microsoft.OData.Edm.IEdmModel[]
-    declaredNamespaces?: string[]
-    directValueAnnotationsManager: {
-    }
-    entityContainer: {
-      elements: {
-        // * `None` = 0
-        // * `EntitySet` = 1
-        // * `ActionImport` = 2
-        // * `FunctionImport` = 3
-        // * `Singleton` = 4
-        // 
-        containerElementKind?: enum[0, 1, 2, 3, 4]
-        container:#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainer
-        name?: string
-      }[]
-      schemaElementKind:#/components/schemas/Microsoft.OData.Edm.EdmSchemaElementKind
-      namespace?: string
-      name?: string
-    }
-  }[]
-  declaredNamespaces?: string[]
-  directValueAnnotationsManager:#/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmDirectValueAnnotationsManager
-  entityContainer:#/components/schemas/Microsoft.OData.Edm.IEdmEntityContainer
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.IEdmSchemaElement
-
-```ts
-{
-  // * `None` = 0
-  // * `TypeDefinition` = 1
-  // * `Term` = 2
-  // * `Action` = 3
-  // * `EntityContainer` = 4
-  // * `Function` = 5
-  // 
-  schemaElementKind?: enum[0, 1, 2, 3, 4, 5]
-  namespace?: string
-  name?: string
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.IEdmType
-
-```ts
-{
-  // * `None` = 0
-  // * `Primitive` = 1
-  // * `Entity` = 2
-  // * `Complex` = 3
-  // * `Collection` = 4
-  // * `EntityReference` = 5
-  // * `Enum` = 6
-  // * `TypeDefinition` = 7
-  // * `Untyped` = 8
-  // * `Path` = 9
-  // 
-  typeKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.IEdmTypeReference
-
-```ts
-{
-  isNullable?: boolean
-  definition: {
-    // * `None` = 0
-    // * `Primitive` = 1
-    // * `Entity` = 2
-    // * `Complex` = 3
-    // * `Collection` = 4
-    // * `EntityReference` = 5
-    // * `Enum` = 6
-    // * `TypeDefinition` = 7
-    // * `Untyped` = 8
-    // * `Path` = 9
-    // 
-    typeKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  }
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmDirectValueAnnotationsManager
-
-```ts
-{
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmTerm
-
-```ts
-{
-  type: {
-    isNullable?: boolean
-    definition: {
-      // * `None` = 0
-      // * `Primitive` = 1
-      // * `Entity` = 2
-      // * `Complex` = 3
-      // * `Collection` = 4
-      // * `EntityReference` = 5
-      // * `Enum` = 6
-      // * `TypeDefinition` = 7
-      // * `Untyped` = 8
-      // * `Path` = 9
-      // 
-      typeKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    }
-  }
-  appliesTo?: string
-  defaultValue?: string
-  // * `None` = 0
-  // * `TypeDefinition` = 1
-  // * `Term` = 2
-  // * `Action` = 3
-  // * `EntityContainer` = 4
-  // * `Function` = 5
-  // 
-  schemaElementKind?: enum[0, 1, 2, 3, 4, 5]
-  namespace?: string
-  name?: string
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotatable
-
-```ts
-{
-}
-```
-
-### #/components/schemas/Microsoft.OData.Edm.Vocabularies.IEdmVocabularyAnnotation
-
-```ts
-{
-  qualifier?: string
-  term: {
-    type: {
-      isNullable?: boolean
-      definition: {
-        // * `None` = 0
-        // * `Primitive` = 1
-        // * `Entity` = 2
-        // * `Complex` = 3
-        // * `Collection` = 4
-        // * `EntityReference` = 5
-        // * `Enum` = 6
-        // * `TypeDefinition` = 7
-        // * `Untyped` = 8
-        // * `Path` = 9
-        // 
-        typeKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      }
-    }
-    appliesTo?: string
-    defaultValue?: string
-    // * `None` = 0
-    // * `TypeDefinition` = 1
-    // * `Term` = 2
-    // * `Action` = 3
-    // * `EntityContainer` = 4
-    // * `Function` = 5
-    // 
-    schemaElementKind?: enum[0, 1, 2, 3, 4, 5]
-    namespace?: string
-    name?: string
-  }
-  target: {
-  }
-  value: {
-    // * `None` = 0
-    // * `BinaryConstant` = 1
-    // * `BooleanConstant` = 2
-    // * `DateTimeOffsetConstant` = 3
-    // * `DecimalConstant` = 4
-    // * `FloatingConstant` = 5
-    // * `GuidConstant` = 6
-    // * `IntegerConstant` = 7
-    // * `StringConstant` = 8
-    // * `DurationConstant` = 9
-    // * `Null` = 10
-    // * `Record` = 11
-    // * `Collection` = 12
-    // * `Path` = 13
-    // * `If` = 14
-    // * `Cast` = 15
-    // * `IsType` = 16
-    // * `FunctionApplication` = 17
-    // * `LabeledExpressionReference` = 18
-    // * `Labeled` = 19
-    // * `PropertyPath` = 20
-    // * `NavigationPropertyPath` = 21
-    // * `DateConstant` = 22
-    // * `TimeOfDayConstant` = 23
-    // * `EnumMember` = 24
-    // * `AnnotationPath` = 25
-    // 
-    expressionKind?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-  }
-}
-```
-
-### #/components/schemas/Microsoft.OData.ODataEntitySetInfo
-
-```ts
-{
-  url?: string
-  name?: string
-  title?: string
-  typeAnnotation: {
-    typeName?: string
-  }
-}
-```
-
-### #/components/schemas/Microsoft.OData.ODataFunctionImportInfo
-
-```ts
-{
-  url?: string
-  name?: string
-  title?: string
-  typeAnnotation: {
-    typeName?: string
-  }
-}
-```
-
-### #/components/schemas/Microsoft.OData.ODataServiceDocument
-
-```ts
-{
-  entitySets: {
-    url?: string
-    name?: string
-    title?: string
-    typeAnnotation: {
-      typeName?: string
-    }
-  }[]
-  singletons: {
-    url?: string
-    name?: string
-    title?: string
-    typeAnnotation:#/components/schemas/Microsoft.OData.ODataTypeAnnotation
-  }[]
-  functionImports: {
-    url?: string
-    name?: string
-    title?: string
-    typeAnnotation:#/components/schemas/Microsoft.OData.ODataTypeAnnotation
-  }[]
-  typeAnnotation:#/components/schemas/Microsoft.OData.ODataTypeAnnotation
-}
-```
-
-### #/components/schemas/Microsoft.OData.ODataSingletonInfo
-
-```ts
-{
-  url?: string
-  name?: string
-  title?: string
-  typeAnnotation: {
-    typeName?: string
-  }
-}
-```
-
-### #/components/schemas/Microsoft.OData.ODataTypeAnnotation
-
-```ts
-{
-  typeName?: string
-}
-```
-
-### #/components/securitySchemes/Bearer
-
-```ts
-{
-  "type": "http",
-  "description": "JWT Authorization header using the Bearer scheme.",
-  "scheme": "bearer",
-  "bearerFormat": "JWT"
-}
-```
+| Response | Description | Type |
+| --- | --- | --- |
+| CustomerId | The tenant owner ID of the customer. | String |
+| Organization | The organization name of the customer. | String |
+| Customer | The tenant owner email address of the customer. | String |
+| TenantId | The tenant ID of the customer. | String |
+| Service | The service that the customer has subscriptions for. | String |
+| SubscriptionModel | The subscription model of the customer’s service. | String |
+| PurchasedUserSeats | The number of purchased user seats of the customer. | String |
+| MicrosoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
+| MicrosoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
+| PurchasedCapacity | The purchased capacity of the customer. | String |
+| Storage | The storage type of the customer. | String |
+| Retention | The data retention period of the customer. | String |
+| ConsumedStorage | The consumed storage size of the customer. | String |
+| ExpirationDate | The expiration date of the customer’s service. | String |
