@@ -1,28 +1,30 @@
-# Gets job information
+# Retrieve Job Information for Cloud Backup for Dynamics 365
 
 > Version v1
 
-Retrieve a list of jobs from Cloud Backup for Dynamics 365.
+Cloud Backup for Dynamics 365 provides the `/api/OpenApi/GetJobs` API to facilitate the retrieval of job-related information through a standardized HTTP POST request. By invoking the `/api/OpenApi/GetJobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.  
+
+This API servers as a crucial tool for developers and businesses needing to access job data programmatically, streamlining workflows and enhancing data-driven decision-making.  
 
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](../).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/index.md/#authentication-and-authorization)
 
 | API method    | Permission required | Permission type |
 |-------------------|---------------|----------------------|
 | [GetJobs](#method) | Dynamics.ReadWrite.All | Application       |
 -------------------------------------------
 
-## Method
+## API Method
 
-| Method | Path | Description |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | [/api/OpenApi/GetJobs](#examples) | Gets job collection. |
+| POST | [/api/OpenApi/GetJobs](#examples) | Retrieves comprehensive job information. |
 
-## Properties
+## Reference Table
 
-| Name | Path | Description |
+| Name | Reference | Description |
 | --- | --- | --- |
 | Dynamics365.Enums.BackupRestoreType | [#/components/schemas/Dynamics365.Enums.BackupRestoreType](#componentsschemasdynamics365enumsbackuprestoretype) |   Sets the job type. |
 | Dynamics365.Model.PageModel | [#/components/schemas/Dynamics365.Model.PageModel](#componentsschemasdynamics365modelpagemodel) | Sets the starting page and page size for the job information to retrieve. |
@@ -32,12 +34,12 @@ You must register an app through AvePoint Online Services > App registration to 
 
 |Property |Elements|Description | Type|Required?|   
 |---|---|---|---|---|    
-|#/components/schemas/Dynamics365.Enums.BackupRestoreType |type|Sets the job types that you want to get.|Enum </br> Valid values:</br> - 0 for all.</br> - 1 for backup. </br> - 2 for restore.  |Yes|
+|#/components/schemas/Dynamics365.Enums.BackupRestoreType |type|Sets the job types that you want to get.<br> Valid values:<br> <ul><li> 0 for all.</li><li> 1 for backup. </li><li> 2 for restore. </li><ul>|Enum  |Yes|
 |#/components/schemas/Dynamics365.Model.PageModel|currentPage|Sets the starting number of the page to get the jobs. The default value is 1.|int|Yes|
 ||pageSize|Sets the number of jobs to display on one page. The default value is 10.|int|Yes|
 |#/components/schemas/Dynamics365.Model.Request.JobFilterModel|startTime|Sets a start time (UTC time) for the time range.|long|Yes|
 ||finishTime|Sets an end time (UTC time) for the time range.|long|Yes|
-||status| Sets the job status.|Enum </br> 2 for In progress</br> 3 for Finished</br>4 for Failed </br>7 for Finished with Exception</br>|Yes|  
+||status| Sets the job status.<ul><li> **2** for In progress</li><li> **3** for Finished</li><li>**4** for Failed </li><li>**7** for Finished with Exception</li><ul>|Enum |Yes|  
 ||organizationId|Sets the organization that you want to get.|GUID|Yes|
 ||objectType|Sets the module type of the jobs to get.|Enum|Yes|
 
@@ -106,6 +108,8 @@ If successful, this method returns a 200 OK response code and a collection of  j
 
 ### #/components/schemas/Dynamics365.Enums.BackupRestoreType
 
+The `BackupRestoreType` component is an enumeration used to define different types of backup and restore options within Cloud Backup for Dynamics 365. It employs an integer type for representation.  
+
 ```ts
 {
   "enum": [
@@ -123,26 +127,38 @@ If successful, this method returns a 200 OK response code and a collection of  j
 
 ### #/components/schemas/Dynamics365.Model.PageModel
 
+The `PageModel` component specifies pagination details used within Cloud Backup for Dynamics 365 models. It helps manage how data is presented in a paginated format.  
+
 ```ts
 {
+  //Indicates the current page number.
   currentPage?: integer
+  //Indicates the number of items per page.
   pageSize?: integer
 }
 ```
 
 ### #/components/schemas/Dynamics365.Model.Request.JobFilterModel
 
+The `JobFilterModel` is a request schema designated for filtering job-related data from Cloud Backup for Dynamics 365. It allows users to set various criteria to refine their search and retrieval of job information.  
+
 ```ts
 {
+  //Contains pagination details with `currentPage` and `pageSize`.
   pageInfo: {
     currentPage?: integer
     pageSize?: integer
   }
+  //Specifies the job type.
   type?: enum[0, 1, 2, 4, 8, 16]
+  //Specifies the start time and end time for the time range.
   startTime?: string
   endTime?: string
+  //Specifies the job status.
   status?: integer
+  //Specifies organization ID for filtering by organizations.
   organizationId?: string
+  //Specifies the object type.
   objectType?: integer
 }
 ```

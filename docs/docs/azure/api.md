@@ -1,35 +1,48 @@
-# My Title
+# Retrieve Job Information for Cloud Backup for IaaS + PaaS
 
 > Version 1.0.0
 
-## Path Table
+Cloud Backup for IaaS + PaaS provides the `/api/public/jobreport` API to facilitate the retrieval of job-related information through a standardized HTTP POST request. By invoking the `/api/public/jobreport` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.  
 
-| Method | Path | Description |
+This API servers as a crucial tool for developers and businesses needing to access job data programmatically, streamlining workflows and enhancing data-driven decision-making.  
+
+## Permission
+
+The following permission is required to call this API.  
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/index.md/#authentication-and-authorization)
+
+| API method    | Permission required | Permission type |
+|-------------------|---------------|----------------------|
+| [GetJobs](#method) | PlatformBackup.ReadWrite.All | Application       |
+-------------------------------------------
+
+## API Method
+
+| HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | [/api/public/jobreport](#postapipublicjobreport) | Use this POST api/public/jobreport API to retrieve the job information. |
+| POST | [/api/public/jobreport](#postapipublicjobreport) | Retrieves comprehensive job information. |
 
 ## Reference Table
 
-| Name | Path | Description |
+| Name | Reference | Description |
 | --- | --- | --- |
 | ReportJobModel | [#/components/schemas/ReportJobModel](#componentsschemasreportjobmodel) | Represents the returned jobs collection. |
-| Jobs | [#/components/schemas/Jobs](#componentsschemasjobs) | Represents a job in product. |
-| ReportJobRequestModel | [#/components/schemas/ReportJobRequestModel](#componentsschemasreportjobrequestmodel) | Request model of job information. |
-| CommonStatus | [#/components/schemas/CommonStatus](#componentsschemascommonstatus) |  |
-| JobType | [#/components/schemas/JobType](#componentsschemasjobtype) |  |
-| ProductModel | [#/components/schemas/ProductModel](#componentsschemasproductmodel) |  |
-| PaginationModel | [#/components/schemas/PaginationModel](#componentsschemaspaginationmodel) | Representing one page information for one request. |
+| Jobs | [#/components/schemas/Jobs](#componentsschemasjobs) | Represents a job. |
+| ReportJobRequestModel | [#/components/schemas/ReportJobRequestModel](#componentsschemasreportjobrequestmodel) | A request schema designed to specify parameters for retrieving job information from the API |
+| CommonStatus | [#/components/schemas/CommonStatus](#componentsschemascommonstatus) | Represents various statuses a job can have. <br> <ul><li> NotStarted - 0</li><li>InProgress - 1</li><li>Successful - 2</li><li>Skipped - 4</li><li>Exception - 8</li><li>Failed - 16</li><li>Waiting - 32</li><li>Stopped - 64</li></ul>|
+| JobType | [#/components/schemas/JobType](#componentsschemasjobtype) | Represents different types of jobs. <br><ul><li>Backup - 1 </li><li>Restore - 2</li><li>Export - 4</li><li>Report - 8</li></ul>Additional types such as VMSync, GenIndex, AADBackup, AADCompare, etc. are also included, representing a wide range of job operations. See the reference|
+| ProductModel | [#/components/schemas/ProductModel](#componentsschemasproductmodel) | Represents different service types associated with jobs.<br><ul><li>VM - 1</li><li>AAD - 2</li><li>AzureFile - 4</li><li>FileShare - 8</li><li>BlobStorage - 16</li><li>APSetting - 64</li><li>Common - 128</li><li>AmazonEC2 - 256</li><li>AzureSQL - 521</li><li>AzureDevOps - 1024</li></ul> |
+| PaginationModel | [#/components/schemas/PaginationModel](#componentsschemaspaginationmodel) | Represents the page information for the request results. |
 
-## Path Details
+## Request Details
 
-***
+To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
 
 ### [POST]/api/public/jobreport
 
-- Summary  
 Use this POST api/public/jobreport API to retrieve the job information.
 
-#### RequestBody
+#### Request Body
 
 - application/json
 
@@ -53,7 +66,7 @@ Use this POST api/public/jobreport API to retrieve the job information.
 
 #### Responses
 
-- 200 If successful, this method returns 200 OK response code and report job object in the response body.
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.  
 
 `application/json`
 
@@ -92,71 +105,77 @@ Use this POST api/public/jobreport API to retrieve the job information.
 
 ### #/components/schemas/ReportJobModel
 
+The `ReportJobModel` is a schema component that defines the structure of a collection of jobs returned by the API. It provides a comprehensive overview of job-related metrics and statuses, encapsulating essential details within a structured format.
+
 ```ts
 // Represents the returned jobs collection.
 {
-  // Total count of current request.
+  // Represents the total number of jobs for the current request.
   totalCount?: integer
-  // Represents a job in product.
+  // Jobs array. Contains multiple job objects, each with the following attributes:
   jobs: {
-    // The job Id in current job.
+    // Indicates the job ID of current job.
     jobId?: string
-    // The job state in current job.
+    // Indicates the state of the job.
     state?: #/components/schemas/CommonStatus
-    // The failed objects count in current job.
+    // Indicates the number of the errored objects within the job.
     failedCount?: integer
-    // The successful objects count in current job.
+    // Indicates the number of the successful objects within the job.
     successfulCount?: integer
-    // The skipped objects count in current job.
+    // Indicates the number of the skipped objects within the job.
     skippedCount?: integer
-    // The total objects cunt in current job.
+    // Indicates the total number of objects in the job.
     totalCount?: integer
-    // The start time of current job.
+    // The start time of the job.
     startTime?: integer
-    // The end time of current job.
+    // The end time of the job.
     finishTime?: integer
-    // The duration of current job.
+    // The duration of the job.
     duration?: integer
-    // Some comments in current job.
+    // Any additional notes or comments regarding the job.
     comments?: string
-  }[]
+  }
 }
 ```
 
 ### #/components/schemas/Jobs
 
+The `Jobs` component represents a job within the Cloud Backup for IaaS + PasS product.
+
 ```ts
 // Represents a job in product.
 {
-  // The job Id in current job.
+  // The job ID.
   jobId?: string
-  // The job state in current job.
+  // A reference to the CommonStatus schema, indicating the current state of the job.
   state?: #/components/schemas/CommonStatus
-  // The failed objects count in current job.
+  // Indicates the number of the failed objects within the job.
   failedCount?: integer
-  // The successful objects count in current job.
+  // Indicates the number of the successful objects within the job.
   successfulCount?: integer
-  // The skipped objects count in current job.
+  // Indicates the number of the skipped objects within the job.
   skippedCount?: integer
-  // The total objects cunt in current job.
+  // Indicates the the total number of the objects in the job.
   totalCount?: integer
-  // The start time of current job.
+  // The start time of the job.
   startTime?: integer
-  // The end time of current job.
+  // The end time of the job.
   finishTime?: integer
-  // The duration of current job.
+  // The duration of the job.
   duration?: integer
-  // Some comments in current job.
+  // Any additional notes or comments regarding to this job.
   comments?: string
 }
 ```
 
 ### #/components/schemas/ReportJobRequestModel
 
+The `ReportJobRequestModel` is a request schema designed to specify parameters for retrieving job information from the API. It allows users to tailor their request according to various criteria, such as time ranges, job types, and service types, ensuring efficient data retrieval and analysis.  
+
 ```ts
 // Request model of job information.
 {
-  // Searches by job ID or description.
+  // Searches for jobs by job ID or description.
   searchText?: string
   // Sets a start time (UTC time) for the time range.
   startTime?: integer
@@ -166,12 +185,14 @@ Use this POST api/public/jobreport API to retrieve the job information.
   serviceType?: #/components/schemas/ProductModel
   // Sets the job types that you want to get.
   jobType?: #/components/schemas/JobType
-  // Sets the request page information.
+  // Sets the information on how to paginate the request results.
   pagination?: #/components/schemas/PaginationModel
 }
 ```
 
 ### #/components/schemas/CommonStatus
+
+The `CommonStatus` schema defines various statuses a job can have. It uses an integer type to represent the status, with each integer corresponding to a specific status. These statuses help track the progress and outcome of jobs within the system.
 
 ```ts
 {
@@ -202,6 +223,8 @@ Use this POST api/public/jobreport API to retrieve the job information.
 
 ### #/components/schemas/JobType
 
+The `JobType` schema categories different types of jobs using an integer representation. Each integer corresponds to a specific job type, allowing for precise identification and filtering.  
+
 ```ts
 {
   "type": "integer",
@@ -212,7 +235,6 @@ Use this POST api/public/jobreport API to retrieve the job information.
     "Export",
     "Report",
     "VMSync",
-    "Initliaze",
     "GenIndex",
     "AADCompare",
     "Retention",
@@ -285,10 +307,12 @@ Use this POST api/public/jobreport API to retrieve the job information.
 
 ### #/components/schemas/ProductModel
 
+The `ProductModel` schema specifies different service types associated with jobs. Each service type is represented by an integer, aiding in categorization and filtering based on the service involved.  
+
 ```ts
 {
   "type": "integer",
-  "description": "",
+  "description": "Specifies the service types for the jobs to retrieve.",
   "x-enumNames": [
     "VM",
     "AAD",
@@ -320,8 +344,10 @@ Use this POST api/public/jobreport API to retrieve the job information.
 
 ### #/components/schemas/PaginationModel
 
+The `PaginationModel` schema is designed to manage pagination in API requests. It specifies how data should be divided into pages, allowing users to control the amount of data retrieved in a single request. This model is essential for efficiently handling large datasets by breaking them into manageable pages, improving performance and usability in data retrieval processes.  
+
 ```ts
-// Representing one page information for one request.
+// Represents the page information for the request results.
 {
   // Sets the starting number of the page. The default value is 0.
   pageNumber?: integer

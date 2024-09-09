@@ -76,9 +76,9 @@ If an error occurs, the following information is displayed in the response body.
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| requestId | string |  | No |
-| date | dateTime |  | Yes |
-| statusCode | [HttpStatusCode](#httpstatuscode) |  | Yes |
+| requestId | string | Represents the request ID. | No |
+| date | dateTime |Represents the date and time of this request  | Yes |
+| statusCode | [HttpStatusCode](#httpstatuscode) |Represents the HTTP error code.  | Yes |
 
 #### HttpStatusCode
 
