@@ -1,2 +1,2 @@
-- name: Audit
+- name: Get audit records
   href: audit.md
