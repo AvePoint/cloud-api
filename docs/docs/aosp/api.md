@@ -9,16 +9,16 @@ Elements provides APIs to retrieve information of your customers, including serv
 | Method | Path | Description |
 | --- | --- | --- |
 | GET | [/api/V1.1/Customers](#getapiv11customers) |Get the general information of all customers that you manage.  |
-| GET | [/api/V1.1/Customers({id})](#getapiv11customersid) |Get the general information of a specific customer that you manage.  |
-| GET | [/api/V1.1/Customers({Id})/Jobs](#getapiv11customersidjobs) | Get your customer's job details for the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported. |
-| GET | [/api/V1.1/Customers({Id})/Jobs(JobType={JobType},JobModule={JobModule})](#getapiv11customersidjobsjobtypejobtypejobmodulejobmodule) |Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the cusotmer has the subscription for are supported.  |
-| GET | [/api/V1.1/Customers({id})/Protected](#getapiv11customersidprotected) | Get your cusomter's protected data information of Cloud Backup for Microsoft 365.<br>Note that only the customers that have the Cloud Backup for Microsoft 365 subscription are supported.|
-| GET | [/api/V1.1/Customers({id})/ScanProfiles](#getapiv11customersidscanprofiles) | Get your customer's information for all scan profiles configured in AvePoint Online Services. |
-| GET | [/api/V1.1/Customers({id})/ScanProfilesDailyNew(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdailynewprofileidprofileid) |Get your cusomter's daily scan profile changes in AvePoint Online Services.|
-| GET | [/api/V1.1/Customers({id})/ScanProfilesDailyNewDetail(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdailynewdetailprofileidprofileid) |Get your customer's daily scan profile change details in AvePoint Online Services.  |
-| GET | [/api/V1.1/Customers({id})/ScanProfilesDetails(ProfileId={ProfileId})](#getapiv11customersidscanprofilesdetailsprofileidprofileid) | Get your cusotmer's information for a specific scan profile configured in AvePoint Online Services.  |
+| GET | [/api/V1.1/Customers/{id}](#getapiv11customersid) |Get the general information of a specific customer that you manage.  |
+| GET | [/api/V1.1/Customers/{Id}/Jobs](#getapiv11customersidjobs) | Get your customer's job details for the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported. |
+| GET | [/api/V1.1/Customers/{Id}/Jobs/JobType/{JobType}/JobModule/{JobModule}](#getapiv11customersidjobsjobtypejobtypejobmodulejobmodule) |Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the cusotmer has the subscription for are supported.  |
+| GET | [/api/V1.1/Customers/{id}/Protected](#getapiv11customersidprotected) | Get your cusomter's protected data information of Cloud Backup for Microsoft 365.<br>Note that only the customers that have the Cloud Backup for Microsoft 365 subscription are supported.|
+| GET | [/api/V1.1/Customers/{id}/ScanProfiles](#getapiv11customersidscanprofiles) | Get your customer's information for all scan profiles configured in AvePoint Online Services. |
+| GET | [/api/V1.1/Customers/{id}/ScanProfilesDailyNew/ProfileId/{ProfileId}](#getapiv11customersidscanprofilesdailynewprofileidprofileid) |Get your cusomter's daily scan profile changes in AvePoint Online Services.|
+| GET | [/api/V1.1/Customers/{id}/ScanProfilesDailyNewDetail/ProfileId/{ProfileId}](#getapiv11customersidscanprofilesdailynewdetailprofileidprofileid) |Get your customer's daily scan profile change details in AvePoint Online Services.  |
+| GET | [/api/V1.1/Customers/{id}/ScanProfilesDetails/ProfileId/{ProfileId}](#getapiv11customersidscanprofilesdetailsprofileidprofileid) | Get your cusotmer's information for a specific scan profile configured in AvePoint Online Services.  |
 | GET | [/api/V1.1/Services](#getapiv11services) |Get the service subscription details of all customers that you manage.|
-| GET | [/api/V1.1/Services({id})](#getapiv11servicesid) | Get the service subscription details of a specific customer that you manage. |
+| GET | [/api/V1.1/Services/{id}](#getapiv11servicesid) | Get the service subscription details of a specific customer that you manage. |
 
 ## Path Details
 
@@ -40,7 +40,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({id})
+### [GET]/api/V1.1/Customers/{id}
 
 Get the general information of a specific customer that you manage.
 
@@ -63,7 +63,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({Id})/Jobs
+### [GET]/api/V1.1/Customers/{Id}/Jobs
 
 Get your customer's job details for the backup services.<br>Note that only the job details for the backup services that the cusotmer has the subscription for are supported. 
 
@@ -96,7 +96,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({Id})/Jobs(JobType={JobType},JobModule={JobModule})
+### [GET]/api/V1.1/Customers/{Id}/Jobs/JobType/{JobType}/JobModule/{JobModule}
 
 Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported.
 
@@ -131,7 +131,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({id})/Protected
+### [GET]/api/V1.1/Customers/{id}/Protected
 
 Get your customer's protected data information of Cloud Backup for Microsoft 365.<br>Note that only the customers that have the Cloud Backup for Microsoft 365 subscription are supported.
 
@@ -157,7 +157,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({id})/ScanProfiles
+### [GET]/api/V1.1/Customers/{id}/ScanProfiles
 
 Get your cusomter's information for all scan profiles configured in AvePoint Online Services.
 
@@ -179,7 +179,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({id})/ScanProfilesDailyNew(ProfileId={ProfileId})
+### [GET]/api/V1.1/Customers/{id}/ScanProfilesDailyNew/ProfileId/{ProfileId}
 
 Get your cusomter's daily scan profile changes in AvePoint Online Services.
 
@@ -210,7 +210,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({id})/ScanProfilesDailyNewDetail(ProfileId={ProfileId})
+### [GET]/api/V1.1/Customers/{id}/ScanProfilesDailyNewDetail/ProfileId/{ProfileId}
 
 Get your customer's daily scan profile change details in AvePoint Online Services.
 
@@ -237,7 +237,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Customers({id})/ScanProfilesDetails(ProfileId={ProfileId})
+### [GET]/api/V1.1/Customers/{id}/ScanProfilesDetails/ProfileId/{ProfileId}
 
 Get your customer's information for a specific scan profile configured in AvePoint Online Services.
 
@@ -299,7 +299,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/V1.1/Services({id})
+### [GET]/api/V1.1/Services/{id}
 
 Get the service subscription details for a specific customer that you manage.
 
