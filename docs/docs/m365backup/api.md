@@ -8,16 +8,16 @@ Gets the job information and the subscription consumption information of Cloud B
 
 | Method | Path | Description |
 | --- | --- | --- |
-| GET | [/api/PublicApi/cloudbackup/jobs](#postapipublicapicloudbackupjobs) | Gets the job information of Cloud Backup for Microsoft 365. |
-| GET | [/api/PublicApi/cloudbackup/licenseconsumption](#getapipublicapicloudbackuplicenseconsumption) | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
+| GET | [/cloudbackup/jobs](#getcloudbackupjobs) | Gets the job information of Cloud Backup for Microsoft 365. |
+| GET | [/cloudbackup/licenseconsumption](#getcloudbackuplicenseconsumption) | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
 
 ## Path Details
 
-### [GET]/api/PublicApi/cloudbackup/jobs
+### [GET]/cloudbackup/jobs
 
 Gets the job information of Cloud Backup for Microsoft 365.
 
-#### Query Parameters 
+#### Query Parameters
 
 | Parameter | Description | Type |
 | --- | --- | --- |
@@ -101,7 +101,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 
-### [GET]/api/PublicApi/cloudbackup/licenseconsumption
+### [GET]/cloudbackup/licenseconsumption
 
 Gets the subscription consumption information of Cloud Backup for Microsoft 365.
 
