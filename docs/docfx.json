@@ -23,10 +23,11 @@
     "output": "_site",
     "template": [
       "default",
-      "modern"
+      "modern",
+      "template"
     ],
     "globalMetadata": {
-      "_appName": "CloudAPIs",
+      "_appName": "Graph API",
       "_appFooter": "<span>Copyright © 2024 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>",
       "_enableSearch": true,
       "pdf": false
