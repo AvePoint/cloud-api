@@ -12,7 +12,7 @@ The AvePoint Graph Modern API is a robust suite of tools designed to streamline 
 ### Legacy API  
 
 - Enables actions such as retrieving audit records, importing objects, registering a partner's customer, and obtaining Cloud Backup for Microsoft 365 job information.  
-- For details, refer to [AvePoint Online Services Web API Help](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-online-services-api/index.htm). 
+- For details, refer to [AvePoint Online Services Web API Help](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-online-services-api/index.htm).  
 - Note that AvePoint plans to deprecate these legacy APIs following the December release. It is recommended to transit to the modern APIs to ensure continued functionality and support.  
 
 By leveraging these APIs, you can efficiently manage and interact with your cloud data in AvePoint Confidence Platform, ensuring seamless integration and enhanced productivity.  
