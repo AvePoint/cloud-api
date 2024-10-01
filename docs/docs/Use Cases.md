@@ -1,6 +1,6 @@
 # Use Cases  
 
-By integrating the AvePoint Graph Modern API into the operations, organizations can achieve enhanced control, security, and efficiency in managing their data and IT services.  
+By integrating the AvePoint Graph Modern API into their operations, organizations can achieve enhanced control, security, and efficiency in managing their data and IT services.  
 
 ## Secure Data Access and Management  
 

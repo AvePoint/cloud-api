@@ -8,7 +8,7 @@ To access the resources of AvePoint Cloud Services via the AvePoint Graph Modern
 - **Permissions**: Assign the appropriate permissions for your app.
 - **Authentication**: Use the generated application (client) ID for secure access.  
 
-For a step-by-step guide on creating an app registration for API authentication, refer to [Configure App Registration](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/configureappregistrations.htm) section in AvePoint Online Services User Guide.
+For a step-by-step guide on creating an app registration for API authentication, refer to the [Configure App Registration](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/configureappregistrations.htm) section in the AvePoint Online Services User Guide.
 
 ## Call an API Method
 
