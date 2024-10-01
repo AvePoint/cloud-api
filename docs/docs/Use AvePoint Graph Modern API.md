@@ -1,11 +1,11 @@
 # Use AvePoint Graph Modern API
 
+
 ## Authentication and Authorization
 
 To access the resources of AvePoint Cloud Services via the AvePoint Graph Modern API, you must configure app registration and grant the necessary permissions. This process involves:  
-
 - **Registering an app**: Set up your app in AvePoint Online Services.
-- **Permissions**: Assign the appropriate permissions for your app.  
+- **Permissions**: Assign the appropriate permissions for your app.
 - **Authentication**: Use the generated application (client) ID for secure access.  
 
 For a step-by-step guide on creating an app registration for API authentication, refer to [Configure App Registration](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/configureappregistrations.htm) section in AvePoint Online Services User Guide.
@@ -22,8 +22,7 @@ To interact with resources, construct a request as follows:
 - {resource} - The referenced resource.
 - {query-parameters} - Optional parameters to customize the response.
 
-### Response Components
-
+### Respnse Components
 After making a request, a response is returned that includes:
 
 - Status code - An HTTP status code that indicates success or failure.  
@@ -39,7 +38,9 @@ The Modern API uses the HTTP method on your request to determine what your reque
 |------|------|  
 |GET|Read data from a resource.|  
 
+
 ## Resource  
 
-A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `services`, and `job`. You can also use a method to perform operations on these resources. For example,
+A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `services`, and `job`. Methods can also be used to perform operations on these resources.  
+
 
