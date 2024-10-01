@@ -20,8 +20,19 @@ IT professionals can monitor backup status, performance, and issues by accessing
 
 ## Additional Use Cases for Various Cloud Services on the Confidence Platform  
 
-- **AvePoint Opus**: Connect to SharePoint on-premises, File Systems, or other external systems, to access and manage content across integrated systems. For details, refer to .  
-- **AvePoint EnPwer**: Connect EnPower with on-premises users and groups to efficiently manage resources and user groups; Retrieve data from EnPower to access necessary data for data analysis and reporting. For details, refer to .   
+- **AvePoint Opus**: Connect to SharePoint on-premises, File Systems, or other external systems, to access and manage content across integrated systems. For details, refer to . 
+
+[add refer to link]: #
+
+- **AvePoint EnPower**: Connect EnPower with on-premises users and groups to efficiently manage resources and user groups; Retrieve data from EnPower to access necessary data for data analysis and reporting. For details, refer to
+
+[add refer to link]: #.   
 - **Fly**: Execute migrations with Fly to seamlessly migrate data between system.  
-- **Insights for Microsoft 365**: Retrieve data from Insights for Microsoft 365 to enhance data visibility for decision-making. For details, refer to .  
+- **Insights for Microsoft 365**: Retrieve data from Insights for Microsoft 365 to enhance data visibility for decision-making. For details, refer to 
+
+[add refer to link]: #
+
+
 - **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. For details, refer to .  
+
+[add refer to link]: #
