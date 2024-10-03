@@ -4,7 +4,7 @@
 
 Cloud Backup for IaaS + PaaS provides the `/api/public/jobreport` API to facilitate the retrieval of job-related information through a standardized HTTP POST request. By invoking the `/api/public/jobreport` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.  
 
-This API servers as a crucial tool for developers and businesses needing to access job data programmatically, streamlining workflows and enhancing data-driven decision-making.  
+This API serves as a crucial tool for developers and businesses needing to access job data programmatically, streamlining workflows and enhancing data-driven decision-making.  
 
 ## Permission
 
@@ -223,7 +223,7 @@ The `CommonStatus` schema defines various statuses a job can have. It uses an in
 
 ### #/components/schemas/JobType
 
-The `JobType` schema categories different types of jobs using an integer representation. Each integer corresponds to a specific job type, allowing for precise identification and filtering.  
+The `JobType` schema categorizes different types of jobs using an integer representation. Each integer corresponds to a specific job type, allowing for precise identification and filtering.  
 
 ```ts
 {
