@@ -4,6 +4,6 @@
 - name: Use AvePoint Graph Modern API
   href: "Use AvePoint Graph Modern API.md" 
 - href: "Use Cases.md"
-- name: services and features
+- name: Services and Features
   href: "services-and-features/toc.yml"
 

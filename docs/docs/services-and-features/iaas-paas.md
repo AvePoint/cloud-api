@@ -11,10 +11,9 @@ This API serves as a crucial tool for developers and businesses needing to acces
 The following permission is required to call this API.  
 You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/index.md/#authentication-and-authorization)
 
-| API method    | Permission required | Permission type |
-|-------------------|---------------|----------------------|
-| [GetJobs](#method) | PlatformBackup.ReadWrite.All | Application       |
--------------------------------------------
+| API method    | Permission required | Permission type |  
+|-------------------|---------------|----------------------|  
+| [GetJobs](#api-method) | PlatformBackup.ReadWrite.All | Application|  
 
 ## API Method
 
