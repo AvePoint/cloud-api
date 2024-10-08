@@ -6,18 +6,18 @@ The AvePoint Graph Modern API is a robust suite of tools designed to streamline 
 
 ### Modern API  
 - Offers advanced authentication methods, including client secret and certificate authentication.  
-- Provides a single endpoint at https://graph.avepointonlineservices.com for accessing AvePoint services data. Note that it differs upon the data center you want to access. For details, refer to [Endpoints Upon Data Centers](#endpoints-upon-data-center).
+- Provides a single endpoint at https://graph.avepointonlineservices.com for accessing AvePoint services data. Note that it differs based upon the data center you want to access. For details, refer to [Endpoints Upon Data Centers](#endpoints-upon-data-center).
 
 ### Legacy API  
 - Enables actions such as retrieving audit records, importing objects, registering a partner's customer, and obtaining Cloud Backup for Microsoft 365 job information.  
 - For details, refer to [AvePoint Online Services Web API Help](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-online-services-api/index.htm). 
-- Note that AvePoint plans to deprecate these legacy APIs following the December release. It is recommended to transit to the modern APIs to ensure continued functionality and support.  
+- Note that AvePoint plans to deprecate these legacy APIs following the December 2024 release. Transitioning to modern APIs is highly recommended to ensure continued functionality and support. 
 
-By leveraging these APIs, you can efficiently manage and interact with your cloud data in AvePoint Confidence Platform, ensuring seamless integration and enhanced productivity.  
+By leveraging these APIs, you can efficiently manage and interact with your cloud data in the AvePoint Confidence Platform, ensuring seamless integration and enhanced productivity.  
 
 ## What's in AvePoint Graph Modern API
 
-AvePoint Graph Modern API offers a unified endpoint to rovide access to AvePoint services data.
+AvePoint Graph Modern API offers a unified endpoint to provide access to AvePoint services data.
 
 ### Introduction
 
@@ -25,7 +25,7 @@ Using advanced authentication methods, this API ensures secure and efficient acc
 
 ### Key Features
 
-- Advanced Authentication Method: Secure access using client secret and certificate authentication.  
+- Advanced Authentication Methods: Secure access using client secret and certificate authentication.  
 
 [I want to add a comment. Enter your comment here]: #
 
