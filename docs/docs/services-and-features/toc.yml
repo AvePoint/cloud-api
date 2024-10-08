@@ -1,0 +1,10 @@
+- name: AvePoint Online Services
+  href: aos.md
+- name: Elements for Partners
+  href: elements.md
+- name: Cloud Backup for Microsoft 365
+  href: m365.md
+- name: Cloud Backup for Dynamics 365
+  href: d365.md
+- name: Cloud Backup for IaaS + PaaS
+  href: iaas-paas.md

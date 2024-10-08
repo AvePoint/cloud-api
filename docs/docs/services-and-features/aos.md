@@ -85,3 +85,5 @@ If an error occurs, the following information is displayed in the response body.
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | HttpStatusCode | integer |  |  |
+
+[description is missing here]: #
