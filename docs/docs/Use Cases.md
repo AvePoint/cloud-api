@@ -18,7 +18,7 @@ Businesses can manage their partners more efficiently via the Elements platform,
 
 IT professionals can monitor backup status, performance, and issues by accessing detailed job information from various AvePoint Cloud Backup services.  
 
-## Additional Use Cases for Various Cloud Services on the Confidence Platform  
+## Use Cases for More Cloud Services on the Confidence Platform  
 
 - **AvePoint Opus**: Connect to SharePoint on-premises, File Systems, or other external systems, to access and manage content across integrated systems. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm)  
 

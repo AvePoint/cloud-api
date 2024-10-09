@@ -7,7 +7,6 @@ The following table indicates the permissions required by API operations.
 | API operation    | Permission required | Permission type |
 |-------------------|---------------|----------------------|
 | [GET](#get) audit records | audit.read.all           | Application       |
--------------------------------------------
 
 ## GET
 
