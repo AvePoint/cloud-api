@@ -33,13 +33,23 @@ After making a request, a response is returned that includes:
 - nextLink - If your request returns a lot of data, you need to page through it by using the URL returned in nextLink. For details, see Paging.--->
 - Response headers - Additional information about the response, such as the type of content returned and the request-id that you can use to correlate the response to the request.  
 
-## HTTP methods
+## HTTP Methods
 
-The Modern API uses the HTTP method on your request to determine what your request is doing. Currently, it supports:  
+The Modern API uses the HTTP methods to specify the action being performed on a request. Currently, it only supports:  
 
 | Method | Description |  
 |------|------|  
 |GET|Read data from a resource.|  
+
+## HTTP Status Code
+
+HTTP status codes indicate the outcome of a request. Common codes include:
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK - The request was successful, and hte response contains the requested data. |
+| 400 | Bad Request - The request could not be processed due to invalid parameters. |
+| 500 | Internal Server Error - An unexpected server error occurred. |
 
 ## Resource  
 

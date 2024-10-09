@@ -13,8 +13,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API method    | Permission required | Permission type |
 |-------------------|---------------|----------------------|
-| [Jobs](#method) | PlatformBackup.ReadWrite.All | Application       |
--------------------------------------------
+| [Jobs](#method) | PlatformBackup.ReadWrite.All | Application|
 
 ## API Method
 
@@ -42,27 +41,20 @@ To use this API, send a GET request to the specified endpoint, including necessa
 
 Use this GET backup/vm/jobs API to retrieve the job information.
 
-### Optional query parameters
+### Query parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
 | SearchText | query | Searches by job ID or description. | No | string |
 | StartTime | query | Sets a start time (UTC time) for the time range. | No | integer |
 | FinishTime | query | Sets an end time (UTC time) for the time range. | No | integer |
-| ServiceType | query | Sets the service type of the jobs to get. | No | #/components/schemas/ProductModel |
-| JobType | query | Sets the job types that you want to get. | No | #/components/schemas/JobType |
+| ServiceType | query | Sets the service type of the jobs to get. | No | [#/components/schemas/ProductModel](#componentsschemasproductmodel) |
+| JobType | query | Sets the job types that you want to get. | No | [#/components/schemas/JobType](#componentsschemasjobtype) |
 | PageNumber | query | Sets the starting number of the page. The default value is 0. | No | integer |
 | PageSize | query | Sets the number of objects to display on one page. The default value is 10. | No | integer |
 | SkipToken | query | Sets the skip token got from next link from previous request, if setting this one, PageNumber will be ignored. | No | string |
 
 ### Responses
-
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Successful response, return report job object in the response body.  | [#/components/schemas/ReportJobModel](#componentsschemasreportjobmodel) |
-| 400 | Bad Request - Invalid parameters. | [#/components/schemas/ErrorModel](#componentsschemaserrormodel) |
-| 500 | Internal Server Error - Unexpected error in server. | [#/components/schemas/ErrorModel](#componentsschemaserrormodel) |
-
 
 If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.  
 
