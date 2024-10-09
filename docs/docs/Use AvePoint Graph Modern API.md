@@ -35,7 +35,7 @@ After making a request, a response is returned that includes:
 
 ## HTTP Methods
 
-The Modern API uses the HTTP methods to specify the action being performed on a request. Currently, it only supports:  
+The Modern API uses the HTTP methods to specify the action being performed on a request. Currently, the API documented here only supports:  
 
 | Method | Description |  
 |------|------|  
@@ -54,4 +54,3 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 ## Resource  
 
 A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `services`, and `job`. Methods can also be used to perform operations on these resources.  
-

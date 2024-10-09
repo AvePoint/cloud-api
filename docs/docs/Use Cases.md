@@ -25,9 +25,9 @@ IT professionals can monitor backup status, performance, and issues by accessing
 [add refer to link]: #
 [Delphine: Is the "See more" OK?]: #
 
-- **AvePoint EnPower**: Connect EnPower with on-premises users and groups to efficiently manage resources and user groups; Retrieve data from EnPower to access necessary data for data analysis and reporting. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/callenpowerwebapi.htm)  
+- **AvePoint EnPower**: Retrieve data from EnPower to access necessary data for data analysis and reporting. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm)  
 
-- **Fly**: Execute migrations with Fly to seamlessly migrate data between system. [See more](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)  
+- **Fly**: Execute migrations with Fly to seamlessly migrate data between systems. [See more](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)  
 
 - **Insights for Microsoft 365**: Retrieve data from Insights for Microsoft 365 to enhance data visibility for decision-making. [See more](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)  
 

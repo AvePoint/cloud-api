@@ -27,7 +27,7 @@ The legacy API offers essential capabilities but is slated for deprecation:
   - Access Cloud Backup for Microsoft 365 job information for backup management.  
 
 - **Deprecation Notice**: Scheduled for deprecation after the December 2024 release, transitioning to modern APIs is highly recommended to maintain support and access to the latest features.  
-- Documentation: For more details on the legacy API, refer to [AvePoint Online Services Web API Help](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-online-services-api/index.htm). 
+- Documentation: For more details on the legacy API, refer to [AvePoint Online Services Web API Help](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-online-services-api/index.htm).  
 By leveraging these APIs, you can efficiently manage and interact with your cloud data in the AvePoint Confidence Platform, ensuring seamless integration and enhanced productivity.  
 
 ## What's in AvePoint Graph Modern API
