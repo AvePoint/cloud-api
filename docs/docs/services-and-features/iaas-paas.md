@@ -1,7 +1,5 @@
 # Retrieve Job Information for Cloud Backup for IaaS + PaaS
 
-> Version 1.0.0
-
 Cloud Backup for IaaS + PaaS provides the `backup/vm/jobs` API to facilitate the retrieval of job-related information through a standardized HTTP GET request. By invoking the `backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.  
 
 This API serves as a crucial tool for developers and businesses needing to access job data programmatically, streamlining workflows and enhancing data-driven decision-making.  

@@ -20,7 +20,7 @@ IT professionals can monitor backup status, performance, and issues by accessing
 
 ## Use Cases for More Cloud Services on the Confidence Platform  
 
-- **AvePoint Opus**: Connect to SharePoint on-premises, File Systems, or other external systems, to access and manage content across integrated systems. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm)  
+- **AvePoint Opus**: Import data from additional systems beyond the six built-in data sources, as well as File System and SharePoint On-Premises connected via Agents. It also enables the export of records with specific disposal due dates and updates their status to Disposed within the platform. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm)  
 
 [add refer to link]: #
 [Delphine: Is the "See more" OK?]: #
