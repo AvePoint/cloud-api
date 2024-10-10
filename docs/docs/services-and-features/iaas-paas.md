@@ -7,11 +7,11 @@ This API serves as a crucial tool for developers and businesses needing to acces
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/index.md/#authentication-and-authorization)
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
 
-| API method    | Permission required | Permission type |
+| API     | Permission required | Permission type |
 |-------------------|---------------|----------------------|
-| [Jobs](#method) | PlatformBackup.ReadWrite.All | Application|
+| [backup/vm/jobs](#api-method) | PlatformBackup.ReadWrite.All | Application|
 
 ## API Method
 
@@ -330,7 +330,7 @@ The `ErrorModel` schema returned when request has problems.
 
 ### #/components/schemas/HttpStatusCode
 
-The `HttpStatusCode` schema specifies different http status code associated with result.
+The `HttpStatusCode` schema specifies different http status code associated with result. For details, refer to [HTTP Status Code](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code)
 
 ```ts
 {
@@ -348,3 +348,4 @@ The `HttpStatusCode` schema specifies different http status code associated with
   ]
 }
 ```
+

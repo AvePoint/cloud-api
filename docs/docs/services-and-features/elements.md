@@ -1,24 +1,27 @@
-# Elements Open API
+# Elements API
 
 Elements provides APIs to retrieve information of your customers, including services, job details, and scan profiles.
 
-## Path Table
+## Permissions  
 
-| Method | Path | Description |
-| --- | --- | --- |
-| GET | [/Customers](#getapiv11customers) |Get the general information of all customers that you manage.  |
-| GET | [/Customers/{id}](#getapiv11customersid) |Get the general information of a specific customer that you manage.  |
-| GET | [/Customers/{Id}/Jobs](#getapiv11customersidjobs) | Get your customer's job details for the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported. |
-| GET | [/Customers/{Id}/Jobs/JobType/{JobType}/JobModule/{JobModule}](#getapiv11customersidjobsjobtypejobtypejobmodulejobmodule) |Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported.  |
-| GET | [/Customers/{id}/Protected](#getapiv11customersidprotected) | Get your customer's protected data information of Cloud Backup for Microsoft 365.<br>Note that only the customers that have the Cloud Backup for Microsoft 365 subscription are supported.|
-| GET | [/Customers/{id}/ScanProfiles](#getapiv11customersidscanprofiles) | Get your customer's information for all scan profiles configured in AvePoint Online Services. |
-| GET | [/Customers/{id}/ScanProfilesDailyNew/ProfileId/{ProfileId}](#getapiv11customersidscanprofilesdailynewprofileidprofileid) |Get your customer's daily scan profile changes in AvePoint Online Services.|
-| GET | [/Customers/{id}/ScanProfilesDailyNewDetail/ProfileId/{ProfileId}](#getapiv11customersidscanprofilesdailynewdetailprofileidprofileid) |Get your customer's daily scan profile change details in AvePoint Online Services.  |
-| GET | [/Customers/{id}/ScanProfilesDetails/ProfileId/{ProfileId}](#getapiv11customersidscanprofilesdetailsprofileidprofileid) | Get your customer's information for a specific scan profile configured in AvePoint Online Services.  |
-| GET | [/Services](#getapiv11services) |Get the service subscription details of all customers that you manage.|
-| GET | [/Services/{id}](#getapiv11servicesid) | Get the service subscription details of a specific customer that you manage. |
+The following permission is required to call the APIs.  
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
 
-## Path Details
+| API |Method| Description | Permission Required |
+|-----------|--------|-------|--------|
+| [/Customers](#getcustomers)| GET  |Get the general information of all customers that you manage.  | partner.customers.read.all|  
+| [/Customers/{id}](#getcustomersid) | GET |Get the general information of a specific customer that you manage.  |partner.customers.read.all|  
+| [/Customers/{Id}/Jobs](#getcustomersidjobs) | GET | Get your customer's job details for the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported. | partner.jobs.read.all |  
+| [/Customers/{Id}/Jobs/JobType/{JobType}/JobModule/{JobModule}](#getcustomersidjobsjobtypejobtypejobmodulejobmodule)| GET  |Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported.  | partner.jobs.read.all  |  
+| [/Customers/{id}/Protected](#getcustomersidprotected) | GET | Get your customer's protected data information of Cloud Backup for Microsoft 365.<br>Note that only the customers that have the Cloud Backup for Microsoft 365 subscription are supported.|partner.cbprotected.read.all |  
+| [/Customers/{id}/ScanProfiles](#getcustomersidscanprofiles) | GET | Get your customer's information for all scan profiles configured in AvePoint Online Services. | partner.scanprofiles.read.all |  
+| [/Customers/{id}/ScanProfilesDailyNew/ProfileId/{ProfileId}](#getcustomersidscanprofilesdailynewprofileidprofileid) | GET |Get your customer's daily scan profile changes in AvePoint Online Services.| partner.scanprofiles.read.all | 
+| [/Customers/{id}/ScanProfilesDailyNewDetail/ProfileId/{ProfileId}](#getcustomersidscanprofilesdailynewdetailprofileidprofileid) | GET |Get your customer's daily scan profile change details in AvePoint Online Services.  | partner.scanprofiles.read.all| 
+| [/Customers/{id}/ScanProfilesDetails/ProfileId/{ProfileId}](#getcustomersidscanprofilesdetailsprofileidprofileid)| GET  | Get your customer's information for a specific scan profile configured in AvePoint Online Services.  |partner.scanprofiles.read.all |  
+| [/Services](#getservices)| GET  |Get the service subscription details of all customers that you manage.|partner.license.read.all |  
+| [/Services/{id}](#getservicesid) | GET | Get the service subscription details of a specific customer that you manage. | partner.license.read.all |  
+
+## References
 
 ### [GET]/Customers
 
