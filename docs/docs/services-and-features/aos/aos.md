@@ -19,7 +19,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 Gets the audit records for activities in your AvePoint Online Services tenant within a time range.
 
-### Query parameters
+## Query Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
