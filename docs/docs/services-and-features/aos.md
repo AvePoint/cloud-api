@@ -5,7 +5,7 @@ AvePoint Online Services provides the `/aos/audit` API to retrieve audit records
 ## Permissions
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/index.md/#authentication-and-authorization)
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
 
 | API   | Permission required | Permission type |
 |-------------------|---------------|----------------------|
@@ -84,4 +84,4 @@ If an error occurs, the following information is displayed in the response body.
 | ---- | ---- | ----------- | -------- |
 | requestId | string | Represents the request ID. | No |
 | date | dateTime |Represents the date and time of this request  | Yes |
-| statusCode | [HttpStatusCode](../Use%20AvePoint%20Graph%20Modern%20API.md) |Represents the HTTP error code.  | Yes |
+| statusCode | [HttpStatusCode](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code) |Represents the HTTP error code.  | Yes |
