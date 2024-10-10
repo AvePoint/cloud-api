@@ -18,21 +18,17 @@ Businesses can manage their partners more efficiently via the Elements platform,
 
 IT professionals can monitor backup status, performance, and issues by accessing detailed job information from various AvePoint Cloud Backup services.  
 
-## Additional Use Cases for Various Cloud Services on the Confidence Platform  
+## Use Cases for More Cloud Services on the Confidence Platform  
 
-- **AvePoint Opus**: Connect to SharePoint on-premises, File Systems, or other external systems, to access and manage content across integrated systems. For details, refer to . 
-
-[add refer to link]: #
-
-- **AvePoint EnPower**: Connect EnPower with on-premises users and groups to efficiently manage resources and user groups; Retrieve data from EnPower to access necessary data for data analysis and reporting. For details, refer to
-
-[add refer to link]: #.   
-- **Fly**: Execute migrations with Fly to seamlessly migrate data between system.  
-- **Insights for Microsoft 365**: Retrieve data from Insights for Microsoft 365 to enhance data visibility for decision-making. For details, refer to 
+- **AvePoint Opus**: Import data from additional systems beyond the six built-in data sources, as well as File System and SharePoint On-Premises connected via Agents. It also enables the export of records with specific disposal due dates and updates their status to Disposed within the platform. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm)  
 
 [add refer to link]: #
+[Delphine: Is the "See more" OK?]: #
 
+- **AvePoint EnPower**: Retrieve data from EnPower to access necessary data for data analysis and reporting. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm)  
 
-- **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. For details, refer to .  
+- **Fly**: Execute migrations with Fly to seamlessly migrate data between systems. [See more](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)  
 
-[add refer to link]: #
+- **Insights for Microsoft 365**: Retrieve data from Insights for Microsoft 365 to enhance data visibility for decision-making. [See more](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)  
+
+- **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm)  

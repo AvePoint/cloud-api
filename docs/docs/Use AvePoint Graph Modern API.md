@@ -1,10 +1,12 @@
-# Use AvePoint Graph Modern API
+# Use AvePoint Graph Modern API  
 
+Welcome to AvePoint Graph Modern API, your gateway to accessing and managing AvePoint Confidence Platform with efficiency and security. This API is designed to streamline your data management and backup monitoring processes, providing IT professionals with robust tools and insights.  
 
 ## Authentication and Authorization
 
 To access the resources of AvePoint Cloud Services via the AvePoint Graph Modern API, you must configure the app registration and grant the necessary permissions. This process involves:  
-- **Registering an app**: Set up your app in AvePoint Online Services.
+
+- **Registering an app**: Set up your app in AvePoint Online Services.  
 - **Permissions**: Assign the appropriate permissions for your app.
 - **Authentication**: Use the generated application (client) ID for secure access.  
 
@@ -23,6 +25,7 @@ To interact with resources, construct a request as follows:
 - {query-parameters} - Optional parameters to customize the response.
 
 ### Response Components
+
 After making a request, a response is returned that includes:
 
 - Status code - An HTTP status code that indicates success or failure.  
@@ -30,17 +33,24 @@ After making a request, a response is returned that includes:
 - nextLink - If your request returns a lot of data, you need to page through it by using the URL returned in nextLink. For details, see Paging.--->
 - Response headers - Additional information about the response, such as the type of content returned and the request-id that you can use to correlate the response to the request.  
 
-## HTTP methods
+## HTTP Methods
 
-The Modern API uses the HTTP method on your request to determine what your request is doing. Currently, it supports:  
+The Modern API uses the HTTP methods to specify the action being performed on a request. Currently, the API documented here only supports:  
 
 | Method | Description |  
 |------|------|  
 |GET|Read data from a resource.|  
 
+## HTTP Status Code
+
+HTTP status codes indicate the outcome of a request. Common codes include:
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK - The request was successful, and hte response contains the requested data. |
+| 400 | Bad Request - The request could not be processed due to invalid parameters. |
+| 500 | Internal Server Error - An unexpected server error occurred. |
 
 ## Resource  
 
 A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `services`, and `job`. Methods can also be used to perform operations on these resources.  
-
-
