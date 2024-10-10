@@ -1,10 +1,10 @@
 - name: AvePoint Online Services
-  href: aos.md
+  href: aos/toc.yml
 - name: Elements for Partners
-  href: elements.md
+  href: elements/toc.yml
 - name: Cloud Backup for Microsoft 365
-  href: m365.md
+  href: m365/toc.yml
 - name: Cloud Backup for Dynamics 365
-  href: d365.md
+  href: d365/toc.yml
 - name: Cloud Backup for IaaS + PaaS
-  href: iaas-paas.md
+  href: iaas-paas/toc.yml

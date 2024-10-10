@@ -1,0 +1,12 @@
+- name: Elements for Partners
+  href: index.md
+- name: Customers
+  href: customers/toc.yml
+- name: Jobs
+  href: jobs/toc.yml
+- name: Data Protection
+  href: data-protection/toc.yml
+- name: Scan Profiles
+  href: scan-profiles/toc.yml
+- name: Service Subscription
+  href: services/toc.yml

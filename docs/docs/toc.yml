@@ -1,7 +1,7 @@
-- name: Get started
+- name: In this doc
 - href: Overview.md
 
-- name: Use AvePoint Graph Modern API
+- name: Get Started
   href: "Use AvePoint Graph Modern API.md" 
 - href: "Use Cases.md"
 - name: Services and Features

@@ -1,0 +1,4 @@
+- name: List service subscriptions
+  href: service-subscription.md
+- name: Retrieve info for specific customer
+  href: service-subscription-customer.md
