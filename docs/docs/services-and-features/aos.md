@@ -1,19 +1,25 @@
-# AvePoint Online Services
+# Retrieve Audit Records from AvePoint Online Services
+
+AvePoint Online Services provides the `/aos/audit` API to retrieve audit records for activities within your AOS tenant. This section outlines the necessary permissions, available methods, and models used for interacting with the API.  
 
 ## Permissions
 
-The following table indicates the permissions required by API operations.
+The following permission is required to call this API.  
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/index.md/#authentication-and-authorization)
 
-| API operation    | Permission required | Permission type |
+| API   | Permission required | Permission type |
 |-------------------|---------------|----------------------|
-| [GET](#get) audit records | audit.read.all           | Application       |
--------------------------------------------
+| [/aos/audit](#api-method)  | audit.read.all           | Application       |
 
-## GET
+## API Method
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | [/aos/audit](#query-parameters) | Retrieves comprehensive job information. |
 
 Gets the audit records for activities in your AvePoint Online Services tenant within a time range.
 
-### Optional query parameters
+### Query parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
@@ -30,7 +36,7 @@ Gets the audit records for activities in your AvePoint Online Services tenant wi
 | 200 | If successful, the method returns this code. | [ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel](#apiquerywithskiptokenresultofuseractivityauditlogitemmodel) |
 | 400 | If an error occurs, the method returns this code. | [ErrorResponse](#errorresponse) |
 
-### Models
+### Response Models
 
 The following sections describe the response models to get audit records.
 
@@ -78,12 +84,4 @@ If an error occurs, the following information is displayed in the response body.
 | ---- | ---- | ----------- | -------- |
 | requestId | string | Represents the request ID. | No |
 | date | dateTime |Represents the date and time of this request  | Yes |
-| statusCode | [HttpStatusCode](#httpstatuscode) |Represents the HTTP error code.  | Yes |
-
-#### HttpStatusCode
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| HttpStatusCode | integer |  |  |
-
-[description is missing here]: #
+| statusCode | [HttpStatusCode](../Use%20AvePoint%20Graph%20Modern%20API.md) |Represents the HTTP error code.  | Yes |
