@@ -1,4 +1,4 @@
 - name: List customers
-  href: all-customer.md
+  href: all-customers.md
 - name: Retrieve customer details
-  href: specific-customer.md
+  href: specific-customers.md
