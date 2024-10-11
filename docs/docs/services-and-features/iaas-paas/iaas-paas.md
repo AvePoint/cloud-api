@@ -1,4 +1,4 @@
-# Retrieve Job Information for Cloud Backup for IaaS + PaaS
+# Retrieve Job Information
 
 Cloud Backup for IaaS + PaaS provides the `backup/vm/jobs` API to facilitate the retrieval of job-related information through a standardized HTTP GET request. By invoking the `backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.  
 
@@ -7,17 +7,17 @@ This API serves as a crucial tool for developers and businesses needing to acces
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
 
 | API     | Permission required | Permission type |
 |-------------------|---------------|----------------------|
-| [backup/vm/jobs](#api-method) | PlatformBackup.ReadWrite.All | Application|
+| `backup/vm/jobs` | PlatformBackup.ReadWrite.All | Application|
 
 ## API Method
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | [backup/vm/jobs](#postapipublicjobreport) | Retrieves comprehensive job information. |
+| GET | `backup/vm/jobs` | Retrieves comprehensive job information. |
 
 ## Reference Table
 

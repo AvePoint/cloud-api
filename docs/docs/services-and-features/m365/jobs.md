@@ -1,4 +1,4 @@
-# Retrieve Job Informatio
+# Retrieve Job Information
 
 The `/cloudbackup/jobs` API endpoint empowers users to seamlessly retrieve job-related information through standardized HTTP GET requests. By leveraging these APIs, users gain comprehensive insights and granular access to job reports, thereby enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
 

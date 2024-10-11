@@ -5,11 +5,10 @@ The `/customers/{id}` API retrieves the general information of a specific custom
 ## Permissions  
 
 The following permission is required to call the APIs.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)
 
-| API || Permission Required |
+| API | Permission Required |
 |-----------|----------|
-
 | `/customers/{id}` |partner.customers.read.all|  
 
 ## Query Parameters  

@@ -1,21 +1,24 @@
 # List All Customers
 
-The  to retrieve information of your customers, including services, job details, and scan profiles.
+The `/partner/customers` API to retrieve general information of your customers. This endpoint is crucial for understanding customer details and maintaining effective partnership.  
+
+
 
 ## Permissions  
 
 The following permission is required to call the APIs.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)  
+
 
 | API  | Permission  |
 |-----------|--------|
-| `/customers` | partner.customers.read.all|  
+| `/partner/customers` | partner.customers.read.all|  
 
 ## API Method
 
 | Method | Path | Description |
 | --- | --- | --- |
-| GET | `customers` | Gets the job information of Cloud Backup for Microsoft 365. |
+| GET | `customers` | Gets the general information of the customers that you manage. |
 
 ## Response
 
@@ -29,5 +32,5 @@ If the request has been successfully processed, a 200 OK response will be return
 | JobStatus | The status of the customer’s tenant. | String |
 | CountryOrRegion | The country or region name of the customer. | String |
 
-## Response Example 
+## Response Example  
 
