@@ -1,31 +1,27 @@
-# Retrieve Job Information for Cloud Backup for Microsoft 365
+# Retrieve Job Information
 
-Cloud Backup for Microsoft 365 provides the `/cloudbackup/jobs` and `/cloudbackup/licenseconsumption` API endpoints. These interfaces empower users to seamlessly retrieve job-related information and monitor subscription consumption through standardized HTTP GET requests. By leveraging these APIs, users gain comprehensive insights and granular access to job reports and subscription consumption metrics, thereby enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
+The `/cloudbackup/jobs` API endpoint empowers users to seamlessly retrieve job-related information through standardized HTTP GET requests. By leveraging these APIs, users gain comprehensive insights and granular access to job reports, thereby enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
+
 
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
 
-| API   | Permission required | Permission type |
-|-------------------|---------------|----------------------|
-| [/cloudbackup/jobs](#getcloudbackupjobs) | microsoft365backup.jobInfo.read.all | Application|  
-|[/cloudbackup/licenseconsumption](#getcloudbackuplicenseconsumption)|microsoft365backup.subscriptionInfo.read.all |Application|
+| API   | Permission |
+|-------------------|---------------|
+|`/cloudbackup/jobs` | microsoft365backup.jobInfo.read.all | 
+
 
 ## API Method
 
 | Method | Path | Description |
 | --- | --- | --- |
-| GET | [/cloudbackup/jobs](#getcloudbackupjobs) | Gets the job information of Cloud Backup for Microsoft 365. |
-| GET | [/cloudbackup/licenseconsumption](#getcloudbackuplicenseconsumption) | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
+| GET | `/cloudbackup/jobs` | Gets the job information of Cloud Backup for Microsoft 365. |
 
-## Path Details
+-------------------------
 
-### [GET]/cloudbackup/jobs
-
-Gets the job information of Cloud Backup for Microsoft 365.
-
-#### Query Parameters
+## Query Parameters
 
 | Parameter | Description | Type |
 | --- | --- | --- |
@@ -36,7 +32,8 @@ Gets the job information of Cloud Backup for Microsoft 365.
 | JobState | Sets the job status. <br> Defined by `#/components/schemas/CloudBackupJobState` |Enum <br> **Valid values:** <br> 0 (for All) <br> 1 (for In Progress) <br> 2 (for Finished) <br> 3 (for Failed) <br> 4 (for Finished with Exception) <br> 5 (for Partially Finished)|
 | PageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| int |
 | PageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | int |
-#### Responses
+
+## Responses
 
 If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
 
@@ -68,23 +65,26 @@ If the request has been successfully processed, a 200 OK response will be return
 | SuccessfulCount | Number of successful objects | long |
 | SkippedCount| Number of skipped objects | long |
 
-#### Example (`application/json`):
+## Request Example (`application/json`):
 
-- Request
+This section outlines the structure of a request to retrieve job details. The request can include options parameters to filter and paginate results, allowing you to specify time ranges, job types, and statuses.
 
 ```ts
 {
   StartTime?: long
   FinishTime?: long.
-  JobType?: #/components/schemas/BackupJobType
-  ObjectType?: #/components/schemas/CloudBackupJobObjectType
-  JobState?: #/components/schemas/CloudBackupJobState
+  JobType?: "2" // Reference to #components/schemas/BackupJobType schema.
+  ObjectType?: "1" // Reference to #components/schemas/CloudBackupJobObjectType schema.
+  JobState?: "0" // Reference to #components/schemas/CloudBackupJobState schema
   PageIndex?: int
   PageSize?: int
 }
 ```
 
-- Response
+## Response Example  
+
+The response provides detailed information about the requested job, including total counts and individual job details. It allows you to review job states, durations, and backup outcomes.  
+
 ```ts
 {
   TotalCount?: int
@@ -104,37 +104,5 @@ If the request has been successfully processed, a 200 OK response will be return
     }
   }
   ]
-}
-```
-
-***
-
-### [GET]/cloudbackup/licenseconsumption
-
-Gets the subscription consumption information of Cloud Backup for Microsoft 365.
-
-#### Responses
-
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-
-| Response | Description | Type |
-| --- | --- | --- |
-| OutOfPolicyTime | The UTC that the license got out of policy. | long |
-| PurchasedUserSeats | Purchased user seats | int |
-| AssignedUserSeats | Assigned user seats | int |
-| PurchasedStorageSize | Purchased storage size | int |
-| ProtectedSize | Protected size | int |
-
-#### Example (`application/json`):
-
-- Response
-
-```ts
-{
-  OutOfPolicyTime?: long
-  PurchasedUserSeats?: int
-  AssignedUserSeats?: int
-  PurchasedStorageSize?: int
-  ProtectedSize?: int
 }
 ```

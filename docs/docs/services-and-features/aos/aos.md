@@ -1,4 +1,4 @@
-# Retrieve Audit Records from AvePoint Online Services
+# Retrieve Audit Records
 
 AvePoint Online Services provides the `/aos/audit` API to retrieve audit records for activities within your AOS tenant. This section outlines the necessary permissions, available methods, and models used for interacting with the API.  
 
@@ -19,7 +19,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 Gets the audit records for activities in your AvePoint Online Services tenant within a time range.
 
-### Query parameters
+## Query Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
@@ -33,14 +33,14 @@ Gets the audit records for activities in your AvePoint Online Services tenant wi
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | If successful, the method returns this code. | [ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel](#apiquerywithskiptokenresultofuseractivityauditlogitemmodel) |
+| 200 | If successful, the method returns this code. | [ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel](#apiresultofuseractivitymodel) |
 | 400 | If an error occurs, the method returns this code. | [ErrorResponse](#errorresponse) |
 
 ### Response Models
 
 The following sections describe the response models to get audit records.
 
-#### ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel
+#### ApiResultOfUserActivityModel
 
 Response model to get audit records successfully.
 

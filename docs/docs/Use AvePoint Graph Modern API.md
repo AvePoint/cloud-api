@@ -10,7 +10,10 @@ To access the resources of AvePoint Cloud Services via the AvePoint Graph Modern
 - **Permissions**: Assign the appropriate permissions for your app.
 - **Authentication**: Use the generated application (client) ID for secure access.  
 
-For a step-by-step guide on creating an app registration for API authentication, refer to the [Configure App Registration](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/configureappregistrations.htm) section in the AvePoint Online Services User Guide.
+For a step-by-step guide on creating an app registration for API authentication, refer to the [Configure App Registration](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/configureappregistrations.htm) section in the AvePoint Online Services User Guide.  
+
+>[!NOTE] 
+> For partner operations, go to Elements for Partner for app registration. See [App Registration in Elements for Partner guide](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 ## Call an API Method
 
@@ -29,8 +32,10 @@ To interact with resources, construct a request as follows:
 After making a request, a response is returned that includes:
 
 - Status code - An HTTP status code that indicates success or failure.  
-- Response message - The data that you requested or the result of the operation. The response message can be empty for some operations.
-- nextLink - If your request returns a lot of data, you need to page through it by using the URL returned in nextLink. For details, see Paging.--->
+- Response message - The data that you requested or the result of the operation. The response message can be empty for some operations.  
+
+[-nextLink - If your request returns a lot of data, you need to page through it by using the URL returned in nextLink.]: # 
+
 - Response headers - Additional information about the response, such as the type of content returned and the request-id that you can use to correlate the response to the request.  
 
 ## HTTP Methods
@@ -53,4 +58,4 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 
 ## Resource  
 
-A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `services`, and `job`. Methods can also be used to perform operations on these resources.  
+A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `services`, and `jobs`. Methods can also be used to perform operations on these resources.  

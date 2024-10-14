@@ -2,33 +2,53 @@
 _layout: landing
 ---
 
-# Welcome to Our API Documentation
+<h1 style="text-align: center; margin-bottom: 32px;">Welcome to AvePoint Graph API Documentation</h1>
 
-Explore our comprehensive API documentation to seamlessly integrate and utilize our powerful features. Our API is designed to provide reliable and efficient access to our services, ensuring a smooth experience for developers.
+<p style="margin-bottom: 32px;">
+Unlock the full potential of AvePoint Cloud services with our comprehensive API documentation. Designed for seamless integration, AvePoint Graph API empowers developers to leverage a wide range of robust features that can enhance and extend your applications. With a focus on reliability and efficiency, our API ensures consistent and secure access to our services, facilitating smooth interactions and exceptional user experiences. our robust features to enhance your applications. Our API ensures reliable and efficient access to our services, delivering a smooth experience for developers. Whether you're optimizing processes or enhancing functionality, our API provides the tools you need to innovate and succeed.  
+</p>
 
-## Key Features
+<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; margin-bottom: 32px;">
 
-- **Robust Endpoints**: Access a wide range of functionalities with our well-structured endpoints.
-- **Real-Time Data**: Retrieve and manipulate data efficiently with real-time updates.
-- **Comprehensive Guides**: Step-by-step tutorials and examples to help you get started quickly.
-- **Security**: Secure your integrations with our robust authentication protocols.
+  <div style="border:1px solid #ccc; padding:24px; border-radius:8px; box-shadow:2px 2px 12px #aaa; width: 30%;">
+    <h3 style="margin-bottom: 16px;"> Key Features</h3>
+    <ul>
+      <li><b>Robust Endpoints</b>: Harness a wide range of functionalities with our well-structured endpoints.</li>
+      <li><b>Real-Time Data</b>: Access and manipulate data seamlessly with real-time updates.</li>
+      <li><b>Comprehensive Guides</b>: Follow step-by-step tutorials and examples to get started quickly.</li>
+      <li><b>Advanced Security</b>: Protect your integrations with our cutting-edge authentication protocols.</li>
+    </ul>
+    <div style="text-align: right;">
+      <a href="./docs/Overview.md" style="text-decoration:none; color:blue;">See More</a>
+    </div>
+  </div>
 
-For more details, refer to [Overview](./docs/Overview.md).
+  <div style="border:1px solid #ccc; padding:24px; border-radius:8px; box-shadow:2px 2px 12px #aaa; width: 30%;">
+    <h3 style="margin-bottom: 16px;">Getting Started</h3>
+    <ol>
+      <li><b>Sign Up</b>: Register to receive your API key and begin integrating.</li>
+      <li><b>Read the Docs</b>: Get acquainted with our API methods, parameters, and response formats.</li>
+      <li><b>Explore Examples</b>: Utilize our code samples to expedite your development process.</li>
+    </ol>
+    <div style="text-align: right;">
+      <a href="./docs/Use%20AvePoint%20Graph%20Modern%20API.md" style="text-decoration:none; color:blue;">See More</a>
+    </div>
+  </div>
 
-## Getting Started
+  <div style="border:1px solid #ccc; padding:24px; border-radius:8px; box-shadow:2px 2px 12px #aaa; width: 30%;">
+    <h3 style="margin-bottom: 16px;">Use Cases</h3>
+    <ol>
+      <li><b>Secure Data Access and Management</b>: Implement robust authentication to ensure only authorized users can access or modify data, meeting stringent security and compliance standards.</li>
+      <li><b>Compliance and Security Audits</b>: Retrieve audit records to facilitate compliance checks and security audits, helping to identify unauthorized activities and maintain a secure environment.</li>
+      <li><b>Streamline Partner Operations</b>: Enhance collaboration and efficiency by managing partner-related workflows through the Elements platform, using the API to integrate and automate processes.</li>
+    </ol>
+    <div style="text-align: right;">
+      <a href="./docs/Use%20Cases.md" style="text-decoration:none; color:blue;">See More</a>
+    </div>
+  </div>
 
-1. Sign Up: Register for an API key to begin integrating.
-2. Read the Docs: Familiarize yourself with our API methods, parameters, and response formats.
-3. Explore Examples: Utilize our code samples to streamline your development process.
+</div>
 
-## Contact Us
+## Contact us  
 
-Have questions or need support? Reach out to our support team for assistance.
-
-Dive into our API Documentation to unlock the full potential of our services today!  
-
-## See more:
-
-- [Overview](./docs/Overview.md)  
-- [Use AvePoint Graph Modern API](./docs/Use%20AvePoint%20Graph%20Modern%20API.md)
-- [Use Cases](./docs/Use%20Cases.md)
+<p style="margin-bottom: 32px;">Have questions or need assistance? Our support team is here to help you every step of the way. </p> 
