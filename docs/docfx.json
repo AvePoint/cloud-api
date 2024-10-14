@@ -22,8 +22,10 @@
     ],
     "output": "_site",
     "template": [
-      "learntemplate",
-      "modern"
+      "default",
+      "modern",
+      "learntemplate"
+      
     ],
     "globalMetadata": {
       "_appName": "Learn",
