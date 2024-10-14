@@ -1,6 +1,6 @@
 # Retrieve Customer Details
 
-The `/customers/{id}` API retrieves the general information of a specific customer that you manage.
+The `/partner/customers/{id}` API retrieves the general information of a specific customer that you manage.
 
 ## Permissions  
 
@@ -9,9 +9,11 @@ You must register an app through Elements for Partners > App Registration to aut
 
 | API | Permission Required |
 |-----------|----------|
-| `/customers/{id}` |partner.customers.read.all|  
+| `/partner/customers/{id}` |partner.customers.read.all|  
 
 ## Query Parameters  
+
+This section outlines the parameters required to specify which customer's information you want to retrieve.  
 
 | Parameter | Description | Type |
 | --- | --- | --- |
@@ -31,3 +33,4 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Response Example  
 
+This section provides an example of the response you can expect when the API request is successfully processed.  
