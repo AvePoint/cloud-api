@@ -31,7 +31,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | JobStatus | The status of the customer’s tenant. | String |
 | CountryOrRegion | The country or region name of the customer. | String |
 
-## Response Example  
+## Response Sample  
 
 This section provides an example of the response you can expect when the API request is successfully processed.  
-
