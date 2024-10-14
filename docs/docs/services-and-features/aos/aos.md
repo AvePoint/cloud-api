@@ -1,11 +1,11 @@
 # Retrieve Audit Records
 
-AvePoint Online Services provides the `/aos/audit` API to retrieve audit records for activities within your AOS tenant. This section outlines the necessary permissions, available methods, and models used for interacting with the API.  
+Retrieve audit records (`/aos/audit` navigation property) for activities within your AOS tenant. This article outlines the necessary permissions, available methods, and models used for interacting with the API.  
 
 ## Permissions
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
 
 | API   | Permission required | Permission type |
 |-------------------|---------------|----------------------|
