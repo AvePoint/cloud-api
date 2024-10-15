@@ -33,7 +33,7 @@ Gets the audit records for activities in your AvePoint Online Services tenant wi
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | If successful, the method returns this code. | [ApiQueryWithSkipTokenResultOfUserActivityAuditLogItemModel](#apiresultofuseractivitymodel) |
+| 200 | If successful, the method returns this code. | [ApiResultOfUserActivityModel](#apiresultofuseractivitymodel) |
 | 400 | If an error occurs, the method returns this code. | [ErrorResponse](#errorresponse) |
 
 ### Response Models
