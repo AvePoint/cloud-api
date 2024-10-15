@@ -12,7 +12,7 @@ To access the resources of AvePoint Cloud Services via the AvePoint Graph Modern
 
 For a step-by-step guide on creating an app registration for API authentication, refer to the [Configure App Registration](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/configureappregistrations.htm) section in the AvePoint Online Services User Guide.  
 
->[!NOTE] 
+>[!NOTE]  
 > For partner operations, go to Elements for Partner for app registration. See [App Registration in Elements for Partners guide](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 ## Call an API Method
@@ -33,8 +33,7 @@ After making a request, a response is returned that includes:
 
 - Status code - An HTTP status code that indicates success or failure.  
 - Response message - The data that you requested or the result of the operation. The response message can be empty for some operations.  
-
-[-nextLink - If your request returns a lot of data, you need to page through it by using the URL returned in nextLink.]: # 
+- nextLink - If your request returns a lot of data, you need to page through it by using the URL returned in nextLink.
 
 - Response headers - Additional information about the response, such as the type of content returned and the request-id that you can use to correlate the response to the request.  
 

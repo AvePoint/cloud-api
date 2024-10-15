@@ -11,7 +11,7 @@ You must register an app through Elements for Partners > App Registration to aut
 |-----------|--------|
 | `/partner/customers` | partner.customers.read.all|  
 
-## API Method
+## Request
 
 This section provides details on the method used to retrieve customer information.
 

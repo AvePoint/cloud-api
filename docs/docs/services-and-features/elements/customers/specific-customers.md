@@ -11,6 +11,14 @@ You must register an app through Elements for Partners > App Registration to aut
 |-----------|----------|
 | `/partner/customers/{id}` |partner.customers.read.all|  
 
+## Request  
+
+This section provides details on the method used to retrieve a specific customer's information.
+
+| Method | Path | Description |
+| --- | --- | --- |
+| GET | `/partner/customers/{id}` | Gets the general information of a specific customer that you manage. |
+
 ## Query Parameters  
 
 This section outlines the parameters required to specify which customer's information you want to retrieve.  
@@ -31,6 +39,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | JobStatus | The status of the customer’s tenant. | String |
 | CountryOrRegion | The country or region name of the customer. | String |
 
-## Response Example  
+## Response Sample  
 
 This section provides an example of the response you can expect when the API request is successfully processed.  
