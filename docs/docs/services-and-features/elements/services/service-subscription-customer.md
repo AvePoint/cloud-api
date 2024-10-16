@@ -1,10 +1,10 @@
 # Retrieve Service Subscriptions
 
-Get service subscription details for a specific customer that you manage. With this API, you can efficiently manage and audit customer subscriptions, enhancing the capability to oversee and optimize service usage effectively.
+Use this API to retrieve service subscription details for a specific customer that you manage. With this API, you can efficiently manage and audit customer subscriptions, enhancing the capability to oversee and optimize service usage effectively.
 
 ## Permissions  
 
-The following permission is required to call the APIs.  
+The following permission is required to call the API.  
 You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)  
 
 | API |Permission Required |

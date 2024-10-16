@@ -1,6 +1,6 @@
 # Retrieve Service Subscriptions for All Your Customers
 
-Get service subscription details for all the customers under your management. With this API, you can efficiently gather comprehensive subscription data.
+Use this API to retrieve service subscription details for all the customers you manage. With this API, you can efficiently gather comprehensive subscription data.
 
 ## Permissions  
 

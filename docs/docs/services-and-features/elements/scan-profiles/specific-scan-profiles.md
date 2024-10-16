@@ -1,6 +1,6 @@
 # Retrieve Specific Scan Profiles
 
-Get your customer's information for a specific scan profile configured in AvePoint Online Services.
+Use this API to retrieve your customer's information for a specific scan profile configured in AvePoint Online Services.
 
 ## Permissions  
 
