@@ -1,6 +1,6 @@
 # Overview
 
-The AvePoint Graph Modern API is a robust suite of tools designed to streamline integration and enhance functionalities for managing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities.  
+The AvePoint Graph Modern API is a robust suite of tools designed to streamline integration and enhance functionality for managing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities.  
 
 ## Available APIs  
 
