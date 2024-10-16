@@ -1,6 +1,6 @@
 # Retrieve Audit Records
 
-Use this APi to retrieve audit records (`/aos/audit` navigation property) for activities within your AOS tenant. This article outlines the necessary permissions, available methods, and models used for interacting with the API.  
+Use this API to retrieve audit records (`/aos/audit` navigation property) for activities within your AOS tenant. This article outlines the necessary permissions, available methods, and models used for interacting with the API.  
 
 ## Permission
 
