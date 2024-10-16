@@ -1,32 +1,34 @@
-# Elements API
+# Retrieve Service Subscriptions for All Your Customers
 
-Elements provides APIs to retrieve information of your customers, including services, job details, and scan profiles.
+Get service subscription details for all the customers under your management. With this API, you can efficiently gather comprehensive subscription data.
 
 ## Permissions  
 
-The following permission is required to call the APIs.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+The following permissions are required to call the API.  
+You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)  
 
-| API |Method| Description | Permission Required |
-|-----------|--------|-------|--------|
-| [/Services](#getservices)| GET  |Get the service subscription details of all customers that you manage.|partner.license.read.all |  
+| API |Permission  |
+|-----------|--------------|
+| `/partner/Services`|partner.license.read.all |  
 
+## Request
 
-### [GET]/Services
+This section outlines the method used to retrieve the service subscription for all of your customers. The request method, path, and description are provided for clarity.  
 
-Get the service subscription details for the customers that you manage.
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | `/partner/services/` | Get the service subscription details for all your customers. |
 
+## Response
 
-#### Responses
-
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+The API response provides detailed information about the customer's service subscriptions retrieved. Each service subscription in the response includes various attributes that describe its properties and status.
 
 | Response | Description | Type |
 | --- | --- | --- |
 | CustomerId | The tenant owner ID of the customer. | String |
-| Organization | The organization name of the customer. | String |
+| Organization | The customer's organization name. | String |
 | Customer | The tenant owner email address of the customer. | String |
-| TenantId | The tenant ID of the customer. | String |
+| TenantId | The customer's tenant ID. | String |
 | Service | The service that the customer has subscriptions for. | String |
 | SubscriptionModel | The subscription model of the customer’s service. | String |
 | PurchasedUserSeats | The number of purchased user seats of the customer. | String |
@@ -39,3 +41,90 @@ If the request has been successfully processed, a 200 OK response will be return
 | expirationDate | The expiration date of the customer’s service. | String |
 | Change | The user seats changes in the pooled license compared with the first day of the current month. | String |
 
+## Request Sample
+
+The following request structure is designed to query subscriptions for all customers.
+
+```json
+https://graph.avepointonlineservices.com/partner/Services
+```
+
+## Response Sample
+
+Below is a sample response showcasing the structure and content of the data returned by the API:
+
+```json
+{
+     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Services",  // OData context URL for the service metadata
+    "value": [  // Array of data objects returned by the service
+        {
+            "customerId": "b521-b521-b521-b521-b521",  // Unique identifier for the customer
+            "organization": "APETest_AOS_QA",  // Name of the customer's organization
+            "customer": "cense_us_test@163.com",  // Customer's email address or username
+            "tenantId": "417d4762-d9db-4f60-b97e-bf32dc4ddb05,6e3bca9a-a5e9-4b31-858e-c718983cfb70,9a802a7f-61de-49c4-a997-c53f80036c64,dd7a65a8-464b-4a1b-bd5d-66c9a93d5bc4,f0392f21-9bc1-4db1-b323-866eb0d60232",  // Comma-separated list of tenant IDs associated with the customer
+            "products": [  // Array of products associated with the customer
+                {
+                    "service": "Cense",  // Name of the service
+                    "subscriptionModel": "N/A",  // Subscription model; not applicable here
+                    "purchasedUserSeats": "10",  // Number of user seats purchased
+                    "microsoftLicenseAssigned": "0",  // Number of Microsoft licenses assigned
+                    "microsoftLicenseAvailable": "0",  // Number of available Microsoft licenses
+                    "purchasedCapacity": "N/A",  // Purchased storage capacity; not applicable here
+                    "storage": "N/A",  // Storage details; not applicable here
+                    "retention": "N/A",  // Data retention policy; not applicable here
+                    "consumedStorage": "N/A",  // Consumed storage; not applicable here
+                    "expirationDate": "02/04/2026",  // Date when the subscription expires
+                    "change": "N/A"  // Information on changes; not applicable here
+                }
+            ]
+        },
+        {
+            "customerId": "b521-b521-b521-b521-b521",
+            "organization": "AvePoint",
+            "customer": "aptest_records_fr@163.com",
+            "tenantId": "16d5a064-bd41-499e-a70e-670f8745010e,31cdb7b5-2307-4874-9be4-9e459cca4770,47ea9460-25ae-4afd-9d13-57dfc719e290,e20c6264-28ec-4233-ab11-92c9489b80b1",
+            "products": [
+                {
+                    "service": "Opus - Discovery and analysis",
+                    "subscriptionModel": "N/A",
+                    "purchasedUserSeats": "N/A",
+                    "microsoftLicenseAssigned": "0",
+                    "microsoftLicenseAvailable": "0",
+                    "purchasedCapacity": "1024 GB",
+                    "storage": "AvePoint storage",
+                    "retention": "N/A",
+                    "consumedStorage": "N/A",
+                    "expirationDate": "12/29/2026",
+                    "change": "N/A"
+                },
+                {
+                    "service": "Opus - Storage optimization",
+                    "subscriptionModel": "Action and store",
+                    "purchasedUserSeats": "N/A",
+                    "microsoftLicenseAssigned": "0",
+                    "microsoftLicenseAvailable": "0",
+                    "purchasedCapacity": "3072 GB",
+                    "storage": "AvePoint storage",
+                    "retention": "N/A",
+                    "consumedStorage": "N/A",
+                    "expirationDate": "12/29/2026",
+                    "change": "N/A"
+                },
+                {
+                    "service": "Opus - Information lifecycle",
+                    "subscriptionModel": "N/A",
+                    "purchasedUserSeats": "40",
+                    "microsoftLicenseAssigned": "14",
+                    "microsoftLicenseAvailable": "0",
+                    "purchasedCapacity": "N/A",
+                    "storage": "AvePoint storage",
+                    "retention": "N/A",
+                    "consumedStorage": "N/A",
+                    "expirationDate": "12/29/2026",
+                    "change": "N/A"
+                }
+            ]
+        }
+    ]
+}
+```

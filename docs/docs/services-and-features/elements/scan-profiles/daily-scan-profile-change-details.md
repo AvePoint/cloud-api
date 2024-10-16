@@ -12,14 +12,18 @@ You must register an app through Elements for Partners > App registration to aut
 | `/partner/customers/{id}/scanProfilesDailyNewDetail/profileId/{ProfileId}`| partner.scanprofiles.read.all|  
 
 ## Request
+
 This section outlines the HTTP method and endpoint used to retrieve customer's daily scan profile change details in AvePoint Online Services.
-| Method | Endpoint | Description |
+
+| Method | Endpoint | Description |  
 |-----------|-----------|-----------|
 |GET|`/partner/customers/{id}/scanProfilesDailyNewDetail/profileId/{ProfileId}`| Retrieves your customer's daily scan profile change details in AvePoint Online Services.|
 
 
 ## Query Parameters
+
 This section outlines the parameters required to specify which customer's daily scan profile change details in AvePoint Online Services you want to retrieve.
+
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | Id | The tenant owner ID of the customer. | String | Yes |
@@ -43,13 +47,19 @@ If the request has been successfully processed, a 200 OK response will be return
 | newRegisteredContent | The details of newly registered objects in the daily report of the scan profile. | String |
 | movedToAnotherContainerObjects | The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | String |
 | removedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | String |
+
 ## Request Sample
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
+
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.  
+
 ```
 https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43bb-b04b-794cb9af5ea3/scanProfilesDailyNew/profileId/0e5e152d-65cc-4206-9829-636ee72c88c3
 ```
+
 ## Response Sample
+
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+
 ```
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDailyNewInfo",

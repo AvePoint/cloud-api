@@ -34,7 +34,7 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 If successful, this method returns a 200 OK response code and a collection of jobs in the response body.  
 For details on the HTTP status code, refer to [HTTP Status Code](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code).
 
-```ts
+```json
 {
     "outOfPolicyTime": 0, // UTC timestamp for when the subscription expires
     "purchasedUserSeats": 100, //Total number of purchased user seats

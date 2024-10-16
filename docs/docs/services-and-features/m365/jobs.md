@@ -72,8 +72,8 @@ The API response provides detailed information about the jobs retrieved. Each jo
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
 
-```
-https://10.2.156.34:12580/cloudbackup/jobs?StartTime=0&FinishTime=0&ObjectType=0&PageSize=5&PageIndex=1
+```json
+https://graph-us.avepointonlineservices.com/cloudbackup/jobs?StartTime=0&FinishTime=0&ObjectType=0&PageSize=5&PageIndex=1
 ```
 
 ## Response Sample
@@ -81,7 +81,7 @@ https://10.2.156.34:12580/cloudbackup/jobs?StartTime=0&FinishTime=0&ObjectType=0
 If successful, this method returns a 200 OK response code and a collection of jobs in the response body.  
 For details on the HTTP status code, refer to [HTTP Status Code](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code). 
 
-```ts
+```json
 {
     "totalCount": 2, //Total number of the retrieved jobs
     "jobs": [
@@ -114,6 +114,6 @@ For details on the HTTP status code, refer to [HTTP Status Code](/docs/docs/Use%
             "jobErrors": []
         }
     ],
-    "nextLink": ""
+    "nextLink": "" // no left results.
 }
 ```

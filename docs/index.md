@@ -5,7 +5,7 @@ _layout: landing
 <h1 style="text-align: center; margin-bottom: 32px;">Welcome to AvePoint Graph API Documentation</h1>
 
 <p style="margin-bottom: 32px;">
-Unlock the full potential of AvePoint Cloud services with our comprehensive API documentation. Designed for seamless integration, AvePoint Graph API empowers developers to leverage a wide range of robust features that can enhance and extend your applications. With a focus on reliability and efficiency, our API ensures consistent and secure access to our services, facilitating smooth interactions and exceptional user experiences. our robust features to enhance your applications. Our API ensures reliable and efficient access to our services, delivering a smooth experience for developers. Whether you're optimizing processes or enhancing functionality, our API provides the tools you need to innovate and succeed.  
+Unlock the full potential of AvePoint Cloud services with our comprehensive API documentation. Designed for seamless integration, AvePoint Graph API empowers developers to leverage a wide range of robust features that can enhance and extend your applications. With a focus on reliability and efficiency, our API ensures consistent and secure access to our services, facilitating smooth interactions and exceptional user experiences for developers. Whether you're optimizing processes or enhancing functionality, our API provides the tools you need to innovate and succeed.  
 </p>
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; margin-bottom: 32px;">
