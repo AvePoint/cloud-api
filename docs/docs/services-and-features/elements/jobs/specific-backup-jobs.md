@@ -1,49 +1,81 @@
-# Elements API
+# Retrieve Specific Job Type and Module of Backup Services
 
-Elements provides APIs to retrieve information of your customers, including services, job details, and scan profiles.
+Get your customer's job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Google Workspace, IaaS PaaS, Dynamics 365, or Salesforce.
+<br>Note that this API is specifically for customers who have subscribed to these services.
 
 ## Permissions  
 
 The following permission is required to call the APIs.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
-| API |Method| Description | Permission Required |
-|-----------|--------|-------|--------|
-| [/Customers/{Id}/Jobs/JobType/{JobType}/JobModule/{JobModule}](#getcustomersidjobsjobtypejobtypejobmodulejobmodule)| GET  |Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported.  | partner.jobs.read.all  |  
+| API | Permission Required |
+|-----------|--------|
+| `/partner/customers/{Id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | partner.jobs.read.all  |  
 
+## Request 
+This section provides details on the HTTP method and endpoint used to retrieve your customer's job details for a specific job type and module of backup services.
+| Method| Endpoint | Description |
+|-----------|--------|-------|
+| GET | `/partner/customers/{Id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | Retrieves your customer's job details for a specific job type and module of the backup services. |
+## Query Parameters
+This section outlines the parameters required to specify the job type and module of backup services that you want to retrieve.
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| Id | The tenant owner ID of the customer. | String | Yes |
+| JobType | The service type of the job. | String | Yes |
+| JobModule | The service module of the job. | String | Yes |
 
-### [GET]/Customers/{Id}/Jobs/JobType/{JobType}/JobModule/{JobModule}
-
-Get your customer's job details for a specific job type and module of the backup services.<br>Note that only the job details for the backup services that the customer has the subscription for are supported.
-
-#### Parameters (Query)
-| Parameter | Description | Type |
-| --- | --- | --- |
-| Id | The tenant owner ID of the customer. | String |
-| JobType | The service type of the job. | String |
-| JobModule | The service module of the job. | String |
-
-#### Responses
+## Responses
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |
-| JobType | The service type of the job. | String |
-| JobModule | The service module of the job. | String |
-| Status | The job status. | String |
-| JobId | The job ID. | String |
-| Name | The job name. | String |
-| TotalCount | The count of the objects that have been processed by the job. | Int |
-| FailedCount | The count of the failed objects. | Int |
-| SuccessfulCount | The count of the successful objects. | Int |
-| SkippedCount | The count of the skipped objects. | Int |
-| WarningCount | The count of the warning objects. | Int |
-| BackupSize | The size of the backed-up objects. | String |
-| StartTime | The start time of the job. | DateTime |
-| EndTime | The end time of the job. | DateTime |
-| JobDuration | The job duration. | String |
-| LastModifyTime | The last modified time of the job. | DateTime |
+| jobType | The service type of the job. | String |
+| jobModule | The service module of the job. | String |
+| status | The job status. | String |
+| jobId | The job ID. | String |
+| name | The job name. | String |
+| totalCount | The count of the objects that have been processed by the job. | Int |
+| failedCount | The count of the failed objects. | Int |
+| successfulCount | The count of the successful objects. | Int |
+| skippedCount | The count of the skipped objects. | Int |
+| warningCount | The count of the warning objects. | Int |
+| backupSize | The size of the backed-up objects. | String |
+| startTime | The start time of the job. | DateTime |
+| endTime | The end time of the job. | DateTime |
+| jobDuration | The job duration. | String |
+| lastModifyTime | The last modified time of the job. | DateTime |
 
 ***
-
+## Request Sample
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
+```
+https://graph.avepointonlineservices.com/partner/customers/00427fbc-8832-46cf-a1d2-582fa46ec638/jobs/jobType/Microsoft 365/jobModule/SharePoint Online
+```
+## Response Sample
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+```
+{
+    "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Collection(Portal.Api.Model.BackUpJob)",
+    "value": [
+        {
+            "jobType": "Microsoft 365", // The service type of the job
+            "jobModule": "SharePoint Online", // The service module of the job
+            "status": "Not Finished", // The job status
+            "jobId": "N/A", // The job ID
+            "name": "N/A", // The job name
+            "totalCount": "0", // The count of the objects that have been processed by the job
+            "failedCount": "0", // The count of the failed objects
+            "successfulCount": "0", // The count of the successful objects
+            "skippedCount": "0", // The count of the skipped objects
+            "warningCount": "0", // The count of the warning objects
+            "backupSize": "0 GB", // The size of the backed-up objects
+            "startTime": "N/A", // The start time of the job
+            "endTime": "N/A", // The end time of the job
+            "jobDuration": "N/A", The job duration
+            "lastModifyTime": "N/A" // The last modified time of the job
+        }
+    ]
+}
+```
