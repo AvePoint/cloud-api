@@ -12,7 +12,9 @@ You must register an app through Elements for Partners > App registration to aut
 | `/partner/customers/{id}/protected` |partner.cbprotected.read.all |  
 
 ## Request
+
 This section outlines the details on the HTTP method and endpoint used to retrieve detailed information about your customer's protected data within Cloud Backup for Microsoft 365.
+
 | Method | Endpoint  | Description |
 |-----------|-------|-----------|
 | GET | `/partner/customers/{id}/protected` | Retrieves detailed information about your customer's protected data within Cloud Backup for Microsoft 365. |
@@ -41,13 +43,17 @@ If the request has been successfully processed, a 200 OK response will be return
 | dataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | Int |
 
 ## Request Sample  
+
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
+
 ```
 https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b04b-794c8baf5ea3/protected
 ```
 
 ## Response Sample
+
 If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+
 ```
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Collection(Portal.Api.Model.CustomerOverallProtected)",

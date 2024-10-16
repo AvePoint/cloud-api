@@ -32,11 +32,13 @@ If the request has been successfully processed, a 200 OK response will be return
 | countryOrRegion | The country or region name of the customer. | String |
 
 ## Request Sample
+
 To use this API, send a GET request to the specified endpoint.
 ```
 https://graph.avepointonlineservices.com/partner/customers
 ```
 ## Response Sample  
+
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
 ```
 {

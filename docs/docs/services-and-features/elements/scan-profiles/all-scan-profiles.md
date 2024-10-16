@@ -13,6 +13,7 @@ You must register an app through Elements for Partners > App registration to aut
 
 
 ## Request
+
 This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Servcies.
 
 | Method | Endpoint | Description |
@@ -21,6 +22,7 @@ This section outlines the HTTP method and endpoint used to retrieve your custome
 
 
 ## Query Parameters
+
 This section outlines the parameters required to specify which customer's information for scan profiles you want to retrieve.
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |

@@ -1,5 +1,7 @@
 # Retrieve Daily Scan Profile Changes
+
 Get your customer's daily scan profile changes in AvePoint Online Services.
+
 ## Permissions  
 
 The following permission is required to call the APIs.  
@@ -10,6 +12,7 @@ You must register an app through Elements for Partners > App registration to aut
 | `/partner/customers/{id}/scanProfilesDailyNew/profileId/{ProfileId}` | partner.scanprofiles.read.all |  
 
 ## Request
+
 This section outlines the details on the HTTP method and endpoint used to retrieve your customer's daily scan profile changes in AvePoint Online Services.
 
 | Method | Endpoint | Description |
@@ -18,6 +21,7 @@ This section outlines the details on the HTTP method and endpoint used to retrie
 
 
 ## Query Parameters
+
 This section outlines the parameters required to specify which customer's specific daily scan profile changes in AvePoint Online Services you want to retrieve.
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
