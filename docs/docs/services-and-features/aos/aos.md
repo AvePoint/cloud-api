@@ -13,7 +13,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to retrieve the audit records. 
+This section outlines the HTTP method and endpoint that is used to retrieve the audit records. 
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
