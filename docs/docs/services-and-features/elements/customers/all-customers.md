@@ -13,11 +13,11 @@ You must register an app through Elements for Partners > App registration to aut
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to retrieve general information of your customers.
+This section provides details on the HTTP method and endpoint used to retrieve general information for all of your customers.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/partner/customers` | Retrieves general information of your customers. |
+| GET | `/partner/customers` | Retrieves general information for all of your customers. |
 
 ## Response
 

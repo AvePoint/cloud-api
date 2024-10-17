@@ -1,6 +1,6 @@
 # Retrieve Job Details for Backup Services
 
-Use this API to retrieve your customer's job details for backup services, including Cloud Backup for Microsoft 365, Google Workspace, IaaS PaaS, Dynamics 365, or Salesforce.<br>Note that this API is specifically for customers who have subscribed to these services.
+Use this API to retrieve your customer's job details for backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.<br>This API is intended specifically for customers who have subscribed to these services.
 
 ## Permissions  
 
@@ -13,7 +13,7 @@ You must register an app through Elements for Partners > App registration to aut
 
 
 ## Request
-This section outlines the details on the HTTP method and endpoint used to retrieve your customer's job details for the backup services.
+This section outlines the details on the HTTP method and endpoint used to retrieve your customer's job details for backup services.
 | Method |Endpoint| Description |
 |-----------|--------|-------|
 | GET | `/partner/customers/{Id}/jobs` | Retrieves your customer's job details for backup services. |
@@ -54,7 +54,7 @@ https://graph.avepointonlineservices.com/partner/customers/00427fbc-8832-46cf-a1
 ```
 ## Response Sample 
 If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
-```
+```json 
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Collection(Portal.Api.Model.BackUpJob)",
     "value": [

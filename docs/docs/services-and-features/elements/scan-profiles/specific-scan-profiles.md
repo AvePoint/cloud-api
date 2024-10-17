@@ -4,7 +4,7 @@ Use this API to retrieve your customer's information for a specific scan profile
 
 ## Permissions  
 
-The following permission is required to call the APIs.  
+The following permission is required to call the API.  
 You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission Required |
@@ -53,7 +53,7 @@ https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b0
 ```
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
-```
+```json 
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDetailInfo",
     "profileId": "0e5e152d-65cc-4206-9829-636ee72c88c3", // The ID of the scan profile
@@ -68,7 +68,7 @@ If the request has been successfully processed, a 200 OK response will be return
     "scanInplaceArchivedMailboxes": false, // Whether to scan in-place archived mailboxes configured in the scan profile: False represents Do not scan in-place archived mailbox
     "ignoreTheLockedObjectsWhenUpdatingTheJobStatus": false, // Whether the Ignore the locked objects when updating the job status setting is enabled in the scan profile: False represents Disabled
     "IsIgnoreLockedSiteEnabled": false, // Whether to ignore the locked sites in the scan profile: False represents Disabled
-    "enableDailyScan": "No", // Whether the daily scan is enabled for the scan Profile.
+    "enableDailyScan": "No", // Whether the Enable daily scan setting is enabled in the scan profile
     "SendAnemailNotificationToTheFollowIngRecipientsWhenObjectsAreMovedTooTherContainerOrRemovedFromAnyContainers": false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: False reprefents Disabled
     "IsSendOutOfPolicyNotification": false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: False represents Disabled
     "containers": [
