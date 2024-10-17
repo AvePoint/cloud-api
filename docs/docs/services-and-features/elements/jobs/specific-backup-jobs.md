@@ -1,11 +1,11 @@
 # Retrieve Specific Job Type and Module of Backup Services
 
-Get your customer's job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Google Workspace, IaaS PaaS, Dynamics 365, or Salesforce.
+Use this API to retrieve your customer's job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Google Workspace, IaaS PaaS, Dynamics 365, or Salesforce.
 <br>Note that this API is specifically for customers who have subscribed to these services.
 
 ## Permissions  
 
-The following permission is required to call the APIs.  
+The following permission is required to call the API.  
 You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission Required |

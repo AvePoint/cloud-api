@@ -1,10 +1,13 @@
 # Retrieve Protected Data within Cloud Backup for Microsoft 365
 
-Get detailed information about your customer's protected data within Cloud Backup for Microsoft 365. This API is specifically for customers who have subscribed to the Cloud Backup for Microsoft 365 service.
+Use this API to retrieve detailed information about your customer's protected data within Cloud Backup for Microsoft 365. This API is intended specifically for customers who have subscribed to the Cloud Backup for Microsoft 365 service.
 
 ## Permissions  
 
-The following permission is required to call the APIs.  
+The following permission is required to call the API.
+<!Should APIs be plural here? I think it should be  The following permission is required to call the API. If so, this should be a global change in all of the docs where this sentence appears. Thanks!>
+
+You must register an app through Elements for Partners>
 You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).  
 
 | API | Permission Required  |

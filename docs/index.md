@@ -39,7 +39,7 @@ Unlock the full potential of AvePoint Cloud services with our comprehensive API 
     <h3 style="margin-bottom: 16px;">Use Cases</h3>
     <ol>
       <li><b>Secure Data Access and Management</b>: Implement robust authentication to ensure only authorized users can access or modify data, meeting stringent security and compliance standards.</li>
-      <li><b>Compliance and Security Audits</b>: Retrieve audit records to facilitate compliance checks and security audits, helping to identify unauthorized activities and maintain a secure environment.</li>
+      <li><b>Compliance and Security Audits</b>: Retrieve audit records to facilitate compliance checks and security audits, which will help to identify unauthorized activities and maintain a secure environment.</li>
       <li><b>Streamline Partner Operations</b>: Enhance collaboration and efficiency by managing partner-related workflows through the Elements platform, using the API to integrate and automate processes.</li>
     </ol>
     <div style="text-align: right;">
