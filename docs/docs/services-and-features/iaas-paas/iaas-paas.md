@@ -59,7 +59,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
 
-```
+```json
 https://graph-us.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType=1&pageSize=5&startTime=638527680000000000&finishTime=638633088000000000
 ```
 
@@ -67,7 +67,7 @@ https://graph-us.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType
 
 If successful, this method returns a 200 OK response code and a collection of  jobs in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code).
 
-```ts
+```json
 {
     "totalCount": 51, // Total count of jobs
     "jobs": [
@@ -133,6 +133,6 @@ If successful, this method returns a 200 OK response code and a collection of  j
         }
     ],
     //For details on nextLink, see 
-    "nextLink": "pZ5%2FtiSPUEfNBIK13B%2BPG5WyXm4CBVPocjiPTqZQgfxHHh2isXpr6JU4eK3OYIIUBKLwoh3tWeLFiMd5fn1eytgvIE3C5qgYl1XUUiBcpv2BPmBrJlKXxLOtTDHwvlPCA4wGnuqQEhd5E8NDFbYkWDa5QwLB5mIlFJj607ZxAKvQCG7oG1BLYb0bmRUf6Wz%2B%2FMfzvDPjhV%2Fpz%2F7SwHtj034jcRrkiMkJwXWB"
+    "nextLink": "pZ5%2FtiSPUEfNBIK13B%2BPG5WyXm4CBVPocjiPTqZQgfxHHh2isXpr6JU4eK3OYIIUBKLwoh3tWeLFiMd5fn1eytgvIE3C5qgYl1XUUiBcpv2BPmBrJlKXxLOtTDHwvlPCA4wGnuqQEhd5E8NDFbYkWDa5QwLB5mIlFJj607ZxAKvQCG7oG1BLYb0bmRUf6Wz%2B%2FMfzvDPjhV%2Fpz%2F7SwHtj034jcRrkiMkJwXWB" //Link to the next page of results
 }
 ```
