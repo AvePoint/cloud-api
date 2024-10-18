@@ -46,14 +46,14 @@ https://graph.avepointonlineservices.com/partner/customers/caf94a89-2cc6-47aa-b0
 ```
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
-```
+```json 
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Collection(Portal.Api.Model.ProfileInfo)",
     "value": [
         {
             "profileName": "test oop", // The name of the scan profile
             "profileId": "0e5e152d-65cc-4206-9829-636ee72c88c3", // The ID of the scan profile
-            "scanMode": 0, // The scan mode of the scan profile: 0 represents Express mode.
+            "scanMode": 0, // The scan mode of the scan profile: 0 represents Express mode
             "modifiedTime": "08/01/2024 06:29:55" // The last modified time of the scan profile
         }
     ]
