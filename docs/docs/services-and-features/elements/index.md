@@ -4,7 +4,7 @@ Unleash the full potential of customer management with AvePoint's Elements APIs.
 
 ## Comprehensive Partner Operations  
 
-Leverage our APIs to streamline partner-related workflows, enhance operational efficiency, and improve collaboration. Automate processes, manage partner permissions, and integrate seamlessly with existing systems to deliver exceptional service and value.
+Leverage our APIs to streamline partner-related workflows, enhance operational efficiency, and improve collaboration. Automate processes, manage customers, and integrate seamlessly with existing systems to deliver exceptional service and value.
 
 ## Secure and Scalable  
 

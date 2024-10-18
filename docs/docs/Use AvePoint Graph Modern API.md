@@ -1,6 +1,6 @@
-# Use AvePoint Graph Modern API  
+# Use the AvePoint Graph Modern API  
 
-Welcome to AvePoint Graph Modern API, your gateway to accessing and managing AvePoint Confidence Platform with efficiency and security. This API is designed to streamline your data management and backup monitoring processes, providing IT professionals with robust tools and insights.  
+Welcome to the AvePoint Graph Modern API, your gateway to accessing and managing the AvePoint Confidence Platform with efficiency and security. This API is designed to streamline your data management and backup monitoring processes, providing IT professionals with robust tools and insights.  
 
 ## Authentication and Authorization
 
@@ -13,6 +13,8 @@ To access the resources of AvePoint Cloud Services via the AvePoint Graph Modern
 For a step-by-step guide on creating an app registration for API authentication, refer to the [Configure App Registration](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/configureappregistrations.htm) section in the AvePoint Online Services User Guide.  
 
 >[!NOTE]  
+
+
 > For partner operations, go to Elements for Partner for app registration. See [App Registration in Elements for Partners guide](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 ## Call an API Method

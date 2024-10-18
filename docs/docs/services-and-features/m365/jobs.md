@@ -1,20 +1,22 @@
 # Retrieve Job Information
 
-The `/cloudbackup/jobs` API endpoint empowers users to seamlessly retrieve job-related information through standardized HTTP GET requests. By leveraging these APIs, users gain comprehensive insights and granular access to job reports, thereby enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
+Get the job-related information (`/cloudbackup/jobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/cloudbackup/jobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
 
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization).
 
 | API   | Permission |
 |-------------------|---------------|
 |`/cloudbackup/jobs` | microsoft365backup.jobInfo.read.all | 
 
 
-## API Method
+## Request
 
-| Method | Path | Description |
+This section outlines the HTTP method and endpoint used to retrieve job information. It provides a concise description of the action performed by the API call.  
+
+| Method | Endpoint | Description |
 | --- | --- | --- |
 | GET | `/cloudbackup/jobs` | Gets the job information of Cloud Backup for Microsoft 365. |
 
@@ -22,23 +24,25 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Query Parameters
 
-| Parameter | Description | Type |
-| --- | --- | --- |
-| StartTime | Sets a start time (UTC time) for the time range. | long |
-| FinishTime | Sets an end time (UTC time) for the time range.| long |
-| JobType | Sets the job types that you want to get. <br> **Valid values:** <br> 0 (for All) <br> 1 (for Backup) <br> 2 (for Restore) <br> 3 (for Export) <br> 4 (for Delete) <br> 5 (for Retention) . | Enum |
-| ObjectType | Sets the service type of the jobs to get. <br>  **Valid values:** <br> 0 (for All) <br> 1 (for Exchange Online) <br> 2 (for  SharePoint Online) <br> 3 (for OneDrive) <br> 4 (for Microsoft 365 Groups) <br> 5 (for Project Online) <br> 6 (for Public Folder) <br> 7 (Teams) <br> 8 (Viva Engage) <br> 9 (Teams Chat) <br> 10 (Power BI) <br> 11 (Power Automate) <br> 12 (Power Apps). | Enum <br>  |
-| JobState | Sets the job status. <br> **Valid values:** <br> 0 (for All) <br> 1 (for In Progress) <br> 2 (for Finished) <br> 3 (for Failed) <br> 4 (for Finished with Exception) <br> 5 (for Partially Finished)|Enum |
-| PageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| int |
-| PageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | int |
+The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify pagination, job types, time ranges, and other criteria to filter the results effectively.  
+
+| Elements | Description | Type | Required? |
+| --- | --- | --- | --- |
+| StartTime | Sets a start time (UTC time) for the time range. | long | Yes |
+| FinishTime | Sets an end time (UTC time) for the time range.| long | Yes |
+| JobType | Sets the job types that you want to get. <br> Valid values: <br> <ul><li> **0** for All <br> </li><li> **1** for Backup <br> </li><li> **2** for Restore <br> </li><li> **3** for Export <br> </li><li> **4** for Deletion <br> </li><li> **5** for Retention</li></ul>| Enum | Yes |
+| ObjectType | Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> **0** for All <br> </li><li>**1** for Exchange Online <br> </li><li>**2** for  SharePoint Online <br> </li><li>**3** for OneDrive <br> </li><li>**4** for Microsoft 365 Groups <br> </li><li>**5** for Project Online <br> </li><li>**6** for Public Folder <br> </li><li>**7** for Teams <br> </li><li>**8** for Viva Engage <br> </li><li>**9** for Teams Chat <br> </li><li>**10** for Power BI <br> </li><li>**11** for Power Automate <br> </li><li>**12** for Power Apps</li></ul> | Enum <br>  | Yes |
+| JobState | Sets the job status. <br> Valid values: <br> <ul><li>**0** for All <br> </li><li>**1** for In Progress <br> </li><li>**2** for Finished <br> </li><li>**3** for Failed <br> </li><li>**4** for Finished with Exception <br> </li><li>**5** for Partially Finished </li></ul>|Enum | Yes |
+| PageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| int | Yes |
+| PageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | int | Yes |
 
 ## Responses
 
-If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body.
+The API response provides detailed information about the jobs retrieved. Each job in the response includes various attributes that describe its properties and status.
 
 **Retrieved result:**
 
-| Response | Description | Type |
+| Elements | Description | Type |
 | --- | --- | --- |
 | TotalCount | The total count of the retrieved jobs | int |
 | Jobs | A list of jobs | List |
@@ -46,7 +50,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 **Job summary:**
 
-| Response | Description | Type |
+| Elements | Description | Type |
 | --- | --- | --- |
 | Id | Job ID | string |
 | State | Job status | string |
@@ -57,51 +61,59 @@ If the request has been successfully processed, a 200 OK response will be return
 
 **Backup details:**
 
-| Response | Description | Type |
+| Elements | Description | Type |
 | --- | --- | --- |
 | TotalCount | Total count | long |
-| FailedCount | Number of failed objects | long |
+| FailedCount | Number of objects with errors| long |
 | SuccessfulCount | Number of successful objects | long |
 | SkippedCount| Number of skipped objects | long |
 
-## Request Example (`application/json`):
+## Request Sample
 
-This section outlines the structure of a request to retrieve job details. The request can include options parameters to filter and paginate results, allowing you to specify time ranges, job types, and statuses.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
 
-```ts
-{
-  StartTime?: long
-  FinishTime?: long.
-  JobType?: "2" // Reference to #components/schemas/BackupJobType schema.
-  ObjectType?: "1" // Reference to #components/schemas/CloudBackupJobObjectType schema.
-  JobState?: "0" // Reference to #components/schemas/CloudBackupJobState schema
-  PageIndex?: int
-  PageSize?: int
-}
+```json
+https://graph-us.avepointonlineservices.com/cloudbackup/jobs?StartTime=0&FinishTime=0&ObjectType=0&PageSize=5&PageIndex=1
 ```
 
-## Response Example  
+## Response Sample
 
-The response provides detailed information about the requested job, including total counts and individual job details. It allows you to review job states, durations, and backup outcomes.  
+If successful, this method returns a 200 OK response code and a collection of jobs in the response body.  
+For details on the HTTP status code, refer to [HTTP Status Code](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code). 
 
-```ts
+```json
 {
-  TotalCount?: int
-  Jobs:[
-  {  
-    Id?: string 
-    State?: string
-    StartTime?: long
-    FinishTime?: long
-    Duration?: long
-    BackupDetails?: 
-    {
-      TotalCount?: long
-      FailedCount?: long
-      SuccessfulCount?: long
-      SkippedCount?: long
-    }
-  }
-  ]
+    "totalCount": 2, //Total number of the retrieved jobs
+    "jobs": [
+        {
+            "id": FB20241015105312327583, //Job ID
+            "state": Finished, // Job status
+            "startTime": 638645575921780695, // UTC timestamp for the start time of the job
+            "finishTime": 638645576438386696, // UTC timestamp for the finished time of the job
+            "duration": 516606001, // Job duration
+            "backupDetails": {
+                "totalCount": 16, // Total number of objects involved
+                "failedCount": 0, // Number of objects with errors
+                "successfulCount": 14, // Number of successful objects
+                "skippedCount": 2, // Number of skipped objects
+            },
+            "jobErrors": []
+        },
+        {
+            "id": EFB20241015105312828443, //Job ID
+            "state": Finished, // Job status
+            "startTime": 638645575920763578, // UTC timestamp for the start time of the job
+            "finishTime": 638645576482282882, // UTC timestamp for the finished time of the job
+            "duration": 561519304, // Job duration
+            "backupDetails": {
+                "totalCount": 438, // Total number of objects involved
+                "failedCount": 0, // Number of objects with errors
+                "successfulCount": 438, // Number of successful objects
+                "skippedCount": 0, // Number of skipped objects
+            },
+            "jobErrors": []
+        }
+    ],
+    "nextLink": "" // no left results.
 }
 ```

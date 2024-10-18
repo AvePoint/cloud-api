@@ -1,23 +1,23 @@
-# List All Customers
+# Retrieve All Customers
 
-The `/partner/customers` API to retrieve general information of your customers. This endpoint is crucial for understanding customer details and maintaining effective partnership.  
+Use this API to access general information for all of your customers. 
 
 ## Permissions  
 
-The following permission is required to call the APIs.  
-You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)  
+The following permission is required to call the API.  
+You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).  
 
-| API  | Permission  |
+| API  | Permission Required |
 |-----------|--------|
 | `/partner/customers` | partner.customers.read.all|  
 
 ## Request
 
-This section provides details on the method used to retrieve customer information.
+This section provides details on the HTTP method and endpoint used to retrieve general information for all of your customers.
 
-| Method | Path | Description |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/partner/customers` | Gets the general information of the customers that you manage. |
+| GET | `/partner/customers` | Retrieves general information for all of your customers. |
 
 ## Response
 
@@ -25,12 +25,46 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| Id | The tenant owner ID of the customer. | String |
-| Organization | The organization name of the customer. | String |
-| OwnerEmail | The tenant owner email address of the customer. | String |
-| JobStatus | The status of the customer’s tenant. | String |
-| CountryOrRegion | The country or region name of the customer. | String |
+| id | The tenant owner ID of the customer. | String |
+| organization | The organization name of the customer. | String |
+| ownerEmail | The tenant owner email address of the customer. | String |
+| jobStatus | The status of the customer’s tenant. | String |
+| countryOrRegion | The country or region name of the customer. | String |
 
+## Request Sample
+
+To use this API, send a GET request to the specified endpoint.
+```
+https://graph.avepointonlineservices.com/partner/customers
+```
 ## Response Sample  
 
-This section provides an example of the response you can expect when the API request is successfully processed.  
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+```
+{
+    "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Customers",
+    "value": [
+        {
+            "id": "00427fbc-8832-46cf-a1d2-582fa46ec638", // The tenant owner ID of the customer
+            "organization": "AvePoint test", // The organization name of the customer
+            "ownerEmail": "aptestariopus8@avepoint.com", // The tenant owner email address of the customer
+            "jobStatus": "Working", //The status of the customer’s tenant
+            "countryOrRegion": "Vietnam" // The country or region name of the customer
+        },
+        {
+            "id": "0088e14d-5275-487d-9078-bcb9fc33ebdb",
+            "organization": "AvePoint test",
+            "ownerEmail": "aptestariopus9@avepoint.com",
+            "jobStatus": "Working",
+            "countryOrRegion": "Vietnam"
+        },
+        {
+            "id": "00e4dde9-9b3f-40d6-b77f-25705db15101",
+            "organization": "AvePoint HN test",
+            "ownerEmail": "aptestari_storageepg@avepoint.com",
+            "jobStatus": "Working",
+            "countryOrRegion": "United States"
+        }
+    ]
+}
+```

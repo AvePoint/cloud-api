@@ -1,17 +1,17 @@
 # Retrieve Subscription Consumption
 
-The `/cloudbackup/licenseconsumption` API endpoint empower users to monitor subscription consumption through standardized HTTP GET requests. This API offers comprehensive insights into subscription usage, helping users manage resources efficiently and ensure compliance with their service agreements.  
+Get the subscription consumption information (`/cloudbackup/licenseconsumption` navigation property) of Cloud Backup for Microsoft 365. By invoking the `/cloudbackup/licenseconsumption` endpoint, users can gain comprehensive insights into subscription usage, facilitating efficient resource management and ensuring service compliance.  
 
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization)
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization).
 
 | API   | Permission  |
 |-------------------|----------------------|
 |`/cloudbackup/licenseconsumption`|microsoft365backup.subscriptionInfo.read.all |
 
-## API Method
+## Request
 
 | Method | Path | Description |
 | --- | --- | --- |
@@ -19,26 +19,27 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Responses
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+The API provides detailed metrics on subscription consumption, aiding in understanding resource allocation and usage. It includes data on user seats and storage, offering crucial insights for managing resources effectively and ensuring compliance with subscription limits.
 
-| Response | Description | Type |
+| Elements | Description | Type |
 | --- | --- | --- |
 | OutOfPolicyTime | The UTC timestamp when the subscription went out of policy. | long |
 | PurchasedUserSeats | Total number of purchased user seats | int |
 | AssignedUserSeats | Number of user seats currently assigned | int |
-| PurchasedStorageSize | Total number of purchased storage size(in GB) | int |
-| ProtectedSize | Amount of protected size(in GB) | int |
+| PurchasedStorageSize | Total purchased storage size (in GB) | int |
+| ProtectedSize | Protected data size (in GB) | int |
 
-## Response Example (`application/json`):
+## Response Sample
 
-The response provides detailed metrics on subscription consumption, helping you understand how resources are allocated and used. It includes information about user seats and storage. This insights is crucial for managing resources effectively and ensuring compliance with subscription limits.  
+If successful, this method returns a 200 OK response code and a collection of jobs in the response body.  
+For details on the HTTP status code, refer to [HTTP Status Code](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code).
 
-```ts
+```json
 {
-  OutOfPolicyTime?: long
-  PurchasedUserSeats?: int
-  AssignedUserSeats?: int
-  PurchasedStorageSize?: int
-  ProtectedSize?: int
+    "outOfPolicyTime": 0, // UTC timestamp for when the subscription expires
+    "purchasedUserSeats": 100, //Total number of purchased user seats
+    "assignedUserSeats": 47, // Current number of assigned user seats.
+    "purchasedStorageSize": 0, //Total purchased storage capacity (in GB)
+    "protectedSize": 0, //Protected storage size (in GB).
 }
 ```
