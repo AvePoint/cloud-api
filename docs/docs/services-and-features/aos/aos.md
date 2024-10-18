@@ -5,7 +5,11 @@ Use this API to retrieve audit records (`/aos/audit` navigation property) for ac
 ## Permission
 
 The following permission is required to call this API.  
+<<<<<<< HEAD
 You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/Use-AvePoint-Graph-Modern-API.md#authentication-and-authorization).
+=======
+You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization).
+>>>>>>> c57cd990c884f8e55f033f60917ed1f1d8624f1d
 
 | API    | Permission  | 
 |-------------------|---------------------|
@@ -94,13 +98,15 @@ If an error occurs, the following information is displayed in the response body.
 
 The following request is an API call to the AvePoint Online Services (AOS) environment in the US - East region. The API method being used is `/aos/audit`. This request is designed to fetch a specific set of audit logs from the AOS portal, within a defined timeframe, and limited to a particular geographical location.
 
-`https://graph-us.avepointonlineservices.com/aos/audit?startTime=2024-10-10T08:00:00Z&endTime=2024-10-14T17:00:00Z&productTypes=Portal&geoLocations=NAM`
+```json
+https://graph-us.avepointonlineservices.com/aos/audit?startTime=2024-10-10T08:00:00Z&endTime=2024-10-14T17:00:00Z&productTypes=Portal&geoLocations=NAM
+```
 
 ## Response Sample
 
 If successful, this method returns a 200 OK response code and a collection of user activities in the response body.
 
-```ts
+```json
 {
     "nextLink": null, // No results in the next page
     "data": [
