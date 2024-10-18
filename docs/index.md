@@ -2,6 +2,8 @@
 _layout: landing
 ---
 
+<div style="margin-left: 20%; margin-right: 20%;">
+
 <h1 style="text-align: center; margin-bottom: 32px;">Welcome to AvePoint Graph API Documentation</h1>
 
 <p style="margin-bottom: 32px;">
@@ -37,11 +39,11 @@ Unlock the full potential of AvePoint Cloud services with our comprehensive API 
 
   <div style="border:1px solid #ccc; padding:24px; border-radius:8px; box-shadow:2px 2px 12px #aaa; width: 30%;">
     <h3 style="margin-bottom: 16px;">Use Cases</h3>
-    <ol>
+    <ul>
       <li><b>Secure Data Access and Management</b>: Implement robust authentication to ensure only authorized users can access or modify data, meeting stringent security and compliance standards.</li>
       <li><b>Compliance and Security Audits</b>: Retrieve audit records to facilitate compliance checks and security audits, which will help to identify unauthorized activities and maintain a secure environment.</li>
       <li><b>Streamline Partner Operations</b>: Enhance collaboration and efficiency by managing partner-related workflows through the Elements platform, using the API to integrate and automate processes.</li>
-    </ol>
+    </ul>
     <div style="text-align: right;">
       <a href="./docs/Use%20Cases.md" style="text-decoration:none; color:blue;">See More</a>
     </div>
