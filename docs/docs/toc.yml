@@ -1,8 +1,8 @@
 - href: Overview.md
 
 - name: Get Started
-  href: "Use AvePoint Graph Modern API.md" 
-- href: "Use Cases.md"
+  href: "Use-AvePoint-Graph-Modern-API.md" 
+- href: "Use-Cases.md"
 - name: Services and Features
   href: "services-and-features/toc.yml"
 
