@@ -1,6 +1,6 @@
 # Retrieve  All Scan Profiles
 
-Use this API tor retrieve your customer's information for all scan profiles configured in AvePoint Online Services. 
+Use this API tor retrieve your customer's information for all scan profiles configured in AvePoint Online Services.  
 
 ## Permissions  
 
