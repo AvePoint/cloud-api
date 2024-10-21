@@ -13,12 +13,17 @@ You must register an app through Elements for Partners > App registration to aut
 | `/partner/customers/{Id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | partner.jobs.read.all  |  
 
 ## Request 
+
 This section provides details on the HTTP method and endpoint used to retrieve your customer's job details for a specific job type and module of backup services.
+
 | Method| Endpoint | Description |
 |-----------|--------|-------|
 | GET | `/partner/customers/{Id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | Retrieves your customer's job details for a specific job type and module of the backup services. |
+
 ## Query Parameters
+
 This section outlines the parameters required to specify the job type and module of backup services that you want to retrieve.
+
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | Id | The tenant owner ID of the customer. | String | Yes |
@@ -49,12 +54,17 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ***
 ## Request Sample
+
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
-```
+
+```json
 https://graph.avepointonlineservices.com/partner/customers/00427fbc-8832-46cf-a1d2-582fa46ec638/jobs/jobType/Microsoft 365/jobModule/SharePoint Online
 ```
+
 ## Response Sample
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code)[HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
 ```json 
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Collection(Portal.Api.Model.BackUpJob)",

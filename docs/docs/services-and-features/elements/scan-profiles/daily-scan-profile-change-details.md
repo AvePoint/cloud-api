@@ -52,13 +52,13 @@ If the request has been successfully processed, a 200 OK response will be return
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.  
 
-```
+```json
 https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43bb-b04b-794cb9af5ea3/scanProfilesDailyNew/profileId/0e5e152d-65cc-4206-9829-636ee72c88c3
 ```
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
 
 ```json 
 {
