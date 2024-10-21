@@ -78,7 +78,7 @@ If successful, the following objects are displayed in the response body.
 | functionality | string | Functionality related to the action. | No |
 | objectName | string | Name of the object related to the action. | No |
 | action | string | Name of the action. This parameter is only for Cloud Governance. | No |
-| clientIP | string | Public IP adress for the action. | No |
+| clientIP | string | Public IP address for the action. | No |
 | additionalDetails | object | Name of the action. This parameter is only for Confide. | No |
 
 #### ErrorResponse
