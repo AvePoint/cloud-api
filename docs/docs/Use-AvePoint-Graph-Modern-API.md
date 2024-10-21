@@ -1,15 +1,18 @@
-# Use the AvePoint Graph Modern API  
+# Use AvePoint Graph Modern API <!-- omit in toc -->
 
 **In this article**
 
-- [Use the AvePoint Graph Modern API](#use-the-avepoint-graph-modern-api)
-  - [Authentication and Authorization](#authentication-and-authorization)
-  - [Call an API Method](#call-an-api-method)
-    - [Request Components](#request-components)
-    - [Response Components](#response-components)
-  - [HTTP Methods](#http-methods)
-  - [HTTP Status Code](#http-status-code)
-  - [Resource](#resource)
+<!-- TOC -->
+
+- [Authentication and Authorization](#authentication-and-authorization)
+- [Call an API Method](#call-an-api-method)
+  - [Request Components](#request-components)
+  - [Response Components](#response-components)
+- [HTTP Methods](#http-methods)
+- [HTTP Status Code](#http-status-code)
+- [Resource](#resource)
+
+<!-- /TOC -->
 
 Welcome to the AvePoint Graph Modern API, your gateway to accessing and managing the AvePoint Confidence Platform with efficiency and security. This API is designed to streamline your data management and backup monitoring processes, providing IT professionals with robust tools and insights.  
 
