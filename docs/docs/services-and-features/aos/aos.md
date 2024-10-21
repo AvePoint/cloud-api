@@ -6,7 +6,7 @@ Use this API to retrieve audit records (`/aos/audit` navigation property) for ac
 
 The following permission is required to call this API.  
 
-You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/Use-AvePoint-Graph-Modern-API.md#authentication-and-authorization), or [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization), or [Authentication and Authorization](/docs/docs/Use-AvePoint-Graph-Modern-API.md#authentication-and-authorization), [Authentication and Authorization](/docs/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
 
 | API    | Permission  | 
 |-------------------|---------------------|
@@ -89,7 +89,7 @@ If an error occurs, the following information is displayed in the response body.
 | ---- | ---- | ----------- | -------- |
 | requestId | string | Represents the request ID. | No |
 | date | dateTime |Represents the date and time of this request  | Yes |
-| statusCode | [HttpStatusCode](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code) |Represents the HTTP error code.  | Yes |
+| statusCode | [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code) |Represents the HTTP error code.  | Yes |
 
 ## Request Sample
 

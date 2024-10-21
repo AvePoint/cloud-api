@@ -5,7 +5,7 @@ Get the job-related information (`backup/vm/jobs` navigation property) from Clou
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
 
 | API     | Permission required | Permission type |
 |-------------------|---------------|----------------------|
@@ -52,7 +52,7 @@ If the request has been successfully processed, a 200 OK response will be return
 |finishTime|The end time of the job.|integer|
 |duration|Duration of the job.|integer|
 |comments|Comments for the job.|string|
-|errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code).|string|
+|errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).|string|
 |nextlink|Returns the link to the next page of results.|string|
 
 ## Request Sample

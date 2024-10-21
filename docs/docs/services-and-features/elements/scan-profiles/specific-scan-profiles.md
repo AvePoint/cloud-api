@@ -12,13 +12,17 @@ You must register an app through Elements for Partners > App registration to aut
 | `/partner/customers/{id}/scanProfilesDetails/profileId/{ProfileId}`|partner.scanprofiles.read.all |  
 
 ## Request
+
 This section outlines the details on the HTTP method and endpoint used to retrieve your customer's information for a specific scan profile configured in AvePoint Online Services.
+
 | Method | Endpoint | Description |
 |-----------|--------|------------|
 | GET | `/partner/customers/{id}/scanProfilesDetails/profileId/{ProfileId}` | Retrieves your customer's information for a specific scan profile configured in AvePoint Online Services.|
 
-## Query Parameters 
+## Query Parameters
+
 This section outlines the parameters required to specify which customer's specific scan profile in AvePoint Online Services you want to retrieve.
+
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
 | Id | The tenant owner ID of the customer. | String | Yes |
@@ -45,14 +49,18 @@ If the request has been successfully processed, a 200 OK response will be return
 | isSendOutOfPolicyNotification | Whether the **Send an email notification to the following recipients when objects are moved to other containers or removed from any containers** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
 | containers | The container details of the scan profile. | String |
 
-***
 ## Request Sample
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
-```
+
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
+
+```json
 https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b04b-794cb9af5ea3/scanProfilesDetails/profileId/0e5e156e-65cc-4206-9829-636ee72c88c3
 ```
+
 ## Response Sample
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
 ```json 
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDetailInfo",
@@ -66,11 +74,11 @@ If the request has been successfully processed, a 200 OK response will be return
     "createdTime": "08/01/2024 06:29:55", // The created time of the scan profile
     "impersonationAccount": null, // The impersonation account configured in the scan profile
     "scanInplaceArchivedMailboxes": false, // Whether to scan in-place archived mailboxes configured in the scan profile: False represents Do not scan in-place archived mailbox
-    "ignoreTheLockedObjectsWhenUpdatingTheJobStatus": false, // Whether the Ignore the locked objects when updating the job status setting is enabled in the scan profile: False represents Disabled
-    "IsIgnoreLockedSiteEnabled": false, // Whether to ignore the locked sites in the scan profile: False represents Disabled
+    "ignoreTheLockedObjectsWhenUpdatingTheJobStatus": false, // Deprecated. Indicates whether the Ignore the locked objects when updating the job status setting is enabled in the scan profile: False represents Disabled
+    "IsIgnoreLockedSiteEnabled": false, // Indicates whether to ignore the locked sites in the scan profile: False represents Disabled
     "enableDailyScan": "No", // Whether the Enable daily scan setting is enabled in the scan profile
-    "SendAnemailNotificationToTheFollowIngRecipientsWhenObjectsAreMovedTooTherContainerOrRemovedFromAnyContainers": false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: False reprefents Disabled
-    "IsSendOutOfPolicyNotification": false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: False represents Disabled
+    "SendAnemailNotificationToTheFollowIngRecipientsWhenObjectsAreMovedTooTherContainerOrRemovedFromAnyContainers": false, // Deprecated. Indicates whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: False represents Disabled
+    "IsSendOutOfPolicyNotification": false, // Indicates whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: False represents Disabled
     "containers": [
         {
             "ContainersName": "Default_ Mailbox_ Group", // The container name

@@ -5,7 +5,7 @@ Get the job-related information (`/cloudbackup/jobs` navigation property) from C
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
 
 | API   | Permission |
 |-------------------|---------------|
@@ -79,7 +79,7 @@ https://graph-us.avepointonlineservices.com/cloudbackup/jobs?StartTime=0&FinishT
 ## Response Sample
 
 If successful, this method returns a 200 OK response code and a collection of jobs in the response body.  
-For details on the HTTP status code, refer to [HTTP Status Code](/docs/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code). 
+For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).  
 
 ```json
 {
