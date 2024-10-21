@@ -52,7 +52,7 @@ This API employs advanced authentication methods to ensure secure and efficient 
 
 - Job Information Retrieval: Detailed insights into Cloud Backup operations to ensure data integrity and availability.  
 
-For more features and use cases, visit the [Use Cases](Use%20Cases.md).  
+For more features and use cases, visit the [Use Cases](Use-Cases.md).  
 
 ### Endpoints Upon Data Center
 
