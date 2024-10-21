@@ -34,13 +34,16 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint.
-```
+
+```json
 https://graph.avepointonlineservices.com/partner/customers
 ```
+
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
-```
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
+```json
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Customers",
     "value": [

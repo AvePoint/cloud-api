@@ -13,14 +13,17 @@ You must register an app through Elements for Partners > App registration to aut
 
 
 ## Request
+
 This section outlines the details on the HTTP method and endpoint used to retrieve your customer's job details for backup services.
+
 | Method |Endpoint| Description |
 |-----------|--------|-------|
 | GET | `/partner/customers/{Id}/jobs` | Retrieves your customer's job details for backup services. |
 
-
 ## Query Parameters
+
 This section outlines the parameters required to specify which customer's job details for backup services you want to retrieve.
+
 | Parameter | Description | Type | Required |
 | --- | --- | --- |--- |
 | Id | The tenant owner ID of the customer. | String | Yes |
@@ -48,13 +51,18 @@ If the request has been successfully processed, a 200 OK response will be return
 | lastModifyTime | The last modified time of the job. | DateTime |
 
 ## Request Sample
+
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
-```
+
+```json
 https://graph.avepointonlineservices.com/partner/customers/00427fbc-8832-46cf-a1d2-582f46e638/jobs
 ```
+
 ## Response Sample 
-If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
-```json 
+
+If the request has been successfully processed, a 200 OK response will be returned, along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
+```json  
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Collection(Portal.Api.Model.BackUpJob)",
     "value": [

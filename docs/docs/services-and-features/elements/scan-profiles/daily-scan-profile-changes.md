@@ -19,16 +19,16 @@ This section outlines the details on the HTTP method and endpoint used to retrie
 |-----------|--------|-----------|
 |GET|`/partner/customers/{id}/scanProfilesDailyNew/profileId/{ProfileId}`|Retrieves your customer's daily scan profile changes in AvePoint Online Services.|
 
-
 ## Query Parameters
 
 This section outlines the parameters required to specify which customer's specific daily scan profile changes in AvePoint Online Services you want to retrieve.
+
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | Id | The tenant owner ID of the customer. | String | Yes |
 | ProfileId | The ID of the scan profile. | String | Yes |
 
-#### Responses
+## Responses
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
 
@@ -47,14 +47,18 @@ If the request has been successfully processed, a 200 OK response will be return
 | movedToAnotherContainer | The number of objects moved to another container in the daily report of the scan profile. | Int |
 | removedFromMicrosoft365OrOutofPolicy | The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | Int |
 
-***
 ## Request Sample
+
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
-```
+
+```json
 https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b04b-794cb9af5ea3/scanProfilesDailyNew/profileId/0e5c152d-65ec-4206-9829-636ee72c88c3
 ```
+
 ## Response Sample 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
 ```json 
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDailyNewInfo",

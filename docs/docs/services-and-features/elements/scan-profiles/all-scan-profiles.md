@@ -14,16 +14,16 @@ You must register an app through Elements for Partners > App registration to aut
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Servcies.
+This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Services.
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
 |GET|`/partner/customers/{id}/scanProfiles`|Retrieves your customer's information for all scan profiles configured in AvePoint Online Services.|
 
-
 ## Query Parameters
 
 This section outlines the parameters required to specify which customer's information for scan profiles you want to retrieve.
+
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | Id | The tenant owner ID of the customer. | String | Yes |
@@ -40,12 +40,17 @@ If the request has been successfully processed, a 200 OK response will be return
 | modifiedTime | The last modified time of the scan profile. | String |
 
 ## Request Sample
+
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
-```
+
+```json
 https://graph.avepointonlineservices.com/partner/customers/caf94a89-2cc6-47aa-b04b-794cb9af5ea3/ScanProfiles
 ```
+
 ## Response Sample
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](/docs/use-avepoint-graph-modern-API/##HTTP-Status-Code).
+
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
 ```json 
 {
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Collection(Portal.Api.Model.ProfileInfo)",
