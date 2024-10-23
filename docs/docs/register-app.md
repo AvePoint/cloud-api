@@ -21,8 +21,8 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 5. Obtain Application (Client) ID  
    - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
 6. Authentication: Based on the credentials of your app registration, refer to the following instructions to get access token:  
-   - See [Client Secret](#client-secret). 
-   - See [Certificate](#certificate). 
+   - See [Client Secret](#client-secret).  
+   - See [Certificate](#certificate).  
 
 
 ## Services and Permissions  
