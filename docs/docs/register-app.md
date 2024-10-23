@@ -4,22 +4,22 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 1. Access AvePoint Online Services  
    - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).
-2. Navigate to App Registration:  
-   - Go to **Administration** > **App registration**.  
+2. Navigate to App Registrations:  
+   - Go to **Administration** > **App registrations**.  
 3. Register a New App with Required Permissions:  
-   1. Click **Create** on the **App registration** page.  
+   1. Click **Create** on the **App registrations** page.  
    2. On the **Create app registration** page, enter a name for the app.  
    3. Click **Add service and permission**.  
    4. In the **Add service and permission** pane, select the services and corresponding permissions that you need to grant to this app, and then click **Add**. 
    >[!NOTE]
-   > For the services and permissions that you can grant to the app for using Graph API, refer to [Services and Permissions](#services-and-permissions)
+   > For the services and permissions that you can grant to the app for using Graph API, refer to [Services and Permissions](#services-and-permissions).
 4. Use a certificate or client secret as the app credentials. Credentials enable application to identify themselves to the authentication service when receiving tokens at a web addressable location (using an HTTPS schema). For a higher level of assurance, we recommend using a certification. Follow the instructions below to configure credentials:  
      - The certificate serves as credentials that allow your application to authenticate itself, requiring no interaction from a user at runtime. Refer to [Prepare a Certificate for the Custom Azure App](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/prepareacertificateforthecustomazureapp.htm) section in AvePoint Online Services user guide to prepare a certificate.  
         >[!NOTE]
         > If your organization is using AvePoint Opus, you can generate and download a certificate in AvePoint Opus Control Panel > Agent Management. For details, refer to [AvePoint Opus User Guide](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/registeragents.htm).
      - If you choose to use the client secret, you can generate a client secret effective within 1 year, 2 years, or 3 years. Client secret values cannot be entirely shown once they are saved.  
 5. Obtain Application (Client) ID  
-   - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
+   - After you have created the app registration, you can click the Copy button to copy the **Application (Client) ID** value which will be used to get an access token in the next step.  
 6. Authentication: Based on the credentials of your app registration, refer to the following instructions to get access token:  
    - See [Client Secret](#client-secret). 
    - See [Certificate](#certificate). 
@@ -27,7 +27,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 ## Services and Permissions  
 
-See the table below for the service and permissions that can be used tor accessing API:  
+See the table below for the services and permissions that can be used tor accessing API:  
 
 | AvePoint Cloud Service   | Permission |Usage                   |  
 |------------|----------|----------|  
@@ -73,7 +73,7 @@ To obtain an access token using a client secret in an app registration, follow t
 
  ## Certificate  
 
-To obtain an access token using a certificate in an app registration, following the instructions below:  
+To obtain an access token using a certificate in an app registration, follow the instructions below:  
 
 1. Ensure .NET 6 or later is installed.  
 2. Create a new project. Use the following command to create a new project and add the required package.  
@@ -190,7 +190,7 @@ To obtain an access token using a certificate in an app registration, following 
     ```
 
     >[!NOTE]
-    > Ajust the `IDENTITY_SERVICE_URI` based on your AvePoint environment.  
+    > Ajust the `IDENTITY_SERVICE_URI` based on your AvePoint Online Services environment.  
     >
     > |AOS Environment| Identity Services URL|
     > |---|---|
