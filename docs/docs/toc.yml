@@ -2,6 +2,7 @@
 
 - name: Get Started
   href: "Use-AvePoint-Graph-Modern-API.md" 
+- href: "App Registration"
 - href: "Use-Cases.md"
 - name: Services and Features
   href: "services-and-features/toc.yml"
