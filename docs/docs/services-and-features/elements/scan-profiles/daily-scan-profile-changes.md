@@ -55,7 +55,7 @@ To use this API, send a GET request to the specified endpoint, including necessa
 https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b04b-794cb9af5ea3/scanProfilesDailyNew/profileId/0e5c152d-65ec-4206-9829-636ee72c88c3
 ```
 
-## Response Sample 
+## Response Sample
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
 
