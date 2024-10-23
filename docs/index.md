@@ -2,7 +2,7 @@
 _layout: landing
 ---
 
-<div style="margin-left: 20%; margin-right: 20%;">
+<div style="margin-left: 5%; margin-right: 5%;">
 
 <h1 style="text-align: center; margin-bottom: 32px;">Welcome to AvePoint Graph API Documentation</h1>
 
