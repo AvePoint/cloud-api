@@ -2,7 +2,8 @@
 
 - name: Get Started
   href: "Use-AvePoint-Graph-Modern-API.md" 
-- href: "App Registration"
+- name: Register an App for Modern API
+  href: "register-app.md"
 - href: "Use-Cases.md"
 - name: Services and Features
   href: "services-and-features/toc.yml"
