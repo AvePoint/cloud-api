@@ -36,11 +36,11 @@ See the table below for the services and permissions that can be used tor access
  | **Cloud Backup for IaaS + PaaS**  |  platformbackup.readwrite.all    | Get job information from Cloud Backup for IaaS + PaaS.                 |
  | **Cloud Backup for Microsoft 365** | microsoft365backup.jobInfo.read.all    | Get job information from Cloud Backup for Microsoft 365. |
  || microsoft365backup.subscriptionInfo.read.all|Get the subscription consumption information of Cloud Backup for Microsoft 365. |
- | **AvePoint Opus**    |                   | Register Agents to connect AvePoint Opus to SharePoint On-Premises and File System to access and manage the content. Use public APIs to connect AvePoint Opus to other systems to access and manage the content. |
-| **EnPower**    |                         | Retrieve data from EnPower. Register Agents to connect EnPower to on-premises users and groups for resource management. |
- | **Fly**   |                              | Perform migrations with Fly.                                                |
- | **Insights for Microsoft 365** |         | Retrieve data from Insights for Microsoft 365.                              |
- | **Cloud Governance**  |                  | Manage data in Cloud Governance.       |
+ | **AvePoint Opus**    |     records.readwrite.all  | Connect AvePoint Opus to other systems to access and manage the content. For details, see [AvePoint Opus API for Connector](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm) |
+| **EnPower**    |      enpower.data.read.all                   | Retrieve data from EnPower. For details, see [EnPower Web API](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm) |
+ | **Fly**   |       fly.graph.readwrite.all                       | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                               |
+ | **Insights for Microsoft 365** | insights.graph.readwrite.all        | Retrieve data from Insights for Microsoft 365. For details, see [Insights for Microsoft 365 Web API](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)                             |
+ | **Cloud Governance**  |     cloudgovernance.fullcontrol.all             | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance Modern API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm)      |
 
 
  ## Client Secret
