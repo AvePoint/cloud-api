@@ -4,8 +4,6 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 1. Access AvePoint Online Services  
    - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).
-2. Navigate to App Registration:  
-   - Go to **Administration** > **App registration**.  
 3. Register a New App with Required Permissions:  
    1. Click **Create** on the **App registration** page.  
    2. On the **Create app registration** page, enter a name for the app.  
@@ -206,4 +204,3 @@ To obtain an access token using a certificate in an app registration, following 
     eyJhbGc...
     [Scope]
     audit.read.all
-    ```

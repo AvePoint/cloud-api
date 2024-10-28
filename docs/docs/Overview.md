@@ -11,7 +11,7 @@ AvePoint Confidence Platform offers a range of APIs to suit different integratio
 The Modern API provides advanced features to optimize integration and security:  
 
 - Authentication methods: Supports client secret and certificate authentication for secure and efficient access control. This flexibility allows developers to choose the most suitable authentication method for their needs.  
-- Single endpoint: The API is access via `https://graph.avepointonlineservices.com` simplifying integration with AvePoint services. Note that the endpoint differs based upon the data center you want to access. For details, refer to [Endpoints Upon Data Centers](#endpoints-upon-data-center).  
+- Single endpoint: The API can be accessed via `https://graph.avepointonlineservices.com` simplifying integration with AvePoint services. Note that the endpoint differs based upon the data center you want to access. For details, refer to [Endpoints Upon Data Centers](#endpoints-upon-data-center).  
 - Comprehensive functionality: Enables seamless interaction with AvePoint services, supporting tasks like data management, reporting, and configuration.  
 - Scalability and performance: Designed to handle large-scale operations, ensuring reliability and speed in various enterprise scenarios.  
 
