@@ -20,9 +20,9 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
      - If you choose to use the client secret, you can generate a client secret effective within 1 year, 2 years, or 3 years. Client secret values cannot be entirely shown once they are saved.  
 5. Obtain Application (Client) ID  
    - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
-6. Authentication: Based on the credentials of your app registration, refer to the following instructions to get access token:  
-   - See [Client Secret](#client-secret).  
-   - See [Certificate](#certificate).  
+6. Get access token: Based on the credentials of your app registration, refer to the following instructions to get an access token:  
+   - Use [Client Secret](#client-secret): You need to send a POST request with the client ID, client secret, scope, and grant type.  
+   - Use [Certificate](#certificate). You need to generate a JWT signed with your certificate and send a POST request with the client ID, client assertion (the signed JWT), scope, and grant type. See the DotNet example in the linked section.  
 
 
 ## Services and Permissions  
@@ -36,7 +36,7 @@ See the table below for the service and permissions that can be used tor accessi
  | **Cloud Backup for IaaS + PaaS**  |  platformbackup.readwrite.all    | Get job information from Cloud Backup for IaaS + PaaS.                 |
  | **Cloud Backup for Microsoft 365** | microsoft365backup.jobInfo.read.all    | Get job information from Cloud Backup for Microsoft 365. |
  || microsoft365backup.subscriptionInfo.read.all|Get the subscription consumption information of Cloud Backup for Microsoft 365. |
- | **AvePoint Opus**    |     records.readwrite.all  | Connect AvePoint Opus to other systems to access and manage the content. For details, see [AvePoint Opus API for Connector](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm) |
+ | **AvePoint Opus**    |     records.readwrite.all  | Connect AvePoint Opus to other systems to access and manage the content. For details, see [AvePoint Opus API for Connector](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm) |c
 | **EnPower**    |      enpower.data.read.all                   | Retrieve data from EnPower. For details, see [EnPower Web API](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm) |
  | **Fly**   |       fly.graph.readwrite.all                       | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                               |
  | **Insights for Microsoft 365** | insights.graph.readwrite.all        | Retrieve data from Insights for Microsoft 365. For details, see [Insights for Microsoft 365 Web API](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)                             |
@@ -200,8 +200,10 @@ To obtain an access token using a certificate in an app registration, following 
 1. Execute the following command to run the project.  
    `dotnet run`
 2. Access token output. The console will display:  
+
     ```json
     [Access Token]
     eyJhbGc...
     [Scope]
     audit.read.all
+    ```
