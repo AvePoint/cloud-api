@@ -11,7 +11,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
    3. Click **Add service and permission**.  
    4. In the **Add service and permission** pane, select the services and corresponding permissions that you need to grant to this app, and then click **Add**. 
    >[!NOTE]
-   > For the services and permissions that you can grant to the app for using Graph API, refer to [Services and Permissions](#services-and-permissions)
+   > For the services and permissions that you can grant to the app for using Graph API, refer to [Services and Permissions](#services-and-permissions).
 4. Use a certificate or client secret as the app credentials. Credentials enable application to identify themselves to the authentication service when receiving tokens at a web addressable location (using an HTTPS schema). For a higher level of assurance, we recommend using a certification. Follow the instructions below to configure credentials:  
      - The certificate serves as credentials that allow your application to authenticate itself, requiring no interaction from a user at runtime. Refer to [Prepare a Certificate for the Custom Azure App](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/prepareacertificateforthecustomazureapp.htm) section in AvePoint Online Services user guide to prepare a certificate.  
         >[!NOTE]
@@ -26,7 +26,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 ## Services and Permissions  
 
-See the table below for the service and permissions that can be used tor accessing API:  
+See the table below for the services and permissions that can be used tor accessing API:  
 
 | AvePoint Cloud Service   | Permission |Usage                   |  
 |------------|----------|----------|  
@@ -35,7 +35,7 @@ See the table below for the service and permissions that can be used tor accessi
  | **Cloud Backup for IaaS + PaaS**  |  platformbackup.readwrite.all    | Get job information from Cloud Backup for IaaS + PaaS.                 |
  | **Cloud Backup for Microsoft 365** | microsoft365backup.jobInfo.read.all    | Get job information from Cloud Backup for Microsoft 365. |
  || microsoft365backup.subscriptionInfo.read.all|Get the subscription consumption information of Cloud Backup for Microsoft 365. |
- | **AvePoint Opus**    |     records.readwrite.all  | Connect AvePoint Opus to other systems to access and manage the content. For details, see [AvePoint Opus API for Connector](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm) |c
+ | **AvePoint Opus**    |     records.readwrite.all  | Connect AvePoint Opus to other systems to access and manage the content. For details, see [AvePoint Opus API for Connector](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm) |
 | **EnPower**    |      enpower.data.read.all                   | Retrieve data from EnPower. For details, see [EnPower Web API](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm) |
  | **Fly**   |       fly.graph.readwrite.all                       | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                               |
  | **Insights for Microsoft 365** | insights.graph.readwrite.all        | Retrieve data from Insights for Microsoft 365. For details, see [Insights for Microsoft 365 Web API](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)                             |
@@ -72,7 +72,7 @@ To obtain an access token using a client secret in an app registration, follow t
 
  ## Certificate  
 
-To obtain an access token using a certificate in an app registration, following the instructions below:  
+To obtain an access token using a certificate in an app registration, follow the instructions below:  
 
 1. Ensure .NET 6 or later is installed.  
 2. Create a new project. Use the following command to create a new project and add the required package.  
@@ -189,7 +189,7 @@ To obtain an access token using a certificate in an app registration, following 
     ```
 
     >[!NOTE]
-    > Ajust the `IDENTITY_SERVICE_URI` based on your AvePoint environment.  
+    > Adjust the `IDENTITY_SERVICE_URI` based on your AvePoint Online Services environment.  
     >
     > |AOS Environment| Identity Services URL|
     > |---|---|
