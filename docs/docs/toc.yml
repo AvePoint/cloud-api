@@ -2,7 +2,7 @@
 
 - name: Get Started
   href: "Use-AvePoint-Graph-Modern-API.md" 
-- name: Register an App for Modern API
+- name: Register an App
   href: "register-app.md"
 - href: "Use-Cases.md"
 - name: Services and Features

@@ -4,8 +4,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 1. Access AvePoint Online Services  
    - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).
-2. Navigate to App Registrations:  
-   - Go to **Administration** > **App registrations**.  
+2. Navigate to **Administration** > **App registrations**.
 3. Register a New App with Required Permissions:  
    1. Click **Create** on the **App registrations** page.  
    2. On the **Create app registration** page, enter a name for the app.  
@@ -19,10 +18,10 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
         > If your organization is using AvePoint Opus, you can generate and download a certificate in AvePoint Opus Control Panel > Agent Management. For details, refer to [AvePoint Opus User Guide](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/registeragents.htm).
      - If you choose to use the client secret, you can generate a client secret effective within 1 year, 2 years, or 3 years. Client secret values cannot be entirely shown once they are saved.  
 5. Obtain Application (Client) ID  
-   - After you have created the app registration, you can click the Copy button to copy the **Application (Client) ID** value which will be used to get an access token in the next step.  
-6. Authentication: Based on the credentials of your app registration, refer to the following instructions to get access token:  
-   - See [Client Secret](#client-secret).  
-   - See [Certificate](#certificate).  
+   - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
+6. Get access token: Based on the credentials of your app registration, refer to the following instructions to get an access token:  
+   - Use [Client Secret](#client-secret): You need to send a POST request with the client ID, client secret, scope, and grant type.  
+   - Use [Certificate](#certificate). You need to generate a JWT signed with your certificate and send a POST request with the client ID, client assertion (the signed JWT), scope, and grant type. See the DotNet example in the linked section.  
 
 
 ## Services and Permissions  
@@ -190,7 +189,7 @@ To obtain an access token using a certificate in an app registration, follow the
     ```
 
     >[!NOTE]
-    > Ajust the `IDENTITY_SERVICE_URI` based on your AvePoint Online Services environment.  
+    > Adjust the `IDENTITY_SERVICE_URI` based on your AvePoint Online Services environment.  
     >
     > |AOS Environment| Identity Services URL|
     > |---|---|
@@ -200,6 +199,7 @@ To obtain an access token using a certificate in an app registration, follow the
 1. Execute the following command to run the project.  
    `dotnet run`
 2. Access token output. The console will display:  
+
     ```json
     [Access Token]
     eyJhbGc...
