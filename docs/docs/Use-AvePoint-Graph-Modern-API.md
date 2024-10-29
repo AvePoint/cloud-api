@@ -37,19 +37,19 @@ To interact with resources, construct a request as follows:
 
 ### Request Components
 
-- {HTTP method} - The HTTP method used for the request.
-- {resource} - The referenced resource.
-- {query-parameters} - Optional parameters to customize the response.
+- {HTTP method} – The HTTP method used for the request.
+- {resource} – The referenced resource.
+- {query-parameters} – Optional parameters to customize the response.
 
 ### Response Components
 
 After making a request, a response is returned that includes:
 
-- Status code - An HTTP status code that indicates success or failure.  
-- Response message - The data that you requested or the result of the operation. The response message can be empty for some operations.  
-- nextLink - If your request returns a lot of data, you need to page through it by using the URL returned in nextLink.
+- Status code – An HTTP status code that indicates success or failure.  
+- Response message – The data that you requested or the result of the operation. The response message can be empty for some operations.  
+- nextLink – If your request returns a lot of data, you need to page through it by using the URL returned in nextLink.
 
-- Response headers - Additional information about the response, such as the type of content returned and the request-id that you can use to correlate the response to the request.  
+- Response headers – Additional information about the response, such as the type of content returned and the request-id that you can use to correlate the response to the request.  
 
 ## HTTP Methods
 
@@ -65,9 +65,9 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 
 | Code | Description |
 | ---- | ----------- |
-| 200 | OK - The request was successful, and hte response contains the requested data. |
-| 400 | Bad Request - The request could not be processed due to invalid parameters. |
-| 500 | Internal Server Error - An unexpected server error occurred. |
+| 200 | OK – The request was successful, and hte response contains the requested data. |
+| 400 | Bad Request – The request could not be processed due to invalid parameters. |
+| 500 | Internal Server Error – An unexpected server error occurred. |
 
 ## Resource  
 
