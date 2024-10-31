@@ -71,13 +71,13 @@ If successful, this method returns a 200 OK response code and a collection of  j
 {
     "totalCount": 51, // Total count of jobs
     "jobs": [
-	    {
+        {
             "jobId": "FB20241027081716326", // Unique job identifier 
             "status": 2, // The job is in progress
             "failedCount": 0, // Count of objects with errors
-            "successfulCount": 16, // Count of successful objects
+            "successfulCount": 1, // Count of successful objects
             "skippedCount": 0, // Count of skipped objects
-            "totalCount": 16, // Total count of objects
+            "totalCount": 1, // Total count of objects
             "startTime": "2024-10-27T08:17:06Z", // Start time of the job
             "finishTime": "2024-10-27T08:21:08Z", // Finish time of the job
             "duration": "00:04:01", // Duration of the job
@@ -119,7 +119,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "duration": "13:02:26", // Duration of the job
             "comments": "" // Comments for the job
         },
-		        {
+        {
             "jobId": "IB20241001160011064", // Unique job identifier
             "status": 2, // The job is in progress
             "failedCount": 0, // Count of objects with errors
