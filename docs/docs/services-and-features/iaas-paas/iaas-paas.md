@@ -26,8 +26,8 @@ The API supports several query parameters to refine and customize the data retri
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
 | SearchText | query | Searches by job ID or description. | No | string |
-| StartTime | query | Sets a start time (UTC time) for the time range. | No | integer |
-| FinishTime | query | Sets an end time (UTC time) for the time range. | No | integer |
+| StartTime | query | Sets a start time (UTC time) for the time range. format:ISO 8601 | No | string |
+| FinishTime | query | Sets an end time (UTC time) for the time range. format:ISO 8601 | No | string |
 | ServiceType | query | Sets the service type of the jobs to get.<ul>  <li> **1** for VM</li>  <li> **2** for AAD</li><li> **4** for AzureFile</li>  <li> **8** for FileShare</li><li> **16** for BlobStorage</li><li> **32** for AKS</li>  <li> **64** for APSetting</li><li> **128** for Common</li>  <li> **256** for AmazonEC2</li><li> **512** for AzureSQL</li><li> **1024** for AzureDevOps</li></ul> | No | Enum |
 | JobType | query | Sets the job types that you want to get.<ul><li> **1** for Backup</li><li> **2** for Restore</li><li> **4** for Export</li><li> **8** for Report</li><li> **16** for VMSync</li><li> **32** for GenIndex</li><li> **33** for AADCompare</li><li> **34** for Retention</li><li> **64** for AADBackup</li><li> **128** for AADRestore</li><li> **256** for AADExport</li><li> **257** for FileSync</li><li> **512** for FileBackup</li><li> **1024** for FileRestore</li><li> **2048** for FileExport</li><li> **4096** for LicenseSync</li><li> **8192** for AOSUpdate</li><li> **16384** for AKSBackup</li><li> **20000** for AKSSync</li><li> **20001** for AKSRestore</li><li> **20002** for APSettingBackup</li><li> **20003** for APSettingExport</li><li> **20004** for APSettingSync</li><li> **20005** for APSettingRestore</li><li> **20006** for ExportCleanUp</li><li> **20007** for EC2Backup</li><li> **20009** for EC2Restore</li><li> **20010** for SQLSync</li><li> **20011** for SQLBackup</li><li> **20012** for SQLRestore</li><li> **20013** for DevOpsBackup</li><li> **20014** for DevOpsRestore</li><li> **20015** for SoftDelete</li><li> **30000** for HardDelete</li><li> **30001** for AdditionalType</li></ul> | No | Enum |
 | PageNumber | query | Sets the starting number of the page. The default value is 0. | No | integer |
@@ -43,14 +43,14 @@ If the request has been successfully processed, a 200 OK response will be return
 |totalCount|Total count of jobs matching the query parameters.|integer|
 |jobs|A collection of jobs.|integer|
 |jobId|Unique identifier for the job. |string|
-|state|Indicates the state of the job.<ul>  <li>**0** for Not Started</li>  <li>**1** for In Progress</li>  <li>**2** for Successful</li>  <li>**4** for Skipped</li>  <li>**8** for Exception</li>  <li>**16** for Failed</li>  <li>**32** for Waiting</li>  <li>**64** for Stopped</li></ul> |Enum|
+|status|Indicates the state of the job.<ul>  <li>**0** for Not Started</li>  <li>**1** for In Progress</li>  <li>**2** for Successful</li>  <li>**4** for Skipped</li>  <li>**8** for Exception</li>  <li>**16** for Failed</li>  <li>**32** for Waiting</li>  <li>**64** for Stopped</li></ul> |Enum|
 |failedCount|Count of objects with errors.|integer|
 |successfulCount|Count of objects successfully proceed.|integer|
 |skippedCount|Count of objects skipped during processing.|integer|
 |totalCount|Total count of objects in the job.|integer|
-|startTime|The start time of the job.|integer|
-|finishTime|The end time of the job.|integer|
-|duration|Duration of the job.|integer|
+|startTime|The start time of the job. format:ISO 8601|string|
+|finishTime|The end time of the job. format:ISO 8601|string|
+|duration|Duration of the job.|string|
 |comments|Comments for the job.|string|
 |errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).|string|
 |nextlink|Returns the link to the next page of results.|string|
