@@ -26,8 +26,8 @@ The API supports several query parameters to refine and customize the data retri
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ------ |
 | SearchText | query | Searches by job ID or description. | No | string |
-| StartTime | query | Sets a start time (UTC time) for the time range. | No | integer |
-| FinishTime | query | Sets an end time (UTC time) for the time range. | No | integer |
+| StartTime | query | Sets a start time (UTC time) for the time range. format: ISO 8601 | No | string |
+| FinishTime | query | Sets an end time (UTC time) for the time range. format: ISO 8601 | No | string |
 | ServiceType | query | Sets the service type of the jobs to get.<ul>  <li> **1** for VM</li>  <li> **2** for AAD</li><li> **4** for AzureFile</li>  <li> **8** for FileShare</li><li> **16** for BlobStorage</li><li> **32** for AKS</li>  <li> **64** for APSetting</li><li> **128** for Common</li>  <li> **256** for AmazonEC2</li><li> **512** for AzureSQL</li><li> **1024** for AzureDevOps</li></ul> | No | Enum |
 | JobType | query | Sets the job types that you want to get.<ul><li> **1** for Backup</li><li> **2** for Restore</li><li> **4** for Export</li><li> **8** for Report</li><li> **16** for VMSync</li><li> **32** for GenIndex</li><li> **33** for AADCompare</li><li> **34** for Retention</li><li> **64** for AADBackup</li><li> **128** for AADRestore</li><li> **256** for AADExport</li><li> **257** for FileSync</li><li> **512** for FileBackup</li><li> **1024** for FileRestore</li><li> **2048** for FileExport</li><li> **4096** for LicenseSync</li><li> **8192** for AOSUpdate</li><li> **16384** for AKSBackup</li><li> **20000** for AKSSync</li><li> **20001** for AKSRestore</li><li> **20002** for APSettingBackup</li><li> **20003** for APSettingExport</li><li> **20004** for APSettingSync</li><li> **20005** for APSettingRestore</li><li> **20006** for ExportCleanUp</li><li> **20007** for EC2Backup</li><li> **20009** for EC2Restore</li><li> **20010** for SQLSync</li><li> **20011** for SQLBackup</li><li> **20012** for SQLRestore</li><li> **20013** for DevOpsBackup</li><li> **20014** for DevOpsRestore</li><li> **20015** for SoftDelete</li><li> **30000** for HardDelete</li><li> **30001** for AdditionalType</li></ul> | No | Enum |
 | PageNumber | query | Sets the starting number of the page. The default value is 0. | No | integer |
@@ -43,14 +43,14 @@ If the request has been successfully processed, a 200 OK response will be return
 |totalCount|Total count of jobs matching the query parameters.|integer|
 |jobs|A collection of jobs.|integer|
 |jobId|Unique identifier for the job. |string|
-|state|Indicates the state of the job.<ul>  <li>**0** for Not Started</li>  <li>**1** for In Progress</li>  <li>**2** for Successful</li>  <li>**4** for Skipped</li>  <li>**8** for Exception</li>  <li>**16** for Failed</li>  <li>**32** for Waiting</li>  <li>**64** for Stopped</li></ul> |Enum|
+|status|Indicates the state of the job.<ul>  <li>**0** for Not Started</li>  <li>**1** for In Progress</li>  <li>**2** for Successful</li>  <li>**4** for Skipped</li>  <li>**8** for Exception</li>  <li>**16** for Failed</li>  <li>**32** for Waiting</li>  <li>**64** for Stopped</li></ul> |Enum|
 |failedCount|Count of objects with errors.|integer|
 |successfulCount|Count of objects successfully proceed.|integer|
 |skippedCount|Count of objects skipped during processing.|integer|
 |totalCount|Total count of objects in the job.|integer|
-|startTime|The start time of the job.|integer|
-|finishTime|The end time of the job.|integer|
-|duration|Duration of the job.|integer|
+|startTime|The start time of the job. format: ISO 8601|string|
+|finishTime|The end time of the job. format: ISO 8601|string|
+|duration|Duration of the job.|string|
 |comments|Comments for the job.|string|
 |errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).|string|
 |nextlink|Returns the link to the next page of results.|string|
@@ -60,7 +60,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
 
 ```json
-https://graph-us.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType=1&pageSize=5&startTime=638527680000000000&finishTime=638633088000000000
+https://graph-us.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType=1&pageSize=5&startTime=2024-08-01T00:00:00Z&finishTime=2024-11-01T00:00:00Z
 ```
 
 ## Response Sample  
@@ -72,63 +72,63 @@ If successful, this method returns a 200 OK response code and a collection of  j
     "totalCount": 51, // Total count of jobs
     "jobs": [
         {
-            "jobId": "IB20240822160048505", // Unique job identifier
-            "state": 2, // The job is in progress
+            "jobId": "FB20241027081716326", // Unique job identifier 
+            "status": 2, // The job is in progress
             "failedCount": 0, // Count of objects with errors
-            "successfulCount": 0, // Count of successful objects
+            "successfulCount": 1, // Count of successful objects
             "skippedCount": 0, // Count of skipped objects
-            "totalCount": 0, // Total count of objects
-            "startTime": 638599392481859693, // Start time of the job
-            "finishTime": 638599398999332487, // Finish time of the job
-            "duration": 6517472794, // Duration of the job
+            "totalCount": 1, // Total count of objects
+            "startTime": "2024-10-27T08:17:06Z", // Start time of the job
+            "finishTime": "2024-10-27T08:21:08Z", // Finish time of the job
+            "duration": "00:04:01", // Duration of the job
             "comments": "" // Comments for the job
         },
         {
-            "jobId": "IB20240821160052944", // Unique job identifier 
-            "state": 2, // The job is in progress
+            "jobId": "IB20241025160014096", // Unique job identifier
+            "status": 2, // The job is in progress
             "failedCount": 0, // Count of objects with errors
-            "successfulCount": 0, // Count of successful objects
-            "skippedCount": 0, // Count of skipped objects
-            "totalCount": 0, // Total count of objects
-            "startTime": 638598528526352169, // Start time of the job
-            "finishTime": 638598529278694804, // Finish time of the job
-            "duration": 752342635, // Duration of the job
+            "successfulCount": 10, // Count of successful objects
+            "skippedCount": 35, // Count of skipped objects
+            "totalCount": 45, // Total count of objects
+            "startTime": "2024-10-25T16:00:14Z", // Start time of the job
+            "finishTime": "2024-10-27T08:00:58Z", // Finish time of the job
+            "duration": "1.16:00:44", // Duration of the job
             "comments": "" // Comments for the job
         },
         {
-            "jobId": "IB20240820160110886", // Unique job identifier
-            "state": 2, // The job is in progress
+            "jobId": "IB20241010055858683", // Unique job identifier 
+            "status": 2, // The job is in progress
             "failedCount": 0, // Count of objects with errors
-            "successfulCount": 0, // Count of successful objects
-            "skippedCount": 0, // Count of skipped objects
-            "totalCount": 0, // Total count of objects
-            "startTime": 638597664705763668, // Start time of the job
-            "finishTime": 638597667419407597, // Finish time of the job
-            "duration": 2713643929, // Duration of the job
+            "successfulCount": 15, // Count of successful objects
+            "skippedCount": 10, // Count of skipped objects
+            "totalCount": 25, // Total count of objects
+            "startTime": "2024-10-10T05:58:58Z", // Start time of the job
+            "finishTime": "2024-10-10T06:59:13Z", // Finish time of the job
+            "duration": "01:00:14", // Duration of the job
             "comments": "" // Comments for the job
         },
         {
-            "jobId": "IB20240819160046802", // Unique job identifier 
-            "state": 2, // The job is in progress
+            "jobId": "IB20241002054145888", // Unique job identifier
+            "status": 2, // The job is in progress
             "failedCount": 0, // Count of objects with errors
-            "successfulCount": 0, // Count of successful objects
-            "skippedCount": 0, // Count of skipped objects
-            "totalCount": 0, // Total count of objects
-            "startTime": 638596800464928012, // Start time of the job
-            "finishTime": 638596802112439803, // Finish time of the job
-            "duration": 1647511791, // Duration of the job
+            "successfulCount": 15, // Count of successful objects
+            "skippedCount": 20, // Count of skipped objects
+            "totalCount": 35, // Total count of objects
+            "startTime": "2024-10-02T05:41:45Z", // Start time of the job
+            "finishTime": "2024-10-02T18:44:11Z", // Finish time of the job
+            "duration": "13:02:26", // Duration of the job
             "comments": "" // Comments for the job
         },
         {
-            "jobId": "IB20240818160115845", // Unique job identifier
-            "state": 2, // The job is in progress
+            "jobId": "IB20241001160011064", // Unique job identifier
+            "status": 2, // The job is in progress
             "failedCount": 0, // Count of objects with errors
-            "successfulCount": 0, // Count of successful objects
+            "successfulCount": 88, // Count of successful objects
             "skippedCount": 0, // Count of skipped objects
-            "totalCount": 0, // Total count of objects
-            "startTime": 638595936755364616, // Start time of the job
-            "finishTime": 638595939121323200, // Finish time of the job
-            "duration": 2365958584, // Duration of the job
+            "totalCount": 88, // Total count of objects
+            "startTime": "2024-10-01T16:00:11Z", // Start time of the job
+            "finishTime": "2024-10-02T00:56:42Z", // Finish time of the job
+            "duration": "08:56:31", // Duration of the job
             "comments": "" // Comments for the job
         }
     ],
