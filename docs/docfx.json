@@ -30,6 +30,7 @@
     "globalMetadata": {
       "_appFooter": "<span>Copyright © 2024 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>",
       "_enableSearch": true,
+      "_disableContribution": true,
       "pdf": true,
       "pdfTocPage": true,
       "pdfFileName": "AvePoint Graph Modern API Documentation.pdf"
