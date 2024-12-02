@@ -7,9 +7,9 @@ Get the job-related information (`backup/vm/jobs` navigation property) from Clou
 The following permission is required to call this API.  
 You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
 
-| API     | Permission required | Permission type |
-|-------------------|---------------|----------------------|
-| `backup/vm/jobs` | PlatformBackup.ReadWrite.All | Application|
+| API     | Permission required | 
+|-------------------|---------------|
+| `backup/vm/jobs` | PlatformBackup.ReadWrite.All |
 
 ## Request  
 
@@ -23,16 +23,16 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify time ranges, service types, and other criteria to filter the results effectively.
 
-| Name | Located in | Description | Required | Schema |
+| Name | Located in | Description | Required | Type |
 | ---- | ---------- | ----------- | -------- | ------ |
-| SearchText | query | Searches by job ID or description. | No | string |
-| StartTime | query | Sets a start time (UTC time) for the time range. format: ISO 8601 | No | string |
-| FinishTime | query | Sets an end time (UTC time) for the time range. format: ISO 8601 | No | string |
-| ServiceType | query | Sets the service type of the jobs to get.<ul>  <li> **1** for VM</li>  <li> **2** for AAD</li><li> **4** for AzureFile</li>  <li> **8** for FileShare</li><li> **16** for BlobStorage</li><li> **32** for AKS</li>  <li> **64** for APSetting</li><li> **128** for Common</li>  <li> **256** for AmazonEC2</li><li> **512** for AzureSQL</li><li> **1024** for AzureDevOps</li></ul> | No | Enum |
-| JobType | query | Sets the job types that you want to get.<ul><li> **1** for Backup</li><li> **2** for Restore</li><li> **4** for Export</li><li> **8** for Report</li><li> **16** for VMSync</li><li> **32** for GenIndex</li><li> **33** for AADCompare</li><li> **34** for Retention</li><li> **64** for AADBackup</li><li> **128** for AADRestore</li><li> **256** for AADExport</li><li> **257** for FileSync</li><li> **512** for FileBackup</li><li> **1024** for FileRestore</li><li> **2048** for FileExport</li><li> **4096** for LicenseSync</li><li> **8192** for AOSUpdate</li><li> **16384** for AKSBackup</li><li> **20000** for AKSSync</li><li> **20001** for AKSRestore</li><li> **20002** for APSettingBackup</li><li> **20003** for APSettingExport</li><li> **20004** for APSettingSync</li><li> **20005** for APSettingRestore</li><li> **20006** for ExportCleanUp</li><li> **20007** for EC2Backup</li><li> **20009** for EC2Restore</li><li> **20010** for SQLSync</li><li> **20011** for SQLBackup</li><li> **20012** for SQLRestore</li><li> **20013** for DevOpsBackup</li><li> **20014** for DevOpsRestore</li><li> **20015** for SoftDelete</li><li> **30000** for HardDelete</li><li> **30001** for AdditionalType</li></ul> | No | Enum |
-| PageNumber | query | Sets the starting number of the page. The default value is 0. | No | integer |
-| PageSize | query | Sets the number of objects to display on one page. The default value is 10. | No | integer |
-| SkipToken | query | Sets the skip token got from next link from previous request, if setting this one, PageNumber will be ignored. | No | string |
+| searchText | query | Searches by job ID or description. | No | string |
+| startTime | query | Sets a start time (UTC time) for the time range. format: ISO 8601 | No | string |
+| finishTime | query | Sets an end time (UTC time) for the time range. format: ISO 8601 | No | string |
+| serviceType | query | Sets the service type of the jobs to get.<ul>  <li> **1** for VM</li>  <li> **2** for AAD</li><li> **4** for AzureFile</li>  <li> **8** for FileShare</li><li> **16** for BlobStorage</li><li> **32** for AKS</li>  <li> **64** for APSetting</li><li> **128** for Common</li>  <li> **256** for AmazonEC2</li><li> **512** for AzureSQL</li><li> **1024** for AzureDevOps</li></ul> | No | Enum |
+| jobType | query | Sets the job types that you want to get.<ul><li> **1** for Backup</li><li> **2** for Restore</li><li> **4** for Export</li><li> **8** for Report</li><li> **16** for VMSync</li><li> **32** for GenIndex</li><li> **33** for AADCompare</li><li> **34** for Retention</li><li> **64** for AADBackup</li><li> **128** for AADRestore</li><li> **256** for AADExport</li><li> **257** for FileSync</li><li> **512** for FileBackup</li><li> **1024** for FileRestore</li><li> **2048** for FileExport</li><li> **4096** for LicenseSync</li><li> **8192** for AOSUpdate</li><li> **16384** for AKSBackup</li><li> **20000** for AKSSync</li><li> **20001** for AKSRestore</li><li> **20002** for APSettingBackup</li><li> **20003** for APSettingExport</li><li> **20004** for APSettingSync</li><li> **20005** for APSettingRestore</li><li> **20006** for ExportCleanUp</li><li> **20007** for EC2Backup</li><li> **20009** for EC2Restore</li><li> **20010** for SQLSync</li><li> **20011** for SQLBackup</li><li> **20012** for SQLRestore</li><li> **20013** for DevOpsBackup</li><li> **20014** for DevOpsRestore</li><li> **20015** for SoftDelete</li><li> **30000** for HardDelete</li><li> **30001** for AdditionalType</li></ul> | No | Enum |
+| pageNumber | query | Sets the starting number of the page. The default value is 0. | No | integer |
+| pageSize | query | Sets the number of objects to display on one page. The default value is 10. | No | integer |
+| skiptoken | query | Sets the skip token got from next link from previous request, if setting this one, PageNumber will be ignored. | No | string |
 
 ## Response  
 
@@ -73,7 +73,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
     "jobs": [
         {
             "jobId": "FB20241027081716326", // Unique job identifier 
-            "status": 2, // The job is in progress
+            "status": 2, // Job status. 2 indicates the job is in progress.
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 1, // Count of successful objects
             "skippedCount": 0, // Count of skipped objects
@@ -85,15 +85,15 @@ If successful, this method returns a 200 OK response code and a collection of  j
         },
         {
             "jobId": "IB20241025160014096", // Unique job identifier
-            "status": 2, // The job is in progress
+            "status": 2, // Job status. 2 indicates the job is in progress.
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 10, // Count of successful objects
             "skippedCount": 35, // Count of skipped objects
             "totalCount": 45, // Total count of objects
             "startTime": "2024-10-25T16:00:14Z", // Start time of the job
             "finishTime": "2024-10-27T08:00:58Z", // Finish time of the job
-            "duration": "1.16:00:44", // Duration of the job
-            "comments": "" // Comments for the job
+            "duration": "1.16:00:44", // Duration of the job in days.hours:minutes:seconds format.
+            "comments": "" // Comments for the job.
         },
         {
             "jobId": "IB20241010055858683", // Unique job identifier 
@@ -104,7 +104,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "totalCount": 25, // Total count of objects
             "startTime": "2024-10-10T05:58:58Z", // Start time of the job
             "finishTime": "2024-10-10T06:59:13Z", // Finish time of the job
-            "duration": "01:00:14", // Duration of the job
+            "duration": "01:00:14", // Duration of the job in hours:minutes:seconds format.
             "comments": "" // Comments for the job
         },
         {

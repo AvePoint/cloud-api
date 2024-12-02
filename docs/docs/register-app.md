@@ -20,7 +20,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 5. Obtain Application (Client) ID  
    - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
 6. Get access token: Based on the credentials of your app registration, refer to the following instructions to get an access token:  
-   - Use [Client Secret](#client-secret): You need to send a POST request with the client ID, client secret, scope, and grant type.  
+   - Use [Client Secret](#client-secret): You need to send a POST request with the client ID, client secret, scope, and grant type.  See the request and response examples in the linked section.
    - Use [Certificate](#certificate). You need to generate a JWT signed with your certificate and send a POST request with the client ID, client assertion (the signed JWT), scope, and grant type. See the DotNet example in the linked section.  
 
 
@@ -28,18 +28,18 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 See the table below for the services and permissions that can be used tor accessing API:  
 
-| AvePoint Cloud Service   | Permission |Usage                   |  
-|------------|----------|----------|  
-| **AvePoint Online Services**          | audit.read.all | Get the audit records of activities in your AvePoint Online Services tenant. |
- | **Cloud Backup for Dynamics 365**  |  dynamics.readwrite.all   | Get job information from Cloud Backup for Dynamics 365.                |
- | **Cloud Backup for IaaS + PaaS**  |  platformbackup.readwrite.all    | Get job information from Cloud Backup for IaaS + PaaS.                 |
- | **Cloud Backup for Microsoft 365** | microsoft365backup.jobInfo.read.all    | Get job information from Cloud Backup for Microsoft 365. |
- || microsoft365backup.subscriptionInfo.read.all|Get the subscription consumption information of Cloud Backup for Microsoft 365. |
- | **AvePoint Opus**    |     records.readwrite.all  | Connect AvePoint Opus to other systems to access and manage the content. For details, see [AvePoint Opus API for Connector](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm) |
-| **EnPower**    |      enpower.data.read.all                   | Retrieve data from EnPower. For details, see [EnPower Web API](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm) |
- | **Fly**   |       fly.graph.readwrite.all                       | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                               |
- | **Insights for Microsoft 365** | insights.graph.readwrite.all        | Retrieve data from Insights for Microsoft 365. For details, see [Insights for Microsoft 365 Web API](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)                             |
- | **Cloud Governance**  |     cloudgovernance.fullcontrol.all             | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance Modern API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm)      |
+| AvePoint Cloud Service             | Permission                                   | Usage                                                                                                                                                                                                                                              |
+| ---------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **AvePoint Online Services**       | audit.read.all                               | Get the audit records of activities in your AvePoint Online Services tenant.                                                                                                                                                                       |
+| **Cloud Backup for Dynamics 365**  | dynamics.readwrite.all                       | Get job information from Cloud Backup for Dynamics 365.                                                                                                                                                                                            |
+| **Cloud Backup for IaaS + PaaS**   | platformbackup.readwrite.all                 | Get job information from Cloud Backup for IaaS + PaaS.                                                                                                                                                                                             |
+| **Cloud Backup for Microsoft 365** | microsoft365backup.jobInfo.read.all          | Get job information from Cloud Backup for Microsoft 365.                                                                                                                                                                                           |
+|                                    | microsoft365backup.subscriptionInfo.read.all | Get the subscription consumption information of Cloud Backup for Microsoft 365.                                                                                                                                                                    |
+| **AvePoint Opus**                  | records.readwrite.all                        | Connect AvePoint Opus to other systems to access and manage the content. For details, see [AvePoint Opus API for Connector](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm)           |
+| **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower. For details, see [EnPower Web API](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm)                                                                                    |
+| **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
+| **Insights for Microsoft 365**     | insights.graph.readwrite.all                 | Retrieve data from Insights for Microsoft 365. For details, see [Insights for Microsoft 365 Web API](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)                    |
+| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance Modern API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm) |
 
 
  ## Client Secret
@@ -49,10 +49,10 @@ To obtain an access token using a client secret in an app registration, follow t
 1. **Set the Access Token URL**  
    Choose the URL based on your organization's AvePoint environment:
 
-   | AOS Environment             | Access Token URL                                                        |
-   |-----------------------------|-------------------------------------------------------------------------|
-   | Commercial Environment      | `https://identity.avepointonlineservices.com/connect/token`             |
-   | U.S. Government Environment | `https://identity-gov.avepointonlineservices.com/connect/token`         |
+   | AOS Environment             | Access Token URL                                                |
+   | --------------------------- | --------------------------------------------------------------- |
+   | Commercial Environment      | `https://identity.avepointonlineservices.com/connect/token`     |
+   | U.S. Government Environment | `https://identity-gov.avepointonlineservices.com/connect/token` |
 
 2. **Set the Header**  
    - `Content-Type: application/x-www-form-urlencoded`
@@ -62,13 +62,33 @@ To obtain an access token using a client secret in an app registration, follow t
    - `client_secret` – Copy the saved Client Secret from the app registration.
    - `scope` – Set the scope, which is the assigned permission.
    - `grant_type` – Set to `client_credentials`.
-
+      
 4. **Response Details**  
    - `access_token` – The token value.
    - `expires_in` – Indicates the token expiration in seconds.
 
 >[!NOTE]
 > You can use Postman to test the POST request as described above.
+
+- Request sample for getting access token by client secret:  
+    
+    ```ts
+    POST https://identity.avepointonlineservices.com/connect/token
+    Content-Type: application/x-www-form-urlencoded
+    client_id=edbdd4fa-0733-4cac-8a43-af4df3e97756
+    &scope=audit.read.all
+    &client_secret=3ZxGsm...wNG8wFrzY
+    &grant_type=client_credentials
+    ```
+- Response sample  
+    ```ts
+    {
+        "token_type": "Bearer",
+        "expires_in": 3600,
+        "ext_expires_in":3600,
+        "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkQ2MzA1NzRFRDdDRDdBR..."
+    }
+    ```
 
  ## Certificate  
 

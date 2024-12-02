@@ -28,13 +28,13 @@ The API supports several query parameters to refine and customize the data retri
 
 | Elements | Description | Type | Required? |
 | --- | --- | --- | --- |
-| StartTime | Sets a start time (UTC time) for the time range. | long | Yes |
-| FinishTime | Sets an end time (UTC time) for the time range.| long | Yes |
-| JobType | Sets the job types that you want to get. <br> Valid values: <br> <ul><li> **0** for All <br> </li><li> **1** for Backup <br> </li><li> **2** for Restore <br> </li><li> **3** for Export <br> </li><li> **4** for Deletion <br> </li><li> **5** for Retention</li></ul>| Enum | Yes |
-| ObjectType | Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> **0** for All <br> </li><li>**1** for Exchange Online <br> </li><li>**2** for  SharePoint Online <br> </li><li>**3** for OneDrive <br> </li><li>**4** for Microsoft 365 Groups <br> </li><li>**5** for Project Online <br> </li><li>**6** for Public Folder <br> </li><li>**7** for Teams <br> </li><li>**8** for Viva Engage <br> </li><li>**9** for Teams Chat <br> </li><li>**10** for Power BI <br> </li><li>**11** for Power Automate <br> </li><li>**12** for Power Apps</li></ul> | Enum <br>  | Yes |
-| JobState | Sets the job status. <br> Valid values: <br> <ul><li>**0** for All <br> </li><li>**1** for In Progress <br> </li><li>**2** for Finished <br> </li><li>**3** for Failed <br> </li><li>**4** for Finished with Exception <br> </li><li>**5** for Partially Finished </li></ul>|Enum | Yes |
-| PageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| int | Yes |
-| PageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | int | Yes |
+| startTime | Sets a start time (UTC time) for the time range. | long | Yes |
+| finishTime | Sets an end time (UTC time) for the time range.| long | Yes |
+| jobType | Sets the job types that you want to get. <br> Valid values: <br> <ul><li> **0** for All <br> </li><li> **1** for Backup <br> </li><li> **2** for Restore <br> </li><li> **3** for Export <br> </li><li> **4** for Deletion <br> </li><li> **5** for Retention</li></ul>| Enum | Yes |
+| objectType | Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> **0** for All <br> </li><li>**1** for Exchange Online <br> </li><li>**2** for  SharePoint Online <br> </li><li>**3** for OneDrive <br> </li><li>**4** for Microsoft 365 Groups <br> </li><li>**5** for Project Online <br> </li><li>**6** for Public Folder <br> </li><li>**7** for Teams <br> </li><li>**8** for Viva Engage <br> </li><li>**9** for Teams Chat <br> </li><li>**10** for Power BI <br> </li><li>**11** for Power Automate <br> </li><li>**12** for Power Apps</li></ul> | Enum <br>  | Yes |
+| jobState | Sets the job status. <br> Valid values: <br> <ul><li>**0** for All <br> </li><li>**1** for In Progress <br> </li><li>**2** for Finished <br> </li><li>**3** for Failed <br> </li><li>**4** for Finished with Exception <br> </li><li>**5** for Partially Finished </li></ul>|Enum | Yes |
+| pageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| int | Yes |
+| pageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | int | Yes |
 
 ## Responses
 
@@ -44,29 +44,29 @@ The API response provides detailed information about the jobs retrieved. Each jo
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| TotalCount | The total count of the retrieved jobs | int |
-| Jobs | A list of jobs | List |
-| NextLink | Reference to the next page of results | string |
+| totalCount | The total count of the retrieved jobs | int |
+| jobs | A list of jobs | List |
+| nextLink | Reference to the next page of results | string |
 
 **Job summary:**
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| Id | Job ID | string |
-| State | Job status | string |
-| StartTime | Job started time | long |
-| FinishTime | Job finished time | long |
-| Duration | Duration | long |
-| BackupDetails | Job details | int |
+| id | Job ID | string |
+| state | Job status | string |
+| startTime | Job started time | long |
+| finishTime | Job finished time | long |
+| duration | Duration | long |
+| backupDetails | Job details | int |
 
 **Backup details:**
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| TotalCount | Total count | long |
-| FailedCount | Number of objects with errors| long |
-| SuccessfulCount | Number of successful objects | long |
-| SkippedCount| Number of skipped objects | long |
+| totalCount | Total count | long |
+| failedCount | Number of objects with errors| long |
+| successfulCount | Number of successful objects | long |
+| skippedCount| Number of skipped objects | long |
 
 ## Request Sample
 

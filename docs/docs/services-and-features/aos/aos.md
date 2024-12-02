@@ -24,7 +24,7 @@ This section outlines the HTTP method and endpoint that is used to retrieve the 
 
 The API supports the following query parameters to refine and customize the data retrieval process. These parameters allow users to specify time ranges, product types, geo locations and other criteria to filter the results effectively.
 
-| Name | Located in | Description | Required | Schema |
+| Name | Located in | Description | Required | Type |
 | ---- | ---------- | ----------- | -------- | ------ |
 | StartTime | query | Sets a start time for the time range in ISO 8601 format. | No | dateTime |
 | EndTime | query | Sets an end time for the time range in ISO 8601 format. The time range between StartTime and EndTime must be no more than 7 days. | No | dateTime |
