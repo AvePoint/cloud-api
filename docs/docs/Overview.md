@@ -70,3 +70,4 @@ For more features and use cases, visit the [Use Cases](Use-Cases.md).
 | Switzerland North (Zurich)          | [https://graph-ch.avepointonlineservices.com/ ](https://graph-ch.avepointonlineservices.com/ ) |
 | UK South (London)                   | [https://graph-uk.avepointonlineservices.com/ ](https://graph-uk.avepointonlineservices.com/ ) |
 | US - East                           | [https://graph-us.avepointonlineservices.com/ ](https://graph-us.avepointonlineservices.com/) |
+| AOS-US Gov                           |[https://graph-gov.avepointonlineservices.com/](https://graph-gov.avepointonlineservices.com/)|
