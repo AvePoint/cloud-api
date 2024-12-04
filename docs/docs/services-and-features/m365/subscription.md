@@ -23,11 +23,11 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| OutOfPolicyTime | The UTC timestamp when the subscription went out of policy. | long |
-| PurchasedUserSeats | Total number of purchased user seats | int |
-| AssignedUserSeats | Number of user seats currently assigned | int |
-| PurchasedStorageSize | Total purchased storage size (in GB) | int |
-| ProtectedSize | Protected data size (in GB) | int |
+| outOfPolicyTime | The UTC timestamp when the subscription went out of policy. | long |
+| purchasedUserSeats | Total number of purchased user seats | int |
+| assignedUserSeats | Number of user seats currently assigned | int |
+| purchasedStorageSize | Total purchased storage size (in GB) | int |
+| protectedSize | Protected data size (in GB) | int |
 
 ## Response Sample
 

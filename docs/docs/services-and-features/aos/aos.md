@@ -24,13 +24,13 @@ This section outlines the HTTP method and endpoint that is used to retrieve the 
 
 The API supports the following query parameters to refine and customize the data retrieval process. These parameters allow users to specify time ranges, product types, geo locations and other criteria to filter the results effectively.
 
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ------ |
-| StartTime | query | Sets a start time for the time range in ISO 8601 format. | No | dateTime |
-| EndTime | query | Sets an end time for the time range in ISO 8601 format. The time range between StartTime and EndTime must be no more than 7 days. | No | dateTime |
-| ProductTypes | query | If no value is set for this parameter, this method retrieves the audit records for all products in your AOS tenant. To get audit records from specific products, use the following values:     <ul><li>**Office365Management** (Cloud Management)</li> <li>**Office365Backup** (Cloud Backup for Microsoft 365)</li> <li>**GovernanceAutomation** (Cloud Governance)</li> <li>**Portal** (AvePoint Online Services)</li> <li>**PolicyEnforcer** (Policies for Microsoft 365)</li> <li>**CPManagement** (Insights for Microsoft 365)</li> <li>**SMP** (EnPower)</li> <li>**VDR** (Confide)</li> <li>**AvePointRecords** (Opus)</li></ul> | No |  string  |
-| GeoLocations | query | This parameter is only available for AOS tenants that support Multi-Geo. If no value is set for this parameter, this method retrieves the audit records from all locations in your AOS tenant. To get audit records from specific data centers, use the following values: <ul><li>**PrimaryGeoLocation** (Central AOS location)</li> <li>**NAM** (North America)</li> <li>**EUR** (Europe/Middle East/Africa)</li> <li>**GBR** (United Kingdom)</li> <li>**JPN** (Japan)</li> <li>**APC** (Asia-Pacific)</li> <li>**AUS** (Australia)</li> <li>**CAN** (Canada)</li> <li>**IND** (India)</li> <li>**FRA** (France)</li>    <li>**ARE** (United Arab Emirates)</li> <li>**ZAF** (South Africa)</li> <li>**CHE** (Switzerland)</li> <li>**KOR** (Korea)</li> <li>**DEU** (Germany)</li> <li>**BRA** (Brazil)</li> <li>**NOR** (Norway)</li> <li>**SWE** (Sweden)</li> <li>**QAT** (Qatar)</li> <li>**POL** (Poland)</li> <li>**ITA** (Italy)</li></ul>  | No |  string  |
-| SkipToken | query | During a query, if the results are too large to be returned in a single response, a **SkipToken** is included in the response. This token allows you to retrieve the next set of results by appending it into the query URL in a subsequent request. | No | string |
+| Name | Description |  Type |Required |
+| ---- | ---------------- | -------- | ------ |
+| startTime |  Sets a start time for the time range in ISO 8601 format. |  string |No |
+| endTime |  Sets an end time for the time range in ISO 8601 format. The time range between StartTime and EndTime must be no more than 7 days.  | string |No |
+| productTypes | If no value is set for this parameter, this method retrieves the audit records for all products in your AOS tenant. To get audit records from specific products, use the following values:     <ul><li>**Office365Management** (Cloud Management)</li> <li>**Office365Backup** (Cloud Backup for Microsoft 365)</li> <li>**GovernanceAutomation** (Cloud Governance)</li> <li>**Portal** (AvePoint Online Services)</li> <li>**PolicyEnforcer** (Policies for Microsoft 365)</li> <li>**CPManagement** (Insights for Microsoft 365)</li> <li>**SMP** (EnPower)</li> <li>**VDR** (Confide)</li> <li>**AvePointRecords** (Opus)</li></ul> | string  |No |  
+| geoLocations |  This parameter is only available for AOS tenants that support Multi-Geo. If no value is set for this parameter, this method retrieves the audit records from all locations in your AOS tenant. To get audit records from specific data centers, use the following values: <ul><li>**PrimaryGeoLocation** (Central AOS location)</li> <li>**NAM** (North America)</li> <li>**EUR** (Europe/Middle East/Africa)</li> <li>**GBR** (United Kingdom)</li> <li>**JPN** (Japan)</li> <li>**APC** (Asia-Pacific)</li> <li>**AUS** (Australia)</li> <li>**CAN** (Canada)</li> <li>**IND** (India)</li> <li>**FRA** (France)</li>    <li>**ARE** (United Arab Emirates)</li> <li>**ZAF** (South Africa)</li> <li>**CHE** (Switzerland)</li> <li>**KOR** (Korea)</li> <li>**DEU** (Germany)</li> <li>**BRA** (Brazil)</li> <li>**NOR** (Norway)</li> <li>**SWE** (Sweden)</li> <li>**QAT** (Qatar)</li> <li>**POL** (Poland)</li> <li>**ITA** (Italy)</li></ul>  | string  |No |  
+| skipToken |  During a query, if the results are too large to be returned in a single response, a **skipToken** is included in the response. This token allows you to retrieve the next set of results by appending it into the query URL in a subsequent request. |string | No | 
 
 ## Response
 
@@ -63,7 +63,7 @@ If successful, the following objects are displayed in the response body.
 | actionName | string | Name of the action. | No |
 | actionUser | string | User of the action. | No |
 | actionParameters | string | Parameters in the action. | No |
-| actionTime | string | Time of the action. | No |
+| actionTime | string | Time of the action in ISO 8601 format. | No |
 | controllerName | string | Controller in the action. | No |
 | product | string | Name of product. Valid values:     <ul><li>**Office365Management** (Cloud Management)</li> <li>**Office365Backup** (Cloud Backup for Microsoft 365)</li> <li>**GovernanceAutomation** (Cloud Governance)</li> <li>**Portal** (AvePoint Online Services)</li> <li>**PolicyEnforcer** (Policies for Microsoft 365)</li> <li>**CPManagement** (Insights for Microsoft 365)</li> <li>**SMP** (EnPower)</li> <li>**VDR** (Confide)</li> <li>**AvePointRecords** (Opus)</li></ul> | No |
 | geoLocation | string | Geo locations of a multi-geo tenant. | No |
@@ -108,25 +108,25 @@ If successful, this method returns a 200 OK response code and a collection of us
     "nextLink": null, // No results in the next page
     "data": [
         {
-            "actionName": "SignIn", // Name of the action
+            "actionName": "Session Timeout", // Name of the action
             "actionUser": "dev@test.onmicrosoft.com", // User of the action
             "actionParameters": "null", // No parameters in the action
             "actionTime": "2024-10-14T07:41:50Z", // Time of the action
-            "controllerName": null, // No controller in the action
-            "product": "Portal", // Name of product
+            "controllerName": "AccountController", // No controller in the action
+            "product": "AvePoint Online Services", // Name of product
             "geoLocation": null, // Not a multi-geo tenant
             "previousValue": null, // No previous value of the action
             "currentValue": null, // No current value of the action
             "partnerTenantOwner": null, // Not a customer managed by service providers
-            "status": "Successfully", // Status of the action
+            "status": null, // Status of the action
             "comment": null, // No comment for the action
-            "objectType": "Login", // Type of the action object
+            "objectType": null, // Type of the action object
             "operationType": null, // No action type
-            "module": "Login", // Module of the action
+            "module": null, // Module of the action
             "functionality": null, // No functionality related to the action
-            "objectName": "", // No object related to the action
+            "objectName": null, // No object related to the action
             "action": null, // Parameter for Cloud Governance only
-            "clientIP": "123.177.22.236", // Public IP address for the action
+            "clientIP": "123.123.12.123", // Public IP address for the action
             "additionalDetails": {} // Parameter for Confide only
         }
     ]
