@@ -36,7 +36,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | profileName | The name of the scan profile. | String |
 | profileId | The ID of the scan profile. | String |
-| scanMode | The scan mode of the scan profile:<br> <ul><li> **0** represents **Express mode**</li><li> **1** represents **Advanced mode** | Int |
+| scanMode | The scan mode of the scan profile:<br> <ul><li> **0** represents **Express mode**</li><li> **1** represents **Advanced mode** | Integer |
 | modifiedTime | The last modified time of the scan profile. | String |
 
 ## Request Sample
@@ -57,7 +57,7 @@ If the request has been successfully processed, a 200 OK response will be return
     "value": [
         {
             "profileName": "test oop", // The name of the scan profile
-            "profileId": "0e5e152d-65cc-4206-9829-636ee72c88c3", // The ID of the scan profile
+            "profileId": "0e5e152d-65cc-65cc-65cc-65cc65cc65cc", // The ID of the scan profile
             "scanMode": 0, // The scan mode of the scan profile: 0 represents Express mode
             "modifiedTime": "08/01/2024 06:29:55" // The last modified time of the scan profile
         }

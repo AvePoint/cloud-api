@@ -25,29 +25,35 @@ This section outlines the parameters required to specify which customer's subscr
 
 | Parameter | Description |
 | --- | --- |
-| Id | The tenant owner ID of the customer. |
+| id | The tenant owner ID of the customer. |
 
 ## Responses
 
 The API response provides detailed information about the service subscriptions retrieved. Each service subscription in the response includes various attributes that describe its properties and status.
 
-| Response | Description | Type |
+| Element | Description | Type |
 | --- | --- | --- |
-| customerId | The tenant owner ID of the customer. | String |
-| organization | The organization name of the customer. | String |
-| customer | The tenant owner email address of the customer. | String |
-| tenantId | The tenant ID of the customer. | String |
-| service | The service that the customer has subscriptions for. | String |
-| subscriptionModel | The subscription model of the customer’s service. | String |
-| purchasedUserSeats | The number of purchased user seats of the customer. | String |
-| microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
-| microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
-| purchasedCapacity | The purchased storage capacity of the customer. | String |
-| protectedCapacity | The protected data size for the customer. | String |
-| storage | The storage type of the customer. | String |
-| retention | The data retention period of the customer. | String |
-| consumedStorage | The consumed storage size of the customer. | String |
-| expirationDate | The expiration date of the customer’s service. | String |
+| customerId | The tenant owner ID of the customer. | string |
+| organization | The organization name of the customer. | string |
+| customer | The tenant owner email address of the customer. | string |
+| tenantId | The tenant ID of the customer. | string |
+|Products| A list of products that the customer has subscribed.| list|
+
+**Product subscriptions**  
+| Element | Description | Type |
+| --- | --- | --- |
+| service | The service that the customer has subscriptions for. | string |
+| subscriptionModel | The subscription model of the customer’s service. | string |
+| purchasedUserSeats | The number of purchased user seats of the customer. | string |
+| microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
+| microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
+| purchasedCapacity | The purchased data capacity of the customer. | string |
+| protectedCapacity | The protected data size for the customer. | string |
+| storage | The storage type of the customer. | string |
+| retention | The data retention period of the customer. | string |
+| consumedStorage | The consumed storage size of the customer. | string |
+| expirationDate | The expiration date of the customer’s service. | string |
+| change | The user seats changes in the pooled license compared with the first day of the current month. | string |
 
 ## Request Sample
 
@@ -63,7 +69,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json
 {
-     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Services/$entity",  // OData metadata URL for the service entity
+    "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Services/$entity",  // OData metadata URL for the service entity
     "customerId": "caf94a75-2cc6-43aa-b04b-794cb9af5ea3",  // Unique identifier for the customer
     "organization": "AvePointTest_OOP_BothCB365ServiceAndExpress",  // Name of the organization
     "customer": "APtest_AOSP_OOP_BothCB365ServiceAndExpress@commercial.com",  // Customer's email or username

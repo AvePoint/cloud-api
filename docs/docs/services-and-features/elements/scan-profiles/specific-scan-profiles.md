@@ -25,8 +25,8 @@ This section outlines the parameters required to specify which customer's specif
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
-| Id | The tenant owner ID of the customer. | String | Yes |
-| ProfileId | The ID of the scan profile. | String | Yes |
+| id | The tenant owner ID of the customer. | String | Yes |
+| profileId | The ID of the scan profile. | String | Yes |
 
 ## Responses
 
@@ -44,10 +44,15 @@ If the request has been successfully processed, a 200 OK response will be return
 | createdTime | The created time of the scan profile. | String |
 | impersonationAccount | The impersonation account configured in the scan profile. | String |
 | scanInplaceArchivedMailboxes | Whether the **Scan in-place archived mailboxes** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
-| isIgnoreLockedSiteEnabled | Whether the **Ignore the locked objects when updating the job status** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
+| isIgnoreLockedSiteEnabled[^1] | Whether the **Ignore the locked objects when updating the job status** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
 | enableDailyScan | Whether the **Enable daily scan** setting is enabled in the scan profile:<br><ul><li>**No** represents  **Disabled**<li>**hh:mm** represents the time of the daily scan, for example, 01:59 | String |
-| isSendOutOfPolicyNotification | Whether the **Send an email notification to the following recipients when objects are moved to other containers or removed from any containers** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
+| isSendOutOfPolicyNotification[^2] | Whether the **Send an email notification to the following recipients when objects are moved to other containers or removed from any containers** setting is enabled in the scan profile:<br><ul><li>**True** represents **Enabled**<li>**False** represents **Disabled** | Boolean |
 | containers | The container details of the scan profile. | String |
+
+>[!NOTE]
+>To enhance user experience and improve integration, we have replaced the following properties with a shorter version. The original, longer properties have been deprecated.  
+>[^1] Replaced the `ignoreTheLockedObjectsWhenUpdatingTheJobStatus` property.  
+>[^2] Replaced the `SendAnemailNotificationToTheFollowIngRecipientsWhenObjectsAreMovedTooTherContainerOrRemovedFromAnyContainers` property.
 
 ## Request Sample
 

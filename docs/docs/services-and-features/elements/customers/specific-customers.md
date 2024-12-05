@@ -57,7 +57,7 @@ If the request has been successfully processed, a 200 OK response will be return
     "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Customers/$entity",
     "id": "00427fbc-8832-46cf-a1d2-582fa46ec638", // The tenant owner ID of the customer
     "organization": "AvePoint test", // The organization name of the customer
-    "ownerEmail": "aptestopus8@avepoint.com", // The tenant owner email address of the customer
+    "ownerEmail": "aptest***s8@avepoint.com", // The tenant owner email address of the customer
     "jobStatus": "Working", // The status of the customer’s tenant
     "countryOrRegion": "Vietnam" // The country or region name of the customer.
 }

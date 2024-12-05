@@ -25,8 +25,8 @@ This section outlines the parameters required to specify which customer's specif
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| Id | The tenant owner ID of the customer. | String | Yes |
-| ProfileId | The ID of the scan profile. | String | Yes |
+| id | The tenant owner ID of the customer. | String | Yes |
+| profileId | The ID of the scan profile. | String | Yes |
 
 ## Responses
 
