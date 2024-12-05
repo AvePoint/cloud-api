@@ -58,38 +58,38 @@ This model is returned upon successful retrieval of audit records.
 
 If successful, the following objects are displayed in the response body.
 
-| Name | Type | Description | Required |
+| Name |  Description | Type |Required |
 | ---- | ---- | ----------- | -------- |
-| actionName | string | Name of the action. | No |
-| actionUser | string | User of the action. | No |
-| actionParameters | string | Parameters in the action. | No |
-| actionTime | string | Time of the action in ISO 8601 format. | No |
-| controllerName | string | Controller in the action. | No |
-| product | string | Name of product. Valid values:     <ul><li>**Office365Management** (Cloud Management)</li> <li>**Office365Backup** (Cloud Backup for Microsoft 365)</li> <li>**GovernanceAutomation** (Cloud Governance)</li> <li>**Portal** (AvePoint Online Services)</li> <li>**PolicyEnforcer** (Policies for Microsoft 365)</li> <li>**CPManagement** (Insights for Microsoft 365)</li> <li>**SMP** (EnPower)</li> <li>**VDR** (Confide)</li> <li>**AvePointRecords** (Opus)</li></ul> | No |
-| geoLocation | string | Geo locations of a multi-geo tenant. | No |
-| previousValue | string | Previous value of the action. | No |
-| currentValue | string | Current value of the action. | No |
-| partnerTenantOwner | string | Tenant owner of the service provider managing the customer's AOS tenant. | No |
-| status | string | Status of the action. | No |
-| comment | string | Comment for the action. | No |
-| objectType | string | Type of the action object. | No |
-| operationType | string | Type of the action. | No |
-| module | string | Module of the action. | No |
-| functionality | string | Functionality related to the action. | No |
-| objectName | string | Name of the object related to the action. | No |
-| action | string | Name of the action. This parameter is only for Cloud Governance. | No |
-| clientIP | string | Public IP address for the action. | No |
-| additionalDetails | object | Name of the action. This parameter is only for Confide. | No |
+| actionName |  Name of the action.|string  | No |
+| actionUser |  User of the action. |string | No |
+| actionParameters | Parameters in the action. | string | No |
+| actionTime |  Time of the action in ISO 8601 format. |string | No |
+| controllerName |  Controller in the action. | string |No |
+| product |  Name of product. Valid values:     <ul><li>**Office365Management** (Cloud Management)</li> <li>**Office365Backup** (Cloud Backup for Microsoft 365)</li> <li>**GovernanceAutomation** (Cloud Governance)</li> <li>**Portal** (AvePoint Online Services)</li> <li>**PolicyEnforcer** (Policies for Microsoft 365)</li> <li>**CPManagement** (Insights for Microsoft 365)</li> <li>**SMP** (EnPower)</li> <li>**VDR** (Confide)</li> <li>**AvePointRecords** (Opus)</li></ul> | string |No |
+| geoLocation |  Geo locations of a multi-geo tenant. | string |No |
+| previousValue |  Previous value of the action. | string |No |
+| currentValue |  Current value of the action. | string |No |
+| partnerTenantOwner |  Tenant owner of the service provider managing the customer's AOS tenant. | string |No |
+| status |  Status of the action. |string | No |
+| comment | Comment for the action. | string | No |
+| objectType |  Type of the action object. |string | No |
+| operationType | Type of the action. |string |  No |
+| module |  Module of the action. | string |No |
+| functionality | Functionality related to the action. |  string |No |
+| objectName | Name of the object related to the action. | string | No |
+| action |  Name of the action. This parameter is only for Cloud Governance. |string | No |
+| clientIP |  Public IP address for the action. |string | No |
+| additionalDetails |  Name of the action. This parameter is only for Confide. |object | No |
 
 #### ErrorResponse
 
 If an error occurs, the following information is displayed in the response body.
 
-| Name | Type | Description | 
+| Name |  Description | Type |
 | ---- | ---- | ----------- | 
-| traceId | string |The unique identifier used to trace and track the flow of a request. | 
-| error | string |The error message.   |
-| statusCode | [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code) |The HTTP error code.  | 
+| traceId | The unique identifier used to trace and track the flow of a request. | string |
+| error | The error message.   |string |
+| statusCode | The HTTP error code.  | [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code) |
 
 ## Request Sample
 
