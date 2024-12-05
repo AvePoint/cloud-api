@@ -35,8 +35,8 @@ The API supports several query parameters to refine and customize the data retri
 | jobType | Sets the job types that you want to get. <br> Valid values: <br> <ul><li> **0** for All <br> </li><li> **1** for Backup <br> </li><li> **2** for Restore <br> </li><li> **3** for Export <br> </li><li> **4** for Deletion <br> </li><li> **5** for Retention</li></ul>| Enum | No |
 | objectType | Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> **0** for All <br> </li><li>**1** for Exchange Online <br> </li><li>**2** for  SharePoint Online <br> </li><li>**3** for OneDrive <br> </li><li>**4** for Microsoft 365 Groups <br> </li><li>**5** for Project Online <br> </li><li>**6** for Public Folder <br> </li><li>**7** for Teams <br> </li><li>**8** for Viva Engage <br> </li><li>**9** for Teams Chat <br> </li><li>**10** for Power BI <br> </li><li>**11** for Power Automate <br> </li><li>**12** for Power Apps</li></ul> | Enum <br>  | No |
 | jobState | Sets the job status. <br> Valid values: <br> <ul><li>**0** for All <br> </li><li>**1** for In Progress <br> </li><li>**2** for Finished <br> </li><li>**3** for Failed <br> </li><li>**4** for Finished with Exception <br> </li><li>**5** for Partially Finished </li></ul>|Enum | No |
-| pageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| int | No |
-| pageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | int | No |
+| pageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| integer | No |
+| pageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | integer | No |
 
 ## Responses
 
@@ -46,8 +46,8 @@ The API response provides detailed information about the jobs retrieved. Each jo
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| totalNumber | The total count of the retrieved jobs | int |
-| jobs | A list of jobs | List |
+| totalNumber | The total count of the retrieved jobs | integer |
+| jobs | A list of jobs | list |
 | nextLink | Reference to the next page of results | string |
 
 **Job summary:**
@@ -101,9 +101,9 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
         {
             "id": FB20241015105312327583, //Job ID
             "state": Finished, // Job status
-            "startTime": "2024-12-02T07:52:25Z", // UTC timestamp for the start time of the job
-            "finishTime": "2024-12-02T07:53:04Z", // UTC timestamp for the finished time of the job
-            "duration": "0.011", // Job duration
+            "startTime": "2024-12-02T07:52:25Z", // The start time of the job in ISO 8601 format. UTC time.
+            "finishTime": "2024-12-02T07:53:04Z", // The finished time of the job in ISO 8601 format. UTC time.
+            "duration": "0.011", // Job duration in hours
             "backupDetails": {
                 "totalCount": 16, // Total number of objects involved
                 "failedCount": 0, // Number of objects with errors

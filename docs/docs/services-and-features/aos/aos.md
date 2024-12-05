@@ -85,11 +85,11 @@ If successful, the following objects are displayed in the response body.
 
 If an error occurs, the following information is displayed in the response body.
 
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| requestId | string | Represents the request ID. | No |
-| date | dateTime |Represents the date and time of this request  | Yes |
-| statusCode | [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code) |Represents the HTTP error code.  | Yes |
+| Name | Type | Description | 
+| ---- | ---- | ----------- | 
+| traceId | string |The unique identifier used to trace and track the flow of a request. | 
+| error | string |The error message.   |
+| statusCode | [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code) |The HTTP error code.  | 
 
 ## Request Sample
 
