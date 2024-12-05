@@ -7,7 +7,7 @@ Use this API to retrieve service subscription details for a specific customer th
 The following permission is required to call the API.  
 You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)  
 
-| API |Permission Required |
+| API |Permission  |
 |-----------|-----------------|
 | `/partner/services/{id}` |  partner.license.read.all |  
 
@@ -33,20 +33,21 @@ The API response provides detailed information about the service subscriptions r
 
 | Response | Description | Type |
 | --- | --- | --- |
-| CustomerId | The tenant owner ID of the customer. | String |
-| Organization | The organization name of the customer. | String |
-| Customer | The tenant owner email address of the customer. | String |
-| TenantId | The tenant ID of the customer. | String |
-| Service | The service that the customer has subscriptions for. | String |
-| SubscriptionModel | The subscription model of the customer’s service. | String |
-| PurchasedUserSeats | The number of purchased user seats of the customer. | String |
-| MicrosoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
-| MicrosoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
-| PurchasedCapacity | The purchased capacity of the customer. | String |
-| Storage | The storage type of the customer. | String |
-| Retention | The data retention period of the customer. | String |
-| ConsumedStorage | The consumed storage size of the customer. | String |
-| ExpirationDate | The expiration date of the customer’s service. | String |
+| customerId | The tenant owner ID of the customer. | String |
+| organization | The organization name of the customer. | String |
+| customer | The tenant owner email address of the customer. | String |
+| tenantId | The tenant ID of the customer. | String |
+| service | The service that the customer has subscriptions for. | String |
+| subscriptionModel | The subscription model of the customer’s service. | String |
+| purchasedUserSeats | The number of purchased user seats of the customer. | String |
+| microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
+| microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
+| purchasedCapacity | The purchased storage capacity of the customer. | String |
+| protectedCapacity | The protected data size for the customer. | String |
+| storage | The storage type of the customer. | String |
+| retention | The data retention period of the customer. | String |
+| consumedStorage | The consumed storage size of the customer. | String |
+| expirationDate | The expiration date of the customer’s service. | String |
 
 ## Request Sample
 
@@ -69,55 +70,59 @@ If the request has been successfully processed, a 200 OK response will be return
     "tenantId": "c2350b99-c7a2-4605-b7d4-79e8646f66c3",  // Identifier for the customer's tenant
     "products": [  // Array of products associated with the customer
         {
-            "service": "Cloud Backup Express",  // Name of the service
-            "subscriptionModel": "Enterprise",  // Type of subscription model
+            "service": "Cloud Backup for IaaS + PaaS - Azure Storage",  // Name of the service
+            "subscriptionModel": "N/A",  // Type of subscription model
             "purchasedUserSeats": "N/A",  // Number of user seats purchased; not applicable here
-            "microsoftLicenseAssigned": "0",  // Number of Microsoft licenses assigned
-            "microsoftLicenseAvailable": "0",  // Number of available Microsoft licenses
-            "purchasedCapacity": "1 GB",  // Amount of storage capacity purchased
+            "microsoftLicenseAssigned": "N/A",  // Number of Microsoft licenses assigned
+            "microsoftLicenseAvailable": "133",  // Number of available Microsoft licenses
+            "purchasedCapacity": "5 GB",  // Amount of purchased capacity for data protection.
+            "protectedCapacity": "0 GB", // Protected data size; not applicable here.
             "storage": "AvePoint storage (Microsoft Azure Blob)",  // Storage type and provider
-            "retention": "Retain data for 1 years",  // Data retention policy duration
-            "consumedStorage": "5.01 GB",  // Amount of storage currently used
-            "expirationDate": "08/23/2027",  // Date when the subscription expires
+            "retention": "Retain data for 1 month",  // Data retention policy duration
+            "consumedStorage": "N/A",  // Amount of storage currently used
+            "expirationDate": "2025-04-05",  // Date when the subscription expires
             "change": "N/A"  // Information on changes, not applicable here
         },
         {
-            "service": "Cloud Backup for Microsoft 365 - Microsoft 365 services",
-            "subscriptionModel": "1 GB/User/Year",
-            "purchasedUserSeats": "1",
-            "microsoftLicenseAssigned": "0",
-            "microsoftLicenseAvailable": "0",
-            "purchasedCapacity": "1 GB",
+            "service": "Cloud Backup for IaaS + PaaS - Virtual Machine",
+            "subscriptionModel": "N/A",
+            "purchasedUserSeats": "100",
+            "microsoftLicenseAssigned": "124",
+            "microsoftLicenseAvailable": "133",
+            "purchasedCapacity": "N/A",
+            "protectedCapacity": "N/A",
             "storage": "AvePoint storage (Microsoft Azure Blob)",
-            "retention": "Retain data for 1 years",
-            "consumedStorage": "5.01 GB",
-            "expirationDate": "08/23/2027",
+            "retention": "Retain data for 1 months",
+            "consumedStorage": "N/A",
+            "expirationDate": "2025-04-05",
             "change": "N/A"
         },
         {
-            "service": "Cloud Backup Express",
-            "subscriptionModel": "Enterprise",
+            "service": "Cloud Backup for IaaS + PaaS - Amazon EC2",
+            "subscriptionModel": "N/A",
+            "purchasedUserSeats": "10",
+            "microsoftLicenseAssigned": "124",
+            "microsoftLicenseAvailable": "133",
+            "purchasedCapacity": "N/A",
+            "protectedCapacity": "N/A",
+            "storage": "AvePoint storage (Microsoft Azure Blob)",
+            "retention": "Retain data for 1 years",
+            "consumedStorage": "N/A",
+            "expirationDate": "2025-03-01",
+            "change": "N/A"
+        },
+        {
+            "service": "Cloud Backup for IaaS + PaaS - Azure SQL",
+            "subscriptionModel": "N/A",
             "purchasedUserSeats": "N/A",
-            "microsoftLicenseAssigned": "0",
-            "microsoftLicenseAvailable": "0",
-            "purchasedCapacity": "1 GB",
+            "microsoftLicenseAssigned": "N/A",
+            "microsoftLicenseAvailable": "133",
+            "purchasedCapacity": "500 GB",
+            "protectedCapacity": "0 GB",
             "storage": "AvePoint storage (Microsoft Azure Blob)",
-            "retention": "Retain data for 1 years",
-            "consumedStorage": "5.01 GB",
-            "expirationDate": "08/23/2027",
-            "change": "N/A"
-        },
-        {
-            "service": "Cloud Backup for Microsoft 365 - Microsoft 365 services",
-            "subscriptionModel": "1 GB/User/Year",
-            "purchasedUserSeats": "1",
-            "microsoftLicenseAssigned": "0",
-            "microsoftLicenseAvailable": "0",
-            "purchasedCapacity": "1 GB",
-            "storage": "AvePoint storage (Microsoft Azure Blob)",
-            "retention": "Retain data for 1 years",
-            "consumedStorage": "5.01 GB",
-            "expirationDate": "08/23/2027",
+            "retention": "Retain data for 1 months",
+            "consumedStorage": "N/A",
+            "expirationDate": "2025-04-05",
             "change": "N/A"
         }
     ]
