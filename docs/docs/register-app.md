@@ -20,7 +20,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 5. Obtain Application (Client) ID  
    - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
 6. Get access token: Based on the credentials of your app registration, refer to the following instructions to get an access token:  
-   - Use [Client Secret](#client-secret): You need to send a POST request with the client ID, client secret, scope, and grant type.  See the request and response examples in the linked section.
+   - Use [Client Secret](#client-secret): You need to send a POST request with the client ID, client secret, scope, and grant type.  See the request and response samples in the linked section.
    - Use [Certificate](#certificate). You need to generate a JWT signed with your certificate and send a POST request with the client ID, client assertion (the signed JWT), scope, and grant type. See the DotNet example in the linked section.  
 
 
@@ -28,7 +28,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 See the table below for the services and permissions that can be used tor accessing API:  
 
-| AvePoint Cloud Service             | Permission                                   | Usage                                                                                                                                                                                                                                              |
+| AvePoint Cloud Service             | Permission                                   | Usage                     |
 | ---------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **AvePoint Online Services**       | audit.read.all                               | Get the audit records of activities in your AvePoint Online Services tenant.                                                                                                                                                                       |
 | **Cloud Backup for Dynamics 365**  | dynamics.readwrite.all                       | Get job information from Cloud Backup for Dynamics 365.                                                                                                                                                                                            |
@@ -63,16 +63,9 @@ To obtain an access token using a client secret in an app registration, follow t
    - `scope` – Set the scope, which is the assigned permission.
    - `grant_type` – Set to `client_credentials`.
       
-4. **Response Details**  
-   - `access_token` – The token value.
-   - `expires_in` – Indicates the token expiration in seconds.
-
->[!NOTE]
-> You can use Postman to test the POST request as described above.
-
-- Request sample for getting access token by client secret:  
+    Request sample for getting access token by client secret:  
     
-    ```ts
+    ```json  
     POST https://identity.avepointonlineservices.com/connect/token
     Content-Type: application/x-www-form-urlencoded
     client_id=edbdd4fa-0733-4cac-8a43-af4df3e97756
@@ -80,8 +73,13 @@ To obtain an access token using a client secret in an app registration, follow t
     &client_secret=3ZxGsm...wNG8wFrzY
     &grant_type=client_credentials
     ```
-- Response sample  
-    ```ts
+
+4. **Response Details**  
+   - `access_token` – The token value.
+   - `expires_in` – Indicates the token expiration in seconds.  
+   
+   Response sample  
+    ```json
     {
         "token_type": "Bearer",
         "expires_in": 3600,
@@ -89,6 +87,11 @@ To obtain an access token using a client secret in an app registration, follow t
         "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkQ2MzA1NzRFRDdDRDdBR..."
     }
     ```
+>[!NOTE]
+> You can use Postman to test the POST request as described above.
+
+
+
 
  ## Certificate  
 

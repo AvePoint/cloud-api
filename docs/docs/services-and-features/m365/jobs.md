@@ -58,7 +58,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | state | Job status | string |
 | startTime | Job started time | string |
 | finishTime | Job finished time | string |
-| duration | Duration in hours | double |
+| duration | Duration in hours | string |
 | backupDetails | Job details | module |
 | jobErrors|A list of job errors| list|
 

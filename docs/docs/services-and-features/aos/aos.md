@@ -47,12 +47,12 @@ The following sections describe the response models to get audit records.
 
 #### ApiResultOfUserActivityModel
 
-Response model to get audit records successfully.
+This model is returned upon successful retrieval of audit records.
 
-| Name | Type | Description | Required |
+| Name |  Description | Type |Required |
 | ---- | ---- | ----------- | -------- |
-| nextLink | string | If multiple query requests are required to retrieve all the results, the response returns the **nextLink** property, and the **nextLink** value is a URL to the next page of results. You can retrieve the next page of results by sending the URL value of the **nextLink** property. | No |
-| data | [UserActivityAuditLogItemModel](#useractivityauditlogitemmodel)  | The query parameters in the response of getting audit records. | No |
+| nextLink |  If multiple query requests are required to retrieve all the results, the response returns the **nextLink** property, and the **nextLink** value is a URL to the next page of results. You can retrieve the next page of results by sending the URL value of the **nextLink** property. |string | No |
+| data |  The query parameters in the response of getting audit records. | [UserActivityAuditLogItemModel](#useractivityauditlogitemmodel)  |No |
 
 #### UserActivityAuditLogItemModel
 

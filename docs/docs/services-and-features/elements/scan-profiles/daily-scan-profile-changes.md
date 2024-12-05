@@ -7,7 +7,7 @@ Use this API to retrieve your customer's daily scan profile changes in AvePoint 
 The following permission is required to call the API.  
 You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
-| API | Permission Required |
+| API | Permission  |
 |-----------|--------|
 | `/partner/customers/{id}/scanProfilesDailyNew/profileId/{ProfileId}` | partner.scanprofiles.read.all |  
 
