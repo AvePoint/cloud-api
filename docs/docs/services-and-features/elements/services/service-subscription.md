@@ -25,21 +25,22 @@ The API response provides detailed information about the customer's service subs
 
 | Response | Description | Type |
 | --- | --- | --- |
-| CustomerId | The tenant owner ID of the customer. | String |
-| Organization | The customer's organization name. | String |
-| Customer | The tenant owner email address of the customer. | String |
-| TenantId | The customer's tenant ID. | String |
-| Service | The service that the customer has subscriptions for. | String |
-| SubscriptionModel | The subscription model of the customer’s service. | String |
-| PurchasedUserSeats | The number of purchased user seats of the customer. | String |
-| MicrosoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
-| MicrosoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
-| PurchasedCapacity | The purchased capacity of the customer. | String |
-| Storage | The storage type of the customer. | String |
-| Retention | The data retention period of the customer. | String |
-| ConsumedStorage | The consumed storage size of the customer. | String |
+| customerId | The tenant owner ID of the customer. | String |
+| organization | The customer's organization name. | String |
+| customer | The tenant owner email address of the customer. | String |
+| tenantId | The customer's tenant ID. | String |
+| service | The service that the customer has subscriptions for. | String |
+| subscriptionModel | The subscription model of the customer’s service. | String |
+| purchasedUserSeats | The number of purchased user seats of the customer. | String |
+| microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
+| microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
+| PurchasedCapacity | The purchased storage capacity of the customer. | String |
+| protectedCapacity | The protected data size for the customer. | String |
+| storage | The storage type of the customer. | String |
+| retention | The data retention period of the customer. | String |
+| consumedStorage | The consumed storage size of the customer. | String |
 | expirationDate | The expiration date of the customer’s service. | String |
-| Change | The user seats changes in the pooled license compared with the first day of the current month. | String |
+| change | The user seats changes in the pooled license compared with the first day of the current month. | String |
 
 ## Request Sample
 
@@ -70,9 +71,10 @@ Below is a sample response showcasing the structure and content of the data retu
                     "microsoftLicenseAssigned": "0",  // Number of Microsoft licenses assigned
                     "microsoftLicenseAvailable": "0",  // Number of available Microsoft licenses
                     "purchasedCapacity": "N/A",  // Purchased storage capacity; not applicable here
+                    "protectedCapacity": "N/A", // Protected data size; not applicable here.
                     "storage": "N/A",  // Storage details; not applicable here
                     "retention": "N/A",  // Data retention policy; not applicable here
-                    "consumedStorage": "N/A",  // Consumed storage; not applicable here
+                    "consumedStorage": "N/A",  // Consumed storage capacity; not applicable here
                     "expirationDate": "02/04/2026",  // Date when the subscription expires
                     "change": "N/A"  // Information on changes; not applicable here
                 }

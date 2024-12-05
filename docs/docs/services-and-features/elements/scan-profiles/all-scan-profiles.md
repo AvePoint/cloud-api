@@ -1,13 +1,13 @@
-# Retrieve  All Scan Profiles
+# Retrieve All Scan Profiles
 
-Use this API tor retrieve your customer's information for all scan profiles configured in AvePoint Online Services.  
+Use this API to retrieve all the scan profiles configured for a specific customer in AvePoint Online Services.  
 
 ## Permissions  
 
 The following permission is required to call the API.  
 You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
-| API | Permission Required|
+| API | Permission |
 |-----------|-----------|
 | `/partner/customers/{id}/scanProfiles` | partner.scanprofiles.read.all |  
 
@@ -18,11 +18,11 @@ This section outlines the HTTP method and endpoint used to retrieve your custome
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|GET|`/partner/customers/{id}/scanProfiles`|Retrieves your customer's information for all scan profiles configured in AvePoint Online Services.|
+|GET|`/partner/customers/{id}/scanProfiles`|Retrieves all the scan profiles configured for a specific customer in AvePoint Online Services.|
 
 ## Query Parameters
 
-This section outlines the parameters required to specify which customer's information for scan profiles you want to retrieve.
+This section outlines the parameters required to specify which customer's scan profile information you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |

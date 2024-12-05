@@ -43,7 +43,7 @@ If the request has been successfully processed, a 200 OK response will be return
 |Elements|Description | Type|
 |---|---|---|
 |totalCount|Total count of jobs matching the query parameters.|integer|
-|jobs|A collection of jobs.|List|
+|jobs|A collection of jobs.|list|
 |nextlink|Returns the link to the next page of results.|string|
 |errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).|string|
 
