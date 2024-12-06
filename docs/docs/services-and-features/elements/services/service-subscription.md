@@ -39,7 +39,7 @@ The API response provides detailed information about the customer's service subs
 | purchasedUserSeats | The number of purchased user seats of the customer. | string |
 | microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
 | microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
-| PurchasedCapacity | The purchased storage capacity of the customer. | string |
+| PurchasedCapacity | The purchased capacity for the customer. | string |
 | protectedCapacity | The protected data size for the customer. | string |
 | storage | The storage type of the customer. | string |
 | retention | The data retention period of the customer. | string |

@@ -47,7 +47,7 @@ The API response provides detailed information about the service subscriptions r
 | purchasedUserSeats | The number of purchased user seats of the customer. | string |
 | microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
 | microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
-| purchasedCapacity | The purchased data capacity of the customer. | string |
+| purchasedCapacity | The purchased capacity for the customer. | string |
 | protectedCapacity | The protected data size for the customer. | string |
 | storage | The storage type of the customer. | string |
 | retention | The data retention period of the customer. | string |
@@ -77,15 +77,15 @@ If the request has been successfully processed, a 200 OK response will be return
     "products": [  // Array of products associated with the customer
         {
             "service": "Cloud Backup for IaaS + PaaS - Azure Storage",  // Name of the service
-            "subscriptionModel": "N/A",  // Type of subscription model
+            "subscriptionModel": "N/A",  // Type of subscription model; not applicable here
             "purchasedUserSeats": "N/A",  // Number of user seats purchased; not applicable here
-            "microsoftLicenseAssigned": "N/A",  // Number of Microsoft licenses assigned
+            "microsoftLicenseAssigned": "N/A",  // Number of Microsoft licenses assigned; not applicable here
             "microsoftLicenseAvailable": "133",  // Number of available Microsoft licenses
             "purchasedCapacity": "5 GB",  // Amount of purchased capacity for data protection.
-            "protectedCapacity": "0 GB", // Protected data size; not applicable here.
+            "protectedCapacity": "0 GB", // Protected data size.
             "storage": "AvePoint storage (Microsoft Azure Blob)",  // Storage type and provider
             "retention": "Retain data for 1 month",  // Data retention policy duration
-            "consumedStorage": "N/A",  // Amount of storage currently used
+            "consumedStorage": "N/A",  // Amount of storage currently used; not applicable here
             "expirationDate": "2025-04-05",  // Date when the subscription expires
             "change": "N/A"  // Information on changes, not applicable here
         },
