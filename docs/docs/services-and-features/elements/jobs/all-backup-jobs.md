@@ -26,7 +26,7 @@ This section outlines the parameters required to specify which customer's job de
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |--- |
-| Id | The tenant owner ID of the customer. | String | Yes |
+| id | The tenant owner ID of the customer. | string | Yes |
 
 ## Responses
 
@@ -34,21 +34,21 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| jobType | The service type of the job. | String |
-| jobModule | The service module of the job. | String |
-| status | The job status. | String |
-| jobId | The job ID. | String |
-| name | The job name. | String |
-| totalCount | The count of the objects that have been processed by the job. | Int |
-| failedCount | The count of the failed objects. | Int |
-| successfulCount | The count of the successful objects. | Int |
-| skippedCount | The count of the skipped objects. | Int |
-| warningCount | The count of the warning objects. | Int |
-| backupSize | The size of the backed-up objects. | String |
-| startTime | The start time of the job. | DateTime |
-| endTime | The end time of the job. | DateTime |
-| jobDuration | The job duration. | String |
-| lastModifyTime | The last modified time of the job. | DateTime |
+| jobType | The service type of the job. | string |
+| jobModule | The service module of the job. | string |
+| status | The job status. | string |
+| jobId | The job ID. | string |
+| name | The job name. | string |
+| totalCount | The count of the objects that have been processed by the job. | integer |
+| failedCount | The count of the failed objects. | integer |
+| successfulCount | The count of the successful objects. | integer |
+| skippedCount | The count of the skipped objects. | integer |
+| warningCount | The count of the warning objects. | integer |
+| backupSize | The size of the backed-up objects. | string |
+| startTime | The start time of the job. | string |
+| endTime | The end time of the job. | string |
+| jobDuration | The job duration. | string |
+| lastModifyTime | The last modified time of the job. | string |
 
 ## Request Sample
 

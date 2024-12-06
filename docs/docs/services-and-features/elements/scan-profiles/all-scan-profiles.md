@@ -26,7 +26,7 @@ This section outlines the parameters required to specify which customer's scan p
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| Id | The tenant owner ID of the customer. | String | Yes |
+| Id | The tenant owner ID of the customer. | string | Yes |
 
 ## Response
 
@@ -34,10 +34,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| profileName | The name of the scan profile. | String |
-| profileId | The ID of the scan profile. | String |
-| scanMode | The scan mode of the scan profile:<br> <ul><li> **0** represents **Express mode**</li><li> **1** represents **Advanced mode** | Integer |
-| modifiedTime | The last modified time of the scan profile. | String |
+| profileName | The name of the scan profile. | string |
+| profileId | The ID of the scan profile. | string |
+| scanMode | The scan mode of the scan profile:<br> <ul><li> **0** represents **Express mode**</li><li> **1** represents **Advanced mode** | integer |
+| modifiedTime | The last modified time of the scan profile. | string |
 
 ## Request Sample
 

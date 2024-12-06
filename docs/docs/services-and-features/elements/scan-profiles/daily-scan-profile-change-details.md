@@ -35,18 +35,18 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| profileName | The name of the scan profile. | String |
-| profileId | The ID of the scan profile. | String |
-| tenantDomain | The tenant domain of the scan profile. | String |
-| tenantId | The tenant ID the scan profile. | String |
-| description | The description of the scan profile. | String |
-| scanMode | TThe scan mode of the scan profile:<br> <ul><li> **0** represents **Express mode**</li><li> **1** represents **Advanced mode** | Int |
-| modifiedTime | The last modified time of the scan profile. | String |
-| lastUpdateTime | The time of generating the daily report for the scan profile. If no daily report has been generated, the time is the last modified time of the scan profile. | String |
-| lastScanStatus | The last scan job status of the scan profile:<br> <ul><li> **2** represents **Finished**</li><li> **3** represents **Failed**</li><li> **4** represents **Finished with Exception**</li><li> **5** represents **Skipped**</li><li> **10** represents **Stopped** | Int |
-| newRegisteredContent | The details of newly registered objects in the daily report of the scan profile. | String |
-| movedToAnotherContainerObjects | The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | String |
-| removedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | String |
+| profileName | The name of the scan profile. | string |
+| profileId | The ID of the scan profile. | string |
+| tenantDomain | The tenant domain of the scan profile. | string |
+| tenantId | The tenant ID the scan profile. | string |
+| description | The description of the scan profile. | string |
+| scanMode | The scan mode of the scan profile:<br> <ul><li> **0** represents **Express mode**</li><li> **1** represents **Advanced mode** | integer |
+| modifiedTime | The last modified time of the scan profile. | string |
+| lastUpdateTime | The time of generating the daily report for the scan profile. If no daily report has been generated, the time is the last modified time of the scan profile. | string |
+| lastScanStatus | The last scan job status of the scan profile:<br> <ul><li> **2** represents **Finished**</li><li> **3** represents **Failed**</li><li> **4** represents **Finished with Exception**</li><li> **5** represents **Skipped**</li><li> **10** represents **Stopped** | integer |
+| newRegisteredContent | The details of newly registered objects in the daily report of the scan profile. | string |
+| movedToAnotherContainerObjects | The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | string |
+| removedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | string |
 
 ## Request Sample
 
