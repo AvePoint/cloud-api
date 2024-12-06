@@ -27,7 +27,7 @@ This section outlines the necessary parameters required to specify which custome
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| Id | The tenant owner ID of the customer. | String | Yes |
+| Id | The tenant owner ID of the customer. | string | Yes |
 
 ## Responses
 
@@ -35,14 +35,14 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| customerId | The tenant owner ID of the customer. | String |
-| customer | The tenant owner email address of the customer. | String |
-| serviceType | The Cloud Backup for Microsoft 365 service that the customer has the subscription for. | String |
-| serviceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | String |
-| totalScannedObjects | The number of the scanned objects. | Int |
-| totalProtectedObjects | The number of the backed-up objects. | Int |
-| dataSizeStoredInAvePoint | The size of the backed-up objects stored in the AvePoint storage. | Int |
-| dataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | Int |
+| customerId | The tenant owner ID of the customer. | string |
+| customer | The tenant owner email address of the customer. | string |
+| serviceType | The Cloud Backup for Microsoft 365 service that the customer has the subscription for. | string |
+| serviceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | string |
+| totalScannedObjects | The number of the scanned objects. | integer |
+| totalProtectedObjects | The number of the backed-up objects. | integer |
+| dataSizeStoredInAvePoint | The size of the backed-up objects stored in the AvePoint storage. | integer |
+| dataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | integer |
 
 ## Request Sample  
 

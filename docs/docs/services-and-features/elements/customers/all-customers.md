@@ -25,11 +25,11 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| id | The tenant owner ID of the customer. | String |
-| organization | The organization name of the customer. | String |
-| ownerEmail | The tenant owner email address of the customer. | String |
-| jobStatus | The status of the customer’s tenant. | String |
-| countryOrRegion | The country or region name of the customer. | String |
+| id | The tenant owner ID of the customer. | string |
+| organization | The organization name of the customer. | string |
+| ownerEmail | The tenant owner email address of the customer. | string |
+| jobStatus | The status of the customer’s tenant. | string |
+| countryOrRegion | The country or region name of the customer. | string |
 
 ## Request Sample
 
