@@ -83,7 +83,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "backupSize": "0 GB", // The size of the backed-up objects
             "startTime": "N/A", // The start time of the job
             "endTime": "N/A", // The end time of the job
-            "jobDuration": "N/A", The job duration
+            "jobDuration": "N/A", //The job duration
             "lastModifyTime": "N/A" // The last modified time of the job
         }
     ]

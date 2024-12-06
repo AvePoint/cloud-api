@@ -63,7 +63,7 @@ To obtain an access token using a client secret in an app registration, follow t
    - `scope` – Set the scope, which is the assigned permission.
    - `grant_type` – Set to `client_credentials`.
       
-    Request sample for getting access token by client secret:  
+    **Request sample for getting access token by client secret:**  
     
     ```json  
     POST https://identity.avepointonlineservices.com/connect/token
@@ -78,7 +78,7 @@ To obtain an access token using a client secret in an app registration, follow t
    - `access_token` – The token value.
    - `expires_in` – Indicates the token expiration in seconds.  
    
-   Response sample  
+   **Response sample**  
     ```json
     {
         "token_type": "Bearer",
