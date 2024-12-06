@@ -16,7 +16,7 @@ Built on a foundation of security and scalability, the Elements APIs ensure that
 
 - **Data Protection Monitoring**: Track and manage protected data within Cloud Backup for Microsoft 365, ensuring compliance and data integrity.
 
-- **Job Details of Backup Services**: View comprehensive job details, including auto-discovery scans and changes in subscription consumption, to maintain optimal service levels.
+- **Details for Scan and Backup**: View comprehensive job details, including auto-discovery scans, backup services, and changes in their subscription consumption, to maintain optimal service levels.
 
 - **Advanced Query Capabilities**: Retrieve specific data points with precision using structured query parameters, allowing for detailed analysis and reporting.
 
