@@ -25,22 +25,27 @@ The API response provides detailed information about the customer's service subs
 
 | Response | Description | Type |
 | --- | --- | --- |
-| customerId | The tenant owner ID of the customer. | String |
-| organization | The customer's organization name. | String |
-| customer | The tenant owner email address of the customer. | String |
-| tenantId | The customer's tenant ID. | String |
-| service | The service that the customer has subscriptions for. | String |
-| subscriptionModel | The subscription model of the customer’s service. | String |
-| purchasedUserSeats | The number of purchased user seats of the customer. | String |
-| microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | String |
-| microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | String |
-| PurchasedCapacity | The purchased storage capacity of the customer. | String |
-| protectedCapacity | The protected data size for the customer. | String |
-| storage | The storage type of the customer. | String |
-| retention | The data retention period of the customer. | String |
-| consumedStorage | The consumed storage size of the customer. | String |
-| expirationDate | The expiration date of the customer’s service. | String |
-| change | The user seats changes in the pooled license compared with the first day of the current month. | String |
+| customerId | The tenant owner ID of the customer. | string |
+| organization | The customer's organization name. | string |
+| customer | The tenant owner email address of the customer. | string |
+| tenantId | The customer's tenant ID. | string |
+|Products| A list of products that the customer has subscribed.| list|
+
+**Product subscriptions**  
+| Element | Description | Type |
+| --- | --- | --- |
+| service | The service that the customer has subscriptions for. | string |
+| subscriptionModel | The subscription model of the customer’s service. | string |
+| purchasedUserSeats | The number of purchased user seats of the customer. | string |
+| microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
+| microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
+| PurchasedCapacity | The purchased capacity for the customer. | string |
+| protectedCapacity | The protected data size for the customer. | string |
+| storage | The storage type of the customer. | string |
+| retention | The data retention period of the customer. | string |
+| consumedStorage | The consumed storage size of the customer. | string |
+| expirationDate | The expiration date of the customer’s service. | string |
+| change | The user seats changes in the pooled license compared with the first day of the current month. | string |
 
 ## Request Sample
 
@@ -70,7 +75,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "purchasedUserSeats": "10",  // Number of user seats purchased
                     "microsoftLicenseAssigned": "0",  // Number of Microsoft licenses assigned
                     "microsoftLicenseAvailable": "0",  // Number of available Microsoft licenses
-                    "purchasedCapacity": "N/A",  // Purchased storage capacity; not applicable here
+                    "purchasedCapacity": "N/A",  // Purchased capacity for data to be protected; not applicable here
                     "protectedCapacity": "N/A", // Protected data size; not applicable here.
                     "storage": "N/A",  // Storage details; not applicable here
                     "retention": "N/A",  // Data retention policy; not applicable here
