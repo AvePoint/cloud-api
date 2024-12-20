@@ -1,5 +1,5 @@
 {
-  "x-generator": "NSwag v14.1.0.0 (NJsonSchema v11.0.2.0 (Newtonsoft.Json v13.0.0.0))",
+  "x-generator": "NSwag v14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))",
   "openapi": "3.0.0",
   "info": {
     "title": "Cloud Backup for Office 365 Web Api 2",
@@ -21,7 +21,7 @@
     }
   ],
   "paths": {
-    "/api/PublicApi/cloudbackup/licenseconsumption": {
+    "/cloudbackup/licenseconsumption": {
       "get": {
         "tags": [
           "PublicApi"
@@ -41,24 +41,196 @@
         }
       }
     },
-    "/api/PublicApi/cloudbackup/jobs": {
-      "post": {
+    "/cloudbackup/getjobs": {
+      "get": {
+        "tags": [
+          "PublicApi"
+        ],
+        "operationId": "PublicApi_GetJobs",
+        "parameters": [
+          {
+            "name": "StartTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "FinishTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "JobType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/BackupJobType"
+            },
+            "x-position": 3
+          },
+          {
+            "name": "ObjectType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/CloudBackupJobObjectType"
+            },
+            "x-position": 4
+          },
+          {
+            "name": "JobState",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/CloudBackupJobState"
+            },
+            "x-position": 5
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 6
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 7
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicApiGetJobResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cloudbackup/getunusualactivitydata": {
+      "get": {
+        "tags": [
+          "PublicApi"
+        ],
+        "operationId": "PublicApi_GetUnusualActivityData",
+        "parameters": [
+          {
+            "name": "StartTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "EndTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicApiGetUnusualActivity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cloudbackup/jobs": {
+      "get": {
         "tags": [
           "PublicApi"
         ],
         "operationId": "PublicApi_GetCloudBackupJobs",
-        "requestBody": {
-          "x-name": "filter",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CloudBackupJobFilter"
-              }
-            }
+        "parameters": [
+          {
+            "name": "StartTime",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "x-position": 1
           },
-          "required": true,
-          "x-position": 1
-        },
+          {
+            "name": "FinishTime",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "JobType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/BackupJobType"
+            },
+            "x-position": 3
+          },
+          {
+            "name": "ObjectType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/CloudBackupJobObjectType"
+            },
+            "x-position": 4
+          },
+          {
+            "name": "JobState",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/CloudBackupJobState"
+            },
+            "x-position": 5
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 6
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 7
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -77,49 +249,81 @@
   "components": {
     "schemas": {
       "LicenseConsumption": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "outOfPolicyTime": {
-            "type": "integer",
-            "format": "int64"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PublicApiResponseBody"
           },
-          "purchasedUserSeats": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "assignedUserSeats": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "purchasedStorageSize": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "protectedSize": {
-            "type": "integer",
-            "format": "int32"
-          }
-        }
-      },
-      "CloudBackupJobResult": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "totalCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "jobs": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/CloudBackupJob"
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "outOfPolicyTime": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "purchasedUserSeats": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "assignedUserSeats": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "purchasedStorageSize": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "protectedSize": {
+                "type": "integer",
+                "format": "int32"
+              }
             }
           }
+        ]
+      },
+      "PublicApiResponseBody": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
         }
       },
-      "CloudBackupJob": {
+      "PublicApiGetJobResult": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PublicApiResponseBody"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "totalNumber": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "jobs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/PublicApiGetJobInfo"
+                }
+              },
+              "nextLink": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "PublicApiGetJobInfo": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -132,75 +336,72 @@
             "nullable": true
           },
           "startTime": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string",
+            "nullable": true
           },
           "finishTime": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string",
+            "nullable": true
           },
           "duration": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string",
+            "nullable": true
           },
           "backupDetails": {
             "nullable": true,
             "oneOf": [
               {
-                "$ref": "#/components/schemas/BackupDetails"
+                "$ref": "#/components/schemas/PublicApiBackupDetails"
               }
             ]
+          },
+          "jobErrors": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ErrorCodeParam"
+            }
           }
         }
       },
-      "BackupDetails": {
+      "PublicApiBackupDetails": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "totalCount": {
+          "totalNumber": {
             "type": "integer",
             "format": "int64"
           },
-          "failedCount": {
+          "failedNumber": {
             "type": "integer",
             "format": "int64"
           },
-          "successfulCount": {
+          "successfulNumber": {
             "type": "integer",
             "format": "int64"
           },
-          "skippedCount": {
+          "skippedNumber": {
             "type": "integer",
             "format": "int64"
           }
         }
       },
-      "CloudBackupJobFilter": {
+      "ErrorCodeParam": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "startTime": {
-            "type": "integer",
-            "format": "int64"
+          "isErrorCode": {
+            "type": "boolean"
           },
-          "finishTime": {
-            "type": "integer",
-            "format": "int64"
+          "value": {
+            "type": "string",
+            "nullable": true
           },
-          "jobType": {
-            "$ref": "#/components/schemas/BackupJobType"
+          "url": {
+            "type": "string",
+            "nullable": true
           },
-          "objectType": {
-            "$ref": "#/components/schemas/CloudBackupJobObjectType"
-          },
-          "jobState": {
-            "$ref": "#/components/schemas/CloudBackupJobState"
-          },
-          "pageIndex": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageSize": {
+          "number": {
             "type": "integer",
             "format": "int32"
           }
@@ -279,6 +480,143 @@
           4,
           5
         ]
+      },
+      "PublicApiGetUnusualActivity": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PublicApiResponseBody"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/UnusualActivityData"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "UnusualActivityData": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tenantOwner": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "serviceType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "potentialRansomwareAttackCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "unusualActivitiesCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CloudBackupJobResult": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PublicApiResponseBody"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "totalCount": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "jobs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/CloudBackupJob"
+                }
+              },
+              "nextLink": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "CloudBackupJob": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "finishTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "backupDetails": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BackupDetails"
+              }
+            ]
+          },
+          "jobErrors": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ErrorCodeParam"
+            }
+          }
+        }
+      },
+      "BackupDetails": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "failedCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "successfulCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "skippedCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
       }
     },
     "securitySchemes": {
