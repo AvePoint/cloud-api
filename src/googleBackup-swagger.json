@@ -1,0 +1,160 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "GSuite Backup Api",
+      "version": "1.0"
+    },
+    "paths": {
+      "/api/jobs": {
+        "get": {
+          "tags": [
+            "Api"
+          ],
+          "operationId": "Job_GetJobs",
+          "parameters": [
+            {
+              "name": "DataSource",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/GSuiteDataSource"
+              }
+            },
+            {
+              "name": "AppType",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/GSuiteAppType"
+              }
+            },
+            {
+              "name": "JobType",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/GSuiteJobType"
+              }
+            },
+            {
+              "name": "StartTime",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            {
+              "name": "FinishTime",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            {
+              "name": "JobStatus",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/GSuiteJobStatus"
+              }
+            },
+            {
+              "name": "PageIndex",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "PageSize",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "NextLink",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "GSuiteAppType": {
+          "enum": [
+            1,
+            2,
+            4,
+            8,
+            64,
+            128,
+            4096
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "GSuiteDataSource": {
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "GSuiteJobStatus": {
+          "enum": [
+            0,
+            2,
+            3,
+            7
+          ],
+          "type": "integer",
+          "format": "int32"
+        },
+        "GSuiteJobType": {
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "securitySchemes": {
+        "OAuth2": {
+          "type": "oauth2",
+          "flows": {
+            "implicit": {
+              "authorizationUrl": "https://glegion.sharepointguild.com/api/login",
+              "scopes": { }
+            }
+          }
+        },
+        "BearerAuth": {
+          "type": "apiKey",
+          "description": "JWT Authorization header using the Bearer scheme.",
+          "name": "Authorization",
+          "in": "header"
+        }
+      }
+    },
+    "security": [
+      {
+        "BearerAuth": [ ]
+      }
+    ]
+  }
