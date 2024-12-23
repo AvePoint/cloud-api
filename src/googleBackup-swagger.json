@@ -5,7 +5,7 @@
       "version": "1.0"
     },
     "paths": {
-      "backup/google/admin/api/jobs": {
+      "backup/google/admin/jobs": {
         "get": {
           "tags": [
             "Api"
