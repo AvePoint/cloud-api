@@ -27,6 +27,16 @@
           "PublicApi"
         ],
         "operationId": "PublicApi_GetCloudBackupLicenseConsumption",
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -91,13 +101,22 @@
             "x-position": 5
           },
           {
+            "name": "Location",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 6
+          },
+          {
             "name": "PageIndex",
             "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
             },
-            "x-position": 6
+            "x-position": 7
           },
           {
             "name": "PageSize",
@@ -106,7 +125,7 @@
               "type": "integer",
               "format": "int32"
             },
-            "x-position": 7
+            "x-position": 8
           }
         ],
         "responses": {
@@ -147,6 +166,15 @@
               "nullable": true
             },
             "x-position": 2
+          },
+          {
+            "name": "Location",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
           }
         ],
         "responses": {
