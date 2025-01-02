@@ -58,7 +58,7 @@ https://graph-us.avepointonlineservices.com/records/connector/records
 ```
 ```json
 {  
-    "id": " ", // The ID of the connection.
+    "id": "d9da492f-cc67-4920-99f9-6fbaae1f1410", // The ID of the connection.
       "confilictOption": "Overwrite", // The conflict resolution when submitting records to AvePoint Opus if there is a conflict with the unique key of the record. Overwrite is to overwrite the record information in AvePoint Opus.
       "data": [
           {
