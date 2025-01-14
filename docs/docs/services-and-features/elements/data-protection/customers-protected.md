@@ -48,7 +48,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
-```
+```json
 https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b04b-794c8baf5ea3/protected
 ```
 

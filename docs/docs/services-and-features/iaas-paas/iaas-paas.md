@@ -68,7 +68,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
 
 ```json
-https://graph-us.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType=1&pageSize=5&startTime=2024-08-01T00:00:00Z&finishTime=2024-11-01T00:00:00Z
+https://graph.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType=1&pageSize=5&startTime=2024-08-01T00:00:00Z&finishTime=2024-11-01T00:00:00Z
 ```
 
 ## Response Sample  

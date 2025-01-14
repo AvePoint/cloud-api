@@ -24,7 +24,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
    - Use [Certificate](#certificate). You need to generate a JWT signed with your certificate and send a POST request with the client ID, client assertion (the signed JWT), scope, and grant type. See the DotNet example in the linked section.  
 7. Use the access token to call an API. For example, you can use the GET request to retrieve the audit records within a specific time range using the access token:
     ```json
-    GET https://graph-us.avepointonlineservices.com/aos/audit?startTime=2023-03-01T08:00:00Z&endTime=2023-03-02T08:00:00Z
+    GET https://graph.avepointonlineservices.com/aos/audit?startTime=2023-03-01T08:00:00Z&endTime=2023-03-02T08:00:00Z
     Authorization: Bearer YOUR_ACCESS_TOKEN
     ```
 

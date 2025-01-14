@@ -96,7 +96,7 @@ If an error occurs, the following information is displayed in the response body.
 The following request is an API call to the AvePoint Online Services (AOS) environment in the US - East region. The API method being used is `/aos/audit`. This request is designed to fetch a specific set of audit logs from the AOS portal, within a defined timeframe, and limited to a particular geographical location.
 
 ```json
-https://graph-us.avepointonlineservices.com/aos/audit?startTime=2024-10-10T08:00:00Z&endTime=2024-10-14T17:00:00Z&productTypes=Portal&geoLocations=NAM
+https://graph.avepointonlineservices.com/aos/audit?startTime=2024-10-10T08:00:00Z&endTime=2024-10-14T17:00:00Z&productTypes=Portal&geoLocations=NAM
 ```
 
 ## Response Sample

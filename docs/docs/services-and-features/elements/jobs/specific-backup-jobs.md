@@ -1,7 +1,8 @@
 # Retrieve Specific Job Type and Module of Backup Services
 
-Use this API to retrieve your customer's job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.
-<br>This API is intended specifically for customers who have subscribed to these services.
+Use this API to retrieve your customer's job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.  
+
+This API is intended specifically for customers who have subscribed to these services.
 
 ## Permissions  
 
@@ -52,7 +53,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | jobDuration | The job duration. | string |
 | lastModifyTime | The last modified time of the job. | string |
 
-***
+
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
