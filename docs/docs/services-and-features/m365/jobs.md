@@ -1,6 +1,6 @@
 # Retrieve Job Information
 
-Get the job-related information (`/cloudbackup/getjobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/cloudbackup/getjobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
+Get the job-related information (`/backup/m365/cloudbackup/getjobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `backup/m365/cloudbackup/getjobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
 
 ## Permission
 
@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API   | Permission |
 |-------------------|---------------|
-|`/cloudbackup/getjobs` | microsoft365backup.jobInfo.read.all | 
+|`/backup/m365/cloudbackup/getjobs` | microsoft365backup.jobInfo.read.all | 
 
 
 ## Request
@@ -18,7 +18,7 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/cloudbackup/getjobs` | Gets the job information of Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/cloudbackup/getjobs` | Gets the job information of Cloud Backup for Microsoft 365. |
 
 -------------------------
 
@@ -86,7 +86,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
 
 ```json
-https://graph.avepointonlineservices.com/cloudbackup/getjobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1
+https://graph.avepointonlineservices.com/backup/m365/cloudbackup/getjobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1
 ```
 
 ## Response Sample
