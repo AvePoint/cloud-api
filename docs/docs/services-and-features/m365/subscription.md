@@ -33,7 +33,7 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 
 ```json
 https://graph.avepointonlineservices.com/backup/m365/cloudbackup/licenseconsumption
-
+```
 
 ## Response Sample  
 
