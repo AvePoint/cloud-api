@@ -1,0 +1,66 @@
+# Destroy Records  
+
+Use this API to update the status of a record as Destroyed in AvePoint Opus.
+<br>Note the following:<br> <ul><li>You can update the status for up to 15 records at a time.</li><li>If manual approval is enabled, after record reviewers approve or reject the records, you can use this API to update the status of the approved records as Destroyed in AvePoint Opus.</li></ul> 
+
+## Permission
+
+The following permission is required to call this API.  
+You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+
+| API    | Permission  |
+|-------------------|---------------------|
+| `/connector/records` |  records.readwrite.all |
+
+## Request
+
+This section outlines the HTTP method and endpoint used to update the status of a record as Destroyed in AvePoint Opus.
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| DELETE | `/connector/records` | Updates the status of a record as Destroyed in AvePoint Opus. |
+
+## Request Parameters
+
+This section outlines the parameters to specify the records whose status you want to update as Destroyed in AvePoint Opus.  
+
+|Parameter|Description | Type|Required?|
+|---|---|---|---|
+|disposalIds|The unique key of the records whose status you want to update as Destroyed in AvePoint Opus.|Array|Yes|
+
+## Response
+
+The API response provides the unique key of the records whose status have been updated as Destroyed in AvePoint Opus.
+
+| Elements           | Description                                                           | Type   | 
+|--------------------|---------------------|--------| 
+| statusCode      | The request status code.  | integer    | 
+| message | The request outcome. | Array  | 
+
+## Request Sample
+
+The following request structure is designed to update the status of a record as Destroyed in AvePoint Opus.  
+
+```json
+https://graph-us.avepointonlineservices.com/records/connector/records
+```
+```json
+{
+    "disposalIds" :[ // The unique key of the records whose status you want to update as Destroyed in AvePoint Opus.
+        "test_connector_0006",
+        "test_connector_0007"
+    ]
+}
+```
+
+## Response Sample
+
+If the request has been successfully processed, a 200 OK response code will be returned.</br>
+For details on the HTTP status code, refer to [HTTP Status Code](/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code).  
+
+```json
+{
+    "statusCode": 200, // The request status code.
+    "message": null // This message appears when the request has been successfully processed.
+}
+```

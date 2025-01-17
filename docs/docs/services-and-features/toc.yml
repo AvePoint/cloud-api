@@ -8,3 +8,5 @@
   href: d365/toc.yml
 - name: Cloud Backup for IaaS + PaaS
   href: iaas-paas/toc.yml
+- name: AvePoint Opus
+  href: opus/toc.yml
