@@ -20,8 +20,6 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 | --- | --- | --- |
 | GET | `/cloudbackup/getjobs` | Gets the job information of Cloud Backup for Microsoft 365. |
 
--------------------------
-
 ## Query Parameters
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify pagination, job types, time ranges, and other criteria to filter the results effectively.  
