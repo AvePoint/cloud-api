@@ -23,7 +23,7 @@ This section outlines the HTTP method and endpoint used to retrieve records whos
 
 The API requires multiple parameters to retrieve records whose disposal due date is earlier than the specified time.  
 
-|Parameter|Description | Type|Required?|
+|Parameter|Description| Type|Required?|
 |---|---|---|---|
 |id|The ID of the connection. You can find it from the JSON file.|GUID|Yes|
 |disposalDueDate|The disposal due date.|string|Yes|
@@ -34,11 +34,11 @@ The API requires multiple parameters to retrieve records whose disposal due date
 
 The API response provides the outcome of the request.
 
-| Parameter   |Description        | Type   | 
-|--------------------|---------------------|--------|
-| message      | The request outcome.      | string    | 
-| startIndex             |The page index of the records that are queried in the request.              | string  |
-| queriedItems             |The records that match the request information.              | Array  | 
+| Parameter |Description |Type | 
+|-----------|-------------|-----|
+| message     | The request outcome.      | string    | 
+| startIndex |The page index of the records that are queried in the request. | string  |
+| queriedItems  |The records that match the request information. | Array  | 
 
 ### Record Details
 Each record retrieved through the API includes detailed attributes. 
@@ -63,7 +63,7 @@ https://graph-us.avepointonlineservices.com/records/connector/records?id=63acafa
 
 ## Response Sample
 
-If the quest has been successfully processed, a 200 OK response code will be returned.</br>
+If the quest has been successfully processed, a 200 OK response code will be returned.  
 For details on the HTTP status code, refer to [HTTP Status Code](/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code).  
 
 ```json
