@@ -31,7 +31,7 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 
 ## Response Sample
 
-If successful, this method returns a 200 OK response code and a collection of jobs in the response body.  
+If successful, this method returns a 200 OK response code and the subscription consumption information in the response body.  
 For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
 
 ```json
