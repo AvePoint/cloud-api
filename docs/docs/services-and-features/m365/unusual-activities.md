@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve the basic in
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/cloudbackup/getunusualactivitydata` | Gets the basic information of unusual activities in Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/cloudbackup/unusualactivitydata` | Gets the basic information of unusual activities in Cloud Backup for Microsoft 365. |
 
 ## Query Parameters
 
