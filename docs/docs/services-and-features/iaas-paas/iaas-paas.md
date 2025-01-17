@@ -1,6 +1,6 @@
 # Retrieve Job Information
 
-Get the job-related information (`backup/vm/jobs` navigation property) from Cloud Backup for IaaS + PaaS. By invoking the `backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.   
+Get the job-related information (`/backup/vm/jobs` navigation property) from Cloud Backup for IaaS + PaaS. By invoking the `backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.   
 
 ## Permission
 
@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API     | Permission required | 
 |-------------------|---------------|
-| `backup/vm/jobs` | PlatformBackup.ReadWrite.All |
+| `/backup/vm/jobs` | PlatformBackup.ReadWrite.All |
 
 ## Request  
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `backup/vm/jobs` | Retrieves comprehensive job information. |
+| GET | `/backup/vm/jobs` | Retrieves comprehensive job information. |
 
 ## Query Parameters
 
@@ -29,7 +29,7 @@ The API supports several query parameters to refine and customize the data retri
 | startTime | Sets a start time (UTC time) for the time range. format: ISO 8601 |string | No | 
 | finishTime |  Sets an end time (UTC time) for the time range. format: ISO 8601 |string | No | 
 | serviceType | Sets the service type of the jobs to get.<ul>  <li> **1** for Azure Virtual Machine</li>  <li> **2** for Microsoft Entra ID</li><li> **4** for Azure Storage</li>  <li> **64** for Admin Portal Settings</li><li> **128** for Common</li> <li> **256** for Amazon EC2</li> <li> **512** for Azure SQL</li><li> **1024** for Azure DevOps</li><li> **2048** for Azure SQL Database real backup</li><li> **4096** for Azure AD B2C</li></ul> | No | Enum |
-| jobType |  Sets the job types that you want to get.<ul><li> **1** for Azure Virtual Machine Backup Job</li><li> **2** for Azure Virtual Machine Restore Job</li><li> **4** for Azure Virtual Machine File Level Export Job</li><li> **32** for Azure Virtual Machine Index Generation Job</li><li> **64** for Data Retention Job</li><li> **128** for Microsoft Entra ID Backup Job</li><li> **256** for Microsoft Entra ID Restore Job</li><li> **257** for Microsoft Entra ID Export Job</li><li> **1024** for Azure Storage Backup Job</li><li> **2048** for Azure Storage Restore Job</li><li> **4096** for Azure Storage Export Job</li><li> **20003** for Admin Portal Settings Backup Job</li><li> **20004** for Admin Portal Settings Export Job</li><li> **20006** for Admin Portal Settings Restore Job</li><li> **20009** for Amazon EC2 Backup Job</li><li> **20010** for Amazon EC2 Restore Job</li><li> **20012** for Azure SQL Backup Job</li><li> **20013** for Azure SQL Restore Job</li><li> **20014** for Azure DevOps Backup Job</li><li> **20015** for Azure DevOps Restore Job</li><li> **20016** for Azure SQL Backup Real Job</li><li> **20017** for Azure SQL Import Job</li><li> **20018** for Azure VM File Restore Job</li><li> **20019** for Azure AD B2C Backup Job</li><li> **20020** for Azure AD B2C Restore Job</li></ul> | No | Enum |
+| jobType |  Sets the job types that you want to get.<ul><li> **1** for Azure Virtual Machine Backup Job</li><li> **2** for Azure Virtual Machine Restore Job</li><li> **4** for Azure Virtual Machine File Level Export Job</li><li> **33** for Azure Virtual Machine Index Generation Job</li><li> **64** for Data Retention Job</li><li> **128** for Microsoft Entra ID Backup Job</li><li> **256** for Microsoft Entra ID Restore Job</li><li> **257** for Microsoft Entra ID Export Job</li><li> **1024** for Azure Storage Backup Job</li><li> **2048** for Azure Storage Restore Job</li><li> **4096** for Azure Storage Export Job</li><li> **20003** for Admin Portal Settings Backup Job</li><li> **20004** for Admin Portal Settings Export Job</li><li> **20006** for Admin Portal Settings Restore Job</li><li> **20009** for Amazon EC2 Backup Job</li><li> **20010** for Amazon EC2 Restore Job</li><li> **20012** for Azure SQL Backup Job</li><li> **20013** for Azure SQL Restore Job</li><li> **20014** for Azure DevOps Backup Job</li><li> **20015** for Azure DevOps Restore Job</li><li> **20016** for Azure SQL Backup Real Job</li><li> **20017** for Azure SQL Import Job</li><li> **20018** for Azure VM File Restore Job</li><li> **20019** for Azure AD B2C Backup Job</li><li> **20020** for Azure AD B2C Restore Job</li></ul> | No | Enum |
 | pageNumber | Sets the starting number of the page. The default value is 0. | integer |No | 
 | pageSize |  Sets the number of objects to display on one page. The default value is 10. |integer | No | 
 | skiptoken |  Sets the skip token got from next link from previous request, if setting this one, PageNumber will be ignored. |  string |No |
