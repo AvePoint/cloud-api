@@ -58,6 +58,8 @@ The Modern API uses the HTTP methods to specify the action being performed on a 
 | Method | Description |  
 |------|------|  
 |GET|Read data from a resource.|  
+|POST| Create data in a resource. |
+|DELETE| Delete data from a resource. | 
 
 ## HTTP Status Code
 
@@ -65,7 +67,7 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 
 | Code | Description |
 | ---- | ----------- |
-| 200 | OK – The request was successful, and hte response contains the requested data. |
+| 200 | OK – The request was successful, and the response contains the requested data. |
 | 400 | Bad Request – The request could not be processed due to invalid parameters. |
 | 500 | Internal Server Error – An unexpected server error occurred. |
 
