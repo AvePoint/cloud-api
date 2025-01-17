@@ -1,6 +1,6 @@
 # Retrieve Job Information
 
-Get the job-related information (`backup/vm/jobs` navigation property) from Cloud Backup for IaaS + PaaS. By invoking the `backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.   
+Get the job-related information (`/backup/vm/jobs` navigation property) from Cloud Backup for IaaS + PaaS. By invoking the `/backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.   
 
 ## Permission
 
@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API     | Permission required | 
 |-------------------|---------------|
-| `backup/vm/jobs` | PlatformBackup.ReadWrite.All |
+| `/backup/vm/jobs` | PlatformBackup.ReadWrite.All |
 
 ## Request  
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `backup/vm/jobs` | Retrieves comprehensive job information. |
+| GET | `/backup/vm/jobs` | Retrieves comprehensive job information. |
 
 ## Query Parameters
 
