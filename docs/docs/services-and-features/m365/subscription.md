@@ -1,6 +1,6 @@
 # Retrieve Subscription Consumption
 
-Get the subscription consumption information (`/cloudbackup/licenseconsumption` navigation property) of Cloud Backup for Microsoft 365. By invoking the `/cloudbackup/licenseconsumption` endpoint, users can gain comprehensive insights into subscription usage, facilitating efficient resource management and ensuring service compliance.  
+Get the subscription consumption information (`/backup/m365/cloudbackup/licenseconsumption` navigation property) of Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackup/licenseconsumption` endpoint, users can gain comprehensive insights into subscription usage, facilitating efficient resource management and ensuring service compliance.  
 
 ## Permission
 
@@ -9,13 +9,13 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API   | Permission  |
 |-------------------|----------------------|
-|`/cloudbackup/licenseconsumption`|microsoft365backup.subscriptionInfo.read.all |
+|`/backup/m365/cloudbackup/licenseconsumption`|microsoft365backup.subscriptionInfo.read.all |
 
 ## Request
 
 | Method | Path | Description |
 | --- | --- | --- |
-| GET | `/cloudbackup/licenseconsumption` | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/cloudbackup/licenseconsumption` | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
 
 ## Responses
 
