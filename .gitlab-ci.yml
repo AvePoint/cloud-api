@@ -1,0 +1,22 @@
+stages:
+  - publish
+
+variables:
+  Guide_Path: "aosgraphapi"
+
+publish:
+  stage: publish
+  tags:
+    - linux-devops-docker-build
+  image: clouddevops.azurecr.io/buildbox:latest
+  only:
+    refs:
+      - /^(main|devops-)/
+  when: manual
+  script:
+    #- dotnet nuget remove source nuget.org
+    - dotnet tool update -g docfx --add-source https://proget.avepoint.net/nuget/NuGet.org/v3/index.json --ignore-failed-sources
+    - cd docs 
+    - pwsh
+    - docfx ./docfx.json
+    - azcopy sync "$CI_PROJECT_DIR/docs/_site/" "https://twguidestagingsa.blob.core.windows.net/\$web/$Guide_Path/?$GUIDE_SAS_TOKEN_STAGING" --recursive=true --delete-destination=true
