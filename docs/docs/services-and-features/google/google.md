@@ -49,15 +49,15 @@ Each job retrieved through the API includes detailed attributes that offer insig
 
 | Elements           | Description                                                           | Type   |
 |--------------------|-----------------------------------------------------------------------|--------|
-| JobId              | Unique identifier for the job.                                        | string | 
-| AppType            | Service type of the job. <br> Valid values:<br> <ul><li> **1** for Gmail</li><li> **2** for Drive </li><li> **4** for Calendar </li><li>**8** for Contacts</li><li>**64** for Shared drives</li><li>**128** for Classroom</li><li>**4096** for Chat</li>                  | enum |
-| JobType            | The  type of job performed. <br> Valid values:<br> <ul><li> **1** for Backup</li><li> **2** for Restore </li><li> **3** for Export </li><li>**4** for Delete</li><li>**5** for Retention</li><li>**6** for Generate Report</li></ul>| enum |
-|DataSource|  The data source of the job. <br> Valid values:<br> <ul><li> **1** for Admin</li><li> **2** for ReCenter </li></ul>|enum  |
-| Status             | Status of the job.    <br>Valid values:</br> <ul><li> **0** for In progress</li><li> **2** for Finished</li><li>**3** for Failed </li><li>**7** for Finished with exception</li><ul>                                   | enum |
-| Progress           | The current state of the job by quantifying the percentage of completion. For example, if the value is **100.0**, it means that 100% of the tasks associated with the job have been completed.                               | double | 
-| StartTime          | The start time of the job in ISO 8601 format.                         | string | 
-| FinishTime         | The end time of the job in ISO 8601 format.                           | string |
-| Operator   | Name of the operator of the job.                                              | string | 
+| jobId              | Unique identifier for the job.                                        | string | 
+| appType            | Service type of the job. <br> Valid values:<br> <ul><li> **1** for Gmail</li><li> **2** for Drive </li><li> **4** for Calendar </li><li>**8** for Contacts</li><li>**64** for Shared drives</li><li>**128** for Classroom</li><li>**4096** for Chat</li>                  | enum |
+| jobType            | The  type of job performed. <br> Valid values:<br> <ul><li> **1** for Backup</li><li> **2** for Restore </li><li> **3** for Export </li><li>**4** for Delete</li><li>**5** for Retention</li><li>**6** for Generate Report</li></ul>| enum |
+|dataSource|  The data source of the job. <br> Valid values:<br> <ul><li> **1** for Admin</li><li> **2** for ReCenter </li></ul>|enum  |
+| status             | Status of the job.    <br>Valid values:</br> <ul><li> **0** for In progress</li><li> **2** for Finished</li><li>**3** for Failed </li><li>**7** for Finished with exception</li><ul>                                   | enum |
+| progress           | The current state of the job by quantifying the percentage of completion. For example, if the value is **100.0**, it means that 100% of the tasks associated with the job have been completed.                               | double | 
+| startTime          | The start time of the job in ISO 8601 format.                         | string | 
+| finishTime         | The end time of the job in ISO 8601 format.                           | string |
+| operator   | Name of the operator of the job.                                              | string | 
 
 ## Request Sample
 
@@ -75,31 +75,31 @@ For details on the HTTP status code, refer to [HTTP Status Code](https://learn.a
 
 ```json
 {
-    "Status": 200,
-    "Message": "",
-    "Value": [
+    "status": 200,
+    "message": "",
+    "jobs": [
         {
-            "JobId": "GDIG20241009053431", // Job ID
-            "AppType": 1, // Service type of the job is Gmail
-            "JobType": 5, // Type of the performed job is Retention
-            "DataSource": 1, // Data source of the job is the Cloud Backup admin portal
-            "Status": 2, // Status of the job is Finished
-            "Progress": 100.0, // 100% of the tasks associated with the job have been completed
-            "StartTime": "2024-10-09T05:34:31+00:00", // UTC timestamp for the start time of the job
-            "FinishTime": "2024-10-09T05:50:36.008+00:00", // // UTC timestamp for the finished time of the job
-            "Operator": "System" // The job is operated by System
+            "jobId": "GDIG20241009053431", // Job ID
+            "appType": 1, // Service type of the job is Gmail
+            "jobType": 5, // Type of the performed job is Retention
+            "dataSource": 1, // Data source of the job is the Cloud Backup admin portal
+            "status": 2, // Status of the job is Finished
+            "progress": 100.0, // 100% of the tasks associated with the job have been completed
+            "startTime": "2024-10-09T05:34:31+00:00", // UTC timestamp for the start time of the job
+            "finishTime": "2024-10-09T05:50:36.008+00:00", // // UTC timestamp for the finished time of the job
+            "operator": "System" // The job is operated by System
         },
         {
-            "JobId": "GDIG20240909071817", // Job ID
-            "AppType": 1, // Service type of the job is Gmail
-            "JobType": 5, // Type of the performed job is Retention
-            "DataSource": 1, // Data source of the job is the Cloud Backup admin portal
-            "Status": 3, // Status of the job is Failed
-            "Progress": 100.0, // 100% of the tasks associated with the job have been completed
-            "StartTime": "2024-09-09T07:18:17+00:00", // UTC timestamp for the start time of the job
-            "FinishTime": "2024-09-09T07:22:34.984+00:00", // // UTC timestamp for the finished time of the job
-            "Operator": "System" // The job is operated by System
+            "jobId": "GDIG20240909071817", // Job ID
+            "appType": 1, // Service type of the job is Gmail
+            "jobType": 5, // Type of the performed job is Retention
+            "dataSource": 1, // Data source of the job is the Cloud Backup admin portal
+            "status": 3, // Status of the job is Failed
+            "progress": 100.0, // 100% of the tasks associated with the job have been completed
+            "startTime": "2024-09-09T07:18:17+00:00", // UTC timestamp for the start time of the job
+            "finishTime": "2024-09-09T07:22:34.984+00:00", // // UTC timestamp for the finished time of the job
+            "operator": "System" // The job is operated by System
         }
     ],
-    "NextLink": "5Q4WjfOaJ0YwYlq3J7HYvC3h%2BxgR7lllqb48ILCpWyebIQeNnukVgM72yyYiR6P2Hd1FBfsKTbh5pDP6j%2FZxloE%2BahKnVh7ZcSE8PGxRbH4OklY%2FQKphJG1%2FDmzyX7IAavZyGDCr0xcDgkX0j0ej2TUwdfu4puqtgRKJ%2FT41jdrgJ2WR9xnZSjT6UcjquKX4X%2By9kSzG7kM6N5XZIm3gXC%2Bg6CPFXllRr2dxBPVTnjkz" // Link to the next page of results
+    "nextLink": "5Q4WjfOaJ0YwYlq3J7HYvC3h%2BxgR7lllqb48ILCpWyebIQeNnukVgM72yyYiR6P2Hd1FBfsKTbh5pDP6j%2FZxloE%2BahKnVh7ZcSE8PGxRbH4OklY%2FQKphJG1%2FDmzyX7IAavZyGDCr0xcDgkX0j0ej2TUwdfu4puqtgRKJ%2FT41jdrgJ2WR9xnZSjT6UcjquKX4X%2By9kSzG7kM6N5XZIm3gXC%2Bg6CPFXllRr2dxBPVTnjkz" // Link to the next page of results
 }
