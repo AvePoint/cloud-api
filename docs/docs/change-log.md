@@ -9,11 +9,10 @@
 ### Changed
 - Enhanced the `/aos/audit` endpoint to support filtering for Cloud Backup for Google Workspace.  
 
-## January 2025 hotfix
+<!---## January 2025 hotfix
 
 ### Fixed
-- Resolved the issue with the `Dynamics.ReadWrite.All` scope where the API does not work when using it with the other scopes.  
-- 
+- Resolved the issue with the `Dynamics.ReadWrite.All` scope where the API does not work when using it with the other scopes.  -->
 
 
 ## December 2024
