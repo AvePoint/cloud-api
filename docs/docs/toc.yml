@@ -4,7 +4,10 @@
   href: "Use-AvePoint-Graph-Modern-API.md" 
 - name: Register an App
   href: "register-app.md"
-- href: "Use-Cases.md"
+- name: Use Cases
+  href: "Use-Cases.md"
+- name: Change Log
+  href: change-log.md
 - name: Services and Features
   href: "services-and-features/toc.yml"
 
