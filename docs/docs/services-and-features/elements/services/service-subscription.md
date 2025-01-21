@@ -37,6 +37,7 @@ The API response provides detailed information about the customer's service subs
 | service | The service that the customer has subscriptions for. | string |
 | subscriptionModel | The subscription model of the customer’s service. | string |
 | purchasedUserSeats | The number of purchased user seats of the customer. | string |
+| purchasedUnits | The number of purchased Microsoft 365 tenants of the customer. | string |
 | microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
 | microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
 | PurchasedCapacity | The purchased capacity for the customer. | string |
@@ -73,6 +74,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "service": "Cense",  // Name of the service
                     "subscriptionModel": "N/A",  // Subscription model; not applicable here
                     "purchasedUserSeats": "10",  // Number of user seats purchased
+                    "purchasedUnits": "N/A",  // Number of Microsoft 365 tenants purchased; not applicable here
                     "microsoftLicenseAssigned": "0",  // Number of Microsoft licenses assigned
                     "microsoftLicenseAvailable": "0",  // Number of available Microsoft licenses
                     "purchasedCapacity": "N/A",  // Purchased capacity for data to be protected; not applicable here
@@ -95,6 +97,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "service": "Opus - Discovery and analysis",
                     "subscriptionModel": "N/A",
                     "purchasedUserSeats": "N/A",
+                    "purchasedUnits": "N/A", 
                     "microsoftLicenseAssigned": "0",
                     "microsoftLicenseAvailable": "0",
                     "purchasedCapacity": "1024 GB",
@@ -108,6 +111,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "service": "Opus - Storage optimization",
                     "subscriptionModel": "Action and store",
                     "purchasedUserSeats": "N/A",
+                    "purchasedUnits": "N/A", 
                     "microsoftLicenseAssigned": "0",
                     "microsoftLicenseAvailable": "0",
                     "purchasedCapacity": "3072 GB",
@@ -121,6 +125,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "service": "Opus - Information lifecycle",
                     "subscriptionModel": "N/A",
                     "purchasedUserSeats": "40",
+                    "purchasedUnits": "N/A",
                     "microsoftLicenseAssigned": "14",
                     "microsoftLicenseAvailable": "0",
                     "purchasedCapacity": "N/A",

@@ -58,7 +58,7 @@ Each record retrieved through the API includes detailed attributes.
 The following request structure is designed to retrieve records whose disposal due date is earlier than the specified time.  
 
 ```json
-https://graph-us.avepointonlineservices.com/records/connector/records?id=63acafab-b2b8-4b44-8ddb-7a47672c2393&disposalDueDate=2024-12-20T11:13:00&startIndex=&itemsPerpage=10
+https://graph-us.avepointonlineservices.com/connector/records?id=63acafab-b2b8-4b44-8ddb-7a47672c2393&disposalDueDate=2024-12-20T11:13:00&startIndex=&itemsPerpage=10
 ```
 
 ## Response Sample
@@ -77,8 +77,8 @@ For details on the HTTP status code, refer to [HTTP Status Code](/docs/Use%20Ave
             "termFullPath": "Connector/Connector-termset/Connector-term", //The classification (term full path) of the record.
             "timeCreated": "2024-12-19 18:15:00 ", //The created time of the record.
             "timeModified": "2024-12-19 18:15:00 ", //The modified time of the record.
-            "createdBy": "caly.hou", //The creator of the record.
-            "modifiedBy": "caly.hou" //The modifier of the record.
+            "createdBy": "jack.smith", //The creator of the record.
+            "modifiedBy": "jack.smith" //The modifier of the record.
         },
     ]
 }
