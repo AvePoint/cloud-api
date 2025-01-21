@@ -39,6 +39,7 @@ The API supports several query parameters to refine and customize the data retri
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
 
 **Retrieved result:**
+
 | Response                        | Description                                                                 | Type    |
 |---------------------------------|-----------------------------------------------------------------------------|---------|
 | id                              | The unique identifier for the Power App.                                     | string  |
