@@ -1,9 +1,7 @@
 # Destroy Records  
 
 Use this API to update the status of records as Destroyed in AvePoint Opus.  
-Note the following:
-- You can update the status for up to 15 records at a time.
-- If manual approval is enabled, after record reviewers approve or reject the records, you can use this API to update the status of the approved records as Destroyed in AvePoint Opus. 
+***Note**: You can update the status for up to 15 records at a time; if manual approval is enabled, after record reviewers approve or reject the records, you can use this API to update the status of the approved records as Destroyed in AvePoint Opus. 
 
 ## Permission
 
@@ -34,17 +32,18 @@ This section outlines the parameters to specify the records whose status you wan
 
 The API response provides the outcome of the request.
 
-| Elements           | Description                                                           | Type   | 
-|--------------------|---------------------|--------| 
+| Elements   | Description  | Type   | 
+|------------|---------------|--------| 
 | statusCode      | The request status code.  | integer    | 
 | message | The request outcome. | Array  | 
+| failedItems | If the status of some records failed to be updated to Destroyed in AvePoint Opus, this parameter would appear, displaying the records failed in the request. | Arrary
 
 ## Request Sample
 
 The following request structure is designed to update the status of records as Destroyed in AvePoint Opus.  
 
 ```json
-https://graph-us.avepointonlineservices.com/records/connector/records
+https://graph-us.avepointonlineservices.com/connector/records
 ```
 ```json
 {

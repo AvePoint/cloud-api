@@ -45,6 +45,7 @@ The API response provides detailed information about the service subscriptions r
 | service | The service that the customer has subscriptions for. | string |
 | subscriptionModel | The subscription model of the customer’s service. | string |
 | purchasedUserSeats | The number of purchased user seats of the customer. | string |
+| purchasedUnits | The number of purchased Microsoft 365 tenants of the customer. | string |
 | microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
 | microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
 | purchasedCapacity | The purchased capacity for the customer. | string |
@@ -79,6 +80,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "service": "Cloud Backup for IaaS + PaaS - Azure Storage",  // Name of the service
             "subscriptionModel": "N/A",  // Type of subscription model; not applicable here
             "purchasedUserSeats": "N/A",  // Number of user seats purchased; not applicable here
+            "purchasedUnits": "N/A",  // Number of Microsoft 365 tenants purchased; ; not applicable here
             "microsoftLicenseAssigned": "N/A",  // Number of Microsoft licenses assigned; not applicable here
             "microsoftLicenseAvailable": "133",  // Number of available Microsoft licenses
             "purchasedCapacity": "5 GB",  // Amount of purchased capacity for data protection.
@@ -93,6 +95,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "service": "Cloud Backup for IaaS + PaaS - Virtual Machine",
             "subscriptionModel": "N/A",
             "purchasedUserSeats": "100",
+            "purchasedUnits": "N/A",
             "microsoftLicenseAssigned": "124",
             "microsoftLicenseAvailable": "133",
             "purchasedCapacity": "N/A",
@@ -107,6 +110,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "service": "Cloud Backup for IaaS + PaaS - Amazon EC2",
             "subscriptionModel": "N/A",
             "purchasedUserSeats": "10",
+            "purchasedUnits": "N/A",
             "microsoftLicenseAssigned": "124",
             "microsoftLicenseAvailable": "133",
             "purchasedCapacity": "N/A",
@@ -121,6 +125,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "service": "Cloud Backup for IaaS + PaaS - Azure SQL",
             "subscriptionModel": "N/A",
             "purchasedUserSeats": "N/A",
+            "purchasedUnits": "N/A",
             "microsoftLicenseAssigned": "N/A",
             "microsoftLicenseAvailable": "133",
             "purchasedCapacity": "500 GB",
