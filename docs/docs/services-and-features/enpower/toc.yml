@@ -1,3 +1,5 @@
+- name: EnPower
+  href: enpower.md
 - name: Environments
   href: environments.md
 - name: Connections

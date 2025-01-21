@@ -110,6 +110,7 @@ electionProfile | The election profile assigned to this environment. | string
 claimStatus | The Cloud Governance claim status of this environment. | string
 
 **Security group details:**
+
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
 | id                      | The unique identifier for the group object.                                 | string  |
@@ -134,6 +135,7 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 | membershipType          | The membership type of the group object.                                    | integer |
 
 **Cloud Governance primary contact, secondary contact, and last renewed by details:**
+
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
 | id                      | The unique identifier for the user.                        | string  |
@@ -150,6 +152,7 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 | countryOrRegion         | The country or region associated with the user.                       | string  |
 
 **Cloud Governance metadata details:**
+
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
 | id                      | The unique identifier for the metadata.                                     | string  |
