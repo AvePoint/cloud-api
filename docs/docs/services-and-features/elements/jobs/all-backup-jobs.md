@@ -9,7 +9,7 @@ You must register an app through Elements for Partners > App registration to aut
 
 | API |Permission  |
 |-----------|--------|
-| `/partner/customers/{Id}/jobs` | partner.jobs.read.all |  
+| `/partner/customers/{id}/jobs` | partner.jobs.read.all |  
 
 
 ## Request
@@ -18,7 +18,7 @@ This section outlines the details on the HTTP method and endpoint used to retrie
 
 | Method |Endpoint| Description |
 |-----------|--------|-------|
-| GET | `/partner/customers/{Id}/jobs` | Retrieves your customer's job details for backup services. |
+| GET | `/partner/customers/{id}/jobs` | Retrieves your customer's job details for backup services. |
 
 ## Query Parameters
 
@@ -39,11 +39,11 @@ If the request has been successfully processed, a 200 OK response will be return
 | status | The job status. | string |
 | jobId | The job ID. | string |
 | name | The job name. | string |
-| totalCount | The count of the objects that have been processed by the job. | integer |
-| failedCount | The count of the failed objects. | integer |
-| successfulCount | The count of the successful objects. | integer |
-| skippedCount | The count of the skipped objects. | integer |
-| warningCount | The count of the warning objects. | integer |
+| totalCount | The count of the objects that have been processed by the job. | string |
+| failedCount | The count of the failed objects. | string |
+| successfulCount | The count of the successful objects. | string |
+| skippedCount | The count of the skipped objects. | string |
+| warningCount | The count of the warning objects. | string |
 | backupSize | The size of the backed-up objects. | string |
 | startTime | The start time of the job. | string |
 | endTime | The end time of the job. | string |

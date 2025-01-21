@@ -1,8 +1,7 @@
 # Retrieve Specific Job Type and Module of Backup Services
 
-Use this API to retrieve your customer's job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.  
-
-This API is intended specifically for customers who have subscribed to these services.
+Use this API to retrieve your customer's job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.
+<br>This API is intended specifically for customers who have subscribed to these services.
 
 ## Permissions  
 
@@ -11,7 +10,7 @@ You must register an app through Elements for Partners > App registration to aut
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/customers/{Id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | partner.jobs.read.all  |  
+| `/partner/customers/{id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | partner.jobs.read.all  |  
 
 ## Request 
 
@@ -19,7 +18,7 @@ This section provides details on the HTTP method and endpoint used to retrieve y
 
 | Method| Endpoint | Description |
 |-----------|--------|-------|
-| GET | `/partner/customers/{Id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | Retrieves your customer's job details for a specific job type and module of the backup services. |
+| GET | `/partner/customers/{id}/jobs/jobType/{JobType}/jobModule/{JobModule}` | Retrieves your customer's job details for a specific job type and module of the backup services. |
 
 ## Query Parameters
 
@@ -42,18 +41,18 @@ If the request has been successfully processed, a 200 OK response will be return
 | status | The job status. | string |
 | jobId | The job ID. | string |
 | name | The job name. | string |
-| totalCount | The count of the objects that have been processed by the job. | integer |
-| failedCount | The count of the failed objects. | integer |
-| successfulCount | The count of the successful objects. | integer |
-| skippedCount | The count of the skipped objects. | integer |
-| warningCount | The count of the warning objects. | integer |
+| totalCount | The count of the objects that have been processed by the job. | string |
+| failedCount | The count of the failed objects. | string |
+| successfulCount | The count of the successful objects. | string |
+| skippedCount | The count of the skipped objects. | string |
+| warningCount | The count of the warning objects. | string |
 | backupSize | The size of the backed-up objects. | string |
 | startTime | The start time of the job. | string |
 | endTime | The end time of the job. | string |
 | jobDuration | The job duration. | string |
 | lastModifyTime | The last modified time of the job. | string |
 
-
+***
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 

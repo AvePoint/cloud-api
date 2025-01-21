@@ -1,6 +1,6 @@
 # Retrieve Job Information
 
-Get the job-related information (`/backup/m365/cloudbackup/getjobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `backup/m365/cloudbackup/getjobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
+Get the job-related information (`/backup/m365/cloudbackup/getjobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackup/getjobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
 
 ## Permission
 

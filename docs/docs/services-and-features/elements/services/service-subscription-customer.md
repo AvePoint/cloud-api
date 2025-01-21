@@ -37,15 +37,15 @@ The API response provides detailed information about the service subscriptions r
 | organization | The organization name of the customer. | string |
 | customer | The tenant owner email address of the customer. | string |
 | tenantId | The tenant ID of the customer. | string |
-|Products| A list of products that the customer has subscribed.| list|
+| Products | A list of products that the customer has subscribed.| list|
 
 **Product subscriptions**  
-
 | Element | Description | Type |
 | --- | --- | --- |
 | service | The service that the customer has subscriptions for. | string |
 | subscriptionModel | The subscription model of the customer’s service. | string |
 | purchasedUserSeats | The number of purchased user seats of the customer. | string |
+| purchasedUnits | The number of purchased Microsoft 365 tenants of the customer. | string |
 | microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
 | microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
 | purchasedCapacity | The purchased capacity for the customer. | string |
@@ -55,6 +55,11 @@ The API response provides detailed information about the service subscriptions r
 | consumedStorage | The consumed storage size of the customer. | string |
 | expirationDate | The expiration date of the customer’s service. | string |
 | change | The user seats changes in the pooled license compared with the first day of the current month. | string |
+| source | The source of the subscription. | string |
+| paymentType | The payment type of the subscription. | string |
+| subscriptionName | The subscription name. This parameter is intended specifically for the Fly service. | string |  
+| package | The package of the subscription. This parameter is intended specifically for the Cloud Backup for Microsoft 365 service. | string |
+| contractEndDate | The contract end date of the subscription. | string |
 
 ## Request Sample
 
@@ -80,6 +85,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "service": "Cloud Backup for IaaS + PaaS - Azure Storage",  // Name of the service
             "subscriptionModel": "N/A",  // Type of subscription model; not applicable here
             "purchasedUserSeats": "N/A",  // Number of user seats purchased; not applicable here
+            "purchasedUnits": "N/A",  // Number of Microsoft 365 tenants purchased; ; not applicable here
             "microsoftLicenseAssigned": "N/A",  // Number of Microsoft licenses assigned; not applicable here
             "microsoftLicenseAvailable": "133",  // Number of available Microsoft licenses
             "purchasedCapacity": "5 GB",  // Amount of purchased capacity for data protection.
@@ -89,11 +95,17 @@ If the request has been successfully processed, a 200 OK response will be return
             "consumedStorage": "N/A",  // Amount of storage currently used; not applicable here
             "expirationDate": "2025-04-05",  // Date when the subscription expires
             "change": "N/A"  // Information on changes, not applicable here
+            "source": "AvePoint subscription" // The source of the subscription
+            "paymentType": "Prepaid" // The payment type of the subscription
+            "subscriptionName": "N/A" // The subscription name; not applicable here
+            "package": "N/A" // The package of the subscription; not applicable here
+            "contractEndDate": "N/A" // The contract end date; not applicable here
         },
         {
             "service": "Cloud Backup for IaaS + PaaS - Virtual Machine",
             "subscriptionModel": "N/A",
             "purchasedUserSeats": "100",
+            "purchasedUnits": "N/A",
             "microsoftLicenseAssigned": "124",
             "microsoftLicenseAvailable": "133",
             "purchasedCapacity": "N/A",
@@ -103,11 +115,17 @@ If the request has been successfully processed, a 200 OK response will be return
             "consumedStorage": "N/A",
             "expirationDate": "2025-04-05",
             "change": "N/A"
+            "source": "AvePoint subscription"
+            "paymentType": "Prepaid"
+            "subscriptionName": "N/A"
+            "package": "N/A"
+            "contractEndDate": "N/A"
         },
         {
             "service": "Cloud Backup for IaaS + PaaS - Amazon EC2",
             "subscriptionModel": "N/A",
             "purchasedUserSeats": "10",
+            "purchasedUnits": "N/A",
             "microsoftLicenseAssigned": "124",
             "microsoftLicenseAvailable": "133",
             "purchasedCapacity": "N/A",
@@ -117,11 +135,17 @@ If the request has been successfully processed, a 200 OK response will be return
             "consumedStorage": "N/A",
             "expirationDate": "2025-03-01",
             "change": "N/A"
+            "source": "AvePoint subscription"
+            "paymentType": "Prepaid"
+            "subscriptionName": "N/A"
+            "package": "N/A"
+            "contractEndDate": "N/A"
         },
         {
             "service": "Cloud Backup for IaaS + PaaS - Azure SQL",
             "subscriptionModel": "N/A",
             "purchasedUserSeats": "N/A",
+            "purchasedUnits": "N/A",
             "microsoftLicenseAssigned": "N/A",
             "microsoftLicenseAvailable": "133",
             "purchasedCapacity": "500 GB",
@@ -131,6 +155,11 @@ If the request has been successfully processed, a 200 OK response will be return
             "consumedStorage": "N/A",
             "expirationDate": "2025-04-05",
             "change": "N/A"
+            "source": "AvePoint subscription"
+            "paymentType": "Prepaid"
+            "subscriptionName": "N/A"
+            "package": "N/A"
+            "contractEndDate": "N/A"
         }
     ]
 }
