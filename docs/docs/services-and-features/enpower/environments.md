@@ -1,10 +1,8 @@
-# Environment Details
-
-## Retrieve Power Platform Environment Details
+# Retrieve Power Platform Environment Details
 
 Use this API to access and retrieve information of your Power Platform environments.  
 
-### Permission
+## Permission
 
 The following permission is required to call the API.
 
@@ -16,7 +14,7 @@ For details, refer to [Authentication and Authorization](https://learn.avepoint.
 |-------------------|---------------|
 |`/smp/powerplatform/environments` | enpower.data.read.all | 
 
-### Request
+## Request
 
 This section provides details on the HTTP method and endpoint used to retrieve general information of your Power Platform environments.
 
@@ -24,7 +22,7 @@ This section provides details on the HTTP method and endpoint used to retrieve g
 |--- | --- | --- |
 | GET | `/smp/powerplatform/environments` | Retrieves your Environments' information | 
 
-### Query Parameters
+## Query Parameters
 
 The API supports several query parameters to refine and customize the data retrieval process.
 
@@ -34,7 +32,7 @@ The API supports several query parameters to refine and customize the data retri
 | top | The number of Environment records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of environments are retrieved. By default, environments of all tenants are retrieved. | string | No |
 
-### Responses
+## Responses
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
 
