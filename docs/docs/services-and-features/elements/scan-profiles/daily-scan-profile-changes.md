@@ -60,19 +60,16 @@ https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b0
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
 
 ```json 
-{
-    "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDailyNewInfo",
+  {
+    "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDailyNewDetailInfo",
     "profileName": "test oop", // The name of the scan profile
     "profileID": "0e5e152d-65cc-4206-9829-636ee72c88c3", // The ID of the scan profile
     "tenantDomain": "v0s40", // The tenant domain of the scan profile
     "tenantID": "c2350b99-c7a2-4605-b7d4-79e8646f66c3", // The tenant ID the scan profile
-    "description": "aa", // The description of the scan profile
-    "scanMode": 0, // The scan mode of the scan profile: 0 represents Express mode
-    "modifiedTime": "08/01/2024 06:29:55", // The last modified time of the scan profile
     "lastUpdateTime": "08/03/2024 00:03:54", // The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile
-    "lastScanStatus": 2, // The last scan job status of the scan profile: 2 represents Finished
-    "newRegistedContentCount": 0, // The number of newly registered objects in the daily report of the scan profile
-    "movedToAnotherContainer": 0, // The number of objects moved to another container in the daily report of the scan profile
-    "removedFromMicrosoft365OrOutofPolicy": 0 // The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
+    "removedFromMicrosoft365OrOutofPolicyObjects": 0 // The details of objects moved to another container in the daily report of the scan profile
+    "newRegistedContent": 0, // Deprecated. The details of newly registered objects in the daily report of the scan profile
+    "newRegisteredContentCount": 0, // The details of newly registered objects in the daily report of the scan profile
+    "movedToAnotherContainerObjects": 0, // The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
 }
 ```

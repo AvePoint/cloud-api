@@ -17,7 +17,7 @@ This section outlines the method used to retrieve the service subscription for a
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/partner/services/` | Get the service subscription details for all your customers. |
+| GET | `/partner/services` | Get the service subscription details for all your customers. |
 
 ## Response
 
