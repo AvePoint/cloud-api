@@ -68,7 +68,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | numberOfGuests             | The number of guests users who have access to the artifact.                | integer |
 | hasRequest | Indicates if EnPower business context has been requested for this artifact. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | hasResponse | Indicates if EnPower business context request for this flow has been responded. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| lastRenewNotifyTime        | The last time a renewal notification was sent for the artifact.            | string  |
 | numberOfUsers              | The number of users who have access to the artifact.                       | integer |
 | lastActivityD7             | The activity count in the last 7 days for the artifact.                    | integer |
 | lastActivityTime           | The date and time of the artifact’s latest activity.                       | string  |
@@ -124,7 +123,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "numberOfGuests": null, // The number of guests users who have access to the artifact
       "hasRequest": false, // Indicates if EnPower business context has been requested for this artifact
       "hasResponse": false, // Indicates if EnPower business context request for this artifact has been responded
-      "lastRenewNotifyTime": "", // The last time a renewal notification was sent for the artifact
       "numberOfUsers": null, // The number of users who have access to the artifact
       "lastActivityD7": 0, // The activity count in the last 7 days for the artifact
       "lastActivityTime": "", // The date and time of the artifact’s latest activity

@@ -81,7 +81,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | renewProfileApplied | Indicates if any Cloud Governance renewal profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | registered | Indicates if the flow has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | renewalProfile              | The Cloud Governance renewal profile applied to this flow.                  | object  |
-| ongoingTaskCount            | The number of ongoing Cloud Governance tasks of this flow.                  | integer |
 | metadata                    | The list of Cloud Governance metadata of this flow.                         | list    |
 | electionProfileApplied | Indicates if any Cloud Governance contact election profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | contactElectionProfile      | The Cloud Governance renewal profile applied to this flow.                  | object  |
@@ -204,7 +203,6 @@ If the request has been successfully processed, a 200 OK response will be return
         "name": "FlowRenewProfile", // The name of the Cloud Governance renewal profile applied to this flow
         "id": "" // The ID of the Cloud Governance renewal profile applied to this flow
       },
-      "ongoingTaskCount": 0, // The number of ongoing Cloud Governance tasks of this flow
       "metadata": [], // The list of Cloud Governance metadata of this flow
       "electionProfileApplied": false, // Indicates if any Cloud Governance contact election profile is applied to this flow
       "contactElectionProfile": null, // The Cloud Governance renewal profile applied to this flow

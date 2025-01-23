@@ -76,7 +76,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | numberOfGuests              | The number of guests in the workspace.                                      | integer |
 | hasRequest | Indicates if EnPower business context has been requested for this workspace. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | hasResponse | Indicates if EnPower business context request for this workspace has been responded. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| lastRenewNotifyTime         | The date and time when the last renewal notification occurred.              | string  |
 | numberOfUsers               | The number of users in the workspace.                                       | integer |
 | lastActivityD7              | The number of activities in the last 7 days in the workspace.               | integer |
 | lastActivityTime            | The date and time when the last activity occurred in the workspace.         | string  |
@@ -90,7 +89,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | renewProfileApplied | Indicates if a renewal profile has been applied to the workspace. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates if the workspace has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | renewProfile                | The Cloud Governance renewal profile applied to the workspace.                               | object  |
-| ongoingTaskCount            | The number of ongoing Cloud Governance tasks of the workspace.              | integer |
 | metadata                    | The Cloud Governance metadata associated with the workspace.                | list    |
 | electionProfileApplied | Indicates if a contact election profile has been applied to the workspace. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | electionProfile             | The Cloud Governance contact election profile applied to the workspace.                              | object  |
@@ -183,7 +181,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "numberOfGuests": 0, // The number of guests in the workspace
       "hasRequest": false, // Indicates if EnPower business context has been requested for this workspace
       "hasResponse": false, // Indicates if EnPower business context request for this workspace has been responded
-      "lastRenewNotifyTime": "", // The date and time when the last renewal notification occurred
       "numberOfUsers": 0, // The number of users in the workspace
       "lastActivityD7": 0, // The number of activities in the last 7 days in the workspace
       "lastActivityTime": "", // The date and time when the last activity occurred in the workspace
@@ -197,7 +194,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "renewProfileApplied": null, // Indicates if a renewal profile has been applied to the workspace
       "isRegistered": false, // Indicates if the workspace has been imported to Cloud Governance
       "renewProfile": null, // The Cloud Governance renewal profile applied to the workspace
-      "ongoingTaskCount": 0, // The number of ongoing Cloud Governance tasks of the workspace
       "metadata": [], // The Cloud Governance metadata associated with the workspace
       "electionProfileApplied": null, // Indicates if a contact election profile has been applied to the workspace
       "electionProfile": null, // The Cloud Governance contact election profile applied to the workspace

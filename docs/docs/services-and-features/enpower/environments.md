@@ -97,7 +97,6 @@ secondaryContact | The Cloud Governance secondary contact of this environment. |
 lastRenewalTime | The last renewal time of this environment. | string
 lastRenewalBy | The latest user who renewed this environment. | object
 | renewalProfileApplied | Indicates whether Cloud Governance renewal profile has been applied to the environment. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-ongoingTaskCount | The number of ongoing Cloud Governance tasks of this environment. | integer
 Metadata | The Cloud Governance metadata of this environment. | list
 | electionProfileApplied | Indicates whether any Cloud Governance contact election profile has been applied to this environment. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates whether this environment has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean | 
@@ -255,7 +254,6 @@ If the request has been successfully processed, a 200 OK response will be return
             "lastRenewalTime": "", // The last renewal time of this environment
             "lastRenewalBy": null, // The latest user who renewed this environment
             "renewProfileApplied": null, // Indicates whether Cloud Governance renewal profile has been applied for the tenant
-            "ongoingTaskCount": 0, // The number of ongoing Cloud Governance tasks of this environment
             "metadata": [], // The Cloud Governance metadata of this environment
             "electionProfileApplied": null, // Indicates whether any Cloud Governance contact election profile has been applied to this tenant
             "isRegistered": false, // Indicates whether this environment has been imported to Cloud Governance

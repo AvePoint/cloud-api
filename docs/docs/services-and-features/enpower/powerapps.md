@@ -102,7 +102,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | renewalProfileApplied | Indicates if a Cloud Governance renewal profile has been applied to the Power App. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates if the Power App was imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | renewProfile                    | The Cloud Governance renewal profile applied to the Power App.              | object  |
-| ongoingTaskCount                | The number of ongoing Cloud Governance tasks of the Power App.              | integer |
 | metadata                        | The Cloud Governance metadata associated with the Power App.                | list  |
 | electionProfileApplied | Indicates if a Cloud Governance contact election profile was applied to the Power App. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | electionProfile                 | The Cloud Governance contact election profile applied to the Power App.     | object  |
@@ -220,7 +219,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "renewProfileApplied": null, // Indicates if a Cloud Governance renewal profile has been applied to the Power App
       "isRegistered": false, // Indicates if the Power App was imported to Cloud Governance 
       "renewProfile": null, // The Cloud Governance renewal profile applied to the Power App
-      "ongoingTaskCount": 0, // The number of ongoing Cloud Governance tasks of the Power App
       "metadata": [], // The Cloud Governance metadata associated with the Power App
       "electionProfileApplied": null, // Indicates if a Cloud Governance contact election profile was applied to the Power App 
       "electionProfile": null, // The Cloud Governance contact election profile applied to the Power App
