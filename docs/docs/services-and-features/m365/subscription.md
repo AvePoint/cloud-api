@@ -29,6 +29,12 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 | purchasedStorageSize | Total purchased storage size (in GB) | integer |
 | protectedSize | Protected data size (in GB) | integer |
 
+## Request Sample
+
+```json
+https://graph.avepointonlineservices.com/backup/m365/cloudbackup/licenseconsumption
+```
+
 ## Response Sample
 
 If successful, this method returns a 200 OK response code and the subscription consumption information in the response body.  

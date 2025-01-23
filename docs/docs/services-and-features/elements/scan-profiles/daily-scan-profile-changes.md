@@ -61,7 +61,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDailyNewInfo",
+    "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDailyNewDetailInfo",
     "profileName": "test oop", // The name of the scan profile
     "profileID": "0e5e152d-65cc-4206-9829-636ee72c88c3", // The ID of the scan profile
     "tenantDomain": "v0s40", // The tenant domain of the scan profile
@@ -71,8 +71,9 @@ If the request has been successfully processed, a 200 OK response will be return
     "modifiedTime": "08/01/2024 06:29:55", // The last modified time of the scan profile
     "lastUpdateTime": "08/03/2024 00:03:54", // The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile
     "lastScanStatus": 2, // The last scan job status of the scan profile: 2 represents Finished
-    "newRegistedContentCount": 0, // The number of newly registered objects in the daily report of the scan profile
-    "movedToAnotherContainer": 0, // The number of objects moved to another container in the daily report of the scan profile
-    "removedFromMicrosoft365OrOutofPolicy": 0 // The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
+    "removedFromMicrosoft365OrOutofPolicyObjects": 0 // The details of objects moved to another container in the daily report of the scan profile
+    "newRegistedContent": 0, // Deprecated. The details of newly registered objects in the daily report of the scan profile
+    "newRegisteredContentCount": 0, // The details of newly registered objects in the daily report of the scan profile
+    "movedToAnotherContainerObjects": 0, // The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
 }
 ```
