@@ -5,9 +5,7 @@ Use this API to access and retrieve information of your Power Platform connectio
 ## Permission
 
 The following permission is required to call the API.
-
-You must register the app through AvePoint Online Services > App Registration to authenticate and authorize your access to AvePoint Graph Modern API.  
-
+You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API.  
 For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
 
 | API   | Permission |
@@ -59,7 +57,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | flowNames                       | The names of Power Automate flows using this connection.                    | list    |
 | appNames                        | The names of Power Apps using this connection.                              | list    |
 | status                          | The status of the connection.                                               | string  |
-| existedInEnPowerScope | Indicates whether this connection is in the manageable scope of EnPower. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean
 | connectionSource                | The source of this connection.                                              | string  |
 | ownerId                         | The unique identifier of the connection owner.                              | string  |
 | ownerDisplayName                | The display name of the connection owner.                                   | string  |
@@ -103,7 +100,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "flowNames": [], // The names of Power Automate flows using this connection
       "appNames": [], // The names of Power Apps using this connection
       "status": "Connected", // The status of the connection
-      "existedInEnPowerScope": false, // Indicates whether this connection is in the manageable scope of EnPower
       "connectionSource": null, // The source of this connection
       "ownerId": "", // The unique identifier of the connection owner
       "ownerDisplayName": "", // The display name of the connection owner

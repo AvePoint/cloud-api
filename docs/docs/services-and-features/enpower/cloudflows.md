@@ -5,9 +5,7 @@ Use this API to access and retrieve information of your Power Automate cloud flo
 ## Permission
 
 The following permission is required to call the API.
-
-You must register the app through AvePoint Online Services > App Registration to authenticate and authorize your access to AvePoint Graph Modern API.
-
+You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API.
 For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
 
 | API   | Permission |
@@ -81,7 +79,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | renewProfileApplied | Indicates if any Cloud Governance renewal profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | registered | Indicates if the flow has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | renewalProfile              | The Cloud Governance renewal profile applied to this flow.                  | object  |
-| ongoingTaskCount            | The number of ongoing Cloud Governance tasks of this flow.                  | integer |
 | metadata                    | The list of Cloud Governance metadata of this flow.                         | list    |
 | electionProfileApplied | Indicates if any Cloud Governance contact election profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | contactElectionProfile      | The Cloud Governance renewal profile applied to this flow.                  | object  |
@@ -204,7 +201,6 @@ If the request has been successfully processed, a 200 OK response will be return
         "name": "FlowRenewProfile", // The name of the Cloud Governance renewal profile applied to this flow
         "id": "" // The ID of the Cloud Governance renewal profile applied to this flow
       },
-      "ongoingTaskCount": 0, // The number of ongoing Cloud Governance tasks of this flow
       "metadata": [], // The list of Cloud Governance metadata of this flow
       "electionProfileApplied": false, // Indicates if any Cloud Governance contact election profile is applied to this flow
       "contactElectionProfile": null, // The Cloud Governance renewal profile applied to this flow
