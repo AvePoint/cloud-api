@@ -37,7 +37,7 @@ The API response provides detailed information about the service subscriptions r
 | organization | The organization name of the customer. | string |
 | customer | The tenant owner email address of the customer. | string |
 | tenantId | The tenant ID of the customer. | string |
-|Products| A list of products that the customer has subscribed.| list|
+| Products | A list of products that the customer has subscribed.| list|
 
 **Product subscriptions**  
 | Element | Description | Type |
@@ -55,6 +55,11 @@ The API response provides detailed information about the service subscriptions r
 | consumedStorage | The consumed storage size of the customer. | string |
 | expirationDate | The expiration date of the customer’s service. | string |
 | change | The user seats changes in the pooled license compared with the first day of the current month. | string |
+| source | The source of the subscription. | string |
+| paymentType | The payment type of the subscription. | string |
+| subscriptionName | The subscription name. This parameter is intended specifically for the Fly service. | string |  
+| package | The package of the subscription. This parameter is intended specifically for the Cloud Backup for Microsoft 365 service. | string |
+| contractEndDate | The contract end date of the subscription. | string |
 
 ## Request Sample
 
@@ -89,7 +94,12 @@ If the request has been successfully processed, a 200 OK response will be return
             "retention": "Retain data for 1 month",  // Data retention policy duration
             "consumedStorage": "N/A",  // Amount of storage currently used; not applicable here
             "expirationDate": "2025-04-05",  // Date when the subscription expires
-            "change": "N/A"  // Information on changes, not applicable here
+            "change": "N/A",  // Information on changes, not applicable here
+            "source": "AvePoint subscription", // The source of the subscription
+            "paymentType": "Prepaid", // The payment type of the subscription
+            "subscriptionName": "N/A", // The subscription name; not applicable here
+            "package": "N/A", // The package of the subscription; not applicable here
+            "contractEndDate": "N/A", // The contract end date; not applicable here
         },
         {
             "service": "Cloud Backup for IaaS + PaaS - Virtual Machine",
@@ -104,7 +114,12 @@ If the request has been successfully processed, a 200 OK response will be return
             "retention": "Retain data for 1 months",
             "consumedStorage": "N/A",
             "expirationDate": "2025-04-05",
-            "change": "N/A"
+            "change": "N/A",
+            "source": "AvePoint subscription",
+            "paymentType": "Prepaid",
+            "subscriptionName": "N/A",
+            "package": "N/A",
+            "contractEndDate": "N/A"
         },
         {
             "service": "Cloud Backup for IaaS + PaaS - Amazon EC2",
@@ -119,7 +134,12 @@ If the request has been successfully processed, a 200 OK response will be return
             "retention": "Retain data for 1 years",
             "consumedStorage": "N/A",
             "expirationDate": "2025-03-01",
-            "change": "N/A"
+            "change": "N/A",
+            "source": "AvePoint subscription",
+            "paymentType": "Prepaid",
+            "subscriptionName": "N/A",
+            "package": "N/A",
+            "contractEndDate": "N/A",
         },
         {
             "service": "Cloud Backup for IaaS + PaaS - Azure SQL",
@@ -134,7 +154,12 @@ If the request has been successfully processed, a 200 OK response will be return
             "retention": "Retain data for 1 months",
             "consumedStorage": "N/A",
             "expirationDate": "2025-04-05",
-            "change": "N/A"
+            "change": "N/A",
+            "source": "AvePoint subscription",
+            "paymentType": "Prepaid",
+            "subscriptionName": "N/A",
+            "package": "N/A",
+            "contractEndDate": "N/A"
         }
     ]
 }

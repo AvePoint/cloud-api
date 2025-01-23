@@ -17,7 +17,7 @@ This section outlines the method used to retrieve the service subscription for a
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/partner/services/` | Get the service subscription details for all your customers. |
+| GET | `/partner/services` | Get the service subscription details for all your customers. |
 
 ## Response
 
@@ -47,6 +47,11 @@ The API response provides detailed information about the customer's service subs
 | consumedStorage | The consumed storage size of the customer. | string |
 | expirationDate | The expiration date of the customer’s service. | string |
 | change | The user seats changes in the pooled license compared with the first day of the current month. | string |
+| source | The source of the subscription. | string |
+| paymentType | The payment type of the subscription. | string |
+| subscriptionName | The subscription name. This parameter is intended specifically for the Fly service. | string |  
+| package | The package of the subscription. This parameter is intended specifically for the Cloud Backup for Microsoft 365 service. | string |
+| contractEndDate | The contract end date of the subscription. | string |
 
 ## Request Sample
 
@@ -83,7 +88,12 @@ Below is a sample response showcasing the structure and content of the data retu
                     "retention": "N/A",  // Data retention policy; not applicable here
                     "consumedStorage": "N/A",  // Consumed storage capacity; not applicable here
                     "expirationDate": "02/04/2026",  // Date when the subscription expires
-                    "change": "N/A"  // Information on changes; not applicable here
+                    "change": "N/A",  // Information on changes; not applicable here
+                     "source": "AvePoint subscription" // The source of the subscription
+                    "paymentType": "Prepaid", // The payment type of the subscription
+                    "subscriptionName": "N/A", // The subscription name; not applicable here
+                    "package": "N/A", // The package of the subscription; not applicable here
+                    "contractEndDate": "N/A" // The contract end date; not applicable here
                 }
             ]
         },
@@ -105,7 +115,12 @@ Below is a sample response showcasing the structure and content of the data retu
                     "retention": "N/A",
                     "consumedStorage": "N/A",
                     "expirationDate": "12/29/2026",
-                    "change": "N/A"
+                    "change": "N/A",
+                    "source": "AvePoint subscription",
+                    "paymentType": "Prepaid",
+                    "subscriptionName": "N/A",
+                    "package": "N/A" ,
+                    "contractEndDate": "N/A"
                 },
                 {
                     "service": "Opus - Storage optimization",
@@ -119,7 +134,12 @@ Below is a sample response showcasing the structure and content of the data retu
                     "retention": "N/A",
                     "consumedStorage": "N/A",
                     "expirationDate": "12/29/2026",
-                    "change": "N/A"
+                    "change": "N/A",
+                    "source": "AvePoint subscription",
+                    "paymentType": "Prepaid",
+                    "subscriptionName": "N/A",
+                    "package": "N/A" ,
+                    "contractEndDate": "N/A"
                 },
                 {
                     "service": "Opus - Information lifecycle",
@@ -133,7 +153,12 @@ Below is a sample response showcasing the structure and content of the data retu
                     "retention": "N/A",
                     "consumedStorage": "N/A",
                     "expirationDate": "12/29/2026",
-                    "change": "N/A"
+                    "change": "N/A",
+                    "source": "AvePoint subscription",
+                    "paymentType": "Prepaid",
+                    "subscriptionName": "N/A",
+                    "package": "N/A" ,
+                    "contractEndDate": "N/A"
                 }
             ]
         }

@@ -40,9 +40,9 @@ If the request has been successfully processed, a 200 OK response will be return
 | tenantDomain | The tenant domain of the scan profile. | string |
 | tenantId | The tenant ID the scan profile. | string |
 | lastUpdateTime | The time of generating the daily report for the scan profile. If no daily report has been generated, the time is the last modified time of the scan profile. | string |
-| newRegisteredContent | The details of newly registered objects in the daily report of the scan profile. | string |
-| movedToAnotherContainerObjects | The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | string |
-| removedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | string |
+|removedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | list |
+| newRegisteredContent | The details of newly registered objects in the daily report of the scan profile. | list |
+| movedToAnotherContainerObjects | The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | list |
 
 ## Request Sample
 
@@ -58,15 +58,16 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "@odata.context": "https://graph.avepointonlineservices.com/partner/api/V1.1/$metadata#Portal.Api.Model.ProfileDailyNewDetailInfo",
-    "profileName": "test oop", // The name of the scan profile
-    "profileID": "0e5e152d-65cc-4206-9829-636ee72c88c3", // The ID of the scan profile
-    "tenantDomain": "v0s40", // The tenant domain of the scan profile
-    "tenantID": "c2350b99-c7a2-4605-b7d4-79e8646f66c3", // The tenant ID the scan profile
-    "lastUpdateTime": "08/03/2024 00:03:54", // The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile
-    "newRegistedContent": 0, // The details of newly registered objects in the daily report of the scan profile
-    "movedToAnotherContainerObjects": 0, // The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
-    "removedFromMicrosoft365OrOutofPolicyObjects": 0 // The details of objects moved to another container in the daily report of the scan profile
+    "@odata.context": "https://graph.avepointonlineservices.com/partner/$metadata#Portal.Api.Model.ProfileDailyNewDetailInfo",
+    "profileName": "M365 3216p0 hana", // The name of the scan profile
+    "profileID": "02d305fb-ddba-4460-b533-74a25a875e3c", // The ID of the scan profile
+    "tenantDomain": "3216p0",// The tenant domain of the scan profile
+    "tenantID": "848aa322-4bbf-4637-954f-7b930a80f46c",// The tenant ID.
+    "lastUpdateTime": "2024-11-22T23:59:24Z", // The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile
+    "removedFromMicrosoft365OrOutOfPolicyObjects": [], //The details of objects moved to another container in the daily report of the scan profile
+    "newRegistedContent": [], // Deprecated. A list of newly registered objects in the daily report of the scan profile
+    "newRegisteredContent": [], // A list of newly registered objects in the daily report of the scan profile
+    "movedToAnotherContainerObjects": [] // A list of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
 }
 ```
 
