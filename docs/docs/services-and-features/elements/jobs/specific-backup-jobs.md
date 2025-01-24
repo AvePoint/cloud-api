@@ -52,7 +52,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | jobDuration | The job duration. | string |
 | lastModifyTime | The last modified time of the job. | string |
 
-***
+
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 

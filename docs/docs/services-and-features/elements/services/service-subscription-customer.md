@@ -40,6 +40,7 @@ The API response provides detailed information about the service subscriptions r
 | Products | A list of products that the customer has subscribed.| list|
 
 **Product subscriptions**  
+
 | Element | Description | Type |
 | --- | --- | --- |
 | service | The service that the customer has subscriptions for. | string |

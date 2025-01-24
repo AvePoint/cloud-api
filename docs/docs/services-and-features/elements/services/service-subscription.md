@@ -32,6 +32,7 @@ The API response provides detailed information about the customer's service subs
 |Products| A list of products that the customer has subscribed.| list|
 
 **Product subscriptions**  
+
 | Element | Description | Type |
 | --- | --- | --- |
 | service | The service that the customer has subscriptions for. | string |
@@ -52,6 +53,7 @@ The API response provides detailed information about the customer's service subs
 | subscriptionName | The subscription name. This parameter is intended specifically for the Fly service. | string |  
 | package | The package of the subscription. This parameter is intended specifically for the Cloud Backup for Microsoft 365 service. | string |
 | contractEndDate | The contract end date of the subscription. | string |
+
 ## Request Sample
 
 The following request structure is designed to query subscriptions for all customers.
