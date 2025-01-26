@@ -22,7 +22,7 @@ This section outlines the HTTP method and endpoint used to retrieve group access
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the group ID, report display language, data sources, export options, and site URLs to filter the results effectively.
+The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the group ID, data sources, export options, and site URLs to filter the results effectively.
 
 
 | Parameter        | Description     | Type    | Required? |
@@ -31,7 +31,7 @@ The API supports several query parameters to refine and customize the data retri
 | exportOptionType | Export options: **1** - summary and site collection level access report, **2** - summary and access report to all objects, **3** - summary report only | integer | Yes        |
 | siteUrls         | Sets the URLs of site collections for which you want to export the permission report.                             | list   | No        |
 | dataSources      | Sets the workspace in which you want to export the access report of users. Multiple values are allowed, such as **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**.          | list   | Yes        |
-| language | Sets the display language for the access report. Supported values are: **en-US**, **ja-JP**, and **fr-FR**. | string | No 
+<!---| language | Sets the display language for the access report. Supported values are: **en-US**, **ja-JP**, and **fr-FR**. | string | No --->
 
 > [!NOTE] The principal names corresponding to the 4 special groups, including Everyone, are as follows:  
 >- The principal names for **Everyone** is "c:0(.s|true"
@@ -59,7 +59,7 @@ The API response provides detailed information about the permission report job. 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the access report job ID for checking the job status and downloading the report file. 
 
 ```json
-https://graph.avepointonlineservices.com/insights/groups/ec34726b-f692-424f-aaf0-f6a478a1b9fc7/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam01&dataSources=microsoft%20teams&dataSources=sharepoint%20online
+https://graph-us.avepointonlineservices.com/insights/groups/ec34726b-f692-424f-aaf0-f6a478a1b9fc7/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam01&dataSources=microsoft%20teams&dataSources=sharepoint%20online
 ```
 
 

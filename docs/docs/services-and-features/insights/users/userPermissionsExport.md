@@ -48,12 +48,12 @@ The API response provides detailed information about the export job.
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant permission details in a structured format, enabling easy integration with other systems or applications.
 
 ```json
-https://graph.avepointonlineservices.com/insights/users/insightstester001_jasoninsightstest.onmicrosoft.com%2523ext%2523%2540m365x636363.onmicrosoft.com/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam01&dataSources=microsoft%20teams&dataSources=sharepoint%20online
+https://graph-us.avepointonlineservices.com/insights/users/insightstester001_jasoninsightstest.onmicrosoft.com%2523ext%2523%2540m365x636363.onmicrosoft.com/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam01&dataSources=microsoft%20teams&dataSources=sharepoint%20online
 ```
 
 ## Response Sample  
 
-The 
+The following is a sample response for this API method, which includes export job ID of the user access report and its operation status 
 
 ```json
 {

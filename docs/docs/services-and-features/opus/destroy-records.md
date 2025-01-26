@@ -26,7 +26,7 @@ This section outlines the parameters to specify the records whose status you wan
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|disposalIds|The unique key of each record whose status you want to update as Destroyed in AvePoint Opus.|Array|Yes|
+|disposalIds|The unique key of each record whose status you want to update as Destroyed in AvePoint Opus.|list|Yes|
 
 ## Response
 
@@ -35,8 +35,8 @@ The API response provides the outcome of the request.
 | Elements   | Description  | Type   | 
 |------------|---------------|--------| 
 | statusCode      | The request status code.  | integer    | 
-| message | The request outcome. | Array  | 
-| failedItems | If the status of some records failed to be updated to Destroyed in AvePoint Opus, this parameter would appear, displaying the records failed in the request. | Arrary
+| message | The request outcome. | list  | 
+| failedItems | If the status of some records failed to be updated to Destroyed in AvePoint Opus, this parameter would appear, displaying the records failed in the request. | list|
 
 ## Request Sample
 

@@ -38,7 +38,7 @@ The API response provides the outcome of the request.
 |-----------|-------------|-----|
 | message     | The request outcome.      | string    | 
 | startIndex |The page index of the records that are queried in the request. | string  |
-| queriedItems  |The records that match the request information. | Array  | 
+| queriedItems  |The records that match the request information. | list  | 
 
 ### Record Details
 Each record retrieved through the API includes detailed attributes. 

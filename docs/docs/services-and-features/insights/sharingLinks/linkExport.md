@@ -27,13 +27,13 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description            | Type    | Required? |
 |-----------|------------------------|---------|-----------|
-| exportLinkType | Set export type: 32 (for FlexibleLink ), 64 (for organization link), 128 (for external link) | integer | Yes |   
+| exportLinkType | Set export type: **32** for Flexible link; **64** for Organization link; **128** for Anonymous link. | integer | Yes |   
 | startTime | Filter By Time, Time format: yyyy-MM-ddTHH:mm:ss | string | Yes |   
 | finishTime | Filter By Time, Time format: yyyy-MM-ddTHH:mm:ss | string | Yes | 
 
 ## Responses
 
-The API response provides detailed information about the export job. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](/insights/exportJobs/exportJobFile.md).
+The API response provides detailed information about the export job. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md).
 
 | Elements	| Description	|Type|
 |---|--- |---|
@@ -48,7 +48,7 @@ The API response provides detailed information about the export job. You can use
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. 
 
 ```json
-https://graph.avepointonlineservices.com/insights/sharingLinks/export?exportLinkType=32&startTime=2023-01-01T00:00:00&finishTime=2023-01-31T23:59:59
+https://graph-us.avepointonlineservices.com/insights/sharingLinks/export?exportLinkType=32&startTime=2023-01-01T00:00:00&finishTime=2023-01-31T23:59:59
 ```
 
 ## Response Sample
@@ -59,6 +59,6 @@ The following is a sample response for this API method, which includes export jo
 {
   "jobId": "12345",
   "status": 200,
-  "message": "OK"
+  "message": ""
 }
 ```

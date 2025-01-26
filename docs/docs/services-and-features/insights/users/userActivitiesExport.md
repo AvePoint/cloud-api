@@ -47,16 +47,17 @@ The API response provides detailed information about the export job. You can use
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the export job ID and operation status.
 
 ```json
-https://graph.avepointonlineservices.com/insights/users/insightstester001_jasoninsightstest.onmicrosoft.com%2523ext%2523%2540m365x636363.onmicrosoft.com/activities/export?startTime=2023-01-01T01%3A37%3A57&finishTime=2023-04-01T01%3A37%3A57&eventTypes=ListViewed&eventTypes=ListItemViewed
+https://graph-us.avepointonlineservices.com/insights/users/insightstester001_jasoninsightstest.onmicrosoft.com%2523ext%2523%2540m365x636363.onmicrosoft.com/activities/export?startTime=2023-01-01T01%3A37%3A57&finishTime=2023-04-01T01%3A37%3A57&eventTypes=ListViewed&eventTypes=ListItemViewed
 ```
 
 ## Response Sample  
 
+The following is a sample response for this API method, which includes export job ID of the user activity report and its operation status 
 
 ```json
 {
   "jobId": "67890",
   "status": 200,
-  "message": "OK"
+  "message": ""
 }
 ```

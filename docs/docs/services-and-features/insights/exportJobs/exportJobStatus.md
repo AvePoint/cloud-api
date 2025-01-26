@@ -41,7 +41,7 @@ The API response provides detailed information about the job status.
 
 
 ```json
-https://graph.avepointonlineservices.com/insights/job/169/exportstatus
+https://graph-us.avepointonlineservices.com/insights/job/169/exportstatus
 ```
 
 ## Response Sample
@@ -52,6 +52,6 @@ This API response returns the job status.
 {
   "jobStatus": 2,    //job status. 2 for finished in this case.
   "status":200,    //operation status
-  "message": "string"    //error message
+  "message": ""    //error message
 }
 ```

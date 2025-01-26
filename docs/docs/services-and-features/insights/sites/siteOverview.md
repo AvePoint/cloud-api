@@ -41,14 +41,14 @@ The API response provides detailed information about the sites retrieved. Each s
 | status   | The HTTP response status code      | integer |
 | message  | The error message                  | string  |
 | nextLink | The token to be used to get the remaining results of this request | string  |
-| values   | The array of site overview objects | array   |
+| values   | A list of site overview objects | list   |
 
 ## Request Sample
 
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site overview details in a structured format, enabling easy integration with other systems or applications.  
 
 ```json
-https://graph.avepointonlineservices.com/insights/sites/overview?riksLevel=1&riksLevel=2&riksLevel=3&nextLink=12313
+https://graph-us.avepointonlineservices.com/insights/sites/overview?riksLevel=1&rikLevel=2&rikLevel=3&nextLink=12313
 ```
 
 ## Response Sample
@@ -60,7 +60,7 @@ The following response provide the overview for the sites that meets the specifi
     "values": [
         {
           "siteName": "SPO Site 001",
-          "siteUrl": "https://jasonliualita.sharepoint.com/sites/sposite001",
+          "siteUrl": "https://ja****alita.sharepoint.com/sites/sposite001",
           "riskItemCount": 25,
           "sensitiveItemCount": 25,
           "exposureItemCount": 27

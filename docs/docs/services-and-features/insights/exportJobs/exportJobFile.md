@@ -36,7 +36,7 @@ If successful, this API response returns the report file for downloading.
 In Postman, you can send this `GET` request and select **Send and Download** to retrieve this report file. 
 
 ```json
-https://graph.avepointonlineservices.com/insights/job/169/exportfile
+https://graph-us.avepointonlineservices.com/insights/job/169/exportfile
 ```
 
 ## Response Sample

@@ -41,33 +41,33 @@ The API response provides detailed information about the site detail records ret
 | status   | The HTTP response status code                    | integer |
 | message  | The error message                                | string  |
 | nextLink | The token to be used to get the remaining results of this request | string  |
-| values   | A list of detail records in the site          | array   |
+| values   | A list of detail records in the site          | list   |
 
 **Detail Record**
 
-| Property          | Description                                                                 |
-|-------------------|-----------------------------------------------------------------------------|
-| id                | Unique identifier for the object                                             |
-| name              | Name of the object                                                            |
-| location          | URL where the object is stored                                                |
-| objectType        | Type of object                                     |
-| createdBy         | User who created the object                                                   |
-| module            | Module or application where the object belongs                                |
-| inheritance       | Indicates whether the object inherits permissions from its parent                  |
-| siteName          | Name of the SharePoint site where the object is stored                        |
-| sensitivityLevel  | Sensitivity level of the object                                               |
-| exposureLevel     | Exposure level of the object                                                  |
-| scannedTime       | Timestamp when the object was last scanned                                    |
-| createdTime       | Timestamp when the object was created                                         |
-| modifiedTime      | Timestamp when the object was last modified                                   |
-| channelName       | Name of the Microsoft Teams channel where the object is shared                |
-| riskLevel         | Risk level associated with the object                                         |
-| privacy           | Privacy setting of the object                                                 |
-| sensitiveInfoType | Types of sensitive information contained in the object                        |
-| sensitivityLabel  | Sensitivity label applied to the object                                       |
-| tagName           | Tag associated with the object                                                |
-| retentionLabel    | Retention label applied to the object                                         |
-| creatorEmail      | Email of the user who created the object                                      |
+| Property          | Description                                                                 |Type |
+|-------------------|-----------------------------------------------------------------------------|----|
+| id                | Unique identifier for the object                                             |string| 
+| name              | Name of the object                                                            |string|
+| location          | URL where the object is stored                                                |string|
+| objectType        | Type of object                                     |string|
+| createdBy         | User who created the object                                                   |string|
+| module            | Module or application where the object belongs                                |string|
+| inheritType       | Indicates whether the object inherits permissions from its parent                  |string|
+| siteName          | Name of the SharePoint site where the object is stored                        |string|
+| sensitivityLevel  | Sensitivity level of the object                                               |string|
+| exposureLevel     | Exposure level of the object                                                  |string|
+| scannedTime       | Timestamp when the object was last scanned                                    |string|
+| createdTime       | Timestamp when the object was created                                         |string|
+| modifiedTime      | Timestamp when the object was last modified                                   |string|
+| channelName       | Name of the Microsoft Teams channel where the object is shared                |string|
+| riskLevel         | Risk level associated with the object                                         |string|
+| privacy           | Privacy setting of the object                                                 |string|
+| sensitiveInfoType | Types of sensitive information contained in the object                        |list|
+| sensitivityLabel  | Sensitivity label applied to the object                                       |string|
+| tagName           | Tag associated with the object                                                |string|
+| retentionLabel    | Retention label applied to the object                                         |string|
+| creatorEmail      | Email of the user who created the object                                      |string|
 
 
 ## Request Sample
@@ -75,7 +75,7 @@ The API response provides detailed information about the site detail records ret
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site detail records in a structured format, enabling easy integration with other systems or applications.
 
 ```json
-https://graph.avepointonlineservices.com/insights/sites/0d6c1549-cd2d-4dd2-94b5-28df6da1f7e2/detailrecords?nextLink=1312312
+https://graph-us.avepointonlineservices.com/insights/sites/0d6c1549-cd2d-4dd2-94b5-28df6da1f7e2/detailrecords?nextLink=1312312
 ```
 
 ## Response Sample
@@ -86,52 +86,52 @@ The following response returns a list of detail records in the queried site with
 {
   "values": [
     {
-      "id": "b68d027a-7583-a089-479d-f15f68739762", // Unique identifier for the object
-      "name": "good Or bad.xlsx", // Name of the object
-      "location": "https://alitamarkettest.sharepoint.com/sites/mibeautifulteams-misharedchannel/shared documents/good or bad.xlsx", // URL where the object is stored
+      "id": "b68d7583-7583-7583-7583-7583758375837583", // Unique identifier for the object
+      "name": "7583.xlsx", // Name of the object
+      "location": "https://alita*******market7583.sharepoint.com/sites/7583teams-7583channel/shared documents/7583.xlsx", // URL where the object is stored
       "objectType": "object", // Type of object, in this case, a object
-      "createdBy": "alita adminIstratorRename", // User who created the object
+      "createdBy": "alita ******7583Rename", // User who created the object
       "module": "Microsoft Teams", // Module or application where the object is used
-      "inheritance": "Yes", // Indicates if the object inherits permissions from its parent
-      "siteName": "Mi beautiful Teams-Mi shared channel", // Name of the SharePoint site where the object is stored
+      "inheritType": "Unique", // Indicates if the object inherits permissions from its parent
+      "siteName": "7583Teams-7583channel", // Name of the SharePoint site where the object is stored
       "sensitivityLevel": "Low", // Sensitivity level of the object
       "exposureLevel": "Low", // Exposure level of the object
       "scannedTime": "2024-11-11T02:46:58Z", // Timestamp when the object was last scanned
       "createdTime": "2024-02-22T02:28:40Z", // Timestamp when the object was created
       "modifiedTime": "2024-02-22T02:28:40Z", // Timestamp when the object was last modified
-      "channelName": "Mi shared channel", // Name of the Microsoft Teams channel where the object is shared
+      "channelName": "7583channel", // Name of the Microsoft Teams channel where the object is shared
       "riskLevel": "Low", // Risk level associated with the object
       "privacy": "Private", // Privacy setting of the object
       "sensitiveInfoType": [
         "Mi CR 2" // Types of sensitive information contained in the object
       ],
-      "sensitivityLabel": "Jason object Only Label", // Sensitivity label applied to the object
+      "sensitivityLabel": "******object Only Label", // Sensitivity label applied to the object
       "tagName": "", // Tag associated with the object
       "retentionLabel": null, // Retention label applied to the object
-      "creatorEmail": "admin@alitamarkettest.onmicrosoft.com" // Email of the user who created the object
+      "creatorEmail": "admin@alita***market7583.onmicrosoft.com" // Email of the user who created the object
     },
     {
-      "id": "3e471efc-0417-74fa-d5cc-b2bd3552bb0f", // Unique identifier for the object
-      "name": "miley PP.pptx", // Name of the object
-      "location": "https://alitamarkettest.sharepoint.com/sites/mibeautifulteams-misharedchannel/shared documents/miley pp.pptx", // URL where the object is stored
+      "id": "d5ccd5cc-d5cc-d5cc-d5cc-d5ccd5ccd5cc", // Unique identifier for the object
+      "name": "d5ccPP.pptx", // Name of the object
+      "location": "https://alita*******market7583.sharepoint.com/sites/7583teams-7583channel/shared documents/d5ccp.pptx", // URL where the object is stored
       "objectType": "object", // Type of object, in this case, a object
-      "createdBy": "alita adminIstratorRename", // User who created the object
+      "createdBy": "alita************", // User who created the object
       "module": "Microsoft Teams", // Module or application where the object is used
-      "inheritance": "No", // Indicates if the object inherits permissions from its parent
-      "siteName": "Mi beautiful Teams-Mi shared channel", // Name of the SharePoint site where the object is stored
+      "inheritType": "Inheritance", // Indicates if the object inherits permissions from its parent
+      "siteName": "******Teams-****channel", // Name of the SharePoint site where the object is stored
       "sensitivityLevel": "N/A", // Sensitivity level of the object
       "exposureLevel": "Medium", // Exposure level of the object
       "scannedTime": "2024-11-01T09:22:18Z", // Timestamp when the object was last scanned
       "createdTime": "2024-04-03T06:57:39Z", // Timestamp when the object was created
       "modifiedTime": "", // Timestamp when the object was last modified
-      "channelName": "Mi shared channel", // Name of the Microsoft Teams channel where the object is shared
+      "channelName": "**********channel", // Name of the Microsoft Teams channel where the object is shared
       "riskLevel": "N/A", // Risk level associated with the object
       "privacy": "Private", // Privacy setting of the object
       "sensitiveInfoType": [], // Types of sensitive information contained in the object
       "sensitivityLabel": null, // Sensitivity label applied to the object
       "tagName": "", // Tag associated with the object
       "retentionLabel": "", // Retention label applied to the object
-      "creatorEmail": "admin@alitamarkettest.onmicrosoft.com" // Email of the user who created the object
+      "creatorEmail": "a***@alita***.onmicrosoft.com" // Email of the user who created the object
     }
   ],
   "status": 200, // HTTP status code indicating the operation is successful.

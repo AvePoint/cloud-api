@@ -27,8 +27,8 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
-| startPage | The starting page of the query starts from 0 | integer | No        |
-| pageSize  | Sets the number of results for one page. 100 results on one page at most. | integer | No        |
+| startPage | The starting page of the query starts from 0 | integer | Yes        |
+| pageSize  | Sets the number of results for one page. 100 results on one page at most. | integer | Yes        |
 
 ### Responses
 
@@ -39,7 +39,7 @@ The API response provides detailed information about the groups retrieved. Each 
 | status   | The HTTP response status code                    | integer |
 | message  | The error message                             | string  |
 | nextLink | The token to be used to get the remaining results of this request | string  |
-| values   | The array of group summary objects               | array   |
+| values   | A list of group summary objects               | list   |
 
 **Group summary**
 
@@ -59,7 +59,7 @@ The API response provides detailed information about the groups retrieved. Each 
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant group summary details in a structured format, enabling easy integration with other systems or applications. 
 
 ```json
-https://graph.avepointonlineservices.com/insights/groups/summary?startPage=1&pageSize=50
+https://graph-us.avepointonlineservices.com/insights/groups/summary?startPage=1&pageSize=50
 ```
 
 ## Response Sample  
@@ -70,8 +70,8 @@ The following is a sample response for this API method, which includes summary i
 {
     "values": [
         {
-            "displayName": "SCgroup0307-1",     //Group name
-            "groupId": "1484f609-796d-4dbf-8488-dccdee57fca8",    //Microsoft Entra Group ID
+            "displayName": "SCgroup********",     //Group name
+            "groupId": "84888488-8488-8488-8488-848884888488",    //Microsoft Entra Group ID
             "email": null,    //Group email
             "groupType": "Security Group", //Group type
             "membershipType": "Assigned",    //Membership type
@@ -79,8 +79,8 @@ The following is a sample response for this API method, which includes summary i
             "externalMemberCount": 17    //External member count
         },
         {
-            "displayName": "Mar2022 Mmail-Enabled Security Groups02",
-            "groupId": "0e4a8a18-57fe-4e59-9b09-f40b99d36933",
+            "displayName": "******** Mail-Enabled Security Groups02",
+            "groupId": "0e4a0e4a-0e4a-0e4a-0e4a-0e4a0e4a0e4a",
             "email": "Mar2022M********@m365x***63.onmicrosoft.com",
             "groupType": "Mail-enabled security group",
             "membershipType": "Assigned",
@@ -88,7 +88,7 @@ The following is a sample response for this API method, which includes summary i
             "externalMemberCount": 15
         },
         {
-            "displayName": "Mar2022 Distribution Group01",
+            "displayName": "*****Distribution Group01",
             "groupId": "7bc05c3d-930e-496e-b9b0-f6f8ff1b02a7",
             "email": "Mar2022**************01@m365x****63.onmicrosoft.com",
             "groupType": "Distribution group",
@@ -97,8 +97,8 @@ The following is a sample response for this API method, which includes summary i
             "externalMemberCount": 11
         },
         {
-            "displayName": "SCgroup0302",
-            "groupId": "d7447d1a-d26a-40bc-896e-da114295c1fc",
+            "displayName": "SCgroup*******",
+            "groupId": "d26ad26a-d26a-d26a-d26a-d26ad26ad26a",
             "email": null,
             "groupType": "Security Group",
             "membershipType": "Dynamic",
@@ -106,8 +106,8 @@ The following is a sample response for this API method, which includes summary i
             "externalMemberCount": 10
         },
         {
-            "displayName": "May2022 Public Group03",
-            "groupId": "1e831ad9-cf08-4e57-abab-5907c428a7c0",
+            "displayName": "********Public Group03",
+            "groupId": "cf08cf08-cf08-cf08-cf08-cf08cf08cf08",
             "email": "May202****@insights*****.onmicrosoft.com",
             "groupType": "Microsoft 365 Group",
             "membershipType": "Assigned",

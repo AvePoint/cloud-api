@@ -4,5 +4,5 @@
   href: userPermissionsExport.md
 - name: Retrieve User Permissions
   href: userPermissions.md
-- name: Export User Permissions
+- name: Export User Activities
   href: userActivitiesExport.md
