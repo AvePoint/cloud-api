@@ -65,7 +65,7 @@ The API response provides detailed information about the site permissions retrie
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant permission details in a structured format, enabling easy integration with other systems or applications.
 
 ```json
-https://graph.avepointonlineservices.com/insights/sites/permission?siteUrls=https%3A%2F%2Finsightscctest.sharepoint.com%2Fsites%2F365groupchangeteams01&pageSize=100&nextLink=1231
+https://graph-us.avepointonlineservices.com/insights/sites/permission?siteUrls=https%3A%2F%2Finsightscctest.sharepoint.com%2Fsites%2F365groupchangeteams01&pageSize=100&nextLink=1231
 ```
 
 ## Response Sample
@@ -77,10 +77,10 @@ The following is a sample response for retrieving the site permissions. Each pro
     "values": [
         {
             "module": "Microsoft Teams", // The data source from which the permission information is retrieved
-            "name": "365Group create team1", // The name of the permission
-            "url": "https://insightscctest.sharepoint.com/sites/365groupchangeteams01", // The URL of the object to which the permission applies
+            "name": "365Group***team1", // The name of the permission
+            "url": "https://insightsc****test.sharepoint.com/sites/365groupchange****", // The URL of the object to which the permission applies
             "objectType": "Site Collection", // The type of the object (e.g., file, folder, site, site collection)
-            "principalName": "365Group create team1 Owners", // The name of the user or group that has the permission
+            "principalName": "365Group****** Owners", // The name of the user or group that has the permission
             "email": "", // The email address of the user or group
             "principalType": "SharePoint Group", // The type of the user or group
             "permission": "Full Control", // The level of permission granted 
@@ -92,6 +92,6 @@ The following is a sample response for retrieving the site permissions. Each pro
     ],
     "status": 200, // The HTTP status code of the response
     "message": "", // The message accompanying the response, if any
-    "nextLink": "I5xQOaYyOO7Iy1YAu2g0mUZe75kIOZ1yQDkWtN2GLJSOvTou+X3OlVL8T/uQGW4AKbgUBMDsYBl0Q4X8oYHEIUkREuxotNfCOx1+PpRpGACiaEFhxUsSJ6qT87tKIgsBLuoHZahFbBDF60LFh6Fqh3JWLK5hx7UklyGqEtF3KgbHyQFbdv5njAd5HqI9QwstYJsDXaHHSiTFwJN/OSxKT1ARyXBmy/0bU+GDl6Bi3u6LlnwSzkYn4YRzCgJFcV96xReOOXXBPohvBVm2pplssNJS7LgoP4yHDEDoNGm3vzhm1ko8nyYEUNBWeDeXoYyjFEL02LMVKQDopLjNLb8fNA==" // The token for the next page of results, if applicable
+    "nextLink": "I5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOa" // The token for the next page of results, if applicable
 }
 ```

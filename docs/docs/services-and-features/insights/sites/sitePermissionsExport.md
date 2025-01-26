@@ -46,7 +46,7 @@ The API response provides export job ID for exporting and downloading the site p
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/insights/sites/permission/export?siteUrls=https://example.com/site1,https://example.com/site2
+ https://graph-us.avepointonlineservices.com/insights/sites/permission/export?siteUrls=https%3A%2F%2Fm365x353634.sharepoint.com%2Fsites%2Fretail&siteUrls=https%3A%2F%2Fm365x353634.sharepoint.com%2Fsites%2Fsite0
 ```
 
 ## Response Sample
@@ -57,6 +57,6 @@ The following is a sample response for this API method, which includes export jo
 {
   "jobId": "67890",
   "status": 200,
-  "message": "OK"
+  "message": ""
 }
 ```

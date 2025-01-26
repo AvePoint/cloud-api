@@ -50,7 +50,7 @@ If successful, the API response will provide the export job ID. You can use the 
 
 
 ```json
-https://graph.avepointonlineservices.com/insights/activities/object/https%3A%2F%2Falitamarkettest.sharepoint.com%2Fsites%2Fharlandleteams001/export?startTime=2024-12-03T00%3A00%3A00&finishTime=2025-01-09T00%3A00%3A00&eventTypes=ListViewed&eventTypes=ListItemViewed
+https://graph-us.avepointonlineservices.com/insights/activities/object/https%3A%2F%2Falitamarkettest.sharepoint.com%2Fsites%2Fharlandleteams001/export?startTime=2024-12-03T00%3A00%3A00&finishTime=2025-01-09T00%3A00%3A00&eventTypes=ListViewed&eventTypes=ListItemViewed
 ```
 
 ## Response Sample  

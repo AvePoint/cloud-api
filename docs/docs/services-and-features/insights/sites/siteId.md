@@ -42,7 +42,7 @@ The API response provides detailed information about the site ID retrieved.
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site IDs in a structured format, enabling easy integration with other systems or applications.
 
 ```json
-https://graph.avepointonlineservices.com/insights/sites/https%3A%2F%2Falitamarkettest.sharepoint.com%2Fsites%2Fharland2/siteid
+https://graph-us.avepointonlineservices.com/insights/sites/https%3A%2F%2Falitamarkettest.sharepoint.com%2Fsites%2Fharland2/siteid
 ```
 
 ## Response Sample
@@ -52,7 +52,7 @@ The following response returns the site ID for the specified Site URL in a struc
 ```json
 {
   "values": [
-    0cce8e50-ea3d-49cb-8b56-bc9543ac9329
+    "49cb49cb-49cb-49cb-49cb-49cb49cb49cb49cb"
   ],
   "status": 200,
   "message": "",

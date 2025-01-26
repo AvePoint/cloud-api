@@ -60,7 +60,7 @@ The API response provides detailed information about the users retrieved. Each g
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant user summary details in a structured format, enabling easy integration with other systems or applications. 
 
 ```json
-https://graph.avepointonlineservices.com/insights/users/summary?startPage=1&pageSize=50
+https://graph-us.avepointonlineservices.com/insights/users/summary?startPage=1&pageSize=50
 ```
 
 ## Response Sample  
@@ -82,8 +82,8 @@ The following is a sample response for this API method, which includes summary i
         },
         {
             "displayName": "Insights1 Tester001", // username
-            "loginName": "insightstester001_jasoninsightstest.onmicrosoft.com#ext#@m365x636363.onmicrosoft.com", // user principal name
-            "email": "InsightsTester001@jasoninsightstest.onmicrosoft.com", // user email
+            "loginName": "insight********_***insightstest.onmicrosoft.com#ext#@m365x********.onmicrosoft.com", // user principal name
+            "email": "Insights********@***insightstest.onmicrosoft.com", // user email
             "userStatus": "Blocked", // current status of the user
             "trustStatus": "Trusted", // trust status of the user
             "sensitiveItems": 55, // number of sensitive items associated with the user
@@ -92,7 +92,7 @@ The following is a sample response for this API method, which includes summary i
         },
         {
             "displayName": "Internal User Change0406-2", // username
-            "loginName": "internaluserchange0406-2@m365x636363.onmicrosoft.com", // user principal name
+            "loginName": "userchange0406-2@m365x******.onmicrosoft.com", // user principal name
             "email": "", // user email (empty in this case)
             "userStatus": "Blocked", // current status of the user
             "trustStatus": "Not Trusted", // trust status of the user
@@ -102,8 +102,8 @@ The following is a sample response for this API method, which includes summary i
         },
         {
             "displayName": "Insights Tester003", // username
-            "loginName": "insightstester003_jasoninsightstest.onmicrosoft.com#ext#@m365x636363.onmicrosoft.com", // user principal name
-            "email": "InsightsTester003@jasoninsightstest.onmicrosoft.com", // user email
+            "loginName": "tester003_******insightstest.onmicrosoft.com#ext#@m365x******.onmicrosoft.com", // user principal name
+            "email": "Tester003@***insightstest.onmicrosoft.com", // user email
             "userStatus": "Active", // current status of the user
             "trustStatus": "Trusted", // trust status of the user
             "sensitiveItems": 36, // number of sensitive items associated with the user

@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API     | Permission required | 
 |-------------------|---------------|
-| `/insights/sharingLinks/{siteUrl}/summary` |  |
+| `/insights/sharingLinks/{siteUrl}/summary` | insights.graph.readwrite.all |
 
 
 ## Request
@@ -27,7 +27,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description            | Type    | Required? |
 |-----------|------------------------|---------|-----------|
-| siteUrl | The SharePoint site URL | string |No    |
+| siteUrl | The SharePoint site URL | string |Yes    |
 | linkType  | The type of the link. **32** for Flexible link; **64** for Organization link; **128** for Anonymous link.  | integer | Yes        |
 | pageSize  | The number of items per page | integer | No        |
 | nextLink  | The token for the next page | string  | No        |
@@ -73,7 +73,7 @@ The API response provides detailed information about the sharing links retrieved
 ## Request Sample
 
 ```json
-https://graph.avepointonlineservices.com/insights/sharingLinks/https%253A%252F%252Fm365x636363.sharepoint.com%252Fsites%252Fjuly2022publicteam01/summary?linkType=32&pageSize=100&nextLink=1231
+https://graph-us.avepointonlineservices.com/insights/sharingLinks/https%253A%252F%252Fm365x636363.sharepoint.com%252Fsites%252Fjuly2022publicteam01/summary?linkType=32&pageSize=100&nextLink=1231
 
 
 ## Response Sample
@@ -83,41 +83,42 @@ The following is a sample response for retrieving the sharing link summary. Each
 {
     "values": [
         {
-            "id": "2f3a2d78-e02c-8ba4-0b00-fe2009ef1df6,e733b955-2ace-4978-9206-a6e26776dc1d", // The unique identifier for the link summary
-            "siteId": "0203bcc8-4eed-4f48-9dc9-fb4f3ed90193", // The site ID where the object is shared
-            "selfId": "e3f887e1-395e-42ba-a4fa-d2d0e486ab7d", // The self ID of the object being shared
-            "linkId": "e733b955-2ace-4978-9206-a6e26776dc1d", // The unique identifier for the link
-            "logonName": "sharinglinks.e3f887e1-395e-42ba-a4fa-d2d0e486ab7d.flexible.e733b955-2ace-4978-9206-a6e26776dc1d", // The login name associated with the link
+            "id": "e02ce02c-e02c-e02c-e02c-e02ce02ce02c,92069206-9206-9206-9206-920692069206", // The unique identifier for the link summary
+            "siteId": "9dc99dc9-9dc9-9dc9-9dc9-9dc99dc99dc9", // The site ID where the object is shared
+            "selfId": "a4faa4fa-a4fa-a4fa-a4fa-a4faa4faa4fa", // The self ID of the object being shared
+            "linkId": "49784978-4978-4978-4978-497849784978", // The unique identifier for the link
+            "logonName": "sharinglinks.395e395e-395e-395e-395e-395e395e395e.flexible.2ace2ace-2ace-2ace-2ace-2ace2ace2ace", // The login name associated with the link
             "createTime": "2022-05-30T07:20:05.58Z", // The timestamp when the link was created
             "expireTime": null, // The timestamp when the link will expire, if applicable
-            "name": "File share 365 Group(1).docx", // The name of the object being shared
-            "objectUrl": "https://m365x636363.sharepoint.com/sites/july2022publicteam01/shared documents/general/for share/file share 365 group(1).docx", // The URL of the shared object
+            "name": "File share 365 Group-Word.docx", // The name of the object being shared
+            "objectUrl": "https://m365x******.sharepoint.com/sites/*******publicteam1/shared documents/general/for share/File share 365 Group-Word.docx", // The URL of the shared object
             "linkType": "Links for Specific External Users", // The type of the link
             "shareBy": "FNU LNU", // The user who created the link
             "inheritFrom": null, // The parent from which the permission inherits, if applicable
             "inheritType": "Unique", // The inheritance type of the permission
             "shareWith": 1, // The number of users and groups with whom the link is shared
-            "linkUrl": "https://m365x636363.sharepoint.com/:w:/s/July2022PublicTeam01/EeGH-ONeObpCpPrS0OSGq30BXkUE0qRbGiVQ_xkav5ARQQ", // The URL of the link
+            "linkUrl": "https://m365x********.sharepoint.com/:w:/s/********PublicTeam1/EeGH-EeGHEeGHEeGHEeGHEeGHEeGHEeGHEeGH", // The URL of the link
             "permission": "Edit", // The permission level of the link
             "fileType": "File", // The type of the object being shared
             "sensitivityLevel": "Low" // The sensitivity level of the shared object
         },
         {
-            "id": "9db028c3-bff5-c445-6056-16a1bd3ee75f,f862aa0f-3103-4c2c-8215-e1dc6c7bbd34",
-            "siteId": "0203bcc8-4eed-4f48-9dc9-fb4f3ed90193",
-            "selfId": "377847a8-c541-43c7-9e13-ddcb606d5b11",
-            "linkId": "f862aa0f-3103-4c2c-8215-e1dc6c7bbd34",
-            "logonName": "sharinglinks.377847a8-c541-43c7-9e13-ddcb606d5b11.flexible.f862aa0f-3103-4c2c-8215-e1dc6c7bbd34",
+            "id": "60566056-6056-6056-6056-605660566056,31033103-3103-3103-3103-310331033103",
+            "siteId": "4eed4eed-4eed-4eed-4eed-4eed4eed4eed4eed",
+            "selfId": "43c743c7-43c7-43c7-43c7-43c743c743c7",
+            "linkId": "82158215-8215-8215-8215-8215821582158215",
+            "logonName": "sharinglinks.82158215-8215-8215-8215-821582158215.flexible.31033103-3103-3103-3103-3103310331033103",
             "createTime": "2022-05-30T08:17:52.001Z",
             "expireTime": null,
             "name": "sensitive info",
-            "objectUrl": "https://m365x636363.sharepoint.com/sites/july2022publicteam01/shared documents/general/sensitive info",
+            "objectUrl": "https://m365x*****
+            *****.sharepoint.com/sites/******publicteam1/shared documents/general/sensitive info",
             "linkType": "Links for Specific External Users",
             "shareBy": "FNU LNU",
             "inheritFrom": null,
             "inheritType": "Unique",
             "shareWith": 1,
-            "linkUrl": "https://m365x636363.sharepoint.com/:f:/s/July2022PublicTeam01/EqhHeDdBxcdDnhPdy2BtWxEB4Qgp4V3PHnzAdR3qeBL-Xw",
+            "linkUrl": "https://m365x******.sharepoint.com/:f:/s/*******PublicTeam1/EqhHEqhHEqhHEqhHEqhHEqhHEqhHEqhHEqhH-Xw",
             "permission": "Edit",
             "fileType": "Folder",
             "sensitiveLevel": "N/A"
@@ -125,5 +126,5 @@ The following is a sample response for retrieving the sharing link summary. Each
     ],
     "status": 200,
     "message": "",
-    "nextLink": "[{\"token\":\"+RID:~SZ5kAO3ZabkBOQAAAAAAAA==#RT:1#TRC:10#ISV:2#IEO:65567#QCF:8#FPC:AgEAAAAIAAG5HYIBwIQA\",\"range\":{\"min\":\"\",\"max\":\"FF\"}}]"
+    "nextLink": "[{\"token\":\"+RID:~EqhHEqhHEqhH==#RT:1#TRC:10#ISV:2#IEO:65567#QCF:8#FPC:AgEEqhHEqhHEqhHQA\",\"range\":{\"min\":\"\",\"max\":\"FF\"}}]"
 }

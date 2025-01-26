@@ -6,8 +6,16 @@ The AvePoint Graph Modern API provides a suite of export methods designed to fac
 
 Each export method is tailored to address specific reporting needs, ensuring that users can retrieve the precise information required for their use cases. The API supports a range of query parameters to refine and customize the data retrieval process, allowing for targeted and efficient data exports.
 
-The following sections provide detailed descriptions of each export method, including the required permissions, query parameters, and the structure of the responses. These methods are essential tools for administrators and developers who need to manage and analyze permissions and activities within their AvePoint environments.
+The following sections provide detailed descriptions of each export method. These methods are essential tools for administrators and developers who need to manage and analyze permissions and activities within their AvePoint environments.
 
+| API Method | Endpoint | Description |
+| --- | --- | --- |
+| [Export Activities on an Object](objects/objectActivities.md)| `/insights/activities/object/{path}/export`| Exports activities performed on a specific object.|
+| [Export User Activities](users/userActivitiesExport.md) | `/insights/users/{email}/activities/export` | Exports activity data for a specific user. | 
+| [Export User Permissions](users/userActivitiesExport.md)  |`/insights/users/{email}/access/export`|Exports user access report.|
+| [Export Group Permissions](groups/groupAccesReport.md) | `/insights/groups/{groupId}/access/export` | Exports group access report. |
+| [Export Site Permissions](sites/sitePermissionsExport.md) | `/insights/sites/permission/export` | Exports site permissions. |
+| [Export Permission-Related Information for Sharing Links](sharingLinks/linkExport.md) | `/insights/sharingLinks/export` | Exports permission-related information for sharing links |
 
 ## API Methods for Direct Data Retrieval
 
@@ -15,13 +23,13 @@ In addition to the export methods, the Insights for Microsoft 365 Modern API pro
 
 | API Method | Endpoint | Documentation |
 | --- | --- | --- |
-| **Get User Permissions** | `/insights/users/access` | [userPermissions.md](insights/users/userPermissions.md) | 
-| **Get User Summary**  |`/insights/users/summary`|[userSummary.md](insights/users/userSummary.md)|
-| **Get Group Summary** | `/insights/groups/summary` | [groupAccessReport.md](insights/groups/groupAccessReport.md) |
-| **Get Site Permissions** | `/insights/sites/permission` | [sitePermissions.md](insights/sites/sitePermissions.md) |
-| **Get Site Overview** | `/insights/sites/overview` | [siteOverview.md](insights/sites/siteOverview.md) |  
-| **Get Site ID** | `/insights/sites/overview` | [siteID.md](insights/sites/siteId.md) |
-| **Get Permission-Related Information for Sharing Links** | `/insights/sharingLinks/{siteUrl}/summary` | [sharingLinks.md](insights/sharingLinks/sharingLinks.md) |
+| [Retrieve User Permissions](users/userPermissions.md) | `/insights/users/access` | Retrieves the permission-related information for specific users. | 
+| [Retrieve User Summary](users/userSummary.md)  |`/insights/users/summary`|Retrieves the user summary information.|
+| [Retrieve Group Summary](groups/groupSummary.md) | `/insights/groups/summary` | Retrieves group summary. |
+| [Retrieve Site Permissions](sites/sitePermissionsGet.md) | `/insights/sites/permission` | Retrieve site Permissions. |
+| [Retrieve Site Overview](sites/siteOverview.md) | `/insights/sites/overview` | Retrieves site overview. |  
+| [Retrieve Site ID](sites/siteId.md) | `/insights/sites/overview` | Retrieves site ID. |
+| [Retrieve Site Detail Records](sites/siteDetailRecords.md)| `insights/sites/{siteId}/detailRecords`| Retrieves site detail records.|
+| [Retrieve Permission-Related Information for Sharing Links](sharingLinks/linkSummary.md) | `/insights/sharingLinks/{siteUrl}/summary` | Retrieves the link summaries. |
 
-| **Get Activities for a Specific Object** | `/insights/activities/object/{path}` | [objectActivities.md](insights/activities/objectActivities.md) |
 
