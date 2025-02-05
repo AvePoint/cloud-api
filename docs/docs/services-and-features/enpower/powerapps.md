@@ -26,7 +26,6 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameters | Description | Type | Required |
 |--- | --- | --- | --- |
-| language | The language of returned data. The default language is English. | string | No |
 | top | The number of Power App records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of Power Apps are retrieved. By default, Power Apps of all tenants are retrieved. | string | No |
 
@@ -126,9 +125,9 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
-| id                      | The unique identifier for the metadata.                                     | string  |
 | metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup </li></ul> | integer | 
 | value                   | The metadata value.                                                         | object  |
+| id                      | The unique identifier for the metadata.                                     | string  |
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
@@ -141,10 +140,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph.avepointonlineservices.com/smp/powerplatform/powerapps
+https://graph-us.avepointonlineservices.com/smp/powerplatform/powerapps
 ```
 
 ## Response Sample
@@ -159,12 +158,12 @@ If the request has been successfully processed, a 200 OK response will be return
       "appId": "89508bda-8f4f-48ef-8363-c8890e5dfee4", // The unique application identifier within Power Platform
       "displayName": "0613-Ci data01_Restored202410010619_Restored202411120345", // The display name of the Power app
       "tenantId": "", // The unique identifier for the tenant that the Power App belongs to
-      "tenantDomain": "zryfw", // The domain name associated with the tenant
+      "tenantDomain": "Sample", // The domain name associated with the tenant
       "containerId": "", // The unique identifier for the container that the Power App belongs to
-      "container": "zryfw-powerapp", // The name of the container
+      "container": "Sample-Apps", // The name of the container
       "environment": "", // The Power Platform environment ID that the Power App belongs to
       "environmentName": "SMPDC (default)", // The display name of the environment
-      "ownerDisplayName": "Camilla Test", // The display name of the Power App owner
+      "ownerDisplayName": "Sample Owner", // The display name of the Power App owner
       "ownerStatus": "Enable", // The status of the Power App owner
       "createdOn": "2024-06-13 03:19:48", // The date and time when the Power App was created
       "modifiedOn": "2024-12-26 03:58:17", // The date and time when the Power App was last modified

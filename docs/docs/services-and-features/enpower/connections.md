@@ -26,7 +26,6 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameters | Description | Type | Required |
 |--- | --- | --- | --- |
-| language | The language of returned data. The default language is English. | string | No |
 | top | The number of connection records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of connections are retrieved. By default, connections of all tenants are retrieved. | string | No |
 
@@ -65,10 +64,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph.avepointonlineservices.com/smp/powerplatform/connections
+https://graph-us.avepointonlineservices.com/smp/powerplatform/connections
 ```
 
 ## Response Sample
@@ -81,9 +80,9 @@ If the request has been successfully processed, a 200 OK response will be return
     {
       "id": "62f0d4b761ea43fda97b0cdfbd1981fd", // The unique identifier for the connection
       "tenantId": "", // The unique identifier for the tenant that the connection belongs to
-      "tenantName": "zryfw", // The name for the tenant that the connection belongs to
+      "tenantName": "Sample", // The name for the tenant that the connection belongs to
       "containerId": "", // The unique identifier for the container that the connection belongs to
-      "containerName": "zryfw-connection", // The name for the container that the connection belongs to
+      "containerName": "Sample-Connections", // The name for the container that the connection belongs to
       "displayName": "365 Training", // The display name of the connection
       "iconUri": "", // The URI of the icon for the connection
       "connectorId": "shared_365training", // The unique identifier for the connector

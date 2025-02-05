@@ -26,7 +26,6 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameters | Description | Type | Required |
 |--- | --- | --- | --- |
-| language | The language of returned data. The default language is English. | string | No |
 | top | The number of artifact records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of artifacts are retrieved. By default, artifacts of all tenants are retrieved. | string | No |
 
@@ -77,10 +76,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph.avepointonlineservices.com/smp/powerplatform/powerbi/artifacts
+https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/artifacts
 ```
 
 ## Response Sample
@@ -95,9 +94,9 @@ If the request has been successfully processed, a 200 OK response will be return
       "name": "0001", // The name of the artifact
       "description": null, // The description of the artifact
       "tenantId": "", // The unique identifier for the tenant where the artifact is hosted
-      "tenantName": "zryfw", // The name of the tenant where the artifact is hosted
+      "tenantName": "Sample", // The name of the tenant where the artifact is hosted
       "containerId": "", // The unique identifier of the container where the artifact is held
-      "container": "zryfw-BI", // The name of the container where the artifact is held
+      "container": "Sample-Artifacts", // The name of the container where the artifact is held
       "owner": "", // The owner of the artifact
       "type": "Report", // The type of the artifact
       "state": "Active", // The state of the artifact
@@ -110,9 +109,9 @@ If the request has been successfully processed, a 200 OK response will be return
       "sensitivityLabelId": "", // The unique identifier for the sensitivity label applied to the artifact
       "sensitivityLabelName": "EntrustEncryptedLabel1", // The name of the sensitivity label applied to the artifact
       "createdDateTime": "2024-12-20 09:29:58", // The date and time when the artifact was created
-      "createdBy": "admin@zryfw.onmicrosoft.com", // The user who created the artifact
+      "createdBy": "admin@sample.onmicrosoft.com", // The user who created the artifact
       "createdById": "", // The unique identifier of the user who created the artifact
-      "modifiedBy": "admin@zryfw.onmicrosoft.com", // The user who last modified the artifact
+      "modifiedBy": "admin@sample.onmicrosoft.com", // The user who last modified the artifact
       "modifiedDateTime": "2024-12-20 09:29:58", // The date and time when the artifact was last modified
       "modifiedById": "", // The unique identifier of the user who last modified the artifact
       "configuredBy": null, // The user who configured the artifact

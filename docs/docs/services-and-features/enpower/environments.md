@@ -26,7 +26,6 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameters | Description | Type | Required |
 |--- | --- | --- | --- |
-| language | The language of returned data. The default language is English. | string | No |
 | top | The number of Environment records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of environments are retrieved. By default, environments of all tenants are retrieved. | string | No |
 
@@ -125,7 +124,7 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 | groupTypes              | The types of the group object, represented as an enumerable collection.     | list    |
 | officeLocation          | The office location of the group object.                                    | string  |
 | jobTitle                | The job title of the group object.                                          | string  |
-| type | The Exchange recipient type of the group object. <br> Valid values: <br> <ul><li> **1** for dynamic distribution group <br> </li><li> **2** for mail contact <br></li><li> **4** for mail non-universal group <br></li><li> **8** for mail universal distribution group <br></li><li> **16** for mail universal security group <br></li><li> **32** for mail user <br></li><li> **64** for public folder <br></li><li> **128** for user mailbox </li></ul> | integer | 
+| exchangeRecipientType | The Exchange recipient type of the group object. <br> Valid values: <br> <ul><li> **1** for dynamic distribution group <br> </li><li> **2** for mail contact <br></li><li> **4** for mail non-universal group <br></li><li> **8** for mail universal distribution group <br></li><li> **16** for mail universal security group <br></li><li> **32** for mail user <br></li><li> **64** for public folder <br></li><li> **128** for user mailbox </li></ul> | integer | 
 | groupType               | The group type of the group object.                                         | integer |
 | membershipType          | The membership type of the group object.                                    | integer |
 
@@ -150,19 +149,19 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
-| id                      | The unique identifier for the metadata.                                     | string  |
 | metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup </li></ul> | integer | 
 | value                   | The metadata value.                                                         | object  |
+| id                      | The unique identifier for the metadata.                                     | string  |
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph.avepointonlineservices.com/smp/powerplatform/environments
+https://graph-us.avepointonlineservices.com/smp/powerplatform/environments
 ```
 
 ## Response Sample
@@ -178,9 +177,9 @@ If the request has been successfully processed, a 200 OK response will be return
             "dataverseInstanceUrl": "", // The Dataverse instance Url of the environment
             "displayName": "0613-Ci data02", // The display name of the environment
             "tenantId": "", // The unique identifier of the tenant that the environment belongs to
-            "tenant": "zryfw", // TThe display name of the tenant that the environment belongs to
+            "tenant": "Sample", // TThe display name of the tenant that the environment belongs to
             "containerId": "", // The unique identifier of the container that the environment belongs to
-            "container": "zryfw-env", // The display name of container that the environment belongs to
+            "container": "Sample-Environments", // The display name of container that the environment belongs to
             "createdTime": "2024-06-13 03:31:12", // The created time of the environment
             "lastModifiedTime": "2024-12-30 01:05:36", // The last modified time of the environment
             "region": "Asia", // The region of the environment

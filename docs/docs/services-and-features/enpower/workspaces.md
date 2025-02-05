@@ -26,7 +26,6 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameters | Description | Type | Required |
 |--- | --- | --- | --- |
-| language | The language of returned data. The default language is English. | string | No |
 | top | The number of workspace records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of workspaces are retrieved. By default, workspaces of all tenants are retrieved. | string | No |
 
@@ -114,9 +113,9 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
-| id                      | The unique identifier for the metadata.                                     | string  |
 | metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup </li></ul> | integer | 
 | value                   | The metadata value.                                                         | object  |
+| id                      | The unique identifier for the metadata.                                     | string  |
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
@@ -129,10 +128,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph.avepointonlineservices.com/smp/powerplatform/powerbi/workspaces
+https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/workspaces
 ```
 
 ## Response Sample
@@ -147,9 +146,9 @@ If the request has been successfully processed, a 200 OK response will be return
       "name": "0716ci-02", // The name of the Power BI workspace
       "description": null, // A brief description of the Power BI workspace
       "tenantId": "", // The unique identifier for the tenant where the workspace is hosted
-      "tenantName": "zryfw", // The name of the tenant where the workspace is hosted
+      "tenantName": "Sample", // The name of the tenant where the workspace is hosted
       "containerId": "", // The unique identifier for the container that holds the workspace
-      "container": "zryfw-BI", // The name of the container that holds the workspace
+      "container": "Sample-Workspaces", // The name of the container that holds the workspace
       "type": "Workspace", // The workspace type
       "state": "Active", // The current workspace status
       "capacityId": null, // The unique identifier for the capacity associated with the workspace

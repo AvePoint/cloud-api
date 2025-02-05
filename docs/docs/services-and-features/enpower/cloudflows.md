@@ -26,7 +26,6 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameters | Description | Type | Required |
 |--- | --- | --- | --- |
-| language | The language of returned data. The default language is English. | string | No |
 | top | The number of cloud flow records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of cloud flows are retrieved. By default, cloud flows of all tenants are retrieved. | string | No |
 
@@ -116,9 +115,9 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
-| id                      | The unique identifier for the metadata.                                     | string  |
 | metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup </li></ul> | integer | 
 | value                   | The metadata value.                                                         | object  |
+| id                      | The unique identifier for the metadata.                                     | string  |
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
@@ -131,10 +130,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph.avepointonlineservices.com/smp/powerplatform/powerautomate/cloudflows
+https://graph-us.avepointonlineservices.com/smp/powerplatform/powerautomate/cloudflows
 ```
 ## Response Sample
 
@@ -149,9 +148,9 @@ If the request has been successfully processed, a 200 OK response will be return
       "environmentId": "", // The unique identifier of the environment that the flow belongs to
       "environment": "", // The environment that the flow belongs to
       "tenantId": "", // The unique identifier of the tenant that the flow belongs to
-      "tenantDomain": "camilladev.onmicrosoft.com", // The domain name associated with the tenant
+      "tenantDomain": "Sample", // The domain name associated with the tenant
       "containerId": "", // The unique identifier of the container that the flow belongs to
-      "container": "Automate2", // The container that the flow belongs to
+      "container": "Sample-CloudFlows", // The container that the flow belongs to
       "type": "Instant", // The flow type
       "createdTime": "2023-11-21 09:56:13", // The time when the flow was created
       "status": "Stopped", // The flow status
@@ -164,7 +163,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "flowRuns": 0, // The number that the flow has run
       "activitiesLast7Days": 0, // The number of flow activities in the last 7 days
       "creator": "", // The creator of this flow
-      "creatorDepartment": "PP_EnPower Department", // The department of the flow creator
+      "creatorDepartment": "Sample Department", // The department of the flow creator
       "creatorOffice": null, // The office of the flow creator
       "creatorStatus": "Enable", // The status of the flow creator
       "creatorUserType": "Member", // The user type of the flow creator
