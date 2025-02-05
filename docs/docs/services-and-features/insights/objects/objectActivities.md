@@ -13,7 +13,7 @@ You must register an app through AvePoint Online Services > App registration to 
 |-------------------|---------------|
 | `/insights/activities/object/{path}/export` | insights.graph.readwrite.all |
 
-[all the methods are GET, why do you need write permission?  -confiremd, cannot be changed as this has been in use for a few releases now ]: #
+[all the methods are GET, why do you need write permission?  -confirmed, cannot be changed as this has been in use for a few releases now ]: #
 
 ## Request 
 
@@ -32,7 +32,7 @@ The API supports several query parameters to refine and customize the data retri
 |-------------|--------------------------------------------------|--------|-----------|
 | path        | The object URL.                                 | string | Yes       |
 | startTime   | The start time of the reporting time range, in ISO 8601 format.  | string | No        |
-| finishTime  | The finish time of the reporting time range. | string | No        |
+| finishTime  | The finish time of the reporting time range, in ISO 8601 format. | string | No        |
 | eventTypes  | Filter by event type                             | list  | No        |
 
 
