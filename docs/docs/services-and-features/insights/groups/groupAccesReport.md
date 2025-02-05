@@ -33,12 +33,12 @@ The API supports several query parameters to refine and customize the data retri
 | dataSources      | Sets the workspace in which you want to export the access report of users. Multiple values are allowed, such as **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**.          | list   | Yes        |
 <!---| language | Sets the display language for the access report. Supported values are: **en-US**, **ja-JP**, and **fr-FR**. | string | No --->
 
-> [!NOTE] The principal names corresponding to the 4 special groups, including Everyone, are as follows:  
->- The principal names for **Everyone** is "c:0(.s|true"
->- The principal names for **EveryoneExceptExternalUsers** is "c:0-.f|rolemanager|spo-grid-all-users"
->- The principal names for **All Users (windows)** is "c:0!.s|windows"
->- The principal names for **All Users (membership)** is "c:0!.s|forms%3amembership"
-
+> [!NOTE] 
+> The principal names corresponding to the 4 special groups, including Everyone, are as follows:  
+>- The principal names for **Everyone** is ```c:0(.s|tru```
+>- The principal names for **EveryoneExceptExternalUsers** is ```c:0-.f|rolemanager|spo-grid-all-users```
+>- The principal names for **All Users (windows)** is ```c:0!.s|windows```
+>- The principal names for **All Users (membership)** is ```c:0!.s|forms%3amembership```
 
 
 [languages + data source rewrite]: #

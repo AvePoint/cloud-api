@@ -27,8 +27,8 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
-| startPage | The starting page of the query starts from 0 | integer | No        |
-| pageSize  | Sets the number of results for one page. 100 results on one page at most. | integer | No        |
+| startPage | The starting page of the query starts from 0 | integer | Yes        |
+| pageSize  | Sets the number of results for one page. 100 results on one page at most. | integer | Yes        |
 
 ### Responses
 
@@ -57,7 +57,7 @@ The API response provides detailed information about the users retrieved. Each g
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant user summary details in a structured format, enabling easy integration with other systems or applications. 
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user summary details in a structured format, enabling easy integration with other systems or applications. 
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/summary?startPage=1&pageSize=50

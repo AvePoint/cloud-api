@@ -56,10 +56,10 @@ The API response provides detailed information about the user permissions retrie
 | objectType         | The type of object.             | string  |
 | inheritType        | Indicates that the permissions are unique to this object.      | string  |
 | permission         | The level of permission granted.                    | string  |
-| SensitivityLevel   | The sensitivity level of the object.               | string  |
+| sensitivityLevel   | The sensitivity level of the object.               | string  |
 | sensitiveInfoType  | Types of sensitive information contained in the file. |string  |
 | isDirect           | Indicates whether the permission is direct or inherited.               | Bool |
-| SensitivityLabel   | The sensitivity label applied to the object, which is empty in this case.          | String  |
+| sensitivityLabel   | The sensitivity label applied to the object, which is empty in this case.          | String  |
 | inheritedFrom      | The source from which the permissions are inherited.                     | String  |
 
 ## Request Sample
@@ -85,10 +85,10 @@ The following is a sample response for this API method, which includes summary i
             "objectType": "File",  // The type of object, which is a file in this case.
             "inheritType": "Unique",  // Indicates that the permissions are unique to this file.
             "permission": "Contribute",  // The level of permission granted.
-            "SensitivityLevel": "High",  // The sensitivity level of the file.
+            "sensitivityLevel": "High",  // The sensitivity level of the file.
             "sensitiveInfoType": "U.S. Individual Taxpayer Identification Number (ITIN), U.S. Social Security Number (SSN), U.S. / U.K. Passport Number",  // Types of sensitive information contained in the file.
             "isDirect": false,  // Indicates whether the permission is direct or inherited.
-            "SensitivityLabel": "",  // The sensitivity label applied to the file, which is empty in this case.
+            "sensitivityLabel": "",  // The sensitivity label applied to the file, which is empty in this case.
             "inheritedFrom": "sharinglinks.2nnn3-5nnn-46nn7-bc32-8nnnnnnnnn.flexible.8nnnnnnnnn-c62b0-c62b0-bc62b0-c62b0"  // The source from which the permissions are inherited.
         }
     ],

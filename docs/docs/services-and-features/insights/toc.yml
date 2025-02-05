@@ -1,4 +1,4 @@
-- name: Insights for Microsoft 365
+- name: Overview
   href: index.md
 - name: Objects
   href: objects/toc.yml

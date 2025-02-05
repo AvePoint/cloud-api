@@ -72,14 +72,17 @@ The API response provides detailed information about the sharing links retrieved
  
 ## Request Sample
 
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. 
+
 ```json
 https://graph-us.avepointonlineservices.com/insights/sharingLinks/https%253A%252F%252Fm365x636363.sharepoint.com%252Fsites%252Fjuly2022publicteam01/summary?linkType=32&pageSize=100&nextLink=1231
-
+```
 
 ## Response Sample
 
 The following is a sample response for retrieving the sharing link summary. Each property in response is explained with a comment for better understanding. 
 
+```json
 {
     "values": [
         {
@@ -128,3 +131,4 @@ The following is a sample response for retrieving the sharing link summary. Each
     "message": "",
     "nextLink": "[{\"token\":\"+RID:~EqhHEqhHEqhH==#RT:1#TRC:10#ISV:2#IEO:65567#QCF:8#FPC:AgEEqhHEqhHEqhHQA\",\"range\":{\"min\":\"\",\"max\":\"FF\"}}]"
 }
+```
