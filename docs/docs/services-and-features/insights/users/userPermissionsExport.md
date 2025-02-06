@@ -22,7 +22,7 @@ This section outlines the HTTP method and endpoint used to export user access re
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, emails, and next link to filter the results effectively..
+The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, emails, and next link to filter the results effectively.
 
 
 | Parameter  | Description                                                                 | Type   | Required? |
@@ -45,7 +45,7 @@ The API response provides detailed information about the export job.
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant permission details in a structured format, enabling easy integration with other systems or applications.
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant permission details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/insightstester001_jasoninsightstest.onmicrosoft.com%2523ext%2523%2540m365x636363.onmicrosoft.com/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam01&dataSources=microsoft%20teams&dataSources=sharepoint%20online

@@ -1,6 +1,6 @@
 # Export Group Access Report
 
-Export the permission-related information of specific groups. By invoking the `/insights/groups/{groupId}/access/export` endpoint, you can export the access report for specific groups. This method is useful for obtaining an overview of group permissions. 
+Export the permission-related information of specific groups. By invoking the `/insights/groups/{groupId}/access/export` endpoint, you can export the access report for specific groups. This method is useful for obtaining an overview of group permissions. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.  
 
 ## Permission 
 
@@ -56,7 +56,7 @@ The API response provides detailed information about the permission report job. 
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the access report job ID for checking the job status and downloading the report file. 
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the access report job ID for checking the job status and downloading the report file. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region. 
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/groups/ec34726b-f692-424f-aaf0-f6a478a1b9fc7/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam01&dataSources=microsoft%20teams&dataSources=sharepoint%20online

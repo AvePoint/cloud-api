@@ -52,7 +52,7 @@ The API response provides detailed information about the sharing links retrieved
 | siteId         | The site ID in which the object is shared by the link | string  |
 | selfId         | The selfID of the object which is shared by the link | string  |
 | linkId         | The link ID                                      | string  |
-| logonName      | The link login name                              | string  |
+| logonName      | The link logonName contains the linkId and the object uniqueId.                              | string  |
 | createTime     | The time when the link is created                | string  |
 | expireTime     | The time when the link is expired                | string  |
 | name           | The object name that is shared via the link      | string  |
@@ -72,7 +72,7 @@ The API response provides detailed information about the sharing links retrieved
  
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. 
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/sharingLinks/https%253A%252F%252Fm365x636363.sharepoint.com%252Fsites%252Fjuly2022publicteam01/summary?linkType=32&pageSize=100&nextLink=1231
@@ -90,7 +90,7 @@ The following is a sample response for retrieving the sharing link summary. Each
             "siteId": "9dc99dc9-9dc9-9dc9-9dc9-9dc99dc99dc9", // The site ID where the object is shared
             "selfId": "a4faa4fa-a4fa-a4fa-a4fa-a4faa4faa4fa", // The self ID of the object being shared
             "linkId": "49784978-4978-4978-4978-497849784978", // The unique identifier for the link
-            "logonName": "sharinglinks.395e395e-395e-395e-395e-395e395e395e.flexible.2ace2ace-2ace-2ace-2ace-2ace2ace2ace", // The login name associated with the link
+            "logonName": "sharinglinks.49784978-4978-4978-4978-497849784978.flexible.2ace2ace-2ace-2ace-2ace-2ace2ace2ace", // The login name associated with the link
             "createTime": "2022-05-30T07:20:05.58Z", // The timestamp when the link was created
             "expireTime": null, // The timestamp when the link will expire, if applicable
             "name": "File share 365 Group-Word.docx", // The name of the object being shared

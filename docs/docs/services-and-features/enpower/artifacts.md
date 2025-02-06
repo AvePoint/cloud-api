@@ -31,9 +31,20 @@ The API supports several query parameters to refine and customize the data retri
 
 ## Responses
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+The API response provides detailed information about the artifacts retrieved. Each artifact in the response includes various attributes that describe its properties and status.
 
-| Response                    | Description                | Type    |
+| Elements           | Description                                                           | Type   | 
+|--------------------|-----------------------------------------------------------------------|--------|
+| artifacts             | A list containing artifacts with detailed information.              | list  | 
+| totalCount      | Total number of jobs matching the query parameters.                   | integer    | 
+| nextLink | Reference to the next page of results | string |
+
+**Artifact details**
+
+Each artifact retrieved through the API includes detailed attributes that provide insight into its properties and status. 
+
+
+| Elements                    | Description                | Type    |
 |-----------------------------|----------------------------|---------|
 | id                         | The unique identifier of the artifact.                                     | string  |
 | name                       | The name of the artifact.                                                  | string  |

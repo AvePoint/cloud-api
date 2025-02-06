@@ -45,7 +45,7 @@ The API response provides detailed information about the user permissions retrie
 | nextLink | The token to be used to get the remaining results of this request | string  |
 | values   | A list of user permission objects               | list   |
 
-**User summary**
+**User permission**
 
 | Property           | Description            | Type    |
 |--------------------|------------------|---------|
@@ -64,7 +64,7 @@ The API response provides detailed information about the user permissions retrie
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant group summary details in a structured format, enabling easy integration with other systems or applications. 
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user permissions in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/access?siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam01&siteUrls=https%3A%2F%2Fm365x636363.sharepoint.com%2Fsites%2Fjuly2022publicteam02&emails=insightstester001_jasoninsightstest.onmicrosoft.com%23ext%23%40m365x636363.onmicrosoft.com&emails=insightstester003_jasoninsightstest.onmicrosoft.com%23ext%23%40m365x636363.onmicrosoft.com
@@ -72,7 +72,7 @@ https://graph-us.avepointonlineservices.com/insights/users/access?siteUrls=https
 
 ## Response Sample  
 
-The following is a sample response for this API method, which includes summary information of the users retrieved: 
+The following is a sample response for this API method, which includes the permission details of users. Each property in response is explained with a comment for better understanding.
 
 ```json
 {
@@ -89,11 +89,11 @@ The following is a sample response for this API method, which includes summary i
             "sensitiveInfoType": "U.S. Individual Taxpayer Identification Number (ITIN), U.S. Social Security Number (SSN), U.S. / U.K. Passport Number",  // Types of sensitive information contained in the file.
             "isDirect": false,  // Indicates whether the permission is direct or inherited.
             "sensitivityLabel": "",  // The sensitivity label applied to the file, which is empty in this case.
-            "inheritedFrom": "sharinglinks.2nnn3-5nnn-46nn7-bc32-8nnnnnnnnn.flexible.8nnnnnnnnn-c62b0-c62b0-bc62b0-c62b0"  // The source from which the permissions are inherited.
+            "inheritedFrom": "sharinglinks.2nnn3-5nnn-46nn7-bc32-8nnnnnnnnn.flexible.8nnnnnnnnn-c62b0-c62b0-c62b0-c62b0"  // The source from which the permissions are inherited.
         }
     ],
     "status": 200,  // The status code of the response, indicating success.
     "message": "",  // Any message included in the response, which is empty in this case.
-    "nextLink": "fBMGW+IDEbl3n2kYtVSN7DEGwNf0p1JhNLfQSIsfqj6ea0ShNRKTiILjDFvNjc/FCdXvSAmLStj88yigR+J2lCWAdkXG1TKmdZIA310272/lEplTjHhcqSUZ+1Pfqwdb3411Fj46NguILLbgalXoOjwm48hG9pSyESLgkRnw7d7j7idhUdVd7skd1OjKyI3/0SeNe2gz8WjwRAJpKFKWvzJhg15ulEpI7gFyx+eX/zgxCVPhsSowunsQcfDRCWi2yK7lzDJq0UgK3LSZ76bs3p02a0soPbaDq1b+6ZqP8RWd7QQ55dgzF1qi7p2W32ucJ9aZLX0YbkWjM9BrfKYyGQ=="  // The next link for pagination, if more data is available.
+    "nextLink": "fBMkYtVSN7/fBMGW+IDEbl3n2kYtVSN772/fBMGW+IDEbl3n2kYtVSN7fBMGW+IDEbl3n2kYtVSN7KyI3/0SeNe2gz8WjwRAJpKFfBMGW+IDEbl3n2kYtVSN7Fyx+eX/zgxCVPhsSowunsQcfDfBMGW+IDEbl3n2kYtVSN7LSZ76fBMGW+IDEbl3n2kYtVSN7KYyGQ=="  // The next link for pagination, if more data is available.
 }
 ```
