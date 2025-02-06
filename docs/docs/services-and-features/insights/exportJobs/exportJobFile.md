@@ -33,7 +33,7 @@ If successful, this API response returns the report file for downloading.
 
 ## Request Sample
 
-In Postman, you can send this `GET` request and select **Send and Download** to retrieve this report file. 
+In Postman, you can send this `GET` request and select **Send and Download** to retrieve this report file. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/job/169/exportfile

@@ -5,7 +5,7 @@ Welcome to the comprehensive guide for the Insights for Microsoft 365 Public API
 
 ## API Methods for Starting Export Report Jobs
 
-The AvePoint Graph Modern API provides a suite of export methods designed to facilitate the extraction of detailed reports and data insights. These methods enable users to export various types of reports, such as user permissions, group access, site permissions, sharing link permissions, and activity reports for specific objects. By leveraging these export methods, users can obtain comprehensive data for analysis, auditing, and integration with other systems or applications.
+The Insights for Microsoft 365 Modern API provides a suite of export methods designed to facilitate the extraction of detailed reports and data insights. These methods enable users to export various types of reports, such as user permissions, group access, site permissions, sharing link permissions, and activity reports for specific objects. By leveraging these export methods, users can obtain comprehensive data for analysis, auditing, and integration with other systems or applications.
 
 Each export method is tailored to address specific reporting needs, ensuring that users can retrieve the precise information required for their use cases. The API supports a range of query parameters to refine and customize the data retrieval process, allowing for targeted and efficient data exports.
 

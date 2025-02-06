@@ -52,7 +52,7 @@ The API response provides detailed information about the sharing links retrieved
 | siteId         | The site ID in which the object is shared by the link | string  |
 | selfId         | The selfID of the object which is shared by the link | string  |
 | linkId         | The link ID                                      | string  |
-| logonName      | The link login name                              | string  |
+| logonName      | The login name associated with the link                              | string  |
 | createTime     | The time when the link is created                | string  |
 | expireTime     | The time when the link is expired                | string  |
 | name           | The object name that is shared via the link      | string  |
@@ -72,7 +72,7 @@ The API response provides detailed information about the sharing links retrieved
  
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. 
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/sharingLinks/https%253A%252F%252Fm365x636363.sharepoint.com%252Fsites%252Fjuly2022publicteam01/summary?linkType=32&pageSize=100&nextLink=1231

@@ -57,7 +57,7 @@ The API response provides detailed information about the users retrieved. Each g
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user summary details in a structured format, enabling easy integration with other systems or applications. 
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/summary?startPage=1&pageSize=50
@@ -65,7 +65,7 @@ https://graph-us.avepointonlineservices.com/insights/users/summary?startPage=1&p
 
 ## Response Sample  
 
-The following is a sample response for this API method, which includes summary information of the users retrieved: 
+The following is a sample response for this API method, which includes summary information of the users retrieved. 
 
 ```json
 {

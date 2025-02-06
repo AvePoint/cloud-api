@@ -1,6 +1,6 @@
 # Export Activities for a Specific Object
 
-Export the activity report for a specific object. By invoking the `/insights/activities/object/{path}/export` endpoint, you can retrieve the activities performed on a specific object. This method is useful for obtaining detailed insights into the activities performed on an object within a specific time range. 
+This API method (`/insights/activities/object/{path}/export` navigation property) allows users to export the activity report for a specific object. This method is useful for obtaining detailed insights into the activities performed on an object within a specific time range. 
 
 [only for object]: # 
 
@@ -48,6 +48,7 @@ If successful, the API response will provide the export job ID. You can use the 
 
 ## Request Sample
 
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/activities/object/https%3A%2F%2Falitamarkettest.sharepoint.com%2Fsites%2Fharlandleteams001/export?startTime=2024-12-03T00%3A00%3A00&finishTime=2025-01-09T00%3A00%3A00&eventTypes=ListViewed&eventTypes=ListItemViewed
@@ -55,7 +56,7 @@ https://graph-us.avepointonlineservices.com/insights/activities/object/https%3A%
 
 ## Response Sample  
 
-This API response returns the export job ID for downloading the activity report. 
+The following is a sample response for this API method, which includes export job ID for downloading the activity report. 
 
 ```json
 {

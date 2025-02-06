@@ -25,7 +25,7 @@ This section outlines the HTTP method and endpoint used to retrieve the site ove
 
 ### Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the risk level, next link, and other criteria to filter the results effectively.
+The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the risk level and next link to filter the results effectively.
 
 | Parameter | Description                              | Type    | Required? |
 |-----------|------------------------------------------|---------|-----------|
@@ -34,7 +34,7 @@ The API supports several query parameters to refine and customize the data retri
 
 ## Responses
 
-The API response provides detailed information about the sites retrieved. Each site in the response includes various attributes that describe its properties and status.
+The API response provides detailed information about the sites retrieved. Each site in the response includes various attributes that describe its properties and status. 
 
 | Elements | Description                        | Type    |
 |----------|------------------------------------|---------|
@@ -45,7 +45,7 @@ The API response provides detailed information about the sites retrieved. Each s
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site overview details in a structured format, enabling easy integration with other systems or applications.  
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site overview details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/sites/overview?riksLevel=1&rikLevel=2&rikLevel=3&nextLink=12313

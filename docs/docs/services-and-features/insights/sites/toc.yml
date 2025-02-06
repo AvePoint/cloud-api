@@ -1,7 +1,7 @@
-- name: Retrieve Site Permissions
-  href: sitePermissionsGet.md
 - name: Export Site Permissions
   href: sitePermissionsExport.md
+- name: Retrieve Site Permissions
+  href: sitePermissionsGet.md
 - name: Retrieve Sites Overview
   href: siteOverview.md
 - name: Retrieve Site ID

@@ -45,7 +45,7 @@ The API response provides detailed information about the export job. You can use
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. 
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/sharingLinks/export?exportLinkType=32&startTime=2023-01-01T00:00:00&finishTime=2023-01-31T23:59:59
