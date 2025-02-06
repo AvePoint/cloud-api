@@ -11,7 +11,7 @@ Each export method is tailored to address specific reporting needs, ensuring tha
 
 The following sections provide detailed descriptions of each export method. These methods are essential tools for administrators and developers who need to manage and analyze permissions and activities within their AvePoint environments.
 
-Endpoint || API Method |  Description |
+Endpoint | API Method |  Description |
 | --- | --- | --- |
 | `/insights/activities/object/{path}/export`| [Export Activities on an Object](objects/objectActivities.md)| Exports activities performed on a specific object.|
 | `/insights/users/{email}/activities/export`| [Export User Activities](users/userActivitiesExport.md)  | Exports activity data for a specific user. | 
