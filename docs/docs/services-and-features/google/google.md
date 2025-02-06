@@ -61,7 +61,7 @@ Each job retrieved through the API includes detailed attributes that offer insig
 
 ## Request Sample
 
-The following request structure is designed to query a collection of jobs with flexible parameters, allowing you to refine your search based on various criteria. This request supports pagination and filtering to efficiently manage and retrieve job data.  
+The following request structure is designed to query a collection of jobs with flexible parameters, allowing you to refine your search based on various criteria. This request supports pagination and filtering to efficiently manage and retrieve job data. This request sample is an API call to the Cloud Backup for Google Workspace environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/backup/google/admin/jobs?pageindex=0&pagesize=10&apptype=1&jobtype=1&status=2&starttime=2024-12-12T00:00:00Z&finishtime=2024-12-13T00:00:00Z
