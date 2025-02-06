@@ -31,8 +31,10 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 
 ## Request Sample
 
+To use this API, send a GET request to the specified endpoint. This will return the subscription consumption information in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.
+
 ```json
-https://graph.avepointonlineservices.com/backup/m365/cloudbackup/licenseconsumption
+https://graph-us.avepointonlineservices.com/backup/m365/cloudbackup/licenseconsumption
 ```
 
 ## Response Sample

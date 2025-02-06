@@ -81,7 +81,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.  
 
 ```json
 https://graph-us.avepointonlineservices.com/backup/m365/cloudbackup/getjobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1
