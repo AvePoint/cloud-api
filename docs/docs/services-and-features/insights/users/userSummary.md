@@ -51,8 +51,8 @@ The API response provides detailed information about the users retrieved. Each g
 | userStatus     | The Sign-in status of the Microsoft 365 user. (e.g., **Blocked**, **Active**) For users that do not exist in Azure AD, the status will be **Not in Azure AD**.                     | string|
 | trustStatus    | The trust status of the user in Insights for Microsoft 365 (e.g., **Trusted**, **Not Trusted**)                     | string|
 | sensitiveItems | The number of sensitive items associated with the user                      |integer|
-| lastSignIn     | The time range of the user's last sign-in. (e.g., **Less than 90 Days**, **More than 90 Days**, **More than 180 Days**, **None**, **N/A**)_            |string|
-| createdOn      | The date and time when the user account was created in Microsoft Entra, in ISO 8601 format     |
+| lastSignIn     | The time range of the user's last sign-in. (e.g., **Less than 90 Days**, **More than 90 Days**, **More than 180 Days**, **None**, **N/A**)            |string|
+| createdOn      | The date and time when the user account was created in Microsoft Entra.     | string|
 
 
 ## Request Sample
