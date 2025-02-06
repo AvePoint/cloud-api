@@ -13,6 +13,8 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Request
 
+This section outlines the HTTP method and endpoint used to retrieve the subscription consumption information. It provides a concise description of the action performed by the API call.
+
 | Method | Path | Description |
 | --- | --- | --- |
 | GET | `/backup/m365/cloudbackup/licenseconsumption` | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
