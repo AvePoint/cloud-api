@@ -10,7 +10,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API    | Permission  |
 |-------------------|---------------------|
-| `/connector/records` |  records.readwrite.all |
+| `/records/connector/records` |  records.readwrite.all |
 
 ## Request
 
@@ -18,7 +18,7 @@ This section outlines the HTTP method and endpoint used to update the status of 
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| DELETE | `/connector/records` | Updates the status of records as Destroyed in AvePoint Opus. |
+| DELETE | `/records/connector/records` | Updates the status of records as Destroyed in AvePoint Opus. |
 
 ## Request Parameters
 
@@ -43,7 +43,7 @@ The API response provides the outcome of the request.
 The following request structure is designed to update the status of records as Destroyed in AvePoint Opus.  
 
 ```json
-https://graph-us.avepointonlineservices.com/connector/records
+https://graph-us.avepointonlineservices.com/records/connector/records
 ```
 ```json
 {
