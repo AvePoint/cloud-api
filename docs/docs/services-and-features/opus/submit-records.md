@@ -10,7 +10,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API    | Permission  |
 |-------------------|---------------------|
-| `/connector/records` |  records.readwrite.all |
+| `/records/connector/records` |  records.readwrite.all |
 
 ## Request
 
@@ -18,7 +18,7 @@ This section outlines the HTTP method and endpoint used to submit records to Ave
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/connector/records` | Submits records to AvePoint Opus. |
+| POST | `/records/connector/records` | Submits records to AvePoint Opus. |
 
 ## Request Parameters
 
@@ -53,7 +53,7 @@ The API response provides the outcome of the request.
 To use this API, send a POST request to the specified endpoint, including necessary parameters. 
 
 ```json
-https://graph-us.avepointonlineservices.com/connector/records
+https://graph-us.avepointonlineservices.com/records/connector/records
 ```
 ```json
 {  

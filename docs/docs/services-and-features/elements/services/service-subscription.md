@@ -32,6 +32,7 @@ The API response provides detailed information about the customer's service subs
 |Products| A list of products that the customer has subscribed.| list|
 
 **Product subscriptions**  
+
 | Element | Description | Type |
 | --- | --- | --- |
 | service | The service that the customer has subscriptions for. | string |
@@ -40,7 +41,7 @@ The API response provides detailed information about the customer's service subs
 | purchasedUnits | The number of purchased Microsoft 365 tenants of the customer. | string |
 | microsoftLicenseAssigned | The number of assigned Microsoft licenses of the customer. | string |
 | microsoftLicenseAvailable | The number of available Microsoft licenses of the customer. | string |
-| PurchasedCapacity | The purchased capacity for the customer. | string |
+| purchasedCapacity | The purchased capacity for the customer. | string |
 | protectedCapacity | The protected data size for the customer. | string |
 | storage | The storage type of the customer. | string |
 | retention | The data retention period of the customer. | string |
@@ -87,7 +88,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "storage": "N/A",  // Storage details; not applicable here
                     "retention": "N/A",  // Data retention policy; not applicable here
                     "consumedStorage": "N/A",  // Consumed storage capacity; not applicable here
-                    "expirationDate": "02/04/2026",  // Date when the subscription expires
+                    "expirationDate": "2025-02-01",  // Date when the subscription expires
                     "change": "N/A",  // Information on changes; not applicable here
                      "source": "AvePoint subscription" // The source of the subscription
                     "paymentType": "Prepaid", // The payment type of the subscription
@@ -114,7 +115,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "storage": "AvePoint storage",
                     "retention": "N/A",
                     "consumedStorage": "N/A",
-                    "expirationDate": "12/29/2026",
+                    "expirationDate": "2025-02-01",
                     "change": "N/A",
                     "source": "AvePoint subscription",
                     "paymentType": "Prepaid",
@@ -133,7 +134,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "storage": "AvePoint storage",
                     "retention": "N/A",
                     "consumedStorage": "N/A",
-                    "expirationDate": "12/29/2026",
+                    "expirationDate": "2025-02-01",
                     "change": "N/A",
                     "source": "AvePoint subscription",
                     "paymentType": "Prepaid",
@@ -152,7 +153,7 @@ Below is a sample response showcasing the structure and content of the data retu
                     "storage": "AvePoint storage",
                     "retention": "N/A",
                     "consumedStorage": "N/A",
-                    "expirationDate": "12/29/2026",
+                    "expirationDate": "2025-02-01",
                     "change": "N/A",
                     "source": "AvePoint subscription",
                     "paymentType": "Prepaid",

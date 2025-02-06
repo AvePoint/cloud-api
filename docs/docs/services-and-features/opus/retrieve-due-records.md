@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API    | Permission  |
 |-------------------|---------------------|
-| `/connector/records` |  records.readwrite.all |
+| `/records/connector/records` |  records.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve records whos
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/connector/records` | Retrieves records whose disposal due date is earlier than the specified time. |
+| GET | `/records/connector/records` | Retrieves records whose disposal due date is earlier than the specified time. |
 
 ## Request Parameters
 
@@ -58,7 +58,7 @@ Each record retrieved through the API includes detailed attributes.
 The following request structure is designed to retrieve records whose disposal due date is earlier than the specified time.  
 
 ```json
-https://graph-us.avepointonlineservices.com/connector/records?id=63acafab-b2b8-4b44-8ddb-7a47672c2393&disposalDueDate=2024-12-20T11:13:00&startIndex=&itemsPerpage=10
+https://graph-us.avepointonlineservices.com/records/connector/records?id=63acafab-b2b8-4b44-8ddb-7a47672c2393&disposalDueDate=2024-12-20T11:13:00&startIndex=&itemsPerpage=10
 ```
 
 ## Response Sample

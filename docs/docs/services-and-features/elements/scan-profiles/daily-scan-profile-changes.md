@@ -25,8 +25,8 @@ This section outlines the parameters required to specify which customer's specif
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| id | The tenant owner ID of the customer. | String | Yes |
-| profileId | The ID of the scan profile. | String | Yes |
+| id | The tenant owner ID of the customer. | string | Yes |
+| profileId | The ID of the scan profile. | string | Yes |
 
 ## Responses
 
@@ -34,18 +34,18 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| profileName | The name of the scan profile. | String |
-| profileId | The ID of the scan profile. | String |
-| tenantDomain | The tenant domain of the scan profile. | String |
-| tenantId | The tenant ID the scan profile. | String |
-| description | The description of the scan profile. | String |
-| scanMode | The scan mode of the scan profile:<br> <ul><li>**0** represents **Express mode**<li>**1** represents **Advanced mode**| Int |
-| modifiedTime | The last modified time of the scan profile. | String |
-| lastUpdateTime | The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile. | String |
-| lastScanStatus | The last scan job status of the scan profile:<br><ul><li>**2** represents **Finished**<li>**3** represents **Failed**<li>**4** represents **Finished with exception**<li>**5** represents **Skipped**<li>**10** represents **Stopped** | Int |
-| newRegisteredContentCount | The number of newly registered objects in the daily report of the scan profile. | Int |
-| movedToAnotherContainer | The number of objects moved to another container in the daily report of the scan profile. | Int |
-| removedFromMicrosoft365OrOutofPolicy | The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | Int |
+| profileName | The name of the scan profile. | string |
+| profileId | The ID of the scan profile. | string |
+| tenantDomain | The tenant domain of the scan profile. | string |
+| tenantId | The tenant ID the scan profile. | string |
+| description | The description of the scan profile. | string |
+| scanMode | The scan mode of the scan profile:<br> <ul><li>**0** represents **Express mode**<li>**1** represents **Advanced mode**| integer |
+| modifiedTime | The last modified time of the scan profile. | string |
+| lastUpdateTime | The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile. | string |
+| lastScanStatus | The last scan job status of the scan profile:<br><ul><li>**2** represents **Finished**<li>**3** represents **Failed**<li>**4** represents **Finished with exception**<li>**5** represents **Skipped**<li>**10** represents **Stopped** | integer |
+| newRegisteredContentCount | The number of newly registered objects in the daily report of the scan profile. | integer |
+| movedToAnotherContainer | The number of objects moved to another container in the daily report of the scan profile. | integer |
+| removedFromMicrosoft365OrOutofPolicy | The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | integer |
 
 ## Request Sample
 
@@ -68,8 +68,8 @@ If the request has been successfully processed, a 200 OK response will be return
     "tenantID": "c2350b99-c7a2-4605-b7d4-79e8646f66c3", // The tenant ID the scan profile
     "description": "aa", // The description of the scan profile
     "scanMode": 0, // The scan mode of the scan profile: 0 represents Express mode
-    "modifiedTime": "08/01/2024 06:29:55", // The last modified time of the scan profile
-    "lastUpdateTime": "08/03/2024 00:03:54", // The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile
+    "modifiedTime": "2024-10-27T17:08:24Z", // The last modified time of the scan profile
+    "lastUpdateTime": "2024-12-27T17:08:24Z", // The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile
     "lastScanStatus": 2, // The last scan job status of the scan profile: 2 represents Finished
     "removedFromMicrosoft365OrOutofPolicyObjects": 0 // The details of objects moved to another container in the daily report of the scan profile
     "newRegistedContent": 0, // Deprecated. The details of newly registered objects in the daily report of the scan profile

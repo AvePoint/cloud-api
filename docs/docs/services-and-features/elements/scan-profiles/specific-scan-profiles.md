@@ -75,8 +75,8 @@ If the request has been successfully processed, a 200 OK response will be return
     "tenantId": "c2350b99-c7a2-4605-b7d4-79e8646f66c3", // The tenant ID the scan profile
     "tenantDomain": "v0s40", // The tenant domain of the scan profile
     "scanMode": 0, // The scan mode of the scan profile: 0 represents Express mode
-    "modifiedTime": "08/01/2024 06:29:55", // The last modified time of the scan profile
-    "createdTime": "08/01/2024 06:29:55", // The created time of the scan profile
+    "modifiedTime": "2024-12-27T17:08:24Z", // The last modified time of the scan profile
+    "createdTime": "2024-10-27T17:08:24Z", // The created time of the scan profile
     "impersonationAccount": null, // The impersonation account configured in the scan profile
     "scanInplaceArchivedMailboxes": false, // Whether to scan in-place archived mailboxes configured in the scan profile: False represents Do not scan in-place archived mailbox
     "ignoreTheLockedObjectsWhenUpdatingTheJobStatus": false, // Deprecated. Indicates whether the Ignore the locked objects when updating the job status setting is enabled in the scan profile: False represents Disabled
