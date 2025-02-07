@@ -31,9 +31,16 @@ The API supports several query parameters to refine and customize the data retri
 
 ## Responses
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+The API response provides detailed information about the environments retrieved. Each environment in the response includes various attributes that describe its properties and status.
 
-**Retrieved result:**
+| Elements           | Description                                                           | Type   | 
+|--------------------|-----------------------------------------------------------------------|--------|
+| environments             | A list containing environments with detailed information. For the detailed list of responses, refer to [Environment Details](#environment-details).             | list  | 
+| totalCount      | Total number of environments retrieved.                   | integer    | 
+| nextLink | Reference to the next page of results | string |
+
+
+### Environment Details
 
 **Response** | **Description** | **Type**
 --- | --- | ---
@@ -78,7 +85,7 @@ numberOfUsers | The number of users in this environment. | integer
 | hasSecurityGroup | Indicates whether this environment has any security groups. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | hasEnPowerPolicy | Indicates whether this environment has EnPower policy assigned. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 securityGroupId | The unique identifier of the security group in this environment. | string
-securityGroup | The security group information | string
+securityGroup | The security group information. For the detailed security group properties, refer to [Security Group Details](#security-group-details). | object
 securityGroupType | The type of security group in this environment. | object
 numberOfSecurityGroupOwners | The number of security group owners. | integer
 numberOfSecurityGroupUsers | The number of users in the security group. | integer
@@ -89,21 +96,21 @@ usageOfFile | The usage of files in this environment. | string
 usageOfFilePercentage | The usage of file percentage by this environment. | string
 usageOfLog | The usage of log in environment. | string
 usageOfLogPercentage | The usage of log percentage by this environment. | string
-primaryContact | The Cloud Governance primary contact of this environment. | object
-secondaryContact | The Cloud Governance secondary contact of this environment. | object
+primaryContact | The Cloud Governance primary contact of this environment. For the detailed user properties, refer to [User Details](#user-details). | object
+secondaryContact | The Cloud Governance secondary contact of this environment. For the detailed user properties, refer to [User Details](#user-details). | object
 lastRenewalTime | The last renewal time of this environment. | string
-lastRenewalBy | The latest user who renewed this environment. | object
+lastRenewalBy | The latest user who renewed this environment. For the detailed user properties, refer to [User Details](#user-details). | object
 | renewalProfileApplied | Indicates whether Cloud Governance renewal profile has been applied to the environment. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-Metadata | The Cloud Governance metadata of this environment. | list
+Metadata | The Cloud Governance metadata of this environment. For the detailed metadata properties, refer to [Cloud Governance Metadata Details](#cloud-governance-metadata-details). | list
 | electionProfileApplied | Indicates whether any Cloud Governance contact election profile has been applied to this environment. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates whether this environment has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean | 
 Phase | The Cloud Governance phase of this environment. | string
 phaseAssignees | The current Cloud Governance phase’s assignee. | string
-renewProfile | The renewal profile assigned to this environment. | string
-electionProfile | The election profile assigned to this environment. | string
+renewProfile | The renewal profile assigned to this environment. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object
+electionProfile | The election profile assigned to this environment. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object
 claimStatus | The Cloud Governance claim status of this environment. | string
 
-**Security group details:**
+### Security Group Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -128,7 +135,7 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 | groupType               | The group type of the group object.                                         | integer |
 | membershipType          | The membership type of the group object.                                    | integer |
 
-**Cloud Governance primary contact, secondary contact, and last renewed by details:**
+### User Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -145,7 +152,7 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 | city                    | The city associated with the user.                         | string  |
 | countryOrRegion         | The country or region associated with the user.                       | string  |
 
-**Cloud Governance metadata details:**
+### Cloud Governance Metadata Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -155,6 +162,12 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
+### Cloud Governance Profile Details
+
+| Elements                | Description                                                                 | Type    |
+|-------------------------|-----------------------------------------------------------------------------|---------|
+| id                      | The unique identifier for the profile.                                      | string  |
+| name                    | The name for the profile.                                                   | string  |
 
 ## Request Sample
 
