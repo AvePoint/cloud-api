@@ -15,7 +15,7 @@ Endpoint | API Method |  Description |
 | --- | --- | --- |
 | `/insights/activities/object/{path}/export`| [Export Activities on an Object](objects/objectActivities.md)| Exports activities performed on a specific object.|
 | `/insights/users/{email}/activities/export`| [Export User Activities](users/userActivitiesExport.md)  | Exports activity data for a specific user. | 
-|`/insights/users/{email}/access/export`| [Export User Permissions](users/userActivitiesExport.md)  |Exports user access report.|
+|`/insights/users/{email}/access/export`| [Export User Permissions](users/userPermissionsExport.md)  |Exports user access report.|
 | `/insights/groups/{groupId}/access/export`| [Export Group Permissions](groups/groupAccesReport.md)  | Exports group access report. |
 | `/insights/sites/permission/export` | [Export Site Permissions](sites/sitePermissionsExport.md) | Exports site permissions. |
 | `/insights/sharingLinks/export` | [Export Permission-Related Information for Sharing Links](sharingLinks/linkExport.md) | Exports permission-related information for sharing links |
