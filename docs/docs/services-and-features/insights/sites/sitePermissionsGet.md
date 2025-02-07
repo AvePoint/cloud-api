@@ -65,7 +65,7 @@ The API response provides detailed information about the site permissions retrie
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant permission details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/insights/sites/permission?siteUrls=https%3A%2F%2Finsightscctest.sharepoint.com%2Fsites%2F365groupchangeteams01&pageSize=100&nextLink=1231
+https://graph-us.avepointonlineservices.com/insights/sites/permission?siteUrls=https%3A%2F%2Finsights*****.sharepoint.com%2Fsites%2F365groupchangeteams01&pageSize=100&nextLink=1231
 ```
 
 ## Response Sample
@@ -78,7 +78,7 @@ The following is a sample response for retrieving the site permissions. Each pro
         {
             "module": "Microsoft Teams", // The data source from which the permission information is retrieved
             "name": "365Group***team1", // The name of the permission
-            "url": "https://insightsc****test.sharepoint.com/sites/365groupchange****", // The URL of the object to which the permission applies
+            "url": "https://insights****.sharepoint.com/sites/365groupchange****", // The URL of the object to which the permission applies
             "objectType": "Site Collection", // The type of the object (e.g., file, folder, site, site collection)
             "principalName": "365Group****** Owners", // The name of the user or group that has the permission
             "email": "", // The email address of the user or group

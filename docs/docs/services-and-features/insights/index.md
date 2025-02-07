@@ -31,7 +31,7 @@ In addition to the export methods, the Insights for Microsoft 365 Modern API pro
 | `/insights/groups/summary`| [Retrieve Group Summary](groups/groupSummary.md)  | Retrieves group summary. |
 | `/insights/sites/permission`| [Retrieve Site Permissions](sites/sitePermissionsGet.md)  | Retrieve site Permissions. |
 | `/insights/sites/overview` | [Retrieve Site Overview](sites/siteOverview.md) | Retrieves site overview. |  
-| `/insights/sites/overview`| [Retrieve Site ID](sites/siteId.md)  | Retrieves site ID. |
+| `/insights/sites/{siteUrl}/siteId`| [Retrieve Site ID](sites/siteId.md)  | Retrieves site ID. |
 | `insights/sites/{siteId}/detailRecords`| [Retrieve Site Detail Records](sites/siteDetailRecords.md)| Retrieves site detail records.|
 | `/insights/sharingLinks/{siteUrl}/summary`| [Retrieve Permission-Related Information for Sharing Links](sharingLinks/linkSummary.md)  | Retrieves the link summaries. |
 
