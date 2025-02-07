@@ -12,8 +12,8 @@ Currently, Power Platform objects can be retrieved via the following API Methods
 | API Method | Endpoint | Documentation | 
 |--- | --- | --- |
 | GET | `/smp/powerplatform/environments` | [Environments](../enpower/environments.md) |
-| GET | `/smp/powerplatform/environments` | [Connections](../enpower/connections.md) |
-| GET | `/smp/powerplatform/environments` | [Power Apps](../enpower/powerapps.md) |
-| GET | `/smp/powerplatform/environments` | [Power Automate Cloud Flows](../enpower/cloudflows.md) |
-| GET  | `/smp/powerplatform/environments` | [Power BI Workspaces](../enpower/workspaces.md) |
-| GET | `/smp/powerplatform/environments` | [Power BI Artifacts](../enpower/artifacts.md) |
+| GET | `/smp/powerplatform/connections` | [Connections](../enpower/connections.md) |
+| GET | `/smp/powerplatform/powerapps` | [Power Apps](../enpower/powerapps.md) |
+| GET | `/smp/powerplatform/powerautomate/cloudflows` | [Power Automate Cloud Flows](../enpower/cloudflows.md) |
+| GET  | `/smp/powerplatform/workspaces` | [Power BI Workspaces](../enpower/workspaces.md) |
+| GET | `/smp/powerplatform/artifacts` | [Power BI Artifacts](../enpower/artifacts.md) |
