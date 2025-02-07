@@ -97,7 +97,7 @@ The API response provides detailed information about the Power Automate cloud fl
 | connectionDisplayName   | The friendly name of connection.                                            | string  |
 | connectorName           | The name of connector.                                                      | string  |
 | connectorDisplayName    | The friendly name of connector.                                             | string  |
-| iconUri                 | The icon uri of the connection.                                             | string  |
+| iconUri                 | The icon URI of the connection.                                             | string  |
 | type                    | The connection type.                                                        | string  |
 
 ### User Details
