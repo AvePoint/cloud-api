@@ -27,7 +27,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter        | Description     | Type    | Required? |
 |------------------|----------------|---------|-----------|
-| emails          | Sets the group ID for which you want to export the permission report. Note that if you want to export the permission report for all groups, skip this parameter and ensure the exportOptionType is set to **3**. | list  | Yes       |
+| groupId          | Sets the group ID for which you want to export the permission report. Note that if you want to export the permission report for all groups, skip this parameter and ensure the exportOptionType is set to **3**. | string  | Yes       |
 | exportOptionType | Export options: **1** - summary and site collection level access report, **2** - summary and access report to all objects, **3** - summary report only | integer | Yes        |
 | siteUrls         | Sets the URLs of site collections for which you want to export the permission report.                             | list   | No        |
 | dataSources      | Sets the workspace in which you want to export the access report of users. Multiple values are allowed, such as **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**.          | list   | Yes        |

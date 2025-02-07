@@ -40,7 +40,8 @@ The API response provides the outcome of the request.
 | startIndex |The page index of the records that are queried in the request. | string  |
 | queriedItems  |The records that match the request information. | list  | 
 
-### Record Details
+**Record Details**
+
 Each record retrieved through the API includes detailed attributes. 
 
 | Parameter   |Description        | Type   | 
@@ -64,7 +65,7 @@ https://graph-us.avepointonlineservices.com/records/connector/records?id=63acafa
 ## Response Sample
 
 If the quest has been successfully processed, a 200 OK response code will be returned.  
-For details on the HTTP status code, refer to [HTTP Status Code](/docs/Use%20AvePoint%20Graph%20Modern%20API.md/#http-status-code).  
+For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).  
 
 ```json
 {
