@@ -31,9 +31,15 @@ The API supports several query parameters to refine and customize the data retri
 
 ## Responses
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+The API response provides detailed information about the Power Automate cloud flows retrieved. Each flow in the response includes various attributes that describe its properties and status.
 
-**Retrieved result:**
+| Elements           | Description                                                           | Type   | 
+|--------------------|-----------------------------------------------------------------------|--------|
+| cloudFlows            | A list containing flows with detailed information. For the detailed list of responses, refer to [Flow Details](#flow-details).             | list  | 
+| totalCount      | Total number of cloud flows retrieved.                   | integer    | 
+| nextLink | Reference to the next page of results | string |
+
+### Flow Details
 
 | Response                    | Description                                                                 | Type    |
 |-----------------------------|-----------------------------------------------------------------------------|---------|
@@ -68,22 +74,22 @@ If the request has been successfully processed, a 200 OK response will be return
 | requestEmailSent | Indicates if EnPower business context has been requested for this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | businessContextResponded | Indicates if EnPower business context request for this flow has been responded. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | solutions                   | Solutions related to this flow.                                             | string  |
-| connections                 | Connections being used by this flow.                                        | list    |
-| primaryContact              | The Cloud Governance primary contact of the flow.                           | object  |
-| secondaryContact            | The Cloud Governance secondary contact of the flow.                         | object  |
+| connections                 | Connections being used by this flow. For the detailed connection properties, refer to [Connection Details](#connection-details).                                       | list    |
+| primaryContact              | The Cloud Governance primary contact of the flow. For the detailed user properties, refer to [User Details](#user-details).                         | object  |
+| secondaryContact            | The Cloud Governance secondary contact of the flow. For the detailed user properties, refer to [User Details](#user-details).                         | object  |
 | phase                       | The Cloud Governance phase of the flow.                                     | string  |
-| phaseAssignees              | The Cloud Governance phase assignee of the flow.                            | object  |
+| phaseAssignees              | The Cloud Governance phase assignee of the flow. For the detailed user properties, refer to [User Details](#user-details).                            | object  |
 | lastRenewalTime             | The latest time when the flow was renewed.                                  | string  |
-| lastRenewedBy               | The latest user who renewed this flow.                                      | object  |
+| lastRenewedBy               | The latest user who renewed this flow. For the detailed user properties, refer to [User Details](#user-details).                                      | object  |
 | renewProfileApplied | Indicates if any Cloud Governance renewal profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | registered | Indicates if the flow has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| renewalProfile              | The Cloud Governance renewal profile applied to this flow.                  | object  |
-| metadata                    | The list of Cloud Governance metadata of this flow.                         | list    |
+| renewalProfile              | The Cloud Governance renewal profile applied to this flow. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).                 | object  |
+| metadata                    | The list of Cloud Governance metadata of this flow. For the detailed metadata properties, refer to [Cloud Governance Metadata Details](#cloud-governance-metadata-details).                        | list    |
 | electionProfileApplied | Indicates if any Cloud Governance contact election profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| contactElectionProfile      | The Cloud Governance renewal profile applied to this flow.                  | object  |
+| contactElectionProfile      | The Cloud Governance renewal profile applied to this flow. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).                  | object  |
 | claimStatus                 | The Cloud Governance claim status of this flow.                             | string  |
 
-**Connection details:**
+### Connection Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -94,7 +100,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | iconUri                 | The icon uri of the connection.                                             | string  |
 | type                    | The connection type.                                                        | string  |
 
-**Primary contact, secondary contact, phase assignees, and last renewed by details:**
+### User Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -111,7 +117,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | city                    | The city associated with the Cloud Governance user.                         | string  |
 | countryOrRegion         | The country or region associated with the Cloud Governance user.            | string  |
 
-**Cloud Governance metadata details:**
+### Cloud Governance Metadata Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -121,7 +127,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
-**Cloud Governance renewal profile and contact election profile details:**
+### Cloud Governance Profile Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|

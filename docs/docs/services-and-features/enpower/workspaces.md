@@ -31,9 +31,15 @@ The API supports several query parameters to refine and customize the data retri
 
 ## Responses
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+The API response provides detailed information about the Power BI workspaces retrieved. Each workspace in the response includes various attributes that describe its properties and status.
 
-**Retrieved result:**
+| Elements           | Description                                                           | Type   | 
+|--------------------|-----------------------------------------------------------------------|--------|
+| workspaces             | A list containing workspaces with detailed information. For the detailed list of responses, refer to [Workspace Details](#workspace-details).              | list  | 
+| totalCount      | Total number of apps retrieved.                   | integer    | 
+| nextLink | Reference to the next page of results | string |
+
+### Workspace Details
 
 | Response                    | Description                                                                 | Type    |
 |-----------------------------|-----------------------------------------------------------------------------|---------|
@@ -77,22 +83,22 @@ If the request has been successfully processed, a 200 OK response will be return
 | lastActivityD7              | The number of activities in the last 7 days in the workspace.               | integer |
 | lastActivityTime            | The date and time when the last activity occurred in the workspace.         | string  |
 | numberOfScorecards          | The number of scorecards in the workspace.                                  | integer |
-| primaryContact              | The Cloud Governance primary contact of the workspace.                      | object  |
-| secondaryContact            | The Cloud Governance secondary contact of the workspace.                    | object  |
+| primaryContact              | The Cloud Governance primary contact of the workspace. For the detailed user properties, refer to [User Details](#user-details).                     | object  |
+| secondaryContact            | The Cloud Governance secondary contact of the workspace. For the detailed user properties, refer to [User Details](#user-details).                   | object  |
 | phase                       | The current phase of the workspace in Cloud Governance.                     | string  |
-| phaseAssignees              | The individuals assigned to the current phase of the workspace in Cloud Governance. | object  |
+| phaseAssignees              | The individuals assigned to the current phase of the workspace in Cloud Governance. For the detailed user properties, refer to [User Details](#user-details). | object  |
 | lastRenewalTime             | The last time when the workspace was renewed.                               | string  |
-| lastRenewalBy               | The latest user who renewed the workspace.                                  | object  |
+| lastRenewalBy               | The latest user who renewed the workspace. For the detailed user properties, refer to [User Details](#user-details).                                 | object  |
 | renewProfileApplied | Indicates if a renewal profile has been applied to the workspace. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates if the workspace has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| renewProfile                | The Cloud Governance renewal profile applied to the workspace.                               | object  |
-| metadata                    | The Cloud Governance metadata associated with the workspace.                | list    |
+| renewProfile                | The Cloud Governance renewal profile applied to the workspace. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).                              | object  |
+| metadata                    | The Cloud Governance metadata associated with the workspace. For the detailed metadata properties, refer to [Cloud Governance Metadata Details](#cloud-governance-metadata-details).                | list    |
 | electionProfileApplied | Indicates if a contact election profile has been applied to the workspace. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| electionProfile             | The Cloud Governance contact election profile applied to the workspace.                              | object  |
+| electionProfile             | The Cloud Governance contact election profile applied to the workspace. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).                             | object  |
 | claimStatus                 | The Cloud Governance claim status of the workspace.                         | string  |
 | datasource                  | The data source of the workspace.                                           | string  |
 
-**Cloud Governance primary contact, secondary contact, Phase assignees, and last renewed by details:**
+### User Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -109,7 +115,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | city                    | The city associated with the user.                                          | string  |
 | countryOrRegion         | The country or region associated with the user.                             | string  |
 
-**Cloud Governance metadata details:**
+### Cloud Governance Metadata Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -119,7 +125,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
-**Cloud Governance renewal and contact election profile details:**
+### Cloud Governance Profile Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|

@@ -36,7 +36,7 @@ The API response provides detailed information about the artifacts retrieved. Ea
 | Elements           | Description                                                           | Type   | 
 |--------------------|-----------------------------------------------------------------------|--------|
 | artifacts             | A list containing artifacts with detailed information.              | list  | 
-| totalCount      | Total number of jobs matching the query parameters.                   | integer    | 
+| totalCount      | Total number of artifacts retrieved.                   | integer    | 
 | nextLink | Reference to the next page of results | string |
 
 **Artifact details**

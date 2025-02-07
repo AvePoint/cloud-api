@@ -31,9 +31,16 @@ The API supports several query parameters to refine and customize the data retri
 
 ## Responses
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+The API response provides detailed information about the Power Apps retrieved. Each app in the response includes various attributes that describe its properties and status.
 
-**Retrieved result:**
+| Elements           | Description                                                           | Type   | 
+|--------------------|-----------------------------------------------------------------------|--------|
+| powerApps             | A list containing Power Apps with detailed information. For the detailed list of responses, refer to [Power App Details](#power-app-details).              | list  | 
+| totalCount      | Total number of apps retrieved.                   | integer    | 
+| nextLink | Reference to the next page of results | string |
+
+
+### Power App Details
 
 | Response                        | Description                                                                 | Type    |
 |---------------------------------|-----------------------------------------------------------------------------|---------|
@@ -90,21 +97,21 @@ If the request has been successfully processed, a 200 OK response will be return
 | ownerUserPrincipalName          | The user principal name of the Power App owner in the directory.            | string  |
 | creatorUserPrincipalName        | The user principal name of the Power App creator in the directory           | string  |
 | creatorOfficeLocation           | The office location of the Power App creator.                               | string  |
-| primaryContact                  | The Cloud Governance primary contact of the Power App.                      | object  |
-| secondaryContact                | The Cloud Governance secondary contact of the Power App                     | object  |
+| primaryContact                  | The Cloud Governance primary contact of the Power App. For the detailed user properties, refer to [User Details](#user-details).                      | object  |
+| secondaryContact                | The Cloud Governance secondary contact of the Power App. For the detailed user properties, refer to [User Details](#user-details).                     | object  |
 | phase                           | The current phase of the Power App in Cloud Governance.                     | string  |
-| phaseAssignees                  | The assignee of the current Cloud Governance phase.                         | object  |
+| phaseAssignees                  | The assignee of the current Cloud Governance phase. For the detailed user properties, refer to [User Details](#user-details).                        | object  |
 | lastRenewalTime                 | The last time the Power App was renewed.                                    | string  |
-| lastRenewalBy                   | The latest user who renewed the Power App.                                  | object  |
+| lastRenewalBy                   | The latest user who renewed the Power App. For the detailed user properties, refer to [User Details](#user-details).                                  | object  |
 | renewalProfileApplied | Indicates if a Cloud Governance renewal profile has been applied to the Power App. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates if the Power App was imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| renewProfile                    | The Cloud Governance renewal profile applied to the Power App.              | object  |
-| metadata                        | The Cloud Governance metadata associated with the Power App.                | list  |
+| renewProfile                    | The Cloud Governance renewal profile applied to the Power App. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).              | object  |
+| metadata                        | The Cloud Governance metadata associated with the Power App. For the detailed metadata properties, refer to [Cloud Governance Metadata Details](#cloud-governance-metadata-details).               | list  |
 | electionProfileApplied | Indicates if a Cloud Governance contact election profile was applied to the Power App. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| electionProfile                 | The Cloud Governance contact election profile applied to the Power App.     | object  |
+| electionProfile                 | The Cloud Governance contact election profile applied to the Power App. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).    | object  |
 | claimStatus                     | The Cloud Governance claim status for the Power App.                        | string  |
 
-**Cloud Governance primary contact, secondary contact, Phase assignees, and last renewed by details:**
+### User Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -121,7 +128,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | city                    | The city associated with the user.                                          | string  |
 | countryOrRegion         | The country or region associated with the user.                             | string  |
 
-**Cloud Governance metadata details:**
+### Cloud Governance Metadata Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
@@ -131,7 +138,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | name                    | The metadata name.                                                          | string  |
 | metadataSetting         | The custom metadata.                                                        | object  |
 
-**Cloud Governance renewal and contact election profile details:**
+### Cloud Governance Profile Details
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
