@@ -1,7 +1,7 @@
 # Submit Records  
 
 Use this API to submit records to AvePoint Opus.   
-***Note**: You need to download the JSON file of each connection from AvePoint Opus > **Settings > Connector** to prepare the record information; you can submit up to 15 records to AvePoint Opus at a time.  
+***Note**: You need to download the JSON file of each connection from AvePoint Opus > Settings > Connector to prepare the record information; you can submit up to 15 records to AvePoint Opus at a time.  
 
 ## Permission
 

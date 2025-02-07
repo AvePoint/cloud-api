@@ -51,7 +51,7 @@ To use this API, send a `GET` request to the specified endpoint, including neces
 
 ## Response Sample
 
-The following is a sample response for this API method, which includes export job ID of the site permission report and its operation status 
+The following is a sample response for this API method, which includes export job ID of the site permission report and its operation status. 
 
 ```json
 {

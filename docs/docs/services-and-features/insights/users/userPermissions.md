@@ -22,7 +22,7 @@ This section outlines the HTTP method and endpoint used to retrieve user permiss
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, emails, and next link to filter the results effectively..
+The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, emails, and next link to filter the results effectively.
 
 
 | Parameter  | Description                                                                 | Type   | Required? |
