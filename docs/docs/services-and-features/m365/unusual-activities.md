@@ -1,6 +1,6 @@
 # Retrieve Unusual Activities
 
-Get the basic information of unusual activities (`/backup/m365/cloudbackup/unusualactivitydata` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackup/unusualactivitydata` endpoint, users can gain the number of sites with unusual activities and that are under potential ransomware attacks in your tenant.
+Get the basic information of unusual activities (`/backup/m365/cloudbackup/unusualactivitydata` navigation property) detected by Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackup/unusualactivitydata` endpoint, users can gain the number of sites with unusual activities and that are under potential ransomware attacks in your tenant.
 
 ## Permission
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve the basic in
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/backup/m365/cloudbackup/unusualactivitydata` | Gets the basic information of unusual activities in Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/cloudbackup/unusualactivitydata` | Gets the basic information of unusual activities detected by Cloud Backup for Microsoft 365. |
 
 ## Query Parameters
 
@@ -39,8 +39,8 @@ The API response provides the basic information of unusual activities. Each job 
 | tenantOwner | Tenant owner | string |
 | tenantId | Tenant ID | string |
 | serviceType | Type of service <br> Valid values: <br> <ul><li> **0** for Exchange Online <br> </li><li>**1** for  SharePoint Online <br> </li><li>**2** for OneDrive <br> </li><li>**3** for Microsoft 365 Groups <br> </li><li>**4** for Project Online <br> </li><li>**5** for Public Folder <br> </li><li>**6** for Teams <br> </li><li>**7** for Public Folder Metadata <br> </li><li>**8** for Private Channel <br> </li><li> **9** for Yammer Group <br> </li><li>**10** for Personal Chat <br> </li><li>**11** for Power BI <br> </li><li>**12** for Power Automate <br> </li><li>**13** for Shared Channel <br> </li><li>**14** for Power Apps</li></ul> | integer |
-| potentialRansomwareAttackCount  | Number of sites with unusual activities | integer |
-| unusualActivitiesCount | Number of sites under potential ransomware attacks | integer |
+| potentialRansomwareAttackCount  | Number of sites with unusual activities | long |
+| unusualActivitiesCount | Number of sites under potential ransomware attacks | long |
 
 ## Request Sample
 
