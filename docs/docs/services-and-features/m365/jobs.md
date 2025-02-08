@@ -57,7 +57,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | startTime | Job started time | string |
 | finishTime | Job finished time | string |
 | duration | Duration in hours | string |
-| backupDetails | Job details | module |
+| backupDetails | Job details.  | module |
 | jobErrors|A list of job errors| list|
 
 **Backup details:**
@@ -69,14 +69,14 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | successfulNumber | Number of successful objects | long |
 | skippedNumber| Number of skipped objects | long |
 
-***Job errors:**
+**Job errors:**
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| IsErrorCode | Whether this error has an error code associated. | boolean |
-| Value | error message | string |
-| Url | error code URL | string |
-| Number| Occurrences of the error in this job. | long |
+| isErrorCode | Whether this error has an error code associated. | boolean |
+| value | error message | string |
+| url | error code URL | string |
+| number| Occurrences of the error in this job. | long |
 
 
 ## Request Sample

@@ -1,4 +1,4 @@
-- name: Elements for Partners
+- name: Overview
   href: index.md
 - name: Customers
   href: customers/toc.yml

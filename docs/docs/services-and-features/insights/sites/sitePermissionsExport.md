@@ -31,7 +31,7 @@ The API supports several query parameters to refine and customize the data expor
 
 ## Responses
 
-The API response provides export job ID for exporting and downloading the site permissions report. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](/insights/exportJobs/exportJobFile.md).
+The API response provides export job ID for exporting and downloading the site permissions report. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md).
 
 | Elements  | Description | Type    |
 |-----------|-------------|---------|

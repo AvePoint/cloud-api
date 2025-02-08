@@ -30,7 +30,7 @@ The API supports several query parameters to refine and customize the data retri
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
 | siteId    | SharePoint site ID | string  | Yes       |
-| nextLink  | Sets the number of results for one page. 100 results on one page at most. | string  | No        |
+| nextLink  | Sets whether to get the remaining results of a request of which the results are more than 100 | string  | No        |
 
 ## Responses
 
@@ -43,9 +43,9 @@ The API response provides detailed information about the site detail records ret
 | nextLink | The token to be used to get the remaining results of this request | string  |
 | values   | A list of detail records in the site          | list   |
 
-**Detail Record**
+**Detail record**
 
-| Property          | Description                                                                 |Type |
+| Elements          | Description                                                                 |Type |
 |-------------------|-----------------------------------------------------------------------------|----|
 | id                | Unique identifier for the object                                             |string| 
 | name              | Name of the object                                                            |string|

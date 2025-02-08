@@ -48,14 +48,14 @@ The API response provides detailed information about the site permissions retrie
 |---------------------|------------------------------------------------------------|---------|
 | module              | The data source from which the permission information is retrieved   | string  |
 | name                | The name of the permission                                 | string  |
-| url                 | The URL of the object to which the permission applies      | string  |
+| url                 | The sharing link to which the permission applies      | string  |
 | objectType          | The object type                                            | string  |
 | principalName       | The name of the user or group that has the permission      | string  |
 | email               | The email address of the user/group                        | string  |
 | principalType       | The type of the user or group                              | string  |
 | permission          | The level of permission granted                            | string  |
 | numberOfMembers     | The number of members in the group, if principalType is a group | integer     |
-| isExternalUser      | Indicates whether the user is an external user.                   | bool    |
+| isExternalUser      | Indicates whether the user is an external user.                   | boolean    |
 | inheritType         | The status of permission inheritance from its parent | string  |
 | linkGivingAccessTo  | The members who are granted access via sharing link         | string  |
 

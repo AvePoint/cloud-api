@@ -35,7 +35,7 @@ By leveraging these APIs, you can efficiently manage and interact with your clou
 
 ## What's in AvePoint Graph Modern API
 
-AvePoint Graph Modern API provides a unified endpoint to accessing AvePoint services data, designed to cater to IT professionals seeking robust data management and backup monitoring solutions.  
+AvePoint Graph Modern API provides a unified endpoint to accessing AvePoint services data, designed to cater to IT professionals seeking robust data management, data insights, and backup monitoring solutions.  
 
 ### Introduction
 

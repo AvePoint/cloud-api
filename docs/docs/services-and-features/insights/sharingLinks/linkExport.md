@@ -23,13 +23,13 @@ This section outlines the HTTP method and endpoint used to export permission-rel
 
 ### Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify link types and time range to filter the results effectively.
+The API supports several query parameters to refine and customize the data export. These parameters allow users to specify link types and time range to filter the results effectively.
 
 | Parameter | Description            | Type    | Required? |
 |-----------|------------------------|---------|-----------|
-| exportLinkType | Set export type: **32** for Flexible link; **64** for Organization link; **128** for Anonymous link. | integer | Yes |   
-| startTime | Filter By Time, Time format: yyyy-MM-ddTHH:mm:ss | string | Yes |   
-| finishTime | Filter By Time, Time format: yyyy-MM-ddTHH:mm:ss | string | Yes | 
+| exportLinkType | Sets export type: <ul><li>**32** for Flexible link</li><li> **64** for Organization link</li><li> **128** for Anonymous link</li> | integer | Yes |   
+| startTime | Filter by time, time format: yyyy-MM-ddTHH:mm:ss | string | Yes |   
+| finishTime | Filter by time, time format: yyyy-MM-ddTHH:mm:ss | string | Yes | 
 
 ## Responses
 

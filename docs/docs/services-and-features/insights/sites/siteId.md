@@ -13,7 +13,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to export site ID. It provides a concise description of the action performed by the API call. 
+This section outlines the HTTP method and endpoint used to retrieve site ID. It provides a concise description of the action performed by the API call. 
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |

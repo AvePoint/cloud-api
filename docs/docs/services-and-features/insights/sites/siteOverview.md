@@ -1,6 +1,6 @@
 # Retrieve Sites Overview
 
-The `/insights/sites/overview` API method allows users to retrieve risk level overview for specific sites. This method is useful for obtaining a summary of site risk level properties and statuses.
+This API method (`/insights/sites/overview` navigation property) allows users to retrieve risk level overview for specific sites. This method is useful for obtaining a summary of site risk level properties and statuses.
 
 ## Permission
 
@@ -29,7 +29,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description                              | Type    | Required? |
 |-----------|------------------------------------------|---------|-----------|
-| riskLevel | Enter the set of risk levels.            | list   | No        |
+| riskLevel | Specifies the set of risk levels.            | list   | No        |
 | nextLink  | Sets the number of results for one page. 100 results on one page at most. | string  | No        |
 
 ## Responses
@@ -42,6 +42,16 @@ The API response provides detailed information about the sites retrieved. Each s
 | message  | The error message                  | string  |
 | nextLink | The token to be used to get the remaining results of this request | string  |
 | values   | A list of site overview objects | list   |
+
+**Site overview**
+
+| Elements | Description                        | Type    |
+|----------|------------------------------------|---------|
+| siteName           | Name of the SharePoint site           |     string   |
+| siteUrl            | URL of the SharePoint site                            |   string   |
+| riskItemCount      | Number of risk items associated with the site         | integer|
+| sensitiveItemCount | Number of sensitive items associated with the site    | integer|
+| exposureItemCount  | Number of exposure items associated with the site     | integer|  
 
 ## Request Sample
 
@@ -57,17 +67,17 @@ The following response provide the overview for the sites that meets the specifi
 
 ```json
 {
-    "values": [
+    "values": [  // list of site overview objects
         {
-          "siteName": "SPO Site 001",
-          "siteUrl": "https://ja****alita.sharepoint.com/sites/sposite001",
-          "riskItemCount": 25,
-          "sensitiveItemCount": 25,
-          "exposureItemCount": 27
+          "siteName": "SPO Site",  // Name of the SharePoint site
+          "siteUrl": "https://ja****alita.sharepoint.com/sites/sposite",  // URL of the SharePoint site
+          "riskItemCount": 25,  // Number of risk items associated with the site
+          "sensitiveItemCount": 25,  // Number of sensitive items associated with the site
+          "exposureItemCount": 27  // Number of exposure items associated with the site
         }
       ],
-    "status": 200,
-    "message": "",
-    "nextLink": null
+    "status": 200,  // HTTP status code indicating the request was successful
+    "message": "",  // Message field, currently empty
+    "nextLink": null  // Link to the next set of results, null if there are no more results
 }
 ```
