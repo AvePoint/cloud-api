@@ -27,7 +27,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
-| startPage | The starting page of the query starts from 0 | integer | Yes        |
+| startPage | The starting page of the query. | integer | Yes        |
 | pageSize  | Sets the number of results for one page. 100 results on one page at most. | integer | Yes        |
 
 ### Responses
