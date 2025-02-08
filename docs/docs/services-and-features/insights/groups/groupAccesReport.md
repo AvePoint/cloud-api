@@ -1,6 +1,6 @@
 # Export Group Access Report
 
-Export the permission-related information of specific groups. By invoking the `/insights/groups/{groupId}/access/export` endpoint, you can export the access report for specific groups. This method is useful for obtaining an overview of group permissions. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.  
+Export the permission-related information of specific groups. By invoking the `/insights/groups/{groupId}/access/export` endpoint, you can export the access report for specific groups. This method is useful for obtaining detailed insights into the permissions granted to groups. 
 
 ## Permission 
 
@@ -22,7 +22,7 @@ This section outlines the HTTP method and endpoint used to retrieve group access
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the group ID, data sources, export options, and site URLs to filter the results effectively.
+The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the group ID, data sources, export options, and site URLs to filter the results effectively.
 
 
 | Parameter        | Description     | Type    | Required? |
@@ -45,7 +45,7 @@ The API supports several query parameters to refine and customize the data retri
 
 ### Responses
 
-The API response provides detailed information about the permission report job. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](/insights/exportJobs/exportJobFile.md).
+The API response provides the export job ID and its operation status. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md).
 
 | Elements | Description                                      | Type    |
 |----------|--------------------------------------------------|---------|
@@ -56,7 +56,7 @@ The API response provides detailed information about the permission report job. 
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the access report job ID for checking the job status and downloading the report file. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region. 
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the export job ID for checking the job status and downloading the report file. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region. 
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/groups/ec34726b-f692-424f-aaf0-f6a478a1b9fc7/access/export?exportOptionType=2&siteUrls=https%3A%2F***%2Fm3***x636363.sharepoint.com%2Fsites%2F*****2022publicteam01&dataSources=microsoft%20teams&dataSources=sharepoint%20online

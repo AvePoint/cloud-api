@@ -12,7 +12,7 @@ IT administrators can retrieve audit records from AvePoint Online Services to fa
 
 ## Streamline Partner Operations  
 
-Businesses can manage their partners more efficiently via the Elements platform, leveraging the API to integrate and automate partner-related workflows, and enhance collaboration and operational efficiency between the organization and its partners.  
+Service providers can manage their customers more efficiently via the Elements platform, leveraging the API to integrate and automate customer-related workflows, and enhance collaboration and operational efficiency between the organization and its customers.  
 
 ## Comprehensive Backup Management  
 
@@ -26,9 +26,12 @@ Organizations can leverage Insights for Microsoft 365 to retrieve and analyze da
 
 With AvePoint EnPower, businesses can efficiently manage and retrieve data from the Power Platform, including environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts. This enables comprehensive data analysis and reporting, enhancing operational efficiency.
 
-## Seamless Content Integration with Opus  
+## Seamless Content Integration with AvePoint Opus  
 
-AvePoint Opus allows organizations to connect and manage content across various systems. By integrating Opus with other platforms, businesses can streamline content management processes, ensuring efficient data handling and compliance.
+AvePoint Opus API methods allows organizations to efficiently manage their content and maintain a well-organized and compliant content management system, enhancing operational efficiency and data governance:
+- Submit new records: Streamlining the process of adding and managing records.
+- Retrieve due records: Accessing records that are due for review or action, helping maintain up-to-date and accurate data.
+- Destroy records: Securely deleting records that are no longer needed.
 
 
 

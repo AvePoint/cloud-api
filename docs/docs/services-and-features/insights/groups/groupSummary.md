@@ -1,6 +1,6 @@
 # Retrieve Group Summary
 
-Retrieve the summary information of groups. By invoking the `/insights/groups/summary` endpoint, you can retrieve the group summary information. This method is useful for obtaining an overview of group properties and statuses. 
+This API method (`/insights/groups/summary` navigation property) retrieves the group summary information. This method is useful for obtaining an overview of group properties and statuses. 
 
 ## Permission 
 

@@ -12,10 +12,8 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
    4. In the **Add service and permission** pane, select the services and corresponding permissions that you need to grant to this app, and then click **Add**. 
    > [!NOTE]
    > For the services and permissions that you can grant to the app for using Graph API, refer to [Services and Permissions](#services-and-permissions).
-4. Use a certificate or client secret as the app credentials. Credentials enable application to identify themselves to the authentication service when receiving tokens at a web addressable location (using an HTTPS schema). For a higher level of assurance, we recommend using a certification. Follow the instructions below to configure credentials:  
+4. Use a certificate or client secret as the app credentials. Credentials enable application to identify themselves to the authentication service when receiving tokens at a web addressable location (using an HTTPS schema). For a higher level of assurance, we recommend using a certificate. Follow the instructions below to configure credentials:  
      - The certificate serves as credentials that allow your application to authenticate itself, requiring no interaction from a user at runtime. Refer to [Prepare a Certificate for the Custom Azure App](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/prepareacertificateforthecustomazureapp.htm) section in AvePoint Online Services user guide to prepare a certificate.  
-        > [!NOTE] 
-        > If your organization is using AvePoint Opus, you can generate and download a certificate in AvePoint Opus Control Panel > Agent Management. For details, refer to [AvePoint Opus User Guide](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/registeragents.htm).  
      - If you choose to use the client secret, you can generate a client secret effective within 1 year, 2 years, or 3 years. Client secret values cannot be entirely shown once they are saved.  
 5. Obtain Application (Client) ID  
    - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
@@ -23,6 +21,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
    - Use [Client Secret](#client-secret): You need to send a POST request with the client ID, client secret, scope, and grant type.  See the request and response samples in the linked section.
    - Use [Certificate](#certificate). You need to generate a JWT signed with your certificate and send a POST request with the client ID, client assertion (the signed JWT), scope, and grant type. See the DotNet example in the linked section.  
 7. Use the access token to call an API. For example, you can use the GET request to retrieve the audit records within a specific time range using the access token:
+
     ```json
     GET https://graph-us.avepointonlineservices.com/aos/audit?startTime=2023-03-01T08:00:00Z&endTime=2023-03-02T08:00:00Z
     Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -33,7 +32,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
 
 ## Services and Permissions  
 
-See the table below for the services and permissions that can be used tor accessing API:  
+See the table below for the services and permissions that can be used for accessing API:  
 
 | AvePoint Cloud Service             | Permission                                   | Usage                     |
 | ---------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +41,8 @@ See the table below for the services and permissions that can be used tor access
 | **Cloud Backup for IaaS + PaaS**   | platformbackup.readwrite.all                 | Get job information from Cloud Backup for IaaS + PaaS.                                                                                                                                                                                             |
 | **Cloud Backup for Microsoft 365** | microsoft365backup.jobInfo.read.all          | Get job information from Cloud Backup for Microsoft 365.                                                                                                                                                                                           |
 |                                    | microsoft365backup.subscriptionInfo.read.all | Get the subscription consumption information of Cloud Backup for Microsoft 365.                                                                                                                                                                    |
-|                                    | microsoft365backup.unusualActivity.read.all | Gets the basic information of unusual activities detected by Cloud Backup for Microsoft 365.                                                                                                                                                                    |
+|                                    | microsoft365backup.unusualActivity.read.all | Get the basic information of unusual activities detected by Cloud Backup for Microsoft 365.                                                                                                                                                                    |
+| **Cloud Backup for Google Workspace**   | gsuite.graph.read.all                 | Get job information from Cloud Backup for Google Workspace.   
 | **AvePoint Opus**                  | records.readwrite.all                        |  Submit records to AvePoint Opus, retrieve due records, and destroy records.           |
 | **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower.                                                                             |
 | **Insights for Microsoft 365**     | insights.graph.readwrite.all                 | Retrieve or export data insights from Microsoft 365 environment.                     |
@@ -52,7 +52,7 @@ See the table below for the services and permissions that can be used tor access
 
  ## Client Secret
 
-To obtain an access token using a client secret in an app registration, follow these steps to send a POST request:
+To obtain an access token using a client secret in an app registration, follow these steps to send a `POST` request:
 
 1. **Set the Access Token URL**  
    Choose the URL based on your organization's AvePoint environment:
@@ -87,6 +87,7 @@ To obtain an access token using a client secret in an app registration, follow t
    - `expires_in` – Indicates the token expiration in seconds.  
    
    **Response sample**  
+   
     ```json
     {
         "token_type": "Bearer",

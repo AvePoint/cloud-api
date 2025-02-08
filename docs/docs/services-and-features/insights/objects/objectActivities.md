@@ -38,7 +38,7 @@ The API supports several query parameters to refine and customize the data retri
 
 ## Responses
 
-If successful, the API response will provide the export job ID. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](/insights/exportJobs/exportJobFile.md). 
+If successful, the API response will provide the export job ID. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md). 
 
 | Elements | Description                                      | Type    |
 |----------|--------------------------------------------------|---------|

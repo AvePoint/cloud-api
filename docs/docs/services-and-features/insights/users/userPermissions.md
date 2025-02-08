@@ -1,6 +1,6 @@
 # Retrieve User Permissions
 
-Retrieve the permission-related information for specific users. By invoking the `/insights/users/access` endpoint, you can retrieve a summary of specific users. This method is useful for obtaining detailed insights into the permissions granted to users. 
+Retrieve the permission-related information for specific users. By invoking the `/insights/users/access` endpoint, you can retrieve the permissions of specific users. This method is useful for obtaining detailed insights into the permissions granted to users. 
 
 ## Permission 
 
@@ -22,14 +22,14 @@ This section outlines the HTTP method and endpoint used to retrieve user permiss
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, emails, and next link to filter the results effectively.
+The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, email addresses, and next link to filter the results effectively.
 
 
 | Parameter  | Description                                                                 | Type   | Required? |
 |------------|-----------------------------------------------------------------------------|--------|-----------|
-| siteUrls | Sets the URLs of site collections for which you want to get the permission related information | list  | No        |
+| siteUrls | Sets the URLs of site collections for which you want to get the permission related information. | list  | No        |
 | emails | Sets the email addresses or logonName of users for which you want to export the permission report. | list  | Yes        |
-| nextLink | Sets whether to get the remaining results of a request of which the results are more than 100 | string | No        |
+| nextLink | Sets whether to get the remaining results of a request of which the results are more than 100. | string | No        |
 
 
 [we have logonName Loginname and principal name? which one is it?]: # 
@@ -54,13 +54,13 @@ The API response provides detailed information about the user permissions retrie
 | name               | The name of the object.                           | string  |
 | location           | The URL where the object is located.             | string  |
 | objectType         | The type of object.             | string  |
-| inheritType        | Indicates that the permissions are unique to this object.      | string  |
+| inheritType        | Indicates whether the permissions are unique to this object.      | string  |
 | permission         | The level of permission granted.                    | string  |
 | sensitivityLevel   | The sensitivity level of the object.               | string  |
 | sensitiveInfoType  | Types of sensitive information contained in the file. |string  |
-| isDirect           | Indicates whether the permission is direct or inherited.               | Bool |
-| sensitivityLabel   | The sensitivity label applied to the object, which is empty in this case.          | String  |
-| inheritedFrom      | The source from which the permissions are inherited.                     | String  |
+| isDirect           | Indicates whether the permission is direct or inherited.               | boolean |
+| sensitivityLabel   | The sensitivity label applied to the object          | string  |
+| inheritedFrom      | The source from which the permissions are inherited.                     | string  |
 
 ## Request Sample
 

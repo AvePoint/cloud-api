@@ -1,6 +1,6 @@
 # Export User Permissions
 
-This API method (`/insights/users/{email}/access/export` navigation property) allows users to export the access reports of specific users in different workspaces. This method is useful for obtaining detailed insights into the permissions granted to users within a specified time range. 
+This API method (`/insights/users/{email}/access/export` navigation property) allows users to export the access reports of specific users in different workspaces. This method is useful for obtaining detailed insights into the permissions granted to users. 
 
 ## Permission 
 
@@ -22,20 +22,20 @@ This section outlines the HTTP method and endpoint used to export user access re
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, emails, and next link to filter the results effectively.
+The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the site URLs, email addresses, and data sources to filter the results effectively.
 
 
 | Parameter  | Description                                                                 | Type   | Required? |
 |------------|-----------------------------------------------------------------------------|--------|-----------|
 | email| Sets the email addresses or loginName of users for which you want to export the permission report. | string | Yes |
-| exportOptionType | Export options: **1** - summary and site collection level access report, **2** - summary and access report to all objects, **3** - summary report only | integer | Yes | 
+| exportOptionType | Export options: <ul><li>**1** for summary and site collection level access report</li><li> **2** for summary and access report to all objects</li> <li>**3** for summary report only</li> | integer | Yes | 
 | siteUrls | Sets the URLs of site collections for which you want to export the permission report | list | No | 
 | dataSources | Sets the workspace in which you want to export the access report of users. Multiple values are allowed. (e.g., **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**) | list | Yes |
 
 
 ### Responses
 
-The API response provides detailed information about the export job. 
+The API response provides the export job ID and its operation status. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md).
 
 | Elements	| Description	|Type|
 |---|--- |---|
@@ -45,7 +45,7 @@ The API response provides detailed information about the export job.
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant permission details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/insights******001_j*****insightstest.onmicrosoft.com%2523ext%2523%2540m3********.onmicrosoft.com/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm******.sharepoint.com%2Fsites%2Fjuly2022public****01&dataSources=microsoft%20teams&dataSources=sharepoint%20online
@@ -53,7 +53,7 @@ https://graph-us.avepointonlineservices.com/insights/users/insights******001_j**
 
 ## Response Sample  
 
-The following is a sample response for this API method, which includes export job ID of the user access report and its operation status 
+The following is a sample response for this API method, which includes export job ID of the user access report and its operation status. 
 
 ```json
 {

@@ -1,6 +1,6 @@
 # Retrieve Due Records  
 
-Use this API to retrieve the records whose disposed due date is earlier than the specified time.
+Use this API to retrieve the records whose disposal due date is earlier than the specified time.
 
 ## Permission
 

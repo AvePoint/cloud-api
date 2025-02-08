@@ -23,12 +23,12 @@ This section outlines the HTTP method and endpoint used to retrieve the summary 
 
 ### Query Parameters
 
-The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify pagination, link types, and other criteria to filter the results effectively.
+The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify pagination, link types, site URL, and other criteria to filter the results effectively.
 
 | Parameter | Description            | Type    | Required? |
 |-----------|------------------------|---------|-----------|
 | siteUrl | The SharePoint site URL | string |Yes    |
-| linkType  | The type of the link. **32** for Flexible link; **64** for Organization link; **128** for Anonymous link.  | integer | Yes        |
+| linkType  | The type of the link. <ul><li>**32** for Flexible link</li><li> **64** for Organization link</li><li> **128** for Anonymous link</li>  | integer | Yes        |
 | pageSize  | The number of items per page | integer | No        |
 | nextLink  | The token for the next page | string  | No        |
 
@@ -72,7 +72,7 @@ The API response provides detailed information about the sharing links retrieved
  
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/sharingLinks/https********Fm365x636363.sharepoint.com%252Fsites%252Fjuly2022******/summary?linkType=32&pageSize=100&nextLink=1231

@@ -27,7 +27,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
-| startPage | The starting page of the query starts from 0 | integer | Yes        |
+| startPage | The starting page of the query, which starts from 1. | integer | Yes        |
 | pageSize  | Sets the number of results for one page. 100 results on one page at most. | integer | Yes        |
 
 ### Responses
@@ -48,11 +48,11 @@ The API response provides detailed information about the users retrieved. Each g
 | displayName    | The display name of the user                                                | string|
 | loginName      | The principal name of the user                                      | String|
 | email          | The email address of the user                                               | string|
-| userStatus     | The Sign-in status of the Microsoft 365 user. (e.g., **Blocked**, **Active**) For users that do not exist in Azure AD, the status will be **Not in Azure AD**.                     | string|
+| userStatus     | The Sign-in status of the Microsoft 365 user (e.g., **Blocked**, **Active**)                   | string|
 | trustStatus    | The trust status of the user in Insights for Microsoft 365 (e.g., **Trusted**, **Not Trusted**)                     | string|
 | sensitiveItems | The number of sensitive items associated with the user                      |integer|
-| lastSignIn     | The time range of the user's last sign-in. (e.g., **Less than 90 Days**, **More than 90 Days**, **More than 180 Days**, **None**, **N/A**)            |string|
-| createdOn      | The date and time when the user account was created in Microsoft Entra.     | string|
+| lastSignIn     | The time range of the user's last sign-in (e.g., **Less than 90 Days**, **More than 90 Days**, **More than 180 Days**, **None**, **N/A**)            |string|
+| createdOn      | The date and time when the user account was created in Microsoft Entra     | string|
 
 
 ## Request Sample

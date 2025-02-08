@@ -34,7 +34,7 @@ The API supports several query parameters to refine and customize the data retri
 
 ### Responses
 
-The API response provides detailed information about the export job. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](/insights/exportJobs/exportJobFile.md).
+The API response provides detailed information about the export job. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md).
 
 | Elements	| Description	|Type|
 |---|--- |---|

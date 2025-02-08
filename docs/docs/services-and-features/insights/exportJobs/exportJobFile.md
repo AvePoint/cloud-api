@@ -21,7 +21,7 @@ To use this API, send a `GET` request to the specified endpoint, including neces
 
 ## Query Parameters
 
-The API supports a single query parameter to specify the job ID for which the status is being requested.
+The API supports a single query parameter to specify the job ID for which the report file is being requested.
 
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|

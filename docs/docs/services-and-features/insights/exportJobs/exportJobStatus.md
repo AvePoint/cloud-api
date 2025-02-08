@@ -1,6 +1,6 @@
 # Retrieve Export Job Status
 
-This API method (`/insights/job/{jobId}/exportstatus` navigation property) allows users to retrieve the status of an activity export job. This method is useful for monitoring the progress and completion status of export jobs.
+This API method (`/insights/job/{jobId}/exportstatus` navigation property) allows users to retrieve the status of an export job. This method is useful for monitoring the progress and completion status of export jobs.
 
 ## Permission
 
