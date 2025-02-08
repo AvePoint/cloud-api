@@ -5,10 +5,16 @@ This document provides a detailed log of changes, updates, and enhancements made
 ## February 2025
 
 ### Added
-- Introduced new endpoints for Cloud Backup for Google Workspace, AvePoint Opus, Insights for Microsoft 365, and EnPower.   
+
+- Introduced new endpoints to AvePoint Graph Modern API for: 
+    - Cloud Backup for Google Workspace
+    - AvePoint Opus
+    - Insights for Microsoft 365
+    - EnPower   
 - Implemented new API for retrieving unusual activities or potential ransomware attacks for Microsoft 365 environment in the `/backup/m365/cloudbackup/unusualactivitydata` endpoint. 
 
 ### Changed
+
 - Enhanced the `/aos/audit` endpoint to support filtering for Cloud Backup for Google Workspace.  
 
 <!---## January 2025 hotfix

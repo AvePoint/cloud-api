@@ -44,9 +44,9 @@ See the table below for the services and permissions that can be used tor access
 |                                    | microsoft365backup.subscriptionInfo.read.all | Get the subscription consumption information of Cloud Backup for Microsoft 365.                                                                                                                                                                    |
 |                                    | microsoft365backup.unusualActivity.read.all | Gets the basic information of unusual activities detected by Cloud Backup for Microsoft 365.                                                                                                                                                                    |
 | **AvePoint Opus**                  | records.readwrite.all                        |  Submit records to AvePoint Opus, retrieve due records, and destroy records.           |
-| **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower. For details, see [EnPower Web API](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm)                                                                                    |
+| **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower.                                                                             |
+| **Insights for Microsoft 365**     | insights.graph.readwrite.all                 | Retrieve or export data insights from Microsoft 365 environment.                     |
 | **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
-| **Insights for Microsoft 365**     | insights.graph.readwrite.all                 | Retrieve data from Insights for Microsoft 365. For details, see [Insights for Microsoft 365 Web API](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)                    |
 | **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance Modern API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm) |
 
 
@@ -95,7 +95,7 @@ To obtain an access token using a client secret in an app registration, follow t
         "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkQ2MzA1NzRFRDdDRDdBR..."
     }
     ```
->[!NOTE]
+> [!NOTE]
 > You can use Postman to test the POST request as described above.
 
 
@@ -219,7 +219,7 @@ To obtain an access token using a certificate in an app registration, follow the
     }
     ```
 
-    >[!NOTE]
+    > [!NOTE]
     > Adjust the `IDENTITY_SERVICE_URI` based on your AvePoint Online Services environment.  
     >
     > |AOS Environment| Identity Services URL|
@@ -236,3 +236,4 @@ To obtain an access token using a certificate in an app registration, follow the
     eyJhbGc...
     [Scope]
     audit.read.all
+    ```

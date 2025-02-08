@@ -46,7 +46,7 @@ The API response provides export job ID for exporting and downloading the site p
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
- https://graph-us.avepointonlineservices.com/insights/sites/permission/export?siteUrls=https%3A%2F%2Fm365x353634.sharepoint.com%2Fsites%2Fretail&siteUrls=https%3A%2F%2Fm365x353634.sharepoint.com%2Fsites%2Fsite0
+ https://graph-us.avepointonlineservices.com/insights/sites/permission/export?siteUrls=https%3A%2F%2Fm365x3***.sharepoint.com%2Fsites%2Fretail&siteUrls=https%3A%2F%2Fm365x4****.sharepoint.com%2Fsites%2Fsite0
 ```
 
 ## Response Sample

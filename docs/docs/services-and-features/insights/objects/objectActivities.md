@@ -51,7 +51,7 @@ If successful, the API response will provide the export job ID. You can use the 
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/insights/activities/object/https%3A%2F%2Falitamarkettest.sharepoint.com%2Fsites%2Fharlandleteams001/export?startTime=2024-12-03T00%3A00%3A00&finishTime=2025-01-09T00%3A00%3A00&eventTypes=ListViewed&eventTypes=ListItemViewed
+https://graph-us.avepointonlineservices.com/insights/activities/object/https******markettest.sharepoint.com%2Fsites%2F******teams001/export?startTime=2024-12-03T00%3A00%3A00&finishTime=2025-01-09T00%3A00%3A00&eventTypes=ListViewed&eventTypes=ListItemViewed
 ```
 
 ## Response Sample  

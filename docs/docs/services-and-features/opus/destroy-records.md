@@ -41,7 +41,7 @@ The API response provides the outcome of the request.
 
 ## Request Sample
 
-The following request structure is designed to update the status of records as Destroyed in AvePoint Opus.  
+To use this API, send a `DELETE` request to the specified endpoint, including necessary parameters. The following request structure is designed to update the status of records as Destroyed in AvePoint Opus.  
 
 **URL**
 
