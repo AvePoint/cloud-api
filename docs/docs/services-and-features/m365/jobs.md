@@ -20,8 +20,6 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 | --- | --- | --- |
 | GET | `/backup/m365/cloudbackup/getjobs` | Gets the job information of Cloud Backup for Microsoft 365. |
 
--------------------------
-
 ## Query Parameters
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify pagination, job types, time ranges, and other criteria to filter the results effectively.  
@@ -59,7 +57,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | startTime | Job started time | string |
 | finishTime | Job finished time | string |
 | duration | Duration in hours | string |
-| backupDetails | Job details | module |
+| backupDetails | Job details.  | module |
 | jobErrors|A list of job errors| list|
 
 **Backup details:**
@@ -71,22 +69,22 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | successfulNumber | Number of successful objects | long |
 | skippedNumber| Number of skipped objects | long |
 
-***Job errors:**
+**Job errors:**
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| IsErrorCode | Whether this error has an error code associated. | boolean |
-| Value | error message | string |
-| Url | error code URL | string |
-| Number| Occurrences of the error in this job. | long |
+| isErrorCode | Whether this error has an error code associated. | boolean |
+| value | error message | string |
+| url | error code URL | string |
+| number| Occurrences of the error in this job. | long |
 
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications.  
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.  
 
 ```json
-https://graph.avepointonlineservices.com/backup/m365/cloudbackup/getjobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1
+https://graph-us.avepointonlineservices.com/backup/m365/cloudbackup/getjobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1
 ```
 
 ## Response Sample

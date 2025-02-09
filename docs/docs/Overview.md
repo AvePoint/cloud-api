@@ -11,7 +11,10 @@ AvePoint Confidence Platform offers a range of APIs to suit different integratio
 The Modern API provides advanced features to optimize integration and security:  
 
 - Authentication methods: Supports client secret and certificate authentication for secure and efficient access control. This flexibility allows developers to choose the most suitable authentication method for their needs.  
-- Single endpoint: The API can be accessed via `https://graph.avepointonlineservices.com` simplifying integration with AvePoint services. Note that the endpoint differs based upon the data center you want to access. For details, refer to [Endpoints Upon Data Centers](#endpoints-upon-data-center).  
+- Unified endpoint: The API can be accessed via a unified endpoint format `https://graph-{dc}.avepointonlineservices.com`. Note that the endpoint differs based upon the data center you want to access. For details, refer to [Endpoints Upon Data Centers](#endpoints-upon-data-center). 
+  > [!NOTE]
+  > For users of the Elements API, there is an added convenience. The Elements API supports a single endpoint (`https://graph.avepointonlineservices.com`), meaning you do not need to adjust the endpoint based on the data center. This can simplify your integration process and reduce configuration overhead.
+
 - Comprehensive functionality: Enables seamless interaction with AvePoint services, supporting tasks like data management, reporting, and configuration.  
 - Scalability and performance: Designed to handle large-scale operations, ensuring reliability and speed in various enterprise scenarios.  
 
@@ -32,7 +35,7 @@ By leveraging these APIs, you can efficiently manage and interact with your clou
 
 ## What's in AvePoint Graph Modern API
 
-AvePoint Graph Modern API provides a unified endpoint to accessing AvePoint services data, designed to cater to IT professionals seeking robust data management and backup monitoring solutions.  
+AvePoint Graph Modern API provides a unified endpoint to accessing AvePoint services data, designed to cater to IT professionals seeking robust data management, data insights, and backup monitoring solutions.  
 
 ### Introduction
 
@@ -40,7 +43,10 @@ This API employs advanced authentication methods to ensure secure and efficient 
 
 - Retrieve audit records: Access comprehensive records from AvePoint Online Services.  
 - Streamline partner operations on customer management: Enhance efficiency in handling customer data and interactions through the Elements platform.  
-- Job information retrieval: Obtain detailed job data from AvePoint's Cloud Backup solutions for Microsoft 365, Microsoft Azure, AWS, and Dynamics 365.  
+- Job information retrieval: Obtain detailed job data from AvePoint's Cloud Backup solutions for Microsoft 365, Microsoft Azure, AWS, Dynamics 365, and Google Workspace.  
+- EnPower data retrieval: Access and manage Power Platform data including environments, connections, Power Apps, Power Automate Cloud Flows, adn Power BI artifacts.  
+- Insights data retrieval: Access detailed reports and data insights from Insights for Microsoft 365.  
+- Opus data management: Connect AvePoint Opus sto other systems to access and manage content.  
 
 ### Key Features
 
@@ -52,22 +58,29 @@ This API employs advanced authentication methods to ensure secure and efficient 
 
 - Job Information Retrieval: Detailed insights into Cloud Backup operations to ensure data integrity and availability.  
 
+- EnPower Data Retrieval: Manage and retrieve data for Power Platform environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts.  
+
+- Insights Data Retrieval: Export and retrieve detailed reports and data insights for Microsoft 365.  
+
+- Opus Data Management: Integrate AvePoint Opus with other systems to manage and access content efficiently.  
+
+
 For more features and use cases, visit the [Use Cases](Use-Cases.md).  
 
 ### Endpoints Upon Data Center
 
 | Region                    | URL                                 |
 |------------------------------|---------------------------------|
-| APAC - Australia          | [https://graph-au.avepointonlineservices.com/](https://graph-au.avepointonlineservices.com/) |
-| APAC - Singapore                    | [https://graph-sg.avepointonlineservices.com/](https://graph-sg.avepointonlineservices.com/) |
-| Canada Central (Toronto)            | [https://graph-ca.avepointonlineservices.com/](https://graph-ca.avepointonlineservices.com/) |
-| EMEA - Ireland                      | [https://graph-ne.avepointonlineservices.com/](https://graph-ne.avepointonlineservices.com/) |
-| EMEA - Netherlands                  | [https://graph-we.avepointonlineservices.com/](https://graph-we.avepointonlineservices.com/) |
-| France Central (Paris)              | [https://graph-fr.avepointonlineservices.com/](https://graph-fr.avepointonlineservices.com/ ) |
-| Germany West Central (Frankfurt)    | [https://graph-de.avepointonlineservices.com/ ](https://graph-de.avepointonlineservices.com/ ) |
-| Japan West - Osaka                  | [https://graph-jp.avepointonlineservices.com/ ](https://graph-jp.avepointonlineservices.com/ ) |
-| Korea Central (Seoul)               | [https://graph-kr.avepointonlineservices.com/ ](https://graph-kr.avepointonlineservices.com/ ) |
-| Switzerland North (Zurich)          | [https://graph-ch.avepointonlineservices.com/ ](https://graph-ch.avepointonlineservices.com/ ) |
-| UK South (London)                   | [https://graph-uk.avepointonlineservices.com/ ](https://graph-uk.avepointonlineservices.com/ ) |
-| US - East                           | [https://graph-us.avepointonlineservices.com/ ](https://graph-us.avepointonlineservices.com/) |
-| AOS-US Gov                           |[https://graph-gov.avepointonlineservices.com/](https://graph-gov.avepointonlineservices.com/)|
+| APAC - Australia          | `https://graph-au.avepointonlineservices.com/`|
+| APAC - Singapore                    | `https://graph-sg.avepointonlineservices.com/`|
+| Canada Central (Toronto)            | `https://graph-ca.avepointonlineservices.com/`|
+| EMEA - Ireland                      | `https://graph-ne.avepointonlineservices.com/` |
+| EMEA - Netherlands                  | `https://graph-we.avepointonlineservices.com/` |
+| France Central (Paris)              | `https://graph-fr.avepointonlineservices.com/` |
+| Germany West Central (Frankfurt)    | `https://graph-de.avepointonlineservices.com/` |
+| Japan West - Osaka                  | `https://graph-jp.avepointonlineservices.com/` |
+| Korea Central (Seoul)               | `https://graph-kr.avepointonlineservices.com/` |
+| Switzerland North (Zurich)          | `https://graph-ch.avepointonlineservices.com/` |
+| UK South (London)                   | `https://graph-uk.avepointonlineservices.com/` |
+| US - East                           | `https://graph-us.avepointonlineservices.com/`|
+| AOS-US Gov                           |`https://graph-gov.avepointonlineservices.com/`|

@@ -1,0 +1,10 @@
+- name: Export Site Permissions
+  href: sitePermissionsExport.md
+- name: Retrieve Site Permissions
+  href: sitePermissionsGet.md
+- name: Retrieve Sites Overview
+  href: siteOverview.md
+- name: Retrieve Site ID
+  href: siteId.md
+- name: Retrieve Site Detail Records
+  href: siteDetailRecords.md

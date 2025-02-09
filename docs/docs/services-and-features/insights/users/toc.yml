@@ -1,0 +1,8 @@
+- name: Export User Activities
+  href: userActivitiesExport.md
+- name: Export User Permissions
+  href: userPermissionsExport.md
+- name: Retrieve User Permissions
+  href: userPermissions.md
+- name: Retrieve User Summary
+  href: userSummary.md
