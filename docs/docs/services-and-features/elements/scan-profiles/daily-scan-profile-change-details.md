@@ -26,8 +26,8 @@ This section outlines the parameters required to specify which customer's daily 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| id | The tenant owner ID of the customer. | String | Yes |
-| profileId | The ID of the scan profile. | String | Yes |
+| id | The tenant owner ID of the customer. | string | Yes |
+| profileId | The ID of the scan profile. | string | Yes |
 
 ## Responses
 
@@ -40,7 +40,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | tenantDomain | The tenant domain of the scan profile. | string |
 | tenantId | The tenant ID the scan profile. | string |
 | lastUpdateTime | The time of generating the daily report for the scan profile. If no daily report has been generated, the time is the last modified time of the scan profile. | string |
-| removedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | list |
+|removedFromMicrosoft365OrOutOfPolicyObjects | The details of objects moved to another container in the daily report of the scan profile. | list |
 | newRegisteredContent | The details of newly registered objects in the daily report of the scan profile. | list |
 | movedToAnotherContainerObjects | The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | list |
 

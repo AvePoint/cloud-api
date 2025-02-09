@@ -1,0 +1,6 @@
+- name: Submit Records
+  href: submit-records.md
+- name: Retrieve Due Records
+  href: retrieve-due-records.md
+- name: Destroy Records
+  href: destroy-records.md

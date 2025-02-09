@@ -59,7 +59,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "profileName": "test oop", // The name of the scan profile
             "profileId": "0e5e152d-65cc-65cc-65cc-65cc65cc65cc", // The ID of the scan profile
             "scanMode": 0, // The scan mode of the scan profile: 0 represents Express mode
-            "modifiedTime": "08/01/2024 06:29:55" // The last modified time of the scan profile
+            "modifiedTime": "2024-12-27T17:08:24Z" // The last modified time of the scan profile
         }
     ]
 }

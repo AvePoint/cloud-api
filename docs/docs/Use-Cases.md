@@ -12,23 +12,31 @@ IT administrators can retrieve audit records from AvePoint Online Services to fa
 
 ## Streamline Partner Operations  
 
-Businesses can manage their partners more efficiently via the Elements platform, leveraging the API to integrate and automate partner-related workflows, and enhance collaboration and operational efficiency between the organization and its partners.  
+Service providers can manage their customers more efficiently via the Elements platform, leveraging the API to integrate and automate customer-related workflows, and enhance collaboration and operational efficiency between the organization and its customers.  
 
 ## Comprehensive Backup Management  
 
 IT professionals can monitor backup status, performance, and issues by accessing detailed job information from various AvePoint Cloud Backup services.  
 
+## Enhanced Data Visibility with Insights  
+
+Organizations can leverage Insights for Microsoft 365 to retrieve and analyze data, providing enhanced visibility for informed decision-making. This API allows businesses to access detailed reports and data insights, driving better business outcomes.
+
+## Efficient Data Management with EnPower  
+
+With AvePoint EnPower, businesses can efficiently manage and retrieve data from the Power Platform, including environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts. This enables comprehensive data analysis and reporting, enhancing operational efficiency.
+
+## Seamless Content Integration with AvePoint Opus  
+
+AvePoint Opus API methods allows organizations to efficiently manage their content and maintain a well-organized and compliant content management system, enhancing operational efficiency and data governance:
+- Submit new records: Streamlining the process of adding and managing records.
+- Retrieve due records: Accessing records that are due for review or action, helping maintain up-to-date and accurate data.
+- Destroy records: Securely deleting records that are no longer needed.
+
+
+
 ## Use Cases for Additional Cloud Services on the Confidence Platform  
 
-- **AvePoint Opus**: Import data from additional systems beyond the six built-in data sources, as well as File System and SharePoint On-Premises connected via Agents. It also enables the export of records with specific disposal due dates and updates their status to Disposed within the platform. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/avepointopusapisforconnector.htm)  
-
-[add refer to link]: #
-[Delphine: Is the "See more" OK?]: #
-
-- **AvePoint EnPower**: Retrieve data from EnPower to access necessary data for data analysis and reporting. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-enpower/index.htm#!Documents/enpowerwebapi.htm)  
-
 - **Fly**: Execute migrations with Fly to seamlessly migrate data between systems. [See more](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)  
-
-- **Insights for Microsoft 365**: Retrieve data from Insights for Microsoft 365 to enhance data visibility for decision-making. [See more](https://cdn.avepoint.com/assets/webhelp/insights-for-microsoft-365/index.htm#!Documents/insightsformicrosoft365webapi.htm)  
 
 - **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm)  

@@ -26,7 +26,7 @@ To access the resources of AvePoint Cloud Services via the AvePoint Graph Modern
 
 For a step-by-step guide on creating an app registration for API authentication, refer to the [Register an App for Modern API](register-app.md) section in the AvePoint Online Services User Guide.  
 
->[!NOTE]  
+> [!NOTE]  
 > For partner operations, go to Elements for Partner for app registration. See [App Registration in Elements for Partners guide](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 ## Call an API Method
@@ -58,6 +58,8 @@ The Modern API uses the HTTP methods to specify the action being performed on a 
 | Method | Description |  
 |------|------|  
 |GET|Read data from a resource.|  
+|POST| Create data in a resource. |
+|DELETE| Delete data from a resource. | 
 
 ## HTTP Status Code
 
@@ -65,8 +67,11 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 
 | Code | Description |
 | ---- | ----------- |
-| 200 | OK – The request was successful, and hte response contains the requested data. |
+| 200 | OK – The request was successful, and the response contains the requested data. |
+| 201 | OK – The request was successful, and the response contains the requested data. <br> ***Note**: This status code is used by the AvePoint Opus API for submitting records to Opus.|
+| 204 | No Content – The request was successful, but there is no content returned. <br> ***Note**: This status code is used by the AvePoint Opus APIs for retrieving due records and destroying records.|
 | 400 | Bad Request – The request could not be processed due to invalid parameters. |
+| 418 | Exist Failed Data Operation – The request was processed with exceptions. <br> ***Note**: This status code is used by the AvePoint Opus APIs for submitting records to Opus and destroying records.|
 | 500 | Internal Server Error – An unexpected server error occurred. |
 
 ## Resource  
