@@ -16,7 +16,13 @@ This document provides a detailed log of changes, updates, and enhancements made
 ### Changed
 
 - Enhanced the `/aos/audit` endpoint to support filtering for Cloud Backup for Google Workspace.  
-
+- Added `purchasedUnits`, `source`, `paymentType`, `subscriptionName`, `package`, and `contractEndDate` parameters to the `/partner/services` and `/partner/services/{id}` endpoints. 
+- Updated the type of the following parameters related to object count to `string` in the `/partner/customers/{id}/jobs` and `/partner/customers/{id}/jobs/jobType/{JobType}/jobModule/{JobModule}` endpoints:
+    - `totalCount`
+    - `failedCount`
+    - `successfulCount`
+    - `skippedCount`
+    - `warningCount`
 <!---## January 2025 hotfix
 
 ### Fixed
