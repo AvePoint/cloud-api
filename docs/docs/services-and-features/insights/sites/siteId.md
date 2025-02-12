@@ -19,7 +19,7 @@ This section outlines the HTTP method and endpoint used to retrieve site ID. It 
 | --- | --- | --- |
 | GET | `/insights/sites/{siteUrl}/siteId` | Retrieves the site ID. |
 
-### Query Parameters
+## Query Parameters
 
 The API supports a single query parameter to specify the site URL for which the site ID is being requested.
 
