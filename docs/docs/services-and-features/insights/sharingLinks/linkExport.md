@@ -21,7 +21,7 @@ This section outlines the HTTP method and endpoint used to export permission-rel
 | GET | `/insights/sharingLinks/export` | Exports the permissions-related information for sharing links. |
 
 
-### Query Parameters
+## Query Parameters
 
 The API supports several query parameters to refine and customize the data export. These parameters allow users to specify link types and time range to filter the results effectively.
 

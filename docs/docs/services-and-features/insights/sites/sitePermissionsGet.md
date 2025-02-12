@@ -20,7 +20,7 @@ This section outlines the HTTP method and endpoint used to retrieve site permiss
 | GET | `/insights/sites/permission` | Retrieves the site permissions. |
 
 
-### Query Parameters
+## Query Parameters
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, page size, and next link to filter the results effectively.
 

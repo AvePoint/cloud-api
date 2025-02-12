@@ -32,7 +32,7 @@ The API supports several query parameters to refine and customize the data retri
 | eventTypes| Filter by event type                             | list  | No        |
 
 
-### Responses
+## Responses
 
 The API response provides detailed information about the export job. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md).
 

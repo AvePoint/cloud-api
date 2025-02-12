@@ -23,7 +23,7 @@ This section outlines the HTTP method and endpoint used to retrieve the site ove
 
 
 
-### Query Parameters
+## Query Parameters
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the risk level and next link to filter the results effectively.
 
