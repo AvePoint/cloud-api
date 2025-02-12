@@ -21,7 +21,7 @@ This section outlines the HTTP method and endpoint used to retrieve the summary 
 | GET | `/insights/sharingLinks/{siteUrl}/summary` | Retrieves the link summaries. |
 
 
-### Query Parameters
+## Query Parameters
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify pagination, link types, site URL, and other criteria to filter the results effectively.
 

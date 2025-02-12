@@ -43,7 +43,7 @@ The API supports several query parameters to refine and customize the data expor
 
 [languages + data source rewrite]: #
 
-### Responses
+## Responses
 
 The API response provides the export job ID and its operation status. You can use the Jobs resource to check the export job progress and export the report file. For details, see [Jobs](../exportJobs/exportJobFile.md).
 

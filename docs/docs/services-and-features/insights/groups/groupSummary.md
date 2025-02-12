@@ -30,7 +30,7 @@ The API supports several query parameters to refine and customize the data retri
 | startPage | The starting page of the query. | integer | Yes        |
 | pageSize  | Sets the number of results for one page. 100 results on one page at most. | integer | Yes        |
 
-### Responses
+## Responses
 
 The API response provides detailed information about the groups retrieved. Each group in the response includes various attributes that describe its properties and status.
 

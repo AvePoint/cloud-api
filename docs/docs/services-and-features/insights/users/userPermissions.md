@@ -34,7 +34,7 @@ The API supports several query parameters to refine and customize the data retri
 
 [we have logonName Loginname and principal name? which one is it?]: # 
 
-### Responses
+## Responses
 
 The API response provides detailed information about the user permissions retrieved. Each user permission in the response includes various attributes that describe its properties and status.
 
