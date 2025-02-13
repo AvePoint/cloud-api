@@ -46,7 +46,7 @@ This API employs advanced authentication methods to ensure secure and efficient 
 - Job information retrieval: Obtain detailed job data from AvePoint's Cloud Backup solutions for Microsoft 365, Microsoft Azure, AWS, Dynamics 365, and Google Workspace.  
 - EnPower data retrieval: Access and manage Power Platform data including environments, connections, Power Apps, Power Automate Cloud Flows, adn Power BI artifacts.  
 - Insights data retrieval: Access detailed reports and data insights from Insights for Microsoft 365.  
-- Opus data management: Connect AvePoint Opus sto other systems to access and manage content.  
+- AvePoint Opus data management: Submit records to AvePoint Opus, retrieve due records, and destroy records.  
 
 ### Key Features
 
@@ -62,7 +62,7 @@ This API employs advanced authentication methods to ensure secure and efficient 
 
 - Insights Data Retrieval: Export and retrieve detailed reports and data insights for Microsoft 365.  
 
-- Opus Data Management: Integrate AvePoint Opus with other systems to manage and access content efficiently.  
+- AvePoint Opus Data Management: Submit, retrieve, or destroy records to ensure the records are managed according to their lifecycle and compliance requirements.  
 
 
 For more features and use cases, visit the [Use Cases](Use-Cases.md).  
