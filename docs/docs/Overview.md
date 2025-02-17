@@ -44,7 +44,7 @@ This API employs advanced authentication methods to ensure secure and efficient 
 - Retrieve audit records: Access comprehensive records from AvePoint Online Services.  
 - Streamline partner operations on customer management: Enhance efficiency in handling customer data and interactions through the Elements platform.  
 - Job information retrieval: Obtain detailed job data from AvePoint's Cloud Backup solutions for Microsoft 365, Microsoft Azure, AWS, Dynamics 365, and Google Workspace.  
-- EnPower data retrieval: Access and manage Power Platform data including environments, connections, Power Apps, Power Automate Cloud Flows, adn Power BI artifacts.  
+- EnPower data retrieval: Access and manage Power Platform data including environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts.  
 - Insights data retrieval: Access detailed reports and data insights from Insights for Microsoft 365.  
 - AvePoint Opus data management: Submit records to AvePoint Opus, retrieve due records, and destroy records.  
 
