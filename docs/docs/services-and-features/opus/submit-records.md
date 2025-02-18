@@ -40,7 +40,7 @@ The API requires multiple parameters to submit records to AvePoint Opus.
 [comment: the confilictOption in the response contains spelling error, but we have to keep it now]: #
 
 > [!NOTE] 
-> AvePoint Opus supports creating custom columns of different types to meet your requirements for variable record properties. When submitting records with custom columns, enter the internal name of each custom column in the connection. Values of custom columns are optional.
+> AvePoint Opus supports creating custom columns of different types to meet your requirements for variable record properties. When submitting records with custom columns, enter the internal name of each custom column defined in the connection. Values of custom columns are optional.
 >- For the **Single line of text** type of column, value should be a single of text. 
 >- For the **Multiple lines of text** type of column, value should be multiple lines of text. 
 >- For the **Date and Time** type of column, value should be a date and/or time. 
