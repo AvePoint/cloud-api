@@ -56,7 +56,7 @@ Each record retrieved through the API includes detailed attributes.
 
 ## Request Sample
 
-The following request structure is designed to retrieve records whose disposal due date is earlier than the specified time.  
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the AvePoint Opus environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/records/connector/records?id=63acafab-b2b8-4b44-8ddb-7a47672c2393&disposalDueDate=2024-12-20T11:13:00&startIndex=&itemsPerpage=10
