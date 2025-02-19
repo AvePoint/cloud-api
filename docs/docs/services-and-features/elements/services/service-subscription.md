@@ -5,7 +5,7 @@ Use this API to retrieve service subscription details for all the customers you 
 ## Permissions  
 
 The following permissions are required to call the API.  
-You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)  
+You must register an app through Elements for Partners > App Registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm)  
 
 | API |Permission  |
 |-----------|--------------|
@@ -165,4 +165,3 @@ Below is a sample response showcasing the structure and content of the data retu
         }
     ]
 }
-```

@@ -37,4 +37,4 @@ This document provides a detailed log of changes, updates, and enhancements made
 - Introduced endpoints for retrieving audit records, managing partner operations, and accessing job information from AvePoint Cloud Backup solutions.
 
 ### Deprecated
-- Marked the legacy API for deprecation after the December 2024 release. Transition to the modern API is recommended.
+- Marked the legacy API for deprecation after the December 2024 release. Transition to the current API is recommended.

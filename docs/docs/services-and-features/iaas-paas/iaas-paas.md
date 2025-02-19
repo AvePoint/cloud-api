@@ -45,7 +45,7 @@ If the request has been successfully processed, a 200 OK response will be return
 |totalCount|Total count of jobs matching the query parameters.|integer|
 |jobs|A collection of jobs.|list|
 |nextlink|Returns the link to the next page of results.|string|
-|errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).|string|
+|errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).|string|
 
 **Job details:**
 
@@ -73,7 +73,7 @@ https://graph-us.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType
 
 ## Response Sample  
 
-If successful, this method returns a 200 OK response code and a collection of  jobs in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+If successful, this method returns a 200 OK response code and a collection of  jobs in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {

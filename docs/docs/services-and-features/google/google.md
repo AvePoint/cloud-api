@@ -71,7 +71,7 @@ https://graph-us.avepointonlineservices.com/backup/google/admin/jobs?pageindex=0
 ## Response Sample
 
 If successful, this method returns a 200 OK response code and a collection of  jobs in the response body.  
-For details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code). 
+For details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code). 
 
 ```json
 {

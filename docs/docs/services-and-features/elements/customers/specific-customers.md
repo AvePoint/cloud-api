@@ -6,7 +6,7 @@ Use this API to access information for a specific  customer that you manage.
 ## Permissions  
 
 The following permission is required to call the API.  
-You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission  |
 |-----------|----------|
@@ -61,4 +61,3 @@ If the request has been successfully processed, a 200 OK response will be return
     "jobStatus": "Working", // The status of the customer’s tenant
     "countryOrRegion": "Vietnam" // The country or region name of the customer.
 }
-```
