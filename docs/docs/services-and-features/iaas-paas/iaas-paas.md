@@ -5,7 +5,7 @@ Get the job-related information (`/backup/vm/jobs` navigation property) from Clo
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API     | Permission required | 
 |-------------------|---------------|
@@ -143,4 +143,3 @@ If successful, this method returns a 200 OK response code and a collection of  j
     //For details on nextLink, see 
     "nextLink": "pZ5%2FtiSPUEfNBIK13B%2BPG5WyXm4CBVPocjiPTqZQgfxHHh2isXpr6JU4eK3OYIIUBKLwoh3tWeLFiMd5fn1eytgvIE3C5qgYl1XUUiBcpv2BPmBrJlKXxLOtTDHwvlPCA4wGnuqQEhd5E8NDFbYkWDa5QwLB5mIlFJj607ZxAKvQCG7oG1BLYb0bmRUf6Wz%2B%2FMfzvDPjhV%2Fpz%2F7SwHtj034jcRrkiMkJwXWB" //Link to the next page of results
 }
-```

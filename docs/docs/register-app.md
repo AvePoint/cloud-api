@@ -1,6 +1,6 @@
-# Register an App for Modern API
+# Register an App for API Access
 
-To register an app for the AvePoint Graph Modern API, follow these steps:
+To register an app for the AvePoint Graph API, follow these steps:
 
 1. Access AvePoint Online Services  
    - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).

@@ -5,7 +5,7 @@ This API method (`/insights/sharingLinks/export` navigation property) allows use
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API     | Permission required | 
 |-------------------|---------------|
@@ -61,4 +61,3 @@ The following is a sample response for this API method, which includes export jo
   "status": 200,
   "message": ""
 }
-```
