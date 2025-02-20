@@ -1,6 +1,6 @@
-# Register an App for Modern API
+# Register an App for API Access
 
-To register an app for the AvePoint Graph Modern API, follow these steps:
+To register an app for the AvePoint Graph API, follow these steps:
 
 1. Access AvePoint Online Services  
    - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).
@@ -47,7 +47,7 @@ See the table below for the services and permissions that can be used for access
 | **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower.                                                                             |
 | **Insights for Microsoft 365**     | insights.graph.readwrite.all                 | Retrieve or export data insights from Microsoft 365 environment.                     |
 | **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
-| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance Modern API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm) |
+| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm) |
 
 
  ## Client Secret

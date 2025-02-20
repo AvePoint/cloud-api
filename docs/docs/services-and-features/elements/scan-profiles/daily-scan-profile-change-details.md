@@ -5,7 +5,7 @@ Use this API to retrieve your customer's daily scan profile change details in Av
 ## Permissions  
 
 The following permission is required to call the API.  
-You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission  |
 |-----------|--------|
@@ -69,5 +69,4 @@ If the request has been successfully processed, a 200 OK response will be return
     "newRegisteredContent": [], // A list of newly registered objects in the daily report of the scan profile
     "movedToAnotherContainerObjects": [] // A list of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
 }
-```
 

@@ -1,14 +1,8 @@
 # Overview
 
-The AvePoint Graph Modern API is a robust suite of tools designed to streamline integration and enhance functionality for managing your digital collaboration environment. This API allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities.  
+The AvePoint Graph API is a robust suite of tools designed to streamline integration and enhance functionality for managing your digital collaboration environment. It allows developers to interact programmatically with AvePoint's solutions, facilitating automation, data integration, and enhanced operational capabilities.  
 
-## Available APIs  
-
-AvePoint Confidence Platform offers a range of APIs to suit different integration needs. The modern API provides advanced features and security, while the legacy API, though still functional, is scheduled for deprecation. Below is a detailed overview of each option:  
-
-### Modern API  
-
-The Modern API provides advanced features to optimize integration and security:  
+The API provides advanced features to optimize integration and security:  
 
 - Authentication methods: Supports client secret and certificate authentication for secure and efficient access control. This flexibility allows developers to choose the most suitable authentication method for their needs.  
 - Unified endpoint: The API can be accessed via a unified endpoint format `https://graph-{dc}.avepointonlineservices.com`. Note that the endpoint differs based upon the data center you want to access. For details, refer to [Endpoints Upon Data Centers](#endpoints-upon-data-center). 
@@ -18,28 +12,26 @@ The Modern API provides advanced features to optimize integration and security:
 - Comprehensive functionality: Enables seamless interaction with AvePoint services, supporting tasks like data management, reporting, and configuration.  
 - Scalability and performance: Designed to handle large-scale operations, ensuring reliability and speed in various enterprise scenarios.  
 
-### Legacy API  
+## Legacy API  
 
 The legacy API offers essential capabilities but is slated for deprecation:  
 
 - Functionalities:  
-
   - Retrieve audit records for compliance and monitoring.  
   - Import objects into AvePoint Online Services for streamlined data management.  
   - Register partner customers to facilitate partner integrations.  
   - Access Cloud Backup for Microsoft 365 job information for backup management.  
 
-- **Deprecation Notice**: This API is scheduled for deprecation after the December 2024 release. Transitioning to modern APIs is highly recommended to ensure continued support and access to the latest features.  
+- **Deprecation Notice**: This API is scheduled for deprecation after the December 2024 release. Transitioning to the current API is highly recommended to ensure continued support and access to the latest features.  
 - Documentation: For additional details on the legacy API, refer to [AvePoint Online Services Web API Help](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-online-services-api/index.htm).  
-By leveraging these APIs, you can efficiently manage and interact with your cloud data in the AvePoint Confidence Platform, ensuring seamless integration and enhanced productivity.  
 
-## What's in AvePoint Graph Modern API
+## What's in the current AvePoint Graph API
 
-AvePoint Graph Modern API provides a unified endpoint to accessing AvePoint services data, designed to cater to IT professionals seeking robust data management, data insights, and backup monitoring solutions.  
+AvePoint Graph API provides a unified endpoint to accessing AvePoint services data, designed to cater to IT professionals seeking robust data management, data insights, and backup monitoring solutions.  
 
 ### Introduction
 
-This API employs advanced authentication methods to ensure secure and efficient access to a wide range of functionalities. These include:  
+The AvePoint Graph API employs advanced authentication methods to ensure secure and efficient access to a wide range of functionalities. These include:  
 
 - Retrieve audit records: Access comprehensive records from AvePoint Online Services.  
 - Streamline partner operations on customer management: Enhance efficiency in handling customer data and interactions through the Elements platform.  

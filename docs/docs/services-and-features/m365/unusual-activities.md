@@ -5,7 +5,7 @@ Get the basic information of unusual activities (`/backup/m365/cloudbackup/unusu
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API   | Permission |
 |---|---|
@@ -53,7 +53,7 @@ https://graph-us.avepointonlineservices.com/backup/m365/cloudbackup/unusualactiv
 ## Response Sample
 
 If successful, this method returns a 200 OK response code and the basic information of unusual activities in the response body.  
-For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
@@ -67,4 +67,3 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
     }
   ]
 }
-```
