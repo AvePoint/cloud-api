@@ -6,7 +6,7 @@ Use this API to retrieve audit records (`/aos/audit` navigation property) for ac
 
 The following permission is required to call this API.  
 
-You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API    | Permission  | 
 |-------------------|---------------------|
@@ -131,5 +131,3 @@ If successful, this method returns a 200 OK response code and a collection of us
         }
     ]
 }
-
-```
