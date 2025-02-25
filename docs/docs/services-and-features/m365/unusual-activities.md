@@ -1,6 +1,6 @@
 # Retrieve Unusual Activities
 
-Get the basic information of unusual activities (`/backup/m365/cloudbackup/unusualactivitydata` navigation property) detected by Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackup/unusualactivitydata` endpoint, users can gain the number of sites with unusual activities and that are under potential ransomware attacks in your tenant.
+Get the basic information of unusual activities (`/backup/m365/unusualactivitydata` navigation property) detected by Cloud Backup for Microsoft 365. By invoking the `/backup/m365/unusualactivitydata` endpoint, users can gain the number of sites with unusual activities and that are under potential ransomware attacks in your tenant.
 
 ## Permission
 
@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API   | Permission |
 |---|---|
-|`/backup/m365/cloudbackup/unusualactivitydata` | microsoft365backup.unusualActivity.read.all|
+|`/backup/m365/unusualactivitydata` | microsoft365backup.unusualActivity.read.all|
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve the basic in
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/backup/m365/cloudbackup/unusualactivitydata` | Gets the basic information of unusual activities detected by Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/unusualactivitydata` | Gets the basic information of unusual activities detected by Cloud Backup for Microsoft 365. |
 
 ## Query Parameters
 
@@ -47,7 +47,7 @@ The API response provides the basic information of unusual activities. Each job 
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the basic information of unusual activities in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.  
 
 ```json
-https://graph-us.avepointonlineservices.com/backup/m365/cloudbackup/unusualactivitydata?StartTime=2024-01-01&FinishTime=2024-12-30?Location=NAM
+https://graph-us.avepointonlineservices.com/backup/m365/unusualactivitydata?StartTime=2024-01-01&FinishTime=2024-12-30?Location=NAM
 ```
 
 ## Response Sample

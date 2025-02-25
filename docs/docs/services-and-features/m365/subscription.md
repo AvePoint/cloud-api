@@ -1,6 +1,6 @@
 # Retrieve Subscription Consumption
 
-Get the subscription consumption information (`/backup/m365/cloudbackup/licenseconsumption` navigation property) of Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackup/licenseconsumption` endpoint, users can gain comprehensive insights into subscription usage, facilitating efficient resource management and ensuring service compliance.  
+Get the subscription consumption information (`/backup/m365/licenseconsumption` navigation property) of Cloud Backup for Microsoft 365. By invoking the `/backup/m365/licenseconsumption` endpoint, users can gain comprehensive insights into subscription usage, facilitating efficient resource management and ensuring service compliance.  
 
 ## Permission
 
@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API   | Permission  |
 |-------------------|----------------------|
-|`/backup/m365/cloudbackup/licenseconsumption`|microsoft365backup.subscriptionInfo.read.all |
+|`/backup/m365/licenseconsumption`|microsoft365backup.subscriptionInfo.read.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve the subscrip
 
 | Method | Path | Description |
 | --- | --- | --- |
-| GET | `/backup/m365/cloudbackup/licenseconsumption` | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/licenseconsumption` | Gets the subscription consumption information of Cloud Backup for Microsoft 365. |
 
 ## Responses
 
@@ -36,7 +36,7 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 To use this API, send a GET request to the specified endpoint. This will return the subscription consumption information in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/backup/m365/cloudbackup/licenseconsumption
+https://graph-us.avepointonlineservices.com/backup/m365/licenseconsumption
 ```
 
 ## Response Sample
