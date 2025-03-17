@@ -81,7 +81,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
     "jobs": [
         {
             "jobId": "FB20241027081716326", // Unique job identifier 
-            "status": 2, // Job status. 2 indicates the job is in progress.
+            "status": 2, // Job status. 2 indicates the job is finished.
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 1, // Count of successful objects
             "skippedCount": 0, // Count of skipped objects
@@ -89,11 +89,12 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-27T08:17:06Z", // Start time of the job
             "finishTime": "2024-10-27T08:21:08Z", // Finish time of the job
             "duration": "00:04:01", // Duration of the job
-            "comments": "" // Comments for the job
+            "comments": "", // Comments for the job
+            "jobType": 1 // Job type
         },
         {
             "jobId": "IB20241025160014096", // Unique job identifier
-            "status": 2, // Job status. 2 indicates the job is in progress.
+            "status": 2, // Job status. 2 indicates the job is in finished.
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 10, // Count of successful objects
             "skippedCount": 35, // Count of skipped objects
@@ -101,11 +102,12 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-25T16:00:14Z", // Start time of the job
             "finishTime": "2024-10-27T08:00:58Z", // Finish time of the job
             "duration": "1.16:00:44", // Duration of the job in days.hours:minutes:seconds format.
-            "comments": "" // Comments for the job.
+            "comments": "", // Comments for the job
+            "jobType": 1 // Job type
         },
         {
             "jobId": "IB20241010055858683", // Unique job identifier 
-            "status": 2, // The job is in progress
+            "status": 2, // The job is in finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 15, // Count of successful objects
             "skippedCount": 10, // Count of skipped objects
@@ -113,11 +115,12 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-10T05:58:58Z", // Start time of the job
             "finishTime": "2024-10-10T06:59:13Z", // Finish time of the job
             "duration": "01:00:14", // Duration of the job in hours:minutes:seconds format.
-            "comments": "" // Comments for the job
+            "comments": "", // Comments for the job
+            "jobType": 1 // Job type
         },
         {
             "jobId": "IB20241002054145888", // Unique job identifier
-            "status": 2, // The job is in progress
+            "status": 2, // The job is in finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 15, // Count of successful objects
             "skippedCount": 20, // Count of skipped objects
@@ -125,11 +128,12 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-02T05:41:45Z", // Start time of the job
             "finishTime": "2024-10-02T18:44:11Z", // Finish time of the job
             "duration": "13:02:26", // Duration of the job
-            "comments": "" // Comments for the job
+            "comments": "", // Comments for the job
+            "jobType": 1 // Job type
         },
         {
             "jobId": "IB20241001160011064", // Unique job identifier
-            "status": 2, // The job is in progress
+            "status": 2, // The job is in finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 88, // Count of successful objects
             "skippedCount": 0, // Count of skipped objects
@@ -137,7 +141,8 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-01T16:00:11Z", // Start time of the job
             "finishTime": "2024-10-02T00:56:42Z", // Finish time of the job
             "duration": "08:56:31", // Duration of the job
-            "comments": "" // Comments for the job
+            "comments": "", // Comments for the job
+            "jobType": 1 // Job type
         }
     ],
     //For details on nextLink, see 
