@@ -2,6 +2,12 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## April 2025
+
+### Added  
+
+Added `jobType` property to the response of the `backup/vm/jobs` endpoint.
+
 ## February 2025
 
 ### Added
@@ -10,7 +16,7 @@ This document provides a detailed log of changes, updates, and enhancements made
     - Cloud Backup for Google Workspace
     - AvePoint Opus
     - Insights for Microsoft 365
-    - EnPower   
+    - EnPower  
 - Implemented new API for retrieving unusual activities or potential ransomware attacks for Microsoft 365 environment in the `/backup/m365/cloudbackup/unusualactivitydata` endpoint. 
 
 ### Changed
