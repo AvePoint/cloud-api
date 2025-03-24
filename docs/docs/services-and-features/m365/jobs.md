@@ -33,6 +33,7 @@ The API supports several query parameters to refine and customize the data retri
 | jobType | Sets the job types that you want to get. <br> Valid values: <br> <ul><li> **0** for All <br> </li><li> **1** for Backup <br> </li><li> **2** for Restore <br> </li><li> **3** for Export <br> </li><li> **4** for Deletion <br> </li><li> **5** for Retention</li></ul>| enum | No |
 | objectType | Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> **0** for All <br> </li><li>**1** for Exchange Online <br> </li><li>**2** for  SharePoint Online <br> </li><li>**3** for OneDrive <br> </li><li>**4** for Microsoft 365 Groups <br> </li><li>**5** for Project Online <br> </li><li>**6** for Public Folder <br> </li><li>**7** for Teams <br> </li><li>**8** for Viva Engage <br> </li><li>**9** for Teams Chat <br> </li><li>**10** for Power BI <br> </li><li>**11** for Power Automate <br> </li><li>**12** for Power Apps</li></ul> | enum <br>  | No |
 | jobState | Sets the job status. <br> Valid values: <br> <ul><li>**0** for All <br> </li><li>**1** for In Progress <br> </li><li>**2** for Finished <br> </li><li>**3** for Failed <br> </li><li>**4** for Finished with Exception <br> </li><li>**5** for Partially Finished </li></ul>|enum | No |
+| location   | This parameter is only available for AOS tenants that support Multi-Geo. If no value is set for this parameter, this method retrieves the unusual activities from all locations in your AOS tenant. To get unusual activities from specific data centers, use the following values: <ul><li>**PrimaryGeoLocation** (Central AOS location)</li> <li>**NAM** (North America)</li> <li>**EUR** (Europe/Middle East/Africa)</li> <li>**GBR** (United Kingdom)</li> <li>**JPN** (Japan)</li> <li>**APC** (Asia-Pacific)</li> <li>**AUS** (Australia)</li> <li>**CAN** (Canada)</li> <li>**IND** (India)</li> <li>**FRA** (France)</li>    <li>**ARE** (United Arab Emirates)</li> <li>**ZAF** (South Africa)</li> <li>**CHE** (Switzerland)</li> <li>**KOR** (Korea)</li> <li>**DEU** (Germany)</li> <li>**BRA** (Brazil)</li> <li>**NOR** (Norway)</li> <li>**SWE** (Sweden)</li> <li>**QAT** (Qatar)</li> <li>**POL** (Poland)</li> <li>**ITA** (Italy)</li></ul>     | string | No |
 | pageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| integer | No |
 | pageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | integer | No |
 
@@ -84,7 +85,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.  
 
 ```json
-https://graph-us.avepointonlineservices.com/backup/m365/jobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1
+https://graph-us.avepointonlineservices.com/backup/m365/jobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1&Location=NAM
 ```
 
 ## Response Sample
