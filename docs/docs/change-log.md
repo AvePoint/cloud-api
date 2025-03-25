@@ -8,6 +8,12 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 Added `jobType` property to the response of the `backup/vm/jobs` endpoint.
 
+### Changed
+
+- Updated the `/backup/m365/cloudbackup/getjobs` endpoint to `/backup/m365/jobs`.
+- Updated the `/backup/m365/cloudbackup/licenseconsumption` endpoint to `/backup/m365/licenseconsumption`.
+- Updated the `/backup/m365/cloudbackup/unusualactivitydata` endpoint to `/backup/m365/unusualactivitydata`.
+
 ## February 2025
 
 ### Added
@@ -34,13 +40,16 @@ Added `jobType` property to the response of the `backup/vm/jobs` endpoint.
 ### Fixed
 - Resolved the issue with the `Dynamics.ReadWrite.All` scope where the API does not work when using it with the other scopes.  -->
 
+- Updated the `/cloudbackup/jobs` endpoint to `/backup/m365/cloudbackup/getjobs`.
+- Updated the `/cloudbackup/licenseconsumption` endpoint to `/backup/m365/cloudbackup/licenseconsumption`.
+
 
 ## December 2024
 
 ### Added
 
 - Initial release of the AvePoint Graph API.
-- Introduced endpoints for retrieving audit records, managing partner operations, and accessing job information from AvePoint Cloud Backup solutions.
+- Introduced endpoints for retrieving audit records, managing partner operations, and accessing job information and subscription consumption from AvePoint Cloud Backup solutions.
 
 ### Deprecated
 - Marked the legacy API for deprecation after the December 2024 release. Transition to the current API is recommended.
