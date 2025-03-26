@@ -1,0 +1,4 @@
+- name: Resource Mailboxes
+  href: resourcemailboxes.md
+- name: User and Shared Mailboxes
+  href: userandsharedmailboxes.md
