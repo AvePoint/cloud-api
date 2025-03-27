@@ -45,8 +45,8 @@ The API response provides detailed information about the resource mailboxes retr
 
 | **Elements**                              | Description                                                                 | Type    |
 |---------------------------------------|-----------------------------------------------------------------------------|---------|
-| Id                                    | The unique identifier of the resource mailbox.                              | string  |
-| userId                                | The unique identifier of the user related to the resource mailbox.          | string  |
+| Id                                    | The unique identifier of the resource mailbox in PowerShell.                              | string  |
+| userId                                | The unique identifier of the resource mailbox in Microsoft 365.          | string  |
 | principalName                         | The user principal name of the resource mailbox.                            | string  |
 | name                                  | The name of the resource.                                                   | string  |
 | emailAddress                          | The email address of the resource mailbox.                                  | string  |
@@ -166,3 +166,78 @@ https://graph-us.avepointonlineservices.com/smp/exchange/resourcemailboxes
 ## Response Sample
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
+```json
+{
+    "resourceMailboxes": [
+        {
+            "id": "73669ae7-55fe-4b47-8fc4-47324c01d5d2",//The unique identifier of the resource mailbox in PowerShell
+            "userId": "",// The unique identifier of the resource mailbox in Microsoft 365
+            "principalName": "",// The user principal name of the resource mailbox
+            "name": "",// The name of the resource mailbox in PowerShell
+            "emailAddress": "",// The email address of the resource mailbox
+            "displayName": "Annie_Room_BulkCreate_008",// The display name of the resource
+            "recipientType": "Room mailbox", // The recipient type of the resource mailbox
+            "status": "Normal", // The status of the resource mailbox.
+            "hiddenFromAddressListsEnabled": false, // Indicates whether this mailbox is hidden from the address list
+            "createTime": "2025-01-13 02:32:52", // The time when the resource was created
+            "modifiedTime": "2025-01-22 23:26:10", // The latest time when the resource was modified
+            "tenantId": "",// The unique identifier of the tenant that the resource belongs to
+            "tenantDomain": "", // The domain of the tenant that the resource belongs to
+            "container": "Default Exchange mailbox container",// The container that the resource is in
+            "containerId": "", // The unique identifier of the container that the resource is in
+            "itemCount": 56, // The number of items in the resource mailbox
+            "storageUsed": 0,// The used storage size of the resource mailbox
+            "issueWarningQuota": 0, // The maximum storage limit before a warning is issued. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user
+            "prohibitSendQuota": 0, // The prohibit send limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message 
+            "prohibitSendReceiveQuota": 0, // The prohibit send and receive limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message
+            "deletedItemCount": 0, // The number of items in the Deleted items folder of the resource mailbox
+            "deletedItemSize": 0, // The size of Deleted items folder of the resource mailbox
+            "firstScanTime": "2025-01-13 02:35:03",// The time when the resource was initially scanned into EnPower
+            "officeLocation": "Ho Chi Minh",// The office location of the resource
+            "businessPhones": "[\"809189220\"]",// The business phone number of the resource
+            "department": "QA01",// The department of the resource
+            "companyName": "Facebook",// The company name of the resource
+            "streetAddress": "Nguyen Van Linh",// The street address of the resource
+            "city": "Ho Chi Minh",// The city of the resource
+            "state": "",// The state of the resource
+            "postalCode": "",// The postal code of the resource
+            "countryOrRegion": "",// The country or region of the resource
+            "resourceCapacity": 9999,// The capacity of the resource
+            "addressBookPolicy": null,// The address book policy of the resource mailbox
+            "customAttributes": {//Custom Attributes // Extension attributes added to the resource mailbox
+                "customAttribute1": "", // The value of custom attribute 1 added to the resource mailbox
+                "customAttribute2": "", // The value of custom attribute 2 added to the resource mailbox
+                "customAttribute3": "", // The value of custom attribute 3 added to the resource mailbox
+                "customAttribute4": "", // The value of custom attribute 4 added to the resource mailbox
+                "customAttribute5": "", // The value of custom attribute 5 added to the resource mailbox
+                "customAttribute6": "", // The value of custom attribute 6 added to the resource mailbox
+                "customAttribute7": "", // The value of custom attribute 7 added to the resource mailbox
+                "customAttribute8": "", // The value of custom attribute 8 added to the resource mailbox
+                "customAttribute9": "", // The value of custom attribute 9 added to the resource mailbox
+                "customAttribute10": "", // The value of custom attribute 10 added to the resource mailbox
+                "customAttribute11": "", // The value of custom attribute 11 added to the resource mailbox
+                "customAttribute12": "", // The value of custom attribute 12 added to the resource mailbox
+                "customAttribute13": "", // The value of custom attribute 13 added to the resource mailbox
+                "customAttribute14": "", // The value of custom attribute 14 added to the resource mailbox
+                "customAttribute15": "" // The value of custom attribute 15 added to the resource mailbox
+            },
+            "notes": "", // The notes added to the resource
+            "primaryContact": null, // The Cloud Governance primary contact of the resource mailbox
+            "secondaryContact": null,// The Cloud Governance secondary contact of the resource mailbox
+            "lastRenewalTime": "",// The last time when the resource mailbox was renewed.
+            "lastRenewalBy": null,// The latest user who renewed the resource mailbox
+            "renewProfileApplied": null,// Indicates if a renewal profile has been applied to the resource mailbox
+            "metadata": [],// The Cloud Governance metadata associated with the resource mailbox
+            "electionProfileApplied": null,// Indicates if a contact election profile has been applied to the resource mailbox
+            "isRegistered": false,// Indicates if the resource mailbox has been imported to Cloud Governance
+            "phase": "",// The current phase of the resource mailbox in Cloud Governance
+            "phaseAssignees": "",// The individuals assigned to the current phase of the resource mailbox in Cloud Governance
+            "renewProfile": "N/A", // The Cloud Governance renewal profile applied to the resource mailbox
+            "electionProfile": "N/A",// The Cloud Governance contact election profile applied to the resource mailbox
+            "claimStatus": ""// The Cloud Governance claim status of the resource mailbox
+        }
+    ],
+    "totalCount": 1,
+    "nextLink": ""
+}

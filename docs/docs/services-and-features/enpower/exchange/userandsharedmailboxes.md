@@ -1,4 +1,4 @@
-# Retrieve Resource Mailbox Details
+# Retrieve User or Shared Mailbox Details
 
 Use this API to access and retrieve information of your user or shared mailboxes.
 
@@ -44,10 +44,10 @@ The API response provides detailed information about the mailboxes retrieved. Ea
 
 | Elements                              | Description                                                                 | Type    |
 |---------------------------------------|-----------------------------------------------------------------------------|---------|
-| Id                                    | The unique identifier of the mailbox.                                       | string  |
-| userId                                | The unique identifier of the user related to the mailbox.                   | string  |
+| Id                                    | The unique identifier of the mailbox in PowerShell.                                       | string  |
+| userId                                | The unique identifier of the mailbox in Microsoft 365.                   | string  |
 | principalName                         | The user principal name of the mailbox.                                     | string  |
-| name                                  | The name of the mailbox.                                                    | string  |
+| name                                  | The name of the mailbox in PowerShell.                                                    | string  |
 | emailAddress                          | The email address of the mailbox.                                           | string  |
 | displayName                           | The display name of the mailbox.                                            | string  |
 | recipientType                         | The recipient type of the mailbox.                                          | string  |
@@ -154,3 +154,68 @@ https://graph-us.avepointonlineservices.com/smp/exchange/mailboxes
 ## Response Sample
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+
+```json
+{
+    "mailboxes": [
+        {
+            "id": "f78625f8-3ec3-4665-835a-3502484af738", // The unique identifier of the mailbox
+            "userId": "",// The unique identifier of the mailbox in Microsft 365
+            "principalName": "", // The user principal name of the mailbox
+            "name": "",// The name of the mailbox in PowerShell.
+            "emailAddress": "", // The email address of the mailbox.
+            "displayName": "39_Gary_aa_the", // The display name of the mailbox
+            "recipientType": "User mailbox", // The recipient type of the mailbox
+            "status": "Archived", // The status of the mailbox
+            "hiddenFromAddressListsEnabled": false, Indicates whether this mailbox is hidden from the address list
+            "createTime": "2024-10-02 06:27:18", // The time when the mailbox was created
+            "modifiedTime": "2024-12-08 17:25:26",// The latest time when the mailbox was modified
+            "tenantId": "",// The unique identifier of the tenant that the mailbox belongs to
+            "tenantDomain": "", // The domain of the tenant that the mailbox belongs to
+            "container": "Default Exchange mailbox container",// The container that the mailbox is in
+            "containerId": "", // The unique identifier of the container that the mailbox is in
+            "itemCount": 56, // The number of items in the mailbox
+            "storageUsed": 1,// The used storage size of the mailbox
+            "issueWarningQuota": 100352, // The maximum storage limit before a warning is issued. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user
+            "prohibitSendQuota": 101376,// The prohibit send limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message
+            "prohibitSendReceiveQuota": 102400, // The prohibit send and receive limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message
+            "deletedItemCount": 2, // The number of items in the Deleted items folder of the mailbox
+            "deletedItemSize": 0,// The size of Deleted items folder of the mailbox
+            "firstScanTime": "2025-01-02 04:25:37", // The time when the mailbox was initially scanned into EnPower
+            "firstName": null, // The first name of the mailbox user
+            "lastName": null, // The last name of the mailbox user
+            "alias": "39_Gary_aa_the", //The alias of the mailbox
+            "autoReplyEnabled": false, // Indicates whether this mailbox has automatic replies enabled
+            "litigationHoldEnabled": true, // Indicates whether this mailbox has litigation hold enabled
+            "emailForwardingEnabled": false, //Indicates whether email forwarding is enabled for the mailbox
+            "archiveStatus": "Active", // The archiving status of the mailbox
+            "archiveName": "", // The name of the folder in the user's mailbox that contains the archive
+            "lastActivityDate": "0001-01-01 00:00:00", // The latest date when the mailbox has any activity.
+            "forwardingAddressDomain": "", // The domain of the email address that emails are being forwarded to
+            "externalForwardingAddressDomain": "",// The domain of the external email address that emails are being forwarded to
+            "externalEmailForwardingEnabled": false, // Indicates whether this mailbox is forwarding emails to external email addresses
+            "recipientLimits": 500,// The maximum number of allowed recipients on the To, Cc, and Bcc lines of the email message sent from this mailbox
+            "mailboxPolicies": { // The mailbox policies applied to this mailbox
+                "addressBookPolicy": null, // The address book policy applied to the mailbox
+                "retentionPolicy": "Default MRM Policy", // The retention policy applied to the mailbox
+                "roleAssignmentPolicy": "Default Role Assignment Policy", // The role assignment policy applied to the mailbox
+                "sharingPolicy": "Default Sharing Policy" // The sharing policy applied to the mailbox
+            },
+            "primaryContact": null, // The Cloud Governance primary contact of the mailbox
+            "secondaryContact": null,// The Cloud Governance secondary contact of the mailbox
+            "lastRenewalTime": "",// The last time when the mailbox was renewed
+            "lastRenewalBy": null,// The latest user who renewed the mailbox
+            "renewProfileApplied": null,// Indicates if a renewal profile has been applied to the mailbox
+            "metadata": [],// The Cloud Governance metadata associated with the mailbox
+            "electionProfileApplied": null,// Indicates if a contact election profile has been applied to the mailbox
+            "isRegistered": false,// Indicates if the mailbox has been imported to Cloud Governance
+            "phase": "",// The current phase of the mailbox in Cloud Governance.
+            "phaseAssignees": "",// The individuals assigned to the current phase of the mailbox in Cloud Governance
+            "renewProfile": "N/A", // The Cloud Governance renewal profile applied to the mailbox
+            "electionProfile": "N/A",// The Cloud Governance contact election profile applied to the mailbox
+            "claimStatus": ""// The Cloud Governance claim status of the mailbox
+        }
+    ],
+    "totalCount": 1,
+    "nextLink": ""
+}
