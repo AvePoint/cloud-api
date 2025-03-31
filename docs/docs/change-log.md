@@ -40,10 +40,6 @@ Added `jobType` property to the response of the `backup/vm/jobs` endpoint.
 ### Fixed
 - Resolved the issue with the `Dynamics.ReadWrite.All` scope where the API does not work when using it with the other scopes.  -->
 
-- Updated the `/cloudbackup/jobs` endpoint to `/backup/m365/cloudbackup/getjobs`.
-- Updated the `/cloudbackup/licenseconsumption` endpoint to `/backup/m365/cloudbackup/licenseconsumption`.
-
-
 ## December 2024
 
 ### Added
