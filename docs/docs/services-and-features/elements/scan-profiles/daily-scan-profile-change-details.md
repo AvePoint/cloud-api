@@ -5,11 +5,11 @@ Use this API to retrieve your customer's daily scan profile change details in Av
 ## Permissions  
 
 The following permission is required to call the API.  
-You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements for Partners > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/customers/{id}/scanProfilesDailyNewDetail/profileId/{ProfileId}`| partner.scanprofiles.read.all|  
+| `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewDetails`| partner.scanprofiles.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve customer's d
 
 | Method | Endpoint | Description |  
 |-----------|-----------|-----------|
-|GET|`/partner/customers/{id}/scanProfilesDailyNewDetail/profileId/{ProfileId}`| Retrieves your customer's daily scan profile change details in AvePoint Online Services.|
+|GET|`/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewDetails`| Retrieves your customer's daily scan profile change details in AvePoint Online Services.|
 
 
 ## Query Parameters
@@ -49,7 +49,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.  
 
 ```json
-https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43bb-b04b-794cb9af5ea3/scanProfilesDailyNewDetail/profileId/0e5e152d-65cc-4206-9829-636ee72c88c3
+https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43bb-b04b-794cb9af5ea3/scanProfiles/0e5e152d-65cc-4206-9829-636ee72c88c3/dailyNewDetails
 ```
 
 ## Response Sample

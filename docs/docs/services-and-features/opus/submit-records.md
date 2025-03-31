@@ -28,7 +28,7 @@ The API requires multiple parameters to submit records to AvePoint Opus.
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
 |id|The ID of the connection. |GUID|Yes|
-|confilictOption|The conflict resolution when there are records with the same unique key.<ul><li> **Overwrite** to overwrite the record information in AvePoint Opus.</li><li> **Skip** to skip submitting the record to AvePoint Opus. </li></ul>|string|Yes|
+|conflictOption|The conflict resolution when there are records with the same unique key.<ul><li> **Overwrite** to overwrite the record information in AvePoint Opus.</li><li> **Skip** to skip submitting the record to AvePoint Opus. </li></ul>|string|Yes|
 |rowKey|The unique key of the record.|string|Yes|
 |leafName|The internal name of the built-in **Name** column in the connection.|string|Yes|
 |termFullPath|The internal name of the built-in **Classification**  column in the connection. The value must be the full path of a term in AvePoint Opus.|string|No|
