@@ -65,7 +65,7 @@ https://graph-us.avepointonlineservices.com/records/connector/records?id=63acafa
 ## Response Sample
 
 If the quest has been successfully processed, a 200 OK response code will be returned.  
-For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).  
+For details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).  
 
 ```json
 {
