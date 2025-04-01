@@ -73,7 +73,7 @@ https://graph-us.avepointonlineservices.com/records/connector/records
 ```json
 {  
     "id": "d9da492f-cc67-4920-99f9-6fbaae1f1410", // The ID of the connection.
-      "confilictOption": "Overwrite", // The conflict resolution when there are records with the same unique key. Overwrite is to overwrite the record information in AvePoint Opus.
+      "conflictOption": "Overwrite", // The conflict resolution when there are records with the same unique key. Overwrite is to overwrite the record information in AvePoint Opus.
       "data": [
           {
           "rowKey": "SingleText", // The unique key of the record.
@@ -91,7 +91,7 @@ https://graph-us.avepointonlineservices.com/records/connector/records
 ## Response Sample
 
 If the request has been successfully processed, a 201 response code will be returned.  
-For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).  
+For details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).  
 
 ```json
 {

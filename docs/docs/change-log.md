@@ -6,7 +6,7 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Added  
 
-Added `jobType` property to the response of the `backup/vm/jobs` endpoint.
+Added the `jobType` property to the response of the `backup/vm/jobs` endpoint.
 
 ### Changed
 
@@ -16,6 +16,12 @@ Added `jobType` property to the response of the `backup/vm/jobs` endpoint.
 - Updated the `/partner/customers/{id}/scanProfilesDetails/profileId/{ProfileId}` endpoint to `/partner/customers/{id}/scanProfiles/{ProfileId}`.
 - Updated the `/partner/customers/{id}/scanProfilesDailyNew/profileId/{ProfileId}` endpoint to `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewSummary`.
 - Updated the `/partner/customers/{id}/scanProfilesDailyNewDetail/profileId/{ProfileId}` endpoint to `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewDetails`.
+
+
+### Fixed
+
+Corrected the spelling mistake of the `conflictOption` property in the request of the `/records/connector/records` endpoint. It was previoulsy misspelled as `confilictOption`.
+
 
 ## February 2025
 
