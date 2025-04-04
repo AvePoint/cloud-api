@@ -26,9 +26,9 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameters | Description | Type | Required |
 |--- | --- | --- | --- |
-| top | The number of resource mailbox records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
-| tenant | The tenant in which data of resource mailboxes are retrieved. By default, data of all tenants are retrieved. | string | No |
-| resourceMailboxType | The type of resource mailboxes to retrieve. <br> Valid values: <br> <ul><li> **0** for **Both** <br> </li><li> **1** for **User mailbox** <br> </li><li> **2** for **Shared mailbox**.</ul> By default, both types of mailboxes are retrieved.| enum | No |
+| top | The number of mailbox records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
+| tenant | The tenant in which data of mailboxes are retrieved. By default, data of all tenants are retrieved. | string | No |
+| mailboxType | The type of mailboxes to retrieve. <br> Valid values: <br> <ul><li> **0** for **Both** <br> </li><li> **1** for **User mailbox** <br> </li><li> **2** for **Shared mailbox**.</ul> By default, both types of mailboxes are retrieved.| enum | No |
 
 ## Responses
 
@@ -90,9 +90,9 @@ The API response provides detailed information about the mailboxes retrieved. Ea
 | electionProfileApplied                | Indicates if a contact election profile has been applied to the mailbox. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered                          | Indicates if the mailbox has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | phase                                 | The current phase of the mailbox in Cloud Governance.                       | string  |
-| phaseAssignees                        | The individuals assigned to the current phase of the mailbox in Cloud Governance. For the detailed user properties, refer to [User Details](#user-details). | string  |
-| renewProfile                          | The Cloud Governance renewal profile applied to the mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | string  |
-| electionProfile                       | The Cloud Governance contact election profile applied to the mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | string  |
+| phaseAssignees                        | The individuals assigned to the current phase of the mailbox in Cloud Governance. For the detailed user properties, refer to [User Details](#user-details). | object  |
+| renewProfile                          | The Cloud Governance renewal profile applied to the mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object  |
+| electionProfile                       | The Cloud Governance contact election profile applied to the mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object  |
 | claimStatus                           | The Cloud Governance claim status of the mailbox.                           | string  |
 
 
@@ -139,8 +139,8 @@ The API response provides detailed information about the mailboxes retrieved. Ea
 
 | Elements             | Description                                      | Type    |
 |----------------------|--------------------------------------------------|---------|
-| id                   | The unique identifier for the profile.           | string  |
 | name                 | The name for the profile.                        | string  |
+| id                   | The unique identifier for the profile.           | string  |
 
 
 ## Request Sample
@@ -164,10 +164,10 @@ If the request has been successfully processed, a 200 OK response will be return
             "principalName": "", // The user principal name of the mailbox
             "name": "",// The name of the mailbox in PowerShell.
             "emailAddress": "", // The email address of the mailbox.
-            "displayName": "39_Gary_aa_the", // The display name of the mailbox
+            "displayName": "Sample mailbox", // The display name of the mailbox
             "recipientType": "User mailbox", // The recipient type of the mailbox
             "status": "Archived", // The status of the mailbox
-            "hiddenFromAddressListsEnabled": false, Indicates whether this mailbox is hidden from the address list
+            "hiddenFromAddressListsEnabled": false, // Indicates whether this mailbox is hidden from the address list
             "createTime": "2024-10-02 06:27:18", // The time when the mailbox was created
             "modifiedTime": "2024-12-08 17:25:26",// The latest time when the mailbox was modified
             "tenantId": "",// The unique identifier of the tenant that the mailbox belongs to
@@ -184,7 +184,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "firstScanTime": "2025-01-02 04:25:37", // The time when the mailbox was initially scanned into EnPower
             "firstName": null, // The first name of the mailbox user
             "lastName": null, // The last name of the mailbox user
-            "alias": "39_Gary_aa_the", //The alias of the mailbox
+            "alias": "Sample alias", //The alias of the mailbox
             "autoReplyEnabled": false, // Indicates whether this mailbox has automatic replies enabled
             "litigationHoldEnabled": true, // Indicates whether this mailbox has litigation hold enabled
             "emailForwardingEnabled": false, //Indicates whether email forwarding is enabled for the mailbox
@@ -194,7 +194,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "forwardingAddressDomain": "", // The domain of the email address that emails are being forwarded to
             "externalForwardingAddressDomain": "",// The domain of the external email address that emails are being forwarded to
             "externalEmailForwardingEnabled": false, // Indicates whether this mailbox is forwarding emails to external email addresses
-            "recipientLimits": 500,// The maximum number of allowed recipients on the To, Cc, and Bcc lines of the email message sent from this mailbox
+            "recipientLimits": "500",// The maximum number of allowed recipients on the To, Cc, and Bcc lines of the email message sent from this mailbox
             "mailboxPolicies": { // The mailbox policies applied to this mailbox
                 "addressBookPolicy": null, // The address book policy applied to the mailbox
                 "retentionPolicy": "Default MRM Policy", // The retention policy applied to the mailbox
