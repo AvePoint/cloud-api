@@ -18,7 +18,7 @@ This section provides details on the HTTP method and endpoint used to retrieve g
 
 | Method | Endpoint | Description | 
 |--- | --- | --- |
-| GET | `/smp/exchange/resourcemailboxes` | Retrieves your shared mailboxes' information | 
+| GET | `/smp/exchange/resourcemailboxes` | Retrieves your resource mailboxes' information | 
 
 ## Query Parameters
 
@@ -90,9 +90,9 @@ The API response provides detailed information about the resource mailboxes retr
 | electionProfileApplied                | Indicates if a contact election profile has been applied to the resource mailbox. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered                          | Indicates if the resource mailbox has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | phase                                 | The current phase of the resource mailbox in Cloud Governance.              | string  |
-| phaseAssignees                        | The individuals assigned to the current phase of the resource mailbox in Cloud Governance. For the detailed user properties, refer to [User Details](#user-details). | string  |
-| renewProfile                          | The Cloud Governance renewal profile applied to the resource mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | string  |
-| electionProfile                       | The Cloud Governance contact election profile applied to the resource mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | string  |
+| phaseAssignees                        | The individuals assigned to the current phase of the resource mailbox in Cloud Governance. For the detailed user properties, refer to [User Details](#user-details). | object  |
+| renewProfile                          | The Cloud Governance renewal profile applied to the resource mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object  |
+| electionProfile                       | The Cloud Governance contact election profile applied to the resource mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object  |
 | claimStatus                           | The Cloud Governance claim status of the resource mailbox.                  | string  |
 
 
@@ -151,8 +151,8 @@ The API response provides detailed information about the resource mailboxes retr
 
 | Elements             | Description                                      | Type    |
 |----------------------|--------------------------------------------------|---------|
-| id                   | The unique identifier for the profile.           | string  |
 | name                 | The name for the profile.                        | string  |
+| id                   | The unique identifier for the profile.           | string  |
 
 
 ## Request Sample
@@ -176,7 +176,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "principalName": "",// The user principal name of the resource mailbox
             "name": "",// The name of the resource mailbox in PowerShell
             "emailAddress": "",// The email address of the resource mailbox
-            "displayName": "Annie_Room_BulkCreate_008",// The display name of the resource
+            "displayName": "Sample resource",// The display name of the resource
             "recipientType": "Room mailbox", // The recipient type of the resource mailbox
             "status": "Normal", // The status of the resource mailbox.
             "hiddenFromAddressListsEnabled": false, // Indicates whether this mailbox is hidden from the address list
@@ -194,15 +194,15 @@ If the request has been successfully processed, a 200 OK response will be return
             "deletedItemCount": 0, // The number of items in the Deleted items folder of the resource mailbox
             "deletedItemSize": 0, // The size of Deleted items folder of the resource mailbox
             "firstScanTime": "2025-01-13 02:35:03",// The time when the resource was initially scanned into EnPower
-            "officeLocation": "Ho Chi Minh",// The office location of the resource
-            "businessPhones": "[\"809189220\"]",// The business phone number of the resource
-            "department": "QA01",// The department of the resource
-            "companyName": "Facebook",// The company name of the resource
-            "streetAddress": "Nguyen Van Linh",// The street address of the resource
-            "city": "Ho Chi Minh",// The city of the resource
-            "state": "",// The state of the resource
+            "officeLocation": "Sample data",// The office location of the resource
+            "businessPhones": "[\"0000000\"]",// The business phone number of the resource
+            "department": "Sample department",// The department of the resource
+            "companyName": "Sample company",// The company name of the resource
+            "streetAddress": "Sample address",// The street address of the resource
+            "city": "Sample city",// The city of the resource
+            "state": "Sample state",// The state of the resource
             "postalCode": "",// The postal code of the resource
-            "countryOrRegion": "",// The country or region of the resource
+            "countryOrRegion": "Sample country",// The country or region of the resource
             "resourceCapacity": 9999,// The capacity of the resource
             "addressBookPolicy": null,// The address book policy of the resource mailbox
             "customAttributes": {//Custom Attributes // Extension attributes added to the resource mailbox

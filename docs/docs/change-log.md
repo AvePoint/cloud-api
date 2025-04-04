@@ -6,7 +6,10 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Added  
 
-Added the `jobType` property to the response of the `backup/vm/jobs` endpoint.
+ - Introduced new endpoints to EnPower for retrieving Exchange objects:
+     - `/smp/exchange/resourcemailboxes`
+     - `/smp/exchange/mailboxes` 
+ - Added the `jobType` property to the response of the `backup/vm/jobs` endpoint.
 
 ### Changed
 
@@ -16,6 +19,7 @@ Added the `jobType` property to the response of the `backup/vm/jobs` endpoint.
 - Updated the `/partner/customers/{id}/scanProfilesDetails/profileId/{ProfileId}` endpoint to `/partner/customers/{id}/scanProfiles/{ProfileId}`.
 - Updated the `/partner/customers/{id}/scanProfilesDailyNew/profileId/{ProfileId}` endpoint to `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewSummary`.
 - Updated the `/partner/customers/{id}/scanProfilesDailyNewDetail/profileId/{ProfileId}` endpoint to `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewDetails`.
+- Removed the `ownerCount` and `userCount` properties from the response of the `/smp/powerplatform/powerapps` endpoint.
 
 
 ### Fixed
