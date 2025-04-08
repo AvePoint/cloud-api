@@ -52,6 +52,7 @@ If the request has been successfully processed, a 200 OK response will be return
 |Elements|Description | Type|
 |---|---|---|
 |jobId|Unique identifier for the job. |string|
+|jobType|The job type. <ul><li> **1** for Azure Virtual Machine Backup Job.</li><li> **2** for Azure Virtual Machine Restore Job.</li><li> **4** for Azure Virtual Machine File Level Export Job.</li><li> **33** for Azure Virtual Machine Index Generation Job.</li><li> **64** for Data Retention Job.</li><li> **128** for Microsoft Entra ID Backup Job.</li><li> **256** for Microsoft Entra ID Restore Job.</li><li> **257** for Microsoft Entra ID Export Job.</li><li> **1024** for Azure Storage Backup Job.</li><li> **2048** for Azure Storage Restore Job.</li><li> **4096** for Azure Storage Export Job.</li><li> **20003** for Admin Portal Settings Backup Job.</li><li> **20004** for Admin Portal Settings Export Job.</li><li> **20006** for Admin Portal Settings Restore Job.</li><li> **20009** for Amazon EC2 Backup Job.</li><li> **20010** for Amazon EC2 Restore Job.</li><li> **20012** for Azure SQL Backup Job.</li><li> **20013** for Azure SQL Restore Job.</li><li> **20014** for Azure DevOps Backup Job.</li><li> **20015** for Azure DevOps Restore Job.</li><li> **20016** for Azure SQL Database Backup Job. Note that this API does not support the native Azure SQL Backup Monitoring jobs.</li><li> **20017** for Azure SQL Database Restore Job. Note that this API does not support retrieving the restore jobs of using native Azure SQL Backup.</li><li> **20018** for Azure VM File Restore Job.</li><li> **20019** for Azure AD B2C Backup Job.</li><li> **20020** for Azure AD B2C Restore Job.</li></ul> |enum|
 |status|Indicates the state of the job.<ul>  <li>**0** for Not Started</li>  <li>**1** for In Progress</li>  <li>**2** for Successful</li>  <li>**4** for Skipped</li>  <li>**8** for Exception</li>  <li>**16** for Failed</li>  <li>**32** for Waiting</li>  <li>**64** for Stopped</li></ul> |enum|
 |failedCount|Count of objects with errors.|integer|
 |successfulCount|Count of objects successfully proceed.|integer|
@@ -61,7 +62,7 @@ If the request has been successfully processed, a 200 OK response will be return
 |finishTime|The end time of the job. format: ISO 8601|string|
 |duration|Duration of the job.|string|
 |comments|Comments for the job.|string|
-|jobType|The job type. <ul><li> **1** for Azure Virtual Machine Backup Job.</li><li> **2** for Azure Virtual Machine Restore Job.</li><li> **4** for Azure Virtual Machine File Level Export Job.</li><li> **33** for Azure Virtual Machine Index Generation Job.</li><li> **64** for Data Retention Job.</li><li> **128** for Microsoft Entra ID Backup Job.</li><li> **256** for Microsoft Entra ID Restore Job.</li><li> **257** for Microsoft Entra ID Export Job.</li><li> **1024** for Azure Storage Backup Job.</li><li> **2048** for Azure Storage Restore Job.</li><li> **4096** for Azure Storage Export Job.</li><li> **20003** for Admin Portal Settings Backup Job.</li><li> **20004** for Admin Portal Settings Export Job.</li><li> **20006** for Admin Portal Settings Restore Job.</li><li> **20009** for Amazon EC2 Backup Job.</li><li> **20010** for Amazon EC2 Restore Job.</li><li> **20012** for Azure SQL Backup Job.</li><li> **20013** for Azure SQL Restore Job.</li><li> **20014** for Azure DevOps Backup Job.</li><li> **20015** for Azure DevOps Restore Job.</li><li> **20016** for Azure SQL Database Backup Job. Note that this API does not support the native Azure SQL Backup Monitoring jobs.</li><li> **20017** for Azure SQL Database Restore Job. Note that this API does not support retrieving the restore jobs of using native Azure SQL Backup.</li><li> **20018** for Azure VM File Restore Job.</li><li> **20019** for Azure AD B2C Backup Job.</li><li> **20020** for Azure AD B2C Restore Job.</li></ul> |enum|
+
 
 
 ## Request Sample
@@ -82,6 +83,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
     "jobs": [
         {
             "jobId": "FB20241027081716326", // Unique job identifier 
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // Job status. 2 indicates the job is finished.
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 1, // Count of successful objects
@@ -90,11 +92,11 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-27T08:17:06Z", // Start time of the job
             "finishTime": "2024-10-27T08:21:08Z", // Finish time of the job
             "duration": "00:04:01", // Duration of the job
-            "comments": "", // Comments for the job
-            "jobType": 1 // Job type
+            "comments": "" // Comments for the job            
         },
         {
             "jobId": "IB20241025160014096", // Unique job identifier
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // Job status. 2 indicates the job is finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 10, // Count of successful objects
@@ -103,11 +105,11 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-25T16:00:14Z", // Start time of the job
             "finishTime": "2024-10-27T08:00:58Z", // Finish time of the job
             "duration": "1.16:00:44", // Duration of the job in days.hours:minutes:seconds format.
-            "comments": "", // Comments for the job
-            "jobType": 1 // Job type
+            "comments": "" // Comments for the job
         },
         {
             "jobId": "IB20241010055858683", // Unique job identifier 
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // The job is finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 15, // Count of successful objects
@@ -116,11 +118,11 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-10T05:58:58Z", // Start time of the job
             "finishTime": "2024-10-10T06:59:13Z", // Finish time of the job
             "duration": "01:00:14", // Duration of the job in hours:minutes:seconds format.
-            "comments": "", // Comments for the job
-            "jobType": 1 // Job type
+            "comments": "" // Comments for the job
         },
         {
             "jobId": "IB20241002054145888", // Unique job identifier
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // The job is finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 15, // Count of successful objects
@@ -129,11 +131,11 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-02T05:41:45Z", // Start time of the job
             "finishTime": "2024-10-02T18:44:11Z", // Finish time of the job
             "duration": "13:02:26", // Duration of the job
-            "comments": "", // Comments for the job
-            "jobType": 1 // Job type
+            "comments": "" // Comments for the job
         },
         {
             "jobId": "IB20241001160011064", // Unique job identifier
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // The job is in finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 88, // Count of successful objects
@@ -142,8 +144,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
             "startTime": "2024-10-01T16:00:11Z", // Start time of the job
             "finishTime": "2024-10-02T00:56:42Z", // Finish time of the job
             "duration": "08:56:31", // Duration of the job
-            "comments": "", // Comments for the job
-            "jobType": 1 // Job type
+            "comments": "" // Comments for the job
         }
     ],
     //For details on nextLink, see 

@@ -89,8 +89,8 @@ Refer to the infrastructures and their data center endpoints in the table below:
 ||UK South (London)                   | `https://graph-uk.avepointonlineservices.com/` |
 || US - East                           | `https://graph-us.avepointonlineservices.com/`|
 || AOS-US Gov                           |`https://graph-gov.avepointonlineservices.com/`|
-|Google Cloud Platform| australia-southeast1|`https://graph-gcp-au.avepointonlineservices.com/`|
-||asia-northeast1|`https://graph-gcp-jp.avepointonlineservices.com/`|
-||us-east1|`https://graph-gcp-us.avepointonlineservices.com/`|
-||europe-west4|`https://graph-gcp-we.avepointonlineservices.com/`|
+|Google Cloud Platform| Australia Southeast (Sydney): australia-southeast1|`https://graph-gcp-au.avepointonlineservices.com/`|
+||Japan (Tokyo): asia-northeast1|`https://graph-gcp-jp.avepointonlineservices.com/`|
+||East US (Moncks Corner): us-east1|`https://graph-gcp-us.avepointonlineservices.com/`|
+||West Europe (Eemshaven, Netherlands): europe-west4|`https://graph-gcp-we.avepointonlineservices.com/`|
 
