@@ -22,7 +22,7 @@ The legacy API offers essential capabilities but is slated for deprecation:
   - Register partner customers to facilitate partner integrations.  
   - Access Cloud Backup for Microsoft 365 job information for backup management.  
 
-- **Deprecation Notice**: This API is scheduled for deprecation after the December 2024 release. Transitioning to the current API is highly recommended to ensure continued support and access to the latest features.  
+- **Deprecation Notice**: This API has been deprecated after the December 2024 release. Transitioning to the current API is highly recommended to ensure continued support and access to the latest features.  
 - Documentation: For additional details on the legacy API, refer to [AvePoint Online Services Web API Help](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-online-services-api/index.htm).  
 
 ## What's in the current AvePoint Graph API
@@ -36,7 +36,7 @@ The AvePoint Graph API employs advanced authentication methods to ensure secure 
 - Retrieve audit records: Access comprehensive records from AvePoint Online Services.  
 - Streamline partner operations on customer management: Enhance efficiency in handling customer data and interactions through the Elements platform.  
 - Job information retrieval: Obtain detailed job data from AvePoint's Cloud Backup solutions for Microsoft 365, Microsoft Azure, AWS, Dynamics 365, and Google Workspace.  
-- EnPower data retrieval: Access and manage Power Platform data including environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts.  
+- EnPower data retrieval: Access and manage Exchange mailboxes and Power Platform data.  
 - Insights data retrieval: Access detailed reports and data insights from Insights for Microsoft 365.  
 - AvePoint Opus data management: Submit records to AvePoint Opus, retrieve due records, and destroy records.  
 
@@ -50,7 +50,7 @@ The AvePoint Graph API employs advanced authentication methods to ensure secure 
 
 - Job Information Retrieval: Detailed insights into Cloud Backup operations to ensure data integrity and availability.  
 
-- EnPower Data Retrieval: Manage and retrieve data for Power Platform environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts.  
+- EnPower Data Retrieval: Manage and retrieve data for Exchange mailboxes and Power Platform environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts.  
 
 - Insights Data Retrieval: Export and retrieve detailed reports and data insights for Microsoft 365.  
 
@@ -62,17 +62,21 @@ For more features and use cases, visit the [Use Cases](Use-Cases.md).
 ### Endpoints Upon Data Center
 
 >[!NOTE]
->Effective April 2025 release, the following five products have been successfully deployed on **Google Cloud Platform (GCP)**:
->
-> - AvePoint Online Services
+>Effective April 2025 release, AvePoint Online Services commercial production environment now supports the following **Google Cloud Platform (GCP) data centers**: 
+> - GCP for Australia Southeast (Sydney) 
+> - GCP for Japan (Tokyo) 
+> - GCP for East US (Moncks Corner) 
+> - GCP for West Europe (Eemshaven, Netherlands) 
+> 
+> These GCP data centers are currently deployed with the following AvePoint services:
 > - Cloud Backup for Microsoft 365
 > - Cloud Backup for Google Workspace
+> - AvePoint Opus
 > - Insights
-> - AvePoint Opus  
 > 
-> In addition to the core deployments, the **public APIs** for these products now fully support **GCP data center endpoints**. This enhancement ensures seamless integration, improved latency, and optimized performance for users leveraging GCP infrastructure. 
+> In addition to the core deployments, the **public APIs** for these products now fully support **GCP data center endpoints**.  
 
-Refer to the infrastructures and their data center endpoints in the table below: 
+Refer to the data center endpoints in the table below: 
 
 |Infrastructure | Region                    | URL                                 |
 |---|------------------------------|---------------------------------|
@@ -89,8 +93,8 @@ Refer to the infrastructures and their data center endpoints in the table below:
 ||UK South (London)                   | `https://graph-uk.avepointonlineservices.com/` |
 || US - East                           | `https://graph-us.avepointonlineservices.com/`|
 || AOS-US Gov                           |`https://graph-gov.avepointonlineservices.com/`|
-|Google Cloud Platform| Australia Southeast (Sydney): australia-southeast1|`https://graph-gcp-au.avepointonlineservices.com/`|
-||Japan (Tokyo): asia-northeast1|`https://graph-gcp-jp.avepointonlineservices.com/`|
-||East US (Moncks Corner): us-east1|`https://graph-gcp-us.avepointonlineservices.com/`|
-||West Europe (Eemshaven, Netherlands): europe-west4|`https://graph-gcp-we.avepointonlineservices.com/`|
+|Google Cloud Platform| Australia Southeast (Sydney): **australia-southeast1**|`https://graph-gcp-au.avepointonlineservices.com/`|
+||Japan (Tokyo): **asia-northeast1**|`https://graph-gcp-jp.avepointonlineservices.com/`|
+||East US (Moncks Corner): **us-east1**|`https://graph-gcp-us.avepointonlineservices.com/`|
+||West Europe (Eemshaven, Netherlands): **europe-west4**|`https://graph-gcp-we.avepointonlineservices.com/`|
 
