@@ -34,7 +34,7 @@ The API supports several query parameters to refine and customize the data retri
 
 The API response provides detailed information about the resource mailboxes retrieved. Each resource mailbox in the response includes various attributes that describe its properties and status.
 
-| **Elements**           | Description                                                           | Type   | 
+| Elements           | Description                                                           | Type   | 
 |--------------------|-----------------------------------------------------------------------|--------|
 | resourceMailboxes             | A list containing resource mailboxes with detailed information. For the detailed list of responses, refer to [Resource Mailbox Details](#resource-mailbox-details).             | list  | 
 | totalCount      | Total number of resource mailboxes retrieved.                   | integer    | 
@@ -43,7 +43,7 @@ The API response provides detailed information about the resource mailboxes retr
 
 ### Resource Mailbox Details
 
-| **Elements**                              | Description                                                                 | Type    |
+| Elements                              | Description                                                                 | Type    |
 |---------------------------------------|-----------------------------------------------------------------------------|---------|
 | Id                                    | The unique identifier of the resource mailbox in PowerShell.                              | string  |
 | userId                                | The unique identifier of the resource mailbox in Microsoft 365.          | string  |
