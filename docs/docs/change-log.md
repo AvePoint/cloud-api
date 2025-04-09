@@ -28,9 +28,9 @@ This document provides a detailed log of changes, updates, and enhancements made
 ### Fixed
 
  - Corrected the spelling mistake of the `conflictOption` property in the request of the `/records/connector/records` endpoint. It was previously misspelled as `confilictOption`.
- - Corrected the following element types in the `/smp/powerplatform/environments` endpoint:
-    - Corrected element type of the `phaseAssignees` to "Object".
-    - Corrected element type of the `dlpPolicies` to "Integer".
+ - Corrected the following property types in the `/smp/powerplatform/environments` endpoint response:
+    - Corrected the type of `phaseAssignees` to "Object".
+    - Corrected the type of `dlpPolicies` to "Integer".
 
 
 ## February 2025
