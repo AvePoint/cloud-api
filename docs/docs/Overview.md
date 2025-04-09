@@ -69,6 +69,7 @@ For more features and use cases, visit the [Use Cases](Use-Cases.md).
 > - GCP for West Europe (Eemshaven, Netherlands) 
 > 
 > These GCP data centers are currently deployed with the following AvePoint services:
+> - AvePoint Online Services
 > - Cloud Backup for Microsoft 365
 > - Cloud Backup for Google Workspace
 > - AvePoint Opus
