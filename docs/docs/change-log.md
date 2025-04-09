@@ -24,7 +24,15 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Fixed
 
-Corrected the spelling mistake of the `conflictOption` property in the request of the `/records/connector/records` endpoint. It was previoulsy misspelled as `confilictOption`.
+ - Corrected the spelling mistake of the `conflictOption` property in the request of the `/records/connector/records` endpoint. It was previoulsy misspelled as `confilictOption`.
+ - Corrected the following element types and descriptions in the `/smp/powerplatform/environments` endpoint:
+    - Corrected type of the `phaseAssignees` to "Object".
+    - Corrected the type pf the `dlpPolicies` to "Integer".
+    - Corrected the description of the `dlpPolicies` to "The number of DLP policies assigned to this environment.".
+ - Clarified the app type in the following element descriptions in the `/smp/powerplatform/powerapps` endpoint:
+    - Clarified the description of `quaratineStatus` as "The quarantine status of the canvas app.".
+    - Clarified the description of `status` as "The current status of the model-driven app.".
+
 
 
 ## February 2025
