@@ -61,18 +61,36 @@ For more features and use cases, visit the [Use Cases](Use-Cases.md).
 
 ### Endpoints Upon Data Center
 
-| Region                    | URL                                 |
-|------------------------------|---------------------------------|
-| APAC - Australia          | `https://graph-au.avepointonlineservices.com/`|
-| APAC - Singapore                    | `https://graph-sg.avepointonlineservices.com/`|
-| Canada Central (Toronto)            | `https://graph-ca.avepointonlineservices.com/`|
-| EMEA - Ireland                      | `https://graph-ne.avepointonlineservices.com/` |
-| EMEA - Netherlands                  | `https://graph-we.avepointonlineservices.com/` |
-| France Central (Paris)              | `https://graph-fr.avepointonlineservices.com/` |
-| Germany West Central (Frankfurt)    | `https://graph-de.avepointonlineservices.com/` |
-| Japan West - Osaka                  | `https://graph-jp.avepointonlineservices.com/` |
-| Korea Central (Seoul)               | `https://graph-kr.avepointonlineservices.com/` |
-| Switzerland North (Zurich)          | `https://graph-ch.avepointonlineservices.com/` |
-| UK South (London)                   | `https://graph-uk.avepointonlineservices.com/` |
-| US - East                           | `https://graph-us.avepointonlineservices.com/`|
-| AOS-US Gov                           |`https://graph-gov.avepointonlineservices.com/`|
+>[!NOTE]
+>Effective April 2025 release, the following five products have been successfully deployed on **Google Cloud Platform (GCP)**:
+>
+> - AvePoint Online Services
+> - Cloud Backup for Microsoft 365
+> - Cloud Backup for Google Workspace
+> - Insights
+> - AvePoint Opus  
+> 
+> In addition to the core deployments, the **public APIs** for these products now fully support **GCP data center endpoints**. This enhancement ensures seamless integration, improved latency, and optimized performance for users leveraging GCP infrastructure. 
+
+Refer to the infrastructures and their data center endpoints in the table below: 
+
+|Infrastructure | Region                    | URL                                 |
+|---|------------------------------|---------------------------------|
+|Microsoft Azure | APAC - Australia          | `https://graph-au.avepointonlineservices.com/`|
+|| APAC - Singapore                    | `https://graph-sg.avepointonlineservices.com/`|
+|| Canada Central (Toronto)            | `https://graph-ca.avepointonlineservices.com/`|
+|| EMEA - Ireland                      | `https://graph-ne.avepointonlineservices.com/` |
+|| EMEA - Netherlands                  | `https://graph-we.avepointonlineservices.com/` |
+|| France Central (Paris)              | `https://graph-fr.avepointonlineservices.com/` |
+|| Germany West Central (Frankfurt)    | `https://graph-de.avepointonlineservices.com/` |
+|| Japan West - Osaka                  | `https://graph-jp.avepointonlineservices.com/` |
+|| Korea Central (Seoul)               | `https://graph-kr.avepointonlineservices.com/` |
+|| Switzerland North (Zurich)          | `https://graph-ch.avepointonlineservices.com/` |
+||UK South (London)                   | `https://graph-uk.avepointonlineservices.com/` |
+|| US - East                           | `https://graph-us.avepointonlineservices.com/`|
+|| AOS-US Gov                           |`https://graph-gov.avepointonlineservices.com/`|
+|Google Cloud Platform| Australia Southeast (Sydney): australia-southeast1|`https://graph-gcp-au.avepointonlineservices.com/`|
+||Japan (Tokyo): asia-northeast1|`https://graph-gcp-jp.avepointonlineservices.com/`|
+||East US (Moncks Corner): us-east1|`https://graph-gcp-us.avepointonlineservices.com/`|
+||West Europe (Eemshaven, Netherlands): europe-west4|`https://graph-gcp-we.avepointonlineservices.com/`|
+

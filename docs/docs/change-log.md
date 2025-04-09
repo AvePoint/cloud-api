@@ -6,10 +6,13 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Added  
 
+ - The public APIs for **AvePoint Online Services**, **Cloud Backup for Microsoft 365**, **Cloud Backup for Google Workspace**, **Insights**, and **AvePoint Opus**, now fully support **GCP data center endpoints**.   
  - Introduced new endpoints to EnPower for retrieving Exchange objects:
      - `/smp/exchange/resourcemailboxes`
      - `/smp/exchange/mailboxes` 
  - Added the `jobType` property to the response of the `backup/vm/jobs` endpoint.
+
+
 
 ### Changed
 
