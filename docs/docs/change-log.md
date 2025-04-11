@@ -33,7 +33,7 @@ This document provides a detailed log of changes, updates, and enhancements made
  - Corrected the following property types in the `/smp/powerplatform/environments` endpoint response:
     - Corrected the type of `phaseAssignees` to "Object".
     - Corrected the type of `dlpPolicies` to "Integer".
-
+ - Documented the `location` query parameter for the `/backup/m365/jobs` and `backup/m365/licenseconsumption` endpoints.
 
 ## February 2025
 
