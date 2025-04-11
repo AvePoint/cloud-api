@@ -39,4 +39,4 @@ AvePoint Opus API methods allows organizations to efficiently manage their conte
 
 - **Fly**: Execute migrations with Fly to seamlessly migrate data between systems. [See more](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)  
 
-- **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm)
+- **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernanceapi.htm)
