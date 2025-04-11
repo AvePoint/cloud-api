@@ -5,7 +5,7 @@ Retrieve the permission-related information for specific users. By invoking the 
 ## Permission 
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API     | Permission required | 
 |-------------------|---------------|
@@ -96,4 +96,3 @@ The following is a sample response for this API method, which includes the permi
     "message": "",  // Any message included in the response, which is empty in this case.
     "nextLink": "fBMkYtVSN7/fBMGW+IDEbl3n2kYtVSN772/fBMGW+IDEbl3n2kYtVSN7fBMGW+IDEbl3n2kYtVSN7KyI3/0SeNe2gz8WjwRAJpKFfBMGW+IDEbl3n2kYtVSN7Fyx+eX/zgxCVPhsSowunsQcfDfBMGW+IDEbl3n2kYtVSN7LSZ76fBMGW+IDEbl3n2kYtVSN7KYyGQ=="  // The next link for pagination, if more data is available.
 }
-```

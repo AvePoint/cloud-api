@@ -11,9 +11,19 @@ Currently, Power Platform objects can be retrieved via the following API Methods
 
 | API Method | Endpoint | Documentation | 
 |--- | --- | --- |
-| GET | `/smp/powerplatform/environments` | [Environments](../enpower/environments.md) |
-| GET | `/smp/powerplatform/connections` | [Connections](../enpower/connections.md) |
-| GET | `/smp/powerplatform/powerapps` | [Power Apps](../enpower/powerapps.md) |
-| GET | `/smp/powerplatform/powerautomate/cloudflows` | [Power Automate Cloud Flows](../enpower/cloudflows.md) |
-| GET  | `/smp/powerplatform/powerbi/workspaces` | [Power BI Workspaces](../enpower/workspaces.md) |
-| GET | `/smp/powerplatform/powerbi/artifacts` | [Power BI Artifacts](../enpower/artifacts.md) |
+| GET | `/smp/powerplatform/environments` | [Environments](../enpower/powerplatform/environments.md) |
+| GET | `/smp/powerplatform/connections` | [Connections](../enpower/powerplatform/connections.md) |
+| GET | `/smp/powerplatform/powerapps` | [Power Apps](../enpower/powerplatform/powerapps.md) |
+| GET | `/smp/powerplatform/powerautomate/cloudflows` | [Power Automate Cloud Flows](../enpower/powerplatform/cloudflows.md) |
+| GET  | `/smp/powerplatform/powerbi/workspaces` | [Power BI Workspaces](../enpower/powerplatform/workspaces.md) |
+| GET | `/smp/powerplatform/powerbi/artifacts` | [Power BI Artifacts](../enpower/powerplatform/artifacts.md) |
+
+
+## API Methods for Exchange Data Retrieval
+
+With the following API Methods, data of your resource mailboxes, shared mailboxes, and user mailboxes can be retrieved.
+
+| API Method | Endpoint | Documentation | 
+|--- | --- | --- |
+| GET | `/smp/exchange/resourcemailboxes` | [Resource Mailboxes](../enpower/exchange/resourcemailboxes.md) |
+| GET | `/smp/exchange/mailboxes` | [User or Shared Mailboxes](../enpower/exchange/userandsharedmailboxes.md) |

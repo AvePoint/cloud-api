@@ -7,7 +7,7 @@ Use this API to update the status of records as Destroyed in AvePoint Opus.
 ## Permission
 
 The following permission is required to call this API.   
-You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API    | Permission  |
 |-------------------|---------------------|
@@ -62,11 +62,10 @@ https://graph-us.avepointonlineservices.com/records/connector/records
 ## Response Sample
 
 If the request has been successfully processed, a 200 OK response code will be returned.  
-For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).  
+For details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).  
 
 ```json
 {
     "statusCode": 200, // The request status code.
     "message": null // This message appears when the request has been successfully processed.
 }
-```

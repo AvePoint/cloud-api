@@ -1,6 +1,6 @@
-# Register an App for Modern API
+# Register an App for API Access
 
-To register an app for the AvePoint Graph Modern API, follow these steps:
+To register an app for the AvePoint Graph API, follow these steps:
 
 1. Access AvePoint Online Services  
    - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).
@@ -10,6 +10,7 @@ To register an app for the AvePoint Graph Modern API, follow these steps:
    2. On the **Create app registration** page, enter a name for the app.  
    3. Click **Add service and permission**.  
    4. In the **Add service and permission** pane, select the services and corresponding permissions that you need to grant to this app, and then click **Add**. 
+   
    > [!NOTE]
    > For the services and permissions that you can grant to the app for using Graph API, refer to [Services and Permissions](#services-and-permissions).
 4. Use a certificate or client secret as the app credentials. Credentials enable application to identify themselves to the authentication service when receiving tokens at a web addressable location (using an HTTPS schema). For a higher level of assurance, we recommend using a certificate. Follow the instructions below to configure credentials:  
@@ -45,9 +46,9 @@ See the table below for the services and permissions that can be used for access
 | **Cloud Backup for Google Workspace**   | gsuite.graph.read.all                 | Get job information from Cloud Backup for Google Workspace.   
 | **AvePoint Opus**                  | records.readwrite.all                        |  Submit records to AvePoint Opus, retrieve due records, and destroy records.           |
 | **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower.                                                                             |
-| **Insights for Microsoft 365**     | insights.graph.readwrite.all                 | Retrieve or export data insights from Microsoft 365 environment.                     |
+| **Insights**     | insights.graph.readwrite.all                 | Retrieve or export data insights from Microsoft 365 environment.                     |
 | **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
-| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance Modern API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm) |
+| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm) |
 
 
  ## Client Secret
