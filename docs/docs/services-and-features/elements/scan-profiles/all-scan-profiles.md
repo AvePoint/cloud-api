@@ -49,7 +49,7 @@ https://graph.avepointonlineservices.com/partner/customers/caf94a89-2cc6-47aa-b0
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json 
 {
