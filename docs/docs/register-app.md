@@ -48,7 +48,7 @@ See the table below for the services and permissions that can be used for access
 | **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower.                                                                             |
 | **Insights**     | insights.graph.readwrite.all                 | Retrieve or export data insights from Microsoft 365 environment.                     |
 | **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
-| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernancemodernapi.htm) |
+| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernanceapi.htm) |
 
 
  ## Client Secret

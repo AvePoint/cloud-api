@@ -89,7 +89,7 @@ If an error occurs, the following information is displayed in the response body.
 | ---- | ---- | ----------- | 
 | traceId | The unique identifier used to trace and track the flow of a request. | string |
 | error | The error message.   |string |
-| statusCode | The HTTP error code.  | [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code) |
+| statusCode | The HTTP error code.  | [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code) |
 
 ## Request Sample
 
