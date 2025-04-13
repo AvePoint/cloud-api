@@ -1,0 +1,12 @@
+- name: Environments
+  href: environments.md
+- name: Connections
+  href: connections.md
+- name: Power Apps
+  href: powerapps.md
+- name: Power Automate Cloud Flows
+  href: cloudflows.md
+- name: Power BI Workspaces
+  href: workspaces.md
+- name: Power BI Artifacts
+  href: artifacts.md

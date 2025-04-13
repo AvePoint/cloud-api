@@ -5,8 +5,8 @@ Use this API to access and retrieve information of your Power Apps.
 ## Permission
 
 The following permission is required to call the API.
-You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API.
-For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API   | Permission |
 |-------------------|---------------|
@@ -42,7 +42,7 @@ The API response provides detailed information about the Power Apps retrieved. E
 
 ### Power App Details
 
-| Response                        | Description                                                                 | Type    |
+| Elements                        | Description                                                                 | Type    |
 |---------------------------------|-----------------------------------------------------------------------------|---------|
 | id                              | The unique identifier for the Power App.                                     | string  |
 | appId                           | The unique application identifier within Power Platform.                    | string  |
@@ -68,8 +68,6 @@ The API response provides detailed information about the Power Apps retrieved. E
 | backgroundColor                 | The background color of the Power App's user interface.                     | string  |
 | hasContextDetail | Indicates if the Power App has context-related details. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | coOwnerCount                    | The number of co-owners of the Power App.                                   | integer |
-| ownerCount                      | The number of owners of the Power App.                                      | integer |
-| userCount                       | The number of users who have access to the Power App.                       | integer |
 | shadowUserCount                 | The number of shadow users of the Power App.                                | integer |
 | guestUserCount                  | The number of guest users who have access to the Power App.                 | integer |
 | ownerUserType                   | The user type of the Power App's owner.                                     | string  |
@@ -86,8 +84,8 @@ The API response provides detailed information about the Power Apps retrieved. E
 | lastActivityD7                  | The activity count in the last 7 days.                                      | integer |
 | appLaunchedCount                | The number of times the Power App has been launched.                        | integer |
 | lastPublishOn                   | The date and time when the Power App was last published.                    | string  |
-| quarantineState                 | The quarantine status of the Power App.                                     | string  |
-| status                          | The current status of the Power App.                                        | string  |
+| quarantineState                 | The quarantine status of the canvas app.                                     | string  |
+| status                          | The current status of the model-driven app.                                        | string  |
 | solutionCount                   | The number of solutions associated with the Power App.                      | integer |
 | solutionNames                   | The names of solutions associated with the Power App.                       | string  |
 | backgroundModelDrivenImageUri   | URI of the background image for model-driven Power App.                     | string  |
@@ -155,7 +153,7 @@ https://graph-us.avepointonlineservices.com/smp/powerplatform/powerapps
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
@@ -174,7 +172,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "ownerStatus": "Enable", // The status of the Power App owner
       "createdOn": "2024-06-13 03:19:48", // The date and time when the Power App was created
       "modifiedOn": "2024-12-26 03:58:17", // The date and time when the Power App was last modified
-      "lastLaunchedOn": "0001-01-01 00:00:00", // The latest date and time when the Power App was launched
+      "lastLaunchedOn": "2024-06-13 03:31:12", // The latest date and time when the Power App was launched
       "sharedUsers": 2, // The number of users with shared access to the Power App
       "sharedGroups": 1, // The number of groups with shared access to the Power App
       "sharedOrganization": false, // Indicates whether the Power App is shared with the organization
@@ -185,8 +183,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "backgroundColor": "RGBA(0,176,240,1)", // The background color of the Power App's user interface
       "hasContextDetail": false, // Indicates if the Power App has context-related details 
       "coOwnerCount": 1, // The number of co-owners of the Power App
-      "ownerCount": 0, // The number of owners of the Power App
-      "userCount": 1, // The number of users who have access to the Power App
       "shadowUserCount": 0, // The number of shadow users of the Power App
       "guestUserCount": 0, // The number of guest users who have access to the Power App
       "ownerUserType": "Member", // The user type of the Power App's owner
@@ -232,4 +228,3 @@ If the request has been successfully processed, a 200 OK response will be return
   "totalCount": 1,
   "nextLink": ""
 }
-```

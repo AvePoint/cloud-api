@@ -5,8 +5,8 @@ Use this API to access and retrieve information of your Power Platform environme
 ## Permission
 
 The following permission is required to call the API.
-You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API.
-For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API   | Permission |
 |-------------------|---------------|
@@ -42,7 +42,7 @@ The API response provides detailed information about the environments retrieved.
 
 ### Environment Details
 
-**Response** | **Description** | **Type**
+**Elements** | **Description** | **Type**
 --- | --- | ---
 id | The unique identifier of the environment. | string
 name | The name of the environment. | string
@@ -70,7 +70,7 @@ environmentOwnerOffice | The office of environment owner. | string
 totalNumberOfAppsAndFlows | The total number of both apps and flows in this environment. | integer
 | hasDataverse | Indicates whether this environment is using Dataverse. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean | 
 | hasDlpPolicy | Indicates whether this environment has DKP policy assigned. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean | 
-| dlpPolicies | The list of DLP policies assigned to this environment. | string
+| dlpPolicies | The number of DLP policies assigned to this environment. | integer
 | hasPremiumConnection | Indicates whether this environment is using any premium tier connector. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 ownerUserType | The user type of the environment owner. | string
 numberOfAdmins | The number of admins in this environment. | integer
@@ -105,7 +105,7 @@ Metadata | The Cloud Governance metadata of this environment. For the detailed m
 | electionProfileApplied | Indicates whether any Cloud Governance contact election profile has been applied to this environment. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates whether this environment has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean | 
 Phase | The Cloud Governance phase of this environment. | string
-phaseAssignees | The current Cloud Governance phase’s assignee. | string
+phaseAssignees | The current Cloud Governance phase’s assignee. | object
 renewProfile | The renewal profile assigned to this environment. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object
 electionProfile | The election profile assigned to this environment. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object
 claimStatus | The Cloud Governance claim status of this environment. | string
@@ -179,7 +179,7 @@ https://graph-us.avepointonlineservices.com/smp/powerplatform/environments
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
@@ -211,13 +211,13 @@ If the request has been successfully processed, a 200 OK response will be return
             "totalNumberOfAppsAndFlows": 2, // The total number of both apps and flows in this environment
             "hasDataverse": true, // Indicates whether this environment is using Dataverse
             "hasDlpPolicy": true, // Indicates whether this environment has DLP policy assigned
-            "dlpPolicies": "2", // The list of DLP policies assigned to this environment
+            "dlpPolicies": 2, // The list of DLP policies assigned to this environment
             "hasPremiumConnection": false, // Indicates whether this environment is using any premium tier connector
             "ownerUserType": "Member", // The user type of the environment owner
             "numberOfAdmins": 0, // The number of admins in this environment
             "numberOfMakers": 0, // The number of makers in this environment
             "numberOfShadowUsers": 0, // The number of shadow users in this environment
-            "numberOfApps": 0, // The number of apps in thisenvironment
+            "numberOfApps": 0, // The number of apps in this environment
             "numberOfFlows": 0, // The number of flows in this environment
             "numberOfDesktopFlows": 2, // The number of desktop flows in this environment
             "numberOfConnections": 0, // The number of connections in this environment
@@ -277,4 +277,3 @@ If the request has been successfully processed, a 200 OK response will be return
     "totalCount": 1,
     "nextLink": ""
 }
-```

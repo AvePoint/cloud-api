@@ -1,11 +1,11 @@
 # Retrieve Job Information
 
-Get the job-related information (`/backup/vm/jobs` navigation property) from Cloud Backup for IaaS + PaaS. By invoking the `backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.   
+Get the job-related information (`/backup/vm/jobs` navigation property) from Cloud Backup for IaaS + PaaS. By invoking the `/backup/vm/jobs` endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.   
 
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API     | Permission required | 
 |-------------------|---------------|
@@ -29,7 +29,7 @@ The API supports several query parameters to refine and customize the data retri
 | startTime | Sets a start time (UTC time) for the time range. format: ISO 8601 |string | No | 
 | finishTime |  Sets an end time (UTC time) for the time range. format: ISO 8601 |string | No |  
 | serviceType | Sets the service type of the jobs to get.<ul>  <li> **1** for Azure Virtual Machine.</li>  <li> **2** for Microsoft Entra ID.</li><li> **4** for Azure Storage.</li>  <li> **64** for Admin Portal Settings.</li><li> **128** for Common.</li> <li> **256** for Amazon EC2.</li> <li> **512** for Azure SQL.</li><li> **1024** for Azure DevOps.</li><li> **2048** for Azure SQL Database real backup.</li><li> **4096** for Azure AD B2C.</li></ul> | Enum | No |
-| jobType |  Sets the job types that you want to get.<ul><li> **1** for Azure Virtual Machine Backup Job.</li><li> **2** for Azure Virtual Machine Restore Job.</li><li> **4** for Azure Virtual Machine File Level Export Job.</li><li> **33** for Azure Virtual Machine Index Generation Job.</li><li> **64** for Data Retention Job.</li><li> **128** for Microsoft Entra ID Backup Job.</li><li> **256** for Microsoft Entra ID Restore Job.</li><li> **257** for Microsoft Entra ID Export Job.</li><li> **1024** for Azure Storage Backup Job.</li><li> **2048** for Azure Storage Restore Job.</li><li> **4096** for Azure Storage Export Job.</li><li> **20003** for Admin Portal Settings Backup Job.</li><li> **20004** for Admin Portal Settings Export Job.</li><li> **20006** for Admin Portal Settings Restore Job.</li><li> **20009** for Amazon EC2 Backup Job.</li><li> **20010** for Amazon EC2 Restore Job.</li><li> **20012** for Azure SQL Backup Job.</li><li> **20013** for Azure SQL Restore Job.</li><li> **20014** for Azure DevOps Backup Job.</li><li> **20015** for Azure DevOps Restore Job.</li><li> **20016** for Azure SQL Database Backup Job. Note that this API does not support the native Azure SQL Backup Monitoring jobs.</li><li> **20017** for Azure SQL Database Restore Job. Note that this API does not support retrieving the restore jobs of using native Azure SQL Backup.</li><li> **20018** for Azure VM File Restore Job.</li><li> **20019** for Azure AD B2C Backup Job.</li><li> **20020** for Azure AD B2C Restore Job.</li></ul> | Enum | No |
+| jobType |  Sets the job types that you want to get.<ul><li> **1** for Azure Virtual Machine Backup Job.</li><li> **2** for Azure Virtual Machine Restore Job.</li><li> **4** for Azure Virtual Machine File Level Export Job.</li><li> **33** for Azure Virtual Machine Index Generation Job.</li><li> **64** for Data Retention Job.</li><li> **128** for Microsoft Entra ID Backup Job.</li><li> **256** for Microsoft Entra ID Restore Job.</li><li> **257** for Microsoft Entra ID Export Job.</li><li> **1024** for Azure Storage Backup Job.</li><li> **2048** for Azure Storage Restore Job.</li><li> **4096** for Azure Storage Export Job.</li><li> **20003** for Admin Portal Settings Backup Job.</li><li> **20004** for Admin Portal Settings Export Job.</li><li> **20006** for Admin Portal Settings Restore Job.</li><li> **20009** for Amazon EC2 Backup Job.</li><li> **20010** for Amazon EC2 Restore Job.</li><li> **20012** for Azure SQL Backup Job.</li><li> **20013** for Azure SQL Restore Job.</li><li> **20014** for Azure DevOps Backup Job.</li><li> **20015** for Azure DevOps Restore Job.</li><li> **20016** for Azure SQL Database Backup Job. Note that this API does not support the native Azure SQL Backup Monitoring jobs.</li><li> **20017** for Azure SQL Database Restore Job. Note that this API does not support retrieving the restore jobs of using native Azure SQL Backup.</li><li> **20018** for Azure VM File Restore Job.</li><li> **20019** for Azure AD B2C Backup Job.</li><li> **20020** for Azure AD B2C Restore Job.</li></ul> | enum | No |
 | pageNumber | Sets the starting number of the page. The default value is 0. | integer |No | 
 | pageSize |  Sets the number of objects to display on one page. The default value is 10. |integer | No | 
 | skiptoken |  Sets the skip token got from next link from previous request, if setting this one, PageNumber will be ignored. |  string |No |
@@ -45,13 +45,14 @@ If the request has been successfully processed, a 200 OK response will be return
 |totalCount|Total count of jobs matching the query parameters.|integer|
 |jobs|A collection of jobs.|list|
 |nextlink|Returns the link to the next page of results.|string|
-|errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).|string|
+|errorModel|Returns the request ID, date and the error code. See [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).|string|
 
 **Job details:**
 
 |Elements|Description | Type|
 |---|---|---|
 |jobId|Unique identifier for the job. |string|
+|jobType|The job type. <ul><li> **1** for Azure Virtual Machine Backup Job.</li><li> **2** for Azure Virtual Machine Restore Job.</li><li> **4** for Azure Virtual Machine File Level Export Job.</li><li> **33** for Azure Virtual Machine Index Generation Job.</li><li> **64** for Data Retention Job.</li><li> **128** for Microsoft Entra ID Backup Job.</li><li> **256** for Microsoft Entra ID Restore Job.</li><li> **257** for Microsoft Entra ID Export Job.</li><li> **1024** for Azure Storage Backup Job.</li><li> **2048** for Azure Storage Restore Job.</li><li> **4096** for Azure Storage Export Job.</li><li> **20003** for Admin Portal Settings Backup Job.</li><li> **20004** for Admin Portal Settings Export Job.</li><li> **20006** for Admin Portal Settings Restore Job.</li><li> **20009** for Amazon EC2 Backup Job.</li><li> **20010** for Amazon EC2 Restore Job.</li><li> **20012** for Azure SQL Backup Job.</li><li> **20013** for Azure SQL Restore Job.</li><li> **20014** for Azure DevOps Backup Job.</li><li> **20015** for Azure DevOps Restore Job.</li><li> **20016** for Azure SQL Database Backup Job. Note that this API does not support the native Azure SQL Backup Monitoring jobs.</li><li> **20017** for Azure SQL Database Restore Job. Note that this API does not support retrieving the restore jobs of using native Azure SQL Backup.</li><li> **20018** for Azure VM File Restore Job.</li><li> **20019** for Azure AD B2C Backup Job.</li><li> **20020** for Azure AD B2C Restore Job.</li></ul> |enum|
 |status|Indicates the state of the job.<ul>  <li>**0** for Not Started</li>  <li>**1** for In Progress</li>  <li>**2** for Successful</li>  <li>**4** for Skipped</li>  <li>**8** for Exception</li>  <li>**16** for Failed</li>  <li>**32** for Waiting</li>  <li>**64** for Stopped</li></ul> |enum|
 |failedCount|Count of objects with errors.|integer|
 |successfulCount|Count of objects successfully proceed.|integer|
@@ -61,6 +62,7 @@ If the request has been successfully processed, a 200 OK response will be return
 |finishTime|The end time of the job. format: ISO 8601|string|
 |duration|Duration of the job.|string|
 |comments|Comments for the job.|string|
+
 
 
 ## Request Sample
@@ -73,7 +75,7 @@ https://graph-us.avepointonlineservices.com/backup/vm/jobs?serviceType=1&jobType
 
 ## Response Sample  
 
-If successful, this method returns a 200 OK response code and a collection of  jobs in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+If successful, this method returns a 200 OK response code and a collection of  jobs in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
@@ -81,6 +83,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
     "jobs": [
         {
             "jobId": "FB20241027081716326", // Unique job identifier 
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // Job status. 2 indicates the job is finished.
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 1, // Count of successful objects
@@ -93,7 +96,8 @@ If successful, this method returns a 200 OK response code and a collection of  j
         },
         {
             "jobId": "IB20241025160014096", // Unique job identifier
-            "status": 2, // Job status. 2 indicates the job is finished.
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
+            "status": 2, // Job status. 2 indicates the job is finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 10, // Count of successful objects
             "skippedCount": 35, // Count of skipped objects
@@ -105,6 +109,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
         },
         {
             "jobId": "IB20241010055858683", // Unique job identifier 
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // The job is finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 15, // Count of successful objects
@@ -117,6 +122,7 @@ If successful, this method returns a 200 OK response code and a collection of  j
         },
         {
             "jobId": "IB20241002054145888", // Unique job identifier
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
             "status": 2, // The job is finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 15, // Count of successful objects
@@ -129,7 +135,8 @@ If successful, this method returns a 200 OK response code and a collection of  j
         },
         {
             "jobId": "IB20241001160011064", // Unique job identifier
-            "status": 2, // The job is finished
+            "jobType": 1, // 1 represents Azure Virtual Machine Backup Job.
+            "status": 2, // The job is in finished
             "failedCount": 0, // Count of objects with errors
             "successfulCount": 88, // Count of successful objects
             "skippedCount": 0, // Count of skipped objects

@@ -5,11 +5,11 @@ Use this API to retrieve your customer's daily scan profile changes in AvePoint 
 ## Permissions  
 
 The following permission is required to call the API.  
-You must register an app through Elements for Partners > App registration to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements for Partners > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/customers/{id}/scanProfilesDailyNew/profileId/{ProfileId}` | partner.scanprofiles.read.all |  
+| `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewSummary` | partner.scanprofiles.read.all |  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details on the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|-----------|
-|GET|`/partner/customers/{id}/scanProfilesDailyNew/profileId/{ProfileId}`|Retrieves your customer's daily scan profile changes in AvePoint Online Services.|
+|GET|`/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewSummary`|Retrieves your customer's daily scan profile changes in AvePoint Online Services.|
 
 ## Query Parameters
 
@@ -52,12 +52,12 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b04b-794cb9af5ea3/scanProfilesDailyNew/profileId/0e5c152d-65ec-4206-9829-636ee72c88c3
+https://graph.avepointonlineservices.com/partner/customers/caf94a75-2cc6-43aa-b04b-794cb9af5ea3/scanProfiles/0e5c152d-65ec-4206-9829-636ee72c88c3/dailyNewSummary
 ```
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json 
 {
@@ -76,4 +76,3 @@ If the request has been successfully processed, a 200 OK response will be return
     "newRegisteredContentCount": 0, // The details of newly registered objects in the daily report of the scan profile
     "movedToAnotherContainerObjects": 0, // The details of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
 }
-```

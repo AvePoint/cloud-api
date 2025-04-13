@@ -7,7 +7,7 @@ Use this API to submit records to AvePoint Opus.
 ## Permission
 
 The following permission is required to call this API.  
-You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register an app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph API. For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API    | Permission  |
 |-------------------|---------------------|
@@ -28,14 +28,14 @@ The API requires multiple parameters to submit records to AvePoint Opus.
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
 |id|The ID of the connection. |GUID|Yes|
-|confilictOption|The conflict resolution when there are records with the same unique key.<ul><li> **Overwrite** to overwrite the record information in AvePoint Opus.</li><li> **Skip** to skip submitting the record to AvePoint Opus. </li></ul>|string|Yes|
+|conflictOption|The conflict resolution when there are records with the same unique key.<ul><li> **Overwrite** to overwrite the record information in AvePoint Opus.</li><li> **Skip** to skip submitting the record to AvePoint Opus. </li></ul>|string|Yes|
 |rowKey|The unique key of the record.|string|Yes|
 |leafName|The internal name of the built-in **Name** column in the connection.|string|Yes|
 |termFullPath|The internal name of the built-in **Classification**  column in the connection. The value must be the full path of a term in AvePoint Opus.|string|No|
 |timeCreated| The internal name of the built-in **Created time** column in the connection. |string |Yes|  
 |timeModified|The internal name of the built-in **Modified time** column in the connection. |string|Yes|
 |createdBy|The internal name of the built-in **Created by** column in the connection.|string|Yes|
-|modifiedBy|The internal name of the built-in **Modified by** column in the connection. |string|Yes|  
+|modifiedBy|The internal name of the built-in **Modified by** column in the connection.|string|Yes|  
 
 [comment: the confilictOption in the response contains spelling error, but we have to keep it now]: #
 
@@ -73,7 +73,7 @@ https://graph-us.avepointonlineservices.com/records/connector/records
 ```json
 {  
     "id": "d9da492f-cc67-4920-99f9-6fbaae1f1410", // The ID of the connection.
-      "confilictOption": "Overwrite", // The conflict resolution when there are records with the same unique key. Overwrite is to overwrite the record information in AvePoint Opus.
+      "conflictOption": "Overwrite", // The conflict resolution when there are records with the same unique key. Overwrite is to overwrite the record information in AvePoint Opus.
       "data": [
           {
           "rowKey": "SingleText", // The unique key of the record.
@@ -91,11 +91,10 @@ https://graph-us.avepointonlineservices.com/records/connector/records
 ## Response Sample
 
 If the request has been successfully processed, a 201 response code will be returned.  
-For details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).  
+For details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).  
 
 ```json
 {
     "statusCode": 201, // The request status code.
     "message": null // This message appears when the request has been successfully processed.
 }
-```

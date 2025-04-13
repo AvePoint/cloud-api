@@ -5,8 +5,8 @@ Use this API to access and retrieve information of your Power Automate cloud flo
 ## Permission
 
 The following permission is required to call the API.
-You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph Modern API.
-For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#authentication-and-authorization).
+You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
 | API   | Permission |
 |-------------------|---------------|
@@ -41,7 +41,7 @@ The API response provides detailed information about the Power Automate cloud fl
 
 ### Flow Details
 
-| Response                    | Description                                                                 | Type    |
+| Elements                    | Description                                                                 | Type    |
 |-----------------------------|-----------------------------------------------------------------------------|---------|
 | flowId                      | The unique identifier of the flow.                                          | string  |
 | displayName                 | The display name of the flow.                                               | string  |
@@ -143,7 +143,7 @@ https://graph-us.avepointonlineservices.com/smp/powerplatform/powerautomate/clou
 ```
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-Modern-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
@@ -215,4 +215,3 @@ If the request has been successfully processed, a 200 OK response will be return
   "totalCount": 1,
   "nextLink": "" 
 }
-```
