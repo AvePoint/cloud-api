@@ -1,0 +1,2464 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Graph API for Insights",
+    "description": "An ASP.NET Core Graph API for Insights",
+    "termsOfService": "https://insights.avepointonlineservices.com/",
+    "version": "v2"
+  },
+  "paths": {
+    "/activities/object/{path}/export": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Get object activity",
+        "operationId": "ExportObjectActivitys",
+        "parameters": [
+          {
+            "name": "path",
+            "in": "path",
+            "description": "Filter by path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "finishTime",
+            "in": "query",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eventTypes",
+            "in": "query",
+            "description": "Filter by Event Type",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/summary": {
+      "get": {
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Gets the summary of specific groups.",
+        "operationId": "GetGroupsSummary",
+        "parameters": [
+          {
+            "name": "startPage",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupSummaryViewModuleJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupSummaryViewModuleJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GroupSummaryViewModuleJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/{groupId}/access/export": {
+      "get": {
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Gets the .zip file from exporting the permission related information of specific groups.",
+        "operationId": "ExportGroupsAccess",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Sets the email addresses or group Id or group logonname of group for which you want to export the permission report",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "exportOptionType",
+            "in": "query",
+            "description": "So far support:\r\n1 - for exporting both the summary report and site collection level access report\r\n2 - for exporting both the summary report and access report to all objects in the configured data scope\r\n3 - for only exporting the summary report",
+            "schema": {
+              "$ref": "#/components/schemas/ExportOptionType"
+            }
+          },
+          {
+            "name": "siteUrls",
+            "in": "query",
+            "description": "Sets the URLs of site collections for which you want to export the permission report.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "dataSources",
+            "in": "query",
+            "description": "Sets the workspace in which you want to export the access report of users. Multiple values are allowed.\r\nmicrosoft teams \r\nsharepoint online\r\nonedrive for business\r\nmicrosoft 365 group",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Healthz": {
+      "get": {
+        "tags": [
+          "Healthz"
+        ],
+        "summary": "The API is for check health of API service",
+        "description": "GET: /healthz",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/job/{jobId}/exportstatus": {
+      "get": {
+        "tags": [
+          "Job"
+        ],
+        "summary": "Get Activity export job statuts",
+        "operationId": "GetExportJobStatus",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "description": "Job Id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32JobStatusResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32JobStatusResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32JobStatusResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/job/{jobId}/exportfile": {
+      "get": {
+        "tags": [
+          "Job"
+        ],
+        "summary": "Download Activity export  file",
+        "operationId": "GetExportFiles",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "description": "Job Id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sharingLinks/{siteUrl}/summary": {
+      "get": {
+        "tags": [
+          "SharingLinks"
+        ],
+        "summary": "Gets the summary of specific links.",
+        "operationId": "GetLinkSummary",
+        "parameters": [
+          {
+            "name": "siteUrl",
+            "in": "path",
+            "description": "Sets the URL of site collections for which you want to get the summary information.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "linkType",
+            "in": "query",
+            "description": "Sets the link types that you are about to get.\r\nExternal Link = 32\r\nOrganization Link = 64\r\nAnonymous Link = 128",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Sets the number of links displayed in each page of the result. The number must be no larger than 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "nextLink",
+            "in": "query",
+            "description": "Sets whether to get the remaining results of a request of which the results are more than 100.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkViewModuleJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkViewModuleJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkViewModuleJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sharingLinks/export": {
+      "get": {
+        "tags": [
+          "SharingLinks"
+        ],
+        "summary": "Gets the .zip file from exporting the permission related information of specific links.",
+        "operationId": "ExportLinks",
+        "parameters": [
+          {
+            "name": "exportLinkType",
+            "in": "query",
+            "description": "Set export type\r\n32 (for FlexibleLink link)\r\n64 (for organization link)\r\n128 (for external link)",
+            "schema": {
+              "$ref": "#/components/schemas/PrincipalTypes"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "finishTime",
+            "in": "query",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/permission": {
+      "get": {
+        "tags": [
+          "Sites"
+        ],
+        "summary": "Gets the permission-related information of specific site collections.",
+        "description": "The api/v1/site/permission/export API is recommended when the site collections that you are about to export are over 2,000.",
+        "operationId": "GetSitesPermission",
+        "parameters": [
+          {
+            "name": "siteUrls",
+            "in": "query",
+            "description": "Sets the URLs of site collections for which you want to get the permission related information",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Sets whether to get the remaining results of a request of which the results are more than 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "nextLink",
+            "in": "query",
+            "description": "Sets the number of results for one page. 100 results on one page at most.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SitePermissionViewModuleJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SitePermissionViewModuleJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SitePermissionViewModuleJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/permission/export": {
+      "get": {
+        "tags": [
+          "Sites"
+        ],
+        "summary": "Exports the permission reports of specific site collections.",
+        "description": "You can only export permission reports of 100 site collections at a time.",
+        "operationId": "ExportSitesPermission",
+        "parameters": [
+          {
+            "name": "siteUrls",
+            "in": "query",
+            "description": "Sets the URLs of site collections for which you want to export the permission report.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/overview": {
+      "get": {
+        "tags": [
+          "Sites"
+        ],
+        "summary": "Get sites data",
+        "operationId": "GetSitesOverview",
+        "parameters": [
+          {
+            "name": "riskLevel",
+            "in": "query",
+            "description": "Enter the set of risk levels.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          {
+            "name": "nextLink",
+            "in": "query",
+            "description": "Sets the number of results for one page. 100 results on one page at most.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SitesDataJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SitesDataJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SitesDataJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteUrl}/siteid": {
+      "get": {
+        "tags": [
+          "Sites"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "siteUrl",
+            "in": "path",
+            "description": "sharepoint site uri",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/detailrecords": {
+      "get": {
+        "tags": [
+          "Sites"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "sharepoint site Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nextLink",
+            "in": "query",
+            "description": "Sets the number of results for one page. 100 results on one page at most.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailRecordDataJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailRecordDataJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailRecordDataJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/{siteId}/{objectUrl}/settag": {
+      "patch": {
+        "tags": [
+          "Sites"
+        ],
+        "summary": "object add tag",
+        "parameters": [
+          {
+            "name": "siteId",
+            "in": "path",
+            "description": "sharepoint site Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectUrl",
+            "in": "path",
+            "description": "sharepoint object url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tagName",
+            "in": "query",
+            "description": "tag name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooleanJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooleanJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BooleanJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/summary": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Gets the summary of specific users.",
+        "operationId": "GetUsersSummary",
+        "parameters": [
+          {
+            "name": "startPage",
+            "in": "query",
+            "description": "The starting page of the query starts from 0.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Sets the number of results for one page. 100 results on one page at most.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSummaryViewModuleJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSummaryViewModuleJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSummaryViewModuleJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/access": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Gets the permission-related information of specific users.",
+        "description": "The api/v1/user/permission/export API is recommended when the users that you are about to export are over 2,000.",
+        "operationId": "GetUsersAccess",
+        "parameters": [
+          {
+            "name": "siteUrls",
+            "in": "query",
+            "description": "Sets the URLs of site collections for which you want to get the permission related information",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "emails",
+            "in": "query",
+            "description": "Sets the email addresses of users for which you want to export the permission report",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "nextLink",
+            "in": "query",
+            "description": "Sets whether to get the remaining results of a request of which the results are more than 100.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessViewModuleJsonResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessViewModuleJsonResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessViewModuleJsonResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{email}/access/export": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Exports the access reports of specific users in different workspaces.",
+        "operationId": "ExportUsersAccess",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Sets the email addresses of users for which you want to export the permission report",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "siteUrls",
+            "in": "query",
+            "description": "Sets the URLs of site collections for which you want to export the permission report.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "dataSources",
+            "in": "query",
+            "description": "Sets the workspace in which you want to export the access report of users. Multiple values are allowed.\r\nmicrosoft teams \r\nsharepoint online\r\nonedrive for business\r\nmicrosoft 365 group",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{email}/activities/export": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "get user activity",
+        "operationId": "ExportUserActivitys",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Filter by email",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "finishTime",
+            "in": "query",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eventTypes",
+            "in": "query",
+            "description": "Filter by Event Type",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccessViewModule": {
+        "type": "object",
+        "properties": {
+          "module": {
+            "type": "string",
+            "description": "The data source.",
+            "nullable": true
+          },
+          "siteName": {
+            "type": "string",
+            "description": "The name of the site.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the permission.",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "description": "The URL of the object.",
+            "nullable": true
+          },
+          "objectType": {
+            "type": "string",
+            "description": "The object type.",
+            "nullable": true
+          },
+          "inheritType": {
+            "type": "string",
+            "description": "The status whether the permission is inherited.",
+            "nullable": true
+          },
+          "permission": {
+            "type": "string",
+            "description": "The permission.",
+            "nullable": true
+          },
+          "sensitivityLevel": {
+            "type": "string",
+            "description": "The sensitivity level of the object.",
+            "nullable": true
+          },
+          "sensitiveInfoType": {
+            "type": "string",
+            "description": "The sensitive info type of the object.",
+            "nullable": true
+          },
+          "isDirect": {
+            "type": "boolean",
+            "description": "The status whether the permission is directly granted."
+          },
+          "sensitivityLabel": {
+            "type": "string",
+            "description": "The sensitivity label of the object.",
+            "nullable": true
+          },
+          "inheritedFrom": {
+            "type": "string",
+            "description": "The parent from which the permission inherits.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccessViewModuleJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccessViewModule"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccessViewModuleOptions": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Sets the language of the report you are about to export.\r\n<value>Default: en-US Support: en-US/ja-JP/fr-FR</value>",
+            "nullable": true
+          },
+          "siteUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets the URLs of site collections for which you want to get the permission related information. 100 URLs at most.",
+            "nullable": true
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets the email addresses of users for which you want to export the permission report. 100 email addresses at most.",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "description": "Sets whether to get the remaining results of a request of which the results are more than 100.",
+            "nullable": true
+          },
+          "top": {
+            "type": "integer",
+            "description": "Sets the number of results for one page. 100 results on one page at most.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get access report by using the paging option"
+      },
+      "AccessViewModuleResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccessViewModule"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityExportOptions": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Sets the language of the report you are about to export.\r\n<value>Default: en-US Support: en-US/ja-JP/fr-FR</value>",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "nullable": true
+          },
+          "eventTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Filter by Event Type",
+            "nullable": true
+          },
+          "path": {
+            "type": "string",
+            "description": "Filter by Path",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "Filter by User email",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Activity export  Options"
+      },
+      "BooleanJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "boolean"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DetailRecordData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "objectType": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "module": {
+            "type": "string",
+            "nullable": true
+          },
+          "inheritType": {
+            "type": "string",
+            "nullable": true
+          },
+          "siteName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensitivityLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "exposureLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "scannedTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "modifiedTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "channelName": {
+            "type": "string",
+            "nullable": true
+          },
+          "riskLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "privacy": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensitiveInfoType": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "sensitivityLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "tagName": {
+            "type": "string",
+            "nullable": true
+          },
+          "retentionLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "creatorEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "webUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DetailRecordDataJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetailRecordData"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DetailRecordDataResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetailRecordData"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DetailRecordExportOptions": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Filter"
+            },
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "siteId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExportOptionType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ExportOptions": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Sets the language of the report you are about to export.\r\n<value>Default: en-US Support: en-US/ja-JP/fr-FR</value>",
+            "nullable": true
+          },
+          "siteUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets the URLs of site collections for which you want to export the permission report. \r\n<value>100 URLs at most.</value>",
+            "nullable": true
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets the email addresses of users for which you want to export the permission report. \r\n<value>\r\n100 email addresses at most.\r\n</value>",
+            "nullable": true
+          },
+          "dataSources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets the workspace in which you want to export the access report of users. Multiple values are allowed.\r\n<value>\r\nmicrosoft teams \r\nsharepoint online\r\nonedrive for business\r\nmicrosoft 365 group\r\n</value>",
+            "nullable": true
+          },
+          "exportOptionType": {
+            "$ref": "#/components/schemas/ExportOptionType"
+          },
+          "exportLinkType": {
+            "$ref": "#/components/schemas/PrincipalTypes"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Export job option"
+      },
+      "ExportOptionsBase": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Filter"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExportResult": {
+        "type": "object",
+        "properties": {
+          "getFileUrl": {
+            "type": "string",
+            "description": "Download file request Uri",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "description": "Export Job Id",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Export Job Result"
+      },
+      "Filter": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupSummaryViewModule": {
+        "type": "object",
+        "properties": {
+          "displayName": {
+            "type": "string",
+            "description": "The group name.",
+            "nullable": true
+          },
+          "groupId": {
+            "type": "string",
+            "description": "The group ID.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The email address of the group",
+            "nullable": true
+          },
+          "groupType": {
+            "type": "string",
+            "description": "The type of the group.\r\n<value>\r\nMicrosoft 365 Group\r\nSecurity Group\r\nDistribution Group\r\nMail-enabled Security Group\r\n</value>",
+            "nullable": true
+          },
+          "membershipType": {
+            "type": "string",
+            "description": "The membership type of the group:\r\n<value>\r\nAssigned\r\nDynamic\r\n</value>",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "description": "The time when the group is created.",
+            "format": "date-time"
+          },
+          "externalMemberCount": {
+            "type": "integer",
+            "description": "The number of external users in the group.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupSummaryViewModuleJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupSummaryViewModule"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupSummaryViewModuleResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GroupSummaryViewModule"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsightsExportResult": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "Export Status\r\n<value>\r\nNone = 0,\r\nInprogress = 1,\r\nSuccessful = 2,\r\nFailed = 3,\r\nSuccessWithException = 4,\r\nStopping = 5,\r\nStopped = 6\r\n</value>",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Status Text",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Insights Export Job Result"
+      },
+      "Int32JobStatusResultList": {
+        "type": "object",
+        "properties": {
+          "jobStatus": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LinkViewModule": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID in the link summary.",
+            "nullable": true
+          },
+          "siteId": {
+            "type": "string",
+            "description": "The site ID in which the object is shared by the link.",
+            "nullable": true
+          },
+          "selfId": {
+            "type": "string",
+            "description": "The selfID of the object which is shared by the link.",
+            "nullable": true
+          },
+          "linkId": {
+            "type": "string",
+            "description": "The link ID.",
+            "nullable": true
+          },
+          "logonName": {
+            "type": "string",
+            "description": "The link login name.",
+            "nullable": true
+          },
+          "createTime": {
+            "type": "string",
+            "description": "The time when the link is created.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "expireTime": {
+            "type": "string",
+            "description": "The time when the link is expired.\r\nThis is only available for anonymous links.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The object name that is shared via the link.",
+            "nullable": true
+          },
+          "objectUrl": {
+            "type": "string",
+            "description": "The object URL that is shared via the link.",
+            "nullable": true
+          },
+          "linkType": {
+            "type": "string",
+            "description": "The link type.\r\n<value>\r\n32(for flexible link)\r\n64 (for organization link)\r\n128 (for anonymous link)\r\n</value>",
+            "nullable": true
+          },
+          "shareBy": {
+            "type": "string",
+            "description": "The user who created the link.",
+            "nullable": true
+          },
+          "inheritFrom": {
+            "type": "string",
+            "description": "The parent from which the permission inherits.",
+            "nullable": true
+          },
+          "inheritType": {
+            "type": "string",
+            "description": "The status whether the permission is inherited.",
+            "nullable": true
+          },
+          "shareWith": {
+            "type": "integer",
+            "description": "The number of users and groups with whom the link is shared.",
+            "format": "int32"
+          },
+          "linkUrl": {
+            "type": "string",
+            "description": "The link URL.",
+            "nullable": true
+          },
+          "permission": {
+            "type": "string",
+            "description": "The permission with which the link is shared.",
+            "nullable": true
+          },
+          "fileType": {
+            "type": "string",
+            "description": "The type of the object shared via the link.",
+            "nullable": true
+          },
+          "sensitivityLevel": {
+            "type": "string",
+            "description": "The sensitivity level of the object shared via the link.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LinkViewModuleJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkViewModule"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LinkViewModuleOptions": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Sets the language of the report you are about to export.\r\n<value>Default: en-US Support: en-US/ja-JP/fr-FR</value>",
+            "nullable": true
+          },
+          "siteUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets the URLs of site collections for which you want to get the summary information.",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "description": "Sets whether to get the remaining results of a request of which the results are more than 100.",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Sets the number of links displayed in each page of the result. The number must be no larger than 100.",
+            "format": "int32"
+          },
+          "linkType": {
+            "type": "integer",
+            "description": " Sets the link types that you are about to get.\r\n <value>\r\nExternal Link = 32\r\nOrganization Link = 64\r\nAnonymous Link = 128\r\n</value>",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get links by using the paging option"
+      },
+      "LinkViewModuleResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LinkViewModule"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PrincipalTypes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16,
+          32,
+          41,
+          64,
+          65,
+          128,
+          201,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          333,
+          401,
+          402,
+          403
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SitePermissionViewModule": {
+        "type": "object",
+        "properties": {
+          "module": {
+            "type": "string",
+            "description": "The data source.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the permission.",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "The URL of the object.",
+            "nullable": true
+          },
+          "objectType": {
+            "type": "string",
+            "description": "The object type.",
+            "nullable": true
+          },
+          "principalName": {
+            "type": "string",
+            "description": "The name of the user or group.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "Email",
+            "nullable": true
+          },
+          "principalType": {
+            "type": "string",
+            "description": "The type of the user or group.",
+            "nullable": true
+          },
+          "permission": {
+            "type": "string",
+            "description": "The permission.",
+            "nullable": true
+          },
+          "numberOfMembers": {
+            "type": "integer",
+            "description": "The number of members in the group.",
+            "format": "int32"
+          },
+          "isExternalUser": {
+            "type": "boolean",
+            "description": "The status whether external users exist."
+          },
+          "inheritType": {
+            "type": "string",
+            "description": "The status whether the permission is inherited.",
+            "nullable": true
+          },
+          "linkGivingAccessTo": {
+            "type": "string",
+            "description": "The members that are given the permission via link.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SitePermissionViewModuleJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SitePermissionViewModule"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SitePermissionViewModuleOptions": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Sets the language of the report you are about to export.\r\n<value>Default: en-US Support: en-US/ja-JP/fr-FR</value>",
+            "nullable": true
+          },
+          "siteUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sets the URLs of site collections for which you want to get the permission related information. 100 URLs at most.",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "description": "Sets whether to get the remaining results of a request of which the results are more than 100.",
+            "nullable": true
+          },
+          "top": {
+            "type": "integer",
+            "description": "Sets the number of results for one page. 100 results on one page at most.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Export permission report by using the paging option\r\n///"
+      },
+      "SitePermissionViewModuleResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SitePermissionViewModule"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SiteResponseViewModel": {
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "string",
+            "nullable": true
+          },
+          "siteUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SiteResponseViewModelResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteResponseViewModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SiteUrlRequest": {
+        "type": "object",
+        "properties": {
+          "siteUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SitesData": {
+        "type": "object",
+        "properties": {
+          "siteName": {
+            "type": "string",
+            "nullable": true
+          },
+          "siteUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "riskItemCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sensitiveItemCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "exposureItemCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SitesDataJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SitesData"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SitesDataResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SitesData"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringJobResultList": {
+        "type": "object",
+        "properties": {
+          "jobId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SummaryViewModuleOptions": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Sets the language of the report you are about to export.\r\n<value>Default: en-US Support: en-US/ja-JP/fr-FR</value>",
+            "nullable": true
+          },
+          "startPage": {
+            "type": "integer",
+            "description": "Sets the start page from which you want to get the group summary. The default value is 1.",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Sets the number of groups displayed in each page of the result. The number must be no larger than 100. The default value is 100.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get summary by using the paging option"
+      },
+      "UserSummaryViewModule": {
+        "type": "object",
+        "properties": {
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the user.",
+            "nullable": true
+          },
+          "loginName": {
+            "type": "string",
+            "description": "The login name of the user.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The email address of the user.",
+            "nullable": true
+          },
+          "userStatus": {
+            "type": "string",
+            "description": "The user’s sign-in status in Microsoft 365.\r\n<value>\r\nBlocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)\r\nActivate (for a user in Azure AD whose sign in to Microsoft 365 is active)\r\nNot in Azure AD (for a user who is not in Azure AD)\r\n</value>",
+            "nullable": true
+          },
+          "trustStatus": {
+            "type": "string",
+            "description": "The user’s trust status in Insights for Microsoft 365.\r\n<value>\r\nTrusted (for a trusted user in Insights for Microsoft 365)\r\nNot Trusted (for a user who is not trusted in Insights for Microsoft 365)\r\n</value>",
+            "nullable": true
+          },
+          "sitesWithDirectAcccess": {
+            "type": "integer",
+            "description": "The number of sensitive items to which the user has been granted direct permissions.",
+            "format": "int32"
+          },
+          "lastSignIn": {
+            "type": "string",
+            "description": "The user’s last sign-in time to Microsoft 365.",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "description": "The time when the user is created in Azure AD.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserSummaryViewModuleJsonResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "nextLink": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserSummaryViewModule"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserSummaryViewModuleResultList": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          },
+          "content": {
+            "type": "string",
+            "description": "The remark. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "nextToken": {
+            "type": "string",
+            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
+            "nullable": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserSummaryViewModule"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme.",
+        "name": "Authorization",
+        "in": "header"
+      },
+      "BearerAuth1": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "BearerAuth": [ ]
+    },
+    {
+      "BearerAuth1": [ ]
+    }
+  ]
+}
