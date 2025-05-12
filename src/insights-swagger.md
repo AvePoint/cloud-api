@@ -1,2672 +1,826 @@
 # Graph API for Insights
-
-> Version v2
-
 An ASP.NET Core Graph API for Insights
 
-## Path Table
+## Version: v2
 
-| Method | Path | Description |
-| --- | --- | --- |
-| GET | [/activities/object/{path}/export](#getactivitiesobjectpathexport) | Get object activity |
-| GET | [/groups/summary](#getgroupssummary) | Gets the summary of specific groups. |
-| GET | [/groups/{groupId}/access/export](#getgroupsgroupidaccessexport) | Gets the .zip file from exporting the permission related information of specific groups. |
-| GET | [/Healthz](#gethealthz) | The API is for check health of API service |
-| GET | [/job/{jobId}/exportstatus](#getjobjobidexportstatus) | Get Activity export job statuts |
-| GET | [/job/{jobId}/exportfile](#getjobjobidexportfile) | Download Activity export  file |
-| GET | [/sharingLinks/{siteUrl}/summary](#getsharinglinkssiteurlsummary) | Gets the summary of specific links. |
-| GET | [/sharingLinks/export](#getsharinglinksexport) | Gets the .zip file from exporting the permission related information of specific links. |
-| GET | [/sites/permission](#getsitespermission) | Gets the permission-related information of specific site collections. |
-| GET | [/sites/permission/export](#getsitespermissionexport) | Exports the permission reports of specific site collections. |
-| GET | [/sites/overview](#getsitesoverview) | Get sites data |
-| GET | [/sites/{siteUrl}/siteid](#getsitessiteurlsiteid) |  |
-| GET | [/sites/{siteId}/detailrecords](#getsitessiteiddetailrecords) |  |
-| GET | [/users/summary](#getuserssummary) | Gets the summary of specific users. |
-| GET | [/users/access](#getusersaccess) | Gets the permission-related information of specific users. |
-| GET | [/users/{email}/access/export](#getusersemailaccessexport) | Exports the access reports of specific users in different workspaces. |
-| GET | [/users/{email}/activities/export](#getusersemailactivitiesexport) | get user activity |
+### Terms of service
+https://insights.avepointonlineservices.com/
 
-## Reference Table
+### /activities/object/{path}/export
 
-| Name | Path | Description |
-| --- | --- | --- |
-| AccessViewModule | [#/components/schemas/AccessViewModule](#componentsschemasaccessviewmodule) |  |
-| AccessViewModuleJsonResultList | [#/components/schemas/AccessViewModuleJsonResultList](#componentsschemasaccessviewmodulejsonresultlist) |  |
-| AccessViewModuleOptions | [#/components/schemas/AccessViewModuleOptions](#componentsschemasaccessviewmoduleoptions) | Get access report by using the paging option |
-| AccessViewModuleResultList | [#/components/schemas/AccessViewModuleResultList](#componentsschemasaccessviewmoduleresultlist) |  |
-| ActivityExportOptions | [#/components/schemas/ActivityExportOptions](#componentsschemasactivityexportoptions) | Activity export  Options |
-| DetailRecordData | [#/components/schemas/DetailRecordData](#componentsschemasdetailrecorddata) |  |
-| DetailRecordDataJsonResultList | [#/components/schemas/DetailRecordDataJsonResultList](#componentsschemasdetailrecorddatajsonresultlist) |  |
-| DetailRecordDataResultList | [#/components/schemas/DetailRecordDataResultList](#componentsschemasdetailrecorddataresultlist) |  |
-| DetailRecordExportOptions | [#/components/schemas/DetailRecordExportOptions](#componentsschemasdetailrecordexportoptions) |  |
-| ExportOptionType | [#/components/schemas/ExportOptionType](#componentsschemasexportoptiontype) |  |
-| ExportOptions | [#/components/schemas/ExportOptions](#componentsschemasexportoptions) | Export job option |
-| ExportOptionsBase | [#/components/schemas/ExportOptionsBase](#componentsschemasexportoptionsbase) |  |
-| ExportResult | [#/components/schemas/ExportResult](#componentsschemasexportresult) | Export Job Result |
-| Filter | [#/components/schemas/Filter](#componentsschemasfilter) |  |
-| GroupSummaryViewModule | [#/components/schemas/GroupSummaryViewModule](#componentsschemasgroupsummaryviewmodule) |  |
-| GroupSummaryViewModuleJsonResultList | [#/components/schemas/GroupSummaryViewModuleJsonResultList](#componentsschemasgroupsummaryviewmodulejsonresultlist) |  |
-| GroupSummaryViewModuleResultList | [#/components/schemas/GroupSummaryViewModuleResultList](#componentsschemasgroupsummaryviewmoduleresultlist) |  |
-| InsightsExportResult | [#/components/schemas/InsightsExportResult](#componentsschemasinsightsexportresult) | Insights Export Job Result |
-| Int32JobStatusResultList | [#/components/schemas/Int32JobStatusResultList](#componentsschemasint32jobstatusresultlist) |  |
-| LinkViewModule | [#/components/schemas/LinkViewModule](#componentsschemaslinkviewmodule) |  |
-| LinkViewModuleJsonResultList | [#/components/schemas/LinkViewModuleJsonResultList](#componentsschemaslinkviewmodulejsonresultlist) |  |
-| LinkViewModuleOptions | [#/components/schemas/LinkViewModuleOptions](#componentsschemaslinkviewmoduleoptions) | Get links by using the paging option |
-| LinkViewModuleResultList | [#/components/schemas/LinkViewModuleResultList](#componentsschemaslinkviewmoduleresultlist) |  |
-| PrincipalTypes | [#/components/schemas/PrincipalTypes](#componentsschemasprincipaltypes) |  |
-| SitePermissionViewModule | [#/components/schemas/SitePermissionViewModule](#componentsschemassitepermissionviewmodule) |  |
-| SitePermissionViewModuleJsonResultList | [#/components/schemas/SitePermissionViewModuleJsonResultList](#componentsschemassitepermissionviewmodulejsonresultlist) |  |
-| SitePermissionViewModuleOptions | [#/components/schemas/SitePermissionViewModuleOptions](#componentsschemassitepermissionviewmoduleoptions) | Export permission report by using the paging option
-/// |
-| SitePermissionViewModuleResultList | [#/components/schemas/SitePermissionViewModuleResultList](#componentsschemassitepermissionviewmoduleresultlist) |  |
-| SiteResponseViewModel | [#/components/schemas/SiteResponseViewModel](#componentsschemassiteresponseviewmodel) |  |
-| SiteResponseViewModelResultList | [#/components/schemas/SiteResponseViewModelResultList](#componentsschemassiteresponseviewmodelresultlist) |  |
-| SiteUrlRequest | [#/components/schemas/SiteUrlRequest](#componentsschemassiteurlrequest) |  |
-| SitesData | [#/components/schemas/SitesData](#componentsschemassitesdata) |  |
-| SitesDataJsonResultList | [#/components/schemas/SitesDataJsonResultList](#componentsschemassitesdatajsonresultlist) |  |
-| SitesDataResultList | [#/components/schemas/SitesDataResultList](#componentsschemassitesdataresultlist) |  |
-| StringJobResultList | [#/components/schemas/StringJobResultList](#componentsschemasstringjobresultlist) |  |
-| StringJsonResultList | [#/components/schemas/StringJsonResultList](#componentsschemasstringjsonresultlist) |  |
-| SummaryViewModuleOptions | [#/components/schemas/SummaryViewModuleOptions](#componentsschemassummaryviewmoduleoptions) | Get summary by using the paging option |
-| UserSummaryViewModule | [#/components/schemas/UserSummaryViewModule](#componentsschemasusersummaryviewmodule) |  |
-| UserSummaryViewModuleJsonResultList | [#/components/schemas/UserSummaryViewModuleJsonResultList](#componentsschemasusersummaryviewmodulejsonresultlist) |  |
-| UserSummaryViewModuleResultList | [#/components/schemas/UserSummaryViewModuleResultList](#componentsschemasusersummaryviewmoduleresultlist) |  |
-| BearerAuth | [#/components/securitySchemes/BearerAuth](#componentssecurityschemesbearerauth) | JWT Authorization header using the Bearer scheme. |
-| BearerAuth1 | [#/components/securitySchemes/BearerAuth1](#componentssecurityschemesbearerauth1) | JWT Authorization header using the Bearer scheme. |
+#### GET
+##### Summary:
 
-## Path Details
-
-***
-
-### [GET]/activities/object/{path}/export
-
-- Summary  
 Get object activity
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-startTime?: string
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| path | path | Filter by path | Yes | string |
+| startTime | query | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No | string |
+| finishTime | query | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No | string |
+| eventTypes | query | Filter by Event Type | No | [ string ] |
 
-```ts
-finishTime?: string
-```
+##### Responses
 
-```ts
-eventTypes?: string[]
-```
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-#### Responses
+### /groups/summary
 
-- 200 OK
+#### GET
+##### Summary:
 
-`text/plain`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`application/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`text/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-***
-
-### [GET]/groups/summary
-
-- Summary  
 Gets the summary of specific groups.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-startPage?: integer
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| startPage | query |  | No | integer |
+| pageSize | query |  | No | integer |
 
-```ts
-pageSize?: integer
-```
+##### Responses
 
-#### Responses
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-- 200 OK
+### /groups/{groupId}/access/export
 
-`text/plain`
+#### GET
+##### Summary:
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The group name.
-    displayName?: string
-    // The group ID.
-    groupId?: string
-    // The email address of the group
-    email?: string
-    // The type of the group.
-    // <value>
-    // Microsoft 365 Group
-    // Security Group
-    // Distribution Group
-    // Mail-enabled Security Group
-    // </value>
-    groupType?: string
-    // The membership type of the group:
-    // <value>
-    // Assigned
-    // Dynamic
-    // </value>
-    membershipType?: string
-    // The time when the group is created.
-    createdOn?: string
-    // The number of external users in the group.
-    externalMemberCount?: integer
-  }[]
-}
-```
-
-`application/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The group name.
-    displayName?: string
-    // The group ID.
-    groupId?: string
-    // The email address of the group
-    email?: string
-    // The type of the group.
-    // <value>
-    // Microsoft 365 Group
-    // Security Group
-    // Distribution Group
-    // Mail-enabled Security Group
-    // </value>
-    groupType?: string
-    // The membership type of the group:
-    // <value>
-    // Assigned
-    // Dynamic
-    // </value>
-    membershipType?: string
-    // The time when the group is created.
-    createdOn?: string
-    // The number of external users in the group.
-    externalMemberCount?: integer
-  }[]
-}
-```
-
-`text/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The group name.
-    displayName?: string
-    // The group ID.
-    groupId?: string
-    // The email address of the group
-    email?: string
-    // The type of the group.
-    // <value>
-    // Microsoft 365 Group
-    // Security Group
-    // Distribution Group
-    // Mail-enabled Security Group
-    // </value>
-    groupType?: string
-    // The membership type of the group:
-    // <value>
-    // Assigned
-    // Dynamic
-    // </value>
-    membershipType?: string
-    // The time when the group is created.
-    createdOn?: string
-    // The number of external users in the group.
-    externalMemberCount?: integer
-  }[]
-}
-```
-
-***
-
-### [GET]/groups/{groupId}/access/export
-
-- Summary  
 Gets the .zip file from exporting the permission related information of specific groups.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-exportOptionType?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| groupId | path | Sets the email addresses or group Id or group logonname of group for which you want to export the permission report | Yes | string |
+| exportOptionType | query | So far support:  1 - for exporting both the summary report and site collection level access report  2 - for exporting both the summary report and access report to all objects in the configured data scope  3 - for only exporting the summary report | No | [ExportOptionType](#exportoptiontype) |
+| siteUrls | query | Sets the URLs of site collections for which you want to export the permission report. | No | [ string ] |
+| dataSources | query | Sets the workspace in which you want to export the access report of users. Multiple values are allowed.  microsoft teams   sharepoint online  onedrive for business  microsoft 365 group | No | [ string ] |
 
-```ts
-siteUrls?: string[]
-```
+##### Responses
 
-```ts
-dataSources?: string[]
-```
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-#### Responses
+### /Healthz
 
-- 200 OK
+#### GET
+##### Summary:
 
-`text/plain`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`application/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`text/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-***
-
-### [GET]/Healthz
-
-- Summary  
 The API is for check health of API service
 
-- Description  
+##### Description:
+
 GET: /healthz
 
-#### Responses
+##### Responses
 
-- 200 OK
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-`text/plain`
+### /job/{jobId}/exportstatus
 
-```ts
-{
-  "type": "string"
-}
-```
+#### GET
+##### Summary:
 
-`application/json`
-
-```ts
-{
-  "type": "string"
-}
-```
-
-`text/json`
-
-```ts
-{
-  "type": "string"
-}
-```
-
-***
-
-### [GET]/job/{jobId}/exportstatus
-
-- Summary  
 Get Activity export job statuts
 
-#### Responses
+##### Parameters
 
-- 200 OK
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| jobId | path | Job Id | Yes | integer |
 
-`text/plain`
+##### Responses
 
-```ts
-{
-  jobStatus?: integer
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-`application/json`
+### /job/{jobId}/exportfile
 
-```ts
-{
-  jobStatus?: integer
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
+#### GET
+##### Summary:
 
-`text/json`
-
-```ts
-{
-  jobStatus?: integer
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-***
-
-### [GET]/job/{jobId}/exportfile
-
-- Summary  
 Download Activity export  file
 
-#### Responses
+##### Parameters
 
-- 200 OK
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| jobId | path | Job Id | Yes | integer |
 
-***
+##### Responses
 
-### [GET]/sharingLinks/{siteUrl}/summary
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-- Summary  
+### /sharingLinks/{siteUrl}/summary
+
+#### GET
+##### Summary:
+
 Gets the summary of specific links.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-linkType?: integer
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| siteUrl | path | Sets the URL of site collections for which you want to get the summary information. | Yes | string |
+| linkType | query | Sets the link types that you are about to get.  External Link = 32  Organization Link = 64  Anonymous Link = 128 | No | integer |
+| pageSize | query | Sets the number of links displayed in each page of the result. The number must be no larger than 100. | No | integer |
+| nextLink | query | Sets whether to get the remaining results of a request of which the results are more than 100. | No | string |
 
-```ts
-pageSize?: integer
-```
+##### Responses
 
-```ts
-nextLink?: string
-```
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-#### Responses
+### /sharingLinks/export
 
-- 200 OK
+#### GET
+##### Summary:
 
-`text/plain`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The ID in the link summary.
-    id?: string
-    // The site ID in which the object is shared by the link.
-    siteId?: string
-    // The selfID of the object which is shared by the link.
-    selfId?: string
-    // The link ID.
-    linkId?: string
-    // The link login name.
-    logonName?: string
-    // The time when the link is created.
-    createTime?: string
-    // The time when the link is expired.
-    // This is only available for anonymous links.
-    expireTime?: string
-    // The object name that is shared via the link.
-    name?: string
-    // The object URL that is shared via the link.
-    objectUrl?: string
-    // The link type.
-    // <value>
-    // 32(for flexible link)
-    // 64 (for organization link)
-    // 128 (for anonymous link)
-    // </value>
-    linkType?: string
-    // The user who created the link.
-    shareBy?: string
-    // The parent from which the permission inherits.
-    inheritFrom?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The number of users and groups with whom the link is shared.
-    shareWith?: integer
-    // The link URL.
-    linkUrl?: string
-    // The permission with which the link is shared.
-    permission?: string
-    // The type of the object shared via the link.
-    fileType?: string
-    // The sensitivity level of the object shared via the link.
-    sensitivityLevel?: string
-  }[]
-}
-```
-
-`application/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The ID in the link summary.
-    id?: string
-    // The site ID in which the object is shared by the link.
-    siteId?: string
-    // The selfID of the object which is shared by the link.
-    selfId?: string
-    // The link ID.
-    linkId?: string
-    // The link login name.
-    logonName?: string
-    // The time when the link is created.
-    createTime?: string
-    // The time when the link is expired.
-    // This is only available for anonymous links.
-    expireTime?: string
-    // The object name that is shared via the link.
-    name?: string
-    // The object URL that is shared via the link.
-    objectUrl?: string
-    // The link type.
-    // <value>
-    // 32(for flexible link)
-    // 64 (for organization link)
-    // 128 (for anonymous link)
-    // </value>
-    linkType?: string
-    // The user who created the link.
-    shareBy?: string
-    // The parent from which the permission inherits.
-    inheritFrom?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The number of users and groups with whom the link is shared.
-    shareWith?: integer
-    // The link URL.
-    linkUrl?: string
-    // The permission with which the link is shared.
-    permission?: string
-    // The type of the object shared via the link.
-    fileType?: string
-    // The sensitivity level of the object shared via the link.
-    sensitivityLevel?: string
-  }[]
-}
-```
-
-`text/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The ID in the link summary.
-    id?: string
-    // The site ID in which the object is shared by the link.
-    siteId?: string
-    // The selfID of the object which is shared by the link.
-    selfId?: string
-    // The link ID.
-    linkId?: string
-    // The link login name.
-    logonName?: string
-    // The time when the link is created.
-    createTime?: string
-    // The time when the link is expired.
-    // This is only available for anonymous links.
-    expireTime?: string
-    // The object name that is shared via the link.
-    name?: string
-    // The object URL that is shared via the link.
-    objectUrl?: string
-    // The link type.
-    // <value>
-    // 32(for flexible link)
-    // 64 (for organization link)
-    // 128 (for anonymous link)
-    // </value>
-    linkType?: string
-    // The user who created the link.
-    shareBy?: string
-    // The parent from which the permission inherits.
-    inheritFrom?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The number of users and groups with whom the link is shared.
-    shareWith?: integer
-    // The link URL.
-    linkUrl?: string
-    // The permission with which the link is shared.
-    permission?: string
-    // The type of the object shared via the link.
-    fileType?: string
-    // The sensitivity level of the object shared via the link.
-    sensitivityLevel?: string
-  }[]
-}
-```
-
-***
-
-### [GET]/sharingLinks/export
-
-- Summary  
 Gets the .zip file from exporting the permission related information of specific links.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-exportLinkType?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16, 32, 41, 64, 65, 128, 201, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 333, 401, 402, 403]
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| exportLinkType | query | Set export type  32 (for FlexibleLink link)  64 (for organization link)  128 (for external link) | No | [PrincipalTypes](#principaltypes) |
+| startTime | query | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No | string |
+| finishTime | query | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No | string |
 
-```ts
-startTime?: string
-```
+##### Responses
 
-```ts
-finishTime?: string
-```
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-#### Responses
+### /sites/permission
 
-- 200 OK
+#### GET
+##### Summary:
 
-`text/plain`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`application/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`text/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-***
-
-### [GET]/sites/permission
-
-- Summary  
 Gets the permission-related information of specific site collections.
 
-- Description  
+##### Description:
+
 The api/v1/site/permission/export API is recommended when the site collections that you are about to export are over 2,000.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-siteUrls?: string[]
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| siteUrls | query | Sets the URLs of site collections for which you want to get the permission related information | No | [ string ] |
+| pageSize | query | Sets whether to get the remaining results of a request of which the results are more than 100. | No | integer |
+| nextLink | query | Sets the number of results for one page. 100 results on one page at most. | No | string |
 
-```ts
-pageSize?: integer
-```
+##### Responses
 
-```ts
-nextLink?: string
-```
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-#### Responses
+### /sites/permission/export
 
-- 200 OK
+#### GET
+##### Summary:
 
-`text/plain`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    url?: string
-    // The object type.
-    objectType?: string
-    // The name of the user or group.
-    principalName?: string
-    // Email
-    email?: string
-    // The type of the user or group.
-    principalType?: string
-    // The permission.
-    permission?: string
-    // The number of members in the group.
-    numberOfMembers?: integer
-    // The status whether external users exist.
-    isExternalUser?: boolean
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The members that are given the permission via link.
-    linkGivingAccessTo?: string
-  }[]
-}
-```
-
-`application/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    url?: string
-    // The object type.
-    objectType?: string
-    // The name of the user or group.
-    principalName?: string
-    // Email
-    email?: string
-    // The type of the user or group.
-    principalType?: string
-    // The permission.
-    permission?: string
-    // The number of members in the group.
-    numberOfMembers?: integer
-    // The status whether external users exist.
-    isExternalUser?: boolean
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The members that are given the permission via link.
-    linkGivingAccessTo?: string
-  }[]
-}
-```
-
-`text/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    url?: string
-    // The object type.
-    objectType?: string
-    // The name of the user or group.
-    principalName?: string
-    // Email
-    email?: string
-    // The type of the user or group.
-    principalType?: string
-    // The permission.
-    permission?: string
-    // The number of members in the group.
-    numberOfMembers?: integer
-    // The status whether external users exist.
-    isExternalUser?: boolean
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The members that are given the permission via link.
-    linkGivingAccessTo?: string
-  }[]
-}
-```
-
-***
-
-### [GET]/sites/permission/export
-
-- Summary  
 Exports the permission reports of specific site collections.
 
-- Description  
+##### Description:
+
 You can only export permission reports of 100 site collections at a time.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-siteUrls?: string[]
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| siteUrls | query | Sets the URLs of site collections for which you want to export the permission report. | No | [ string ] |
 
-#### Responses
+##### Responses
 
-- 200 OK
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-`text/plain`
+### /sites/overview
 
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
+#### GET
+##### Summary:
 
-`application/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`text/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-***
-
-### [GET]/sites/overview
-
-- Summary  
 Get sites data
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-riskLevel?: integer[]
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| riskLevel | query | Enter the set of risk levels. | No | [ integer ] |
+| nextLink | query | Sets the number of results for one page. 100 results on one page at most. | No | string |
 
-```ts
-nextLink?: string
-```
+##### Responses
 
-#### Responses
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-- 200 OK
+### /sites/{siteUrl}/siteid
 
-`text/plain`
+#### GET
+##### Summary:
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    siteName?: string
-    siteUrl?: string
-    riskItemCount?: integer
-    sensitiveItemCount?: integer
-    exposureItemCount?: integer
-  }[]
-}
-```
 
-`application/json`
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    siteName?: string
-    siteUrl?: string
-    riskItemCount?: integer
-    sensitiveItemCount?: integer
-    exposureItemCount?: integer
-  }[]
-}
-```
+##### Parameters
 
-`text/json`
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| siteUrl | path | sharepoint site uri | Yes | string |
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    siteName?: string
-    siteUrl?: string
-    riskItemCount?: integer
-    sensitiveItemCount?: integer
-    exposureItemCount?: integer
-  }[]
-}
-```
+##### Responses
 
-***
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-### [GET]/sites/{siteUrl}/siteid
+### /sites/{siteId}/detailrecords
 
-#### Responses
+#### GET
+##### Summary:
 
-- 200 OK
 
-`text/plain`
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values?: string[]
-}
-```
+##### Parameters
 
-`application/json`
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| siteId | path | sharepoint site Id | Yes | string |
+| nextLink | query | Sets the number of results for one page. 100 results on one page at most. | No | string |
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values?: string[]
-}
-```
+##### Responses
 
-`text/json`
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values?: string[]
-}
-```
+### /sites/{siteId}/{objectUrl}/settag
 
-***
+#### PATCH
+##### Summary:
 
-### [GET]/sites/{siteId}/detailrecords
+object add tag
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-nextLink?: string
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| siteId | path | sharepoint site Id | Yes | string |
+| objectUrl | path | sharepoint object url | Yes | string |
+| tagName | query | tag name | No | string |
 
-#### Responses
+##### Responses
 
-- 200 OK
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-`text/plain`
+### /users/summary
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    id?: string
-    name?: string
-    location?: string
-    objectType?: string
-    createdBy?: string
-    module?: string
-    inheritType?: string
-    siteName?: string
-    sensitivityLevel?: string
-    exposureLevel?: string
-    scannedTime?: string
-    createdTime?: string
-    modifiedTime?: string
-    channelName?: string
-    riskLevel?: string
-    privacy?: string
-    sensitiveInfoType?: string[]
-    sensitivityLabel?: string
-    tagName?: string
-    retentionLabel?: string
-    creatorEmail?: string
-  }[]
-}
-```
+#### GET
+##### Summary:
 
-`application/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    id?: string
-    name?: string
-    location?: string
-    objectType?: string
-    createdBy?: string
-    module?: string
-    inheritType?: string
-    siteName?: string
-    sensitivityLevel?: string
-    exposureLevel?: string
-    scannedTime?: string
-    createdTime?: string
-    modifiedTime?: string
-    channelName?: string
-    riskLevel?: string
-    privacy?: string
-    sensitiveInfoType?: string[]
-    sensitivityLabel?: string
-    tagName?: string
-    retentionLabel?: string
-    creatorEmail?: string
-  }[]
-}
-```
-
-`text/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    id?: string
-    name?: string
-    location?: string
-    objectType?: string
-    createdBy?: string
-    module?: string
-    inheritType?: string
-    siteName?: string
-    sensitivityLevel?: string
-    exposureLevel?: string
-    scannedTime?: string
-    createdTime?: string
-    modifiedTime?: string
-    channelName?: string
-    riskLevel?: string
-    privacy?: string
-    sensitiveInfoType?: string[]
-    sensitivityLabel?: string
-    tagName?: string
-    retentionLabel?: string
-    creatorEmail?: string
-  }[]
-}
-```
-
-***
-
-### [GET]/users/summary
-
-- Summary  
 Gets the summary of specific users.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-startPage?: integer
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| startPage | query | The starting page of the query starts from 0. | No | integer |
+| pageSize | query | Sets the number of results for one page. 100 results on one page at most. | No | integer |
 
-```ts
-pageSize?: integer
-```
+##### Responses
 
-#### Responses
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-- 200 OK
+### /users/access
 
-`text/plain`
+#### GET
+##### Summary:
 
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The display name of the user.
-    displayName?: string
-    // The login name of the user.
-    loginName?: string
-    // The email address of the user.
-    email?: string
-    // The user’s sign-in status in Microsoft 365.
-    // <value>
-    // Blocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)
-    // Activate (for a user in Azure AD whose sign in to Microsoft 365 is active)
-    // Not in Azure AD (for a user who is not in Azure AD)
-    // </value>
-    userStatus?: string
-    // The user’s trust status in Insights for Microsoft 365.
-    // <value>
-    // Trusted (for a trusted user in Insights for Microsoft 365)
-    // Not Trusted (for a user who is not trusted in Insights for Microsoft 365)
-    // </value>
-    trustStatus?: string
-    // The number of sensitive items to which the user has been granted direct permissions.
-    sitesWithDirectAcccess?: integer
-    // The user’s last sign-in time to Microsoft 365.
-    lastSignIn?: string
-    // The time when the user is created in Azure AD.
-    createdOn?: string
-  }[]
-}
-```
-
-`application/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The display name of the user.
-    displayName?: string
-    // The login name of the user.
-    loginName?: string
-    // The email address of the user.
-    email?: string
-    // The user’s sign-in status in Microsoft 365.
-    // <value>
-    // Blocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)
-    // Activate (for a user in Azure AD whose sign in to Microsoft 365 is active)
-    // Not in Azure AD (for a user who is not in Azure AD)
-    // </value>
-    userStatus?: string
-    // The user’s trust status in Insights for Microsoft 365.
-    // <value>
-    // Trusted (for a trusted user in Insights for Microsoft 365)
-    // Not Trusted (for a user who is not trusted in Insights for Microsoft 365)
-    // </value>
-    trustStatus?: string
-    // The number of sensitive items to which the user has been granted direct permissions.
-    sitesWithDirectAcccess?: integer
-    // The user’s last sign-in time to Microsoft 365.
-    lastSignIn?: string
-    // The time when the user is created in Azure AD.
-    createdOn?: string
-  }[]
-}
-```
-
-`text/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The display name of the user.
-    displayName?: string
-    // The login name of the user.
-    loginName?: string
-    // The email address of the user.
-    email?: string
-    // The user’s sign-in status in Microsoft 365.
-    // <value>
-    // Blocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)
-    // Activate (for a user in Azure AD whose sign in to Microsoft 365 is active)
-    // Not in Azure AD (for a user who is not in Azure AD)
-    // </value>
-    userStatus?: string
-    // The user’s trust status in Insights for Microsoft 365.
-    // <value>
-    // Trusted (for a trusted user in Insights for Microsoft 365)
-    // Not Trusted (for a user who is not trusted in Insights for Microsoft 365)
-    // </value>
-    trustStatus?: string
-    // The number of sensitive items to which the user has been granted direct permissions.
-    sitesWithDirectAcccess?: integer
-    // The user’s last sign-in time to Microsoft 365.
-    lastSignIn?: string
-    // The time when the user is created in Azure AD.
-    createdOn?: string
-  }[]
-}
-```
-
-***
-
-### [GET]/users/access
-
-- Summary  
 Gets the permission-related information of specific users.
 
-- Description  
+##### Description:
+
 The api/v1/user/permission/export API is recommended when the users that you are about to export are over 2,000.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-siteUrls?: string[]
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| siteUrls | query | Sets the URLs of site collections for which you want to get the permission related information | No | [ string ] |
+| emails | query | Sets the email addresses of users for which you want to export the permission report | No | [ string ] |
+| nextLink | query | Sets whether to get the remaining results of a request of which the results are more than 100. | No | string |
 
-```ts
-emails?: string[]
-```
+##### Responses
 
-```ts
-nextLink?: string
-```
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-#### Responses
+### /users/{email}/access/export
 
-- 200 OK
+#### GET
+##### Summary:
 
-`text/plain`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the site.
-    siteName?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    location?: string
-    // The object type.
-    objectType?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The permission.
-    permission?: string
-    // The sensitivity level of the object.
-    sensitivityLevel?: string
-    // The sensitive info type of the object.
-    sensitiveInfoType?: string
-    // The status whether the permission is directly granted.
-    isDirect?: boolean
-    // The sensitivity label of the object.
-    sensitivityLabel?: string
-    // The parent from which the permission inherits.
-    inheritedFrom?: string
-  }[]
-}
-```
-
-`application/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the site.
-    siteName?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    location?: string
-    // The object type.
-    objectType?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The permission.
-    permission?: string
-    // The sensitivity level of the object.
-    sensitivityLevel?: string
-    // The sensitive info type of the object.
-    sensitiveInfoType?: string
-    // The status whether the permission is directly granted.
-    isDirect?: boolean
-    // The sensitivity label of the object.
-    sensitivityLabel?: string
-    // The parent from which the permission inherits.
-    inheritedFrom?: string
-  }[]
-}
-```
-
-`text/json`
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the site.
-    siteName?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    location?: string
-    // The object type.
-    objectType?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The permission.
-    permission?: string
-    // The sensitivity level of the object.
-    sensitivityLevel?: string
-    // The sensitive info type of the object.
-    sensitiveInfoType?: string
-    // The status whether the permission is directly granted.
-    isDirect?: boolean
-    // The sensitivity label of the object.
-    sensitivityLabel?: string
-    // The parent from which the permission inherits.
-    inheritedFrom?: string
-  }[]
-}
-```
-
-***
-
-### [GET]/users/{email}/access/export
-
-- Summary  
 Exports the access reports of specific users in different workspaces.
 
-#### Parameters(Query)
+##### Parameters
 
-```ts
-siteUrls?: string[]
-```
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| email | path | Sets the email addresses of users for which you want to export the permission report | Yes | string |
+| siteUrls | query | Sets the URLs of site collections for which you want to export the permission report. | No | [ string ] |
+| dataSources | query | Sets the workspace in which you want to export the access report of users. Multiple values are allowed.  microsoft teams   sharepoint online  onedrive for business  microsoft 365 group | No | [ string ] |
 
-```ts
-dataSources?: string[]
-```
+##### Responses
 
-#### Responses
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
 
-- 200 OK
+### /users/{email}/activities/export
 
-`text/plain`
+#### GET
+##### Summary:
 
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`application/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`text/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-***
-
-### [GET]/users/{email}/activities/export
-
-- Summary  
 get user activity
 
-#### Parameters(Query)
-
-```ts
-startTime?: string
-```
-
-```ts
-finishTime?: string
-```
-
-```ts
-eventTypes?: string[]
-```
-
-#### Responses
-
-- 200 OK
-
-`text/plain`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`application/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-`text/json`
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-## References
-
-### #/components/schemas/AccessViewModule
-
-```ts
-{
-  // The data source.
-  module?: string
-  // The name of the site.
-  siteName?: string
-  // The name of the permission.
-  name?: string
-  // The URL of the object.
-  location?: string
-  // The object type.
-  objectType?: string
-  // The status whether the permission is inherited.
-  inheritType?: string
-  // The permission.
-  permission?: string
-  // The sensitivity level of the object.
-  sensitivityLevel?: string
-  // The sensitive info type of the object.
-  sensitiveInfoType?: string
-  // The status whether the permission is directly granted.
-  isDirect?: boolean
-  // The sensitivity label of the object.
-  sensitivityLabel?: string
-  // The parent from which the permission inherits.
-  inheritedFrom?: string
-}
-```
-
-### #/components/schemas/AccessViewModuleJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the site.
-    siteName?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    location?: string
-    // The object type.
-    objectType?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The permission.
-    permission?: string
-    // The sensitivity level of the object.
-    sensitivityLevel?: string
-    // The sensitive info type of the object.
-    sensitiveInfoType?: string
-    // The status whether the permission is directly granted.
-    isDirect?: boolean
-    // The sensitivity label of the object.
-    sensitivityLabel?: string
-    // The parent from which the permission inherits.
-    inheritedFrom?: string
-  }[]
-}
-```
-
-### #/components/schemas/AccessViewModuleOptions
-
-```ts
-// Get access report by using the paging option
-{
-  // Sets the language of the report you are about to export.
-  // <value>Default: en-US Support: en-US/ja-JP/fr-FR</value>
-  language?: string
-  siteUrls?: string[]
-  emails?: string[]
-  // Sets whether to get the remaining results of a request of which the results are more than 100.
-  token?: string
-  // Sets the number of results for one page. 100 results on one page at most.
-  top?: integer
-}
-```
-
-### #/components/schemas/AccessViewModuleResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    // The data source.
-    module?: string
-    // The name of the site.
-    siteName?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    location?: string
-    // The object type.
-    objectType?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The permission.
-    permission?: string
-    // The sensitivity level of the object.
-    sensitivityLevel?: string
-    // The sensitive info type of the object.
-    sensitiveInfoType?: string
-    // The status whether the permission is directly granted.
-    isDirect?: boolean
-    // The sensitivity label of the object.
-    sensitivityLabel?: string
-    // The parent from which the permission inherits.
-    inheritedFrom?: string
-  }[]
-}
-```
-
-### #/components/schemas/ActivityExportOptions
-
-```ts
-// Activity export  Options
-{
-  // Sets the language of the report you are about to export.
-  // <value>Default: en-US Support: en-US/ja-JP/fr-FR</value>
-  language?: string
-  // Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss"
-  startTime?: string
-  // Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss"
-  endTime?: string
-  eventTypes?: string[]
-  // Filter by Path
-  path?: string
-  // Filter by User email
-  email?: string
-}
-```
-
-### #/components/schemas/DetailRecordData
-
-```ts
-{
-  id?: string
-  name?: string
-  location?: string
-  objectType?: string
-  createdBy?: string
-  module?: string
-  inheritType?: string
-  siteName?: string
-  sensitivityLevel?: string
-  exposureLevel?: string
-  scannedTime?: string
-  createdTime?: string
-  modifiedTime?: string
-  channelName?: string
-  riskLevel?: string
-  privacy?: string
-  sensitiveInfoType?: string[]
-  sensitivityLabel?: string
-  tagName?: string
-  retentionLabel?: string
-  creatorEmail?: string
-}
-```
-
-### #/components/schemas/DetailRecordDataJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    id?: string
-    name?: string
-    location?: string
-    objectType?: string
-    createdBy?: string
-    module?: string
-    inheritType?: string
-    siteName?: string
-    sensitivityLevel?: string
-    exposureLevel?: string
-    scannedTime?: string
-    createdTime?: string
-    modifiedTime?: string
-    channelName?: string
-    riskLevel?: string
-    privacy?: string
-    sensitiveInfoType?: string[]
-    sensitivityLabel?: string
-    tagName?: string
-    retentionLabel?: string
-    creatorEmail?: string
-  }[]
-}
-```
-
-### #/components/schemas/DetailRecordDataResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    id?: string
-    name?: string
-    location?: string
-    objectType?: string
-    createdBy?: string
-    module?: string
-    inheritType?: string
-    siteName?: string
-    sensitivityLevel?: string
-    exposureLevel?: string
-    scannedTime?: string
-    createdTime?: string
-    modifiedTime?: string
-    channelName?: string
-    riskLevel?: string
-    privacy?: string
-    sensitiveInfoType?: string[]
-    sensitivityLabel?: string
-    tagName?: string
-    retentionLabel?: string
-    creatorEmail?: string
-  }[]
-}
-```
-
-### #/components/schemas/DetailRecordExportOptions
-
-```ts
-{
-  token?: string
-  pageSize?: integer
-  filters: {
-    id?: string
-    values?: string[]
-  }[]
-  language?: string
-  siteId?: string
-}
-```
-
-### #/components/schemas/ExportOptionType
-
-```ts
-{
-  "enum": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9
-  ],
-  "type": "integer",
-  "format": "int32"
-}
-```
-
-### #/components/schemas/ExportOptions
-
-```ts
-// Export job option
-{
-  // Sets the language of the report you are about to export.
-  // <value>Default: en-US Support: en-US/ja-JP/fr-FR</value>
-  language?: string
-  siteUrls?: string[]
-  emails?: string[]
-  dataSources?: string[]
-  exportOptionType?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  exportLinkType?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16, 32, 41, 64, 65, 128, 201, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 333, 401, 402, 403]
-  // Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss"
-  startTime?: string
-  // Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss"
-  endTime?: string
-}
-```
-
-### #/components/schemas/ExportOptionsBase
-
-```ts
-{
-  token?: string
-  pageSize?: integer
-  filters: {
-    id?: string
-    values?: string[]
-  }[]
-}
-```
-
-### #/components/schemas/ExportResult
-
-```ts
-// Export Job Result
-{
-  // Download file request Uri
-  getFileUrl?: string
-  // Export Job Id
-  id?: integer
-}
-```
-
-### #/components/schemas/Filter
-
-```ts
-{
-  id?: string
-  values?: string[]
-}
-```
-
-### #/components/schemas/GroupSummaryViewModule
-
-```ts
-{
-  // The group name.
-  displayName?: string
-  // The group ID.
-  groupId?: string
-  // The email address of the group
-  email?: string
-  // The type of the group.
-  // <value>
-  // Microsoft 365 Group
-  // Security Group
-  // Distribution Group
-  // Mail-enabled Security Group
-  // </value>
-  groupType?: string
-  // The membership type of the group:
-  // <value>
-  // Assigned
-  // Dynamic
-  // </value>
-  membershipType?: string
-  // The time when the group is created.
-  createdOn?: string
-  // The number of external users in the group.
-  externalMemberCount?: integer
-}
-```
-
-### #/components/schemas/GroupSummaryViewModuleJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The group name.
-    displayName?: string
-    // The group ID.
-    groupId?: string
-    // The email address of the group
-    email?: string
-    // The type of the group.
-    // <value>
-    // Microsoft 365 Group
-    // Security Group
-    // Distribution Group
-    // Mail-enabled Security Group
-    // </value>
-    groupType?: string
-    // The membership type of the group:
-    // <value>
-    // Assigned
-    // Dynamic
-    // </value>
-    membershipType?: string
-    // The time when the group is created.
-    createdOn?: string
-    // The number of external users in the group.
-    externalMemberCount?: integer
-  }[]
-}
-```
-
-### #/components/schemas/GroupSummaryViewModuleResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    // The group name.
-    displayName?: string
-    // The group ID.
-    groupId?: string
-    // The email address of the group
-    email?: string
-    // The type of the group.
-    // <value>
-    // Microsoft 365 Group
-    // Security Group
-    // Distribution Group
-    // Mail-enabled Security Group
-    // </value>
-    groupType?: string
-    // The membership type of the group:
-    // <value>
-    // Assigned
-    // Dynamic
-    // </value>
-    membershipType?: string
-    // The time when the group is created.
-    createdOn?: string
-    // The number of external users in the group.
-    externalMemberCount?: integer
-  }[]
-}
-```
-
-### #/components/schemas/InsightsExportResult
-
-```ts
-// Insights Export Job Result
-{
-  // Export Status
-  // <value>
-  // None = 0,
-  // Inprogress = 1,
-  // Successful = 2,
-  // Failed = 3,
-  // SuccessWithException = 4,
-  // Stopping = 5,
-  // Stopped = 6
-  // </value>
-  status?: integer
-  // Status Text
-  description?: string
-}
-```
-
-### #/components/schemas/Int32JobStatusResultList
-
-```ts
-{
-  jobStatus?: integer
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-### #/components/schemas/LinkViewModule
-
-```ts
-{
-  // The ID in the link summary.
-  id?: string
-  // The site ID in which the object is shared by the link.
-  siteId?: string
-  // The selfID of the object which is shared by the link.
-  selfId?: string
-  // The link ID.
-  linkId?: string
-  // The link login name.
-  logonName?: string
-  // The time when the link is created.
-  createTime?: string
-  // The time when the link is expired.
-  // This is only available for anonymous links.
-  expireTime?: string
-  // The object name that is shared via the link.
-  name?: string
-  // The object URL that is shared via the link.
-  objectUrl?: string
-  // The link type.
-  // <value>
-  // 32(for flexible link)
-  // 64 (for organization link)
-  // 128 (for anonymous link)
-  // </value>
-  linkType?: string
-  // The user who created the link.
-  shareBy?: string
-  // The parent from which the permission inherits.
-  inheritFrom?: string
-  // The status whether the permission is inherited.
-  inheritType?: string
-  // The number of users and groups with whom the link is shared.
-  shareWith?: integer
-  // The link URL.
-  linkUrl?: string
-  // The permission with which the link is shared.
-  permission?: string
-  // The type of the object shared via the link.
-  fileType?: string
-  // The sensitivity level of the object shared via the link.
-  sensitivityLevel?: string
-}
-```
-
-### #/components/schemas/LinkViewModuleJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The ID in the link summary.
-    id?: string
-    // The site ID in which the object is shared by the link.
-    siteId?: string
-    // The selfID of the object which is shared by the link.
-    selfId?: string
-    // The link ID.
-    linkId?: string
-    // The link login name.
-    logonName?: string
-    // The time when the link is created.
-    createTime?: string
-    // The time when the link is expired.
-    // This is only available for anonymous links.
-    expireTime?: string
-    // The object name that is shared via the link.
-    name?: string
-    // The object URL that is shared via the link.
-    objectUrl?: string
-    // The link type.
-    // <value>
-    // 32(for flexible link)
-    // 64 (for organization link)
-    // 128 (for anonymous link)
-    // </value>
-    linkType?: string
-    // The user who created the link.
-    shareBy?: string
-    // The parent from which the permission inherits.
-    inheritFrom?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The number of users and groups with whom the link is shared.
-    shareWith?: integer
-    // The link URL.
-    linkUrl?: string
-    // The permission with which the link is shared.
-    permission?: string
-    // The type of the object shared via the link.
-    fileType?: string
-    // The sensitivity level of the object shared via the link.
-    sensitivityLevel?: string
-  }[]
-}
-```
-
-### #/components/schemas/LinkViewModuleOptions
-
-```ts
-// Get links by using the paging option
-{
-  // Sets the language of the report you are about to export.
-  // <value>Default: en-US Support: en-US/ja-JP/fr-FR</value>
-  language?: string
-  siteUrls?: string[]
-  // Sets whether to get the remaining results of a request of which the results are more than 100.
-  token?: string
-  // Sets the number of links displayed in each page of the result. The number must be no larger than 100.
-  pageSize?: integer
-  //  Sets the link types that you are about to get.
-  //  <value>
-  // External Link = 32
-  // Organization Link = 64
-  // Anonymous Link = 128
-  // </value>
-  linkType?: integer
-}
-```
-
-### #/components/schemas/LinkViewModuleResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    // The ID in the link summary.
-    id?: string
-    // The site ID in which the object is shared by the link.
-    siteId?: string
-    // The selfID of the object which is shared by the link.
-    selfId?: string
-    // The link ID.
-    linkId?: string
-    // The link login name.
-    logonName?: string
-    // The time when the link is created.
-    createTime?: string
-    // The time when the link is expired.
-    // This is only available for anonymous links.
-    expireTime?: string
-    // The object name that is shared via the link.
-    name?: string
-    // The object URL that is shared via the link.
-    objectUrl?: string
-    // The link type.
-    // <value>
-    // 32(for flexible link)
-    // 64 (for organization link)
-    // 128 (for anonymous link)
-    // </value>
-    linkType?: string
-    // The user who created the link.
-    shareBy?: string
-    // The parent from which the permission inherits.
-    inheritFrom?: string
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The number of users and groups with whom the link is shared.
-    shareWith?: integer
-    // The link URL.
-    linkUrl?: string
-    // The permission with which the link is shared.
-    permission?: string
-    // The type of the object shared via the link.
-    fileType?: string
-    // The sensitivity level of the object shared via the link.
-    sensitivityLevel?: string
-  }[]
-}
-```
-
-### #/components/schemas/PrincipalTypes
-
-```ts
-{
-  "enum": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    16,
-    32,
-    41,
-    64,
-    65,
-    128,
-    201,
-    301,
-    302,
-    303,
-    304,
-    305,
-    306,
-    307,
-    308,
-    309,
-    310,
-    311,
-    312,
-    313,
-    314,
-    315,
-    316,
-    317,
-    318,
-    319,
-    320,
-    333,
-    401,
-    402,
-    403
-  ],
-  "type": "integer",
-  "format": "int32"
-}
-```
-
-### #/components/schemas/SitePermissionViewModule
-
-```ts
-{
-  // The data source.
-  module?: string
-  // The name of the permission.
-  name?: string
-  // The URL of the object.
-  url?: string
-  // The object type.
-  objectType?: string
-  // The name of the user or group.
-  principalName?: string
-  // Email
-  email?: string
-  // The type of the user or group.
-  principalType?: string
-  // The permission.
-  permission?: string
-  // The number of members in the group.
-  numberOfMembers?: integer
-  // The status whether external users exist.
-  isExternalUser?: boolean
-  // The status whether the permission is inherited.
-  inheritType?: string
-  // The members that are given the permission via link.
-  linkGivingAccessTo?: string
-}
-```
-
-### #/components/schemas/SitePermissionViewModuleJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The data source.
-    module?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    url?: string
-    // The object type.
-    objectType?: string
-    // The name of the user or group.
-    principalName?: string
-    // Email
-    email?: string
-    // The type of the user or group.
-    principalType?: string
-    // The permission.
-    permission?: string
-    // The number of members in the group.
-    numberOfMembers?: integer
-    // The status whether external users exist.
-    isExternalUser?: boolean
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The members that are given the permission via link.
-    linkGivingAccessTo?: string
-  }[]
-}
-```
-
-### #/components/schemas/SitePermissionViewModuleOptions
-
-```ts
-// Export permission report by using the paging option
-// ///
-{
-  // Sets the language of the report you are about to export.
-  // <value>Default: en-US Support: en-US/ja-JP/fr-FR</value>
-  language?: string
-  siteUrls?: string[]
-  // Sets whether to get the remaining results of a request of which the results are more than 100.
-  token?: string
-  // Sets the number of results for one page. 100 results on one page at most.
-  top?: integer
-}
-```
-
-### #/components/schemas/SitePermissionViewModuleResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    // The data source.
-    module?: string
-    // The name of the permission.
-    name?: string
-    // The URL of the object.
-    url?: string
-    // The object type.
-    objectType?: string
-    // The name of the user or group.
-    principalName?: string
-    // Email
-    email?: string
-    // The type of the user or group.
-    principalType?: string
-    // The permission.
-    permission?: string
-    // The number of members in the group.
-    numberOfMembers?: integer
-    // The status whether external users exist.
-    isExternalUser?: boolean
-    // The status whether the permission is inherited.
-    inheritType?: string
-    // The members that are given the permission via link.
-    linkGivingAccessTo?: string
-  }[]
-}
-```
-
-### #/components/schemas/SiteResponseViewModel
-
-```ts
-{
-  siteId?: string
-  siteUrl?: string
-}
-```
-
-### #/components/schemas/SiteResponseViewModelResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    siteId?: string
-    siteUrl?: string
-  }[]
-}
-```
-
-### #/components/schemas/SiteUrlRequest
-
-```ts
-{
-  siteUrls?: string[]
-}
-```
-
-### #/components/schemas/SitesData
-
-```ts
-{
-  siteName?: string
-  siteUrl?: string
-  riskItemCount?: integer
-  sensitiveItemCount?: integer
-  exposureItemCount?: integer
-}
-```
-
-### #/components/schemas/SitesDataJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    siteName?: string
-    siteUrl?: string
-    riskItemCount?: integer
-    sensitiveItemCount?: integer
-    exposureItemCount?: integer
-  }[]
-}
-```
-
-### #/components/schemas/SitesDataResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    siteName?: string
-    siteUrl?: string
-    riskItemCount?: integer
-    sensitiveItemCount?: integer
-    exposureItemCount?: integer
-  }[]
-}
-```
-
-### #/components/schemas/StringJobResultList
-
-```ts
-{
-  jobId?: string
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-}
-```
-
-### #/components/schemas/StringJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values?: string[]
-}
-```
-
-### #/components/schemas/SummaryViewModuleOptions
-
-```ts
-// Get summary by using the paging option
-{
-  // Sets the language of the report you are about to export.
-  // <value>Default: en-US Support: en-US/ja-JP/fr-FR</value>
-  language?: string
-  // Sets the start page from which you want to get the group summary. The default value is 1.
-  startPage?: integer
-  // Sets the number of groups displayed in each page of the result. The number must be no larger than 100. The default value is 100.
-  pageSize?: integer
-}
-```
-
-### #/components/schemas/UserSummaryViewModule
-
-```ts
-{
-  // The display name of the user.
-  displayName?: string
-  // The login name of the user.
-  loginName?: string
-  // The email address of the user.
-  email?: string
-  // The user’s sign-in status in Microsoft 365.
-  // <value>
-  // Blocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)
-  // Activate (for a user in Azure AD whose sign in to Microsoft 365 is active)
-  // Not in Azure AD (for a user who is not in Azure AD)
-  // </value>
-  userStatus?: string
-  // The user’s trust status in Insights for Microsoft 365.
-  // <value>
-  // Trusted (for a trusted user in Insights for Microsoft 365)
-  // Not Trusted (for a user who is not trusted in Insights for Microsoft 365)
-  // </value>
-  trustStatus?: string
-  // The number of sensitive items to which the user has been granted direct permissions.
-  sitesWithDirectAcccess?: integer
-  // The user’s last sign-in time to Microsoft 365.
-  lastSignIn?: string
-  // The time when the user is created in Azure AD.
-  createdOn?: string
-}
-```
-
-### #/components/schemas/UserSummaryViewModuleJsonResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextLink?: string
-  values: {
-    // The display name of the user.
-    displayName?: string
-    // The login name of the user.
-    loginName?: string
-    // The email address of the user.
-    email?: string
-    // The user’s sign-in status in Microsoft 365.
-    // <value>
-    // Blocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)
-    // Activate (for a user in Azure AD whose sign in to Microsoft 365 is active)
-    // Not in Azure AD (for a user who is not in Azure AD)
-    // </value>
-    userStatus?: string
-    // The user’s trust status in Insights for Microsoft 365.
-    // <value>
-    // Trusted (for a trusted user in Insights for Microsoft 365)
-    // Not Trusted (for a user who is not trusted in Insights for Microsoft 365)
-    // </value>
-    trustStatus?: string
-    // The number of sensitive items to which the user has been granted direct permissions.
-    sitesWithDirectAcccess?: integer
-    // The user’s last sign-in time to Microsoft 365.
-    lastSignIn?: string
-    // The time when the user is created in Azure AD.
-    createdOn?: string
-  }[]
-}
-```
-
-### #/components/schemas/UserSummaryViewModuleResultList
-
-```ts
-{
-  // The HTTP response status code.
-  status?: integer
-  // The error message.
-  message?: string
-  // The remark. The element is not used for this API and responded with “null” by default.
-  content?: string
-  // The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.
-  nextToken?: string
-  results: {
-    // The display name of the user.
-    displayName?: string
-    // The login name of the user.
-    loginName?: string
-    // The email address of the user.
-    email?: string
-    // The user’s sign-in status in Microsoft 365.
-    // <value>
-    // Blocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)
-    // Activate (for a user in Azure AD whose sign in to Microsoft 365 is active)
-    // Not in Azure AD (for a user who is not in Azure AD)
-    // </value>
-    userStatus?: string
-    // The user’s trust status in Insights for Microsoft 365.
-    // <value>
-    // Trusted (for a trusted user in Insights for Microsoft 365)
-    // Not Trusted (for a user who is not trusted in Insights for Microsoft 365)
-    // </value>
-    trustStatus?: string
-    // The number of sensitive items to which the user has been granted direct permissions.
-    sitesWithDirectAcccess?: integer
-    // The user’s last sign-in time to Microsoft 365.
-    lastSignIn?: string
-    // The time when the user is created in Azure AD.
-    createdOn?: string
-  }[]
-}
-```
-
-### #/components/securitySchemes/BearerAuth
-
-```ts
-{
-  "type": "apiKey",
-  "description": "JWT Authorization header using the Bearer scheme.",
-  "name": "Authorization",
-  "in": "header"
-}
-```
-
-### #/components/securitySchemes/BearerAuth1
-
-```ts
-{
-  "type": "apiKey",
-  "description": "JWT Authorization header using the Bearer scheme.",
-  "name": "Authorization",
-  "in": "header"
-}
-```
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| email | path | Filter by email | Yes | string |
+| startTime | query | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No | string |
+| finishTime | query | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No | string |
+| eventTypes | query | Filter by Event Type | No | [ string ] |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
+
+### Models
+
+
+#### AccessViewModule
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| module | string | The data source. | No |
+| siteName | string | The name of the site. | No |
+| name | string | The name of the permission. | No |
+| location | string | The URL of the object. | No |
+| objectType | string | The object type. | No |
+| inheritType | string | The status whether the permission is inherited. | No |
+| permission | string | The permission. | No |
+| sensitivityLevel | string | The sensitivity level of the object. | No |
+| sensitiveInfoType | string | The sensitive info type of the object. | No |
+| isDirect | boolean | The status whether the permission is directly granted. | No |
+| sensitivityLabel | string | The sensitivity label of the object. | No |
+| inheritedFrom | string | The parent from which the permission inherits. | No |
+
+#### AccessViewModuleJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ [AccessViewModule](#accessviewmodule) ] |  | No |
+
+#### AccessViewModuleOptions
+
+Get access report by using the paging option
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| language | string | Sets the language of the report you are about to export.  <value>Default: en-US Support: en-US/ja-JP/fr-FR</value> | No |
+| siteUrls | [ string ] | Sets the URLs of site collections for which you want to get the permission related information. 100 URLs at most. | No |
+| emails | [ string ] | Sets the email addresses of users for which you want to export the permission report. 100 email addresses at most. | No |
+| token | string | Sets whether to get the remaining results of a request of which the results are more than 100. | No |
+| top | integer | Sets the number of results for one page. 100 results on one page at most. | No |
+
+#### AccessViewModuleResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [AccessViewModule](#accessviewmodule) ] |  | No |
+
+#### ActivityExportOptions
+
+Activity export  Options
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| language | string | Sets the language of the report you are about to export.  <value>Default: en-US Support: en-US/ja-JP/fr-FR</value> | No |
+| startTime | string | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No |
+| endTime | string | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No |
+| eventTypes | [ string ] | Filter by Event Type | No |
+| path | string | Filter by Path | No |
+| email | string | Filter by User email | No |
+
+#### BooleanJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ boolean ] |  | No |
+
+#### DetailRecordData
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | string |  | No |
+| name | string |  | No |
+| location | string |  | No |
+| objectType | string |  | No |
+| createdBy | string |  | No |
+| module | string |  | No |
+| inheritType | string |  | No |
+| siteName | string |  | No |
+| sensitivityLevel | string |  | No |
+| exposureLevel | string |  | No |
+| scannedTime | string |  | No |
+| createdTime | string |  | No |
+| modifiedTime | string |  | No |
+| channelName | string |  | No |
+| riskLevel | string |  | No |
+| privacy | string |  | No |
+| sensitiveInfoType | [ string ] |  | No |
+| sensitivityLabel | string |  | No |
+| tagName | string |  | No |
+| retentionLabel | string |  | No |
+| creatorEmail | string |  | No |
+| webUrl | string |  | No |
+
+#### DetailRecordDataJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ [DetailRecordData](#detailrecorddata) ] |  | No |
+
+#### DetailRecordDataResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [DetailRecordData](#detailrecorddata) ] |  | No |
+
+#### DetailRecordExportOptions
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| token | string |  | No |
+| pageSize | integer |  | No |
+| filters | [ [Filter](#filter) ] |  | No |
+| language | string |  | No |
+| siteId | string |  | No |
+
+#### ExportOptionType
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| ExportOptionType | integer |  |  |
+
+#### ExportOptions
+
+Export job option
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| language | string | Sets the language of the report you are about to export.  <value>Default: en-US Support: en-US/ja-JP/fr-FR</value> | No |
+| siteUrls | [ string ] | Sets the URLs of site collections for which you want to export the permission report.   <value>100 URLs at most.</value> | No |
+| emails | [ string ] | Sets the email addresses of users for which you want to export the permission report.   <value>  100 email addresses at most.  </value> | No |
+| dataSources | [ string ] | Sets the workspace in which you want to export the access report of users. Multiple values are allowed.  <value>  microsoft teams   sharepoint online  onedrive for business  microsoft 365 group  </value> | No |
+| exportOptionType | [ExportOptionType](#exportoptiontype) |  | No |
+| exportLinkType | [PrincipalTypes](#principaltypes) |  | No |
+| startTime | string | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No |
+| endTime | string | Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss" | No |
+
+#### ExportOptionsBase
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| token | string |  | No |
+| pageSize | integer |  | No |
+| filters | [ [Filter](#filter) ] |  | No |
+
+#### ExportResult
+
+Export Job Result
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| getFileUrl | string | Download file request Uri | No |
+| id | integer | Export Job Id | No |
+
+#### Filter
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | string |  | No |
+| values | [ string ] |  | No |
+
+#### GroupSummaryViewModule
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| displayName | string | The group name. | No |
+| groupId | string | The group ID. | No |
+| email | string | The email address of the group | No |
+| groupType | string | The type of the group.  <value>  Microsoft 365 Group  Security Group  Distribution Group  Mail-enabled Security Group  </value> | No |
+| membershipType | string | The membership type of the group:  <value>  Assigned  Dynamic  </value> | No |
+| createdOn | dateTime | The time when the group is created. | No |
+| externalMemberCount | integer | The number of external users in the group. | No |
+
+#### GroupSummaryViewModuleJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ [GroupSummaryViewModule](#groupsummaryviewmodule) ] |  | No |
+
+#### GroupSummaryViewModuleResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [GroupSummaryViewModule](#groupsummaryviewmodule) ] |  | No |
+
+#### InsightsExportResult
+
+Insights Export Job Result
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | Export Status  <value>  None = 0,  Inprogress = 1,  Successful = 2,  Failed = 3,  SuccessWithException = 4,  Stopping = 5,  Stopped = 6  </value> | No |
+| description | string | Status Text | No |
+
+#### Int32JobStatusResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| jobStatus | integer |  | No |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+
+#### LinkViewModule
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | string | The ID in the link summary. | No |
+| siteId | string | The site ID in which the object is shared by the link. | No |
+| selfId | string | The selfID of the object which is shared by the link. | No |
+| linkId | string | The link ID. | No |
+| logonName | string | The link login name. | No |
+| createTime | dateTime | The time when the link is created. | No |
+| expireTime | dateTime | The time when the link is expired.  This is only available for anonymous links. | No |
+| name | string | The object name that is shared via the link. | No |
+| objectUrl | string | The object URL that is shared via the link. | No |
+| linkType | string | The link type.  <value>  32(for flexible link)  64 (for organization link)  128 (for anonymous link)  </value> | No |
+| shareBy | string | The user who created the link. | No |
+| inheritFrom | string | The parent from which the permission inherits. | No |
+| inheritType | string | The status whether the permission is inherited. | No |
+| shareWith | integer | The number of users and groups with whom the link is shared. | No |
+| linkUrl | string | The link URL. | No |
+| permission | string | The permission with which the link is shared. | No |
+| fileType | string | The type of the object shared via the link. | No |
+| sensitivityLevel | string | The sensitivity level of the object shared via the link. | No |
+
+#### LinkViewModuleJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ [LinkViewModule](#linkviewmodule) ] |  | No |
+
+#### LinkViewModuleOptions
+
+Get links by using the paging option
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| language | string | Sets the language of the report you are about to export.  <value>Default: en-US Support: en-US/ja-JP/fr-FR</value> | No |
+| siteUrls | [ string ] | Sets the URLs of site collections for which you want to get the summary information. | No |
+| token | string | Sets whether to get the remaining results of a request of which the results are more than 100. | No |
+| pageSize | integer | Sets the number of links displayed in each page of the result. The number must be no larger than 100. | No |
+| linkType | integer |  Sets the link types that you are about to get.   <value>  External Link = 32  Organization Link = 64  Anonymous Link = 128  </value> | No |
+
+#### LinkViewModuleResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [LinkViewModule](#linkviewmodule) ] |  | No |
+
+#### PrincipalTypes
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| PrincipalTypes | integer |  |  |
+
+#### SitePermissionViewModule
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| module | string | The data source. | No |
+| name | string | The name of the permission. | No |
+| url | string | The URL of the object. | No |
+| objectType | string | The object type. | No |
+| principalName | string | The name of the user or group. | No |
+| email | string | Email | No |
+| principalType | string | The type of the user or group. | No |
+| permission | string | The permission. | No |
+| numberOfMembers | integer | The number of members in the group. | No |
+| isExternalUser | boolean | The status whether external users exist. | No |
+| inheritType | string | The status whether the permission is inherited. | No |
+| linkGivingAccessTo | string | The members that are given the permission via link. | No |
+
+#### SitePermissionViewModuleJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ [SitePermissionViewModule](#sitepermissionviewmodule) ] |  | No |
+
+#### SitePermissionViewModuleOptions
+
+Export permission report by using the paging option
+///
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| language | string | Sets the language of the report you are about to export.  <value>Default: en-US Support: en-US/ja-JP/fr-FR</value> | No |
+| siteUrls | [ string ] | Sets the URLs of site collections for which you want to get the permission related information. 100 URLs at most. | No |
+| token | string | Sets whether to get the remaining results of a request of which the results are more than 100. | No |
+| top | integer | Sets the number of results for one page. 100 results on one page at most. | No |
+
+#### SitePermissionViewModuleResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [SitePermissionViewModule](#sitepermissionviewmodule) ] |  | No |
+
+#### SiteResponseViewModel
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| siteId | string |  | No |
+| siteUrl | string |  | No |
+
+#### SiteResponseViewModelResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [SiteResponseViewModel](#siteresponseviewmodel) ] |  | No |
+
+#### SiteUrlRequest
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| siteUrls | [ string ] |  | No |
+
+#### SitesData
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| siteName | string |  | No |
+| siteUrl | string |  | No |
+| riskItemCount | integer |  | No |
+| sensitiveItemCount | integer |  | No |
+| exposureItemCount | integer |  | No |
+
+#### SitesDataJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ [SitesData](#sitesdata) ] |  | No |
+
+#### SitesDataResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [SitesData](#sitesdata) ] |  | No |
+
+#### StringJobResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| jobId | string |  | No |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+
+#### StringJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ string ] |  | No |
+
+#### SummaryViewModuleOptions
+
+Get summary by using the paging option
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| language | string | Sets the language of the report you are about to export.  <value>Default: en-US Support: en-US/ja-JP/fr-FR</value> | No |
+| startPage | integer | Sets the start page from which you want to get the group summary. The default value is 1. | No |
+| pageSize | integer | Sets the number of groups displayed in each page of the result. The number must be no larger than 100. The default value is 100. | No |
+
+#### UserSummaryViewModule
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| displayName | string | The display name of the user. | No |
+| loginName | string | The login name of the user. | No |
+| email | string | The email address of the user. | No |
+| userStatus | string | The user’s sign-in status in Microsoft 365.  <value>  Blocked (for a user in Azure AD whose sign-in to Microsoft 365 is blocked)  Activate (for a user in Azure AD whose sign in to Microsoft 365 is active)  Not in Azure AD (for a user who is not in Azure AD)  </value> | No |
+| trustStatus | string | The user’s trust status in Insights for Microsoft 365.  <value>  Trusted (for a trusted user in Insights for Microsoft 365)  Not Trusted (for a user who is not trusted in Insights for Microsoft 365)  </value> | No |
+| sitesWithDirectAcccess | integer | The number of sensitive items to which the user has been granted direct permissions. | No |
+| lastSignIn | string | The user’s last sign-in time to Microsoft 365. | No |
+| createdOn | dateTime | The time when the user is created in Azure AD. | No |
+
+#### UserSummaryViewModuleJsonResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| nextLink | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| values | [ [UserSummaryViewModule](#usersummaryviewmodule) ] |  | No |
+
+#### UserSummaryViewModuleResultList
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| status | integer | The HTTP response status code. | No |
+| message | string | The error message. | No |
+| content | string | The remark. The element is not used for this API and responded with “null” by default. | No |
+| nextToken | string | The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default. | No |
+| results | [ [UserSummaryViewModule](#usersummaryviewmodule) ] |  | No |
