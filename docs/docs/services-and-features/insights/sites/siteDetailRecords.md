@@ -68,6 +68,7 @@ The API response provides detailed information about the site detail records ret
 | tagName           | Tag associated with the object                                                |string|
 | retentionLabel    | Retention label applied to the object                                         |string|
 | creatorEmail      | Email of the user who created the object                                      |string|
+| webURL     | URL of the SharePoint site where the object is stored                                      |string|
 
 
 ## Request Sample
@@ -132,6 +133,7 @@ The following response returns a list of detail records in the queried site with
       "tagName": "", // Tag associated with the object
       "retentionLabel": "", // Retention label applied to the object
       "creatorEmail": "a***@alita***.onmicrosoft.com" // Email of the user who created the object
+      "webURL": "https://alita*******market7583.sharepoint.com/sites/7583teams-7583channel" // URl of the SharePoint site where the object is stored
     }
   ],
   "status": 200, // HTTP status code indicating the operation is successful.
