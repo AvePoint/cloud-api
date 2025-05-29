@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.4",
   "info": {
     "title": "Graph API for Insights",
     "description": "An ASP.NET Core Graph API for Insights",
@@ -714,17 +714,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanJsonResultList"
+                  "$ref": "#/components/schemas/SimpleResultModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanJsonResultList"
+                  "$ref": "#/components/schemas/SimpleResultModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanJsonResultList"
+                  "$ref": "#/components/schemas/SimpleResultModel"
                 }
               }
             }
@@ -1191,37 +1191,6 @@
         },
         "additionalProperties": false,
         "description": "Activity export  Options"
-      },
-      "BooleanJsonResultList": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "integer",
-            "description": "The HTTP response status code.",
-            "format": "int32",
-            "readOnly": true
-          },
-          "message": {
-            "type": "string",
-            "description": "The error message.",
-            "nullable": true,
-            "readOnly": true
-          },
-          "nextLink": {
-            "type": "string",
-            "description": "The token to be used to get the remaining results of this request. The element is not used for this API and responded with “null” by default.",
-            "nullable": true
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "type": "boolean"
-            },
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
       },
       "DetailRecordData": {
         "type": "object",
@@ -1933,6 +1902,24 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "SimpleResultModel": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "The HTTP response status code.",
+            "format": "int32",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
       },
       "SitePermissionViewModule": {
         "type": "object",
