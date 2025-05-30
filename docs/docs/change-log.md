@@ -7,6 +7,9 @@ This document provides a detailed log of changes, updates, and enhancements made
 ### Added  
 
  - The public APIs for **Elements for Partners** are now fully supported in GCC and GCC High tenants.  
+  - Introduced the new endpoint `/insights/sites/{siteId}/{objectUrl}/settag` to **Insights** for tagging objects.  
+  - Added the `webUrl` property to the response of the `/insights/sites/{siteId}/detailRecords` endpoint.
+
 
 
 ## April 2025
