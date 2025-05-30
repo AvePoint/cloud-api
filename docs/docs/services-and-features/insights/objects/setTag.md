@@ -38,13 +38,13 @@ The API supports several query parameters to specify the object to which the tag
 
 ## Responses
 
-The API response provides detailed information about the job status.  
+The API response provides detailed information about the tag status.  
 
 | Elements | Description                                      | Type    |
 |----------|--------------------------------------------------|---------|
-| values  | The result of the tag action.                                            | string  |
-| status   | The status of the tag action.                   | integer |
-| message  | The error message if the job failed.                                     | string  |
+| status | The status of the tag action.                                                 | integer  |
+| message | The error message if the tag action failed.                   | string |
+
 
 ## Request Sample
 
@@ -60,7 +60,6 @@ The following is a sample response for this API method, which includes the actio
 
 ```json
 {
-  "jobId": "4790",
   "status": 200, // current operation status
   "message": "" // error message if this API method failed.
 }

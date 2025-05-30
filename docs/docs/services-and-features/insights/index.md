@@ -13,10 +13,10 @@ The following sections provide detailed descriptions of each export method. Thes
 
 Endpoint | API Method |  Description |
 | --- | --- | --- |
-| `/insights/activities/object/{path}/export`| [Export Activities on an Object](objects/objectActivities.md)| Exports activities performed on a specific object.|
+| `/insights/activities/object/{path}/export`| [Export Activities for a Specific Object](objects/objectActivities.md)| Exports activities performed on a specific object.|
 | `/insights/users/{email}/activities/export`| [Export User Activities](users/userActivitiesExport.md)  | Exports activity data for a specific user. | 
 |`/insights/users/{email}/access/export`| [Export User Permissions](users/userPermissionsExport.md)  |Exports user access report.|
-| `/insights/groups/{groupId}/access/export`| [Export Group Permissions](groups/groupAccesReport.md)  | Exports group access report. |
+| `/insights/groups/{groupId}/access/export`| [Export Group Access Permissions](groups/groupAccesReport.md)  | Exports group access report. |
 | `/insights/sites/permission/export` | [Export Site Permissions](sites/sitePermissionsExport.md) | Exports site permissions. |
 | `/insights/sharingLinks/export` | [Export Permission-Related Information for Sharing Links](sharingLinks/linkExport.md) | Exports permission-related information for sharing links |
 
@@ -29,10 +29,21 @@ In addition to the export methods, the Insights for Microsoft 365 API provides s
 | `/insights/users/access`| [Retrieve User Permissions](users/userPermissions.md)  | Retrieves the permission-related information for specific users. | 
 |`/insights/users/summary`| [Retrieve User Summary](users/userSummary.md)  |Retrieves the user summary information.|
 | `/insights/groups/summary`| [Retrieve Group Summary](groups/groupSummary.md)  | Retrieves group summary. |
-| `/insights/sites/permission`| [Retrieve Site Permissions](sites/sitePermissionsGet.md)  | Retrieve site Permissions. |
+| `/insights/sharingLinks/{siteUrl}/summary`| [Retrieve Sharing Links Summary](sharingLinks/linkSummary.md)  | Retrieves link summaries. |
+| `/insights/sites/permission`| [Retrieve Site Permissions](sites/sitePermissionsGet.md)  | Retrieves site Permissions. |
 | `/insights/sites/overview` | [Retrieve Site Overview](sites/siteOverview.md) | Retrieves site overview. |  
 | `/insights/sites/{siteUrl}/siteId`| [Retrieve Site ID](sites/siteId.md)  | Retrieves site ID. |
 | `insights/sites/{siteId}/detailRecords`| [Retrieve Site Detail Records](sites/siteDetailRecords.md)| Retrieves site detail records.|
 | `/insights/sharingLinks/{siteUrl}/summary`| [Retrieve Permission-Related Information for Sharing Links](sharingLinks/linkSummary.md)  | Retrieves the link summaries. |
+
+## API Methods for Direct Action
+
+The Insights for Microsoft 365 API provides the method that allow users to download the report file of an export job, and the method to add tags to objects for data categorization and further management. 
+
+| Endpoint| API Method  | Description |
+| --- | --- | --- |
+| `/insights/job/{jobId}/exportfile`| [Download Export Job File](exportJobs/exportJobFile.md)  | Downloads the report file of an export job. | 
+|`/insights/sites/{siteId}/{objectUrl}/settag`| [Add Tag to Specific Object](objects/setTag.md)  |Adds a tag to a specific object.|
+
 
 
