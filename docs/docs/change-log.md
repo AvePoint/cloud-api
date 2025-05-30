@@ -2,6 +2,13 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## June 2025
+
+### Added  
+
+ - The public APIs for **Elements for Partners** are now fully supported in GCC and GCC High tenants.  
+
+
 ## April 2025
 
 ### Added  
