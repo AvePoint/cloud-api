@@ -6,6 +6,7 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Added  
 
+  - Introduced the new endpoint `/aos/jobs` to **AvePoint Online Services** for retrieving scan job information.
  - The public APIs for **Elements for Partners** are now fully supported in GCC and GCC High tenants.  
   - Introduced the new endpoint `/insights/sites/{siteId}/{objectUrl}/settag` to **Insights** for tagging objects.  
   - Added the `webUrl` property to the response of the `/insights/sites/{siteId}/detailRecords` endpoint.
