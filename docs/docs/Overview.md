@@ -68,6 +68,7 @@ For more features and use cases, visit the [Use Cases](Use-Cases.md).
 > - GCP for Japan (Tokyo)
 > - GCP for East US (Moncks Corner)
 > - GCP for West Europe (Eemshaven, Netherlands)
+> - GCP for South Korea (Seoul)
 >
 > These GCP data centers are currently deployed with the following AvePoint services:
 >
@@ -100,6 +101,7 @@ Refer to the data center endpoints in the table below:
 |                       | Japan (Tokyo):**asia-northeast1**                     | `https://graph-gcp-jp.avepointonlineservices.com/` |
 |                       | East US (Moncks Corner):**us-east1**                  | `https://graph-gcp-us.avepointonlineservices.com/` |
 |                       | West Europe (Eemshaven, Netherlands):**europe-west4** | `https://graph-gcp-we.avepointonlineservices.com/` |
+||South Korea (Seoul): **asia-northeast3** |`https://graph-gcp-kr.avepointonlineservices.com/`|
 
 
 ### Security Measures
