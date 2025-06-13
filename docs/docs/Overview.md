@@ -116,14 +116,10 @@ Refer to the data center endpoints in the table below:
 
 - Certificates and Client Secret Specifications
   
-  - Client Secret Requirements
+  - AvePoint recommends that you set an expiration for the secrets of one year for the app registration, and the secrets are hashed using SHA-256 before storing to AvePoint's secure backend system.
 
-    Client secrets must be exactly 32 characters and secrets are hashed using SHA-256 before storing to AvePoint's secure backend system.
+  - Certificate-based authentication
 
-  - Certificate-Based Authentication
-    
-    For enhanced security, use X.509 certificate instead of client secretes. Certificates must:
-
-      - Use RSA keys (≥2048-bit) or ECC keys (≥256-bit).
-      - Employ SHA-256 signatures.
-      - Be issued by a trusted Certificate Authority (CA).
+      - For enhanced security, use X.509 certificate instead of client secretes.  
+      - The certificate must contain a public key, and you must have access to the corresponding private key.
+      - The "Key Usage" extension of the certificate must be marked for Digital Signature.
