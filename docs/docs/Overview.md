@@ -17,7 +17,7 @@ The API provides advanced features to optimize integration and security:
     - TLS 1.2/1.3 guarantees modern cryptographic protection for data in transit.  
     - Strict client secret rules and certificate requirements mitigate credential theft and brute-force attacks.
   
-  By adhering to these protocols, organizations use enterprise-grade security while accessing Graph API, ensuring data integrity and regulatory compliance. For more details, refer to []().
+  By adhering to these protocols, organizations use enterprise-grade security while accessing Graph API, ensuring data integrity and regulatory compliance. For more details, refer to [Security Measures](#security-measures).
 
 ## Legacy API
 
