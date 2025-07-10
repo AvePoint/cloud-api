@@ -2,6 +2,29 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## August 2025
+
+### Added
+
+  - Added the `phaseStartTime`, `renewalDueDate`, and `nextRenewalDate` properties to the response of the following endpoints:
+    - `/smp/powerplatform/environments`
+    - `/smp/powerplatform/powerapps`
+    - `/smp/powerplatform/powerautomate/cloudflows`
+    - `/smp/powerplatform/powerbi/workspaces`
+    - `/smp/exchange/mailboxes`
+
+### Changed
+
+  - Removed the following properties from the `/smp/exchange/resourcemailboxes` endpoint:
+    - `lastRenewalTime`
+    - `lastRenewalBy`
+    - `renewProfileApplied`
+    - `electionProfileApplied`
+    - `phaseAssignees`
+    - `renewProfile`
+    - `electionProfile`
+  - Updated the type of `recipientLimits` of the `/smp/exchange/mailboxes` endpoint to `string`.
+
 ## June 2025
 
 ### Added  
@@ -42,8 +65,8 @@ This document provides a detailed log of changes, updates, and enhancements made
 
  - Corrected the spelling mistake of the `conflictOption` property in the request of the `/records/connector/records` endpoint. It was previously misspelled as `confilictOption`.
  - Corrected the following property types in the `/smp/powerplatform/environments` endpoint response:
-    - Corrected the type of `phaseAssignees` to "Object".
-    - Corrected the type of `dlpPolicies` to "Integer".
+    - Corrected the type of `phaseAssignees` to `Object`.
+    - Corrected the type of `dlpPolicies` to `Integer`.
  - Documented the `location` query parameter for the `/backup/m365/jobs` and `backup/m365/licenseconsumption` endpoints.
 
 ## February 2025

@@ -83,16 +83,9 @@ The API response provides detailed information about the resource mailboxes retr
 | notes                                 | The notes added to the resource.                                            | string  |
 | primaryContact                        | The Cloud Governance primary contact of the resource mailbox. For the detailed user properties, refer to [User Details](#user-details). | object  |
 | secondaryContact                      | The Cloud Governance secondary contact of the resource mailbox. For the detailed user properties, refer to [User Details](#user-details). | object  |
-| lastRenewalTime                       | The last time when the resource mailbox was renewed.                        | string  |
-| lastRenewalBy                         | The latest user who renewed the resource mailbox. For the detailed user properties, refer to [User Details](#user-details). | object  |
-| renewProfileApplied                   | Indicates if a renewal profile has been applied to the resource mailbox. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | metadata                              | The Cloud Governance metadata associated with the resource mailbox. For the detailed metadata properties, refer to [Cloud Governance Metadata Details](#cloud-governance-metadata-details). | list    |
-| electionProfileApplied                | Indicates if a contact election profile has been applied to the resource mailbox. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered                          | Indicates if the resource mailbox has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | phase                                 | The current phase of the resource mailbox in Cloud Governance.              | string  |
-| phaseAssignees                        | The individuals assigned to the current phase of the resource mailbox in Cloud Governance. For the detailed user properties, refer to [User Details](#user-details). | object  |
-| renewProfile                          | The Cloud Governance renewal profile applied to the resource mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object  |
-| electionProfile                       | The Cloud Governance contact election profile applied to the resource mailbox. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details). | object  |
 | claimStatus                           | The Cloud Governance claim status of the resource mailbox.                  | string  |
 
 
@@ -145,14 +138,6 @@ The API response provides detailed information about the resource mailboxes retr
 | id                   | The unique identifier for the metadata.          | string  |
 | name                 | The metadata name.                               | string  |
 | metadataSetting      | The custom metadata.                             | object  |
-
-
-### Cloud Governance Profile Details
-
-| Elements             | Description                                      | Type    |
-|----------------------|--------------------------------------------------|---------|
-| name                 | The name for the profile.                        | string  |
-| id                   | The unique identifier for the profile.           | string  |
 
 
 ## Request Sample
@@ -225,16 +210,9 @@ If the request has been successfully processed, a 200 OK response will be return
             "notes": "", // The notes added to the resource
             "primaryContact": null, // The Cloud Governance primary contact of the resource mailbox
             "secondaryContact": null,// The Cloud Governance secondary contact of the resource mailbox
-            "lastRenewalTime": "",// The last time when the resource mailbox was renewed.
-            "lastRenewalBy": null,// The latest user who renewed the resource mailbox
-            "renewProfileApplied": null,// Indicates if a renewal profile has been applied to the resource mailbox
             "metadata": [],// The Cloud Governance metadata associated with the resource mailbox
-            "electionProfileApplied": null,// Indicates if a contact election profile has been applied to the resource mailbox
             "isRegistered": false,// Indicates if the resource mailbox has been imported to Cloud Governance
             "phase": "",// The current phase of the resource mailbox in Cloud Governance
-            "phaseAssignees": "",// The individuals assigned to the current phase of the resource mailbox in Cloud Governance
-            "renewProfile": "N/A", // The Cloud Governance renewal profile applied to the resource mailbox
-            "electionProfile": "N/A",// The Cloud Governance contact election profile applied to the resource mailbox
             "claimStatus": ""// The Cloud Governance claim status of the resource mailbox
         }
     ],
