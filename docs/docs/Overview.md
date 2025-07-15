@@ -97,6 +97,8 @@ Refer to the data center endpoints in the table below:
 |                       | UK South (London)                                           | `https://graph-uk.avepointonlineservices.com/`     |
 |                       | US - East                                                   | `https://graph-us.avepointonlineservices.com/`     |
 |                       | AOS-US Gov                                                  | `https://graph-gov.avepointonlineservices.com/`    |
+|                       | AOS2                                                  | `https://graph-aos2.avepointonlineservices.com/`    |
+|                       | FedRAMP Cloud (Project Hosts)                                    | `https://graphusgovapi.online15.net/`    |
 | Google Cloud Platform | Australia Southeast (Sydney):**australia-southeast1** | `https://graph-gcp-au.avepointonlineservices.com/` |
 |                       | Japan (Tokyo):**asia-northeast1**                     | `https://graph-gcp-jp.avepointonlineservices.com/` |
 |                       | East US (Moncks Corner):**us-east1**                  | `https://graph-gcp-us.avepointonlineservices.com/` |
