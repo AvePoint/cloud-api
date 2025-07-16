@@ -15,6 +15,11 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Changed
 
+- **AvePoint Online Services**
+  - Enhanced the `/aos/audit` endpoint to support filtering for Cloud Backup for Dynamics 365.
+- **Cloud Backup for Google Workspace**
+  - Enhanced the `/backup/google/admin/jobs` endpoint to support filtering for Google Directory (including users and groups) and Google Vault (including Gmail, Drive, and shared drives).
+- **EnPower**
   - Removed the following properties from the `/smp/exchange/resourcemailboxes` endpoint:
     - `lastRenewalTime`
     - `lastRenewalBy`
