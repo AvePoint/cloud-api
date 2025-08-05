@@ -29,13 +29,15 @@ This document provides a detailed log of changes, updates, and enhancements made
     - `renewProfile`
     - `electionProfile`
   - Updated the type of `recipientLimits` of the `/smp/exchange/mailboxes` endpoint to `string`.
+- **Elements**
+  - Enhanced the `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewSummary` endpoint to support the last scan job status of **In progress**.
 
 ## June 2025
 
 ### Added  
 
   - Introduced the new endpoint `/aos/jobs` to **AvePoint Online Services** for retrieving scan job information.
- - The public APIs for **Elements for Partners** are now fully supported in GCC and GCC High tenants.  
+ - Public APIs for **Elements** are now fully supported in GCC and GCC High tenants.  
   - Introduced the new endpoint `/insights/sites/{siteId}/{objectUrl}/settag` to **Insights** for tagging objects.  
   - Added the `webUrl` property to the response of the `/insights/sites/{siteId}/detailRecords` endpoint.
 
