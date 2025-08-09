@@ -27,7 +27,7 @@ To access the resources of AvePoint Cloud Services via the AvePoint Graph API, y
 For a step-by-step guide on creating an app registration for API authentication, refer to the [Register an App for Modern API](register-app.md) section in the AvePoint Online Services User Guide.  
 
 > [!NOTE]  
-> For partner operations, go to Elements for Partner for app registration. See [App Registration in Elements for Partners guide](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+> For partner operations, go to Elements for app registration. See [App Registration in the Elements User Guide](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 ## Call an API Method
 

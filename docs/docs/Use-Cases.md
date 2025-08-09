@@ -12,7 +12,7 @@ IT administrators can retrieve audit records from AvePoint Online Services to fa
 
 ## Streamline Partner Operations  
 
-Service providers can manage their customers more efficiently via the Elements platform, leveraging the API to integrate and automate customer-related workflows, and enhance collaboration and operational efficiency between the organization and its customers.  
+Service providers can manage their customers more efficiently via Elements, leveraging the API to integrate and automate customer-related workflows, and enhance collaboration and operational efficiency between the organization and its customers.  
 
 ## Comprehensive Backup Management  
 

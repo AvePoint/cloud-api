@@ -26,7 +26,7 @@ The API supports several query parameters to refine and customize the data retri
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
 |dataSource|Sets the data source for the job that you want to get. The default value is 1. <br> Valid values:<br> <ul><li> **1** for Admin</li><li> **2** for ReCenter </li></ul>|enum  |No|
-|appType|Sets the service types of the jobs to get.<br> Valid values:<br> <ul><li> **1** for Gmail</li><li> **2** for Drive </li><li> **4** for Calendar </li><li>**8** for Contacts</li><li>**64** for Shared drives</li><li>**128** for Classroom</li><li>**4096** for Chat</li></ul>|enum  |No|
+|appType|Sets the service types of the jobs to get.<br> Valid values:<br> <ul><li> **1** for Gmail</li><li> **2** for Drive </li><li> **4** for Calendar </li><li>**8** for Contacts</li><li>**64** for Shared drives</li><li>**128** for Classroom</li><li>**256** for Users</li><li>**512** for Groups</li><li>**4096** for Chat</li><li>**8192** for Gmail (Vault)</li><li>**16384** for Drive (Vault)</li><li>**32768** for shared drives (Vault)</li></ul>|enum  |No|
 |pageIndex|Sets the starting number of the page to get the jobs. The default value is 0.|integer|No|
 |pageSize|Sets the number of jobs to display on one page. The default value is 100.|integer|No|
 |jobType|Sets the job types that you want to get.<br> Valid values:<br> <ul><li> **1** for Backup</li><li> **2** for Restore </li><li> **3** for Export </li><li>**4** for Delete</li><li>**5** for Retention</li><li>**6** for Generate Report</li></ul>|enum  |No|
@@ -50,7 +50,7 @@ Each job retrieved through the API includes detailed attributes that offer insig
 | Elements           | Description                                                           | Type   |
 |--------------------|-----------------------------------------------------------------------|--------|
 | jobId              | Unique identifier for the job.                                        | string | 
-| appType            | Service type of the job. <br> Valid values:<br> <ul><li> **1** for Gmail</li><li> **2** for Drive </li><li> **4** for Calendar </li><li>**8** for Contacts</li><li>**64** for Shared drives</li><li>**128** for Classroom</li><li>**4096** for Chat</li>                  | enum |
+| appType            | Service type of the job. <br> Valid values:<br> <ul><li> **1** for Gmail</li><li> **2** for Drive </li><li> **4** for Calendar </li><li>**8** for Contacts</li><li>**64** for Shared drives</li><li>**128** for Classroom</li><li>**256** for Users</li><li>**512** for Groups</li><li>**4096** for Chat</li><li>**8192** for Gmail (Vault)</li><li>**16384** for Drive (Vault)</li><li>**32768** for shared drives (Vault)</li></ul>                  | enum |
 | jobType            | The  type of job performed. <br> Valid values:<br> <ul><li> **1** for Backup</li><li> **2** for Restore </li><li> **3** for Export </li><li>**4** for Delete</li><li>**5** for Retention</li><li>**6** for Generate Report</li></ul>| enum |
 |dataSource|  The data source of the job. <br> Valid values:<br> <ul><li> **1** for Admin</li><li> **2** for ReCenter </li></ul>|enum  |
 | status             | Status of the job.    <br>Valid values:</br> <ul><li> **0** for In progress</li><li> **2** for Finished</li><li>**3** for Failed </li><li>**7** for Finished with exception</li><ul>                                   | enum |

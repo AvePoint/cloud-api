@@ -5,7 +5,7 @@ Use this API to retrieve your customer's daily scan profile changes in AvePoint 
 ## Permissions  
 
 The following permission is required to call the API.  
-You must register an app through Elements for Partners > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission  |
 |-----------|--------|
@@ -42,7 +42,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | scanMode | The scan mode of the scan profile:<br> <ul><li>**0** represents **Express mode**<li>**1** represents **Advanced mode**| integer |
 | modifiedTime | The last modified time of the scan profile. | string |
 | lastUpdateTime | The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile. | string |
-| lastScanStatus | The last scan job status of the scan profile:<br><ul><li>**2** represents **Finished**<li>**3** represents **Failed**<li>**4** represents **Finished with exception**<li>**5** represents **Skipped**<li>**10** represents **Stopped** | integer |
+| lastScanStatus | The last scan job status of the scan profile:<br><ul><li>**1** represents **In progress**<li>**2** represents **Finished**<li>**3** represents **Failed**<li>**4** represents **Finished with exception**<li>**5** represents **Skipped**<li>**10** represents **Stopped** | integer |
 | newRegisteredContentCount | The number of newly registered objects in the daily report of the scan profile. | integer |
 | movedToAnotherContainer | The number of objects moved to another container in the daily report of the scan profile. | integer |
 | removedFromMicrosoft365OrOutofPolicy | The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | integer |
