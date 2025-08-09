@@ -88,6 +88,9 @@ The API response provides detailed information about the Power BI workspaces ret
 | phase                       | The current phase of the workspace in Cloud Governance.                     | string  |
 | phaseAssignees              | The individuals assigned to the current phase of the workspace in Cloud Governance. For the detailed user properties, refer to [User Details](#user-details). | object  |
 | lastRenewalTime             | The last time when the workspace was renewed.                               | string  |
+| phaseStartTime              | The renewal start time of the workspace.                |  string |
+| renewalDueDate              | The renewal due date of the workspace.                |  string |
+| nextRenewalDate              | The next renewal date of the workspace.                |  string |
 | lastRenewalBy               | The latest user who renewed the workspace. For the detailed user properties, refer to [User Details](#user-details).                                 | object  |
 | renewProfileApplied | Indicates if a renewal profile has been applied to the workspace. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates if the workspace has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
@@ -193,6 +196,9 @@ If the request has been successfully processed, a 200 OK response will be return
       "phase": null, // The current phase of the workspace in Cloud Governance
       "phaseAssignees": null, // The individuals assigned to the current phase of the workspace in Cloud Governance
       "lastRenewalTime": "", // The last time when the workspace was renewed
+      "phaseStartTime": "", // The renewal start time of the workspace
+      "renewalDueDate": "", // The renewal due date of the workspace
+      "nextRenewalDate": "", // The next renewal date of the workspace
       "lastRenewalBy": null, // The latest user who renewed the workspace
       "renewProfileApplied": null, // Indicates if a renewal profile has been applied to the workspace
       "isRegistered": false, // Indicates if the workspace has been imported to Cloud Governance

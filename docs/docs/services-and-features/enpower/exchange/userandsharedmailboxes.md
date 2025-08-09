@@ -79,11 +79,14 @@ The API response provides detailed information about the mailboxes retrieved. Ea
 | forwardingAddressDomain               | The domain of the email address that emails are being forwarded to.         | string  |
 | externalForwardingAddressDomain       | The domain of the external email address that emails are being forwarded to.| string  |
 | externalEmailForwardingEnabled        | Indicates whether this mailbox is forwarding emails to external email addresses. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| recipientLimits                       | The maximum number of allowed recipients on the To, Cc, and Bcc lines of the email message sent from this mailbox. | integer |
+| recipientLimits                       | The maximum number of allowed recipients on the To, Cc, and Bcc lines of the email message sent from this mailbox. | string |
 | mailboxPolicies                       | The mailbox policies applied to this mailbox. For the list of mailbox policies, refer to [Mailbox Policy Details](#mailbox-policy-details). | object  |
 | primaryContact                        | The Cloud Governance primary contact of the mailbox. For the detailed user properties, refer to [User Details](#user-details). | object  |
 | secondaryContact                      | The Cloud Governance secondary contact of the mailbox. For the detailed user properties, refer to [User Details](#user-details). | object  |
 | lastRenewalTime                       | The last time when the mailbox was renewed.                                 | string  |
+| phaseStartTime              | The renewal start time of the mailbox.                |  string |
+| renewalDueDate              | The renewal due date of the mailbox.                |  string |
+| nextRenewalDate              | The next renewal date of the mailbox.                |  string |
 | lastRenewalBy                         | The latest user who renewed the mailbox. For the detailed user properties, refer to [User Details](#user-details). | object  |
 | renewProfileApplied                   | Indicates if a renewal profile has been applied to the mailbox. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | metadata                              | The Cloud Governance metadata associated with the mailbox. For the detailed metadata properties, refer to [Cloud Governance Metadata Details](#cloud-governance-metadata-details). | list    |
@@ -204,6 +207,9 @@ If the request has been successfully processed, a 200 OK response will be return
             "primaryContact": null, // The Cloud Governance primary contact of the mailbox
             "secondaryContact": null,// The Cloud Governance secondary contact of the mailbox
             "lastRenewalTime": "",// The last time when the mailbox was renewed
+            "phaseStartTime": "", // The renewal start time of the mailbox
+            "renewalDueDate": "", // The renewal due date of the mailbox
+            "nextRenewalDate": "", // The next renewal date of the mailbox
             "lastRenewalBy": null,// The latest user who renewed the mailbox
             "renewProfileApplied": null,// Indicates if a renewal profile has been applied to the mailbox
             "metadata": [],// The Cloud Governance metadata associated with the mailbox

@@ -100,6 +100,9 @@ The API response provides detailed information about the Power Apps retrieved. E
 | phase                           | The current phase of the Power App in Cloud Governance.                     | string  |
 | phaseAssignees                  | The assignee of the current Cloud Governance phase. For the detailed user properties, refer to [User Details](#user-details).                        | object  |
 | lastRenewalTime                 | The last time the Power App was renewed.                                    | string  |
+| phaseStartTime                  | The renewal start time of the Power App.          | string |
+| renewalDueDate                  | The renewal due date of the Power App.            | string |
+| nextRenewalDate                 | The next renewal date of the Power App.           | string |
 | lastRenewalBy                   | The latest user who renewed the Power App. For the detailed user properties, refer to [User Details](#user-details).                                  | object  |
 | renewalProfileApplied | Indicates if a Cloud Governance renewal profile has been applied to the Power App. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | isRegistered | Indicates if the Power App was imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
@@ -215,6 +218,9 @@ If the request has been successfully processed, a 200 OK response will be return
       "phase": null, // The current phase of the Power App in Cloud Governance
       "phaseAssignees": null, // The assignee of the current Cloud Governance phase
       "lastRenewalTime": "", // The last time the Power App was renewed
+      "phaseStartTime": "", // The renewal start time of the Power App
+      "renewalDueDate": "", // The renewal due date of the Power App
+      "nextRenewalDate": "", // The next renewal date of the Power App
       "lastRenewalBy": null, // The latest user who renewed the Power App
       "renewProfileApplied": null, // Indicates if a Cloud Governance renewal profile has been applied to the Power App
       "isRegistered": false, // Indicates if the Power App was imported to Cloud Governance 

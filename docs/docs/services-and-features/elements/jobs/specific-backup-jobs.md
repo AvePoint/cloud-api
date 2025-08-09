@@ -6,7 +6,7 @@ Use this API to retrieve your customer's job details for a specific job type and
 ## Permissions  
 
 The following permission is required to call the API.  
-You must register an app through Elements for Partners > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 | API | Permission  |
 |-----------|--------|
