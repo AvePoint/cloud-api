@@ -41,7 +41,7 @@ AvePoint Graph API provides a unified endpoint to accessing AvePoint services da
 The AvePoint Graph API employs advanced authentication methods to ensure secure and efficient access to a wide range of functionalities. These include:
 
 - Retrieve audit records: Access comprehensive records from AvePoint Online Services.
-- Streamline partner operations on customer management: Enhance efficiency in handling customer data and interactions through the Elements platform.
+- Streamline partner operations on customer management: Enhance efficiency in handling customer data and interactions through Elements.
 - Job information retrieval: Obtain detailed job data from AvePoint's Cloud Backup solutions for Microsoft 365, Microsoft Azure, AWS, Dynamics 365, and Google Workspace.
 - EnPower data retrieval: Access and manage Exchange mailboxes and Power Platform data.
 - Insights data retrieval: Access detailed reports and data insights from Insights for Microsoft 365.
@@ -97,8 +97,6 @@ Refer to the data center endpoints in the table below:
 |                       | UK South (London)                                           | `https://graph-uk.avepointonlineservices.com/`     |
 |                       | US - East                                                   | `https://graph-us.avepointonlineservices.com/`     |
 |                       | AOS-US Gov                                                  | `https://graph-gov.avepointonlineservices.com/`    |
-|                       | AOS2                                                  | `https://graph-aos2.avepointonlineservices.com/`    |
-|                       | FedRAMP Cloud (Project Hosts)                                    | `https://graphusgovapi.online15.net/`    |
 | Google Cloud Platform | Australia Southeast (Sydney):**australia-southeast1** | `https://graph-gcp-au.avepointonlineservices.com/` |
 |                       | Japan (Tokyo):**asia-northeast1**                     | `https://graph-gcp-jp.avepointonlineservices.com/` |
 |                       | East US (Moncks Corner):**us-east1**                  | `https://graph-gcp-us.avepointonlineservices.com/` |

@@ -99,6 +99,9 @@ usageOfLogPercentage | The usage of log percentage by this environment. | string
 primaryContact | The Cloud Governance primary contact of this environment. For the detailed user properties, refer to [User Details](#user-details). | object
 secondaryContact | The Cloud Governance secondary contact of this environment. For the detailed user properties, refer to [User Details](#user-details). | object
 lastRenewalTime | The last renewal time of this environment. | string
+phaseStartTime | The renewal start time of this environment. | string
+renewalDueDate | The renewal due date of this environment. | string
+nextRenewalDate | The next renewal date of this environment. | string
 lastRenewalBy | The latest user who renewed this environment. For the detailed user properties, refer to [User Details](#user-details). | object
 | renewalProfileApplied | Indicates whether Cloud Governance renewal profile has been applied to the environment. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 Metadata | The Cloud Governance metadata of this environment. For the detailed metadata properties, refer to [Cloud Governance Metadata Details](#cloud-governance-metadata-details). | list
@@ -262,6 +265,9 @@ If the request has been successfully processed, a 200 OK response will be return
             "primaryContact": null, // The Cloud Governance primary contact of this environment
             "secondaryContact": null, // The Cloud Governance secondary contact of this environment
             "lastRenewalTime": "", // The last renewal time of this environment
+            "phaseStartTime": "", // The renewal start time of this environment
+            "renewalDueDate": "", // The renewal due date of this environment
+            "nextRenewalDate": "", // The next renewal date of this environment
             "lastRenewalBy": null, // The latest user who renewed this environment
             "renewProfileApplied": null, // Indicates whether Cloud Governance renewal profile has been applied for the tenant
             "metadata": [], // The Cloud Governance metadata of this environment

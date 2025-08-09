@@ -80,6 +80,9 @@ The API response provides detailed information about the Power Automate cloud fl
 | phase                       | The Cloud Governance phase of the flow.                                     | string  |
 | phaseAssignees              | The Cloud Governance phase assignee of the flow. For the detailed user properties, refer to [User Details](#user-details).                            | object  |
 | lastRenewalTime             | The latest time when the flow was renewed.                                  | string  |
+| phaseStartTime              | The renewal start time of the flow.                |  string |
+| renewalDueDate              | The renewal due date of the flow.                |  string |
+| nextRenewalDate              | The next renewal date of the flow.                |  string |
 | lastRenewedBy               | The latest user who renewed this flow. For the detailed user properties, refer to [User Details](#user-details).                                      | object  |
 | renewProfileApplied | Indicates if any Cloud Governance renewal profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | registered | Indicates if the flow has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
@@ -199,6 +202,9 @@ If the request has been successfully processed, a 200 OK response will be return
       "phase": "RenewalExpired", // The Cloud Governance phase of the flow
       "phaseAssignees": null, // The Cloud Governance phase assignee of the flow
       "lastRenewalTime": "", // The latest time when the flow was renewed
+      "phaseStartTime": "", // The renewal start time of the flow
+      "renewalDueDate": "", // The renewal due date of the flow
+      "nextRenewalDate": "", // The next renewal date of the flow
       "lastRenewedBy": null, // The latest user who renewed this flow
       "renewProfileApplied": true, // Indicates if any Cloud Governance renewal profile is applied to this flow
       "registered": true, // Indicates if the flow has been imported to Cloud Governance

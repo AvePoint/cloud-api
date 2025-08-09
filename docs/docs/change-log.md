@@ -2,12 +2,44 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## August 2025
+
+### Added
+
+  - Added the `phaseStartTime`, `renewalDueDate`, and `nextRenewalDate` properties to the response of the following endpoints:
+    - `/smp/powerplatform/environments`
+    - `/smp/powerplatform/powerapps`
+    - `/smp/powerplatform/powerautomate/cloudflows`
+    - `/smp/powerplatform/powerbi/workspaces`
+    - `/smp/exchange/mailboxes`
+
+### Changed
+
+- **AvePoint Online Services**
+  - Enhanced the `/aos/audit` endpoint to support filtering for Cloud Backup for Dynamics 365.
+- **Cloud Backup for Google Workspace**
+  - Enhanced the `/backup/google/admin/jobs` endpoint to support filtering for Google Directory (including users and groups) and Google Vault (including Gmail, Drive, and shared drives).
+- **Cloud Backup for IaaS + PaaS**
+  - Enhanced the `/backup/vm/jobs` endpoint to support filtering for Google VM backup and restore jobs.
+- **EnPower**
+  - Removed the following properties from the `/smp/exchange/resourcemailboxes` endpoint:
+    - `lastRenewalTime`
+    - `lastRenewalBy`
+    - `renewProfileApplied`
+    - `electionProfileApplied`
+    - `phaseAssignees`
+    - `renewProfile`
+    - `electionProfile`
+  - Updated the type of `recipientLimits` of the `/smp/exchange/mailboxes` endpoint to `string`.
+- **Elements**
+  - Enhanced the `/partner/customers/{id}/scanProfiles/{ProfileId}/dailyNewSummary` endpoint to support the last scan job status of **In progress**.
+
 ## June 2025
 
 ### Added  
 
   - Introduced the new endpoint `/aos/jobs` to **AvePoint Online Services** for retrieving scan job information.
- - The public APIs for **Elements for Partners** are now fully supported in GCC and GCC High tenants.  
+ - Public APIs for **Elements** are now fully supported in GCC and GCC High tenants.  
   - Introduced the new endpoint `/insights/sites/{siteId}/{objectUrl}/settag` to **Insights** for tagging objects.  
   - Added the `webUrl` property to the response of the `/insights/sites/{siteId}/detailRecords` endpoint.
 
@@ -42,8 +74,8 @@ This document provides a detailed log of changes, updates, and enhancements made
 
  - Corrected the spelling mistake of the `conflictOption` property in the request of the `/records/connector/records` endpoint. It was previously misspelled as `confilictOption`.
  - Corrected the following property types in the `/smp/powerplatform/environments` endpoint response:
-    - Corrected the type of `phaseAssignees` to "Object".
-    - Corrected the type of `dlpPolicies` to "Integer".
+    - Corrected the type of `phaseAssignees` to `Object`.
+    - Corrected the type of `dlpPolicies` to `Integer`.
  - Documented the `location` query parameter for the `/backup/m365/jobs` and `backup/m365/licenseconsumption` endpoints.
 
 ## February 2025

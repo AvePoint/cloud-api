@@ -1,6 +1,6 @@
 - name: AvePoint Online Services
   href: aos/toc.yml
-- name: Elements for Partners
+- name: Elements
   href: elements/toc.yml
 - name: Cloud Backup for Microsoft 365
   href: m365/toc.yml
