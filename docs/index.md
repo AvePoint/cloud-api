@@ -33,7 +33,7 @@ Unlock the full potential of AvePoint Cloud services with our comprehensive API 
       <li><b>Explore Examples</b>: Utilize our code samples to expedite your development process.</li>
     </ol>
     <div style="text-align: right;">
-      <a href="./docs/Use-AvePoint-Graph-Modern-API.md" style="text-decoration:none; color:blue;">See More</a>
+      <a href="./docs/Use-AvePoint-Graph-API.md" style="text-decoration:none; color:blue;">See More</a>
     </div>
   </div>
 
