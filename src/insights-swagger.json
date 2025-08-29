@@ -76,6 +76,120 @@
         }
       }
     },
+    "/google/activities/object/{id}/export": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Export activities of a specific object (e.g., Google Drive) within a specified time range and event types.",
+        "operationId": "ExportGoogleObjectActivities",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Filter by Object Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "Filter by Start Time, Time format: yyyy-MM-ddTHH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "finishTime",
+            "in": "query",
+            "description": "Filter by Finish Time, Time format: yyyy-MM-ddTHH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eventTypes",
+            "in": "query",
+            "description": "Filter by Event Types",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/google/drives/permission/export": {
+      "get": {
+        "tags": [
+          "Drives"
+        ],
+        "summary": "Exports the permission reports of specific Google Drives.",
+        "description": "You can only export permission reports of 100 Google Drives at a time.",
+        "operationId": "ExportDrivesPermission",
+        "parameters": [
+          {
+            "name": "driveIds",
+            "in": "query",
+            "description": "Sets the Id of Google Drives for which you want to export the permission report.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/groups/summary": {
       "get": {
         "tags": [
@@ -167,6 +281,78 @@
             "name": "dataSources",
             "in": "query",
             "description": "Sets the workspace in which you want to export the access report of users. Multiple values are allowed.\r\nmicrosoft teams \r\nsharepoint online\r\nonedrive for business\r\nmicrosoft 365 group",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/google/groups/{groupId}/access/export": {
+      "get": {
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Exports the access report of a specific Google group.",
+        "operationId": "ExportGoogleGroupsAccess",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Sets the email addresses of group for which you want to export the permission report",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "exportOptionType",
+            "in": "query",
+            "description": "1 - for exporting both the summary report and Google Drive level access report (not support yet)\r\n2 - for exporting both the summary report and access report to all objects in the configured data scope\r\n3 - for only exporting the summary report",
+            "schema": {
+              "$ref": "#/components/schemas/ExportOptionType"
+            }
+          },
+          {
+            "name": "driveIds",
+            "in": "query",
+            "description": "Sets the Ids of Google Drive for which you want to export the permission report.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "dataSources",
+            "in": "query",
+            "description": "Sets the workspace in which you want to export the access report of users. Multiple values are allowed.\r\nmy drive\r\nshared drive",
             "schema": {
               "type": "array",
               "items": {
@@ -395,6 +581,63 @@
             "name": "finishTime",
             "in": "query",
             "description": "Filter By Time, Time format:yyyy-MM-ddTHH:mm:ss\"",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/google/sharingLinks/export": {
+      "get": {
+        "tags": [
+          "SharingLinks"
+        ],
+        "summary": "Export Google sharing links.",
+        "operationId": "ExportGoogleLinks",
+        "parameters": [
+          {
+            "name": "exportLinkType",
+            "in": "query",
+            "description": "Set export type\r\n301 (for Target Audience)\r\n303 (for Anyone link)",
+            "schema": {
+              "$ref": "#/components/schemas/PrincipalTypes"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "Filter By Start Time, Time format:yyyy-MM-ddTHH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "finishTime",
+            "in": "query",
+            "description": "Filter By Finish Time, Time format:yyyy-MM-ddTHH:mm:ss",
             "schema": {
               "type": "string"
             }
@@ -948,6 +1191,139 @@
             "name": "eventTypes",
             "in": "query",
             "description": "Filter by Event Type",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/google/users/{email}/access/export": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Exports the access report of a specific Google user.",
+        "operationId": "ExportGoogleUserAccessesAsync",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Filter by the email address of user who you want to export the permission report.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "driveIds",
+            "in": "query",
+            "description": "Filter by the Google Drive Ids which you want to export the permission report.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "dataSources",
+            "in": "query",
+            "description": "Sets the workspace in which you want to export the access report of user. Multiple values are allowed.\r\nmy drive\r\nshared drive",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringJobResultList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/google/users/{email}/activities/export": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Exports the activity of a specific user by email address.",
+        "operationId": "ExportGoogleUsersActivities",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Filter by the email address of user who you want to export the activities report.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "description": "Filter by Start Time, Time format:yyyy-MM-ddTHH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "finishTime",
+            "in": "query",
+            "description": "Filter by Finish Time, Time format:yyyy-MM-ddTHH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eventTypes",
+            "in": "query",
+            "description": "Filter by Event Types",
             "schema": {
               "type": "array",
               "items": {
