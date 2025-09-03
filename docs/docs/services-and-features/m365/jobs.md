@@ -1,6 +1,6 @@
 # Retrieve Job Information
 
-Get the job-related information (`/backup/m365/jobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/backup/m365/jobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
+Get the job-related information (`/backup/m365/cloudbackupjobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackupjobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
 
 ## Permission
 
@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API   | Permission |
 |-------------------|---------------|
-|`/backup/m365/jobs` | microsoft365backup.jobInfo.read.all | 
+|`/backup/m365/cloudbackupjobs` | microsoft365backup.jobInfo.read.all | 
 
 
 ## Request
@@ -18,7 +18,7 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/backup/m365/jobs` | Gets the job information of Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/cloudbackupjobs` | Gets the job information of Cloud Backup for Microsoft 365. |
 
 ## Query Parameters
 
@@ -45,9 +45,13 @@ The API response provides detailed information about the jobs retrieved. Each jo
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| totalNumber | The total count of the retrieved jobs | integer |
-| jobs | A list of jobs | list |
-| nextLink | Reference to the next page of results | string |
+| statusCode | Http Response Status Code | integer |
+| message | error message | string |
+| data | A list of jobs | jobs |
+| requestId | API request Id | string |
+| traceId | API traceId | string |
+| timestamp | API request time | string |
+| metadata | API Response metadata | ResponseMetadata |
 
 **Job summary:**
 
@@ -79,13 +83,19 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | url | error code URL | string |
 | number| Occurrences of the error in this job. | long |
 
+**ResponseMetadata:**
+
+| Elements | Description | Type |
+| --- | --- | --- |
+| totalNumber | The total count of the retrieved jobs | integer |
+| nextLink | Reference to the next page of results | string |
 
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.  
 
 ```json
-https://graph-us.avepointonlineservices.com/backup/m365/jobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1&Location=NAM
+https://graph-us.avepointonlineservices.com/backup/m365/cloudbackupjobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1&Location=NAM
 ```
 
 ## Response Sample
@@ -95,9 +105,10 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
 
 ```json
 {
-    "totalCount": 2, //Total number of the retrieved jobs
-    "jobs": [
-        {
+    "statusCode": 200,
+    "message": "",
+    "data": [
+         {
             "id": FB20241015105312327583, //Job ID
             "state": Finished, // Job status
             "startTime": "2024-12-02T07:52:25Z", // The start time of the job in ISO 8601 format. UTC time.
@@ -126,5 +137,11 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
             "jobErrors": []
         }
     ],
-    "nextLink": "" // no left results.
+    "requestId": "0HNEVHLNSPSEJ:00000002",
+    "timestamp": "2025-08-20T03:25:12.304891Z",
+    "metadata": {
+        "totalCount": 2,  //Total number of the retrieved jobs
+        "nextLink": "" // no left results.
+    },
+    "traceId": "00-f33571c212e19c7bad36b255e18b7df2-97d26a62bd4a5b70-00"
 }
