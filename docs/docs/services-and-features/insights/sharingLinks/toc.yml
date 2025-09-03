@@ -2,3 +2,5 @@
   href: linkExport.md
 - name: Retrieve Sharing Links Summary
   href: linkSummary.md
+- name: Export Permission-Related Information for Google Sharing Links
+  href: googleLinkExport.md

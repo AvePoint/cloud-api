@@ -2,3 +2,5 @@
   href: objectActivities.md
 - name: Add Tag to Specific Object
   href: setTag.md
+- name: Export Activities for a Specific Google Object
+  href: googleObjectActivities.md
