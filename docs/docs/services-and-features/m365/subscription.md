@@ -36,17 +36,17 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 | Elements | Description | Type |
 | --- | --- | --- |
 | statusCode | Http Response Status Code | integer |
-| message | error message | string |
-| data | license consumption | licenseconsumption |
-| requestId | API request Id | string |
-| traceId | API traceId | string |
+| message | Error message | string |
+| data | Subscription consumption | licenseconsumption |
+| requestId | API Request ID | string |
 | timestamp | API request time | string |
+| traceId | API Trace ID | string |
 
-**license consumption:**
+**Subscription consumption:**
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| outOfPolicyTime | The UTC timestamp when the subscription went out of policy. | long |
+| outOfPolicyTime | The UTC timestamp when the subscription went out of policy | long |
 | purchasedUserSeats | Total number of purchased user seats | integer |
 | assignedUserSeats | Number of user seats currently assigned | integer |
 | purchasedStorageSize | Total purchased storage size (in GB) | integer |
@@ -67,16 +67,16 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
 
 ```json
 {
-    "statusCode": 200,
-    "message": "",
+    "statusCode": 200, //Http Response Status Code
+    "message": "", //Error message
     "data": {
         "outOfPolicyTime": 0, // UTC timestamp for when the subscription expires
         "purchasedUserSeats": 100, //Total number of purchased user seats
-        "assignedUserSeats": 47, // Current number of assigned user seats.
+        "assignedUserSeats": 47, // Current number of assigned user seats
         "purchasedStorageSize": 0, //Total purchased storage capacity (in GB)
-        "protectedSize": 0, //Protected storage size (in GB).
+        "protectedSize": 0, //Protected storage size (in GB)
     },
-    "requestId": "0HNEVHLNSPSEJ:00000003",
-    "timestamp": "2025-08-20T03:36:54.780972Z",
-    "traceId": "00-7d7a9360e98bd75eaee0a0ae652adf1d-efcd6c0533a5225d-00"
+    "requestId": "0HNEVHLNSPSEJ:00000003", //API Request ID
+    "timestamp": "2025-08-20T03:36:54.780972Z",  //API request time
+    "traceId": "00-7d7a9360e98bd75eaee0a0ae652adf1d-efcd6c0533a5225d-00" //API Trace ID
 }
