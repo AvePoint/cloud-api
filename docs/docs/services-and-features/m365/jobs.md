@@ -9,8 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API   | Permission |
 |-------------------|---------------|
-|`/backup/m365/cloudbackupjobs` | microsoft365backup.jobInfo.read.all | 
-
+|`/backup/m365/cloudbackupjobs` | microsoft365backup.jobInfo.read.all |
 
 ## Request
 
@@ -24,8 +23,6 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify pagination, job types, time ranges, and other criteria to filter the results effectively.  
 
-[comment Please confirm the Required? info]: #
-
 | Parameter | Description | Type | Required? |
 | --- | --- | --- | --- |
 | startTime | Sets a start time (UTC time) for the time range. For example, 2024-01-01.| string | No |
@@ -34,8 +31,8 @@ The API supports several query parameters to refine and customize the data retri
 | objectType | Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> **0** for All <br> </li><li>**1** for Exchange Online <br> </li><li>**2** for  SharePoint Online <br> </li><li>**3** for OneDrive <br> </li><li>**4** for Microsoft 365 Groups <br> </li><li>**5** for Project Online <br> </li><li>**6** for Public Folder <br> </li><li>**7** for Teams <br> </li><li>**8** for Viva Engage <br> </li><li>**9** for Teams Chat <br> </li><li>**10** for Power BI <br> </li><li>**11** for Power Automate <br> </li><li>**12** for Power Apps</li></ul> | enum <br>  | No |
 | jobState | Sets the job status. <br> Valid values: <br> <ul><li>**0** for All <br> </li><li>**1** for In Progress <br> </li><li>**2** for Finished <br> </li><li>**3** for Failed <br> </li><li>**4** for Finished with Exception <br> </li><li>**5** for Partially Finished </li></ul>|enum | No |
 | location   | This parameter is only available for AOS tenants that support Multi-Geo. If no value is set for this parameter, this method retrieves the unusual activities from all locations in your AOS tenant. To get unusual activities from specific data centers, use the following values: <ul><li>**PrimaryGeoLocation** (Central AOS location)</li> <li>**NAM** (North America)</li> <li>**EUR** (Europe/Middle East/Africa)</li> <li>**GBR** (United Kingdom)</li> <li>**JPN** (Japan)</li> <li>**APC** (Asia-Pacific)</li> <li>**AUS** (Australia)</li> <li>**CAN** (Canada)</li> <li>**IND** (India)</li> <li>**FRA** (France)</li>    <li>**ARE** (United Arab Emirates)</li> <li>**ZAF** (South Africa)</li> <li>**CHE** (Switzerland)</li> <li>**KOR** (Korea)</li> <li>**DEU** (Germany)</li> <li>**BRA** (Brazil)</li> <li>**NOR** (Norway)</li> <li>**SWE** (Sweden)</li> <li>**QAT** (Qatar)</li> <li>**POL** (Poland)</li> <li>**ITA** (Italy)</li></ul>     | string | No |
-| pageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| integer | No |
-| pageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | integer | No |
+| pageIndex| Sets the starting number of the page to get the jobs. <br> The default value is 0.| integer | No |
+| pageSize| Sets the number of jobs to display on one page. <br> The default value is 10. | integer | No |
 
 ## Responses
 
@@ -46,12 +43,12 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | Elements | Description | Type |
 | --- | --- | --- |
 | statusCode | Http Response Status Code | integer |
-| message | error message | string |
+| message | Error message | string |
 | data | A list of jobs | jobs |
-| requestId | API request Id | string |
-| traceId | API traceId | string |
+| requestId | API Request ID | string |
 | timestamp | API request time | string |
-| metadata | API Response metadata | ResponseMetadata |
+| metadata | API response metadata | ResponseMetadata |
+| traceId | API Trace ID | string |
 
 **Job summary:**
 
@@ -62,7 +59,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | startTime | Job started time | string |
 | finishTime | Job finished time | string |
 | duration | Duration in hours | string |
-| backupDetails | Job details.  | module |
+| backupDetails | Job details | module |
 | jobErrors|A list of job errors| list|
 
 **Backup details:**
@@ -79,11 +76,11 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | Elements | Description | Type |
 | --- | --- | --- |
 | isErrorCode | Whether this error has an error code associated. | boolean |
-| value | error message | string |
-| url | error code URL | string |
-| number| Occurrences of the error in this job. | long |
+| value | Error message | string |
+| url | Error code URL | string |
+| number| Occurrences of the error in this job | long |
 
-**ResponseMetadata:**
+**Response metadata:**
 
 | Elements | Description | Type |
 | --- | --- | --- |
@@ -105,8 +102,8 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
 
 ```json
 {
-    "statusCode": 200,
-    "message": "",
+    "statusCode": 200, //Http Response Status Code
+    "message": "", //Error message
     "data": [
          {
             "id": FB20241015105312327583, //Job ID
@@ -137,11 +134,11 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
             "jobErrors": []
         }
     ],
-    "requestId": "0HNEVHLNSPSEJ:00000002",
-    "timestamp": "2025-08-20T03:25:12.304891Z",
+    "requestId": "0HNEVHLNSPSEJ:00000002", //API Request ID
+    "timestamp": "2025-08-20T03:25:12.304891Z", //API request time
     "metadata": {
         "totalCount": 2,  //Total number of the retrieved jobs
-        "nextLink": "" // no left results.
+        "nextLink": "" // No left results
     },
-    "traceId": "00-f33571c212e19c7bad36b255e18b7df2-97d26a62bd4a5b70-00"
+    "traceId": "00-f33571c212e19c7bad36b255e18b7df2-97d26a62bd4a5b70-00" //API Trace ID
 }

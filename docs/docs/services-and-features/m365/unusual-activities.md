@@ -23,7 +23,6 @@ This section outlines the HTTP method and endpoint used to retrieve the basic in
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify the detected time range and location to filter the results effectively.  
 
-
 | Parameter  | Description | Type   | Required? |
 |------------|-------------|--------|-----------|
 | startTime  | Sets a start time (UTC time) for the detected time range. For example, 2024-01-01.| string | Yes |
@@ -40,12 +39,12 @@ The API response provides the basic information of unusual activities. Each job 
 | --- | --- | --- |
 | statusCode | Http Response Status Code | integer |
 | message | error message | string |
-| data | unusual activity data | unusualactivitydata |
-| requestId | API request Id | string |
-| traceId | API traceId | string |
+| data | Basic information of unusual activities | unusualactivitydata |
+| requestId | API Request ID | string |
 | timestamp | API request time | string |
+| traceId | API Trace ID | string |
 
-**unusual activity data:**
+**Basic information of unusual activities**
 
 | Elements | Description | Type   |
 | --- | --- | --- |
@@ -70,8 +69,8 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
 
 ```json
 {
-    "statusCode": 200,
-    "message": "",
+    "statusCode": 200, //Http Response Status Code
+    "message": "", //Error message
     "data": {
         "data": [
                     {
@@ -83,7 +82,7 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
                     }
                   ]
     },
-    "requestId": "0HNEVHLNSPSEJ:00000004",
-    "timestamp": "2025-08-20T03:45:46.3561083Z",
-    "traceId": "00-670aa1d01485c1a7bbcc88bd48b05ed7-ecfba726763bda2a-00"
+    "requestId": "0HNEVHLNSPSEJ:00000004", //API Request ID
+    "timestamp": "2025-08-20T03:45:46.3561083Z",  //API request time
+    "traceId": "00-670aa1d01485c1a7bbcc88bd48b05ed7-ecfba726763bda2a-00" //API Trace ID
 }
