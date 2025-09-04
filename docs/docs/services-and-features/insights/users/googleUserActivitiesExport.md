@@ -1,6 +1,6 @@
 # Export Google User Activities
 
-This API method (`/insights/google/users/{email}/activities/export` navigation property) allows google users to export the activity data for a specific user. This method is useful for obtaining detailed insights into the google user activities within a specified time range. 
+This API method (`/insights/google/users/{email}/activities/export` navigation property) allows users to export the activity data for a specific user. This method is useful for obtaining detailed insights into the Google user activities within a specified time range. 
 
 ## Permission 
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to export the activity d
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/insights/google/users/{email}/activities/export` | Exports the activity data for a specific google user. |
+| GET | `/insights/google/users/{email}/activities/export` | Exports the activity data for a specific Google user. |
 
 
 ## Query Parameters
@@ -44,7 +44,7 @@ The API response provides detailed information about the export job. You can use
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the export job ID and operation status. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the export job ID and operation status. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/google/users/insights***and**@avepoint*****.com/activities/export?startTime=2025-05-01T01%3A37%3A57&finishTime=2025-10-01T01%3A37%3A57&eventTypes=create&eventTypes=label_added
@@ -52,11 +52,11 @@ https://graph-us.avepointonlineservices.com/insights/google/users/insights***and
 
 ## Response Sample  
 
-The following is a sample response for this API method, which includes export job ID of the google user activity report and its operation status 
+The following is a sample response for this API method, which includes export job ID of the google user activity report and its operation status. 
 
 ```json
 {
-  "jobId": "67890",
+  "jobId": "67891",
   "status": 200,
   "message": ""
 }

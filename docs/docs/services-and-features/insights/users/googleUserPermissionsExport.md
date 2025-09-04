@@ -1,6 +1,6 @@
 # Export Google User Permissions
 
-This API method (`/insights/google/users/{email}/access/export` navigation property) allows users to export the access reports of specific google users in different workspaces. This method is useful for obtaining detailed insights into the permissions granted to google users. 
+This API method (`/insights/google/users/{email}/access/export` navigation property) allows users to export the access reports of specific Google users in different workspaces. This method is useful for obtaining detailed insights into the permissions granted to Google users. 
 
 ## Permission 
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to export google user ac
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/insights/google/users/{email}/access/export` | Exports the google user access report. |
+| GET | `/insights/google/users/{email}/access/export` | Exports the Google user access report. |
 
 
 ## Query Parameters
@@ -27,9 +27,9 @@ The API supports several query parameters to refine and customize the data expor
 
 | Parameter  | Description                                                                 | Type   | Required? |
 |------------|-----------------------------------------------------------------------------|--------|-----------|
-| email| Sets the primary email addresses of google users for which you want to export the permission report. | string | Yes |
-| driveIds | Sets the Ids of google drives for which you want to export the permission report | list | No | 
-| dataSources | Sets the workspace in which you want to export the access report of users. Multiple values are allowed. (e.g., **My Drive**, **Shared Drive** | list | Yes |
+| email| Sets the primary email addresses of Google users for whom you want to export the permission report. | string | Yes |
+| driveIds | Sets the IDs of Google drives for which you want to export the permission report. | list | No | 
+| dataSources | Sets the workspace in which you want to export the access report of users. Multiple values are allowed. (e.g., **My Drive**, **Shared Drive**)| list | Yes |
 
 
 ## Responses
@@ -44,7 +44,7 @@ The API response provides the export job ID and its operation status. You can us
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/google/users/insights***and**@avepoint*****.com/access/export?exportOptionType=2&driveIds=0ALUvlYxwVLhSUk9PVA&dataSources=shared%20drive&dataSources=my%20drive
@@ -56,7 +56,7 @@ The following is a sample response for this API method, which includes export jo
 
 ```json
 {
-  "jobId": "67890",
+  "jobId": "67891",
   "status": 200,
   "message": ""
 }

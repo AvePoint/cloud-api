@@ -1,6 +1,6 @@
 # Export Permission-Related Information for Google Sharing Links 
 
-This API method (`/insights/google/sharingLinks/export` navigation property) allows users to export permission-related information for google sharing links. This method is useful for obtaining detailed insights into the permissions granted to links within a specific time range.
+This API method (`/insights/google/sharingLinks/export` navigation property) allows users to export permission-related information for Google sharing links. This method is useful for obtaining detailed insights into the permissions granted to links within a specific time range.
 
 ## Permission
 
@@ -14,11 +14,11 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to export permission-related information for google sharing links. It provides a concise description of the action performed by the API call.
+This section outlines the HTTP method and endpoint used to export permission-related information for Google sharing links. It provides a concise description of the action performed by the API call.
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/insights/google/sharingLinks/export` | Exports the permissions-related information for google sharing links. |
+| GET | `/insights/google/sharingLinks/export` | Exports the permissions-related information for Google sharing links. |
 
 
 ## Query Parameters
@@ -27,7 +27,7 @@ The API supports several query parameters to refine and customize the data expor
 
 | Parameter | Description            | Type    | Required? |
 |-----------|------------------------|---------|-----------|
-| exportLinkType | Sets export type: <ul><li>**301** for Target Audience</li><li> **303** for Anyone link</li> | integer | Yes |   
+| exportLinkType | Sets export type: <ul><li>**301** for Target audience link</li><li> **303** for Anyone link</li> | integer | Yes |   
 | startTime | Filter by time, time format: yyyy-MM-ddTHH:mm:ss | string | Yes |   
 | finishTime | Filter by time, time format: yyyy-MM-ddTHH:mm:ss | string | Yes | 
 
@@ -45,7 +45,7 @@ The API response provides detailed information about the export job. You can use
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/google/sharingLinks/export?exportLinkType=303&startTime=2025-05-01T00:00:00&finishTime=2025-05-31T23:59:59
@@ -53,7 +53,7 @@ https://graph-us.avepointonlineservices.com/insights/google/sharingLinks/export?
 
 ## Response Sample
 
-The following is a sample response for this API method, which includes export job ID of the permission report for google sharing links nd its operation status 
+The following is a sample response for this API method, which includes export job ID of the permission report for Google sharing links and its operation status. 
 
 ```json
 {
