@@ -19,6 +19,12 @@ Endpoint | API Method |  Description |
 | `/insights/groups/{groupId}/access/export`| [Export Group Access Permissions](groups/groupAccesReport.md)  | Exports group access report. |
 | `/insights/sites/permission/export` | [Export Site Permissions](sites/sitePermissionsExport.md) | Exports site permissions. |
 | `/insights/sharingLinks/export` | [Export Permission-Related Information for Sharing Links](sharingLinks/linkExport.md) | Exports permission-related information for sharing links |
+| `/insights/google/activities/object/{id}/export`| [Export Activities for a Specific Google Object](objects/googleObjectActivities.md)| Exports activities performed on a specific google object.|
+| `/insights/google/users/{email}/activities/export`| [Export Google User Activities](users/googleUserActivitiesExport.md)  | Exports activity data for a specific google user. | 
+|`/insights/google/users/{email}/access/export`| [Export Google User Permissions](users/googleUserPermissionsExport.md)  |Exports google user access report.|
+| `/insights/google/groups/{groupId}/access/export`| [Export Google Group Access Permissions](groups/googleGroupAccesReport.md)  | Exports google group access report. |
+| `/insights/drives/permission/export` | [Export Drive Permissions](drives/drivePermissionsExport.md) | Exports drive permissions. |
+| `/insights/google/sharingLinks/export` | [Export Permission-Related Information for Google Sharing Links](sharingLinks/googleLinkExport.md) | Exports permission-related information for google sharing links |
 
 ## API Methods for Direct Data Retrieval
 

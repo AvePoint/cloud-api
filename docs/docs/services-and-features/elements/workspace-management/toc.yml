@@ -1,0 +1,9 @@
+- name: List scan profiles
+  href: all-scan-profiles.md
+- name: Retrieve scan profile details
+  href: specific-scan-profiles.md
+- name: Retrieve scan change summary
+  href: daily-scan-profile-changes.md
+- name: Retrieve object details in scan changes
+  href: daily-scan-profile-change-details.md
+   
