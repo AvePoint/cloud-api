@@ -1,6 +1,6 @@
 # Export Drive Permissions
 
-This API method (`/insights/google/drives/permission/export` navigation property) allows users to export the permission report for specific google drives. This method is useful for obtaining detailed insights into the permissions granted to google drives within a specified time range.
+This API method (`/insights/google/drives/permission/export` navigation property) allows users to export the permission report for specific google drives. This method is useful for obtaining detailed insights into the permissions granted to Google drives within a specified time range.
 
 ## Permission
 
@@ -13,7 +13,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to export drives permissions. It provides a concise description of the action performed by the API call. 
+This section outlines the HTTP method and endpoint used to export drive permissions. It provides a concise description of the action performed by the API call. 
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
@@ -22,11 +22,11 @@ This section outlines the HTTP method and endpoint used to export drives permiss
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the drive Ids to filter the results effectively.
+The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the drive IDs to filter the results effectively.
 
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
-| driveIds  | Sets the Ids of google drives for which you want to get the permission related information. No more than 100 google drives in the list | list   | Yes       |
+| driveIds  | Sets the IDs of google drives for which you want to get the permission related information. No more than 100 Google drives in the list. | list   | Yes       |
 
 
 ## Responses
@@ -43,10 +43,10 @@ The API response provides export job ID for exporting and downloading the drive 
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
- https://graph-us.avepointonlineservices.com/insights/google/drives/permission/export?driveIds=0AG****TS_s2E***PVA&driveIds=insightsdev*****@avepoint**.com
+ https://graph-us.avepointonlineservices.com/insights/google/drives/permission/export?driveIds=0AG****TS_s2E***PVA&driveIds=insightsdev*****@avepoint***.com
 ```
 
 ## Response Sample
@@ -55,7 +55,7 @@ The following is a sample response for this API method, which includes export jo
 
 ```json
 {
-  "jobId": "67890",
+  "jobId": "67891",
   "status": 200,
   "message": ""
 }

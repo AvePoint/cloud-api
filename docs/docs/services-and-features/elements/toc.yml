@@ -10,3 +10,15 @@
   href: scan-profiles/toc.yml
 - name: Service Subscription
   href: services/toc.yml
+- name: 3rd-party-products
+  href: 3rd-party-products/toc.yml
+- name: avpt-products
+  href: avpt-products/toc.yml
+- name: baseline-management
+  href: baseline-management/toc.yml
+- name: risk-management
+  href: risk-management/toc.yml
+- name: workspace-management
+  href: workspace-management/toc.yml
+- name: user-management
+  href: user-management/toc.yml

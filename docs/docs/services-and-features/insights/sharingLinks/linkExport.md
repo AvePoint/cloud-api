@@ -53,7 +53,7 @@ https://graph-us.avepointonlineservices.com/insights/sharingLinks/export?exportL
 
 ## Response Sample
 
-The following is a sample response for this API method, which includes export job ID of the permission report for sharing links nd its operation status 
+The following is a sample response for this API method, which includes export job ID of the permission report for sharing links and its operation status. 
 
 ```json
 {
