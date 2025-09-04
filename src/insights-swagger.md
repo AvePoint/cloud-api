@@ -9,13 +9,17 @@ An ASP.NET Core Graph API for Insights
 | Method | Path | Description |
 | --- | --- | --- |
 | GET | [/activities/object/{path}/export](#getactivitiesobjectpathexport) | Get object activity |
+| GET | [/google/activities/object/{id}/export](#getgoogleactivitiesobjectidexport) | Export activities of a specific object (e.g., Google Drive) within a specified time range and event types. |
+| GET | [/google/drives/permission/export](#getgoogledrivespermissionexport) | Exports the permission reports of specific Google Drives. |
 | GET | [/groups/summary](#getgroupssummary) | Gets the summary of specific groups. |
 | GET | [/groups/{groupId}/access/export](#getgroupsgroupidaccessexport) | Gets the .zip file from exporting the permission related information of specific groups. |
+| GET | [/google/groups/{groupId}/access/export](#getgooglegroupsgroupidaccessexport) | Exports the access report of a specific Google group. |
 | GET | [/Healthz](#gethealthz) | The API is for check health of API service |
 | GET | [/job/{jobId}/exportstatus](#getjobjobidexportstatus) | Get Activity export job statuts |
 | GET | [/job/{jobId}/exportfile](#getjobjobidexportfile) | Download Activity export  file |
 | GET | [/sharingLinks/{siteUrl}/summary](#getsharinglinkssiteurlsummary) | Gets the summary of specific links. |
 | GET | [/sharingLinks/export](#getsharinglinksexport) | Gets the .zip file from exporting the permission related information of specific links. |
+| GET | [/google/sharingLinks/export](#getgooglesharinglinksexport) | Export Google sharing links. |
 | GET | [/sites/permission](#getsitespermission) | Gets the permission-related information of specific site collections. |
 | GET | [/sites/permission/export](#getsitespermissionexport) | Exports the permission reports of specific site collections. |
 | GET | [/sites/overview](#getsitesoverview) | Get sites data |
@@ -26,6 +30,8 @@ An ASP.NET Core Graph API for Insights
 | GET | [/users/access](#getusersaccess) | Gets the permission-related information of specific users. |
 | GET | [/users/{email}/access/export](#getusersemailaccessexport) | Exports the access reports of specific users in different workspaces. |
 | GET | [/users/{email}/activities/export](#getusersemailactivitiesexport) | get user activity |
+| GET | [/google/users/{email}/access/export](#getgoogleusersemailaccessexport) | Exports the access report of a specific Google user. |
+| GET | [/google/users/{email}/activities/export](#getgoogleusersemailactivitiesexport) | Exports the activity of a specific user by email address. |
 
 ## Reference Table
 
@@ -97,6 +103,123 @@ finishTime?: string
 
 ```ts
 eventTypes?: string[]
+```
+
+#### Responses
+
+- 200 OK
+
+`text/plain`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`application/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`text/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+***
+
+### [GET]/google/activities/object/{id}/export
+
+- Summary  
+Export activities of a specific object (e.g., Google Drive) within a specified time range and event types.
+
+#### Parameters(Query)
+
+```ts
+startTime?: string
+```
+
+```ts
+finishTime?: string
+```
+
+```ts
+eventTypes?: string[]
+```
+
+#### Responses
+
+- 200 OK
+
+`text/plain`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`application/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`text/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+***
+
+### [GET]/google/drives/permission/export
+
+- Summary  
+Exports the permission reports of specific Google Drives.
+
+- Description  
+You can only export permission reports of 100 Google Drives at a time.
+
+#### Parameters(Query)
+
+```ts
+driveIds?: string[]
 ```
 
 #### Responses
@@ -292,6 +415,67 @@ exportOptionType?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ```ts
 siteUrls?: string[]
+```
+
+```ts
+dataSources?: string[]
+```
+
+#### Responses
+
+- 200 OK
+
+`text/plain`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`application/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`text/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+***
+
+### [GET]/google/groups/{groupId}/access/export
+
+- Summary  
+Exports the access report of a specific Google group.
+
+#### Parameters(Query)
+
+```ts
+exportOptionType?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+```ts
+driveIds?: string[]
 ```
 
 ```ts
@@ -636,6 +820,67 @@ nextLink?: string
 
 - Summary  
 Gets the .zip file from exporting the permission related information of specific links.
+
+#### Parameters(Query)
+
+```ts
+exportLinkType?: enum[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16, 32, 41, 64, 65, 128, 201, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 333, 401, 402, 403]
+```
+
+```ts
+startTime?: string
+```
+
+```ts
+finishTime?: string
+```
+
+#### Responses
+
+- 200 OK
+
+`text/plain`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`application/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`text/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+***
+
+### [GET]/google/sharingLinks/export
+
+- Summary  
+Export Google sharing links.
 
 #### Parameters(Query)
 
@@ -1547,6 +1792,124 @@ dataSources?: string[]
 
 - Summary  
 get user activity
+
+#### Parameters(Query)
+
+```ts
+startTime?: string
+```
+
+```ts
+finishTime?: string
+```
+
+```ts
+eventTypes?: string[]
+```
+
+#### Responses
+
+- 200 OK
+
+`text/plain`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`application/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`text/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+***
+
+### [GET]/google/users/{email}/access/export
+
+- Summary  
+Exports the access report of a specific Google user.
+
+#### Parameters(Query)
+
+```ts
+driveIds?: string[]
+```
+
+```ts
+dataSources?: string[]
+```
+
+#### Responses
+
+- 200 OK
+
+`text/plain`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`application/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+`text/json`
+
+```ts
+{
+  jobId?: string
+  // The HTTP response status code.
+  status?: integer
+  // The error message.
+  message?: string
+}
+```
+
+***
+
+### [GET]/google/users/{email}/activities/export
+
+- Summary  
+Exports the activity of a specific user by email address.
 
 #### Parameters(Query)
 

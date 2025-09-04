@@ -6,3 +6,7 @@
   href: userPermissions.md
 - name: Retrieve User Summary
   href: userSummary.md
+- name: Export Google User Activities
+  href: googleUserActivitiesExport.md
+- name: Export Google User Permissions
+  href: googleUserPermissionsExport.md
