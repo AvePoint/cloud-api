@@ -1,0 +1,75 @@
+# Retrieve all data source that match risk rules
+
+Use this API to retrieve records for all risk rules that are match for a specific tenant in AvePoint Online Services.  
+
+## Permissions  
+
+The following permission is required to call the API.  
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+
+| API | Permission |
+|-----------|-----------|
+| `/partner/external/rm/customers/{customerId}/tenants/{tenantId}/detection/rules` | partner.rm.read.all |  
+
+
+## Request
+
+This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Services.
+
+| Method | Endpoint | Description |
+|-----------|-----------|-----------|
+|GET|`/partner/external/rm/customers/{customerId}/tenants/{tenantId}/detection/rules`|Retrieves records for all risk rules that are match for a specific tenant in AvePoint Online Services.|
+
+## Query Parameters
+
+This section outlines the parameters required to specify which tenant's risk rule detail records you want to retrieve.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| CustomerId | The customer's ID. | string | Yes |
+| TenantId | The customer tenant's ID. | string | Yes |
+| Workspaces | The specific workspace to filter. | integer | No |
+| Status | The status of risk rules to filter. | integer | No |
+
+
+## Response
+
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| ruleId | The ID of the rule. | string |
+| ruleName | The display name of the rule. | string |
+| setting | The paramerter in the name of the rule.  | string |
+| tenantId | The tenant's id. | integer |
+| customerId | The customer's id. | integer |
+| workspace | The record's workspace. | integer |
+| hitItemCount | The number of objects that have the rule. | integer |
+
+
+## Request Sample
+
+To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
+
+```json
+https://graph-us.avepointonlineservices.com/partner/customers/d926b068-47cd-4830-a082-fd2a1eb64e99/tenants/0eaab044-c775-4a92-b40d-93c6e237711e/detection/rules
+```
+
+## Response Sample
+
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+
+```json 
+{
+    "result": [
+        {
+            "ruleId": "00000002-9E63-4A52-9946-00000016",
+            "ruleName": "OneDrives that have reached 75% of the storage limits",
+            "setting": "{\"param1\": 75}",
+            "tenantId": "be4cdf40-1677-49d1-86c1-ab967eb78246",
+            "customerId": "292b68c5-a239-46f2-bc43-28650d407eaf",
+            "workspace": 5,
+            "hitItemCount": 0
+        }
+    ]
+}
