@@ -36,30 +36,30 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| numberOfWorkspaces | The number Of Workspaces. | integer |
-| numberOfTeams | The number Of Teams. | integer |
-| numberOfSharePointSites | The number Of SharePointSites.  | integer |
-| numberOfOneDrives | The number Of OneDrives. | integer |
-| numberOfGroups | The number Of Groups. | integer |
-| numberOfExchangeMailboxes | The number Of ExchangeMailboxes. | integer |
-| numberOfActiveWorkspaces | The number Of ActiveWorkspaces. | integer |
-| numberOfInactiveWorkspaces | The number Of InactiveWorkspaces. | integer |
-| numberOfOrphanedWorkspaces | The number Of OrphanedWorkspaces. | integer |
-| numberOfOrphanedTeams | The number Of OrphanedTeams. | integer |
-| numberOfOrphanedSharePointSites | The number Of OrphanedSharePointSites. | integer |
-| numberOfOrphanedOneDrives | The number Of OrphanedOneDrives. | integer |
-| numberOfOrphanedGroups | The number Of OrphanedGroups. | integer |
-| numberOfWorkspacesWithGuestUsers | The number Of WorkspacesWithGuestUsers. | integer |
-| numberOfTeamsWithGuestUsers | The number Of TeamsWithGuestUsers. | integer |
-| numberOfSharePointSitesWithGuestUsers | The number Of SharePointSitesWithGuestUsers. | integer |
-| numberOfOneDrivesWithGuestUsers | The number Of OneDrivesWithGuestUsers. | integer |
-| numberOfGroupsWithGuestUsers | The number Of GroupsWithGuestUsers. | integer |
-| numberOfReachingStorageLimitWorkspaces | The number Of ReachingStorageLimitWorkspaces. | integer |
-| numberOfReachingStorageLimitTeams | The number Of ReachingStorageLimitTeams. | integer |
-| numberOfReachingStorageLimitSharePointSites | The number Of ReachingStorageLimitSharePointSites. | integer |
-| numberOfReachingStorageLimitOneDrives | The number Of ReachingStorageLimitOneDrives. | integer |
-| numberOfReachingStorageLimitGroups | The number Of ReachingStorageLimitGroups. | integer |
-| numberOfReachingStorageLimitMailboxes | The number Of ReachingStorageLimitMailboxes. | integer |
+| Workspaces | The number Of Workspaces. | integer |
+| Teams | The number Of Teams. | integer |
+| SharePointSites | The number Of SharePointSites.  | integer |
+| OneDrives | The number Of OneDrives. | integer |
+| Groups | The number Of Groups. | integer |
+| ExchangeMailboxes | The number Of ExchangeMailboxes. | integer |
+| ActiveWorkspaces | The number Of ActiveWorkspaces. | integer |
+| InactiveWorkspaces | The number Of InactiveWorkspaces. | integer |
+| OrphanedWorkspaces | The number Of OrphanedWorkspaces. | integer |
+| OrphanedTeams | The number Of OrphanedTeams. | integer |
+| OrphanedSharePointSites | The number Of OrphanedSharePointSites. | integer |
+| OrphanedOneDrives | The number Of OrphanedOneDrives. | integer |
+| OrphanedGroups | The number Of OrphanedGroups. | integer |
+| WorkspacesWithGuestUsers | The number Of WorkspacesWithGuestUsers. | integer |
+| TeamsWithGuestUsers | The number Of TeamsWithGuestUsers. | integer |
+| SharePointSitesWithGuestUsers | The number Of SharePointSitesWithGuestUsers. | integer |
+| OneDrivesWithGuestUsers | The number Of OneDrivesWithGuestUsers. | integer |
+| GroupsWithGuestUsers | The number Of GroupsWithGuestUsers. | integer |
+| ReachingStorageLimitWorkspaces | The number Of ReachingStorageLimitWorkspaces. | integer |
+| ReachingStorageLimitTeams | The number Of ReachingStorageLimitTeams. | integer |
+| ReachingStorageLimitSharePointSites | The number Of ReachingStorageLimitSharePointSites. | integer |
+| ReachingStorageLimitOneDrives | The number Of ReachingStorageLimitOneDrives. | integer |
+| ReachingStorageLimitGroups | The number Of ReachingStorageLimitGroups. | integer |
+| ReachingStorageLimitMailboxes | The number Of ReachingStorageLimitMailboxes. | integer |
 
 
 ## Request Sample
@@ -76,29 +76,29 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "numberOfWorkspaces": 4285,
-    "numberOfTeams": 171,
-    "numberOfSharePointSites": 865,
-    "numberOfOneDrives": 12,
-    "numberOfGroups": 2989,
-    "numberOfExchangeMailboxes": 248,
-    "numberOfActiveWorkspaces": 159,
-    "numberOfInactiveWorkspaces": 399,
-    "numberOfOrphanedWorkspaces": 264,
-    "numberOfOrphanedTeams": 56,
-    "numberOfOrphanedGroups": 192,
-    "numberOfOrphanedSharePointSites": 15,
-    "numberOfWorkspacesWithGuestUsers": 88,
-    "numberOfOrphanedOneDrives": 1,
-    "numberOfTeamsWithGuestUsers": 13,
-    "numberOfSharePointSitesWithGuestUsers": 37,
-    "numberOfOneDrivesWithGuestUsers": 0,
-    "numberOfGroupsWithGuestUsers": 38,
-    "numberOfReachingStorageLimitWorkspaces": 0,
-    "numberOfReachingStorageLimitTeams": 0,
-    "numberOfReachingStorageLimitSharePoint": 0,
-    "numberOfReachingStorageLimitOneDrives": 0,
-    "numberOfReachingStorageLimitGroups": 0,
-    "numberOfReachingStorageLimitMailboxes": 0,
-    "numberOfReachingStorageLimitSharePointSites": 0
+    "Workspaces": 4285,
+    "Teams": 171,
+    "SharePointSites": 865,
+    "OneDrives": 12,
+    "Groups": 2989,
+    "ExchangeMailboxes": 248,
+    "ActiveWorkspaces": 159,
+    "InactiveWorkspaces": 399,
+    "OrphanedWorkspaces": 264,
+    "OrphanedTeams": 56,
+    "OrphanedGroups": 192,
+    "OrphanedSharePointSites": 15,
+    "WorkspacesWithGuestUsers": 88,
+    "OrphanedOneDrives": 1,
+    "TeamsWithGuestUsers": 13,
+    "SharePointSitesWithGuestUsers": 37,
+    "OneDrivesWithGuestUsers": 0,
+    "GroupsWithGuestUsers": 38,
+    "ReachingStorageLimitWorkspaces": 0,
+    "ReachingStorageLimitTeams": 0,
+    "ReachingStorageLimitSharePoint": 0,
+    "ReachingStorageLimitOneDrives": 0,
+    "ReachingStorageLimitGroups": 0,
+    "ReachingStorageLimitMailboxes": 0,
+    "ReachingStorageLimitSharePointSites": 0
 }

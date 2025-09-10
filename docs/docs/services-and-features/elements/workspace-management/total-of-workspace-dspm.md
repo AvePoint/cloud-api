@@ -36,11 +36,11 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| numberOfSensitiveItemsSharedWithEveryOne | The number Of SensitiveItemsSharedWithEveryOne. | integer |
-| numberOfSensitiveItemsSharedWithEveryOneExceptExternalUsers | The number Of SensitiveItemsSharedWithEveryOneExceptExternalUsers. | integer |
-| numberOfSensitiveItemsSharedViaAnonynousLink | The number Of SensitiveItemsSharedViaAnonynousLink.  | integer |
-| numberOfSensitiveItemsSharedViaLinkForSpecificExternalUsers | The number Of SensitiveItemsSharedViaLinkForSpecificExternalUsers. | integer |
-| numberOfSensitiveItemsSharedViaOrganizationLink | The number Of SensitiveItemsSharedViaOrganizationLink. | integer |
+| SensitiveItemsSharedWithEveryOne | The number Of SensitiveItemsSharedWithEveryOne. | integer |
+| SensitiveItemsSharedWithEveryOneExceptExternalUsers | The number Of SensitiveItemsSharedWithEveryOneExceptExternalUsers. | integer |
+| SensitiveItemsSharedViaAnonynousLink | The number Of SensitiveItemsSharedViaAnonynousLink.  | integer |
+| SensitiveItemsSharedViaLinkForSpecificExternalUsers | The number Of SensitiveItemsSharedViaLinkForSpecificExternalUsers. | integer |
+| SensitiveItemsSharedViaOrganizationLink | The number Of SensitiveItemsSharedViaOrganizationLink. | integer |
 
 
 ## Request Sample
@@ -57,9 +57,9 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "numberOfSensitiveItemsSharedWithEveryOne": 1,
-    "numberOfSensitiveItemsSharedWithEveryOneExceptExternalUsers": 2,
-    "numberOfSensitiveItemsSharedViaAnonynousLink": 3,
-    "numberOfSensitiveItemsSharedViaLinkForSpecificExternalUsers": 4,
-    "numberOfSensitiveItemsSharedViaOrganizationLink": 5
+    "SensitiveItemsSharedWithEveryOne": 1,
+    "SensitiveItemsSharedWithEveryOneExceptExternalUsers": 2,
+    "SensitiveItemsSharedViaAnonynousLink": 3,
+    "SensitiveItemsSharedViaLinkForSpecificExternalUsers": 4,
+    "SensitiveItemsSharedViaOrganizationLink": 5
 }

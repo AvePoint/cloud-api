@@ -36,18 +36,18 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| numberOfTeamsUnderPotentialRansomwareAttack | The number Of TeamsUnderPotentialRansomwareAttack. | integer |
-| numberOfTeamsWithUnusualActivities | The number Of TeamsWithUnusualActivities. | integer |
-| numberOfSharePointSitesUnderPotentialRansomwareAttack | The number Of SharePointSitesUnderPotentialRansomwareAttack.  | integer |
-| numberOfSharePointSitesWithUnusualActivities | The number Of SharePointSitesWithUnusualActivities. | integer |
-| numberOfOneDrivesUnderPotentialRansomwareAttack | The number Of OneDrivesUnderPotentialRansomwareAttack. | integer |
-| numberOfOneDrivesWithUnusualActivities | The number Of OneDrivesWithUnusualActivities. | integer |
-| numberOfGroupsUnderPotentialRansomwareAttack | The number Of GroupsUnderPotentialRansomwareAttack. | integer |
-| numberOfGroupsWithUnusualActivities | The number Of GroupsWithUnusualActivities. | integer |
-| numberOfTeamsWithSuspiciousObjects | The number Of TeamsWithSuspiciousObjects. | integer |
-| numberOfSharePointSitesWithSuspiciousObjects | The number Of SharePointSitesWithSuspiciousObjects. | integer |
-| numberOfOneDrivesWithSuspiciousObjects | The number Of OneDrivesWithSuspiciousObjects. | integer |
-| numberOfGroupsWithSuspiciousObjects | The number Of GroupsWithSuspiciousObjects. | integer |
+| TeamsUnderPotentialRansomwareAttack | The number Of TeamsUnderPotentialRansomwareAttack. | integer |
+| TeamsWithUnusualActivities | The number Of TeamsWithUnusualActivities. | integer |
+| SharePointSitesUnderPotentialRansomwareAttack | The number Of SharePointSitesUnderPotentialRansomwareAttack.  | integer |
+| SharePointSitesWithUnusualActivities | The number Of SharePointSitesWithUnusualActivities. | integer |
+| OneDrivesUnderPotentialRansomwareAttack | The number Of OneDrivesUnderPotentialRansomwareAttack. | integer |
+| OneDrivesWithUnusualActivities | The number Of OneDrivesWithUnusualActivities. | integer |
+| GroupsUnderPotentialRansomwareAttack | The number Of GroupsUnderPotentialRansomwareAttack. | integer |
+| GroupsWithUnusualActivities | The number Of GroupsWithUnusualActivities. | integer |
+| TeamsWithSuspiciousObjects | The number Of TeamsWithSuspiciousObjects. | integer |
+| SharePointSitesWithSuspiciousObjects | The number Of SharePointSitesWithSuspiciousObjects. | integer |
+| OneDrivesWithSuspiciousObjects | The number Of OneDrivesWithSuspiciousObjects. | integer |
+| GroupsWithSuspiciousObjects | The number Of GroupsWithSuspiciousObjects. | integer |
 
 
 ## Request Sample
@@ -64,16 +64,16 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "numberOfTeamsUnderPotentialRansomwareAttack": 10,
-    "numberOfSharePointSitesUnderPotentialRansomwareAttack": 0,
-    "numberOfOneDrivesUnderPotentialRansomwareAttack": 0,
-    "numberOfGroupsUnderPotentialRansomwareAttack": 16,
-    "numberOfTeamsWithUnusualActivities": 0,
-    "numberOfSharePointSitesWithUnusualActivities": 1,
-    "numberOfOneDrivesWithUnusualActivities": 22,
-    "numberOfGroupsWithUnusualActivities": 0,
-    "numberOfTeamsWithSuspiciousObjects": 12,
-    "numberOfSharePointSitesWithSuspiciousObjects": 0,
-    "numberOfOneDrivesWithSuspiciousObjects": 0,
-    "numberOfGroupsWithSuspiciousObjects": 1
+    "TeamsUnderPotentialRansomwareAttack": 10,
+    "SharePointSitesUnderPotentialRansomwareAttack": 0,
+    "OneDrivesUnderPotentialRansomwareAttack": 0,
+    "GroupsUnderPotentialRansomwareAttack": 16,
+    "TeamsWithUnusualActivities": 0,
+    "SharePointSitesWithUnusualActivities": 1,
+    "OneDrivesWithUnusualActivities": 22,
+    "GroupsWithUnusualActivities": 0,
+    "TeamsWithSuspiciousObjects": 12,
+    "SharePointSitesWithSuspiciousObjects": 0,
+    "OneDrivesWithSuspiciousObjects": 0,
+    "GroupsWithSuspiciousObjects": 1
 }

@@ -36,8 +36,8 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| numberOfWorkspacesInCompliance | The number Of WorkspacesInCompliance. | integer |
-| numberOfWorkspacesOutOfCompliance | The number Of WorkspacesOutOfCompliance. | integer |
+| WorkspacesInCompliance | The number Of WorkspacesInCompliance. | integer |
+| WorkspacesOutOfCompliance | The number Of WorkspacesOutOfCompliance. | integer |
 
 
 ## Request Sample
@@ -54,6 +54,6 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "numberOfWorkspacesInCompliance": 2438,
-    "numberOfWorkspacesOutOfCompliance": 1037
+    "WorkspacesInCompliance": 2438,
+    "WorkspacesOutOfCompliance": 1037
 }
