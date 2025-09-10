@@ -46,8 +46,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | id |  The id of the user signin record. | string |
 | loginTime |  The login time of the user signin record. | long |
-| customerId |  The customerId of the user signin record. | string |
-| tenantId |  The tenantId of the user signin record. | string |
 | userId |  The userId of the user signin record. | string |
 | userDisplayName |  The user DisplayName of the user signin record. | string |
 | userPrincipalName |  The user PrincipalName of the user signin record. | string |
@@ -57,8 +55,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | country |  The country of the user signin record. | string |
 | city |  The city of the user signin record. | string |
 | isRisk |  The risk status of the user signin record. | bool |
-| city_Country |  The city_country format value of the user signin record. | string |
-| deviceDisplayName |  The device display name used when user singin. | string |
 
 ## Request Sample
 
@@ -79,8 +75,6 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
         {
             "id": "001f0090-5daf-4ea3-b540-b2c060e52500",
             "loginTime": 638907426550000000,
-            "customerId": "966f35cc-61f4-4070-819c-25cdbcf82a07",
-            "tenantId": "0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec",
             "userId": "4140b563-7c45-4a8a-b0bf-5f44dadcf0fd",
             "userDisplayName": "Bob Mark",
             "userPrincipalName": "mark@element.onmicrosoft.com",
@@ -89,9 +83,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
             "lon": -121.9827,
             "country": "US",
             "city": "Fremont",
-            "isRisk": false,
-            "city_Country": "Fremont, US",
-            "deviceDisplayName": "Laptop"
+            "isRisk": false
         },
     ],
      "metadata": {
