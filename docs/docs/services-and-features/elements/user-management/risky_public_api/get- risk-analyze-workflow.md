@@ -46,8 +46,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | id |  The ID of risk security | string |
-| customerId |  The customer ID of the customer. | string |
-| TenantId |  The specific tenant ID of the customer. | string |
 | WorkflowId |  The workflow ID of the customer. | string |
 | WorkflowDisplayName |  The workflow display name of the customer. | string |
 
@@ -69,8 +67,6 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "data": [
         {
             "id": "83545853-9408-4d0b-902e-79b0beb5dac5",
-            "customerId": "966f35cc-61f4-4070-819c-25cdbcf82a07",
-            "tenantId": "0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec",
             "workflowId": "8fc933ed-5d54-41fe-909c-afbf326f27ff",
             "workflowDisplayName": "User MFA disabled"
         }
