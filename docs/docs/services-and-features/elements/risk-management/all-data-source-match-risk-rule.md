@@ -43,7 +43,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | setting | The paramerter in the name of the rule.  | string |
 | tenantId | The tenant's id. | integer |
 | customerId | The customer's id. | integer |
-| workspace | The record's workspace. | integer |
+| workspace | The record's workspace. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li></ul>| integer |
 | hitItemCount | The number of objects that have the rule. | integer |
 
 
@@ -66,8 +66,8 @@ If the request has been successfully processed, a 200 OK response will be return
             "ruleId": "00000002-9E63-4A52-9946-00000016",
             "ruleName": "OneDrives that have reached 75% of the storage limits",
             "setting": "{\"param1\": 75}",
-            "tenantId": "be4cdf40-1677-49d1-86c1-ab967eb78246",
-            "customerId": "292b68c5-a239-46f2-bc43-28650d407eaf",
+            "tenantId": "be4cdf40-****-****-****-ab967eb78246",
+            "customerId": "292b68c5-****-****-****-28650d407eaf",
             "workspace": 5,
             "hitItemCount": 0
         }

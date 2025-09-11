@@ -48,7 +48,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | objectId | The object's id | integer |
 | tenantId | The tenant's id | integer |
 | customerId | The customer's id | integer |
-| workspace | The record's workspace | integer |
+| workspace | The record's workspace <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li></ul>| integer |
 | detail | The detail information of the record | object |
 
 
@@ -75,7 +75,7 @@ If the request has been successfully processed, a 200 OK response will be return
         {
             "detail": {
                 "groupName": "20240820 teamsite",
-                "groupEmailAddress": "20240820teamsite@vrmhv.onmicrosoft.com",
+                "groupEmailAddress": "20***********site@*****.onmicrosoft.com",
                 "createdBy": "",
                 "groupType": 1,
                 "owners": "",
@@ -83,7 +83,7 @@ If the request has been successfully processed, a 200 OK response will be return
                 "memberCount": 4,
                 "createDate": 638597481290000000,
                 "lastActivityDate": 638877024000000000,
-                "ownerIds": "17cbcd9e-e6c5-4d41-999b-fec514a79c64",
+                "ownerIds": "17cbcd9e-****-****-****-fec514a79c64",
                 "memberIds": "",
                 "mark": 0,
                 "sourceType": 1
