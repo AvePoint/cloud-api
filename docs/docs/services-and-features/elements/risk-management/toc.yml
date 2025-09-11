@@ -1,9 +1,4 @@
-- name: List scan profiles
-  href: all-scan-profiles.md
-- name: Retrieve scan profile details
-  href: specific-scan-profiles.md
-- name: Retrieve scan change summary
-  href: daily-scan-profile-changes.md
-- name: Retrieve object details in scan changes
-  href: daily-scan-profile-change-details.md
-   
+- name: Retrieve specific rule detail hit items
+  href: specific-rule-detail-hit-items.md
+- name: Retrieve all data source that match risk rules
+  href: all-data-source-match-risk-rule.md
