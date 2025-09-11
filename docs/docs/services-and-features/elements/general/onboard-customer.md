@@ -47,7 +47,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Request Sample
 
-To use this API, send a GET request to the specified endpoint.
+To use this API, send a POST request to the specified endpoint.
 
 ```json
 https://graph-us.avepointonlineservices.com/partner/external/v3/general/customers
