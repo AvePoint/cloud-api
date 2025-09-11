@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to get cu
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch` | Get customer tenant protected user status.|
+| POST | `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch` | Get customer tenant protected user status.|
  
 ## URL Parameters
 
@@ -40,7 +40,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | moduleStatus.IsProtected  | The protected status of the module.                  | bool |
 
 ## Request Sample
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
+To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
 https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch
 ```
