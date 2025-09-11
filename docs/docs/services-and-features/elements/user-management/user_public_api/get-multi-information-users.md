@@ -69,7 +69,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | endDate | The enforce end date of the user. | Long |
 | officePhone | The office phone of the user. | string |
 | countryOrRegion | The country region of the user. | string |
-| status | The status of the user. | enum |
+| status | The status of the user (Active, Inactive, etc.). | `List<string>` |
 | pageIndex | The page index of current request. | integer |
 | pageSize | The user number will be retrieved in one request. | integer |
 | totalCount | The total number count that match the request. | integer |
@@ -98,7 +98,10 @@ If the request has been successfully processed, a 200 OK response will be return
             "department": "DEV",// The department of the user
             "mobile": "11122",// The mobile of the user
             "jobTitle": "Software developer",// The jobTitle of the user
-            "status": 4113,// The status of the user
+            "status": [
+                    "Active", 
+                    "MFA disabled"
+            ],// The status of the user
             "isTestUser": false,// If the user is test or not
             "age": 12,// The password age of the user
             "startDate": 0,// The enforce start date of the user

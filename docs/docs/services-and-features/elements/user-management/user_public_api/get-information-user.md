@@ -42,7 +42,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | DisplayName | The display name of the user | string |
 | JobTitle | The job title of the user. | string |
 | EmployeeId |The employeeId of the user. | string |
-| AlternativeEmailAddress | The alternate email address or the user. | List<string> |
+| AlternativeEmailAddress | The alternate email address or the user. | `List<string>` |
 | Company | The company of the user. | string |
 | Department | The department  of the user. | string |
 | Location | The location of the user. | string |
@@ -54,7 +54,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | Mobile | The mobile phone number of the user. | string |
 | Birthday | The birthday of the user | long |
 | Mail | The primary email address of the user. | string |
-| UsageLocation | The usage location for the user account, typically a country code. | string |
+| UsageLocation | The usage location for the user account, typically a country code.(AF: Afghanistan) | string |
 | PreferredLanguage | The preferred language setting for the user interface. | string |
 | EnforceStart | Indicates whether account enforcement start date is enabled. | boolean |
 | EnforceStartDateTime | The date and time when account enforcement begins. | long |
@@ -65,7 +65,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | State | The state or province where the user is located. | string |
 | Address | The street address of the user's location. | string |
 | LoginName | The login name or user principal name used for authentication. | string |
-| Status | The current status of the user account (Active, Inactive, etc.). | enum |
+| Status | The current status of the user account (Active, Inactive, etc.). | `List<string>` |
 
 ## Request Sample
 
@@ -114,6 +114,9 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "state": "British Antarctic Territory",
     "address": "Rothera Research Station",
     "loginName": "kevin@element.onmicrosoft.com",
-    "status": 25
+    "status":  [
+        "Active", 
+        "MFA disabled"
+    ],
 }
 ```
