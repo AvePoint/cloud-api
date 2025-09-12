@@ -43,7 +43,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | setting | The paramerter in the name of the rule.  | string |
 | tenantId | The tenant's id. | integer |
 | customerId | The customer's id. | integer |
-| workspace | The record's workspace. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li></ul>| integer |
+| workspace | The record's workspace. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer |
 | hitItemCount | The number of objects that have the rule. | integer |
 
 
