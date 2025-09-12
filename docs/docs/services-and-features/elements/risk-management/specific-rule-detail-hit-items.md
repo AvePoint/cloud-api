@@ -43,13 +43,30 @@ If the request has been successfully processed, a 200 OK response will be return
 | totalNumber | The total number of items that meet the criteria. | integer |
 | totalPage | The total number of pages that meet the criteria.  | integer |
 | jumpPage | The page we need to jump to. | integer |
-| currentPage | The current display page  | integer |
-| id | The record's id | integer |
-| objectId | The object's id | integer |
-| tenantId | The tenant's id | integer |
+| currentPage | The current display page.  | integer |
+| id | The record's id. | integer |
+| objectId | The object's id. | integer |
+| tenantId | The tenant's id. | integer |
 | customerId | The customer's id | integer |
-| workspace | The record's workspace <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li></ul>| integer |
-| detail | The detail information of the record | object |
+| workspace | The record's workspace. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer |
+| detail | The detail information of the record. | object |
+
+
+## Detail's enumerations
+
+Based on the workspace, there are enumerations that stands for a specific type of the record.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| groupType | The type of group. <ul><li>**1** - Microsoft365</li><li>**2** - Security</li><li>**4** - Distribution</li><li>**8** - MailEnabledSecurity</li><li>**-1** - Unknown</li></ul> | integer |
+| sourceType | The source type of the record. <ul><li>**0** - None</li><li>**1** - Cloud</li><li>**2** - OnPremise</li><li>**4** - Hybrid</li></ul> | integer |
+| userType | The user's type. <ul><li>**1** - Guest</li><li>**2** - Member</li></ul> | integer |
+| archiveStatus | The record's archive status. <ul><li>**0** - Archive</li><li>**1** - UnArchive</li></ul> | integer |
+| lockState | The record's lock state. <ul><li>**0** - Unknown</li><li>**1** - Unlock</li><li>**2** - ReadOnly</li><li>**3** - NoAccess</li></ul> | integer |
+| includedInSolutions | The record's id. | integer |
+| type(1) | The Power Automate's flow type. <ul><li>**0** - Unknown</li><li>**1** - Instant</li><li>**2** - Automated</li><li>**4** - Scheduled</li><li>**8** - DesktopFlow</li></ul> | integer |
+| type(2) | The Power Platform Environment's environment type. <ul><li>**1** - Default</li><li>**2** - Trial</li><li>**4** - Sandbox</li><li>**8** - Production</li><li>**16** - Teams</li><li>**32** - Subscription Based Trial</li><li>**64** - Developer</li></ul> | integer |
+| region | The Power Platform Environment's region. <ul><li>**-1** - none</li><li>**0** - unitedstates</li><li>**1** - europe</li><li>**2** - asia</li><li>**3** - australia</li><li>**4** - india</li><li>**5** - japan</li><li>**6** - canada</li><li>**7** - unitedkingdom</li><li>**8** - unitedstatesfirstrelease</li><li>**9** - southamerica</li><li>**10** - france</li><li>**11** - switzerland</li><li>**12** - germany</li><li>**13** - korea</li><li>**14** - norway</li><li>**15** - unitedarabemirates</li><li>**16** - usgov</li><li>**17** - southafrica</li><li>**18** - sweden</li><li>**19** - usgovhigh</li></ul> | integer |
 
 
 ## Request Sample
