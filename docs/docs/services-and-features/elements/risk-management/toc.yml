@@ -1,4 +1,0 @@
-- name: Retrieve specific rule detail hit items
-  href: specific-rule-detail-hit-items.md
-- name: Retrieve all data source that match risk rules
-  href: all-data-source-match-risk-rule.md
