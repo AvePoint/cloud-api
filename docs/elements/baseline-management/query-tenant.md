@@ -43,10 +43,17 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | tenantName | The **Name** of the tenant. | string |
-| status | The **Status** of the baseline.<ul><li>**1** Connected</li><li>**3** Settings retrieval failed</li><li>**4** Retrieving settings</li><li>**5** Review deployment</li><li>**6** Deployment draft saved</li><li>**7** Scheduled deployment</li><li>**8** Deploying</li><li>**9** Monitoring</li><li>**10** Deployed with exception</li><li>**11** Deployment failed</li><li>**13** Review restore</li><li>**14** Restored</li><li>**15** Restoring</li><li>**16** Restored with exception</li><li>**17** Restore failed</li><li>**18** Scheduled restore</li><li>**100** Expired</li></ul> | int |
+| status | The **Status** of the baseline.<ul><li>**1** Connected</li><li>**2** Deployed with exception</li><li>**3** Deploying</li><li>**4** Deployment draft saved</li><li>**5** Deployment failed </li><li>**6** Expired</li><li>**7** Deployed </li><li>**8** Restore failed </li><li>**19** Restored</li><li>**10** Restored with exception</li><li>**11** Restoring</li><li>**12** Retrieving setting</li><li>**13** Review deployment</li><li>**14** Review restore</li><li>**15** Scheduled deployment </li><li>**16** Schedule restore</li><li>**17** Settings retrieval failed</li></ul> | int |
 | driftDetected | The count of drift detected. | int |
-| driftDetectedDate | The last drift detected date (UTC). | string |
-| lastDeployed | The last deploy date (UTC). | string |
+| driftDetectedTime | The last drift detected date (UTC). | string |
+| lastDeployedTime | The last deploy date (UTC). | string |
+| customerId | The Id of customer. | string |
+| tenantId | The Id of tenant. | string |
+| autoAlignmentStatus | The status of Auto-Alignment. <ul><li>**0** Disable</li><li>**1** Enable</li></ul>| string |
+| appliedBaselines | The baselines that applied to the tenant.| string |
+| baselineId | The id of baseline.| string |
+| baselineName | The name of baseline.| string |
+| version | The version of baseline.| int |
 
 ## Request Sample
 
@@ -71,13 +78,21 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "data": [
         {
-            "name": "2****l",
+            "tenantName": "2****l",
             "status": 5,
             "driftDetected": 51,
             "driftDetectedTime": "2025-09-05T10:30:00Z",
             "customerId": "ce43e186-****-****-****-86b51b0aef92",
             "tenantId": "af83b8e1-****-****-****-970f92192dc5",
-            "lastDeployedTime": "2025-09-06T10:30:00Z"
+            "autoAlignmentStatus": 1,
+            "lastDeployedTime": "2025-09-11T02:26:34Z",
+            "appliedBaselines": [
+                {
+                    "baselineId": "de473862-****-****-****-3a1c20398d55",
+                    "baselineName": "baseline1",
+                    "version": "4"
+                }
+            ]
         }
     ],
     "metadata": {
