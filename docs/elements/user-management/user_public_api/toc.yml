@@ -1,0 +1,25 @@
+- name: Get User
+  href: get-information-user.md
+- name: Get Users
+  href: get-multi-information-users.md
+- name: Update Account Information
+  href: update-account-information.md
+- name: Update Birthday
+  href: update-birthday.md
+- name: Update Contact Information
+  href: update-contact-information.md
+- name: Update Email Address
+  href: update-email-address.md
+- name: Update General Information
+  href: update-general-information.md
+- name: User Validation
+  href: update-istest.md
+- name: Update Manager
+  href: update-manager.md
+- name: Update Office
+  href: update-office.md
+- name: Update Office Information
+  href: update-office-information.md
+- name: Update Password Settings
+  href: update-password-setting.md
+   
