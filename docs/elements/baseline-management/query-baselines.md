@@ -46,7 +46,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | baselineName | The **Name** of the baseline. | string |
 | createTime | The create time of the baseline (UTC). | string |
 | ModifyTime | The last modify time of the baseline (UTC). | string |
-| status | The **Status** of the baseline.<ul><li>**0** - Retrieving settings</li><li>**1** - Unused</li><li>**2** - Active</li><li>**3** - Settings retrieval failed</li><li>**7** - Retrieved with exception</li><li>**8** - Draft</li></ul> | int |
+| status | The **Status** of the baseline.<ul><li>**1** - Retrieving settings</li><li>**2** - Unused</li><li>**3** - Active</li><li>**4** - Settings retrieval failed</li><li>**5** - Retrieved with exception</li><li>**6** - Draft</li></ul> | int |
 
 ## Request Sample
 
