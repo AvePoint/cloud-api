@@ -37,6 +37,7 @@ The API provides detailed metrics on subscription consumption, aiding in underst
 | --- | --- | --- |
 | statusCode | Http Response Status Code | integer |
 | message | Error message | string |
+| errors | API error | ApiError |
 | data | Subscription consumption | licenseconsumption |
 | requestId | API Request ID | string |
 | timestamp | API request time | string |

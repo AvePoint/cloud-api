@@ -39,6 +39,7 @@ The API response provides the basic information of unusual activities. Each job 
 | --- | --- | --- |
 | statusCode | Http Response Status Code | integer |
 | message | error message | string |
+| errors | API error | ApiError |
 | data | Basic information of unusual activities | unusualactivitydata |
 | requestId | API Request ID | string |
 | timestamp | API request time | string |
