@@ -1,0 +1,13 @@
+- name: Get Cloud Backup Overview
+  href: get-customer-cloud-backup-m365-overview.md
+- name: Get Customer Jobs
+  href: get-customer-jobs.md
+- name: Get Customer Scan Profile Details
+  href: get-customer-scan-profile-detail.md
+- name: Get Customer Scan Profiles
+  href: get-customer-scan-profiles.md
+- name: Get Customer Scan Profile Details v2
+  href: get-customer-scan-profile-v2-detail.md
+- name: Get Customer Scan Profiles v2
+  href: get-customer-scan-profile-v2.md
+   
