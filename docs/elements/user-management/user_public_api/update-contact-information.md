@@ -53,7 +53,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 
 ```json
 {
-  "phone": "323-333-111",
+  "officePhone": "323-333-111",
   "mobile": "323-344-409"
 }
 ```
