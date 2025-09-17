@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/partner/external/rm/customers/{customerId}/tenants/{tenantId}/detection/rules` | partner.rm.read.all |  
+| `/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules` | elements.rm.read.all |  
 
 
 ## Request
@@ -18,7 +18,7 @@ This section outlines the HTTP method and endpoint used to retrieve your custome
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|GET|`/partner/external/rm/customers/{customerId}/tenants/{tenantId}/detection/rules`|Retrieves records for all risk rules that are match for a specific tenant in AvePoint Online Services.|
+|GET|`/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules`|Retrieves records for all risk rules that are match for a specific tenant in AvePoint Online Services.|
 
 ## Query Parameters
 
@@ -52,7 +52,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/customers/d926b068-47cd-4830-a082-fd2a1eb64e99/tenants/0eaab044-c775-4a92-b40d-93c6e237711e/detection/rules
+https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d926b068-47cd-4830-a082-fd2a1eb64e99/tenants/0eaab044-c775-4a92-b40d-93c6e237711e/detection/rules
 ```
 
 ## Response Sample
