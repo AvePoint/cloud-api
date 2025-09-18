@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API  | Permission  |
 |-----------|--------|
-| `/partner/external/v3/bm/baselines/batch` | elements.bm.baseline.read.all|  
+| `/partner/external/v3/bm/baselines/batch` | elements.bm.baseline.read.all or elements.bm.baseline.readwrite.all|  
 
 ## Request
 

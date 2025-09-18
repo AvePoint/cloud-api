@@ -31,9 +31,12 @@ The API requires multiple parameters to create baseline.
 |customerId|The id of the **Customer**.|string|Yes|
 |tenantId|The id of the **Tenant**.|string|Yes|
 
+> [!NOTE]  
+Tenants in the following status cannot be used to create baseline.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li></ul>
+
 ## Response
 
-If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body.
+If the request has been successfully processed, a 201 OK response will be returned along with the created baseline id displayed in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |
@@ -57,7 +60,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 201 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {

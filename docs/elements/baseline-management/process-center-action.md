@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API  | Permission  |
 |-----------|--------|
-| `/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}}/process-center/actions` | elements.bm.tenant.read.all|  
+| `/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}}/process-center/actions` | elements.bm.tenant.read.all or elements.bm.tenant.readwrite.all|  
 
 ## Request
 
@@ -26,7 +26,7 @@ You can provide a object about the action.
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
 |actionType| The tenant action type. <ul><li>**3** - Download</li></ul> |int|Yes|
-|data| The parameters of action <ul><li>**mainJobId** - The main job id of the job</li><li>**downloadFileType** - The file type of download<ul><li>**1** - Job file</li></ul></li></ul> | object |
+|data| The parameters of action <ul><li>**jobId** - The job id of the job</li><li>**downloadFileType** - The file type of download<ul><li>**1** - Job file</li></ul></li></ul> | object |
 
 ## Response
 
@@ -43,7 +43,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/{cu
     "actionType": "3",
     "data": 
     {
-        "mainJobId": "e43f1e86-0000-0000-0000-5ae6ebd79a75",
+        "jobId": "e43f1e86-0000-0000-0000-5ae6ebd79a75",
         "downloadFileType": "1"
     }
 }

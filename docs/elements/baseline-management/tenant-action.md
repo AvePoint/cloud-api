@@ -28,13 +28,17 @@ You can provide a object about the action.
 |actionType| The tenant action type. <ul><li>**1** - Apply Baseline</li><li>**2** - Export tenant configuration</li></ul> |int|Yes|
 |data| The parameters of action <ul><li>**baselineId** - Apply Baseline Id (Apply Baseline action)</li><li>**order** - Apply baseline order (Apply Baseline action)</li><li>**configurationExportType** - Tenant configuration export type (Tenant configuration export action)<ul><li>**0** - Standard</li><li>**1** - Customized</li></ul></li></ul> |object|Yes|
 
+> [!NOTE]  
+Tenants in the following status cannot perform the "Apply Baseline" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
+Baselines in the following status cannot be used for the "Apply Baseline" action.<ul><li>**1** - Retrieving settings</li><li>**4** - Settings retrieval failed</li><li>**6** - Draft</li></ul>
+
 ## Response
 
 If the request has been successfully processed, a 200 OK response will be returned along with the action result in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |
-| mainJobId | The main job id of apply baseline job or export tenant configuration job. | string |
+| jobId | The job id of apply baseline job or export tenant configuration job. | string |
 
 ## Request Sample
 
@@ -75,5 +79,5 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json
 {
-    "mainJobId": "7f3b241b-****-****-****-3a1c395524t6"
+    "jobId": "7f3b241b-****-****-****-3a1c395524t6"
 }
