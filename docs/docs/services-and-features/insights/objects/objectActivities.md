@@ -30,7 +30,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter   | Description                                      | Type   | Required? |
 |-------------|--------------------------------------------------|--------|-----------|
-| path        | The object URL.                                 | string | Yes       |
+| path        | The object URL                                 | string | Yes       |
 | startTime   | The start time of the reporting time range, in ISO 8601 format.  | string | No        |
 | finishTime  | The finish time of the reporting time range, in ISO 8601 format. | string | No        |
 | eventTypes  | Filter by event type                             | list  | No        |
@@ -48,7 +48,7 @@ If successful, the API response will provide the export job ID. You can use the 
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/activities/object/https******markettest.sharepoint.com%2Fsites%2F******teams001/export?startTime=2024-12-03T00%3A00%3A00&finishTime=2025-01-09T00%3A00%3A00&eventTypes=ListViewed&eventTypes=ListItemViewed

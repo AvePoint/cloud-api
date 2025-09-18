@@ -20,7 +20,7 @@ IT professionals can monitor backup status, performance, and issues by accessing
 
 ## Enhanced Data Visibility with Insights  
 
-Organizations can leverage Insights for Microsoft 365 to retrieve and analyze data, providing enhanced visibility for informed decision-making. This API allows businesses to access detailed reports and data insights, driving better business outcomes.
+Organizations can leverage Insights to retrieve and analyze data, providing enhanced visibility for informed decision-making. This API allows businesses to access detailed reports and data insights, driving better business outcomes.
 
 ## Efficient Data Management with EnPower  
 

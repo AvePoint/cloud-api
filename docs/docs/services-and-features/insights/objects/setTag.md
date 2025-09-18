@@ -48,7 +48,7 @@ The API response provides detailed information about the tag status.
 
 ## Request Sample
 
-To use this API, send a `PATCH` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `PATCH` request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/sites/5794af14-b6ee-4194-b122-bdaa1a******/https%3A%2F%2******markettest.sharepoint.com%2Fsites%2Fharland2/settag?tagName=FalsePositive

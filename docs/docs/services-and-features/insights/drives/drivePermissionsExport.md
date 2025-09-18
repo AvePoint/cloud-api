@@ -1,6 +1,6 @@
 # Export Drive Permissions
 
-This API method (`/insights/google/drives/permission/export` navigation property) allows users to export the permission report for specific google drives. This method is useful for obtaining detailed insights into the permissions granted to Google drives within a specified time range.
+This API method (`/insights/google/drives/permission/export` navigation property) allows users to export the permission report for specific Google drives. This method is useful for obtaining detailed insights into the permissions granted to Google drives within a specified time range.
 
 ## Permission
 
