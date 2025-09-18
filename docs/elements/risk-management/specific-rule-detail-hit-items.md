@@ -154,6 +154,7 @@ Depending on the workspace, there are fields that stands for a specific type of 
 | LoginTime | The User's login time. | string |
 | ManagerId | The User's managerId. | string |
 | SignInCount | The User's number of sign in. | int |
+| ObjectUsers | The detail informations about users in the record. | string |
 
 
 ## Request Sample
@@ -170,24 +171,24 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "pageSize": 50,
-    "totalNumber": 37,
-    "totalPage": 1,
-    "jumpPage": 1,
-    "currentPage": 1,
-    "result": [
+    "metaData": {
+        "pageIndex": 1,
+        "pageSize": 50,
+        "totalCount": 37
+    },
+    "data": [
         {
             "detail": {
                 "groupName": "20240820 teamsite",
-                "groupEmailAddress": "20***********site@*****.onmicrosoft.com",
+                "groupEmailAddress": "2024********@vrmhv.onmicrosoft.com",
                 "createdBy": "",
+                "objectUsers": null,
                 "groupType": 1,
-                "owners": "",
                 "ownerCount": 1,
                 "memberCount": 4,
-                "createDate": 638597481290000000,
-                "lastActivityDate": 638877024000000000,
-                "ownerIds": "17cbcd9e-****-****-****-fec514a79c64",
+                "createDate": "2024-08-20T10:55:29.0000000Z",
+                "lastActivityDate": "2025-07-10T00:00:00.0000000Z",
+                "ownerIds": "17****-****-****-****-****79c64",
                 "memberIds": "",
                 "mark": 0,
                 "sourceType": 1
