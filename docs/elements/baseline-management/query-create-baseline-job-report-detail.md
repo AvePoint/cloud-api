@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API  | Permission  |
 |-----------|--------|
-| `/partner/external/v3/bm/baselines/{baselineId}/reports` | elements.bm.baseline.read.all|  
+| `/partner/external/v3/bm/baselines/{baselineId}/reports` | elements.bm.baseline.read.all or elements.bm.baseline.readwrite.all |  
 
 ## Request
 
@@ -34,10 +34,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| source |  | string |
-| configuration |  | string |
-| action |  | string |
-| status |  | string |
+| source | Azure configuration category | string |
+| configuration | The name of configuration  | string |
+| status | The result of retrieve action | string |
+| details | The detail information of failed retrieve action | string |
 
 ## Request Sample
 
@@ -57,14 +57,14 @@ If the request has been successfully processed, a 200 OK response will be return
         {
             "source": "Intune",
             "configuration": "DeviceCompliancePolicies > MacOSCompliancePolicy",
-            "action": "Retrieve",
             "status": "Successful",
+            "details": null
         },
         {
             "source": "Intune",
             "configuration": "DeviceCompliancePolicies > Windows10/11CompliancePolicy",
-            "action": "Retrieve",
             "status": "Successful",
+            "details": null
         },
         ...
     ],
