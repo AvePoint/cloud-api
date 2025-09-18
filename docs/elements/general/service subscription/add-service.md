@@ -107,8 +107,8 @@ Add Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup 
 }
 Add other products pool license request:
 {
-    "product": "PartnerTenantSettingManagement",
-    "licenseType": "Enterprise",
+    "product": 42,
+    "licenseType": 1,
     "licenseItems": [
       {
         "expireTime": "2025-09-30T00:00:00Z",
