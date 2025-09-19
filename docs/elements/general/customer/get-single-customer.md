@@ -37,7 +37,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | id               | The ID of the customer.                 | string |
 | organization     | The organization of the customer.       | string |
 | ownerEmail       | The email address of the customer.      | string |
-| registrationTime | The registeration time of the customer. | string |
 | jobStatus        | The job status of the customer.<ul><li>**0** - N/A</li><li>**1** - Working</li><li>**2** - Failed</li><li>**3** - Waiting for Configuration</li><li>**4** - Multiple Issues Found</li><li>**5** - Finished with Exception</li><li>**6** - No Backup Update</li></ul>                                                     | string |
 | countryOrRegion  | The country of the customer.            | string |
 | managementMode   | The management mode of the user.        | int    |
