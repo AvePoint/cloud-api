@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/general/customers/{customerId}`|elements.customers.read.all|  
+| `partner/external/v3/general/customers/{customerId}`|elements.customers.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to get a 
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/general/customers/{customerId}` | Get a customer managed by current partner.|
+| GET | `partner/external/v3/general/customers/{customerId}` | Get a customer managed by current partner.|
 
 ## URL Parameters
 
