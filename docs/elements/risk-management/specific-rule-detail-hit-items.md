@@ -153,7 +153,11 @@ Depending on the workspace, there are fields that stands for a specific type of 
 | LoginTime | The User's login time. | string |
 | ManagerId | The User's managerId. | string |
 | SignInCount | The User's number of sign in. | int |
-| ObjectUsers | The detail informations about users in the record. | string |
+| InternalId | The Microsoft Teams' teamId. | string |
+| LatestCampaignInfo | The detail informations about record's campaign. | string |
+| GuestUsers | The detail informations about guest users in the record. | string |
+| UnassignedLicensesCount | The User's number of unassigned licenses from the license pool. | string |
+| CreatorIds | The record's creator's Id. | string |
 
 
 ## Request Sample
