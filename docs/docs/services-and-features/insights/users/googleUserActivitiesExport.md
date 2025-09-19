@@ -13,7 +13,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 ## Request 
 
-This section outlines the HTTP method and endpoint used to export the activity data for a specific google user. It provides a concise description of the action performed by the API call. 
+This section outlines the HTTP method and endpoint used to export the activity data for a specific Google user. It provides a concise description of the action performed by the API call. 
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
@@ -52,7 +52,7 @@ https://graph-us.avepointonlineservices.com/insights/google/users/insights***and
 
 ## Response Sample  
 
-The following is a sample response for this API method, which includes export job ID of the google user activity report and its operation status. 
+The following is a sample response for this API method, which includes export job ID of the Google user activity report and its operation status. 
 
 ```json
 {

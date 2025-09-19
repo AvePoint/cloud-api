@@ -22,6 +22,10 @@ Built on a foundation of security and scalability, the Elements APIs ensure that
 
 - **Real-Time Responses**: Gain instant access to the data you need with efficient, real-time API responses, ensuring timely insights and actions.
 
+## Deprecation Notice
+
+This API is slated for deprecation. We are upgrading to a new API for better user experience, stability, and easier integration. Transitioning to the [new API](https://learn.avepoint.com/elements/Overview.html) is highly recommended to ensure continued support and access to the latest features. 
+
 ## Get Started Now! 
 
 Harness the power of Elements APIs to drive your business forward. With our cutting-edge technology and expert support, you'll transform the way you manage customers, ensuring seamless monitoring of backup protection and precise tracking of subscription usage. Detect and adapt to Auto Discovery scan changes with unparalleled efficiency. Our comprehensive resources, including in-depth documentation, coupled with expert support, provide everything you need to embark on a successful integration journey today.  

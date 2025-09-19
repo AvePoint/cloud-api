@@ -30,7 +30,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter   | Description                                      | Type   | Required? |
 |-------------|--------------------------------------------------|--------|-----------|
-| id        | The object ID.                                 | string | Yes       |
+| id        | The object ID                                 | string | Yes       |
 | startTime   | The start time of the reporting time range, in ISO 8601 format.  | string | No        |
 | finishTime  | The finish time of the reporting time range, in ISO 8601 format. | string | No        |
 | eventTypes  | Filter by event type                             | list  | No        |

@@ -4,6 +4,15 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ## October 2025
 
+### Added  
+
+- Introduced the new endpoint `/insights/google/activities/object/{id}/export` to **Insights** for exporting activities performed on a specific Google object.  
+- Introduced the new endpoint `/insights/google/users/{email}/activities/export` to **Insights** for exporting activity data for a specific Google user.  
+- Introduced the new endpoint `/insights/google/users/{email}/access/export` to **Insights** for exporting Google user access report.  
+- Introduced the new endpoint `/insights/google/groups/{groupId}/access/export` to **Insights** for exporting Google group access report.  
+- Introduced the new endpoint `/insights/google/drives/permission/export` to **Insights** for exporting Google drive permissions.  
+- Introduced the new endpoint `/insights/google/sharingLinks/export` to **Insights** for exporting permission related information for Google sharing links.  
+
 ### Changed
 
 - **Cloud Backup for Microsoft 365**

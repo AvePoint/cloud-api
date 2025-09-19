@@ -45,7 +45,7 @@ The API response provides the export job ID and its operation status. You can us
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/insights******001_j*****insightstest.onmicrosoft.com%2523ext%2523%2540m3********.onmicrosoft.com/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm******.sharepoint.com%2Fsites%2Fjuly2022public****01&dataSources=microsoft%20teams&dataSources=sharepoint%20online
