@@ -77,6 +77,10 @@ The API response provides detailed information about the Power Apps retrieved. E
 | environmentHasSecurityGroup | Indicates whether the environment has a security group attached. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | creatorDepartment               | The department of the Power App creator.                                    | string  |
 | creatorDisplayName              | The display name of the Power App creator.                                  | string  |
+| creatorCountry                  | The country of the creator of the Power App.          | string |
+| creatorId                  | The ID of the creator of the Power App.          | string |
+| creatorJobTitle                  | The job title of the creator of the Power App.          | string |
+| lastActivityDate                  | The latest app activity date.          | string |
 | connectorTier                   | The tier of the connector being used in the Power App                       | string  |
 | withBusinessContextRequest | Indicates if the Power App has business context requested via EnPower. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | withBusinessContextResponse | Indicates if the Power App has responded EnPower’s business context request. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
@@ -170,7 +174,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "containerId": "", // The unique identifier for the container that the Power App belongs to
       "container": "Sample-Apps", // The name of the container
       "environment": "", // The Power Platform environment ID that the Power App belongs to
-      "environmentName": "SMPDC (default)", // The display name of the environment
+      "environmentName": "Sample environment", // The display name of the environment
       "ownerDisplayName": "Sample Owner", // The display name of the Power App owner
       "ownerStatus": "Enable", // The status of the Power App owner
       "createdOn": "2024-06-13 03:19:48", // The date and time when the Power App was created
@@ -194,7 +198,11 @@ If the request has been successfully processed, a 200 OK response will be return
       "environmentType": "Default", // The type of the environment that the Power App belongs to
       "environmentHasSecurityGroup": false, // Indicates whether the environment has a security group attached
       "creatorDepartment": "01", // The department of the Power App creator
-      "creatorDisplayName": "Camilla Test", // The display name of the Power App creator
+      "creatorDisplayName": "Sample User", // The display name of the Power App creator
+      "creatorCountry": "", // The country of the creator of the Power App
+      "creatorId": "", // The ID of the creator of the Power App
+      "creatorJobTitle": "", // The job title of the creator of the Power App
+      "lastActivityDate": "", // The latest app activity date
       "connectorTier": "Standard", // The tier of the connector being used in the Power App
       "withBusinessContextRequest": false, // Indicates if the Power App has business context requested via EnPower
       "withBusinessContextResponse": false, // Indicates if the Power App has responded EnPower’s business context request

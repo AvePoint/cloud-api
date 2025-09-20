@@ -1,0 +1,4 @@
+- name: Connection Details
+  href: connections.md
+- name: Connection Usage
+  href: connectionusage.md

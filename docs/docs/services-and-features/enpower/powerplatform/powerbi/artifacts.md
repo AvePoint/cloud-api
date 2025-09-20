@@ -76,6 +76,7 @@ Each artifact retrieved through the API includes detailed attributes that provid
 | numberOfGuests             | The number of guests users who have access to the artifact.                | integer |
 | hasRequest | Indicates if EnPower business context has been requested for this artifact. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | hasResponse | Indicates if EnPower business context request for this flow has been responded. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
+| lastRenewNotifyTime              | The last time a renewal notification was sent for the Power BI artifact.                       | string |
 | numberOfUsers              | The number of users who have access to the artifact.                       | integer |
 | lastActivityD7             | The activity count in the last 7 days for the artifact.                    | integer |
 | lastActivityTime           | The date and time of the artifact’s latest activity.                       | string  |
@@ -84,6 +85,14 @@ Each artifact retrieved through the API includes detailed attributes that provid
 | lastViewedTime             | The last time that the artifact was viewed.                                | string  |
 | datasource                 | The data source associated with the artifact.                              | string  |
 | numberOfRefreshHistories   | The number of refresh histories of the artifact.                           | integer |
+| creatorDisplayName             | The display name of artifact's creator.                       | string |
+| creatorDepartment              | The display name of artifact's creator                       | string |
+| viewsOfLast7Days              | Artifact view count in last 7 days.                       | integer |
+| uniqueViewersOfLast7Days              | Artifact unique viewer count in last 7 days.                       | integer |
+| viewsOfLast30Days              | Artifact view count in last 30 days.                       | integer |
+| uniqueViewersOfLast30Days              | Artifact unique viewer count in last 30 days.                       | integer |
+| viewsOfLast90Days              | Artifact view count in last 90 days.                       | integer |
+| uniqueViewersOfLast90Days              | Artifact unique viewer count in last 90 days.                       | integer |
 
 ## Request Sample
 
@@ -130,15 +139,23 @@ If the request has been successfully processed, a 200 OK response will be return
       "isDeleted": false, // Indicates if the artifact was deleted
       "numberOfGuests": null, // The number of guests users who have access to the artifact
       "hasRequest": false, // Indicates if EnPower business context has been requested for this artifact
-      "hasResponse": false, // Indicates if EnPower business context request for this artifact has been responded
-      "numberOfUsers": null, // The number of users who have access to the artifact
-      "lastActivityD7": 0, // The activity count in the last 7 days for the artifact
-      "lastActivityTime": "", // The date and time of the artifact’s latest activity
-      "lastRefreshDate": "", // The date and time of the artifact’s latest refresh
-      "numberOfDirectShares": null, // The number of direct shares of the artifact
-      "lastViewedTime": "", // The last time that the artifact was viewed
-      "datasource": null, // The data source associated with the artifact
-      "numberOfRefreshHistories": null // The number of refresh histories of the artifact
+      "hasResponse": false, // Indicates if there is a response for the Power BI artifact
+      "lastRenewNotifyTime": "", // The last time a renewal notification was sent for the Power BI artifact
+      "numberOfUsers": null, // The number of users who have access to the Power BI artifact
+      "lastActivityD7": 0, // The activity count in the last 7 days for the Power BI artifact
+      "lastActivityTime": "", // The date and time when the Power BI artifact had its last activity
+      "lastRefreshDate": "", // The date and time when the Power BI artifact was last refreshed
+      "numberOfDirectShares": null, // The number of direct shares for the Power BI artifact
+      "lastViewedTime": "", // The last time the Power BI artifact was viewed
+      "datasource": null, // The data source associated with the Power BI artifact
+      "creatorDisplayName": "" // Display name of artifact creator
+      "creatorDepartment": "" // Department of artifact creator
+      "viewsOfLast7Days": 0 // View count in last 7 days
+      "uniqueViewersOfLast7Days": 0 // Viewer count in last 7 days
+      "viewsOfLast30Days": 0 // View count in last 30 days
+      "uniqueViewersOfLast30Days": 0 // Viewer count in last 30 days
+      "viewsOfLast90Days": 0 // View count in last 90 days
+      "uniqueViewersOfLast90Days": 0 // Viewer count in last 90 days
     }
   ],
   "totalCount": 1,

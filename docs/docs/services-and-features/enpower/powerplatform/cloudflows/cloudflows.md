@@ -67,6 +67,11 @@ The API response provides detailed information about the Power Automate cloud fl
 | creatorOffice               | The office of the flow creator.                                             | string  |
 | creatorStatus               | The status of the flow creator.                                             | string  |
 | creatorUserType             | The user type of the flow creator.                                          | string  |
+| creatorCountry             | The country of the flow creator.                                          | string  |
+| creatorEmail             | The email of the flow creator.                                          | string  |
+| creatorId             | The unique identifier of the flow creator.                                          | string  |
+| creatorJobTitle             | The job title of the flow creator.                                          | string  |
+| creatorUpn             | The user principal name of the flow creator.                                          | string  |
 | coOwners                    | The number of flow co-owners.                                               | integer |
 | users                       | The number of users who have access to the flow.                            | integer |
 | guests                      | The number of guest users who have access to the flow.                      | integer |
@@ -176,6 +181,11 @@ If the request has been successfully processed, a 200 OK response will be return
       "creatorOffice": null, // The office of the flow creator
       "creatorStatus": "Enable", // The status of the flow creator
       "creatorUserType": "Member", // The user type of the flow creator
+      "creatorCountry": "", // The country of the flow creator
+      "creatorEmail": "", // The email of the flow creator
+      "creatorId": "", // The unique identifier of the flow creator
+      "creatorJobTitle": "", // The job title of the flow creator
+      "creatorUpn": "", // The user principal name of the flow creator
       "coOwners": 3, // The number of flow co-owners
       "users": 0, // The number of users who have access to the flow
       "guests": 0, // The number of guest users who have access to the flow
