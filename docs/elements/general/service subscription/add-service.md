@@ -39,7 +39,7 @@ You can provide a customer basic information in the request body to onboard a cu
 |licenseItems.SaleType               |The sale type of the service. <ul><li>**0** - Capacity Tier</li><li>**1** - Unlimited Users</li><li>**2** - Unlimited Organization</li></ul>         |int         |Yes|
 |licenseItems.PackageType            |The package type of the service. <ul><li>**0** - Standard</li><li>**1** - Core</li><li>**2** - Flex</li></ul>                                      |int         |Yes|
 |licenseItems.CustomerSize           |The customer size of the service.                 |int         |Yes|
-|licenseItems.ContractEndDate        |The contract end date of the service.             |string      |Yes|
+|licenseItems.ContractEndDate        |The contract end date of the service.             |string      |No |
 |licenseItems.PaymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - PayAsYouGo</li></ul>                                                     |int         |Yes|
 
 ## Response
