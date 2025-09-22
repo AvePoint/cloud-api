@@ -71,5 +71,5 @@ If the request has been successfully processed, a 200 OK response will be return
 ```json
 {
     "status":1,
-    "customerId":"76f5dc9e-xxxx-xxxx-xxxx-d7efa0b536i5"
+    "id":"76f5dc9e-xxxx-xxxx-xxxx-d7efa0b536i5"
 }
