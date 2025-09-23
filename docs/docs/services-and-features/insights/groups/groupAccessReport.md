@@ -28,9 +28,9 @@ The API supports several query parameters to refine and customize the data expor
 | Parameter        | Description     | Type    | Required? |
 |------------------|----------------|---------|-----------|
 | groupId          | Sets the group ID for which you want to export the permission report. Note that if you want to export the permission report for all groups, skip this parameter and ensure the exportOptionType is set to **3**. | string  | Yes       |
-| exportOptionType | Export options: <ul><li>**1** for summary and site collection level access report</li><li> **2** for summary and access report to all objects</li><li> **3** - summary report only</li> | integer | Yes        |
+| exportOptionType | Export options: <ul><li>**1** for summary and site collection level access report</li><li> **2** for summary and access report to all objects</li><li> **3** for summary report only</li> | integer | Yes        |
 | siteUrls         | Sets the URLs of site collections for which you want to export the permission report.                             | list   | No        |
-| dataSources      | Sets the workspace in which you want to export the access report of users. Multiple values are allowed, such as **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**.          | list   | Yes        |
+| dataSources      | Sets the workspace in which you want to export the access report. Multiple values are allowed, such as **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**.          | list   | Yes        |
 <!---| language | Sets the display language for the access report. Supported values are: **en-US**, **ja-JP**, and **fr-FR**. | string | No --->
 
 > [!NOTE] 
