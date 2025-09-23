@@ -22,15 +22,15 @@ This section outlines the HTTP method and endpoint used to retrieve Google group
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the group ID, data sources, export options, and drive Ids to filter the results effectively.
+The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the group ID, data sources, export options, and drive IDs to filter the results effectively.
 
 
 | Parameter        | Description     | Type    | Required? |
 |------------------|----------------|---------|-----------|
 | groupId          | Sets the group email for which you want to export the permission report. Note that if you want to export the permission report for all groups, skip this parameter and ensure the exportOptionType parameter is set to **3**. | string  | Yes       |
-| exportOptionType | Export options: <ul><li>**1** for summary and google drive level access report (not supported yet)</li><li> **2** for summary and access report to all objects</li><li> **3** - summary report only</li> | integer | Yes        |
+| exportOptionType | Export options: <ul><li>**1** for summary and Google drive level access report (not supported yet)</li><li> **2** for summary and access report to all objects</li><li> **3** for summary report only</li> | integer | Yes        |
 | driveIds         | Sets the IDs of Google drives for which you want to export the permission report.                             | list   | No        |
-| dataSources      | Sets the workspace in which you want to export the access report of users. Multiple values are allowed, such as **User Drive**, **Shared Drive**.          | list   | Yes        |
+| dataSources      | Sets the workspace in which you want to export the access report. Multiple values are allowed, such as **User Drive**, **Shared Drive**.          | list   | Yes        |
 <!---| language | Sets the display language for the access report. Supported values are: **en-US**, **ja-JP**, and **fr-FR**. | string | No --->
 
 
@@ -58,7 +58,7 @@ https://graph-us.avepointonlineservices.com/insights/google/groups/insightgroup*
 
 ## Response Sample  
 
-The following is a sample response for this API method, which includes export job ID of the permission report and its operation status 
+The following is a sample response for this API method, which includes export job ID of the permission report and its operation status. 
 
 ```json
 {

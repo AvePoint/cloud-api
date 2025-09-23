@@ -22,14 +22,14 @@ This section outlines the HTTP method and endpoint used to export Google user ac
 
 ## Query Parameters
 
-The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the drive Ids, email addresses, and data sources to filter the results effectively.
+The API supports several query parameters to refine and customize the data export. These parameters allow users to specify the drive IDs, email addresses, and data sources to filter the results effectively.
 
 
 | Parameter  | Description                                                                 | Type   | Required? |
 |------------|-----------------------------------------------------------------------------|--------|-----------|
 | email| Sets the primary email addresses of Google users for whom you want to export the permission report. | string | Yes |
 | driveIds | Sets the IDs of Google drives for which you want to export the permission report. | list | No | 
-| dataSources | Sets the workspace in which you want to export the access report of users. Multiple values are allowed. (e.g., **My Drive**, **Shared Drive**)| list | Yes |
+| dataSources | Sets the workspace in which you want to export the access report of users. Multiple values are allowed. (e.g., **User Drive**, **Shared Drive**)| list | Yes |
 
 
 ## Responses
@@ -47,7 +47,7 @@ The API response provides the export job ID and its operation status. You can us
 To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/insights/google/users/insights***and**@avepoint*****.com/access/export?exportOptionType=2&driveIds=0ALUvlYxwVLhSUk9PVA&dataSources=shared%20drive&dataSources=my%20drive
+https://graph-us.avepointonlineservices.com/insights/google/users/insights****@avepoint****.com/access/export?exportOptionType=2&driveIds=0ALUvlYxwVLhSUk9PVA&dataSources=shared%20drive&dataSources=my%20drive
 ```
 
 ## Response Sample  

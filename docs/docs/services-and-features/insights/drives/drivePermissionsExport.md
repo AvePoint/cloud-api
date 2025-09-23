@@ -26,7 +26,7 @@ The API supports several query parameters to refine and customize the data expor
 
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
-| driveIds  | Sets the IDs of google drives for which you want to get the permission related information. No more than 100 Google drives in the list. | list   | Yes       |
+| driveIds  | Sets the IDs of Google drives for which you want to get the permission related information. No more than 100 Google drives in the list. | list   | Yes       |
 
 
 ## Responses

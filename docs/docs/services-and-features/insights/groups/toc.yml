@@ -1,6 +1,6 @@
 - name: Export Group Access Report
-  href: groupAccesReport.md
+  href: groupAccessReport.md
 - name: Retrieve Group Summary
   href: groupSummary.md
 - name: Export Google Group Access Report
-  href: googleGroupAccesReport.md
+  href: googleGroupAccessReport.md

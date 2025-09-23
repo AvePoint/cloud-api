@@ -1,4 +1,4 @@
-# Explore Insights for Microsoft 365 Public API  
+# Explore Insights Public API  
 
 Welcome to the comprehensive guide for the Insights Public API. This documentation provides detailed information on how to leverage the API to extract, manage, and analyze data within your Microsoft 365 or Google environment. Whether you are an administrator looking to audit permissions, a developer integrating data into other systems, or an analyst seeking detailed reports, this guide will help you navigate the various export and data retrieval methods available. Dive in to explore the powerful tools and capabilities that the Insights API offers to enhance your data management and analysis workflows.
 
