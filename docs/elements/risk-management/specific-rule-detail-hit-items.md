@@ -1,6 +1,6 @@
 # Retrieve specific rule detail hit items
 
-Use this API to retrieve all records for a specific risk rule for a specific tenant in AvePoint Online Services.  
+Use this API to retrieve all matched records of a specific risk rule for a specific tenant.  
 
 ## Permissions  
 
@@ -14,11 +14,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Services.
+This section outlines the HTTP method and endpoint used to retrieve the matched objects of a speific risk rule within a tenant.
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|GET|`/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules/{ruleId}/hit-items`|Retrieves all records for a specific risk rule for a specific tenant in AvePoint Online Services.|
+|GET|`/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules/{ruleId}/hit-items`|Retrieves all matched records of a specific risk rule for a specific tenant.|
 
 ## Query Parameters
 
@@ -26,11 +26,11 @@ This section outlines the parameters required to specify which tenant's risk rul
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| CustomerId | The customer's ID. | string | Yes |
-| TenantId | The customer tenant's ID. | string | Yes |
-| RuleId | The ID of the risk rule. | string | Yes |
-| PageIndex | The page you want to navigate to. | integer | No |
-| PageSize | The number of records in each response. | integer | No |
+| customerId | The customer ID. | string | Yes |
+| tenantId | The tenant ID of the customer. | string | Yes |
+| ruleId | The ID of the risk rule. | string | Yes |
+| pageIndex | The page you want to navigate to. | integer | No |
+| pageSize | The number of records in each response. | integer | No |
 
 
 ## Response
@@ -39,16 +39,16 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| pageSize | The number of data items displayed per page. | integer |
+| pageSize | The number of items displayed per page. | integer |
 | totalNumber | The total number of items that meet the criteria. | integer |
 | totalPage | The total number of pages that meet the criteria.  | integer |
 | jumpPage | The page we need to jump to. | integer |
 | currentPage | The current display page.  | integer |
-| id | The record's id. | integer |
-| objectId | The object's id. | integer |
-| tenantId | The tenant's id. | integer |
-| customerId | The customer's id | integer |
-| workspace | The record's workspace. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer |
+| id | The record ID. | integer |
+| objectId | The object ID. | integer |
+| tenantId | The tenant ID. | integer |
+| customerId | The customer ID. | integer |
+| workspace | The record's data source. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer |
 | detail | The detail information of the record. | object |
 
 
@@ -183,7 +183,7 @@ If the request has been successfully processed, a 200 OK response will be return
         {
             "detail": {
                 "groupName": "20240820 teamsite",
-                "groupEmailAddress": "2024********@vrmhv.onmicrosoft.com",
+                "groupEmailAddress": "2024********@***hv.onmicrosoft.com",
                 "createdBy": "",
                 "objectUsers": null,
                 "groupType": 1,
