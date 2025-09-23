@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail`|elements.scanprofiles.read.all|  
+| `partner/external/v3/general/customers/{customerId}/scan-profiles-v2/{scanProfileId}/detail`|elements.scanprofiles.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to get th
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail` | Get the daily scan profile change detail in Avepoint Online Services for a customer.|
+| GET | `partner/external/v3/general/customers/{customerId}/scan-profiles-v2/{scanProfileId}/detail` | Get the daily scan profile change detail in Avepoint Online Services for a customer.|
 
 ## Response
 
@@ -40,7 +40,7 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/scan-profiles-v2/{scanProfileId}/detail
 ```
  
 ## Response Sample

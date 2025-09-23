@@ -32,7 +32,7 @@ The API requires multiple parameters to create baseline.
 |tenantId|The id of the **Tenant**.|string|Yes|
 
 > [!NOTE]  
-Tenants in the following status cannot be used to create baseline.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li></ul>
+> Tenants in the following status cannot be used to create baseline.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li></ul>
 
 ## Response
 

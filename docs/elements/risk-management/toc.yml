@@ -1,4 +1,4 @@
-- name: Retrieve Hit Objects of Risk Rule
-  href: specific-rule-detail-hit-items.md
 - name: Retrieve Matched Risk Rules
   href: all-data-source-match-risk-rule.md
+- name: Retrieve Hit Objects of Risk Rule
+  href: specific-rule-detail-hit-items.md

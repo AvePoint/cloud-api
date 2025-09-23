@@ -25,7 +25,7 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve (starting from 1). |int|Yes|
+|pageIndex|The index of the page to retrieve (starting from 1). |int|No|
 |pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|int|No|
 
 ## Request Body Parameters
