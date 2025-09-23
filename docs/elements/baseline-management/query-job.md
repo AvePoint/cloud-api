@@ -43,7 +43,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | jobId | The job id of the job. | string |
-| type | The type of the job. <ul><li>**1** - Apply baseline</li><li>**2** - Auto-alignment</li><li>**3** - Create baseline</li><li>**4** - Detect drift</li><li>**5** - Deploy</li><li>**6** - Deploy detected deviations</li><li>**7** - Daily tenant backup</li><li>**8** - Edit tenant configurations </li><li>**9** - Restore to a specific date</li><li>**10** - Restore</li><li>**11** - Export tenant configuration</li></ul> | int |
+| type | The type of the job. <ul><li>**1** - Apply baseline</li><li>**2** - Auto-alignment</li><li>**3** - Create baseline</li><li>**4** - Detect drift</li><li>**5** - Deploy</li><li>**6** - Deploy detected deviations</li><li>**7** - Daily tenant backup</li><li>**8** - Edit tenant configurations </li><li>**9** - Restore to a specific date</li><li>**10** - Restore</li></ul> | int |
 | status | The **Status** of the baseline.<ul><li>**0** - Waiting</li><li>**1** - In progress</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - Skipped</li><li>**5** - Finished with exception</li></ul> | int |
 
 ## Request Sample

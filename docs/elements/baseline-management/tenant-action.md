@@ -25,8 +25,8 @@ You can provide a object about the action.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|actionType| The tenant action type. <ul><li>**1** - Apply Baseline</li><li>**2** - Export tenant configuration</li></ul> |int|Yes|
-|data| The parameters of action <ul><li>**baselineId** - Apply Baseline Id (Apply Baseline action)</li><li>**order** - Apply baseline order (Apply Baseline action)</li><li>**configurationExportType** - Tenant configuration export type (Tenant configuration export action)<ul><li>**0** - Standard</li><li>**1** - Customized</li></ul></li></ul> |object|Yes|
+|actionType| The tenant action type. <ul><li>**1** - Apply Baseline</li></ul> |int|Yes|
+|data| The parameters of action <ul><li>**baselineId** - Apply Baseline Id (Apply Baseline action)</li><li>**order** - Apply baseline order (Apply Baseline action)</li></ul></li></ul> |object|Yes|
 
 > [!NOTE]  
 > Tenants in the following status cannot perform the "Apply Baseline" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
@@ -62,15 +62,6 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/{cu
         }
     ]
 }
-
-//Export tenant configuration action
-{
-    "actionType": "2",
-    "data": 
-    {
-        "configurationExportType": 0
-    }
-}
 ```
 
 ## Response Sample  
@@ -81,3 +72,4 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "jobId": "7f3b241b-****-****-****-3a1c395524t6"
 }
+```

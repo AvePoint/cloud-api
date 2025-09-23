@@ -1,7 +1,5 @@
 - name: Create Baseline
   href: create-baseline.md
-- name: Process Center
-  href: process-center-action.md
 - name: View Baselines
   href: query-baselines.md
 - name: View Job Report
