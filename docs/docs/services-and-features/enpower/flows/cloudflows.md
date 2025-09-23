@@ -14,7 +14,7 @@ For details, refer to [Authentication and Authorization](https://learn.avepoint.
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to retrieve general information of your Power Apps.
+This section provides details on the HTTP method and endpoint used to retrieve general information of your cloud flows.
 
 | Method | Endpoint | Description | 
 |--- | --- | --- |
