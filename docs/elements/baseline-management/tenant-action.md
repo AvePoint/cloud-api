@@ -29,8 +29,8 @@ You can provide a object about the action.
 |data| The parameters of action <ul><li>**baselineId** - Apply Baseline Id (Apply Baseline action)</li><li>**order** - Apply baseline order (Apply Baseline action)</li><li>**configurationExportType** - Tenant configuration export type (Tenant configuration export action)<ul><li>**0** - Standard</li><li>**1** - Customized</li></ul></li></ul> |object|Yes|
 
 > [!NOTE]  
-Tenants in the following status cannot perform the "Apply Baseline" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
-Baselines in the following status cannot be used for the "Apply Baseline" action.<ul><li>**1** - Retrieving settings</li><li>**4** - Settings retrieval failed</li><li>**6** - Draft</li></ul>
+> Tenants in the following status cannot perform the "Apply Baseline" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
+> Baselines in the following status cannot be used for the "Apply Baseline" action.<ul><li>**1** - Retrieving settings</li><li>**4** - Settings retrieval failed</li><li>**6** - Draft</li></ul>
 
 ## Response
 

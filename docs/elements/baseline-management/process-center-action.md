@@ -26,7 +26,7 @@ You can provide a object about the action.
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
 |actionType| The tenant action type. <ul><li>**3** - Download</li></ul> |int|Yes|
-|data| The parameters of action <ul><li>**jobId** - The job id of the job</li><li>**downloadFileType** - The file type of download<ul><li>**1** - Job file</li></ul></li></ul> | object |
+|data| The parameters of action <ul><li>**jobId** - The job id of the job</li><li>**downloadFileType** - The file type of download<ul><li>**1** - Job file</li></ul></li></ul> | object |Yes|
 
 ## Response
 
