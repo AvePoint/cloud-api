@@ -58,6 +58,7 @@ The API response provides detailed information about the connections retrieved. 
 | isCustom | Indicates whether the connection is custom connector based. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean
 | tier                            | The tier of the connector.                                                  | string  |
 | connectorOwnerDisplayName       | The display name of the connector owner.                                    | string  |
+| connectorCreatedTime       | The created time of the custom connector.                                    | string  |
 | publisher                       | The publisher of the connection.                                            | string  |
 | powerAppCount                   | Number of Power Apps using this connection.                                 | integer |
 | flowCount                       | Number of Power Automate flows using this connection.                       | integer |
@@ -69,6 +70,7 @@ The API response provides detailed information about the connections retrieved. 
 | ownerDisplayName                | The display name of the connection owner.                                   | string  |
 | ownerUserPrincipalName          | The user principal name of the connection owner.                            | string  |
 | ownerStatus                     | The status of the connection owner.                                         | string  |
+| ownerCountry       | The country of the connector owner.                                    | string  |
 
 ## Request Sample
 
@@ -101,6 +103,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "isCustom": false, // Indicates whether the connection is custom connector based
       "tier": "Premium", // The tier of the connector
       "connectorOwnerDisplayName": null, // The display name of the connector owner
+      "connectorCreatedTime": "", // The created time of the custom connector
       "publisher": "We Speak You Learn, LLC", // The publisher of the connection
       "powerAppCount": 0, // Number of Power Apps using this connection
       "flowCount": 0, // Number of Power Automate flows using this connection
@@ -112,6 +115,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "ownerDisplayName": "", // The display name of the connection owner
       "ownerUserPrincipalName": "", // The user principal name of the connection owner
       "ownerStatus": "Enabled" // The status of the connection owner
+      "ownerCountry": "", // The country of the connection owner
     }
   ],
   "totalCount": 1, 

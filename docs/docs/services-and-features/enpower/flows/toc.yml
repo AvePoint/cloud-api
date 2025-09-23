@@ -1,0 +1,12 @@
+- name: Cloud Flow Details
+  href: cloudflows.md
+- name: Cloud Flow Running History
+  href: cloudrunhistories.md
+- name: Desktop Flow Details
+  href: desktopflows.md
+- name: Desktop Flow Running History
+  href: desktoprunhistories.md
+- name: Cloud Flow Activities
+  href: activities.md   
+- name: Cloud Flow Connection Usage
+  href: connectionusage.md
