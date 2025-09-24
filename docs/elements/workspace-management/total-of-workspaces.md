@@ -1,6 +1,6 @@
 # Retrieve Total of workspaces
 
-Use this API to retrieve records for Total of workspaces for a specific tenant in AvePoint Online Services.  
+Use this API to retrieve the workspace overview statistics of a specific tenant.  
 
 ## Permissions  
 
@@ -14,11 +14,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Services.
+This section outlines the HTTP method and endpoint used to retrieve the workspace overview statistics of a specific tenant in Elements.
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace`|Retrieves records for all workspcaes that are match for a specific tenant in AvePoint Online Services.|
+|GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace`|Retrieves statistics of workspcaes for a specific tenant in Elements.|
 
 ## Query Parameters
 
@@ -26,8 +26,8 @@ This section outlines the parameters required to specify which tenant's workspac
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| CustomerId | The customer's ID. | string | Yes |
-| TenantId | The customer tenant's ID. | string | Yes |
+| customerId | The customer ID. | string | Yes |
+| tenantId | The tenant ID of the customer. | string | Yes |
 
 
 ## Response
@@ -36,30 +36,30 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| Workspaces | The number Of Workspaces. | integer |
-| Teams | The number Of Teams. | integer |
-| SharePointSites | The number Of SharePointSites.  | integer |
-| OneDrives | The number Of OneDrives. | integer |
-| Groups | The number Of Groups. | integer |
-| ExchangeMailboxes | The number Of ExchangeMailboxes. | integer |
-| ActiveWorkspaces | The number Of ActiveWorkspaces. | integer |
-| InactiveWorkspaces | The number Of InactiveWorkspaces. | integer |
-| OrphanedWorkspaces | The number Of OrphanedWorkspaces. | integer |
-| OrphanedTeams | The number Of OrphanedTeams. | integer |
-| OrphanedSharePointSites | The number Of OrphanedSharePointSites. | integer |
-| OrphanedOneDrives | The number Of OrphanedOneDrives. | integer |
-| OrphanedGroups | The number Of OrphanedGroups. | integer |
-| WorkspacesWithGuestUsers | The number Of WorkspacesWithGuestUsers. | integer |
-| TeamsWithGuestUsers | The number Of TeamsWithGuestUsers. | integer |
-| SharePointSitesWithGuestUsers | The number Of SharePointSitesWithGuestUsers. | integer |
-| OneDrivesWithGuestUsers | The number Of OneDrivesWithGuestUsers. | integer |
-| GroupsWithGuestUsers | The number Of GroupsWithGuestUsers. | integer |
-| ReachingStorageLimitWorkspaces | The number Of ReachingStorageLimitWorkspaces. | integer |
-| ReachingStorageLimitTeams | The number Of ReachingStorageLimitTeams. | integer |
-| ReachingStorageLimitSharePointSites | The number Of ReachingStorageLimitSharePointSites. | integer |
-| ReachingStorageLimitOneDrives | The number Of ReachingStorageLimitOneDrives. | integer |
-| ReachingStorageLimitGroups | The number Of ReachingStorageLimitGroups. | integer |
-| ReachingStorageLimitMailboxes | The number Of ReachingStorageLimitMailboxes. | integer |
+| Workspaces | The total number of workspaces. | integer |
+| Teams | The number of Teams. | integer |
+| SharePointSites | The number of SharePoint sites.  | integer |
+| OneDrives | The number of OneDrives. | integer |
+| Groups | The number of Groups. | integer |
+| ExchangeMailboxes | The number of Exchange mailboxes. | integer |
+| ActiveWorkspaces | The number of active workspaces. | integer |
+| InactiveWorkspaces | The number of inactive workspaces. | integer |
+| OrphanedWorkspaces | The number of orphaned workspaces. | integer |
+| OrphanedTeams | The number of orphaned Teams. | integer |
+| OrphanedSharePointSites | The number of orphaned SharePoint sites. | integer |
+| OrphanedOneDrives | The number of orphaned OneDrives. | integer |
+| OrphanedGroups | The number of orphaned Groups. | integer |
+| WorkspacesWithGuestUsers | The number of workspaces with guest users. | integer |
+| TeamsWithGuestUsers | The number of Teams with guest users. | integer |
+| SharePointSitesWithGuestUsers | The number of SharePoint sites with guest users. | integer |
+| OneDrivesWithGuestUsers | The number of OneDrives with guest users. | integer |
+| GroupsWithGuestUsers | The number of Groups with guest users. | integer |
+| ReachingStorageLimitWorkspaces | The total number of workspaces that are reaching their storage limit. | integer |
+| ReachingStorageLimitTeams | The number of Teams that have reaching the storage limit. | integer |
+| ReachingStorageLimitSharePointSites | The number of ReachingStorageLimitSharePointSites. | integer |
+| ReachingStorageLimitOneDrives | The number of ReachingStorageLimitOneDrives. | integer |
+| ReachingStorageLimitGroups | The number of ReachingStorageLimitGroups. | integer |
+| ReachingStorageLimitMailboxes | The number of ReachingStorageLimitMailboxes. | integer |
 
 
 ## Request Sample
@@ -67,7 +67,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph.avepointonlineservices.com/partner/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/workspace
+https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-819c-25cd****2a07/tenants/0c7715b3-****-4c4c-a8a0-f363****acec/overview/workspace
 ```
 
 ## Response Sample

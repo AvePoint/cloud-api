@@ -1,9 +1,10 @@
+- name: Retrieve Workspace Overview
+  href: total-of-workspaces.md
+- name: Retrieve Workspace Compliance statistics  
+  href: total-of-workspaces-incompliance.md
 - name: Retrieve Data Security Posture
   href: total-of-workspace-dspm.md
-- name: Retrieve Ransomware Dection
-  href: total-of-workspace-ransomware-dection.md
-- name: Retrieve Workspaces
-  href: total-of-workspaces.md
-- name: Retrieve Incompliance Workspaces  
-  href: total-of-workspaces-incompliance.md
+- name: Retrieve Data Protection Statistics
+  href: total-of-workspace-ransomware-detection.md
+
    
