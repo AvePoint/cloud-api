@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users/batch`|partner.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users/batch`|elements.um.user.read.all|  
 
 ## Request
 
@@ -34,34 +34,35 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | False |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | False |
-| status | An array containing the statuses that the user wants to retrieve | `List<int>` (0:MFADisabled,1:SignInBlocked,2:PasswordExpired,3:HighRisk,4:MediumRisk,5:Compliance)  | False |
+| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
+| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
+| status | An array containing the statuses that the user wants to retrieve. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[]  | No |
 
 ## Response
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
  
-| Field | Description | Type |
+| Response | Description | Type |
 | --- | --- | --- |
-| Id | The ID of the user. | string |
-| DisplayName |  The displayName of the user. | string |
-| Mail | The email address of the user. | string |
-| FirstName | The first name of the user. | string |
-| LastName | The last name of the user. | string |
-| EmployeeId | The employeeId of the user. | string |
-| Location | The location of the user. | string |
-| Department | The department of the user. | string |
-| Mobile | The mobile phone number of the user. | string |
-| JobTitle | The jobTitle of the user. | string |
-| Status |  The status of the user. | enum |
-| IsTestUser |  If the user is test or not. | boolean |
-| Age | The password age of the user.  | integer |
-| StartDate | The enforce start date of the user. | Long |
-| EndDate | The enforce end date of the user. | Long |
-| OfficePhone | The business phone number of the user. | string |
-| Company | The company of the user | string |
-| CountryRegion | The country or region of the user | string |
+| id | The ID of the user. | string |
+| userPrincipalName | The user principle name of the user. | string |
+| mail | The email of the user. | string |
+| displayName | The displayName of the user. | string |
+| firstName | The firstName of the user. | string |
+| lastName | The lastName of the user. | string |
+| employeeId | The employeeId of the user. | string |
+| location | The location of the user. | string |
+| company | The company of the user. | string |
+| department | The department of the user. | string |
+| mobile | The mobile of the user. | string |
+| jobTitle | The jobTitle of the user. | string |
+| isTestUser | If the user is test or not. | bool |
+| age | The password age of the user. | integer |
+| startDate | The enforce start date of the user. | string |
+| endDate | The enforce end date of the user. | string |
+| officePhone | The office phone of the user. | string |
+| countryOrRegion | The country region of the user. | string |
+| status | The current status of the user account (Expire, Inactive, etc.). <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[] |
 | pageIndex | The page index of current request. | integer |
 | pageSize | The user number will be retrieved in one request. | integer |
 | totalCount | The total number count that match the request. | integer |
@@ -79,30 +80,30 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 {
     "data": [
         {
-            "id": "f04d7aee-341e-4ab9-9e1a-65215f92e596",
-            "userPrincipalName": "mark@element.onmicrosoft.com",
-            "displayName": "Bob Mark",
-            "firstName": "Bob",
-            "lastName": "Mark",
-            "employeeId": "s12123",
-            "location": "0711",
-            "department": "09",
-            "mobile": "55444",
-            "jobTitle": "Software developer",
-            "status": 13,
-            "isTestUser": true,
-            "age": 0,
-            "startDate": 0,
-            "endDate": 0,
-            "company": "BK Company",
-            "officePhone":"43344",
-            "countryRegion": "Slovenia"
+            "id": "c2aa00d3-ef87-40aa-a80a-9e9c79232bff",// The ID of the user
+            "userPrincipalName": "kevin@element.onmicrosoft.com",// The user principle name of the user
+            "displayName": "Kevin Mark",// The displayname of the user
+            "firstName": "Kevin",// The firstName of the user
+            "lastName": "Mark",// The lastName of the user
+            "department": "DEV",// The department of the user
+            "mobile": "11122",// The mobile of the user
+            "jobTitle": "Software developer",// The jobTitle of the user
+            "status": [
+                    0, 
+                    1
+            ],// The status of the user
+            "isTestUser": false,// If the user is test or not
+            "age": 12,// The password age of the user
+            "startDate": "1970-01-01T00:00:00Z",// The enforce start date of the user
+            "endDate": "1970-01-01T00:00:00Z",// The enforce end date of the user
+            "company": "BK Company",// The company of the user
+            "countryOrRegion": "Slovenia"// The country region of the user
         }
     ],
     "metadata": {
-        "pageIndex": 1,
-        "pageSize": 50,
-        "totalCount": 1
+        "pageIndex": 1,// The page index of current request
+        "pageSize": 50,// The user number will be retrieved in one request
+        "totalCount": 1// The total number count that match the request
     }
 }
 ```

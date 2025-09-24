@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office`|partner.um.user.readwrite.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office`|elements.um.user.readwrite.all|  
 
 ## Request
 
@@ -36,9 +36,9 @@ This section outlines the required fields to update the office of a user.
 
 | Parameter | Description | Type | Required | MaxLength
 | --- | --- | --- | --- | ---|
-| Company | The company of the user. | string | Yes | 64 character |
-| Department | The department of the user. | string | Yes | 64 character|
-| Location |  The locatiuon of the user | string | Yes |  64 character|
+| company | The company of the user. | string | Yes | 64 character |
+| department | The department of the user. | string | Yes | 64 character|
+| location |  The locatiuon of the user | string | Yes |  64 character|
 
 ## Response
 

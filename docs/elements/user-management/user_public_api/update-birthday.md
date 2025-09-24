@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/birthday`|partner.um.user.readwrite.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/birthday`|elements.um.user.readwrite.all|  
 
 ## Request
 
@@ -35,7 +35,7 @@ This section outlines the required fields to update the birthday of a user.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| Birthday | The birthday of the user. | long | Yes |
+| birthday | The birthday of the user. | string | Yes |
 
 ## Response
 
@@ -52,6 +52,6 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 
 ```json
 {
-  "birthday": 638894480510000000
+  "birthday": "1970-01-01T00:00:00Z"
 }
 ```

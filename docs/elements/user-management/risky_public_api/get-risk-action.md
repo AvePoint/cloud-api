@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions`|partner.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions`|elements.um.user.read.all|  
 
 ## Request
 
@@ -35,7 +35,7 @@ This section outlines the optional parameters used to specify the information fo
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| types | The array value includes the types you want to retrieve. | `List<int>` (0:normal action, 1:risk action) | False |
+| types | The array value includes the types you want to retrieve. <ul><li>**0** - Normal action</li><li>**1** - Risk action</li></ul> | integer[]| No |
 
 
 ## Response

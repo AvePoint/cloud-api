@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/alternate-email-address`|partner.um.user.readwrite.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/alternate-email-address`|elements.um.user.readwrite.all|  
 
 ## Request
 
@@ -36,7 +36,7 @@ This section outlines the required fields to update the general information of a
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-|AlternativeEmailAddress | The alternative email address of the user. | `List<string>` | Yes |
+|alternativeEmailAddress | The alternative email address of the user. | string[] | Yes |
 
 ## Response
 

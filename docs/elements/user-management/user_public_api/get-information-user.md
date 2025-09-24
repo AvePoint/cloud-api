@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}`|partner.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}`|elements.um.user.read.all|  
 
 ## Request
 
@@ -35,37 +35,37 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| Id |  The ID of the user. | string |
-| Manager | The manager of the user | string |
-| FirstName | The first name of the user. | string |
-| LastName | The last name of the user. | string |
-| DisplayName | The display name of the user | string |
-| JobTitle | The job title of the user. | string |
-| EmployeeId |The employeeId of the user. | string |
-| AlternativeEmailAddress | The alternate email address or the user. | `List<string>` |
-| Company | The company of the user. | string |
-| Department | The department  of the user. | string |
-| Location | The location of the user. | string |
-| PasswordNeverExpire | Indicates whether the user's password is set to never expire. | boolean |
-| LastChangeDate | The date and time when the user account was last modified. | long |
-| Age | The calculated age of the user based on their birthday. | int |
-| IsTestUser | Indicates whether this is a test user account for development purposes. | boolean |
-| OfficePhone | The business phone number of the user. | string |
-| Mobile | The mobile phone number of the user. | string |
-| Birthday | The birthday of the user | long |
-| Mail | The primary email address of the user. | string |
-| UsageLocation | The usage location for the user account, typically a country code.(AF: Afghanistan) | string |
-| PreferredLanguage | The preferred language setting for the user interface. | string |
-| EnforceStart | Indicates whether account enforcement start date is enabled. | boolean |
-| EnforceStartDateTime | The date and time when account enforcement begins. | long |
-| EnforceEnd | Indicates whether account enforcement end date is enabled. | boolean |
-| EnforceEndDateTime | The date and time when account enforcement ends. | long |
-| PostalCode | The postal code of the user. | string |
-| CountryRegion | The country or region where the user is located. | string |
-| State | The state or province where the user is located. | string |
-| Address | The street address of the user's location. | string |
-| LoginName | The login name or user principal name used for authentication. | string |
-| Status | The current status of the user account (Active, Inactive, etc.). | `List<string>` |
+| id |  The ID of the user. | string |
+| manager | The manager of the user | string |
+| firstName | The first name of the user. | string |
+| lastName | The last name of the user. | string |
+| displayName | The display name of the user | string |
+| jobTitle | The job title of the user. | string |
+| employeeId |The employeeId of the user. | string |
+| alternativeEmailAddress | The alternate email address or the user. | string[] |
+| company | The company of the user. | string |
+| department | The department  of the user. | string |
+| location | The location of the user. | string |
+| passwordNeverExpire | Indicates whether the user's password is set to never expire. | boolean |
+| lastChangeDate | The date and time when the user account was last modified. | string |
+| age | The calculated age of the user based on their birthday. | int |
+| isTestUser | Indicates whether this is a test user account for development purposes. | boolean |
+| officePhone | The business phone number of the user. | string |
+| mobile | The mobile phone number of the user. | string |
+| birthday | The birthday of the user | string |
+| mail | The primary email address of the user. | string |
+| usageLocation | The usage location for the user account, typically a country code.(AF: Afghanistan) | string |
+| preferredLanguage | The preferred language setting for the user interface. | string |
+| enforceStart | Indicates whether account enforcement start date is enabled. | boolean |
+| enforceStartDateTime | The date and time when account enforcement begins. | string |
+| enforceEnd | Indicates whether account enforcement end date is enabled. | boolean |
+| enforceEndDateTime | The date and time when account enforcement ends. | string |
+| postalCode | The postal code of the user. | string |
+| countryRegion | The country or region where the user is located. | string |
+| state | The state or province where the user is located. | string |
+| address | The street address of the user's location. | string |
+| loginName | The login name or user principal name used for authentication. | string |
+| status | The current status of the user account (Expire, Inactive, etc.). <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[] |
 
 ## Request Sample
 
@@ -96,7 +96,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "department": "DEV",
     "location": "2298",
     "passwordNeverExpire": true,
-    "lastChangeDate": 638894480510000000,
+    "lastChangeDate": "1970-01-01T00:00:00Z",
     "age": 37,
     "isTestUser": true,
     "officePhone": "2323111dsd",
@@ -106,17 +106,17 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "usageLocation": "AF",
     "preferredLanguage": "af-NA",
     "enforceStart": false,
-    "enforceStartDateTime": 0,
+    "enforceStartDateTime": "1970-01-01T00:00:00Z",
     "enforceEnd": false,
-    "enforceEndDateTime": 0,
+    "enforceEndDateTime": "1970-01-01T00:00:00Z",
     "postalCode": "2121",
     "countryRegion": "Antarctica",
     "state": "British Antarctic Territory",
     "address": "Rothera Research Station",
     "loginName": "kevin@element.onmicrosoft.com",
     "status":  [
-        "Active", 
-        "MFA disabled"
+        0, 
+        1
     ],
 }
 ```

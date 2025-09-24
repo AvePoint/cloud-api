@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/general-information`|partner.um.user.readwrite.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/general-information`|elements.um.user.readwrite.all|  
 
 ## Request
 
@@ -36,11 +36,11 @@ This section outlines the required fields to update the general information of a
 
 | Parameter | Description | Type | Required | MaxLength
 | --- | --- | --- | --- | ---|
-| FirstName | The first name of the user. | string | Yes | 64 character |
-| LastName | The last name of the user. | string | Yes | 64 character|
-| DisplayName |  The display name of the user | string | Yes |  256 character|
-| JobTitle | The job title of the user. | string | Yes | |
-| EmployeeId |The employeeId of the user. | string | Yes | 16 character|
+| firstName | The first name of the user. | string | Yes | 64 character |
+| lastName | The last name of the user. | string | Yes | 64 character|
+| displayName |  The display name of the user | string | Yes |  256 character|
+| jobTitle | The job title of the user. | string | Yes | |
+| employeeId |The employeeId of the user. | string | Yes | 16 character|
 
 ## Response
 

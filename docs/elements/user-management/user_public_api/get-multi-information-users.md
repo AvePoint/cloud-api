@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch` | partner.um.user.read.all |  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch` | elements.um.user.read.all |  
 
 ## Request
 
@@ -34,8 +34,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | False |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | False |
+| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
+| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
 
 ## Request Body
 
@@ -43,7 +43,7 @@ This section outlines the request body required to specify which users you want 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| userIds | Array value include the ID of the users to be retrived | string[] | False |
+| userIds | Array value include the ID of the users to be retrived | string[] | No |
 
 ## Response
 
@@ -65,11 +65,11 @@ If the request has been successfully processed, a 200 OK response will be return
 | jobTitle | The jobTitle of the user. | string |
 | isTestUser | If the user is test or not. | bool |
 | age | The password age of the user. | integer |
-| startDate | The enforce start date of the user. | Long |
-| endDate | The enforce end date of the user. | Long |
+| startDate | The enforce start date of the user. | string |
+| endDate | The enforce end date of the user. | string |
 | officePhone | The office phone of the user. | string |
 | countryOrRegion | The country region of the user. | string |
-| status | The status of the user (Active, Inactive, etc.). | `List<string>` |
+| status | The current status of the user account (Expire, Inactive, etc.). <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[] |
 | pageIndex | The page index of current request. | integer |
 | pageSize | The user number will be retrieved in one request. | integer |
 | totalCount | The total number count that match the request. | integer |
@@ -99,13 +99,13 @@ If the request has been successfully processed, a 200 OK response will be return
             "mobile": "11122",// The mobile of the user
             "jobTitle": "Software developer",// The jobTitle of the user
             "status": [
-                    "Active", 
-                    "MFA disabled"
+                    0, 
+                    1
             ],// The status of the user
             "isTestUser": false,// If the user is test or not
             "age": 12,// The password age of the user
-            "startDate": 0,// The enforce start date of the user
-            "endDate": 0,// The enforce end date of the user
+            "startDate": "1970-01-01T00:00:00Z",// The enforce start date of the user
+            "endDate": "1970-01-01T00:00:00Z",// The enforce end date of the user
             "company": "BK Company",// The company of the user
             "countryOrRegion": "Slovenia"// The country region of the user
         }

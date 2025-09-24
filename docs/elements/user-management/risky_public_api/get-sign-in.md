@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/signins/batch`|partner.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/signins/batch`|elements.um.user.read.all|  
 
 ## Request
 
@@ -34,9 +34,9 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | False |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | False |
-| risky | Filter for only risky signins. | bool | False |
+| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
+| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
+| risky | Filter for only risky signins. | bool | No |
 
 ## Response
 
