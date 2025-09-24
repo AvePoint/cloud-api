@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}/batch`|partner.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}/batch`|elements.um.user.read.all|  
 
 ## Request
 
@@ -34,8 +34,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | False |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | False |
+| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
+| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
 
 ## Response
 
@@ -49,11 +49,11 @@ If the request has been successfully processed, a 200 OK response will be return
 | userPrincipalName |  The PrincipalName of the risk user. | string |
 | userId |  The unique Id of the risk user. | string |
 | loginIP |  The ip address when user login 365 trigger the risky flow. | string |
-| loginTime |  The login time when user login 365 trigger the risky flow. | long |
+| loginTime |  The login time when user login 365 trigger the risky flow. | string |
 | deviceName |  The name of device . | string |  
 | accessedFileName |  The name of file accessed. | string |
 | sensitiveInformation |  The sensitive information of the file. | string |
-| accessTime |  The time when the user access the file. | long |
+| accessTime |  The time when the user access the file. | string |
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
@@ -81,13 +81,13 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
         "loginIps": [
           {
             "loginIP": "23.98.122.140",
-            "loginTime": 638925708260000000
+            "loginTime": "1970-01-01T00:00:00Z"
           }
         ],
         "files": [
           {
             "accessedFileName": "report.docx",
-            "accessTime": "638925708260000000",
+            "accessTime": "1970-01-01T00:00:00Z",
             "sensitiveInformation": "Personal Data"
           }
         ],

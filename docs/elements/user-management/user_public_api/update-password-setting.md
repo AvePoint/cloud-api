@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/password-setting`|partner.um.user.readwrite.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/password-setting`|elements.um.user.readwrite.all|  
 
 ## Request
 
@@ -36,7 +36,7 @@ This section outlines the required fields to update the password setting of a us
 
 | Parameter | Description | Type | Required
 | --- | --- | --- | ---
-| PasswordNeverExpire | The password nerver expire of the user. | bool | Yes |
+| passwordNeverExpire | The password nerver expire of the user. | bool | Yes |
 
 ## Response
 
@@ -53,6 +53,6 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 
 ```json
 {
-    "PasswordNeverExpire" : true
+    "passwordNeverExpire" : true
 }
 ```

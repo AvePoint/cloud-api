@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/manager`|partner.um.user.readwrite.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/manager`|elements.um.user.readwrite.all|  
 
 ## Request
 

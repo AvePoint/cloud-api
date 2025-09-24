@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/batch`|partner.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/batch`|elements.um.user.read.all|  
 
 ## Request
 
@@ -35,9 +35,9 @@ This section outlines the optional parameters used to specify the information fo
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| catagory | The array value includes the category you want to retrieve. | `List<UserManagementRiskEventCategory>` | False |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | False |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | False |
+| catagory | The array value includes the category you want to retrieve. <ul><li>**1** - Network security</li><li>**2** - Endpoint security</li><li>**3** - Identity access</li><li>**4** - Configuration security</li></ul> | integer[] | No |
+| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
+| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
 
 ## Response
 

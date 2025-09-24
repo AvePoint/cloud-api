@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/account-information`|partner.um.user.readwrite.all|
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/account-information`|elements.um.user.readwrite.all|
 
 ## Request
 
@@ -39,9 +39,9 @@ This section outlines the required fields to update the account information of a
 | usageLocation | The usage location of the user. | string | Yes | 128 character|
 | preferredLanguage |  The preferred language of the user | string | Yes | |
 | enforceStart | The enforce start of the user. | bool | Yes | |
-| enforceStartDateTime |The enforce start dateTime of the user. | long | Yes | |
+| enforceStartDateTime |The enforce start dateTime of the user. | string | Yes | |
 | enforceEnd |The enforceEnd of the user. | bool | Yes | |
-| enforceEndDateTime |The enforceEndDateTime of the user. | long | Yes | |
+| enforceEndDateTime |The enforceEndDateTime of the user. | string | Yes | |
 
 ## Response
 
@@ -62,8 +62,8 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
   "usageLocation": "AF",
   "preferredLanguage": "af-NA",
   "enforceStart": true,
-  "enforceStartDateTime": 638934660000000000,
+  "enforceStartDateTime": "1970-01-01T00:00:00Z",
   "enforceEnd": true,
-  "enforceEndDateTime": 638942436000000000
+  "enforceEndDateTime": "1970-01-01T00:00:00Z"
 }
 ```
