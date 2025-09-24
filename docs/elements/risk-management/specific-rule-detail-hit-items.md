@@ -39,16 +39,15 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| pageSize | The number of items displayed per page. | integer |
-| totalNumber | The total number of items that meet the criteria. | integer |
-| totalPage | The total number of pages that meet the criteria.  | integer |
-| jumpPage | The page we need to jump to. | integer |
-| currentPage | The current display page.  | integer |
-| id | The record ID. | integer |
-| objectId | The object ID. | integer |
-| tenantId | The tenant ID. | integer |
-| customerId | The customer ID. | integer |
-| workspace | The record's data source. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer |
+| metaData | The response's metadata. | object |
+| pageIndex | The current display page. | integer |
+| pageSize | The display page's size.  | integer |
+| totalCount | The total number of records. | integer |
+| id | The record's id. | integer |
+| objectId | The object's id. | integer |
+| tenantId | The tenant's id. | integer |
+| customerId | The customer's id | integer |
+| dataSource | The record's data source. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer |
 | detail | The detail information of the record. | object |
 
 
@@ -77,87 +76,58 @@ Depending on the workspace, there are fields that stands for a specific type of 
 
 | Response | Description | Type |
 | --- | --- | --- |
-| MailboxName | The Microsoft Exchange's display name. | string |
-| MailboxEmailAddress | The Microsoft Exchange's email address. | string |
-| StorageUsed | The record's storage usage in Megabytes (MB). | int |
-| ProhibitSendReceiveQuota | The record's prohibit send and recieve limit in Megabytes (MB). | int |
-| ProhibitSendQuota | The record's prohibit send limit in Megabytes (MB). | int |
-| CreateDate | The record's create date. | string |
-| LastActivityDate | The record's last activity date. | string |
-| EnabledDate | The time when the record was enabled for a user account. | string |
-| EmailForwardingEnabledDate | The time when the record was enabled to forward mails to another recipient. | string |
-| GroupName | The Microsoft 365 Group's display name. | string |
-| GroupEmailAddress | The Microsoft 365 Group's email address | string |
-| CreatedBy | The record's creator name | string |
-| OwnerCount | The number of owners in the record. | int |
-| MemberCount | The number of members in the record. | int |
-| OwnerIds | The owners' Ids. | string |
-| MemberIds | The members' Ids. | string |
-| TeamsName | The Microsoft Teams's display name. | string |
-| TeamsUrl | The Microsoft Teams's URL. | string |
-| OwnersName | The record's owner display name. | string |
-| OwnersEmail | The record's owner email. | string |
-| Email | The Microsoft Teams's email. | string |
-| SiteName | The Microsoft Sharepoint's display name. | string |
-| SiteUrl | The Microsoft Sharepoint's URL. | string |
-| DisplayName | The Microsoft OneDrive's display name. | string |
-| URL | The Microsoft OneDrive's URL. | string |
-| AdminName | The record's admin name. | string |
-| EmailAddress | The record's email address. | string |
-| OwnerDisplayName | The record's owner display name. | string |
-| AdminCount | The record's admin count | string |
-| StorageLimit | The record's storage limit in Megabytes (MB). | int |
-| ChangeFileCount | The record's number of files changed. | int |
-| GuestsCount | The record's number of guests. | int |
-| EnvironmentName | The Microsoft Power Platform Environment's display name. | string |
-| CreatorCount | The record's number of creators. | int |
-| EnvironmentMakers | The Microsoft Power Platform Environment's environment makers. | string |
-| EnvironmentMakerCount | The Microsoft Power Platform Environment's environment makers count. | int |
-| GuestUserIds | The record guest users' ids. | string |
-| GuestUserCount | The number of guest users in the record. | int |
-| Permission | The Microsoft Power Platform Environment's permission. | string |
-| DatabaseUsage | The Microsoft Power Platform Environment's Dataverse database usage in Bytes (B). | int |
-| TotalUsage | The Microsoft Power Platform Environment's total usage in Bytes (B). | int |
-| CreatorName | The record's creator name. | string |
-| CreatorEmail | The record's creator email. | string |
-| ConnectionName | The Microsoft Power Platform Environment's display name. | string |
-| ParentEnvironment | The Microsoft Power Platform Environment's parent environment. | string |
-| OwnerEmail | The record's owner email. | string |
-| AppName | The Microsoft Power Platform App's display name. | string |
-| Environment | The Microsoft Power Platform App/Flow's environment. | string |
-| CoOwnerCount | The number of co-owners in the record. | int |
-| LastSignIn | The time when users last sign in to the app/flow. | string |
-| LastLaunchTime | The time when users last launch the app. | string |
-| FlowName | The Microsoft Power Platform Flow's display name. | string |
-| WorkspaceName | The Microsoft Power BI's workspace name. | string |
-| CapacityName | The Microsoft Power BI's capacity name. | string |
-| ArtifactName | The Microsoft Power BI's artifact name. | string |
-| Workspace | The Microsoft Power BI's workspace. | string |
-| Sensitivity | The Microsoft Power BI's sensitivity. | string |
-| ReportCount | The Microsoft Power BI's number of reports. | int |
-| UserCount | The record's number of users. | int |
-| LicenseCount | The record's number of license pool count. | int |
-| LicenseDisplayName | The license's display name. | string |
-| LicenseKeyName | The license's key name. | string |
-| UserName | The User's display name. | string |
-| UserEmailAddress | The User's email address. | string |
-| UserRoles | The User's user role. | string |
-| CAP | The User's Conditional Access Policy. | string |
-| UPN | The User's User Principal Name. | string |
-| UserLoginLocation | The User's login location. | string |
-| UserLoginIP | The User's display login IP address. | string |
-| InvitedByUserName | The name of the User's inviter. | string |
-| InvitedByEmailAddress | The email address of the User's inviter. | string |
-| UserAccountCount | The User's number of user account. | int |
+| mailboxName | The Microsoft Exchange's display name. | string |
+| mailboxEmailAddress | The Microsoft Exchange's email address. | string |
+| storageUsed | The record's storage usage in Megabytes (MB). | int |
+| prohibitSendReceiveQuota | The record's prohibit send and recieve limit in Megabytes (MB). | int |
+| prohibitSendQuota | The record's prohibit send limit in Megabytes (MB). | int |
+| createDate | The record's create date. | string |
+| lastActivityDate | The record's last activity date. | string |
+| groupName | The Microsoft 365 Group's display name. | string |
+| groupEmailAddress | The Microsoft 365 Group's email address | string |
+| createdBy | The record's creator name | string |
+| ownerCount | The number of owners in the record. | int |
+| memberCount | The number of members in the record. | int |
+| teamsName | The Microsoft Teams's display name. | string |
+| teamsUrl | The Microsoft Teams's URL. | string |
+| siteName | The Microsoft Sharepoint's display name. | string |
+| siteUrl | The Microsoft Sharepoint's URL. | string |
+| displayName | The Microsoft OneDrive's display name. | string |
+| url | The Microsoft OneDrive's URL. | string |
+| adminCount | The record's admin count | string |
+| storageLimit | The record's storage limit in Megabytes (MB). | int |
+| changeFileCount | The record's number of files changed. | int |
+| guestsCount | The record's number of guests. | int |
+| environmentName | The Microsoft Power Platform Environment's display name. | string |
+| environmentMakerCount | The Microsoft Power Platform Environment's environment makers count. | int |
+| totalUsage | The Microsoft Power Platform Environment's total usage in Bytes (B). | int |
+| creatorName | The record's creator name. | string |
+| creatorEmail | The record's creator email. | string |
+| connectionName | The Microsoft Power Platform Environment's display name. | string |
+| parentEnvironment | The Microsoft Power Platform Environment's parent environment. | string |
+| appName | The Microsoft Power Platform App's display name. | string |
+| environment | The Microsoft Power Platform App/Flow's environment. | string |
+| coOwnerCount | The number of co-owners in the record. | int |
+| lastSignIn | The time when users last sign in to the app/flow. | string |
+| lastLaunchTime | The time when users last launch the app. | string |
+| flowName | The Microsoft Power Platform Flow's display name. | string |
+| workspaceName | The Microsoft Power BI's workspace name. | string |
+| capacityName | The Microsoft Power BI's capacity name. | string |
+| artifactName | The Microsoft Power BI's artifact name. | string |
+| workspace | The Microsoft Power BI's workspace. | string |
+| sensitivity | The Microsoft Power BI's sensitivity. | string |
+| reportCount | The Microsoft Power BI's number of reports. | int |
+| userCount | The record's number of users. | int |
+| licenseCount | The record's number of license pool count. | int |
+| licenseDisplayName | The license's display name. | string |
+| licenseKeyName | The license's key name. | string |
+| userName | The User's display name. | string |
+| userEmailAddress | The User's email address. | string |
+| userRoles | The User's user role. | string |
+| upn | The User's User Principal Name. | string |
 | MFAControlledViaCap | The User's MFA status. | bool |
-| LoginTime | The User's login time. | string |
-| ManagerId | The User's managerId. | string |
-| SignInCount | The User's number of sign in. | int |
-| InternalId | The Microsoft Teams' teamId. | string |
-| LatestCampaignInfo | The detail informations about record's campaign. | string |
-| GuestUsers | The detail informations about guest users in the record. | string |
-| UnassignedLicensesCount | The User's number of unassigned licenses from the license pool. | string |
-| CreatorIds | The record's creator's Id. | string |
+| signInCount | The User's number of sign in. | int |
+| latestCampaignInfo | The detail informations about record's campaign. | string |
 
 
 ## Request Sample
@@ -183,19 +153,21 @@ If the request has been successfully processed, a 200 OK response will be return
         {
             "detail": {
                 "groupName": "20240820 teamsite",
-                "groupEmailAddress": "2024********@***hv.onmicrosoft.com",
-                "createdBy": "",
-                "objectUsers": null,
+                "groupEmailAddress": "2024********@vrmhv.onmicrosoft.com",
                 "groupType": 1,
                 "ownerCount": 1,
                 "memberCount": 4,
                 "createDate": "2024-08-20T10:55:29.0000000Z",
                 "lastActivityDate": "2025-07-10T00:00:00.0000000Z",
-                "ownerIds": "17****-****-****-****-****79c64",
-                "memberIds": "",
                 "mark": 0,
                 "sourceType": 1
-            }
+            },
+            "id": "5824e186-****-****-****-e2aa9a60ac16",
+            "objectid": "e6950ad1-****-****-****-151a1a060d1f",
+            "ruleId": "00000002-****-****-****-00000007",
+            "tenantId": "be4cdf40-****-****-****-ab967eb78246",
+            "customerId": "292b68c5-****-****-****-28650d407eaf",
+            "dataSource": 2
         }
     ]
 }

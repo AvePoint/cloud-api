@@ -28,8 +28,8 @@ This section outlines the parameters required to specify which tenant's risk det
 | --- | --- | --- | --- |
 | customerId | The customer's ID. | string | Yes |
 | tenantId | The tenant ID of the customer. | string | Yes |
-| dataSources | The specific data sources to narrow down the results. | integer | No |
-| status | The status of risk rules to filter. | integer | No |
+| dataSources | The specific data sources to narrow down the results. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer[] | No |
+| status | The status of risk rules to filter. <ul><li>**0** - Disabled</li><li>**1** - Enabled</li></ul>| integer | No |
 
 
 ## Response
@@ -38,13 +38,13 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| ruleId | The ID of the risk rule. | string |
-| ruleName | The display name of the risk rule. | string |
-| setting | The paramerter value configured in the risk rule.  | string |
-| tenantId | The tenant ID. | integer |
-| customerId | The customer ID. | integer |
-| dataSources | The record's workspace. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - Microsoft 365 Groups</li><li>**3** - Teams</li><li>**4** - SharePoint</li><li>**5** - OneDrive</li><li>**6** - Users</li><li>**8** - Environments</li><li>**9** - Connections</li><li>**10** - Power Apps</li><li>**11** - Power Automate</li><li>**12** - Power BI</li></ul>| integer |
-| hitItemCount | The number of objects that match the risk rule. | integer |
+| ruleId | The ID of the rule. | string |
+| ruleName | The display name of the rule. | string |
+| setting | The paramerter in the name of the rule.  | string |
+| tenantId | The tenant's id. | integer |
+| customerId | The customer's id. | integer |
+| dataSource | The record's data source. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer |
+| hitItemCount | The number of objects that have the rule. | integer |
 
 
 ## Request Sample
@@ -63,13 +63,22 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "result": [
         {
-            "ruleId": "00000002-9E63-4A52-9946-00000016",
-            "ruleName": "OneDrives that have reached 75% of the storage limits",
-            "setting": "{\"param1\": 75}",
+            "ruleId": "00000002-****-****-****-0000001A",
+            "ruleName": "Users without MFA enabled",
+            "setting": null,
             "tenantId": "be4cdf40-****-****-****-ab967eb78246",
             "customerId": "292b68c5-****-****-****-28650d407eaf",
-            "workspaces": 5,
-            "hitItemCount": 0
+            "dataSource": 6,
+            "hitItemCount": 161
+        },
+        {
+            "ruleId": "00000002-****-****-****-00000023",
+            "ruleName": "Global administrator without a password expiration date",
+            "setting": null,
+            "tenantId": "be4cdf40-****-****-****-ab967eb78246",
+            "customerId": "292b68c5-****-****-****-28650d407eaf",
+            "dataSource": 6,
+            "hitItemCount": 1
         }
     ]
 }
