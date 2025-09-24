@@ -1,6 +1,6 @@
-# Retrieve Total of workspaces
+# Retrieve Data Protection Statistics
 
-Use this API to retrieve records for information about the workspace ransomware-detetion for a specific tenant in AvePoint Online Services.  
+Use this API to retrieve the data protection statistics of a specific tenant in Elements.  
 
 ## Permissions  
 
@@ -14,20 +14,20 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Services.
+This section outlines the HTTP method and endpoint used to retrieve the data protection statistics of a specific tenant in Elments.
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion`|Retrieves records for information about the workspace ransomware-detetion that are match for a specific tenant in AvePoint Online Services.|
+|GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion`|Retrieves the data protection statistics.|
 
 ## Query Parameters
 
-This section outlines the parameters required to specify which tenant's workspace detail records you want to retrieve.
+This section outlines the parameters required to specify which tenant's data protection statistics you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The customer ID. | string | Yes |
-| tenantId | The tenant ID of the customer. | string | Yes |
+| customerId | The customer ID | string | Yes |
+| tenantId | The tenant ID of the customer | string | Yes |
 
 
 ## Response
@@ -55,7 +55,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-819c-25cd****2a07/tenants/0c7715b3-****-4c4c-a8a0-f363****acec/overview/data-protection/ransomware-detetion
+https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/data-protection/ransomware-detetion
 ```
 
 ## Response Sample

@@ -1,8 +1,8 @@
-# Retrieve Total of workspaces in compliance
+# Retrieve Workspace Compliance Statistics
 
-Use this API to retrieve records for Total of workspaces in compliance for a specific tenant in AvePoint Online Services.  
+Use this API to retrieve the compliance statistics of workspaces for a specific tenant in Elements.  
 
-## Permissions  
+## Permission  
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
@@ -14,20 +14,20 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to retrieve your customer's information for all scan profiles configured in AvePoint Online Services.
+This section outlines the HTTP method and endpoint used to retrieve the compliance statistics of workspaces. It provides a concise description of the action performed by the API call.
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/compliance-rate`|Retrieves records for all workspcaes compliance that are match for a specific tenant in AvePoint Online Services.|
+|GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/compliance-rate`|Retrieves the compliance statistics of workspaces.|
 
 ## Query Parameters
 
-This section outlines the parameters required to specify which tenant's workspace detail records you want to retrieve.
+This section outlines the parameters required to specify which tenant's workspace compliance statistics you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The customer ID. | string | Yes |
-| tenantId | The tenant ID of the customer. | string | Yes |
+| customerId | The customer ID | string | Yes |
+| tenantId | The tenant ID of the customer | string | Yes |
 
 
 ## Response
@@ -45,7 +45,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-819c-25cd****2a07/tenants/0c7715b3-****-4c4c-a8a0-f363****acec/overview/data-protection/compliance-rate
+https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/data-protection/compliance-rate
 ```
 
 ## Response Sample
