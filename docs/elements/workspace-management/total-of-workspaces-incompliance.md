@@ -26,8 +26,8 @@ This section outlines the parameters required to specify which tenant's workspac
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| CustomerId | The customer's ID. | string | Yes |
-| TenantId | The customer tenant's ID. | string | Yes |
+| customerId | The customer ID. | string | Yes |
+| tenantId | The tenant ID of the customer. | string | Yes |
 
 
 ## Response
@@ -36,8 +36,8 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| WorkspacesInCompliance | The number Of WorkspacesInCompliance. | integer |
-| WorkspacesOutOfCompliance | The number Of WorkspacesOutOfCompliance. | integer |
+| workspacesInCompliance | The number of workspaces that are in compliance. | integer |
+| workspacesOutOfCompliance | The number of workspaces that are out of compliance. | integer |
 
 
 ## Request Sample
@@ -45,7 +45,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph.avepointonlineservices.com/partner/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/data-protection/compliance-rate
+https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-819c-25cd****2a07/tenants/0c7715b3-****-4c4c-a8a0-f363****acec/overview/data-protection/compliance-rate
 ```
 
 ## Response Sample
@@ -54,6 +54,6 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "WorkspacesInCompliance": 2438,
-    "WorkspacesOutOfCompliance": 1037
+    "workspacesInCompliance": 2438,
+    "workspacesOutOfCompliance": 1037
 }
