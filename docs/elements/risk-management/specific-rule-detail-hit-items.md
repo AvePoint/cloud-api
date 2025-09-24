@@ -20,7 +20,8 @@ This section outlines the HTTP method and endpoint used to retrieve the matched 
 |-----------|-----------|-----------|
 |GET|`/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules/{ruleId}/hit-items`|Retrieves all matched records of a specific risk rule.|
 
-## Query Parameters
+
+## URL Parameters
 
 This section outlines the parameters required to specify which tenant's risk rule detail records you want to retrieve.
 
@@ -29,8 +30,16 @@ This section outlines the parameters required to specify which tenant's risk rul
 | customerId | The customer ID. | string | Yes |
 | tenantId | The tenant ID of the customer. | string | Yes |
 | ruleId | The ID of the risk rule. | string | Yes |
-| pageIndex | The starting number of the page to get the hit objects. The default value is 1. | integer | No |
-| pageSize | The number of objects to display on one page. The default value is 50. | integer | No |
+
+
+## Query Parameters
+
+This section outlines the parameters required to specify paging attributes.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| pageIndex | The page you want to navigate to. | integer | No |
+| pageSize | The number of records in each response. | integer | No |
 
 
 ## Response
