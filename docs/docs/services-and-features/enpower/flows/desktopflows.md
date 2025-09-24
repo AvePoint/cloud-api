@@ -63,7 +63,7 @@ The API response provides detailed information about the Power Automate desktop 
 | createdTime          | The flow created time.                                    | string  |
 | modifiedTime         | The latest flow modification time.                         | string  |
 | solutionCount        | The number of solutions related to this flow.              | integer |
-| solutionDisplayNames  | The list of display names of the solutions related to this flow.| string  |
+| solutionDisplayNames  | The list of display names of the solutions related to this flow.| list<string>  |
 | schemaVersion        | The schema version of this flow.                           | string  |
 
 ## Request Sample

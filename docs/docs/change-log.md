@@ -6,12 +6,58 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Added  
 
-- Introduced the new endpoint `/insights/google/activities/object/{id}/export` to **Insights** for exporting activities performed on a specific Google object.  
-- Introduced the new endpoint `/insights/google/users/{email}/activities/export` to **Insights** for exporting activity data for a specific Google user.  
-- Introduced the new endpoint `/insights/google/users/{email}/access/export` to **Insights** for exporting Google user access report.  
-- Introduced the new endpoint `/insights/google/groups/{groupId}/access/export` to **Insights** for exporting Google group access report.  
-- Introduced the new endpoint `/insights/google/drives/permission/export` to **Insights** for exporting Google drive permissions.  
-- Introduced the new endpoint `/insights/google/sharingLinks/export` to **Insights** for exporting permission related information for Google sharing links.  
+- **Insights**
+  - Introduced the new endpoint `/insights/google/activities/object/{id}/export` for exporting activities performed on a specific Google object.  
+  - Introduced the new endpoint `/insights/google/users/{email}/activities/export` for exporting activity data for a specific Google user.  
+  - Introduced the new endpoint `/insights/google/users/{email}/access/export` for exporting Google user access report.  <!--  -->
+  - Introduced the new endpoint `/insights/google/groups/{groupId}/access/export` for exporting Google group access report.  
+  - Introduced the new endpoint `/insights/google/drives/permission/export` for exporting Google drive permissions.  
+  - Introduced the new endpoint `/insights/google/sharingLinks/export` for exporting permission related information for Google sharing links.  
+
+- **EnPower**
+  - Introduced the following new endpoints for Power App data retrieval:
+    - `/smp/powerplatform/powerapps/{appId}/activities` for app activities.
+    - `/smp/powerplatform/powerapps/{appId}/launches` for apps' launching history.
+    - `/smp/powerplatform/powerapps/{appId}/launched-users` for users who launched apps.
+  - Introduced the following new endpoints for Power Automate data retrieval:
+    - `/smp/powerplatform/powerautomate/cloudflows/{flowId}/runs` for cloud flows' running history.
+    - `/smp/powerplatform/powerautomate/cloudflows/{flowId}/activities` for cloud flow activities.
+    - `/smp/powerplatform/connectionusage/cloudflows` for cloud flows' connection usage.
+    - `/smp/powerplatform/powerautomate/desktopflows` for desktop flows' details.
+    - `/smp/powerplatform/powerautomate/desktopflows/{flowId}/runs` for desktop flows' running history.
+  - Introduced the following new endpoints for Power BI data retrieval:
+    - `/smp/powerplatform/powerbi/datasourcecountbydatasourcetype` for data source counts.
+    - `/smp/powerplatform/powerbi/datasourcedetails` for data source details.
+    - `/smp/powerplatform/powerbi/semanticemodeldetails` for semantic model details.
+    - `/smp/powerplatform/powerbi/semanticmodelcountbydatasourcetype` for semantic models by data sources.
+    - `/smp/powerplatform/powerbi/powerbiactiveusers` for active Power BI users.
+  - Introduced the following new endpoints for Copilot Studio data retrieval:
+    - `/smp/powerplatform/bot` for Copilot Studio agent details.
+    - `/smp/powerplatform/bot/{botId}/activities` for Copilot Studio agent activities.
+  - Added the following properties to the response of the `/smp/powerplatform/powerapps` endpoint:
+    - `creatorCountry`
+    - `creatorId`
+    - `creatorJobTitle`
+    - `lastActivityDate`
+  - Added the following properties to the response of the `/smp/powerplatform/powerautomate/cloudflows` endpoint:
+    - `creatorCountry`
+    - `creatorEmail`
+    - `creatorId`
+    - `creatorJobTitle`
+    - `creatorUpn`
+  - Added the following properties to the response of the `/smp/powerplatform/connections` endpoint:
+    - `connectorCreatedTime`
+    - `ownerCountry`
+  - Added the following properties to the response of the `/smp/powerplatform/connections` endpoint:
+    - `lastRenewNotifyTime`
+    - `creatorDisplayName`
+    - `viewsOfLast7Days`
+    - `uniqueViewersOfLast7Days`
+    - `viewsOfLast30Days`
+    - `uniqueViewersOfLast30Days`
+     - `viewsOfLast90Days`
+    - `uniqueViewersOfLast90Days`
+
 
 ### Changed
 
