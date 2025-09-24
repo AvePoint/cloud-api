@@ -1,7 +1,7 @@
 - name: Workspaces
   href: workspaces.md
 - name: Artifacts
-  href: artifacts.yml
+  href: artifacts.md
 - name: Active Users
   href: activeusers.md
 - name: Data Source Counts
@@ -10,5 +10,5 @@
   href: datasourcedetails.md
 - name: Semantic Models
   href: semanticmodels.md
-- name: Semantic Model Counts by Data Source Types
+- name: Semantic Models by Data Sources
   href: semanticmodelbydatasource.md

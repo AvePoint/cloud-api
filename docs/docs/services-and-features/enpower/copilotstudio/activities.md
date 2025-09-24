@@ -44,7 +44,6 @@ The API response provides detailed information about the agents' activities retr
 | userId                | The UPN (User Principal Name) of the user who performed the action. | string |
 | userKey               | An alternative ID for the user identified in the UserId property. | string |
 | userType              | The type of user who performed the operation.               | string |
-| clientIP              | The IP address of the client device from which the activity was performed. | string |
 | activityType          | The type of activity performed.                              | string |
 | dataSource            | The data source names associated to the activity.           | string |
 
@@ -69,7 +68,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "userId": "", // The UPN (User Principal Name) of the user who performed the action
       "userKey": "", // An alternative ID for the user identified in the UserId property
       "userType": "", // The type of user who performed the operation
-      "clientIP": "", // The IP address of the client device from which the activity was performed
       "activityType": "", // The type of activity performed
       "dataSource": "" // The data source names associated to the activity
     }
