@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/compliance-rate` | partner.wm.read.all |  
+| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/compliance-rate` | elements.wm.read.all |  
 
 
 ## Request
@@ -20,7 +20,7 @@ This section outlines the HTTP method and endpoint used to retrieve the complian
 |-----------|-----------|-----------|
 |GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/compliance-rate`|Retrieves the compliance statistics of workspaces.|
 
-## Query Parameters
+## URL Parameters
 
 This section outlines the parameters required to specify which tenant's workspace compliance statistics you want to retrieve.
 

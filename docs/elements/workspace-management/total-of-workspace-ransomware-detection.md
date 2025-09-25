@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion` | partner.wm.read.all |  
+| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion` | elements.wm.read.all |  
 
 
 ## Request
@@ -20,7 +20,7 @@ This section outlines the HTTP method and endpoint used to retrieve the data pro
 |-----------|-----------|-----------|
 |GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion`|Retrieves the data protection statistics.|
 
-## Query Parameters
+## URL Parameters
 
 This section outlines the parameters required to specify which tenant's data protection statistics you want to retrieve.
 
@@ -36,18 +36,18 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| TeamsUnderPotentialRansomwareAttack | The number of Teams under potential ransomware attack over the last 7 days. | integer |
-| TeamsWithUnusualActivities | The number of Teams with unusual activities over the last 7 days. | integer |
-| SharePointSitesUnderPotentialRansomwareAttack | The number of SharePoint sites under potential ransomware attack over the last 7 days.  | integer |
-| SharePointSitesWithUnusualActivities | The number of SharePoint sites with unusual activities over the last 7 days. | integer |
-| OneDrivesUnderPotentialRansomwareAttack | The number of OneDrives under potential ransomware attack over the last 7 days. | integer |
-| OneDrivesWithUnusualActivities | The number of OneDrives with unusual activities over the last 7 days. | integer |
-| GroupsUnderPotentialRansomwareAttack | The number of Groups under potential ransomware attack over the last 7 days. | integer |
-| GroupsWithUnusualActivities | The number of Groups with unusual activities over the last 7 days. | integer |
-| TeamsWithSuspiciousObjects | The number of Teams with suspicious objects over the last 7 days. | integer |
-| SharePointSitesWithSuspiciousObjects | The number of SharePoint sites with suspicious objects over the last 7 days. | integer |
-| OneDrivesWithSuspiciousObjects | The number of OneDrives with suspicious objects over the last 7 days. | integer |
-| GroupsWithSuspiciousObjects | The number of Groups with suspicious objects over the last 7 days. | integer |
+| teamsUnderPotentialRansomwareAttack | The number of Teams under potential ransomware attack over the last 7 days. | integer |
+| teamsWithUnusualActivities | The number of Teams with unusual activities over the last 7 days. | integer |
+| sharePointSitesUnderPotentialRansomwareAttack | The number of SharePoint sites under potential ransomware attack over the last 7 days.  | integer |
+| sharePointSitesWithUnusualActivities | The number of SharePoint sites with unusual activities over the last 7 days. | integer |
+| oneDrivesUnderPotentialRansomwareAttack | The number of OneDrives under potential ransomware attack over the last 7 days. | integer |
+| oneDrivesWithUnusualActivities | The number of OneDrives with unusual activities over the last 7 days. | integer |
+| groupsUnderPotentialRansomwareAttack | The number of Groups under potential ransomware attack over the last 7 days. | integer |
+| groupsWithUnusualActivities | The number of Groups with unusual activities over the last 7 days. | integer |
+| teamsWithSuspiciousObjects | The number of Teams with suspicious objects over the last 7 days. | integer |
+| sharePointSitesWithSuspiciousObjects | The number of SharePoint sites with suspicious objects over the last 7 days. | integer |
+| oneDrivesWithSuspiciousObjects | The number of OneDrives with suspicious objects over the last 7 days. | integer |
+| groupsWithSuspiciousObjects | The number of Groups with suspicious objects over the last 7 days. | integer |
 
 
 ## Request Sample

@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace` | partner.wm.read.all |  
+| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace` | elements.wm.read.all |  
 
 
 ## Request
@@ -20,7 +20,7 @@ This section outlines the HTTP method and endpoint used to retrieve the workspac
 |-----------|-----------|-----------|
 |GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace`|Retrieves statistics of workspcaes for a specific tenant.|
 
-## Query Parameters
+## URL Parameters
 
 This section outlines the parameters required to specify which tenant's workspace overview statistics you want to retrieve.
 
@@ -36,30 +36,30 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| Workspaces | The total number of workspaces. | integer |
-| Teams | The number of Teams. | integer |
-| SharePointSites | The number of SharePoint sites.  | integer |
-| OneDrives | The number of OneDrives. | integer |
-| Groups | The number of Groups. | integer |
-| ExchangeMailboxes | The number of Exchange mailboxes. | integer |
-| ActiveWorkspaces | The number of active workspaces. | integer |
-| InactiveWorkspaces | The number of inactive workspaces. | integer |
-| OrphanedWorkspaces | The total number of orphaned workspaces. | integer |
-| OrphanedTeams | The number of orphaned Teams. | integer |
-| OrphanedSharePointSites | The number of orphaned SharePoint sites. | integer |
-| OrphanedOneDrives | The number of orphaned OneDrives. | integer |
-| OrphanedGroups | The number of orphaned Groups. | integer |
-| WorkspacesWithGuestUsers | The total number of workspaces with guest users. | integer |
-| TeamsWithGuestUsers | The number of Teams with guest users. | integer |
-| SharePointSitesWithGuestUsers | The number of SharePoint sites with guest users. | integer |
-| OneDrivesWithGuestUsers | The number of OneDrives with guest users. | integer |
-| GroupsWithGuestUsers | The number of Groups with guest users. | integer |
-| ReachingStorageLimitWorkspaces | The total number of workspaces that have reached 90% of their storage limits. | integer |
-| ReachingStorageLimitTeams | The number of Teams that have reached 90% of their storage limits. | integer |
-| ReachingStorageLimitSharePointSites | The number of SharePoint sites that have reached 90% of their storage limits. | integer |
-| ReachingStorageLimitOneDrives | The number of OneDrives that have reached 90% of their storage limits. | integer |
-| ReachingStorageLimitGroups | The number of Groups that have reached 90% of their storage limits. | integer |
-| ReachingStorageLimitMailboxes | The number of mailboxes that have reached 90% of their storage limits. | integer |
+| workspaces | The total number of workspaces. | integer |
+| teams | The number of Teams. | integer |
+| sharePointSites | The number of SharePoint sites.  | integer |
+| oneDrives | The number of OneDrives. | integer |
+| groups | The number of Groups. | integer |
+| exchangeMailboxes | The number of Exchange mailboxes. | integer |
+| activeWorkspaces | The number of active workspaces. | integer |
+| inactiveWorkspaces | The number of inactive workspaces. | integer |
+| orphanedWorkspaces | The total number of orphaned workspaces. | integer |
+| orphanedTeams | The number of orphaned Teams. | integer |
+| orphanedSharePointSites | The number of orphaned SharePoint sites. | integer |
+| orphanedOneDrives | The number of orphaned OneDrives. | integer |
+| orphanedGroups | The number of orphaned Groups. | integer |
+| workspacesWithGuestUsers | The total number of workspaces with guest users. | integer |
+| teamsWithGuestUsers | The number of Teams with guest users. | integer |
+| sharePointSitesWithGuestUsers | The number of SharePoint sites with guest users. | integer |
+| oneDrivesWithGuestUsers | The number of OneDrives with guest users. | integer |
+| groupsWithGuestUsers | The number of Groups with guest users. | integer |
+| reachingStorageLimitWorkspaces | The total number of workspaces that have reached 90% of their storage limits. | integer |
+| reachingStorageLimitTeams | The number of Teams that have reached 90% of their storage limits. | integer |
+| reachingStorageLimitSharePointSites | The number of SharePoint sites that have reached 90% of their storage limits. | integer |
+| reachingStorageLimitOneDrives | The number of OneDrives that have reached 90% of their storage limits. | integer |
+| reachingStorageLimitGroups | The number of Groups that have reached 90% of their storage limits. | integer |
+| reachingStorageLimitMailboxes | The number of mailboxes that have reached 90% of their storage limits. | integer |
 
 
 ## Request Sample
@@ -76,29 +76,29 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "Workspaces": 4285,
-    "Teams": 171,
-    "SharePointSites": 865,
-    "OneDrives": 12,
-    "Groups": 2989,
-    "ExchangeMailboxes": 248,
-    "ActiveWorkspaces": 159,
-    "InactiveWorkspaces": 399,
-    "OrphanedWorkspaces": 264,
-    "OrphanedTeams": 56,
-    "OrphanedGroups": 192,
-    "OrphanedSharePointSites": 15,
-    "WorkspacesWithGuestUsers": 88,
-    "OrphanedOneDrives": 1,
-    "TeamsWithGuestUsers": 13,
-    "SharePointSitesWithGuestUsers": 37,
-    "OneDrivesWithGuestUsers": 0,
-    "GroupsWithGuestUsers": 38,
-    "ReachingStorageLimitWorkspaces": 0,
-    "ReachingStorageLimitTeams": 0,
-    "ReachingStorageLimitSharePoint": 0,
-    "ReachingStorageLimitOneDrives": 0,
-    "ReachingStorageLimitGroups": 0,
-    "ReachingStorageLimitMailboxes": 0,
-    "ReachingStorageLimitSharePointSites": 0
+    "workspaces": 4285,
+    "teams": 171,
+    "sharePointSites": 865,
+    "oneDrives": 12,
+    "groups": 2989,
+    "exchangeMailboxes": 248,
+    "activeWorkspaces": 159,
+    "inactiveWorkspaces": 399,
+    "orphanedWorkspaces": 264,
+    "orphanedTeams": 56,
+    "orphanedGroups": 192,
+    "orphanedSharePointSites": 15,
+    "workspacesWithGuestUsers": 88,
+    "orphanedOneDrives": 1,
+    "teamsWithGuestUsers": 13,
+    "sharePointSitesWithGuestUsers": 37,
+    "oneDrivesWithGuestUsers": 0,
+    "groupsWithGuestUsers": 38,
+    "reachingStorageLimitWorkspaces": 0,
+    "reachingStorageLimitTeams": 0,
+    "reachingStorageLimitSharePoint": 0,
+    "reachingStorageLimitOneDrives": 0,
+    "reachingStorageLimitGroups": 0,
+    "reachingStorageLimitMailboxes": 0,
+    "reachingStorageLimitSharePointSites": 0
 }

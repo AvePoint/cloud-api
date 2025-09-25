@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights` | partner.wm.read.all |  
+| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights` | elements.wm.read.all |  
 
 
 ## Request
@@ -20,7 +20,7 @@ This section outlines the HTTP method and endpoint used to retrieve the data sec
 |-----------|-----------|-----------|
 |GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights`|Retrieves the data security posture statistics.|
 
-## Query Parameters
+## URL Parameters
 
 This section outlines the parameters required to specify which tenant's data security posture statistics you want to retrieve.
 
