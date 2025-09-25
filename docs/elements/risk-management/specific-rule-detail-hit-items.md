@@ -20,7 +20,8 @@ This section outlines the HTTP method and endpoint used to retrieve the matched 
 |-----------|-----------|-----------|
 |GET|`/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules/{ruleId}/hit-items`|Retrieves all matched records of a specific risk rule.|
 
-## Query Parameters
+
+## URL Parameters
 
 This section outlines the parameters required to specify which tenant's risk rule detail records you want to retrieve.
 
@@ -29,8 +30,16 @@ This section outlines the parameters required to specify which tenant's risk rul
 | customerId | The customer ID. | string | Yes |
 | tenantId | The tenant ID of the customer. | string | Yes |
 | ruleId | The ID of the risk rule. | string | Yes |
-| pageIndex | The starting number of the page to get the hit objects. The default value is 1. | integer | No |
-| pageSize | The number of objects to display on one page. The default value is 50. | integer | No |
+
+
+## Query Parameters
+
+This section outlines the parameters required to specify paging attributes.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| pageIndex | The page you want to navigate to. | integer | No |
+| pageSize | The number of records in each response. | integer | No |
 
 
 ## Response
@@ -51,83 +60,211 @@ If the request has been successfully processed, a 200 OK response will be return
 | detail | The detail information of the object. | object |
 
 
-**Object details**
+## Exchange detail fields
+
+Below is the detail fields for Microsoft Exchange's records.
 
 | Property | Description | Type |
 | --- | --- | --- |
 | mailboxName | The display name of the mailbox. | string |
 | mailboxEmailAddress | The email address. | string |
-| storageUsed | The storage usage of object in Megabytes (MB). | int |
-| prohibitSendReceiveQuota | The record's prohibit send and recieve limit in Megabytes (MB). | int |
-| prohibitSendQuota | The record's prohibit send limit in Megabytes (MB). | int |
+| storageUsed | The storage usage of object in Megabytes (MB). | integer |
+| prohibitSendReceiveQuota | The record's prohibit send and recieve limit in Megabytes (MB). | integer |
 | createDate | The record's create date. | string |
 | lastActivityDate | The record's last activity date. | string |
+| prohibitSendQuota | The record's prohibit send limit in Megabytes (MB). | integer |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+
+
+## Groups detail fields
+
+Below is the detail fields for Group's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | groupName | The Microsoft 365 Group's display name. | string |
 | groupEmailAddress | The Microsoft 365 Group's email address | string |
 | createdBy | The record's creator name | string |
-| ownerCount | The number of owners in the record. | int |
-| memberCount | The number of members in the record. | int |
+| groupType | The type of group. <ul><li>**1** - Microsoft365 groups</li><li>**2** - Security groups</li><li>**4** - Distribution groups</li><li>**8** - Mail Enabled Security groups</li><li>**-1** - Unknown</li></ul> | integer |
+| ownerCount | The number of owners in the record. | integer |
+| memberCount | The number of members in the record. | integer |
+| createDate | The record's create date. | string |
+| lastActivityDate | The record's last activity date. | string |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| sourceType | The source type of the record. <ul><li>**0** - None</li><li>**1** - Cloud</li><li>**2** - On premise</li><li>**4** - Hybrid</li></ul> | integer |
+
+
+## Teams detail fields
+
+Below is the detail fields for Microsoft Teams's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | teamsName | The Microsoft Teams's display name. | string |
 | teamsUrl | The Microsoft Teams's URL. | string |
+| createdBy | The record's creator name | string |
+| ownerCount | The number of owners in the record. | integer |
+| memberCount | The number of members in the record. | integer |
+| lastActivityDate | The record's last activity date. | string |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| latestCampaignInfo | The detail informations about record's campaign. | string |
+
+
+## Sharepoint detail fields
+
+Below is the detail fields for Microsoft Sharepoint's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | siteName | The Microsoft Sharepoint's display name. | string |
 | siteUrl | The Microsoft Sharepoint's URL. | string |
+| createdBy | The record's creator name | string |
+| storageUsed | The record's storage usage in Megabytes (MB). | integer |
+| ownerCount | The number of owners in the record. | integer |
+| memberCount | The number of members in the record. | integer |
+| createDate | The record's create date. | string |
+| lastActivityDate | The record's last activity date. | string |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| latestCampaignInfo | The detail informations about record's campaign. | string |
+| lockState | The record's lock state. <ul><li>**0** - Unknown</li><li>**1** - Unlock</li><li>**2** - ReadOnly</li><li>**3** - NoAccess</li></ul> | integer |
+
+
+## OneDrive detail fields
+
+Below is the detail fields for Microsoft OneDrive's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | displayName | The Microsoft OneDrive's display name. | string |
 | url | The Microsoft OneDrive's URL. | string |
 | adminCount | The record's admin count | string |
-| storageLimit | The record's storage limit in Megabytes (MB). | int |
-| changeFileCount | The record's number of files changed. | int |
-| guestsCount | The record's number of guests. | int |
+| storageUsed | The record's storage usage in Megabytes (MB). | integer |
+| storageLimit | The record's storage limit in Megabytes (MB). | integer |
+| changeFileCount | The record's number of files changed. | integer |
+| guestsCount | The record's number of guests. | integer |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+
+
+## Power Platform Environment detail fields
+
+Below is the detail fields for Microsoft Power Platform Environment's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | environmentName | The Microsoft Power Platform Environment's display name. | string |
-| environmentMakerCount | The Microsoft Power Platform Environment's environment makers count. | int |
-| totalUsage | The Microsoft Power Platform Environment's total usage in Bytes (B). | int |
+| environmentMakerCount | The Microsoft Power Platform Environment's environment makers count. | integer |
+| region | The Power Platform Environment's region. <ul><li>**-1** - none</li><li>**0** - United States</li><li>**1** - Europe</li><li>**2** - Asia</li><li>**3** - Australia</li><li>**4** - India</li><li>**5** - Japan</li><li>**6** - Canada</li><li>**7** - United Kingdom</li><li>**8** - United States First Release</li><li>**9** - South America</li><li>**10** - France</li><li>**11** - Switzerland</li><li>**12** - Germany</li><li>**13** - Korea</li><li>**14** - Norway</li><li>**15** - United Arab Emirates</li><li>**16** - usgov</li><li>**17** - South Africa</li><li>**18** - Sweden</li><li>**19** - usgovhigh</li></ul> | integer |
+| recipientType | The recipient type of a Microsoft Exchange's mail. <ul><li>1 - UserMailbox</li><li>2 - SharedMailbox</li><li>4 - RoomMailbox</li><li>8 - EquipmentMailbox</li><li>16 - MailContact</li><li>32 - MailUser</li><li>64 - GuestMailUser</li><li>128 - DiscoveryMailbox</li><li>256 - LegacyMailbox</li><li>512 - LinkedMailbox</li><li>1024 - LinkedRoomMailbox</li><li>2048 - TeamMailbox</li><li>4096 - DynamicDistributionGroup</li><li>8192 - GroupMailbox</li><li>16384 - MailForestContact</li><li>32768 - MailNonUniversalGroup</li><li>65536 - MailUniversalDistributionGroup</li><li>131072 - MailUniversalSecurityGroup</li><li>262144 - PublicFolder</li><li>524288 - PublicFolderMailbox</li><li>1048576 - RemoteEquipmentMailbox</li><li>2097152 - RemoteRoomMailbox</li><li>4194304 - RemoteSharedMailbox</li><li>8388608 - RemoteTeamMailbox</li><li>16777216 - RemoteUserMailbox</li><li>33554432 - RoomList</li><li>67108864 - SchedulingMailbox</li></ul> | integer |
+| type | The Power Platform Environment's environment type. <ul><li>**1** - Default</li><li>**2** - Trial</li><li>**4** - Sandbox</li><li>**8** - Production</li><li>**16** - Teams</li><li>**32** - Subscription Based Trial</li><li>**64** - Developer</li></ul> | integer |
+| createDate | The record's create date. | string |
+| lastActivityDate | The record's last activity date. | string |
+| totalUsage | The Microsoft Power Platform Environment's total usage in Bytes (B). | integer |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | creatorName | The record's creator name. | string |
 | creatorEmail | The record's creator email. | string |
+| adminCount | The record's admin count | string |
+
+
+## Power Platform Connection detail fields
+
+Below is the detail fields for Microsoft Power Platform Connection's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | connectionName | The Microsoft Power Platform Environment's display name. | string |
 | parentEnvironment | The Microsoft Power Platform Environment's parent environment. | string |
+| createdBy | The record's creator name | string |
+| createDate | The record's create date. | string |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+
+
+## Power Platform App detail fields
+
+Below is the detail fields for Microsoft Power Platform App's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | appName | The Microsoft Power Platform App's display name. | string |
 | environment | The Microsoft Power Platform App/Flow's environment. | string |
-| coOwnerCount | The number of co-owners in the record. | int |
+| createdBy | The record's creator name | string |
+| guestUserCount | The record's number of guest users. | integer |
+| includedInSolutions | Indicates whether the Flow/App is included in a Power Platform solution. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| coOwnerCount | The number of co-owners in the record. | integer |
 | lastSignIn | The time when users last sign in to the app/flow. | string |
 | lastLaunchTime | The time when users last launch the app. | string |
-| flowName | The Microsoft Power Platform Flow's display name. | string |
+| createDate | The record's create date. | string |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+
+
+## Power Automate detail fields
+
+Below is the detail fields for Microsoft Power Automate's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| flowName | The Microsoft Power Automate's display name. | string |
+| environment | The Microsoft Power Platform App/Flow's environment. | string |
+| guestsCount | The record's number of guests. | integer |
+| creatorName | The record's creator name. | string |
+| type | The Power Automate's flow type. <ul><li>**0** - Unknown</li><li>**1** - Instant</li><li>**2** - Automated</li><li>**4** - Scheduled</li><li>**8** - DesktopFlow</li></ul> | integer |
+| includedInSolutions | Indicates whether the Flow/App is included in a Power Platform solution. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| coOwnerCount | The number of co-owners in the record. | integer |
+| createDate | The record's create date. | string |
+| lastActivityDate | The record's last activity date. | string |
+| lastSignIn | The time when users last sign in to the app/flow. | string |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+
+
+## Power BI detail fields
+
+Below is the detail fields for Microsoft Power BI's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | workspaceName | The Microsoft Power BI's workspace name. | string |
 | capacityName | The Microsoft Power BI's capacity name. | string |
 | artifactName | The Microsoft Power BI's artifact name. | string |
 | workspace | The Microsoft Power BI's workspace. | string |
 | sensitivity | The Microsoft Power BI's sensitivity. | string |
-| reportCount | The Microsoft Power BI's number of reports. | int |
-| userCount | The record's number of users. | int |
-| licenseCount | The record's number of license pool count. | int |
+| adminCount | The record's admin count | string |
+| lastActivityDate | The record's last activity date. | string |
+| createDate | The record's create date. | string |
+| guestUserCount | The record's number of guest users. | integer |
+| reportCount | The Microsoft Power BI's number of reports. | integer |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| userCount | The record's number of users. | integer |
+
+
+## License detail fields
+
+Below is the detail fields for Microsoft License's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
+| licenseCount | The record's number of license pool count. | integer |
 | licenseDisplayName | The license's display name. | string |
 | licenseKeyName | The license's key name. | string |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+
+
+## User detail fields
+
+Below is the detail fields for User's records.
+
+| Response | Description | Type |
+| --- | --- | --- |
 | userName | The User's display name. | string |
 | userEmailAddress | The User's email address. | string |
 | userRoles | The User's user role. | string |
 | upn | The User's User Principal Name. | string |
-| MFAControlledViaCap | The User's MFA status. | bool |
-| signInCount | The User's number of sign in. | int |
-| latestCampaignInfo | The detail informations about record's campaign. | string |
-
-
-## Detail's enumerations
-
-Depending on the workspace, there are enumerations that stands for a specific type of the record.
-
-| Response | Description | Type |
-| --- | --- | --- |
-| groupType | The type of group. <ul><li>**1** - Microsoft365 groups</li><li>**2** - Security groups</li><li>**4** - Distribution groups</li><li>**8** - Mail Enabled Security groups</li><li>**-1** - Unknown</li></ul> | integer |
-| sourceType | The source type of the record. <ul><li>**0** - None</li><li>**1** - Cloud</li><li>**2** - On premise</li><li>**4** - Hybrid</li></ul> | integer |
 | userType | The user's type. <ul><li>**1** - Guest</li><li>**2** - Member</li></ul> | integer |
-| archiveStatus | The record's archive status. <ul><li>**1** - UnArchived</li><li>**2** - Archived</li></ul> | integer |
-| lockState | The record's lock state. <ul><li>**0** - Unknown</li><li>**1** - Unlock</li><li>**2** - ReadOnly</li><li>**3** - NoAccess</li></ul> | integer |
-| includedInSolutions | Indicates whether the Flow/App is included in a Power Platform solution. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
-| type(1) | The Power Automate's flow type. <ul><li>**0** - Unknown</li><li>**1** - Instant</li><li>**2** - Automated</li><li>**4** - Scheduled</li><li>**8** - DesktopFlow</li></ul> | integer |
-| type(2) | The Power Platform Environment's environment type. <ul><li>**1** - Default</li><li>**2** - Trial</li><li>**4** - Sandbox</li><li>**8** - Production</li><li>**16** - Teams</li><li>**32** - Subscription Based Trial</li><li>**64** - Developer</li></ul> | integer |
-| region | The Power Platform Environment's region. <ul><li>**-1** - none</li><li>**0** - United States</li><li>**1** - Europe</li><li>**2** - Asia</li><li>**3** - Australia</li><li>**4** - India</li><li>**5** - Japan</li><li>**6** - Canada</li><li>**7** - United Kingdom</li><li>**8** - United States First Release</li><li>**9** - South America</li><li>**10** - France</li><li>**11** - Switzerland</li><li>**12** - Germany</li><li>**13** - Korea</li><li>**14** - Norway</li><li>**15** - United Arab Emirates</li><li>**16** - usgov</li><li>**17** - South Africa</li><li>**18** - Sweden</li><li>**19** - usgovhigh</li></ul> | integer |
-| recipientType | The recipient type of a Microsoft Exchange's mail. <ul><li>1 - UserMailbox</li><li>2 - SharedMailbox</li><li>4 - RoomMailbox</li><li>8 - EquipmentMailbox</li><li>16 - MailContact</li><li>32 - MailUser</li><li>64 - GuestMailUser</li><li>128 - DiscoveryMailbox</li><li>256 - LegacyMailbox</li><li>512 - LinkedMailbox</li><li>1024 - LinkedRoomMailbox</li><li>2048 - TeamMailbox</li><li>4096 - DynamicDistributionGroup</li><li>8192 - GroupMailbox</li><li>16384 - MailForestContact</li><li>32768 - MailNonUniversalGroup</li><li>65536 - MailUniversalDistributionGroup</li><li>131072 - MailUniversalSecurityGroup</li><li>262144 - PublicFolder</li><li>524288 - PublicFolderMailbox</li><li>1048576 - RemoteEquipmentMailbox</li><li>2097152 - RemoteRoomMailbox</li><li>4194304 - RemoteSharedMailbox</li><li>8388608 - RemoteTeamMailbox</li><li>16777216 - RemoteUserMailbox</li><li>33554432 - RoomList</li><li>67108864 - SchedulingMailbox</li></ul> | integer |
-| Mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | interger |
- 
-
+| MFAControlledViaCap | The User's MFA status. | bool |
+| lastSignIn | The time when users last sign in to the app/flow. | string |
+| lastActivityDate | The record's last activity date. | string |
+| createDate | The record's create date. | string |
+| signInCount | The User's number of sign in. | integer |
+| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| sourceType | The source type of the record. <ul><li>**0** - None</li><li>**1** - Cloud</li><li>**2** - On premise</li><li>**4** - Hybrid</li></ul> | integer |
 
 
 ## Request Sample

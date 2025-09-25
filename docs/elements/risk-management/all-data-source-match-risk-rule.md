@@ -20,7 +20,8 @@ This section outlines the HTTP method and endpoint used to retrieve the matched 
 |-----------|-----------|-----------|
 |GET|`/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules`|Retrieves the matched risk rules.|
 
-## Query Parameters
+
+## URL Parameters
 
 This section outlines the parameters required to specify which tenant's risk detection details you want to retrieve.
 
@@ -28,8 +29,16 @@ This section outlines the parameters required to specify which tenant's risk det
 | --- | --- | --- | --- |
 | customerId | The customer ID. | string | Yes |
 | tenantId | The tenant ID of the customer. | string | Yes |
-| dataSources | The specific data sources to narrow down the results. <ul><li>**1** - Exchange </li><li>**2** - Groups</li><li>**3** - Teams</li><li>**4** - SharePoint</li><li>**5** - OneDrive</li><li>**6** - Users</li><li>**8** - Environments</li><li>**9** - Connections</li><li>**10** - Power Apps</li><li>**11** - Power Automate</li><li>**12** - Power BI</li></ul>| integer | No |
-| status | The status of risk rules. <ul><li>**0** - Disabled</li><li>**1** - Enabled</li></ul>| integer | No |
+
+
+## Query Parameters
+
+This section outlines the parameters required to specify which data source/status details you want to retrieve.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| dataSources | The specific data sources to narrow down the results. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer[] | No |
+| status | The status of risk rules to filter. <ul><li>**0** - Disabled</li><li>**1** - Enabled</li></ul>| integer | No |
 
 
 ## Response
