@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve (starting from 1). |int|No|
-|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|int|No|
+|pageIndex|The index of the page to retrieve (starting from 1). |integer|No|
+|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|integer|No|
 
 ## Request Body Parameters
 
@@ -34,7 +34,7 @@ You can provide a list of baseline id in the request body to filter the results.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|baselineIds|The ID of the baseline. |array of string|No|
+|baselineIds|The ID of the baseline. |string[]|No|
 
 ## Response
 
@@ -45,8 +45,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | baselineId | The **Id** of the baseline. | string |
 | baselineName | The **Name** of the baseline. | string |
 | createTime | The create time of the baseline (UTC). | string |
-| ModifyTime | The last modify time of the baseline (UTC). | string |
-| status | The **Status** of the baseline.<ul><li>**1** - Retrieving settings</li><li>**2** - Unused</li><li>**3** - Active</li><li>**4** - Settings retrieval failed</li><li>**5** - Retrieved with exception</li><li>**6** - Draft</li></ul> | int |
+| modifyTime | The last modify time of the baseline (UTC). | string |
+| status | The **Status** of the baseline.<ul><li>**1** - Retrieving settings</li><li>**2** - Unused</li><li>**3** - Active</li><li>**4** - Settings retrieval failed</li><li>**5** - Retrieved with exception</li><li>**6** - Draft</li></ul> | integer |
 
 ## Request Sample
 

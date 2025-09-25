@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API  | Permission  |
 |-----------|--------|
-| `/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}/process-center/jobs/batch` | elements.bm.tenant.read.all or elements.bm.tenant.readwrite.all |  
+| `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/process-center/jobs/batch` | elements.bm.tenant.read.all or elements.bm.tenant.readwrite.all |  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section provides details on the HTTP method and endpoint used to query job.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}/process-center/jobs/batch` | Query all jobs with optional filtering and pagination. |
+| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/process-center/jobs/batch` | Query all jobs with optional filtering and pagination. |
 
 ## Query Parameters
 
@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve (starting from 1). |int|No|
-|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|int|No|
+|pageIndex|The index of the page to retrieve (starting from 1). |integer|No|
+|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|integer|No|
 
 ## Request Body Parameters
 
@@ -34,7 +34,7 @@ You can provide a list of baselineIds in the request body to filter the results.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|jobIds|The job ID of the job. |string array|No|
+|jobIds|The job ID of the job. |string[]|No|
 
 ## Response
 
@@ -43,15 +43,15 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | jobId | The job id of the job. | string |
-| type | The type of the job. <ul><li>**1** - Apply baseline</li><li>**2** - Auto-alignment</li><li>**3** - Create baseline</li><li>**4** - Detect drift</li><li>**5** - Deploy</li><li>**6** - Deploy detected deviations</li><li>**7** - Daily tenant backup</li><li>**8** - Edit tenant configurations </li><li>**9** - Restore to a specific date</li><li>**10** - Restore</li></ul> | int |
-| status | The **Status** of the baseline.<ul><li>**0** - Waiting</li><li>**1** - In progress</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - Skipped</li><li>**5** - Finished with exception</li></ul> | int |
+| type | The type of the job. <ul><li>**1** - Apply baseline</li><li>**2** - Auto-alignment</li><li>**3** - Create baseline</li><li>**4** - Detect drift</li><li>**5** - Deploy</li><li>**6** - Deploy detected deviations</li><li>**7** - Daily tenant backup</li><li>**8** - Edit tenant configurations </li><li>**9** - Restore to a specific date</li><li>**10** - Restore</li></ul> | integer |
+| status | The **Status** of the baseline.<ul><li>**0** - Waiting</li><li>**1** - In progress</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - Skipped</li><li>**5** - Finished with exception</li></ul> | integer |
 
 ## Request Sample
 
 To use this API, send a POST request to the specified endpoint.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}/process-center/jobs/batch?pageIndex=1&pageSize=50
+https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c6a73d-****-****-****-75b0f1959474/tenants/a2145aa5-****-****-****-7fffd6e0cc68/process-center/jobs/batch?pageIndex=1&pageSize=50
 
 //filter by job ids
 {

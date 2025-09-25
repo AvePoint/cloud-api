@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API  | Permission  |
 |-----------|--------|
-| `/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}}/actions` | elements.bm.tenant.readwrite.all|  
+| `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | elements.bm.tenant.readwrite.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section provides details on the HTTP method and endpoint used to execute te
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}}/actions` | Execute tenant action. |
+| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Execute tenant action. |
 
 ## Request Body Parameters
 
@@ -25,8 +25,18 @@ You can provide a object about the action.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|actionType| The tenant action type. <ul><li>**1** - Apply Baseline</li></ul> |int|Yes|
-|data| The parameters of action <ul><li>**baselineId** - Apply Baseline Id (Apply Baseline action)</li><li>**order** - Apply baseline order (Apply Baseline action)</li></ul></li></ul> |object|Yes|
+|actionType| The tenant action type. (More actions will be supported in the future) <ul><li>**1** - Apply Baseline</li></ul> |integer|Yes|
+|data| The parameters of action |object|Yes|
+
+### Apply Action Data Parameters
+
+For the "Apply Baseline" action, the parameters of the data object are as follows.
+
+|Parameter|Description | Type|Required?|
+|---|---|---|---|
+|baselineId| Baseline Id for apply. |integer|Yes|
+|order| Apply order |integer|Yes|
+
 
 > [!NOTE]  
 > Tenants in the following status cannot perform the "Apply Baseline" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
@@ -45,7 +55,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a POST request to the specified endpoint.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/{customerId}}/tenants/{tenantId}}/actions
+https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c6a73d-****-****-****-75b0f1959474/tenants/a2145aa5-****-****-****-7fffd6e0cc68/actions
 
 //Apply baseline action
 {

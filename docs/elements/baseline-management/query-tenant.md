@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve (starting from 1). |int|No|
-|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|int|No|
+|pageIndex|The index of the page to retrieve (starting from 1). |integer|No|
+|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|integer|No|
 
 ## Request Body Parameters
 
@@ -34,7 +34,7 @@ You can provide a list of tenant id in the request body to filter the results. T
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|tenantIds|The ID of the tenant. |array of string|No|
+|tenantIds|The ID of the tenant. |string[]|No|
 
 ## Response
 
@@ -43,8 +43,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | tenantName | The **Name** of the tenant. | string |
-| status | The **Status** of the baseline.<ul><li>**1** Connected</li><li>**2** Deployed with exception</li><li>**3** Deploying</li><li>**4** Deployment draft saved</li><li>**5** Deployment failed </li><li>**6** Expired</li><li>**7** Deployed </li><li>**8** Restore failed </li><li>**19** Restored</li><li>**10** Restored with exception</li><li>**11** Restoring</li><li>**12** Retrieving setting</li><li>**13** Review deployment</li><li>**14** Review restore</li><li>**15** Scheduled deployment </li><li>**16** Schedule restore</li><li>**17** Settings retrieval failed</li></ul> | int |
-| driftDetected | The count of drift detected. | int |
+| status | The **Status** of the baseline.<ul><li>**1** Connected</li><li>**2** Deployed with exception</li><li>**3** Deploying</li><li>**4** Deployment draft saved</li><li>**5** Deployment failed </li><li>**6** Expired</li><li>**7** Deployed </li><li>**8** Restore failed </li><li>**19** Restored</li><li>**10** Restored with exception</li><li>**11** Restoring</li><li>**12** Retrieving setting</li><li>**13** Review deployment</li><li>**14** Review restore</li><li>**15** Scheduled deployment </li><li>**16** Schedule restore</li><li>**17** Settings retrieval failed</li></ul> | integer |
+| driftDetected | The count of drift detected. | integer |
 | driftDetectedTime | The last drift detected date (UTC). | string |
 | lastDeployedTime | The last deploy date (UTC). | string |
 | customerId | The Id of customer. | string |
@@ -53,7 +53,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | appliedBaselines | The baselines that applied to the tenant.| string |
 | baselineId | The id of baseline.| string |
 | baselineName | The name of baseline.| string |
-| version | The version of baseline.| int |
+| version | The version of baseline.| integer |
 
 ## Request Sample
 

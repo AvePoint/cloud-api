@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve (starting from 1). |int|No|
-|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|int|No|
+|pageIndex|The index of the page to retrieve (starting from 1). |integer|No|
+|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|integer|No|
 
 ## Response
 
@@ -44,7 +44,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/{baselineId}/reports?pageIndex=1&pageSize=50
+https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/23351ee7-****-****-****-e8e3ffc29cd7/reports?pageIndex=1&pageSize=50
 ```
 
 ## Response Sample  
