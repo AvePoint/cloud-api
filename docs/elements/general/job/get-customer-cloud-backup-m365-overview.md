@@ -46,8 +46,8 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 ```json
 [
     {
-        "customerId": "f1626c49-b9d4-4baf-a165-97dbdc55fc15",
-        "customer": "test_fly_license_10@163.com",
+        "customerId": "f1626c49-****-****-****-97dbdc55fc15",
+        "customer": "test_****@avepoint.com",
         "serviceType": "Cloud Backup for Microsoft 365",
         "serviceModule": "Exchange Online",
         "totalScannedObjects": 25,
@@ -56,8 +56,8 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
         "dataSizeStoredInBYOS": "N/A"
     },
     {
-        "customerId": "f1626c49-b9d4-4baf-a165-97dbdc55fc15",
-        "customer": "test_fly_license_10@163.com",
+        "customerId": "f1626c49-****-****-****-97dbdc55fc15",
+        "customer": "test_****@avepoint.com",
         "serviceType": "Cloud Backup for Microsoft 365",
         "serviceModule": "Microsoft 365 Group",
         "totalScannedObjects": 7,

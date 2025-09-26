@@ -1,6 +1,6 @@
-# Get customer M365 assigned user seats
+# Get customer tenant assigned user seats
 
-Use this API to get customer M365 assigned user seats. 
+Use this API to get customer tenant assigned user seats. 
 
  ## Permissions
 
@@ -9,15 +9,15 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/external/v3/general/customers/{customerId}/3rd-party-products/users/type/{type}/{licenseAssignedStatus?}`|elements.license.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users`|elements.license.read.all|  
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to get customer M365 assigned user seats.
+This section outlines the details of the HTTP method and endpoint used to get customer tenant assigned user seats.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/3rd-party-products/users/type/{type}/{licenseAssignedStatus?}` | Get customer M365 assigned user seats.|
+| POST | `/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users` | Get customer M365 assigned user seats.|
  
 ## URL Parameters
 
@@ -26,8 +26,15 @@ This section outlines the parameters required to specify which customer tenant y
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | customerId | The customer id of the customer.    | string | Yes |
-| type | The specific tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | int    | Yes |
-| licenseAssignedStatus | The specific field of the user seat.<ul><li>**0** - AvailableUserSeat</li><li>**1** - AvailableUserSeat</li></ul> | int    | No |
+| type | The specific tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | integer    | Yes |
+
+## Request Body
+
+This section outlines the request body required to specify which users you want to retrieve.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| licenseAssignedStatus | The specific field of the user seat.<ul><li>**0** - AvailableUserSeat</li><li>**1** - AvailableUserSeat</li></ul> | integer    | No |
 
 ## Response
 
@@ -37,13 +44,13 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | id                | The id of the tenant.                                | string |
 | name              | The id of the tenant.                                | string |
-| availableUserSeat | The availableUserSeat of the tenant.                 | int |
-| assignedUserSeat  | The assignedUserSeat of the tenant.                  | int |
+| availableUserSeat | The availableUserSeat of the tenant.                 | integer |
+| assignedUserSeat  | The assignedUserSeat of the tenant.                  | integer |
 
 ## Request Sample
-To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
+To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/3rd-party-products/users/type/{type}/{licenseAssignedStatus?}
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users
 ```
  
 ## Response Sample
@@ -52,7 +59,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 ```json
 [
     {
-        "id": "f04d7aee-xxxx-xxxx-xxxx-65215f92e596",
+        "id": "f04d7aee-****-****-****-65215f92e596",
         "name":"v40t",
         "availableUserSeat": 25,
         "assignedUserSeat": 25

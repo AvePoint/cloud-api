@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/external/v3/general/customers/{customerId}/3rd-party-products/overview/type/{type}`|elements.license.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/overview`|elements.license.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to get cu
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/3rd-party-products/overview/type/{type}` | Get customer tenant user seats.|
+| GET | `/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/overview` | Get customer tenant user seats.|
  
 ## URL Parameters
 
@@ -26,7 +26,7 @@ This section outlines the parameters required to specify which customer tenant y
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | customerId | The customer id of the customer.    | string | Yes |
-| type | The specific tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | int    | Yes |
+| type | The specific tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | integer    | Yes |
 
 ## Response
 
@@ -34,14 +34,14 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| type | The tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | int |
-| availableUserSeat |  The availableUserSeat of the tenant. | int |
-| assignedUserSeat | The assignedUserSeat of the tenant.    | int |
+| type | The tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | integer |
+| availableUserSeat |  The availableUserSeat of the tenant. | integer |
+| assignedUserSeat | The assignedUserSeat of the tenant.    | integer |
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/3rd-party-products/overview/type/{type}
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/overview
 ```
  
 ## Response Sample
