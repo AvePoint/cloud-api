@@ -23,24 +23,73 @@ This section provides details on the HTTP method and endpoint used to add a serv
 
 You can provide a customer basic information in the request body to onboard a customer. This field is required.
 
+#### Add Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive trial license:
+
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|product                             |The product name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li><li>**270** - Cloud Backup for Exchange Online & OneDrive</li><li>**274** - Cloud Backup Express</li><li>**40** - Baseline management</li><li>**42** - Workspace management</li><li>**49** - User and device management</li><li>**65** - Workspace management - Storage optimization</li></ul>                |int    |Yes|
-|licenseType                         |The license type of the service.  <ul><li>**0** - Trial</li><li>**1** - Enterprise</li></ul>                |int      |Yes|
-|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvepointStorageAzure</li><li>**1** - AvepointStorageS3</li><li>**2** - AvepointStorageGCP</li></ul>                                                                                     |int         |Yes|
-|retentionYear                       |The retention year of the service.                |int         |Yes|
-|byos                                |The byos of the service.                          |bool        |Yes|
-|userSeat                            |The user seat of the service.                     |int         |Yes|
-|expirationTime                      |The expiration time of the service.               |string      |Yes |
-|licenseItems.Resource               |The resource of the service.   <ul><li>**Office365Backup** - Microsoft 365 pool</li><li>**Office365PPBackup** - PowerPlatform pool</li><li>**Office365EXODBackup** - Exchange Online & OneDrive pool</li><li>**PartnerTenantSettingManagement** - Baseline management pool</li><li>**PartnerWorkspaceOnboarding** - Workspace management pool</li><li>**PartnerUserManagement** - User and device management pool</li><li>**PartnerStorageOptimization** - Workspace management - Storage optimization pool</li></ul>                      |string      |Yes|
-|licenseItems.SubscriptionSourceType |The source of the service. <ul><li>**1** - AvepointPool</li><li>**2** - MarketplacePool</li><li>**6** - LarsAvepointPool</li></ul>               |int         |Yes|
-|licenseItems.IsSameAsPool           |The is same as pool of the service.               |bool        |Yes|
-|licenseItems.ExpireTime             |The is expire time of the service.                |string      |Yes|
-|licenseItems.SaleType               |The sale type of the service. <ul><li>**0** - Capacity Tier</li><li>**1** - Unlimited Users</li><li>**2** - Unlimited Organization</li></ul>         |int         |Yes|
-|licenseItems.PackageType            |The package type of the service. <ul><li>**0** - Standard</li><li>**1** - Core</li><li>**2** - Flex</li></ul>                                      |int         |Yes|
-|licenseItems.CustomerSize           |The customer size of the service.                 |int         |Yes|
-|licenseItems.ContractEndDate        |The contract end date of the service.             |string      |No |
-|licenseItems.PaymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - PayAsYouGo</li></ul>                                                     |int         |Yes|
+|product                             |The product name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
+|licenseType                         |The license type of the service.  <ul><li>**0** - Trial</li></ul>                |integer      |Yes|
+|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvepointStorageAzure</li><li>**1** - AvepointStorageS3</li></ul>   |integer         |Yes(No)|
+|retentionYear                       |The retention year of the service.                |integer         |Yes(No)|
+|byos                                |The byos of the service.                          |boolean        |No(Yes) |
+
+> [!NOTE]  
+If the avepointStorageType and retentionYear are not required, then byos is required; vice versa.
+
+#### Add Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - Storage optimization trial license:
+
+|Parameter|Description | Type|Required?|
+|---|---|---|---|
+|product                             |The product name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
+|licenseType                         |The license type of the service.  <ul><li>**0** - Trial</li></ul>                |integer      |Yes|
+
+#### Add Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup for Exchange Online & OneDrive pool license:
+
+|Parameter|Description | Type|Required?|
+|---|---|---|---|
+|product                             |The product name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
+|licenseType                         |The license type of the service.  <ul><li>**1** - Enterprise</li></ul>                |integer      |Yes|
+|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvepointStorageAzure</li><li>**1** - AvepointStorageS3</li></ul>     |integer         |Yes(No)|
+|retentionYear                       |The retention year of the service.                |integer     |Yes(Yes)|
+|byos                                |The byos of the service.                          |boolean        |No(Yes)|
+|licenseItems                        |The licenseItems of the service.                  |list        |Yes|
+
+### LicenseItems information:
+
+|Parameter|Description | Type|Required?|
+|---|---|---|---|
+|resource               |The resource of the service.   <ul><li>**Office365Backup** - Microsoft 365 pool</li><li>**Office365PPBackup** - PowerPlatform pool</li><li>**Office365EXODBackup** - Exchange Online & OneDrive pool</li></ul>      |string      |Yes|
+|subscriptionSourceType |The source of the service. <ul><li>**1** - AvepointPool</li><li>**2** - MarketplacePool</li><li>**6** - LarsAvepointPool</li></ul>               |integer         |Yes|
+|isSameAsPool           |The is same as pool of the service.               |bool        |Yes|
+|expireTime             |The is expire time of the service.                |string      |Yes|
+|saleType               |The sale type of the service. <ul><li>**0** - Capacity Tier</li><li>**1** - Unlimited Users</li><li>**2** - Unlimited Organization</li></ul>         |integer         |Yes|
+|packageType            |The package type of the service. <ul><li>**0** - Standard</li><li>**1** - Core</li><li>**2** - Flex</li></ul>                                      |integer         |Yes|
+|customerSize           |The customer size of the service.                 |integer         |Yes|
+|contractEndDate        |The contract end date of the service.             |string      |No |
+|paymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - PayAsYouGo</li></ul>    |integer         |Yes|
+
+> [!NOTE]  
+If the avepointStorageType and retentionYear are not required, then byos is required; vice versa.
+packageType and customerSize are only for Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive
+
+#### Add Baseline management/Workspace management/User and device management/Workspace management - Storage optimization pool license:
+
+|Parameter|Description | Type|Required?|
+|---|---|---|---|
+|product                             |The product name of the service.  <ul><li>**40** - Baseline management</li><li>**42** - Workspace management</li><li>**49** - User and device management</li><li>**65** - Workspace management - Storage optimization</li></ul>                |integer    |Yes|
+|licenseType                         |The license type of the service.  <ul><li>**1** - Enterprise</li></ul>                |integer      |Yes|
+|licenseItems                        |The licenseItems of the service.                  |list        |Yes|
+
+### LicenseItems information:
+
+|Parameter|Description | Type|Required?|
+|---|---|---|---|
+|resource               |The resource of the service.   <ul><li>**PartnerTenantSettingManagement** - Baseline management pool</li><li>**PartnerWorkspaceOnboarding** - Workspace management pool</li><li>**PartnerUserManagement** - User and device management pool</li><li>**PartnerStorageOptimization** - Workspace management - Storage optimization pool</li></ul>      |string      |Yes|
+|subscriptionSourceType |The source of the service. <ul><li>**1** - AvepointPool</li><li>**2** - MarketplacePool</li><li>**6** - LarsAvepointPool</li></ul>               |integer         |Yes|
+|isSameAsPool           |The is same as pool of the service.               |bool        |Yes|
+|expireTime             |The is expire time of the service.                |string      |Yes|
+|contractEndDate        |The contract end date of the service.             |string      |No |
+|paymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - PayAsYouGo</li></ul>    |integer         |Yes|
 
 ## Response
 
@@ -49,8 +98,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | customerId     | The customer id of the added service.     | string |
-| product        | The product of the added service.         | int    |
-| status | The status of the created customer.<ul><li>**1** - SaveSuccessful</li><li>**2** - SaveFailed</li><li>**3** - PartnerNoLicense</li><li>**4** - UserSeatNotEnough</li><li>**5** - ExceededExpiredTime</li><li>**6** - CheckFailed</li><li>**7** - LicenseExists</li><li>**11** - LessThanCurrentTime</li><li>**12** - HasSameLicense</li><li>**13** - AlreadyAcceptOtherLicense</li><li>**16** - CheckSuccessful</li><li>**17** - PremiumProductReachLimit</li><li>**18** - ExpiredTimeLessThanOneMonth</li><li>**19** - ReduceUserSeatFailed</li><li>**20** - AssignEXODForCB365ActiveFailed</li></ul> | int |
+| product        | The product of the added service.         | integer    |
+| status | The status of the created customer.<ul><li>**1** - SaveSuccessful</li><li>**2** - SaveFailed</li><li>**3** - PartnerNoLicense</li><li>**4** - UserSeatNotEnough</li><li>**5** - ExceededExpiredTime</li><li>**6** - CheckFailed</li><li>**7** - LicenseExists</li><li>**11** - LessThanCurrentTime</li><li>**12** - HasSameLicense</li><li>**13** - AlreadyAcceptOtherLicense</li><li>**16** - CheckSuccessful</li><li>**17** - PremiumProductReachLimit</li><li>**18** - ExpiredTimeLessThanOneMonth</li><li>**19** - ReduceUserSeatFailed</li><li>**20** - AssignEXODForCB365ActiveFailed</li></ul> | integer |
 
 ## Request Sample
 
@@ -59,29 +108,26 @@ To use this API, send a POST request to the specified endpoint.
 ```json
 https://graph-us.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/services
 
-Add Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive Trial license request:
+Add Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive trial license request:
 {
   "product": 2048,
   "licenseType": 0,
-  "byos": false,
   "avepointStorageType": 0,
-  "retentionYear": 1,
-  "expirationTime": "2025-10-18T00:00:00Z"
+  "retentionYear": 1
 }
-Add other products Trial license request:
+
+Add Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - Storage optimization trial license request:
 {
   "product": 42,
-  "licenseType": 0,
-  "expirationTime": "2025-10-18T00:00:00Z"
+  "licenseType": 0
 }
+
 Add Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup for Exchange Online & OneDrive pool license request:
 {
   "product": 2048,
   "licenseType": 1,
-  "byos": false,
-  "avepointStorageType": 0,
+  "byos": true,
   "storageProfileId": "",
-  "retentionYear": 1,
   "licenseItems": [
     {
       "expireTime": "2025-09-26T00:00:00Z",
@@ -105,6 +151,7 @@ Add Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup 
     }
   ]
 }
+
 Add other products pool license request:
 {
     "product": 42,
@@ -129,6 +176,6 @@ If the request has been successfully processed, a 200 OK response will be return
 ```json
 {
     "customerId":"7e4ffcae-xxxx-xxxx-xxxx-c6efa0b250d5",
-    "product":"Office365Backup",
+    "product":2048,
     "status":1
 }
