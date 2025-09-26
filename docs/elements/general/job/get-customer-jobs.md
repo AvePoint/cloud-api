@@ -71,7 +71,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 {
     "data": [
         {
-            "jobType": 8,
+            "jobType": 7,
             "jobModule": 304,
             "status": 3,
             "jobId": "FB20250911032116214502",
