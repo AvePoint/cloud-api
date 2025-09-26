@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/external/v3/general/customers/{customerId}/avpt-products/overview/type/{productType}`|elements.license.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/avpt-products/type/{productType}/overview`|elements.license.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to get cu
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/avpt-products/overview/type/{productType}` | Get customer avepoint user seats.|
+| GET | `/partner/external/v3/general/customers/{customerId}/avpt-products/type/{productType}/overview` | Get customer avepoint user seats.|
  
 ## URL Parameters
 
@@ -26,7 +26,7 @@ This section outlines the parameters required to specify which customer you want
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | customerId | The customer id of the customer.    | string | Yes |
-| productType | The specific product type.<ul><li>**2048** - Office 365</li></ul> | int    | Yes |
+| productType | The specific product type.<ul><li>**1** - DocAve Online</li><li>**4** - Cloud Governance</li><li>**32** - Cloud Backup for Salesforce</li><li>**40** - Baseline Management</li><li>**41** - Risk Management</li><li>**42** - Workspace Management</li><li>**49** - User Management</li><li>**60** - MyHub</li><li>**65** - WorkSpace Management - Storage Optimization</li><li>**257** - TyGraph</li><li>**2048** - Cloud Backup for Microsoft 365</li><li>**4096** - Cloud Management</li><li>**8192** - Cloud Archiving</li><li>**65536** - Opus</li><li>**131072** - Cloud Backup for Dynamics 365</li><li>**4194304** - Insights</li><li>**8388608** - Policies for Microsoft 365</li><li>**16777216** - Fly</li><li>**33554432** - Cloud Backup for Google Workspace</li><li>**67108864** - Cense</li><li>**134217728** - Enpower</li><li>**1073741824** - Cloud Backup for IaaS + PaaS</li></ul> | integer    | Yes |
 
 ## Response
 
@@ -34,13 +34,13 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| productType       | The product type.<ul><li>**2048** - Office 365</li></ul>                           | string |
-| availableUserSeat | The availableUserSeat of the product.                 | int |
+| productType       | The product type.<ul><li>**1** - DocAve Online</li><li>**4** - Cloud Governance</li><li>**32** - Cloud Backup for Salesforce</li><li>**40** - Baseline Management</li><li>**41** - Risk Management</li><li>**42** - Workspace Management</li><li>**49** - User Management</li><li>**60** - MyHub</li><li>**65** - WorkSpace Management - Storage Optimization</li><li>**257** - TyGraph</li><li>**2048** - Cloud Backup for Microsoft 365</li><li>**4096** - Cloud Management</li><li>**8192** - Cloud Archiving</li><li>**65536** - Opus</li><li>**131072** - Cloud Backup for Dynamics 365</li><li>**4194304** - Insights</li><li>**8388608** - Policies for Microsoft 365</li><li>**16777216** - Fly</li><li>**33554432** - Cloud Backup for Google Workspace</li><li>**67108864** - Cense</li><li>**134217728** - Enpower</li><li>**1073741824** - Cloud Backup for IaaS + PaaS</li></ul>                           | string |
+| availableUserSeat | The availableUserSeat of the product.                 | integer |
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}//avpt-products/overview/type/{productType}
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/avpt-products/type/{productType}/overview
 ```
  
 ## Response Sample

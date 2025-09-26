@@ -30,17 +30,40 @@ If the request has been successfully processed, a 200 OK response will be return
 | description       | The description of the profile.      | string |
 | tenantId | The tenant id of the profile. | string |
 | tenantDomain | The tenant domain of the profile. | string |
-| scanMode | The scan mode of the profile. | int |
+| scanMode | The scan mode of the profile. | integer |
 | modifiedTime | The modify time of the profile. | string |
 | createdTime | The create time of the profile. | string |
+| lastUpdateTime | The last update time of the profile. | string |
 | impersonationAccount | The impersonation account of the profile. | string |
-| scanInplaceArchivedMailboxes | The scan inplace archive mailboxes of the profile. | bool |
+| scanInplaceArchivedMailboxes | The scan inplace archive mailboxes of the profile. | boolean |
 | ignoreTheLockedObjectsWhenUpdatingTheJobStatus | The ignore lock object status of the profile. | bool |
-| isIgnoreLockedSiteEnabled | The ignore lock site of the profile. | bool |
+| isIgnoreLockedSiteEnabled | The ignore lock site of the profile. | boolean |
 | enableDailyScan | The enable daily scan of the profile. | string |
-| isSendOutOfPolicyNotification | The send oop notification status of the profile. | bool |
-| containers.ContainersName | The container name of the container. | string |
-| containers.ObjectType | The object type of the container. | int |
+| isSendOutOfPolicyNotification | The send oop notification status of the profile. | boolean |
+| removedFromMicrosoft365OrOutOfPolicyObjects | The removed from microsoft365 or out of policy objects of the profile. | string[] |
+| newRegisteredContent | The new registered content information of the profile. | list |
+| containers | The container information of the container. | list |
+| movedToAnotherContainerObjects | The moved to another container object information of the profile. | list |
+
+The new registered content information:
+| Field | Description | Type |
+| --- | --- | --- |
+| objectName | The new registered content object name of the profile. | string |
+| containerName | The new registered content container name of the profile. | string |
+
+The new registered content information:
+| Field | Description | Type |
+| --- | --- | --- |
+| containersName | The container name of the container. | string |
+| objectType | The object type of the container. | integer |
+
+The moved to another container container information:
+| Field | Description | Type |
+| --- | --- | --- |
+| objectName | The moved to another container object name of the profile. | string |
+| containerName | The moved to another container container name of the profile. | string |
+
+
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
@@ -61,11 +84,15 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "scanMode": 0,
     "modifiedTime": "2025-09-11T03:19:14Z",
     "createdTime": "2025-09-11T03:19:14Z",
+    "lastUpdateTime": "2025-09-11T03:19:14Z",
     "scanInplaceArchivedMailboxes": false,
     "ignoreTheLockedObjectsWhenUpdatingTheJobStatus": false,
     "isIgnoreLockedSiteEnabled": false,
     "enableDailyScan": "15:19",
     "isSendOutOfPolicyNotification": false,
+    "newRegisteredContent": [],
+    "removedFromMicrosoft365OrOutOfPolicyObjects": [],
+    "movedToAnotherContainerObjects": []
     "containers": [
         {
             "containersName": "Default_ProjectOnline_Sites_Group",
