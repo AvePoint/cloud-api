@@ -1,14 +1,14 @@
 - name: Create Baseline
   href: create-baseline.md
-- name: View Baselines
+- name: Retrieve Baseline Information
   href: query-baselines.md
-- name: View Job Report
+- name: Retrieve Baseline Creation Job Report
   href: query-create-baseline-job-report-detail.md
-- name: View Job Details
+- name: Retrieve Job Information from Process Center
   href: query-job.md
-- name: View Tenant
+- name: Retrieve Tenant Information
   href: query-tenant.md
-- name: View Tenant Actions
+- name: Monitor Tenants
   href: tenant-action.md
    
    

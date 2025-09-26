@@ -1,8 +1,8 @@
-# Query process center job
+# Retrieve Job Information from Process Center
 
-Use this API to query process center jobs with optional filtering and pagination support.
+Use this API to retrieve job information from the **Process center** page.
 
-## Permissions  
+## Permission  
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).  
@@ -13,7 +13,7 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to query job.
+This section provides details on the HTTP method and endpoint used to retrieve job information from the **Process center** page.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
@@ -30,21 +30,21 @@ You can use the following optional query parameters in the URL to control pagina
 
 ## Request Body Parameters
 
-You can provide a list of baselineIds in the request body to filter the results. This field is optional.
+You can provide a list of job IDs in the request body to filter the results. This field is optional.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|jobIds|The job ID of the job. |string[]|No|
+|jobIds|The ID of the job. |string |No|
 
 ## Response
 
-If the request has been successfully processed, a 200 OK response will be returned along with the job info in the response body.
+If the request has been successfully processed, a 200 OK response will be returned along with the retrieved job information displayed in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |
-| jobId | The job id of the job. | string |
+| jobId | The ID of the job. | string |
 | type | The type of the job. <ul><li>**1** - Apply baseline</li><li>**2** - Auto-alignment</li><li>**3** - Create baseline</li><li>**4** - Detect drift</li><li>**5** - Deploy</li><li>**6** - Deploy detected deviations</li><li>**7** - Daily tenant backup</li><li>**8** - Edit tenant configurations </li><li>**9** - Restore to a specific date</li><li>**10** - Restore</li></ul> | integer |
-| status | The **Status** of the baseline.<ul><li>**0** - Waiting</li><li>**1** - In progress</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - Skipped</li><li>**5** - Finished with exception</li></ul> | integer |
+| status | The status of the job.<ul><li>**0** - Waiting</li><li>**1** - In progress</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - Skipped</li><li>**5** - Finished with exception</li></ul> | integer |
 
 ## Request Sample
 
@@ -57,22 +57,22 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
 {
     "jobIds": 
     [
-      "a7bd3e1b-****-****-****-243c4df89a2d"
+      "a7bd3e1b-****-****-****-243c4df89a2d" // The ID of the job
     ]
 }
 ```
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the job statuses retrieved from the **Process center** page displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
     "data": [
         {
-            "jobId": "a7bd3e1b-****-****-****-243c4df89a2d",
-            "type": 1,
-            "status": 2
+            "jobId": "a7bd3e1b-****-****-****-243c4df89a2d", // The ID of the job
+            "type": 1, // The type of the job
+            "status": 2  // The status of the job
         }
     ],
     "metadata": {
