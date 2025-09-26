@@ -50,8 +50,8 @@ To use this API, send a POST request to the specified endpoint.
 https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines
 
 {
-    name: "baseline1",
-    color:"0",
+    name: "baseline1", // 
+    color:"0", // 
     description:"baseline1 description",
     customerId:"ce43e186-****-****-****-86b51b0aef92",
     tenantId:"af83b8e1-****-****-****-970f92192dc5"
@@ -64,5 +64,5 @@ If the request has been successfully processed, a 201 OK response will be return
 
 ```json
 {
-    "baselineId": "606f30c0-****-****-****-3a1c3a823ab5"
+    "baselineId": "606f30c0-****-****-****-3a1c3a823ab5" //
 }
