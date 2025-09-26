@@ -1,6 +1,6 @@
-# Tenant baseline action
+# Monitor Tenants
 
-Use this API to execute tenant actions.
+Use this API to monitor tenants by performing actions to the tenants.
 
 ## Permissions  
 
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to execute tenant action.
+This section provides details on the HTTP method and endpoint used to monitor tenants by performing actions on the tenants.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Execute tenant action. |
+| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Monitors tenants by performing actions on the tenants. |
 
 ## Request Body Parameters
 
@@ -25,22 +25,22 @@ You can provide a object about the action.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|actionType| The tenant action type. (More actions will be supported in the future) <ul><li>**1** - Apply Baseline</li></ul> |integer|Yes|
-|data| The parameters of action |object|Yes|
+|actionType| The action that you want to perform on the tenant. (More actions will be supported in the future) <ul><li>**1** - Apply baseline to tenant</li></ul> |integer|Yes|
+|data| The parameters of the action. |object|Yes|
 
 ### Apply Action Data Parameters
 
-For the "Apply Baseline" action, the parameters of the data object are as follows.
+For the "Apply baseline to tenant" action, the parameters of the data object are as follows.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|baselineId| Baseline Id for apply. |integer|Yes|
-|order| Apply order |integer|Yes|
+|baselineId| The ID of the baseline. |integer|Yes|
+|order| The ranking order of the baseline among all applied baselines. |integer|Yes|
 
 
 > [!NOTE]  
-> Tenants in the following status cannot perform the "Apply Baseline" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
-> Baselines in the following status cannot be used for the "Apply Baseline" action.<ul><li>**1** - Retrieving settings</li><li>**4** - Settings retrieval failed</li><li>**6** - Draft</li></ul>
+> Tenants in the following status cannot perform the "Apply baseline to tenant" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
+> Baselines in the following status cannot be used for the "Apply baseline to tenant" action.<ul><li>**1** - Retrieving settings</li><li>**4** - Settings retrieval failed</li><li>**6** - Draft</li></ul>
 
 ## Response
 
@@ -48,7 +48,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| jobId | The job id of apply baseline job or export tenant configuration job. | string |
+| jobId | The ID of the job to apply baseline to tenant. | string |
 
 ## Request Sample
 
@@ -59,12 +59,12 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
 
 //Apply baseline action
 {
-    "actionType": "1",
+    "actionType": "1", // The action that you want to perform on the tenant. 1 represents "Apply baseline to tenant"
     "data": 
     [
         {
-            "baselineId": "e12922f4-****-****-****-3a1c162b4cf2",
-            "order": 1
+            "baselineId": "e12922f4-****-****-****-3a1c162b4cf2", // The ID of the baseline
+            "order": 1 // The ranking order of the baseline among all applied baselines
         },
         {
             "baselineId": "b4c84bff-****-****-****-3a1c16243555",
