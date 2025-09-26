@@ -53,7 +53,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | email                     | The email of the tenant user.                       | string |
 | displayName               | The displayName of the tenant user.                 | string |
-| moduleStatus.Module       | The module of the tenant user.  <ul><li>**0** - Mailbox</li><li>**2** - OneDrive</li></ul>               | int |
+| moduleStatus.Module       | The module of the tenant user.  <ul><li>**0** - Mailbox</li><li>**2** - OneDrive</li></ul>               | integer |
 | moduleStatus.IsProtected  | The protected status of the module.                  | boolean |
 
 ## Request Sample
@@ -69,19 +69,19 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 {
     "data": [
         {
-            "id": "admin@M365****.onmicrosoft.com",
-        "displayName":"M365****",
-        "moduleStatus":
-        [
-            {
-                "module":0,
-                "isProtected": false
-            },
-            {
-                "module":2,
-                "isProtected": true
-            }
-        ]
+            "email": "admin@M365****.onmicrosoft.com",
+            "displayName":"M365****",
+            "moduleStatus":
+            [
+                {
+                    "module":0,
+                    "isProtected": false
+                },
+                {
+                    "module":2,
+                    "isProtected": true
+                }
+            ]
         }
     ],
     "metadata": {
