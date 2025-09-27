@@ -40,28 +40,15 @@ If the request has been successfully processed, a 200 OK response will be return
 | isIgnoreLockedSiteEnabled | The ignore lock site of the profile. | boolean |
 | enableDailyScan | The enable daily scan of the profile. | string |
 | isSendOutOfPolicyNotification | The send oop notification status of the profile. | boolean |
-| removedFromMicrosoft365OrOutOfPolicyObjects | The removed from microsoft365 or out of policy objects of the profile. | string[] |
-| newRegisteredContent | The new registered content information of the profile. | list |
 | containers | The container information of the container. | list |
-| movedToAnotherContainerObjects | The moved to another container object information of the profile. | list |
 
-The new registered content information:
-| Field | Description | Type |
-| --- | --- | --- |
-| objectName | The new registered content object name of the profile. | string |
-| containerName | The new registered content container name of the profile. | string |
-
-The new registered content information:
+### The container information:
 | Field | Description | Type |
 | --- | --- | --- |
 | containersName | The container name of the container. | string |
 | objectType | The object type of the container. | integer |
 
-The moved to another container container information:
-| Field | Description | Type |
-| --- | --- | --- |
-| objectName | The moved to another container object name of the profile. | string |
-| containerName | The moved to another container container name of the profile. | string |
+
 
 
 
@@ -90,9 +77,6 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "isIgnoreLockedSiteEnabled": false,
     "enableDailyScan": "15:19",
     "isSendOutOfPolicyNotification": false,
-    "newRegisteredContent": [],
-    "removedFromMicrosoft365OrOutOfPolicyObjects": [],
-    "movedToAnotherContainerObjects": []
     "containers": [
         {
             "containersName": "Default_ProjectOnline_Sites_Group",
