@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to query baselines.
+This section provides details on the HTTP method and endpoint used to retrieve the report details of a baseline creation job.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/partner/external/v3/bm/baselines/{baselineId}/reports` | Retrieves the report details of a baseline baseline creation job. |
+| GET | `/partner/external/v3/bm/baselines/{baselineId}/reports` | Retrieves the report details of a baseline creation job. |
 
 ## Query Parameters
 
@@ -30,14 +30,14 @@ You can use the following optional query parameters in the URL to control pagina
 
 ## Response
 
-If the request has been successfully processed, a 200 OK response will be returned along with the report details of the baseline creation job displayed in the response body.
+If the request has been successfully processed, a 200 OK response will be returned along with the report details of the queried baseline creation job displayed in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |
 | source | The source of the configuration. | string |
 | configuration | The name of the configuration.  | string |
 | status | The status of the configuration retrieval action. | string |
-| details | The detailed information to be displayed when a configuration is failed to be retrieved. | string |
+| details | The detailed information to be displayed when a configuration fails to be retrieved. | string |
 
 ## Request Sample
 
@@ -49,7 +49,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/233
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the report details of the queried baseline creation job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
@@ -57,8 +57,8 @@ If the request has been successfully processed, a 200 OK response will be return
         {
             "source": "Intune", // The source of the configuration
             "configuration": "DeviceCompliancePolicies > MacOSCompliancePolicy", // The name of the configuration
-            "status": "Successful", // The status of the configuration retrieval action.
-            "details": null // The detailed information to be displayed when a configuration is failed to be retrieved.
+            "status": "Successful", // The status of the configuration retrieval action
+            "details": null // The detailed information to be displayed when a configuration fails to be retrieved
         },
         {
             "source": "Intune",

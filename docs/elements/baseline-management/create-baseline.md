@@ -17,7 +17,7 @@ This section provides details on the HTTP method and endpoint used to create a b
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/baselines` | Create a baseline from a tenant to establish benchmarks for tenant configurations. |
+| POST | `/partner/external/v3/bm/baselines` | Creates a baseline from a tenant to establish benchmarks for tenant configurations. |
 
 ## Request Body Parameters
 
@@ -32,11 +32,11 @@ The API requires multiple parameters to create a baseline from a tenant to estab
 |tenantId|The ID of the tenant.|string|Yes|
 
 > [!NOTE]  
-> Tenants in the following status cannot be used to create a baseline to establish benchmarks for tenant configurations.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li></ul>
+> Tenants in the following status cannot be used to create a baseline.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li></ul>
 
 ## Response
 
-If the request has been successfully processed, a 201 OK response will be returned along with the ID of the created baseline displayed in the response body.
+If the request has been successfully processed, a 201 OK response will be returned along with the ID of the newly created baseline displayed in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |

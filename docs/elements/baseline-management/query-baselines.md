@@ -1,4 +1,4 @@
-# Retrieve Baseline General Information
+# Retrieve Baseline Information
 
 Use this API to retrieve the general information of baselines.
 
@@ -17,7 +17,7 @@ This section provides details on the HTTP method and endpoint used to retrieve t
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/baselines/batch` | Retrieve the general information of baselines. |
+| POST | `/partner/external/v3/bm/baselines/batch` | Retrieves the general information of baselines. |
 
 ## Query Parameters
 
@@ -30,7 +30,7 @@ You can use the following optional query parameters in the URL to control pagina
 
 ## Request Body Parameters
 
-You can provide a list of baseline IDs in the request body to filter the results. This field is optional.
+You can provide a list of baseline IDs in the request body to filter the results. This is optional.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
@@ -38,7 +38,7 @@ You can provide a list of baseline IDs in the request body to filter the results
 
 ## Response
 
-If the request has been successfully processed, a 200 OK response will be returned along with the queried baseline IDs displayed in the response body.
+If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines displayed in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |
@@ -66,7 +66,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/bat
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the general information of the baselines in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
@@ -75,8 +75,8 @@ If the request has been successfully processed, a 200 OK response will be return
             "baselineId": "0f0cb41b-****-****-****-3a1c39554d0c", // The ID of the baseline
             "baselineName": "Baseline1", // The name of the baseline
             "createdTime": "2025-09-04T10:30:00Z", // The created time (UTC) of the baseline
-            "modifiedTime": "2025-09-05T10:30:00Z", // The last modified time (UTC) of the baseline .
-            "status": 1 // The status of the baseline. 1 represents retrieving settings
+            "modifiedTime": "2025-09-05T10:30:00Z", // The last modified time (UTC) of the baseline
+            "status": 1 // The status of the baseline. 1 represents "Retrieving settings"
         },
         {
             "baselineId": "5aec2275-****-****-****-3a1c307a28fa",

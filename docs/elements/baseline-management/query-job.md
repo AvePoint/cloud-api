@@ -17,7 +17,7 @@ This section provides details on the HTTP method and endpoint used to retrieve j
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/process-center/jobs/batch` | Query all jobs with optional filtering and pagination. |
+| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/process-center/jobs/batch` | Retrieves job information from the **Process center** page. |
 
 ## Query Parameters
 
@@ -30,7 +30,7 @@ You can use the following optional query parameters in the URL to control pagina
 
 ## Request Body Parameters
 
-You can provide a list of job IDs in the request body to filter the results. This field is optional.
+You can provide a list of job IDs in the request body to filter the results. This is optional.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
