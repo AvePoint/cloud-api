@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `partner/external/v3/general/customers/{customerId}/jobs`|elements.jobs.read.all|  
+| `partner/external/v3/general/customers/{customerId}/avpt-products/cloud-backup-m365/jobs/batch`|elements.jobs.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to get th
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| POST | `partner/external/v3/general/customers/{customerId}/jobs` | Get the job details of the backup services of a specific customer.|
+| POST | `partner/external/v3/general/customers/{customerId}/avpt-products/cloud-backup-m365/jobs/batch` | Get the job details of the backup services of a specific customer.|
 
 ## Query Parameters
 
@@ -61,7 +61,7 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/jobs
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/avpt-products/cloud-backup-m365/jobs/batch
 ```
  
 ## Response Sample
