@@ -5,7 +5,7 @@ Use this API to get a scan profile information configured in Avepoint Online Ser
  ## Permissions
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../../elements/register-app.md).
 
 | API | Permission  |
 |-----------|--------|

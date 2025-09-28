@@ -1,23 +1,23 @@
-# Get the scan profile daily summary in Avepoint Online Services for a customer
+# Retrieve Daily Scan Profile Changes in AvePoint Online Services for a Customer
 
-Use this API to get the scan profile daily summary in Avepoint Online Services for a customer. 
+Use this API to retrieve the daily scan profile changes in AvePoint Online Services for a customer. 
 
- ## Permissions
+ ## Permission
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../../elements/register-app.md).
 
 | API | Permission  |
 |-----------|--------|
-| `partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/daily/summary`|elements.scanprofiles.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/daily/summary`|elements.scanprofiles.read.all|  
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to get the scan profile daily summary in Avepoint Online Services for a customer.
+This section outlines the details of the HTTP method and endpoint used to retrieve the daily scan profile changes in AvePoint Online Services for a customer.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/daily/summary` | Get the scan profile daily summary in Avepoint Online Services for a customer.|
+| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/daily/summary` | Retrieve the daily scan profile changes in AvePoint Online Services for a customer.|
 
 ## Response
 
@@ -25,41 +25,41 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| profileName               | The profile name of the profile.                 | string |
-| profileId     | The profile id of the profile.       | string |
-| description       | The description of the profile.      | string |
-| tenantId | The tenant id of the profile. | string |
-| tenantDomain | The tenant domain of the profile. | string |
-| scanMode | The scan mode of the profile. <ul><li>**0** - Express</li><li>**1** - Filter</li></ul> | integer |
-| modifiedTime | The modify time of the profile. | string |
-| lastUpdateTime | The last update time of the profile. | string |
-| lastScanStatus | The last scan status of the profile. <ul><li>**0** - None</li><li>**1** - Running</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - FinishedWithException</li><li>**5** - Skipped</li><li>**6** - Pending</li><li>**7** - ErrorStart</li><li>**8** - Canceled</li><li>**9** - Rejected</li><li>**10** - Stopped</li><li>**11** - NotScan</li><li>**12** - Disabled</li><li>**13** - NotStart</li><li>**14** - WaitForTheConfiguration</li></ul> | integer |
-| newRegisteredContentCount | The new register content count the profile. | integer |
-| movedToAnotherContainer | The moved to another container of the profile. | integer |
-| removedFromMicrosoft365OrOutofPolicy | The removed from microsoft365 or out of policy of the profile. | integer |
+| profileName               | The name of the scan profile.                 | string |
+| profileId     | The ID of the scan profile.       | string |
+| description       | The description of the scan profile.      | string |
+| tenantId | The tenant ID of the scan profile. | string |
+| tenantDomain | The tenant domain of the scan profile. | string |
+| scanMode | The scan mode of the profile. <ul><li>**0** - Express mode</li><li>**1** - Advanced mode</li></ul> | integer |
+| modifiedTime | The last modified time of the scan profile. | string |
+| lastUpdateTime | The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile. | string |
+| lastScanStatus | The last scan job status of the scan profile. <ul><li>**0** - None</li><li>**1** - Running</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - Finished with exception</li><li>**5** - Skipped</li><li>**6** - Pending</li><li>**7** - Failed to tart</li><li>**8** - Canceled</li><li>**9** - Rejected</li><li>**10** - Stopped</li><li>**11** - Not scanned</li><li>**12** - Disabled</li><li>**13** - Not started</li><li>**14** - Wait for configuration</li></ul> | integer |
+| newRegisteredContentCount | The number of newly registered objects in the daily report of the scan profile. | integer |
+| movedToAnotherContainer | The number of objects moved to another container in the daily report of the scan profile. | integer |
+| removedFromMicrosoft365OrOutofPolicy | The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. | integer |
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/daily/summary
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/{47db****-1004-****-b2ce-8f5e****842d}/daily/summary
 ```
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
-    "profileName": "Default Microsoft 365 Scan Profile",
-    "profileId": "47dba9a1-1004-4c2d-b2ce-8f5e66f5842d",
-    "tenantDomain": "v0s40",
-    "tenantId": "c2350b99-c7a2-4605-b7d4-79e8646f66c3",
-    "description": "This is a partner-configured scan profile.",
-    "scanMode": 0,
-    "modifiedTime": "2025-09-11T03:19:14Z",
-    "lastUpdateTime": "2025-09-11T03:19:14Z",
-    "lastScanStatus": 2,
-    "newRegisteredContentCount": 0,
-    "movedToAnotherContainer": 0,
-    "removedFromMicrosoft365OrOutofPolicy": 0
+    "profileName": "Default Microsoft 365 Scan Profile", // The name of the scan profile. 
+    "profileId": "47db****-1004-****-b2ce-8f5e****842d", // The ID of the scan profile. 
+    "tenantDomain": "Domain", // The tenant domain of the scan profile. 
+    "tenantId": "c235****-c7a2-****-b7d4-79e8****66c3", // The tenant ID of the scan profile. 
+    "description": "This is a partner-configured scan profile.", // The description of the scan profile. 
+    "scanMode": 0, // The scan mode of the profile: 0 represents the Express mode. 
+    "modifiedTime": "2025-09-11T03:19:14Z", // The last modified time of the scan profile. 
+    "lastUpdateTime": "2025-09-11T03:19:14Z", // The last updated time of the scan profile. 
+    "lastScanStatus": 2, // The last scan job status of the scan profile: 2 represents finished. 
+    "newRegisteredContentCount": 0, // The number of newly registered objects in the daily report of the scan profile. 
+    "movedToAnotherContainer": 0, // The number of objects moved to another container in the daily report of the scan profile. 
+    "removedFromMicrosoft365OrOutofPolicy": 0 // The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile. 
 }
 ```
