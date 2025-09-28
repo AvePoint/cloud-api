@@ -1,11 +1,11 @@
-# Get customer tenant user seats
+# Retrieve customer tenant user seats
 
-Use this API to get customer tenant user seats. 
+Use this API to retrieve customer tenant's user seats.
 
- ## Permissions
+ ## Permission
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../../elements/register-app.md).
 
 | API | Permission  |
 |-----------|--------|
@@ -25,8 +25,8 @@ This section outlines the parameters required to specify which customer tenant y
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The customer id of the customer.    | string | Yes |
-| type | The specific tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | integer    | Yes |
+| customerId | The ID of the customer.    | string | Yes |
+| type | The tenant type of the customer's tenant.<ul><li>**0** - Microsoft 365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics 365</li></ul> | integer    | Yes |
 
 ## Response
 
@@ -34,23 +34,23 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| type | The tenant type of the customer.<ul><li>**0** - Microsoft365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics365</li></ul> | integer |
-| availableUserSeat |  The availableUserSeat of the tenant. | integer |
-| assignedUserSeat | The assignedUserSeat of the tenant.    | integer |
+| type | The tenant type of the customer.<ul><li>**0** - Microsoft 365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics 365</li></ul> | integer |
+| availableUserSeat |  The number of available user seats of the tenant. | integer |
+| assignedUserSeat | The number of assigned user seats of the tenant.    | integer |
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/overview
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/f162****-b9d4-****-a165-97db****fc15/3rd-party-products/type/0/overview
 ```
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).html#http-status-code).
 ```json
 {
-    "type": 0,
-    "availableUserSeat": 25,
-    "assignedUserSeat": 25
+    "type": 0, // The tenant type of the customer: 0 represents Microsoft 365.
+    "availableUserSeat": 25, // The number of available user seats of the tenant.
+    "assignedUserSeat": 25 // The number of assigned user seats of the tenant.
 }
 ```

@@ -1,11 +1,11 @@
-# Get services of customers managed by current partner
+# Retrieve All Services of Customers
 
-Use this API to get services of customers managed by current partner. 
+Use this API to retrieve the services of customers managed by the current partner. 
 
- ## Permissions
+ ## Permission
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../../elements/register-app.md).
 
 | API | Permission  |
 |-----------|--------|
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to get services of customers managed by current partner.
+This section outlines the details of the HTTP method and endpoint used to retrieve the services of customers managed by the current partner.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| POST | `/partner/external/v3/general/customers/services/batch` | Get services of customers managed by current partner.|
+| POST | `/partner/external/v3/general/customers/services/batch` | Retrieve the services of customers managed by the current partner..|
  
 
 ## Query Parameters
@@ -29,13 +29,13 @@ This section outlines the parameters optional required to specify paging informa
 | pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
 | pageSize | The number of customers API will retrieved in a time, the default value is 100. | integer | No |
 
-## Request Body
+## Request Body Parameters
 
-This section outlines the request body required to specify which users you want to retrieve.
+This section outlines the request body required to specify which customers you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The ID of the customer to be retrived | string | No |
+| customerId | The ID of the customer to be retrieved | string | No |
 
 ## Response
 
@@ -43,32 +43,32 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| customerId               | The customer id of the customer.                 | string |
-| organization     | The organization of the customer.       | string |
+| customerId               | The ID of the customer.                 | string |
+| organization     | The organization name of the customer.       | string |
 | customer       | The email address of the customer.      | string |
-| products          | The products information of the customer.               | list |
+| products          | The service subscription information of the customer.               | list |
 
-Product subscription:
+**Service subscriptions:**
 | Field | Description | Type |
 | --- | --- | --- |
-| service | The service name of the service. | string |
-| subscriptionModel      | The subscription model of the license.    | string |
-| purchasedUserSeats  | The purchased user seat of the service.            | string |
+| service | The service that the customer has subscriptions for. | string |
+| subscriptionModel      | The subscription model of the service.    | string |
+| purchasedUserSeats  | The number of purchased user seats of the customer.            | string |
 | purchasedUnits   | The purchased unit of the service.        | string    |
-| microsoftLicenseAssigned      | The microsoft license assigned user seat of the service.                   | string |
-| microsoftLicenseAvailable     | The microsoft license available user seat of the service.                 | string |
-| purchasedCapacity     | The purchased capacity of the service.                 | string |
-| protectedCapacity     | The protected capacity of the service.                 | string |
+| microsoftLicenseAssigned      | The number of assigned Microsoft licenses of the customer.                   | string |
+| microsoftLicenseAvailable     | The number of available Microsoft licenses of the customer.                 | string |
+| purchasedCapacity     | The purchased capacity for the customer.                 | string |
+| protectedCapacity     | The protected capacity for the customer.                 | string |
 | storage     | The storage of the service.                 | string |
-| retention     | The retention of the service.                 | string |
-| consumedStorage     | The consumed storage of the service.                 | string |
-| expirationDate     | The expiration date of the service.                 | string |
-| change     | The change of the service.                 | string |
-| source     | The source of the service.                 | string |
-| paymentType     | The payment type of the service.                 | string |
-| subscriptionName     | The subscription name of the service.                 | string |
-| package     | The package of the service.                 | string |
-| contractEndDate     | The contract end date of the service.                 | string |
+| retention     | The data retention period of the customer.                 | string |
+| consumedStorage     | The consumed storage size of the customer.                 | string |
+| expirationDate     | The expiration date of the customer’s service.                 | string |
+| change     | The user seats changes in the pooled license compared with the first day of the current month.                 | string |
+| source     | The source of the subscription.                 | string |
+| paymentType     | The payment type of the subscription.               | string |
+| subscriptionName     | The subscription name. This parameter is intended specifically for the Fly service.                 | string |
+| package     | The package of the subscription. This parameter is intended specifically for the Cloud Backup for Microsoft 365 service.                 | string |
+| contractEndDate     | The contract end date of the subscription.                 | string |
 
 ## Request Sample
 To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.
@@ -78,34 +78,34 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers/s
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).html#http-status-code).
 ```json
 {
     "data": [
         {
             "customerId": "1c10525c-****-****-****-2e641bc13421",
-            "organization": "test_****",
-            "customer": "test_****@avepoint.com",
+            "organization": "OrganizationABC",
+            "customer": "user@domain.com",
             "products": [
                 {
-                    "service": "Cloud Backup for IaaS + PaaS - Unit",
-                    "subscriptionModel": "N/A",
-                    "purchasedUserSeats": "N/A",
-                    "purchasedUnits": "N/A",
-                    "microsoftLicenseAssigned": "0",
-                    "microsoftLicenseAvailable": "0",
-                    "purchasedCapacity": "0/1 GB",
-                    "protectedCapacity": "0 GB",
-                    "storage": "Bring your own storage",
-                    "retention": "N/A",
-                    "consumedStorage": "N/A",
-                    "expirationDate": "2025-09-26T00:00:00Z",
-                    "change": "N/A",
-                    "source": "AvePoint pooled subscription",
-                    "paymentType": "Prepaid",
-                    "subscriptionName": "N/A",
-                    "package": "N/A",
-                    "contractEndDate": "N/A"
+                    "service": "Cloud Backup for IaaS + PaaS - Unit", // The service that the customer has subscriptions for
+                    "subscriptionModel": "N/A", // The subscription model of the service; not applicable here
+                    "purchasedUserSeats": "N/A", // The number of purchased user seats of the customer; not applicable here
+                    "purchasedUnits": "N/A", // The purchased unit of the service; not applicable here
+                    "microsoftLicenseAssigned": "0", // The number of assigned Microsoft licenses of the customer
+                    "microsoftLicenseAvailable": "0", // The number of available Microsoft licenses of the customer
+                    "purchasedCapacity": "0/1 GB", // The purchased capacity for the customer
+                    "protectedCapacity": "0 GB", // The protected capacity for the customer
+                    "storage": "Bring your own storage", // The storage of the service
+                    "retention": "N/A", // The data retention period of the customer; not applicable here
+                    "consumedStorage": "N/A", // The consumed storage size of the customer; not applicable here
+                    "expirationDate": "2025-09-26T00:00:00Z", // The expiration date of the customer’s service
+                    "change": "N/A", // The user seats changes in the pooled license compared with the first day of the current month; not applicable here
+                    "source": "AvePoint pooled subscription", // The source of the subscription
+                    "paymentType": "Prepaid", // The payment type of the subscription; not applicable here
+                    "subscriptionName": "N/A", // The subscription name; not applicable here
+                    "package": "N/A", // The package of the subscription; not applicable here
+                    "contractEndDate": "N/A" // The contract end date of the subscription; not applicable here
                 },
                 {
                     "service": "Fly Migration to Google",
