@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Sharing Links Summary </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Sharing Links Summary ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-sharing-links-summary">Retrieve Sharing Links Summary</h1>
+
+<p>This API method (<code>/insights/sharingLinks/{siteUrl}/summary</code> navigation property) allows users to retrieve the summary information of sharing links. This method is useful for obtaining an overview of link properties and statuses.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/insights/sharingLinks/{siteUrl}/summary</code></td>
+<td>insights.graph.readwrite.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve the summary of specific sharing links. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/insights/sharingLinks/{siteUrl}/summary</code></td>
+<td>Retrieves the link summaries.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify pagination, link types, site URL, and other criteria to filter the results effectively.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>siteUrl</td>
+<td>The SharePoint site URL</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>linkType</td>
+<td>The type of the link. <ul><li><strong>32</strong> for Specific link</li><li> <strong>64</strong> for Organization link</li><li> <strong>128</strong> for Anyone link</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>The number of items per page</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>The token for the next page</td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the sharing links retrieved. Each link in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>values</td>
+<td>A list of sharing links</td>
+<td>list</td>
+</tr>
+<tr>
+<td>status</td>
+<td>the HTTP status code</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>message</td>
+<td>error message</td>
+<td>string</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>The token for the next page</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>link Summary</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The ID in the link summary</td>
+<td>string</td>
+</tr>
+<tr>
+<td>siteId</td>
+<td>The site ID in which the object is shared by the link</td>
+<td>string</td>
+</tr>
+<tr>
+<td>selfId</td>
+<td>The selfID of the object which is shared by the link</td>
+<td>string</td>
+</tr>
+<tr>
+<td>linkId</td>
+<td>The link ID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>logonName</td>
+<td>The link logonName contains the linkId and the object uniqueId.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>The time when the link is created</td>
+<td>string</td>
+</tr>
+<tr>
+<td>expireTime</td>
+<td>The time when the link is expired</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The object name that is shared via the link</td>
+<td>string</td>
+</tr>
+<tr>
+<td>objectUrl</td>
+<td>The object URL that is shared via the link</td>
+<td>string</td>
+</tr>
+<tr>
+<td>linkType</td>
+<td>The link type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>shareBy</td>
+<td>The user who created the link</td>
+<td>string</td>
+</tr>
+<tr>
+<td>inheritFrom</td>
+<td>The parent from which the permission inherits</td>
+<td>string</td>
+</tr>
+<tr>
+<td>inheritType</td>
+<td>The status whether the permission is inherited</td>
+<td>string</td>
+</tr>
+<tr>
+<td>shareWith</td>
+<td>The number of users and groups with whom the link is shared</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>linkUrl</td>
+<td>The link URL</td>
+<td>string</td>
+</tr>
+<tr>
+<td>permission</td>
+<td>The permission with which the link is shared</td>
+<td>string</td>
+</tr>
+<tr>
+<td>fileType</td>
+<td>The type of the object shared via the link</td>
+<td>string</td>
+</tr>
+<tr>
+<td>sensitivityLevel</td>
+<td>The sensitivity level of the object shared via the link</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a <code>GET</code> request to the specified endpoint, including necessary parameters as defined. This will return the relevant link summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/insights/sharingLinks/https********Fm365x636363.sharepoint.com%252Fsites%252Fjuly2022******/summary?linkType=32&amp;pageSize=100&amp;nextLink=1231
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>The following is a sample response for retrieving the sharing link summary. Each property in response is explained with a comment for better understanding.</p>
+<pre><code class="lang-json">{
+    &quot;values&quot;: [
+        {
+            &quot;id&quot;: &quot;e02ce02c-e02c-e02c-e02c-e02ce02ce02c,92069206-9206-9206-9206-920692069206&quot;, // The unique identifier for the link summary
+            &quot;siteId&quot;: &quot;9dc99dc9-9dc9-9dc9-9dc9-9dc99dc99dc9&quot;, // The site ID where the object is shared
+            &quot;selfId&quot;: &quot;a4faa4fa-a4fa-a4fa-a4fa-a4faa4faa4fa&quot;, // The self ID of the object being shared
+            &quot;linkId&quot;: &quot;49784978-4978-4978-4978-497849784978&quot;, // The unique identifier for the link
+            &quot;logonName&quot;: &quot;sharinglinks.49784978-4978-4978-4978-497849784978.flexible.2ace2ace-2ace-2ace-2ace-2ace2ace2ace&quot;, // The login name associated with the link
+            &quot;createTime&quot;: &quot;2022-05-30T07:20:05.58Z&quot;, // The timestamp when the link was created
+            &quot;expireTime&quot;: null, // The timestamp when the link will expire, if applicable
+            &quot;name&quot;: &quot;File share 365 Group-Word.docx&quot;, // The name of the object being shared
+            &quot;objectUrl&quot;: &quot;https://m365x******.sharepoint.com/sites/*******publicteam1/shared documents/general/for share/File share 365 Group-Word.docx&quot;, // The URL of the shared object
+            &quot;linkType&quot;: &quot;Links for Specific External Users&quot;, // The type of the link
+            &quot;shareBy&quot;: &quot;FNU LNU&quot;, // The user who created the link
+            &quot;inheritFrom&quot;: null, // The parent from which the permission inherits, if applicable
+            &quot;inheritType&quot;: &quot;Unique&quot;, // The inheritance type of the permission
+            &quot;shareWith&quot;: 1, // The number of users and groups with whom the link is shared
+            &quot;linkUrl&quot;: &quot;https://m365x********.sharepoint.com/:w:/s/********PublicTeam1/EeGH-EeGHEeGHEeGHEeGHEeGHEeGHEeGHEeGH&quot;, // The URL of the link
+            &quot;permission&quot;: &quot;Edit&quot;, // The permission level of the link
+            &quot;fileType&quot;: &quot;File&quot;, // The type of the object being shared
+            &quot;sensitivityLevel&quot;: &quot;Low&quot; // The sensitivity level of the shared object
+        },
+        {
+            &quot;id&quot;: &quot;60566056-6056-6056-6056-605660566056,31033103-3103-3103-3103-310331033103&quot;,
+            &quot;siteId&quot;: &quot;4eed4eed-4eed-4eed-4eed-4eed4eed4eed4eed&quot;,
+            &quot;selfId&quot;: &quot;43c743c7-43c7-43c7-43c7-43c743c743c7&quot;,
+            &quot;linkId&quot;: &quot;82158215-8215-8215-8215-8215821582158215&quot;,
+            &quot;logonName&quot;: &quot;sharinglinks.82158215-8215-8215-8215-821582158215.flexible.31033103-3103-3103-3103-3103310331033103&quot;,
+            &quot;createTime&quot;: &quot;2022-05-30T08:17:52.001Z&quot;,
+            &quot;expireTime&quot;: null,
+            &quot;name&quot;: &quot;sensitive info&quot;,
+            &quot;objectUrl&quot;: &quot;https://m365x*****
+            *****.sharepoint.com/sites/******publicteam1/shared documents/general/sensitive info&quot;,
+            &quot;linkType&quot;: &quot;Links for Specific External Users&quot;,
+            &quot;shareBy&quot;: &quot;FNU LNU&quot;,
+            &quot;inheritFrom&quot;: null,
+            &quot;inheritType&quot;: &quot;Unique&quot;,
+            &quot;shareWith&quot;: 1,
+            &quot;linkUrl&quot;: &quot;https://m365x******.sharepoint.com/:f:/s/*******PublicTeam1/EqhHEqhHEqhHEqhHEqhHEqhHEqhHEqhHEqhH-Xw&quot;,
+            &quot;permission&quot;: &quot;Edit&quot;,
+            &quot;fileType&quot;: &quot;Folder&quot;,
+            &quot;sensitiveLevel&quot;: &quot;N/A&quot;
+        }
+    ],
+    &quot;status&quot;: 200,
+    &quot;message&quot;: &quot;&quot;,
+    &quot;nextLink&quot;: &quot;[{\&quot;token\&quot;:\&quot;+RID:~EqhHEqhHEqhH==#RT:1#TRC:10#ISV:2#IEO:65567#QCF:8#FPC:AgEEqhHEqhHEqhHQA\&quot;,\&quot;range\&quot;:{\&quot;min\&quot;:\&quot;\&quot;,\&quot;max\&quot;:\&quot;FF\&quot;}}]&quot;
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

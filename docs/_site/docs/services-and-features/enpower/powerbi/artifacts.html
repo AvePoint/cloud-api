@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Power BI Artifact Details </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Power BI Artifact Details ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-power-bi-artifact-details">Retrieve Power BI Artifact Details</h1>
+
+<p>Use this API to access and retrieve information of your Power BI artifacts.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call the API.
+You must register the app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/smp/powerplatform/powerbi/artifacts</code></td>
+<td>enpower.data.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section provides details on the HTTP method and endpoint used to retrieve general information of your Power BI artifacts.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/smp/powerplatform/powerbi/artifacts</code></td>
+<td>Retrieves your Power BI artifacts' information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>The number of artifact records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>The tenant in which data of artifacts are retrieved. By default, artifacts of all tenants are retrieved.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the artifacts retrieved. Each artifact in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>artifacts</td>
+<td>A list containing artifacts with detailed information.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>Total number of artifacts retrieved.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Reference to the next page of results</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Artifact details</strong></p>
+<p>Each artifact retrieved through the API includes detailed attributes that provide insight into its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier of the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>description</td>
+<td>The description of the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier of the tenant where the artifact is hosted.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantName</td>
+<td>The name of the tenant where the artifact is hosted.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>containerId</td>
+<td>The unique identifier of the container where the artifact is held.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>container</td>
+<td>The name of the container where the artifact is held.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>The owner of the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>The type of the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The status of the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>resourceUrl</td>
+<td>The URL of the artifact resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>hasContextDetail</td>
+<td>Indicates if the artifact has context-related details. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>workspaceId</td>
+<td>The unique identifier for the workspace that the artifact belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>parentName</td>
+<td>The name of the artifact parent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>parentType</td>
+<td>The type of the artifact parent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>parentState</td>
+<td>The status of the artifact parent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>sensitivityLabelId</td>
+<td>The unique identifier for the sensitivity label applied to the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>sensitivityLabelName</td>
+<td>The name of the sensitivity label applied to the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createdDateTime</td>
+<td>The date and time when the artifact was created.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>The user who created the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createdById</td>
+<td>The unique identifier of the user who created the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>modifiedBy</td>
+<td>The user who last modified the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>modifiedDateTime</td>
+<td>The date and time when the artifact was last modified.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>modifiedById</td>
+<td>The unique identifier of the latest user who modified the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>configuredBy</td>
+<td>The user who configured the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>configuredById</td>
+<td>The unique identifier of the user who configured the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>isDeleted</td>
+<td>Indicates if the artifact was deleted. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>numberOfGuests</td>
+<td>The number of guests users who have access to the artifact.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>hasRequest</td>
+<td>Indicates if EnPower business context has been requested for this artifact. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>hasResponse</td>
+<td>Indicates if EnPower business context request for this flow has been responded. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>lastRenewNotifyTime</td>
+<td>The last time a renewal notification was sent for the Power BI artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>numberOfUsers</td>
+<td>The number of users who have access to the artifact.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>lastActivityD7</td>
+<td>The activity count in the last 7 days for the artifact.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>lastActivityTime</td>
+<td>The date and time of the artifact’s latest activity.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastRefreshDate</td>
+<td>The date and time of the artifact’s latest refresh.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>numberOfDirectShares</td>
+<td>The number of direct shares of the artifact.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>lastViewedTime</td>
+<td>The last time that the artifact was viewed.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>datasource</td>
+<td>The data source associated with the artifact.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>numberOfRefreshHistories</td>
+<td>The number of refresh histories of the artifact.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>creatorDisplayName</td>
+<td>The display name of artifact's creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorDepartment</td>
+<td>The display name of artifact's creator</td>
+<td>string</td>
+</tr>
+<tr>
+<td>viewsOfLast7Days</td>
+<td>Artifact view count in last 7 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>uniqueViewersOfLast7Days</td>
+<td>Artifact unique viewer count in last 7 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>viewsOfLast30Days</td>
+<td>Artifact view count in last 30 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>uniqueViewersOfLast30Days</td>
+<td>Artifact unique viewer count in last 30 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>viewsOfLast90Days</td>
+<td>Artifact view count in last 90 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>uniqueViewersOfLast90Days</td>
+<td>Artifact unique viewer count in last 90 days.</td>
+<td>integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/artifacts
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HTTP Status Code</a>.</p>
+<pre><code class="lang-json">{
+  &quot;artifacts&quot;: [
+    {
+      &quot;id&quot;: &quot;3cf0f5c6-4793-4996-bf39-a8583b2b9b2f&quot;, // The unique identifier of the artifact
+      &quot;name&quot;: &quot;0001&quot;, // The name of the artifact
+      &quot;description&quot;: null, // The description of the artifact
+      &quot;tenantId&quot;: &quot;&quot;, // The unique identifier for the tenant where the artifact is hosted
+      &quot;tenantName&quot;: &quot;Sample&quot;, // The name of the tenant where the artifact is hosted
+      &quot;containerId&quot;: &quot;&quot;, // The unique identifier of the container where the artifact is held
+      &quot;container&quot;: &quot;Sample-Artifacts&quot;, // The name of the container where the artifact is held
+      &quot;owner&quot;: &quot;&quot;, // The owner of the artifact
+      &quot;type&quot;: &quot;Report&quot;, // The type of the artifact
+      &quot;state&quot;: &quot;Active&quot;, // The state of the artifact
+      &quot;resourceUrl&quot;: &quot;&quot;, // The URL of the artifact resource
+      &quot;hasContextDetail&quot;: false, // Indicates if the artifact has context-related details
+      &quot;workspaceId&quot;: &quot;&quot;, // The unique identifier for the workspace that the artifact belongs to
+      &quot;parentName&quot;: &quot;Alice_WS_20240716_01_zryfw_edit&quot;, // The name of artifact parent
+      &quot;parentType&quot;: &quot;Workspace&quot;, // The type of the artifact parent
+      &quot;parentState&quot;: &quot;Active&quot;, // The status of the artifact parent
+      &quot;sensitivityLabelId&quot;: &quot;&quot;, // The unique identifier for the sensitivity label applied to the artifact
+      &quot;sensitivityLabelName&quot;: &quot;EntrustEncryptedLabel1&quot;, // The name of the sensitivity label applied to the artifact
+      &quot;createdDateTime&quot;: &quot;2024-12-20 09:29:58&quot;, // The date and time when the artifact was created
+      &quot;createdBy&quot;: &quot;admin@sample.onmicrosoft.com&quot;, // The user who created the artifact
+      &quot;createdById&quot;: &quot;&quot;, // The unique identifier of the user who created the artifact
+      &quot;modifiedBy&quot;: &quot;admin@sample.onmicrosoft.com&quot;, // The user who last modified the artifact
+      &quot;modifiedDateTime&quot;: &quot;2024-12-20 09:29:58&quot;, // The date and time when the artifact was last modified
+      &quot;modifiedById&quot;: &quot;&quot;, // The unique identifier of the user who last modified the artifact
+      &quot;configuredBy&quot;: null, // The user who configured the artifact
+      &quot;configuredById&quot;: null, // The unique identifier of the user who configured the artifact
+      &quot;isDeleted&quot;: false, // Indicates if the artifact was deleted
+      &quot;numberOfGuests&quot;: null, // The number of guests users who have access to the artifact
+      &quot;hasRequest&quot;: false, // Indicates if EnPower business context has been requested for this artifact
+      &quot;hasResponse&quot;: false, // Indicates if there is a response for the Power BI artifact
+      &quot;lastRenewNotifyTime&quot;: &quot;&quot;, // The last time a renewal notification was sent for the Power BI artifact
+      &quot;numberOfUsers&quot;: null, // The number of users who have access to the Power BI artifact
+      &quot;lastActivityD7&quot;: 0, // The activity count in the last 7 days for the Power BI artifact
+      &quot;lastActivityTime&quot;: &quot;&quot;, // The date and time when the Power BI artifact had its last activity
+      &quot;lastRefreshDate&quot;: &quot;&quot;, // The date and time when the Power BI artifact was last refreshed
+      &quot;numberOfDirectShares&quot;: null, // The number of direct shares for the Power BI artifact
+      &quot;lastViewedTime&quot;: &quot;&quot;, // The last time the Power BI artifact was viewed
+      &quot;datasource&quot;: null, // The data source associated with the Power BI artifact
+      &quot;creatorDisplayName&quot;: &quot;&quot; // Display name of artifact creator
+      &quot;creatorDepartment&quot;: &quot;&quot; // Department of artifact creator
+      &quot;viewsOfLast7Days&quot;: 0 // View count in last 7 days
+      &quot;uniqueViewersOfLast7Days&quot;: 0 // Viewer count in last 7 days
+      &quot;viewsOfLast30Days&quot;: 0 // View count in last 30 days
+      &quot;uniqueViewersOfLast30Days&quot;: 0 // Viewer count in last 30 days
+      &quot;viewsOfLast90Days&quot;: 0 // View count in last 90 days
+      &quot;uniqueViewersOfLast90Days&quot;: 0 // Viewer count in last 90 days
+    }
+  ],
+  &quot;totalCount&quot;: 1,
+  &quot;nextLink&quot;: &quot;&quot;
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

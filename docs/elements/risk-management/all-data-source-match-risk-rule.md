@@ -5,7 +5,7 @@ Use this API to retrieve all matched risk rules for a specific tenant in Element
 ## Permission  
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../register-app.md).
 
 | API | Permission |
 |-----------|-----------|
@@ -33,12 +33,12 @@ This section outlines the parameters required to specify which tenant's risk det
 
 ## Query Parameters
 
-This section outlines the parameters required to specify which data source/status details you want to retrieve.
+This section outlines the parameters that can be used to specify the data source and status of the risk rules you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| dataSources | The specific data sources to narrow down the results. <ul><li>**1** - Mailbox (Exchange)</li><li>**2** - M365 Group</li><li>**3** - Teams</li><li>**4** - Sharepoint</li><li>**5** - Onedrive</li><li>**6** - User</li><li>**8** - Power Platform Environment</li><li>**9** - Power Platform Connection</li><li>**10** - Power App</li><li>**11** - Power Automate</li><li>**12** - PowerBI</li></ul>| integer[] | No |
-| status | The status of risk rules to filter. <ul><li>**0** - Disabled</li><li>**1** - Enabled</li></ul>| integer | No |
+| dataSources | The specific data sources to narrow down the results. <ul><li>**1** - Exchange</li><li>**2** - Groups</li><li>**3** - Teams</li><li>**4** - SharePoint</li><li>**5** - OneDrive</li><li>**6** - Users</li><li>**8** - Environments</li><li>**9** - Connections</li><li>**10** - Power Apps</li><li>**11** - Power Automate</li><li>**12** - Power BI</li></ul>| integer | No |
+| status | The status of risk rules. <ul><li>**0** - Disabled</li><li>**1** - Enabled</li></ul>| integer | No |
 
 
 ## Response
@@ -52,7 +52,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | setting | The paramerter value configured for the rule.  | string |
 | tenantId | The tenant ID. | integer |
 | customerId | The customer ID. | integer |
-| dataSource | The record's data source. <ul><li>**1** - Exchange</li><li>**2** - Groups</li><li>**3** - Teams</li><li>**4** - SharePoint</li><li>**5** - OneDrive</li><li>**6** - Users</li><li>**8** - Environments</li><li>**9** - Connections</li><li>**10** - Power Apps</li><li>**11** - Power Automate</li><li>**12** - Power BI</li></ul>| integer |
+| dataSource | The data source of the matched objects. <ul><li>**1** - Exchange</li><li>**2** - Groups</li><li>**3** - Teams</li><li>**4** - SharePoint</li><li>**5** - OneDrive</li><li>**6** - Users</li><li>**8** - Environments</li><li>**9** - Connections</li><li>**10** - Power Apps</li><li>**11** - Power Automate</li><li>**12** - Power BI</li></ul>| integer |
 | hitItemCount | The number of objects that match the risk rule. | integer |
 
 

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Add Tag to Specific Object </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Add Tag to Specific Object ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="add-tag-to-specific-object">Add Tag to Specific Object</h1>
+
+<p>This API method (<code>/insights/sites/{siteId}/{objectUrl}/settag</code> navigation property) allows users to add tag to a specific object. This method is useful for categorizing objects with tags that are commonly used in Insights.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/insights/sites/{siteId}/{objectUrl}/settag</code></td>
+<td>insights.graph.readwrite.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve job information. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PATCH</td>
+<td><code>/insights/sites/{siteId}/{objectUrl}/settag</code></td>
+<td>Adds a tag to a specific object.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to specify the object to which the tag will be added.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>siteId</td>
+<td>Sets the ID of the site where the object resides.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>objectUrl</td>
+<td>Sets the URL of the object  to which the tag you want to add.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tagName</td>
+<td>Sets the name of the tag in Inisights that you want to add to the object.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the tag status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>The status of the tag action.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>message</td>
+<td>The error message if the tag action failed.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a <code>PATCH</code> request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the Insights environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/insights/sites/5794af14-b6ee-4194-b122-bdaa1a******/https%3A%2F%2******markettest.sharepoint.com%2Fsites%2Fharland2/settag?tagName=FalsePositive
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>The following is a sample response for this API method, which includes the action result and details.</p>
+<pre><code class="lang-json">{
+  &quot;status&quot;: 200, // current operation status
+  &quot;message&quot;: &quot;&quot; // error message if this API method failed.
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Job Information </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Job Information ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-job-information">Retrieve Job Information</h1>
+
+<p>Get the job-related information (<code>/backup/m365/cloudbackupjobs</code> navigation property) from Cloud Backup for Microsoft 365. By invoking the <code>/backup/m365/cloudbackupjobs</code> endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/backup/m365/cloudbackupjobs</code></td>
+<td>microsoft365backup.jobInfo.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve job information. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/backup/m365/cloudbackupjobs</code></td>
+<td>Gets the job information of Cloud Backup for Microsoft 365.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify pagination, job types, time ranges, and other criteria to filter the results effectively.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>startTime</td>
+<td>Sets a start time (UTC time) for the time range. For example, 2024-01-01.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>finishTime</td>
+<td>Sets an end time (UTC time) for the time range. For example, 2024-12-01.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>jobType</td>
+<td>Sets the job types that you want to get. <br> Valid values: <br> <ul><li> <strong>0</strong> for All <br> </li><li> <strong>1</strong> for Backup <br> </li><li> <strong>2</strong> for Restore <br> </li><li> <strong>3</strong> for Export <br> </li><li> <strong>4</strong> for Deletion <br> </li><li> <strong>5</strong> for Retention</li></ul></td>
+<td>enum</td>
+<td>No</td>
+</tr>
+<tr>
+<td>objectType</td>
+<td>Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> <strong>0</strong> for All <br> </li><li><strong>1</strong> for Exchange Online <br> </li><li><strong>2</strong> for  SharePoint Online <br> </li><li><strong>3</strong> for OneDrive <br> </li><li><strong>4</strong> for Microsoft 365 Groups <br> </li><li><strong>5</strong> for Project Online <br> </li><li><strong>6</strong> for Public Folder <br> </li><li><strong>7</strong> for Teams <br> </li><li><strong>8</strong> for Viva Engage <br> </li><li><strong>9</strong> for Teams Chat <br> </li><li><strong>10</strong> for Power BI <br> </li><li><strong>11</strong> for Power Automate <br> </li><li><strong>12</strong> for Power Apps</li></ul></td>
+<td>enum <br></td>
+<td>No</td>
+</tr>
+<tr>
+<td>jobState</td>
+<td>Sets the job status. <br> Valid values: <br> <ul><li><strong>0</strong> for All <br> </li><li><strong>1</strong> for In Progress <br> </li><li><strong>2</strong> for Finished <br> </li><li><strong>3</strong> for Failed <br> </li><li><strong>4</strong> for Finished with Exception <br> </li><li><strong>5</strong> for Partially Finished </li></ul></td>
+<td>enum</td>
+<td>No</td>
+</tr>
+<tr>
+<td>location</td>
+<td>This parameter is only available for AOS tenants that support Multi-Geo. If no value is set for this parameter, this method retrieves the unusual activities from all locations in your AOS tenant. To get unusual activities from specific data centers, use the following values: <ul><li><strong>PrimaryGeoLocation</strong> (Central AOS location)</li> <li><strong>NAM</strong> (North America)</li> <li><strong>EUR</strong> (Europe/Middle East/Africa)</li> <li><strong>GBR</strong> (United Kingdom)</li> <li><strong>JPN</strong> (Japan)</li> <li><strong>APC</strong> (Asia-Pacific)</li> <li><strong>AUS</strong> (Australia)</li> <li><strong>CAN</strong> (Canada)</li> <li><strong>IND</strong> (India)</li> <li><strong>FRA</strong> (France)</li>    <li><strong>ARE</strong> (United Arab Emirates)</li> <li><strong>ZAF</strong> (South Africa)</li> <li><strong>CHE</strong> (Switzerland)</li> <li><strong>KOR</strong> (Korea)</li> <li><strong>DEU</strong> (Germany)</li> <li><strong>BRA</strong> (Brazil)</li> <li><strong>NOR</strong> (Norway)</li> <li><strong>SWE</strong> (Sweden)</li> <li><strong>QAT</strong> (Qatar)</li> <li><strong>POL</strong> (Poland)</li> <li><strong>ITA</strong> (Italy)</li></ul></td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pageIndex</td>
+<td>Sets the starting number of the page to get the jobs. <br> The default value is 0.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Sets the number of jobs to display on one page. <br> The default value is 10.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the jobs retrieved. Each job in the response includes various attributes that describe its properties and status.</p>
+<p><strong>Retrieved result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>statusCode</td>
+<td>Http Response Status Code</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Error message</td>
+<td>string</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>API error</td>
+<td>ApiError</td>
+</tr>
+<tr>
+<td>data</td>
+<td>A list of jobs</td>
+<td>jobs</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>API Request ID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>API request time</td>
+<td>string</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>API response metadata</td>
+<td>ResponseMetadata</td>
+</tr>
+<tr>
+<td>traceId</td>
+<td>API Trace ID</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Job summary:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Job ID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Job status</td>
+<td>string</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>Job started time</td>
+<td>string</td>
+</tr>
+<tr>
+<td>finishTime</td>
+<td>Job finished time</td>
+<td>string</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Duration in hours</td>
+<td>string</td>
+</tr>
+<tr>
+<td>backupDetails</td>
+<td>Job details</td>
+<td>module</td>
+</tr>
+<tr>
+<td>jobErrors</td>
+<td>A list of job errors</td>
+<td>list</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Backup details:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>totalNumber</td>
+<td>Total count of objects</td>
+<td>long</td>
+</tr>
+<tr>
+<td>failedNumber</td>
+<td>Number of objects with errors</td>
+<td>long</td>
+</tr>
+<tr>
+<td>successfulNumber</td>
+<td>Number of successful objects</td>
+<td>long</td>
+</tr>
+<tr>
+<td>skippedNumber</td>
+<td>Number of skipped objects</td>
+<td>long</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Job errors:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isErrorCode</td>
+<td>Whether this error has an error code associated.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Error message</td>
+<td>string</td>
+</tr>
+<tr>
+<td>url</td>
+<td>Error code URL</td>
+<td>string</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Occurrences of the error in this job</td>
+<td>long</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response metadata:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>totalNumber</td>
+<td>The total count of the retrieved jobs</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Reference to the next page of results</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/backup/m365/cloudbackupjobs?StartTime=2024-10-24&amp;FinishTime=2024-12-25&amp;ObjectType=0&amp;PageSize=50&amp;PageIndex=1&amp;Location=NAM
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If successful, this method returns a 200 OK response code and a collection of jobs in the response body.<br>
+For details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<pre><code class="lang-json">{
+    &quot;statusCode&quot;: 200, //Http Response Status Code
+    &quot;message&quot;: &quot;&quot;, //Error message
+    &quot;data&quot;: [
+         {
+            &quot;id&quot;: FB20241015105312327583, //Job ID
+            &quot;state&quot;: Finished, // Job status
+            &quot;startTime&quot;: &quot;2024-12-02T07:52:25Z&quot;, // The start time of the job in ISO 8601 format. UTC time.
+            &quot;finishTime&quot;: &quot;2024-12-02T07:53:04Z&quot;, // The finished time of the job in ISO 8601 format. UTC time.
+            &quot;duration&quot;: &quot;0.011&quot;, // Job duration in hours
+            &quot;backupDetails&quot;: {
+                &quot;totalCount&quot;: 16, // Total number of objects involved
+                &quot;failedCount&quot;: 0, // Number of objects with errors
+                &quot;successfulCount&quot;: 14, // Number of successful objects
+                &quot;skippedCount&quot;: 2, // Number of skipped objects
+            },
+            &quot;jobErrors&quot;: []
+        },
+        {
+            &quot;id&quot;: EFB20241015105312828443, //Job ID
+            &quot;state&quot;: Finished, // Job status
+            &quot;startTime&quot;: &quot;2024-12-02T01:33:22Z&quot;, // UTC timestamp for the start time of the job
+            &quot;finishTime&quot;: &quot;2024-12-02T01:34:10Z&quot;, // UTC timestamp for the finished time of the job
+            &quot;duration&quot;:  &quot;0.014&quot;, // Job duration
+            &quot;backupDetails&quot;: {
+                &quot;totalCount&quot;: 438, // Total number of objects involved
+                &quot;failedCount&quot;: 0, // Number of objects with errors
+                &quot;successfulCount&quot;: 438, // Number of successful objects
+                &quot;skippedCount&quot;: 0, // Number of skipped objects
+            },
+            &quot;jobErrors&quot;: []
+        }
+    ],
+    &quot;requestId&quot;: &quot;0HNEVHLNSPSEJ:00000002&quot;, //API Request ID
+    &quot;timestamp&quot;: &quot;2025-08-20T03:25:12.304891Z&quot;, //API request time
+    &quot;metadata&quot;: {
+        &quot;totalCount&quot;: 2,  //Total number of the retrieved jobs
+        &quot;nextLink&quot;: &quot;&quot; // No left results
+    },
+    &quot;traceId&quot;: &quot;00-f33571c212e19c7bad36b255e18b7df2-97d26a62bd4a5b70-00&quot; //API Trace ID
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

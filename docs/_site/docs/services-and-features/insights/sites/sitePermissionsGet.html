@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Site Permissions </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Site Permissions ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-site-permissions">Retrieve Site Permissions</h1>
+
+<p>This API method (<code>/insights/sites/permission</code> navigation property) allows users to retrieve permission-related information of specific site collections. This method is useful for obtaining detailed insights into the permissions granted to site collections.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/insights/sites/permission</code></td>
+<td>insights.graph.readwrite.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve site permissions. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/insights/sites/permission</code></td>
+<td>Retrieves the site permissions.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify the site URLs, page size, and next link to filter the results effectively.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>siteUrls</td>
+<td>Sets the URLs of site collections for which you want to get the permission related information</td>
+<td>list</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Sets the number of results for one page. 100 results on one page at most</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Sets whether to get the remaining results of a request of which the results are more than 100</td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the site permissions retrieved. Each site permission in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>The HTTP response status code</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>message</td>
+<td>The error message</td>
+<td>string</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>The token to be used to get the remaining results of this request</td>
+<td>string</td>
+</tr>
+<tr>
+<td>values</td>
+<td>A list of site permission objects</td>
+<td>list</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Site Permission</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>The data source from which the permission information is retrieved</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the permission</td>
+<td>string</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The sharing link to which the permission applies</td>
+<td>string</td>
+</tr>
+<tr>
+<td>objectType</td>
+<td>The object type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>principalName</td>
+<td>The name of the user or group that has the permission</td>
+<td>string</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address of the user/group</td>
+<td>string</td>
+</tr>
+<tr>
+<td>principalType</td>
+<td>The type of the user or group</td>
+<td>string</td>
+</tr>
+<tr>
+<td>permission</td>
+<td>The level of permission granted</td>
+<td>string</td>
+</tr>
+<tr>
+<td>numberOfMembers</td>
+<td>The number of members in the group, if principalType is a group</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>isExternalUser</td>
+<td>Indicates whether the user is an external user</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>inheritType</td>
+<td>The status of permission inheritance from its parent</td>
+<td>string</td>
+</tr>
+<tr>
+<td>linkGivingAccessTo</td>
+<td>The members who are granted access via sharing link</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Sample</strong></p>
+<p>To use this API, send a <code>GET</code> request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant permission details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/insights/sites/permission?siteUrls=https%3A%2F%2Finsights*****.sharepoint.com%2Fsites%2F365groupchangeteams01&amp;pageSize=100&amp;nextLink=1231
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>The following is a sample response for retrieving the site permissions. Each property in response is explained with a comment for better understanding.</p>
+<pre><code class="lang-json">{
+    &quot;values&quot;: [
+        {
+            &quot;module&quot;: &quot;Microsoft Teams&quot;, // The data source from which the permission information is retrieved
+            &quot;name&quot;: &quot;365Group***team1&quot;, // The name of the permission
+            &quot;url&quot;: &quot;https://insights****.sharepoint.com/sites/365groupchange****&quot;, // The URL of the object to which the permission applies
+            &quot;objectType&quot;: &quot;Site Collection&quot;, // The type of the object (e.g., file, folder, site, site collection)
+            &quot;principalName&quot;: &quot;365Group****** Owners&quot;, // The name of the user or group that has the permission
+            &quot;email&quot;: &quot;&quot;, // The email address of the user or group
+            &quot;principalType&quot;: &quot;SharePoint Group&quot;, // The type of the user or group
+            &quot;permission&quot;: &quot;Full Control&quot;, // The level of permission granted 
+            &quot;numberOfMembers&quot;: 0, // The number of members in the group, if the principal is a group
+            &quot;isExternalUser&quot;: false, // Indicates whether the user is an external user (true/false)
+            &quot;inheritType&quot;: &quot;Unique&quot;, // Indicates whether the object inherits permissions from its parent
+            &quot;linkGivingAccessTo&quot;: null // The members who are granted access via a sharing link
+        }
+    ],
+    &quot;status&quot;: 200, // The HTTP status code of the response
+    &quot;message&quot;: &quot;&quot;, // The message accompanying the response, if any
+    &quot;nextLink&quot;: &quot;I5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOaI5xQOa&quot; // The token for the next page of results, if applicable
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

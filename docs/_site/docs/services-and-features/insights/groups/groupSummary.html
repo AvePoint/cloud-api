@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Group Summary </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Group Summary ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-group-summary">Retrieve Group Summary</h1>
+
+<p>This API method (<code>/insights/groups/summary</code> navigation property) retrieves the group summary information. This method is useful for obtaining an overview of group properties and statuses.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/insights/groups/summary</code></td>
+<td>insights.graph.readwrite.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve group summary information. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/insights/groups/summary</code></td>
+<td>Retrieves the group summary information.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify pagination and page size to filter the results effectively.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>startPage</td>
+<td>The starting page of the query.</td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Sets the number of results for one page. 100 results on one page at most.</td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the groups retrieved. Each group in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>The HTTP response status code</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>message</td>
+<td>The error message</td>
+<td>string</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>The token to be used to get the remaining results of this request</td>
+<td>string</td>
+</tr>
+<tr>
+<td>values</td>
+<td>A list of group summary objects</td>
+<td>list</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Group summary</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>displayName</td>
+<td>Display name of the group</td>
+<td>string</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>Group ID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The group email address</td>
+<td>string</td>
+</tr>
+<tr>
+<td>groupType</td>
+<td>The group type</td>
+<td>sting</td>
+</tr>
+<tr>
+<td>membershipType</td>
+<td>The membership type of the group</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createdOn</td>
+<td>The created time of the group</td>
+<td>string</td>
+</tr>
+<tr>
+<td>externalMemberCount</td>
+<td>The number of the external users in the group</td>
+<td>integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a <code>GET</code> request to the specified endpoint, including necessary parameters as defined. This will return the relevant group summary details in a structured format, enabling easy integration with other systems or applications.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/insights/groups/summary?startPage=1&amp;pageSize=50
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>The following is a sample response for this API method, which includes summary information of the groups retrieved:</p>
+<pre><code class="lang-json">{
+    &quot;values&quot;: [
+        {
+            &quot;displayName&quot;: &quot;SCgroup********&quot;,     //Group name
+            &quot;groupId&quot;: &quot;84888488-8488-8488-8488-848884888488&quot;,    //Microsoft Entra Group ID
+            &quot;email&quot;: null,    //Group email
+            &quot;groupType&quot;: &quot;Security Group&quot;, //Group type
+            &quot;membershipType&quot;: &quot;Assigned&quot;,    //Membership type
+            &quot;createdOn&quot;: &quot;2022-03-07T08:19:41&quot;,//Created  time
+            &quot;externalMemberCount&quot;: 17    //External member count
+        },
+        {
+            &quot;displayName&quot;: &quot;******** Mail-Enabled Security Groups02&quot;,
+            &quot;groupId&quot;: &quot;0e4a0e4a-0e4a-0e4a-0e4a-0e4a0e4a0e4a&quot;,
+            &quot;email&quot;: &quot;Mar2022M********@m365x***63.onmicrosoft.com&quot;,
+            &quot;groupType&quot;: &quot;Mail-enabled security group&quot;,
+            &quot;membershipType&quot;: &quot;Assigned&quot;,
+            &quot;createdOn&quot;: &quot;2022-03-03T01:11:26&quot;,
+            &quot;externalMemberCount&quot;: 15
+        },
+        {
+            &quot;displayName&quot;: &quot;*****Distribution Group01&quot;,
+            &quot;groupId&quot;: &quot;7bc05c3d-930e-496e-b9b0-f6f8ff1b02a7&quot;,
+            &quot;email&quot;: &quot;Mar2022**************01@m365x****63.onmicrosoft.com&quot;,
+            &quot;groupType&quot;: &quot;Distribution group&quot;,
+            &quot;membershipType&quot;: &quot;Assigned&quot;,
+            &quot;createdOn&quot;: &quot;2022-03-03T01:08:58&quot;,
+            &quot;externalMemberCount&quot;: 11
+        },
+        {
+            &quot;displayName&quot;: &quot;SCgroup*******&quot;,
+            &quot;groupId&quot;: &quot;d26ad26a-d26a-d26a-d26a-d26ad26ad26a&quot;,
+            &quot;email&quot;: null,
+            &quot;groupType&quot;: &quot;Security Group&quot;,
+            &quot;membershipType&quot;: &quot;Dynamic&quot;,
+            &quot;createdOn&quot;: &quot;2022-03-02T08:55:50&quot;,
+            &quot;externalMemberCount&quot;: 10
+        },
+        {
+            &quot;displayName&quot;: &quot;********Public Group03&quot;,
+            &quot;groupId&quot;: &quot;cf08cf08-cf08-cf08-cf08-cf08cf08cf08&quot;,
+            &quot;email&quot;: &quot;May202****@insights*****.onmicrosoft.com&quot;,
+            &quot;groupType&quot;: &quot;Microsoft 365 Group&quot;,
+            &quot;membershipType&quot;: &quot;Assigned&quot;,
+            &quot;createdOn&quot;: &quot;2022-03-04T03:45:40&quot;,
+            &quot;externalMemberCount&quot;: 7
+        }
+    ],
+    &quot;status&quot;: 200,
+    &quot;message&quot;: &quot;&quot;,
+    &quot;nextLink&quot;: null
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Get all services of a customer managed by current partner </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Get all services of a customer managed by current partner ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="get-all-services-of-a-customer-managed-by-current-partner">Get all services of a customer managed by current partner</h1>
+
+<p>Use this API to get all services of a customer managed by current partner.</p>
+<h2 id="permissions">Permissions</h2>
+<p>The following permission is required to call the API.<br>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>partner/external/v3/general/customers/{customerId}/services</code></td>
+<td>elements.license.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the details of the HTTP method and endpoint used to get all services of a customer managed by current partner.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>partner/external/v3/general/customers/{customerId}/services</code></td>
+<td>Get all services of a customer managed by current partner.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response">Response</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customerId</td>
+<td>The customer id of the customer.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>organization</td>
+<td>The organization of the customer.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>The email address of the customer.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.Service</td>
+<td>The service name of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.SubscriptionModel</td>
+<td>The subscription model of the license.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.PurchasedUserSeats</td>
+<td>The purchased user seat of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.PurchasedUnits</td>
+<td>The purchased unit of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.MicrosoftLicenseAssigned</td>
+<td>The microsoft license assigned user seat of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.MicrosoftLicenseAvailable</td>
+<td>The microsoft license available user seat of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.PurchasedCapacity</td>
+<td>The purchased capacity of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.ProtectedCapacity</td>
+<td>The protected capacity of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.Storage</td>
+<td>The storage of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.Retention</td>
+<td>The retention of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.ConsumedStorage</td>
+<td>The consumed storage.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.ExpirationDate</td>
+<td>The expiration date of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.Change</td>
+<td>The change of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.Source</td>
+<td>The source of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.PaymentType</td>
+<td>The payment type of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.SubscriptionName</td>
+<td>The subscription name of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.Package</td>
+<td>The package of the service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>products.ContractEndDate</td>
+<td>The contract end date of the service.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/services
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<pre><code class="lang-json">{
+    &quot;customerId&quot;: &quot;1c10525c-121b-4bbc-80a4-2e641bc13421&quot;,
+    &quot;organization&quot;: &quot;test_fly_with_pool_46&quot;,
+    &quot;customer&quot;: &quot;test_fly_with_pool_46@163.com&quot;,
+    &quot;products&quot;: [
+        {
+            &quot;service&quot;: &quot;Cloud Backup for IaaS + PaaS - Unit&quot;,
+            &quot;subscriptionModel&quot;: &quot;N/A&quot;,
+            &quot;purchasedUserSeats&quot;: &quot;N/A&quot;,
+            &quot;purchasedUnits&quot;: &quot;N/A&quot;,
+            &quot;microsoftLicenseAssigned&quot;: &quot;0&quot;,
+            &quot;microsoftLicenseAvailable&quot;: &quot;0&quot;,
+            &quot;purchasedCapacity&quot;: &quot;0/1 GB&quot;,
+            &quot;protectedCapacity&quot;: &quot;0 GB&quot;,
+            &quot;storage&quot;: &quot;Bring your own storage&quot;,
+            &quot;retention&quot;: &quot;N/A&quot;,
+            &quot;consumedStorage&quot;: &quot;N/A&quot;,
+            &quot;expirationDate&quot;: &quot;2025/09/30&quot;,
+            &quot;change&quot;: &quot;N/A&quot;,
+            &quot;source&quot;: &quot;AvePoint pooled subscription&quot;,
+            &quot;paymentType&quot;: &quot;Prepaid&quot;,
+            &quot;subscriptionName&quot;: &quot;N/A&quot;,
+            &quot;package&quot;: &quot;N/A&quot;,
+            &quot;contractEndDate&quot;: &quot;N/A&quot;
+        },
+        {
+            &quot;service&quot;: &quot;Fly Migration to Google&quot;,
+            &quot;subscriptionModel&quot;: &quot;N/A&quot;,
+            &quot;purchasedUserSeats&quot;: &quot;2&quot;,
+            &quot;purchasedUnits&quot;: &quot;N/A&quot;,
+            &quot;microsoftLicenseAssigned&quot;: &quot;0&quot;,
+            &quot;microsoftLicenseAvailable&quot;: &quot;0&quot;,
+            &quot;purchasedCapacity&quot;: &quot;N/A&quot;,
+            &quot;protectedCapacity&quot;: &quot;N/A&quot;,
+            &quot;storage&quot;: &quot;N/A&quot;,
+            &quot;retention&quot;: &quot;N/A&quot;,
+            &quot;consumedStorage&quot;: &quot;N/A&quot;,
+            &quot;expirationDate&quot;: &quot;2025/08/22&quot;,
+            &quot;change&quot;: &quot;N/A&quot;,
+            &quot;source&quot;: &quot;AvePoint subscription&quot;,
+            &quot;paymentType&quot;: &quot;N/A&quot;,
+            &quot;subscriptionName&quot;: &quot;N/A&quot;,
+            &quot;package&quot;: &quot;N/A&quot;,
+            &quot;contractEndDate&quot;: &quot;N/A&quot;
+        }
+    ]
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
