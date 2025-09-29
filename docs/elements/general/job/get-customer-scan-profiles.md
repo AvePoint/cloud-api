@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/batch` | Retrieve all scan profiles configured for a specific customer in AvePoint Online Services|
+| POST | `/partner/external/v3/general/customers/{customerId}/scan-profiles/batch` | Retrieve all scan profiles configured for a specific customer in AvePoint Online Services|
 
 ## Query Parameters
 
@@ -27,6 +27,14 @@ This section outlines the parameters optional required to specify paging informa
 | --- | --- | --- | --- |
 | pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
 | pageSize | The number of customers API will retrieved in a time, the default value is 100. | integer | No |
+
+## Request Body Parameters
+
+This section outlines the request body required to specify which scan profiles you want to retrieve.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| scanProfileIds | The IDs of the scan profiles to be retrieved | string[] | No |
 
 ## Response
 
@@ -47,7 +55,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 
 {
