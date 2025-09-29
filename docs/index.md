@@ -31,9 +31,9 @@ Unlock the full potential of AvePoint Cloud services with our comprehensive API 
       <li><b>Customer Insights</b>: Access detailed information about your customers, including organizational data and subscription details, to drive informed decision-making.</li>
       <li><b>Baseline Management</b>: Track and manage protected data within Cloud Backup for Microsoft 365, ensuring compliance and data integrity.
 </li>
-      <li><b>Risk Management</b>: Follow step-by-step tutorials and examples to get started quickly.</li>
+      <li><b>Risk Management</b>: Retrieve the matched risk rules and view all objects that violate a specific risk rule.</li>
       <li><b>User Management</b>: Protect your integrations with our cutting-edge authentication protocols.</li>
-      <li><b>Workspace Management</b>: Protect your integrations with our cutting-edge authentication protocols.</li>
+      <li><b>Workspace Management</b>: View the workspace statistis of your tenant.</li>
     </ul>
     <div style="text-align: right;">
       <a href="./elements/Overview.md" style="text-decoration:none; color:blue;">See More</a>

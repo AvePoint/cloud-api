@@ -68,6 +68,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | mailboxEmailAddress | The email address. | string |
 | storageUsed | The used storage of the mailbox. The unit is MB. | integer |
 | prohibitSendReceiveQuota | The prohibit send and recieve quota of the mailbox. The unit is MB.| integer |
+| recipientType | The recipient type of the mailbox. <ul><li>1 - User mailbox</li><li>2 - Shared mailbox</li><li>4 - Room mailbox</li><li>8 - Equipment mailbox</li><li>16 - Mail contact</li><li>32 - Mail user</li><li>64 - Guest mail user</li><li>128 - Discovery mailbox</li><li>256 - Legacy mailbox</li><li>512 - Linked mailbox</li><li>1024 - Linked room mailbox</li><li>2048 - Team mailbox</li><li>4096 - Dynamic distribution group</li><li>8192 - Group mailbox</li><li>16384 - Mail forest contact</li><li>32768 - Mail-enabled non-universal group</li><li>65536 - Universal distribution group</li><li>131072 - Universal security group</li><li>262144 - Public folder</li><li>524288 - Public folder mailbox</li><li>1048576 - Remote equipment mailbox</li><li>2097152 - Remote room mailbox</li><li>4194304 - Remote shared mailbox</li><li>8388608 - Remote Team mailbox</li><li>16777216 - Remote user mailbox</li><li>33554432 - Room list</li><li>67108864 - Scheduling mailbox</li></ul> | integer |
 | createdDate | The created date and time of the mailbox. | string |
 | lastActivityDate | The date and time of the mailbox's last activity. | string |
 | prohibitSendQuota | The prohibit send quota of the mailbox. The unit is MB.| integer |
@@ -130,7 +131,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | adminCount | The number of admins. | string |
 | storageUsed | The used storage of the OneDrive. The unit is MB. | integer |
 | storageLimit | The storage limit of the OneDrive. The unit is MB.| integer |
-| changeFileCount | The record's number of files changed. | integer |
+| changeFileCount | The number of file modifications. | integer |
 | guestsCount | The number of guests in the OneDrive. | integer |
 | mark | The status of the OneDrive whether it is marked as fixed.  <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 
@@ -141,8 +142,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | environmentName | The display name of the environment. | string |
 | environmentMakerCount | The number of environment makers. | integer |
-| region | The environment's region. <ul><li>**-1** - None</li><li>**0** - United States</li><li>**1** - Europe</li><li>**2** - Asia</li><li>**3** - Australia</li><li>**4** - India</li><li>**5** - Japan</li><li>**6** - Canada</li><li>**7** - United Kingdom</li><li>**8** - United States First Release</li><li>**9** - South America</li><li>**10** - France</li><li>**11** - Switzerland</li><li>**12** - Germany</li><li>**13** - Korea</li><li>**14** - Norway</li><li>**15** - United Arab Emirates</li><li>**16** - US Gov</li><li>**17** - South Africa</li><li>**18** - Sweden</li><li>**19** - usgovhigh</li></ul> | integer |
-| recipientType | The recipient type of a Microsoft Exchange's mail. <ul><li>1 - UserMailbox</li><li>2 - SharedMailbox</li><li>4 - RoomMailbox</li><li>8 - EquipmentMailbox</li><li>16 - MailContact</li><li>32 - MailUser</li><li>64 - GuestMailUser</li><li>128 - DiscoveryMailbox</li><li>256 - LegacyMailbox</li><li>512 - LinkedMailbox</li><li>1024 - LinkedRoomMailbox</li><li>2048 - TeamMailbox</li><li>4096 - DynamicDistributionGroup</li><li>8192 - GroupMailbox</li><li>16384 - MailForestContact</li><li>32768 - MailNonUniversalGroup</li><li>65536 - MailUniversalDistributionGroup</li><li>131072 - MailUniversalSecurityGroup</li><li>262144 - PublicFolder</li><li>524288 - PublicFolderMailbox</li><li>1048576 - RemoteEquipmentMailbox</li><li>2097152 - RemoteRoomMailbox</li><li>4194304 - RemoteSharedMailbox</li><li>8388608 - RemoteTeamMailbox</li><li>16777216 - RemoteUserMailbox</li><li>33554432 - RoomList</li><li>67108864 - SchedulingMailbox</li></ul> | integer |
+| region | The environment's region. <ul><li>**-1** - None</li><li>**0** - United States</li><li>**1** - Europe</li><li>**2** - Asia</li><li>**3** - Australia</li><li>**4** - India</li><li>**5** - Japan</li><li>**6** - Canada</li><li>**7** - United Kingdom</li><li>**8** - United States</li><li>**9** - South America</li><li>**10** - France</li><li>**11** - Switzerland</li><li>**12** - Germany</li><li>**13** - Korea</li><li>**14** - Norway</li><li>**15** - United Arab Emirates</li><li>**16** - US Gov</li><li>**17** - South Africa</li><li>**18** - Sweden</li><li>**19** - US Gov High</li></ul> | integer |
 | type | The environment type. <ul><li>**1** - Default</li><li>**2** - Trial</li><li>**4** - Sandbox</li><li>**8** - Production</li><li>**16** - Teams</li><li>**32** - Trial (subscription-based)</li><li>**64** - Developer</li></ul> | integer |
 | createdDate | The created date and time of the environment. | string |
 | lastActivityDate | The date and time of the environment's last activity. | string |
@@ -201,28 +201,19 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| workspaceName | The display name of the Power BI workspace. | string |
-| capacityName | The Microsoft Power BI's capacity name. | string |
-| artifactName | The artifact name . | string |
-| workspace | The Microsoft Power BI's workspace. | string |
-| sensitivity | The Microsoft Power BI's sensitivity. | string |
-| adminCount | The record's admin count | string |
-| lastActivityDate | The record's last activity date. | string |
-| createDate | The record's create date. | string |
-| guestUserCount | The record's number of guest users. | integer |
-| reportCount | The Microsoft Power BI's number of reports. | integer |
-| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
-| userCount | The record's number of users. | integer |
+| workspaceName | The display name of the Power BI workspace/report. | string |
+| capacityName | The capacity name of the Power BI workspace.| string |
+| artifactName | The artifact name. | string |
+| workspace | The parent workspace name. | string |
+| sensitivity | The sensitivity level of the Power BI workspace/report. | string |
+| adminCount | The number of admins. | string |
+| lastActivityDate | The date and time of the last activity in the Power BI workspace/report. | string |
+| createdDate | The created date and time of the Power BI workspace/report. | string |
+| guestUserCount | The number of guest users. | integer |
+| reportCount | The number of Power BI reports. | integer |
+| mark | The status of the workspace/report whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
+| userCount | The number of users in the Power BI workspace/report. | integer |
 
-
-**License details:**
-
-| Response | Description | Type |
-| --- | --- | --- |
-| licenseCount | The record's number of license pool count. | integer |
-| licenseDisplayName | The license's display name. | string |
-| licenseKeyName | The license's key name. | string |
-| mark | Indicates whether the record is mark as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 
 
 **User details:**
@@ -235,13 +226,21 @@ If the request has been successfully processed, a 200 OK response will be return
 | upn | The User Principal Name of the user. | string |
 | userType | The user type. <ul><li>**1** - Guest</li><li>**2** - Member</li></ul> | integer |
 | MFAControlledViaCap | The user's MFA status. | bool |
-| lastSignIn | The time when users last sign in to the app/flow. | string |
+| lastSignIn | The time when the user last signed in to Microsoft 365. | string |
 | lastActivityDate | The date and time of the user's last activity. | string |
 | createdDate | The created date and time of the user. | string |
 | signInCount | The number of the user's sign-ins. | integer |
 | mark | The status of the user whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | sourceType | The source type of the user. <ul><li>**0** - None</li><li>**1** - Cloud</li><li>**2** - On-premises</li><li>**4** - Hybrid</li></ul> | integer |
 
+**License details:**
+
+| Response | Description | Type |
+| --- | --- | --- |
+| licenseCount | The license count. | integer |
+| licenseDisplayName | The license display name. | string |
+| licenseKeyName | The license key name. | string |
+| mark | The status of the license whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 
 ## Request Sample
 
@@ -253,7 +252,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d92
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](Use-AvePoint-Graph-API.md#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md/#http-status-code).
 
 ```json 
 {

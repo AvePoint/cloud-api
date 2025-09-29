@@ -4,6 +4,8 @@
   href: "Use-AvePoint-Graph-API.md" 
 - name: Register an App
   href: "register-app.md"
+- name: Change Log
+  href: "change-log.md"
 - name: Common Features
   href: "general/toc.yml"
 - name: Baseline Management
