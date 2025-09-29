@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Cloud Flow Details </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Cloud Flow Details ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-cloud-flow-details">Retrieve Cloud Flow Details</h1>
+
+<p>Use this API to access and retrieve information of your Power Automate cloud flows.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call the API.
+You must register the app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/smp/powerplatform/powerautomate/cloudflows</code></td>
+<td>enpower.data.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section provides details on the HTTP method and endpoint used to retrieve general information of your cloud flows.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/smp/powerplatform/powerautomate/cloudflows</code></td>
+<td>Retrieves your cloud flows' information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>The number of cloud flow records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>The tenant in which data of cloud flows are retrieved. By default, cloud flows of all tenants are retrieved.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the Power Automate cloud flows retrieved. Each flow in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cloudFlows</td>
+<td>A list containing flows with detailed information. For the detailed list of responses, refer to <a href="#flow-details">Flow Details</a>.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>Total number of cloud flows retrieved.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Reference to the next page of results</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flow-details">Flow Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flowId</td>
+<td>The unique identifier of the flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name of the flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>environmentId</td>
+<td>The unique identifier of the environment that the flow belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>environment</td>
+<td>The environment that the flow belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier of the tenant that the flow belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantDomain</td>
+<td>The domain name associated with the tenant.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>containerId</td>
+<td>The unique identifier of the container that the flow belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>container</td>
+<td>The container that the flow belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>The flow type.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createdTime</td>
+<td>The time when the flow was created.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The flow status.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>flowTrigger</td>
+<td>The flow trigger.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>triggered</td>
+<td>Indicates if the flow has been triggered <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>actionCount</td>
+<td>The number of actions in this flow.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>lastModifiedTime</td>
+<td>The latest flow modification time.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastActivityDate</td>
+<td>The latest flow activity date.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastRunTime</td>
+<td>The latest flow running time.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>flowRuns</td>
+<td>The number that the flow has run.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>activitiesLast7Days</td>
+<td>The number of flow activities in the last 7 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>The creator of this flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorDepartment</td>
+<td>The department of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorOffice</td>
+<td>The office of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorStatus</td>
+<td>The status of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorUserType</td>
+<td>The user type of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorCountry</td>
+<td>The country of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorEmail</td>
+<td>The email of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorId</td>
+<td>The unique identifier of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorJobTitle</td>
+<td>The job title of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorUpn</td>
+<td>The user principal name of the flow creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>coOwners</td>
+<td>The number of flow co-owners.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>users</td>
+<td>The number of users who have access to the flow.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>guests</td>
+<td>The number of guest users who have access to the flow.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>shadowUsers</td>
+<td>The number of shadow users who have access to the flow.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>requestEmailSent</td>
+<td>Indicates if EnPower business context has been requested for this flow. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>businessContextResponded</td>
+<td>Indicates if EnPower business context request for this flow has been responded. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>solutions</td>
+<td>Solutions related to this flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>connections</td>
+<td>Connections being used by this flow. For the detailed connection properties, refer to <a href="#connection-details">Connection Details</a>.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>primaryContact</td>
+<td>The Cloud Governance primary contact of the flow. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>secondaryContact</td>
+<td>The Cloud Governance secondary contact of the flow. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>phase</td>
+<td>The Cloud Governance phase of the flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>phaseAssignees</td>
+<td>The Cloud Governance phase assignee of the flow. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>lastRenewalTime</td>
+<td>The latest time when the flow was renewed.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>phaseStartTime</td>
+<td>The renewal start time of the flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>renewalDueDate</td>
+<td>The renewal due date of the flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>nextRenewalDate</td>
+<td>The next renewal date of the flow.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastRenewedBy</td>
+<td>The latest user who renewed this flow. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>renewProfileApplied</td>
+<td>Indicates if any Cloud Governance renewal profile is applied to this flow. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>registered</td>
+<td>Indicates if the flow has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>renewalProfile</td>
+<td>The Cloud Governance renewal profile applied to this flow. For the detailed profile properties, refer to <a href="#cloud-governance-profile-details">Cloud Governance Profile Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>The list of Cloud Governance metadata of this flow. For the detailed metadata properties, refer to <a href="#cloud-governance-metadata-details">Cloud Governance Metadata Details</a>.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>electionProfileApplied</td>
+<td>Indicates if any Cloud Governance contact election profile is applied to this flow. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>contactElectionProfile</td>
+<td>The Cloud Governance renewal profile applied to this flow. For the detailed profile properties, refer to <a href="#cloud-governance-profile-details">Cloud Governance Profile Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>claimStatus</td>
+<td>The Cloud Governance claim status of this flow.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connection-details">Connection Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>connectionName</td>
+<td>The name of connection.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>connectionDisplayName</td>
+<td>The friendly name of connection.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>connectorName</td>
+<td>The name of connector.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>connectorDisplayName</td>
+<td>The friendly name of connector.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>iconUri</td>
+<td>The icon URI of the connection.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>The connection type.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-details">User Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier for the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name of the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address associated with the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier for the tenant that the Cloud Governance user belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>userPrincipalName</td>
+<td>The user principal name of the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>objectId</td>
+<td>The unique object ID for the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>jobTitle</td>
+<td>The job title associated with the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>department</td>
+<td>The department associated with the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>The company name associated with the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>office</td>
+<td>The office location associated with the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city associated with the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>countryOrRegion</td>
+<td>The country or region associated with the Cloud Governance user.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-governance-metadata-details">Cloud Governance Metadata Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metadataType</td>
+<td>The type of metadata. <br> Valid values: <br> <ul><li> <strong>0</strong> for none <br> </li><li> <strong>1</strong> for single line of text <br></li><li> <strong>2</strong> for multiple lines of text <br></li><li> <strong>3</strong> for yes/no <br></li><li> <strong>4</strong> for choice <br></li><li> <strong>5</strong> for people picker filter profile <br></li><li> <strong>6</strong> for managed metadata <br></li><li> <strong>7</strong> for hyperlink <br></li><li> <strong>8</strong> for user profile property <br></li><li> <strong>9</strong> for Microsoft Entra property <br></li><li> <strong>10</strong> for lookup </li></ul></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>value</td>
+<td>The metadata value.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The unique identifier for the metadata.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The metadata name.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>metadataSetting</td>
+<td>The custom metadata.</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-governance-profile-details">Cloud Governance Profile Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier of the profile.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the profile.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/smp/powerplatform/powerautomate/cloudflows
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HTTP Status Code</a>.</p>
+<pre><code class="lang-json">{
+  &quot;cloudFlows&quot;: [
+    {
+      &quot;flowId&quot;: &quot;dbca27a4-c6dc-42e5-9c6f-cac9f4d9b2ea&quot;, // The unique identifier of the flow
+      &quot;displayName&quot;: &quot;FlowName&quot;, // The display name of the flow
+      &quot;environmentId&quot;: &quot;&quot;, // The unique identifier of the environment that the flow belongs to
+      &quot;environment&quot;: &quot;&quot;, // The environment that the flow belongs to
+      &quot;tenantId&quot;: &quot;&quot;, // The unique identifier of the tenant that the flow belongs to
+      &quot;tenantDomain&quot;: &quot;Sample&quot;, // The domain name associated with the tenant
+      &quot;containerId&quot;: &quot;&quot;, // The unique identifier of the container that the flow belongs to
+      &quot;container&quot;: &quot;Sample-CloudFlows&quot;, // The container that the flow belongs to
+      &quot;type&quot;: &quot;Instant&quot;, // The flow type
+      &quot;createdTime&quot;: &quot;2023-11-21 09:56:13&quot;, // The time when the flow was created
+      &quot;status&quot;: &quot;Stopped&quot;, // The flow status
+      &quot;flowTrigger&quot;: &quot;PowerAppsButton&quot;, // The flow trigger
+      &quot;triggered&quot;: false, // Indicates if the flow has been triggered
+      &quot;actionCount&quot;: 1, // The number of actions in this flow
+      &quot;lastModifiedTime&quot;: &quot;2024-07-08 06:25:11&quot;, // The latest flow modification time
+      &quot;lastActivityDate&quot;: &quot;&quot;, // The latest flow activity date
+      &quot;lastRunTime&quot;: &quot;&quot;, // The latest flow running time
+      &quot;flowRuns&quot;: 0, // The number that the flow has run
+      &quot;activitiesLast7Days&quot;: 0, // The number of flow activities in the last 7 days
+      &quot;creator&quot;: &quot;&quot;, // The creator of this flow
+      &quot;creatorDepartment&quot;: &quot;Sample Department&quot;, // The department of the flow creator
+      &quot;creatorOffice&quot;: null, // The office of the flow creator
+      &quot;creatorStatus&quot;: &quot;Enable&quot;, // The status of the flow creator
+      &quot;creatorUserType&quot;: &quot;Member&quot;, // The user type of the flow creator
+      &quot;creatorCountry&quot;: &quot;&quot;, // The country of the flow creator
+      &quot;creatorEmail&quot;: &quot;&quot;, // The email of the flow creator
+      &quot;creatorId&quot;: &quot;&quot;, // The unique identifier of the flow creator
+      &quot;creatorJobTitle&quot;: &quot;&quot;, // The job title of the flow creator
+      &quot;creatorUpn&quot;: &quot;&quot;, // The user principal name of the flow creator
+      &quot;coOwners&quot;: 3, // The number of flow co-owners
+      &quot;users&quot;: 0, // The number of users who have access to the flow
+      &quot;guests&quot;: 0, // The number of guest users who have access to the flow
+      &quot;shadowUsers&quot;: 0, // The number of shadow users who have access to the flow
+      &quot;requestEmailSent&quot;: true, // Indicates if EnPower business context has been requested for this flow
+      &quot;businessContextResponded&quot;: false, // Indicates if EnPower business context request for this flow has been responded
+      &quot;solutions&quot;: &quot;None&quot;, // Solutions related to this flow
+      &quot;connections&quot;: [], // Connections being used by this flow
+      &quot;primaryContact&quot;: {
+        &quot;id&quot;: &quot;&quot;, // The unique identifier of the primary contact for this flow
+        &quot;displayName&quot;: &quot;&quot;, // The display name of the primary contact
+        &quot;email&quot;: &quot;&quot;, // The email address of the primary contact
+        &quot;tenantId&quot;: null, // The tenant ID of the primary contact
+        &quot;userPrincipalName&quot;: &quot;&quot;, // The user principal name of the primary contact
+        &quot;objectId&quot;: &quot;&quot;, // The object ID of the primary contact
+        &quot;jobTitle&quot;: null, // The job title of the primary contact
+        &quot;department&quot;: null, // The department of the primary contact
+        &quot;companyName&quot;: null, // The company name of the primary contact
+        &quot;office&quot;: null, // The office of the primary contact
+        &quot;city&quot;: null, // The city of the primary contact
+        &quot;countryOrRegion&quot;: null // The country or region of the primary contact
+      },
+      &quot;secondaryContact&quot;: null, // The Cloud Governance secondary contact of the flow
+      &quot;phase&quot;: &quot;RenewalExpired&quot;, // The Cloud Governance phase of the flow
+      &quot;phaseAssignees&quot;: null, // The Cloud Governance phase assignee of the flow
+      &quot;lastRenewalTime&quot;: &quot;&quot;, // The latest time when the flow was renewed
+      &quot;phaseStartTime&quot;: &quot;&quot;, // The renewal start time of the flow
+      &quot;renewalDueDate&quot;: &quot;&quot;, // The renewal due date of the flow
+      &quot;nextRenewalDate&quot;: &quot;&quot;, // The next renewal date of the flow
+      &quot;lastRenewedBy&quot;: null, // The latest user who renewed this flow
+      &quot;renewProfileApplied&quot;: true, // Indicates if any Cloud Governance renewal profile is applied to this flow
+      &quot;registered&quot;: true, // Indicates if the flow has been imported to Cloud Governance
+      &quot;renewalProfile&quot;: {
+        &quot;name&quot;: &quot;FlowRenewProfile&quot;, // The name of the Cloud Governance renewal profile applied to this flow
+        &quot;id&quot;: &quot;&quot; // The ID of the Cloud Governance renewal profile applied to this flow
+      },
+      &quot;metadata&quot;: [], // The list of Cloud Governance metadata of this flow
+      &quot;electionProfileApplied&quot;: false, // Indicates if any Cloud Governance contact election profile is applied to this flow
+      &quot;contactElectionProfile&quot;: null, // The Cloud Governance renewal profile applied to this flow
+      &quot;claimStatus&quot;: &quot;Claimed&quot; // The Cloud Governance claim status of this flow
+    }
+  ],
+  &quot;totalCount&quot;: 1,
+  &quot;nextLink&quot;: &quot;&quot; 
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

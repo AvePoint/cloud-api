@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Unusual Activities </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Unusual Activities ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-unusual-activities">Retrieve Unusual Activities</h1>
+
+<p>Get the basic information of unusual activities (<code>/backup/m365/cloudbackupunusualactivitydata</code> navigation property) detected by Cloud Backup for Microsoft 365. By invoking the <code>/backup/m365/cloudbackupunusualactivitydata</code> endpoint, users can gain the number of sites with unusual activities and that are under potential ransomware attacks in your tenant.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/backup/m365/cloudbackupunusualactivitydata</code></td>
+<td>microsoft365backup.unusualActivity.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve the basic information of unusual activities. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/backup/m365/cloudbackupunusualactivitydata</code></td>
+<td>Gets the basic information of unusual activities detected by Cloud Backup for Microsoft 365.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify the detected time range and location to filter the results effectively.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>startTime</td>
+<td>Sets a start time (UTC time) for the detected time range. For example, 2024-01-01.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>finishTime</td>
+<td>Sets a end time (UTC time) for the detected time range. For example, 2024-12-01.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>location</td>
+<td>This parameter is only available for AOS tenants that support Multi-Geo. If no value is set for this parameter, this method retrieves the unusual activities from all locations in your AOS tenant. To get unusual activities from specific data centers, use the following values: <ul><li><strong>PrimaryGeoLocation</strong> (Central AOS location)</li> <li><strong>NAM</strong> (North America)</li> <li><strong>EUR</strong> (Europe/Middle East/Africa)</li> <li><strong>GBR</strong> (United Kingdom)</li> <li><strong>JPN</strong> (Japan)</li> <li><strong>APC</strong> (Asia-Pacific)</li> <li><strong>AUS</strong> (Australia)</li> <li><strong>CAN</strong> (Canada)</li> <li><strong>IND</strong> (India)</li> <li><strong>FRA</strong> (France)</li>    <li><strong>ARE</strong> (United Arab Emirates)</li> <li><strong>ZAF</strong> (South Africa)</li> <li><strong>CHE</strong> (Switzerland)</li> <li><strong>KOR</strong> (Korea)</li> <li><strong>DEU</strong> (Germany)</li> <li><strong>BRA</strong> (Brazil)</li> <li><strong>NOR</strong> (Norway)</li> <li><strong>SWE</strong> (Sweden)</li> <li><strong>QAT</strong> (Qatar)</li> <li><strong>POL</strong> (Poland)</li> <li><strong>ITA</strong> (Italy)</li></ul></td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides the basic information of unusual activities. Each job in the response includes various attributes that describe its properties and status.</p>
+<p><strong>Retrieved result:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>statusCode</td>
+<td>Http Response Status Code</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>message</td>
+<td>error message</td>
+<td>string</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>API error</td>
+<td>ApiError</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Basic information of unusual activities</td>
+<td>unusualactivitydata</td>
+</tr>
+<tr>
+<td>requestId</td>
+<td>API Request ID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>API request time</td>
+<td>string</td>
+</tr>
+<tr>
+<td>traceId</td>
+<td>API Trace ID</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Basic information of unusual activities</strong></p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenantOwner</td>
+<td>Tenant owner</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>Tenant ID</td>
+<td>string</td>
+</tr>
+<tr>
+<td>serviceType</td>
+<td>Type of service <br> Valid values: <br> <ul><li> <strong>0</strong> for Exchange Online <br> </li><li><strong>1</strong> for  SharePoint Online <br> </li><li><strong>2</strong> for OneDrive <br> </li><li><strong>3</strong> for Microsoft 365 Groups <br> </li><li><strong>4</strong> for Project Online <br> </li><li><strong>5</strong> for Public Folder <br> </li><li><strong>6</strong> for Teams <br> </li><li><strong>7</strong> for Public Folder Metadata <br> </li><li><strong>8</strong> for Private Channel <br> </li><li> <strong>9</strong> for Yammer Group <br> </li><li><strong>10</strong> for Personal Chat <br> </li><li><strong>11</strong> for Power BI <br> </li><li><strong>12</strong> for Power Automate <br> </li><li><strong>13</strong> for Shared Channel <br> </li><li><strong>14</strong> for Power Apps</li></ul></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>potentialRansomwareAttackCount</td>
+<td>Number of sites with unusual activities</td>
+<td>long</td>
+</tr>
+<tr>
+<td>unusualActivitiesCount</td>
+<td>Number of sites under potential ransomware attacks</td>
+<td>long</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a <code>GET</code> request to the specified endpoint, including necessary parameters as defined in the references. This will return the basic information of unusual activities in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/backup/m365/cloudbackupunusualactivitydata?StartTime=2024-01-01&amp;FinishTime=2024-12-30&amp;Location=NAM
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If successful, this method returns a 200 OK response code and the basic information of unusual activities in the response body.<br>
+For details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<pre><code class="lang-json">{
+    &quot;statusCode&quot;: 200, //Http Response Status Code
+    &quot;message&quot;: &quot;&quot;, //Error message
+    &quot;data&quot;: {
+        &quot;data&quot;: [
+                    {
+                      &quot;tenantOwner&quot;: &quot;John Doe&quot;, //Tenant owner
+                      &quot;tenantId&quot;: &quot;12345678-1234-1234-1234-123456789012&quot;, //Tenant ID
+                      &quot;serviceType&quot;: 1, //Service type
+                      &quot;potentialRansomwareAttackCount&quot;: 5, //Number of sites with unusual activities
+                      &quot;unusualActivitiesCount&quot;: 10, //Number of sites under potential ransomware attacks
+                    }
+                  ]
+    },
+    &quot;requestId&quot;: &quot;0HNEVHLNSPSEJ:00000004&quot;, //API Request ID
+    &quot;timestamp&quot;: &quot;2025-08-20T03:45:46.3561083Z&quot;,  //API request time
+    &quot;traceId&quot;: &quot;00-670aa1d01485c1a7bbcc88bd48b05ed7-ecfba726763bda2a-00&quot; //API Trace ID
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

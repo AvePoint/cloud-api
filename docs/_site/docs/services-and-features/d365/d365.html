@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Job Information </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Job Information ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-job-information">Retrieve Job Information</h1>
+
+<p>Use this API to retrieve the job-related information (<code>/dynamicsbackup/jobs</code> navigation property) from Cloud Backup for Dynamics 365. By invoking the <code>/dynamicsbackup/jobs</code> endpoint, users can access detailed insights and data about specific job reports, enhancing the ability to manage and analyze job information efficiently.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/dynamicsbackup/jobs</code></td>
+<td>Dynamics.ReadWrite.All</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve job information. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/dynamicsbackup/jobs</code></td>
+<td>Retrieves comprehensive job information.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process. These parameters allow users to specify pagination, job types, time ranges, and other criteria to filter the results effectively.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pageIndex</td>
+<td>Sets the starting number of the page to get the jobs. The default value is 1.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Sets the number of jobs to display on one page. The default value is 10.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Sets the job types that you want to get.<br> Valid values:<br> <ul><li> <strong>0</strong> for all.</li><li> <strong>1</strong> for backup. </li><li> <strong>2</strong> for restore. </li><li><strong>4</strong> for Dryrun</li><li><strong>8</strong> for Retention</li><li><strong>16</strong> for AuditBackup</li><li><strong>32</strong> for Export</li></ul></td>
+<td>Enum</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>Sets a start time (UTC time) for the time range in ISO 8601 format.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>finishTime</td>
+<td>Sets an end time (UTC time) for the time range in ISO 8601 format.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Sets the job status.<ul><li> <strong>2</strong> for In progress</li><li> <strong>3</strong> for Finished</li><li><strong>4</strong> for Failed </li><li><strong>7</strong> for Finished with Exception</li><ul></ul></ul></td>
+<td>Enum</td>
+<td>No</td>
+</tr>
+<tr>
+<td>organizationId</td>
+<td>Sets the organization that you want to get.</td>
+<td>GUID</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<!-- |objectType|Sets the module type of the jobs to get.|Enum|Yes| -->
+<h2 id="response">Response</h2>
+<p>The API response provides detailed information about the jobs retrieved. Each job in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>totalCount</td>
+<td>Total number of jobs matching the query parameters.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>jobs</td>
+<td>A list containing job objects with detailed information.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Reference to the next page of results</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Job details</strong></p>
+<p>Each job retrieved through the API includes detailed attributes that provide insight into its execution and outcome. These attributes help in assessing the performance, status, and specifics of each job, enabling effective management and analysis.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module</td>
+<td>The module associated with the job.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>The type of job performed. <ul><li> <strong>0</strong> for all.</li><li> <strong>1</strong> for backup. </li><li> <strong>2</strong> for restore. </li><li><strong>4</strong> for Dryrun</li><li><strong>8</strong> for Retention</li><li><strong>16</strong> for AuditBackup</li><li><strong>32</strong> for Export</li></ul></td>
+<td>enum</td>
+</tr>
+<tr>
+<td>jobId</td>
+<td>Unique identifier for the job.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>The start time of the job in ISO 8601 format.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>finishTime</td>
+<td>The end time of the job in ISO 8601 format.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>durationHours</td>
+<td>Duration of the job in hours.</td>
+<td>double</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Status of the job.    <ul><li> <strong>2</strong> for In progress</li><li> <strong>3</strong> for Finished</li><li><strong>4</strong> for Failed </li><li><strong>7</strong> for Finished with Exception</li><ul></ul></ul></td>
+<td>enum</td>
+</tr>
+<tr>
+<td>successfulEntity</td>
+<td>Number of entities successfully processed.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>failedEntity</td>
+<td>Number of entities with errors.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>skippedEntity</td>
+<td>Number of entities skipped during processing.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>warningEntity</td>
+<td>Number of entities with warnings.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>totalEntity</td>
+<td>Total number of entities involved in the job.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>successfulRecord</td>
+<td>Number of records successfully processed.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>failedRecord</td>
+<td>Number of records with errors.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>skippedRecord</td>
+<td>Number of records skipped during processing.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>warningRecord</td>
+<td>Number of records with warnings.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>totalRecord</td>
+<td>Total number of records involved in the job.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>backupSize</td>
+<td>Size of the backup created during the job.</td>
+<td>long</td>
+</tr>
+<tr>
+<td>organizationId</td>
+<td>GUID of the organization associated with the job.</td>
+<td>GUID</td>
+</tr>
+<tr>
+<td>organizationName</td>
+<td>Name of the organization associated with the job.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>The following request structure is designed to query a collection of jobs with flexible parameters, allowing you to refine your search based on various criteria. This request supports pagination and filtering to efficiently manage and retrieve job data. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/dynamicsbackup/jobs?pageIndex=1&amp;pageSize=5&amp;startTime=2021-05-22T11:42:00Z&amp;finishTime=2024-09-22T11:42:00Z&amp;type=1&amp;status=3&amp;organizationId=69cb1ecc-f8e8-439b-8077-a4b7fd45e87f
+
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If successful, this method returns a 200 OK response code and a collection of  jobs in the response body.<br>
+For details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<pre><code class="lang-json">{
+    &quot;totalCount&quot;: 20, // Total number of jobs.
+    &quot;nextLink&quot;: &quot;/jobs?pageIndex=2&amp;pageSize=5&amp;startTime=2021-05-22T11:42:00Z&amp;finishTime=2024-09-22T11:42:00Z&amp;type=1&amp;status=3&amp;organizationId=6cccccc-ffff-bbb-88888-aabbccdeee&quot;, //
+    &quot;jobs&quot;: [
+        {
+            &quot;module&quot;: &quot;Customer Engagement&quot;, //Service type.
+            &quot;type&quot;: 1, //Job type.
+            &quot;jobId&quot;: &quot;DCIB2022081903124382222110&quot;, //Unique job ID.
+            &quot;startTime&quot;: &quot;2022-08-19T03:12:43.823Z&quot;, //The start time of the job.
+            &quot;finishTime&quot;: &quot;2022-08-19T03:13:46.633Z&quot;, //The finish time of the job.
+            &quot;durationHours&quot;: 0.01744722222222222, //The job duration in hours.
+            &quot;status&quot;: 3, //Job status.
+            &quot;successfulEntity&quot;: 1, //Number of successful entities.
+            &quot;failedEntity&quot;: 0, //Number of entities with errors.
+            &quot;skippedEntity&quot;: 0, //Number of skipped entities.
+            &quot;warningEntity&quot;: 0, //Number of warning entities. 
+            &quot;totalEntity&quot;: 1, //Total number of entities. 
+            &quot;successfulRecord&quot;: 1, //Number of successful records.
+            &quot;failedRecord&quot;: 0, //Number of records with errors.
+            &quot;skippedRecord&quot;: 0, //Number of skipped records.
+            &quot;warningRecord&quot;: 0, //Number of warning records.
+            &quot;totalRecord&quot;: 1, //Total number of records.
+            &quot;backupSize&quot;: 180832, //The backup data size in bytes.
+            &quot;organizationId&quot;: &quot;6cccccc-ffff-bbb-88888-aabbccdeee&quot;,// Organization GUID
+            &quot;organizationName&quot;: &quot;uatorg123&quot;// Name of the organization
+        },
+        {
+            &quot;module&quot;: &quot;Customer Engagement&quot;,
+            &quot;type&quot;: 1,
+            &quot;jobId&quot;: &quot;DCIB2022081810345391848112&quot;,
+            &quot;startTime&quot;: &quot;2022-08-18T10:34:53.92Z&quot;,
+            &quot;finishTime&quot;: &quot;2022-08-18T10:36:01.603Z&quot;,
+            &quot;durationHours&quot;: 0.018800833333333333,
+            &quot;status&quot;: 3,
+            &quot;successfulEntity&quot;: 1,
+            &quot;failedEntity&quot;: 0,
+            &quot;skippedEntity&quot;: 0,
+            &quot;warningEntity&quot;: 0,
+            &quot;totalEntity&quot;: 1,
+            &quot;successfulRecord&quot;: 2,
+            &quot;failedRecord&quot;: 0,
+            &quot;skippedRecord&quot;: 0,
+            &quot;warningRecord&quot;: 0,
+            &quot;totalRecord&quot;: 2,
+            &quot;backupSize&quot;: 185440,
+            &quot;organizationId&quot;: &quot;6cccccc-ffff-bbb-88888-aabbccdeee&quot;,
+            &quot;organizationName&quot;: &quot;uatorg123&quot;
+        },  
+        {
+            &quot;module&quot;: &quot;Customer Engagement&quot;,
+            &quot;type&quot;: 1,
+            &quot;jobId&quot;: &quot;DCIB2022081810345391848112&quot;,
+            &quot;startTime&quot;: &quot;2022-08-18T10:34:53.92Z&quot;,
+            &quot;finishTime&quot;: &quot;2022-08-18T10:36:01.603Z&quot;,
+            &quot;durationHours&quot;: 0.018800833333333333,
+            &quot;status&quot;: 3,
+            &quot;successfulEntity&quot;: 1,
+            &quot;failedEntity&quot;: 0,
+            &quot;skippedEntity&quot;: 0,
+            &quot;warningEntity&quot;: 0,
+            &quot;totalEntity&quot;: 1,
+            &quot;successfulRecord&quot;: 2,
+            &quot;failedRecord&quot;: 0,
+            &quot;skippedRecord&quot;: 0,
+            &quot;warningRecord&quot;: 0,
+            &quot;totalRecord&quot;: 2,
+            &quot;backupSize&quot;: 185440,
+            &quot;organizationId&quot;: &quot;6cccccc-ffff-bbb-88888-aabbccdeee&quot;,
+            &quot;organizationName&quot;: &quot;uatorg123&quot;
+        },
+        {
+            &quot;module&quot;: &quot;Customer Engagement&quot;,
+            &quot;type&quot;: 1,
+            &quot;jobId&quot;: &quot;DCIB2022081810345391848112&quot;,
+            &quot;startTime&quot;: &quot;2022-08-18T10:34:53.92Z&quot;,
+            &quot;finishTime&quot;: &quot;2022-08-18T10:36:01.603Z&quot;,
+            &quot;durationHours&quot;: 0.018800833333333333,
+            &quot;status&quot;: 3,
+            &quot;successfulEntity&quot;: 1,
+            &quot;failedEntity&quot;: 0,
+            &quot;skippedEntity&quot;: 0,
+            &quot;warningEntity&quot;: 0,
+            &quot;totalEntity&quot;: 1,
+            &quot;successfulRecord&quot;: 2,
+            &quot;failedRecord&quot;: 0,
+            &quot;skippedRecord&quot;: 0,
+            &quot;warningRecord&quot;: 0,
+            &quot;totalRecord&quot;: 2,
+            &quot;backupSize&quot;: 185440,
+            &quot;organizationId&quot;: &quot;6cccccc-ffff-bbb-88888-aabbccdeee&quot;,
+            &quot;organizationName&quot;: &quot;uatorg123&quot;
+        },
+        {
+            &quot;module&quot;: &quot;Customer Engagement&quot;,
+            &quot;type&quot;: 1,
+            &quot;jobId&quot;: &quot;DCIB2022081810345391848112&quot;,
+            &quot;startTime&quot;: &quot;2022-08-18T10:34:53.92Z&quot;,
+            &quot;finishTime&quot;: &quot;2022-08-18T10:36:01.603Z&quot;,
+            &quot;durationHours&quot;: 0.018800833333333333,
+            &quot;status&quot;: 3,
+            &quot;successfulEntity&quot;: 1,
+            &quot;failedEntity&quot;: 0,
+            &quot;skippedEntity&quot;: 0,
+            &quot;warningEntity&quot;: 0,
+            &quot;totalEntity&quot;: 1,
+            &quot;successfulRecord&quot;: 2,
+            &quot;failedRecord&quot;: 0,
+            &quot;skippedRecord&quot;: 0,
+            &quot;warningRecord&quot;: 0,
+            &quot;totalRecord&quot;: 2,
+            &quot;backupSize&quot;: 185440,
+            &quot;organizationId&quot;: &quot;6cccccc-ffff-bbb-88888-aabbccdeee&quot;,
+            &quot;organizationName&quot;: &quot;uatorg123&quot;
+        },
+    ],
+    &quot;pageIndex&quot;: 1, //Page number.
+    &quot;pageSize&quot;: 5 //Number of jobs per page.
+}
+
+</code></pre>
+<!-- ### Responses
+
+If successful, this method returns a 200 OK response code and a collection of  jobs in the response body.
+
+## References
+
+### #/components/schemas/Dynamics365.Enums.BackupRestoreType
+
+The `BackupRestoreType` component is an enumeration used to define different types of backup and restore options within Cloud Backup for Dynamics 365. It employs an integer type for representation.  
+
+```ts
+{
+  "enum": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "type": "integer",
+  "format": "int32"
+}
+```
+
+### #/components/schemas/Dynamics365.Model.PageModel
+
+The `PageModel` component specifies pagination details used within Cloud Backup for Dynamics 365 models. It helps manage how data is presented in a paginated format.  
+
+```ts
+{
+  //Indicates the current page number.
+  currentPage?: integer
+  //Indicates the number of items per page.
+  pageSize?: integer
+}
+```
+
+### #/components/schemas/Dynamics365.Model.Request.JobFilterModel
+
+The `JobFilterModel` is a request schema designated for filtering job-related data from Cloud Backup for Dynamics 365. It allows users to set various criteria to refine their search and retrieval of job information.  
+
+```ts
+{
+  //Contains pagination details with `currentPage` and `pageSize`.
+  pageInfo: {
+    currentPage?: integer
+    pageSize?: integer
+  }
+  //Specifies the job type.
+  type?: enum[0, 1, 2, 4, 8, 16]
+  //Specifies the start time and end time for the time range.
+  startTime?: string
+  endTime?: string
+  //Specifies the job status.
+  status?: integer
+  //Specifies organization ID for filtering by organizations.
+  organizationId?: string
+  //Specifies the object type.
+  objectType?: integer
+}
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+</article></div></main></body></html></article></div></main></body></html>

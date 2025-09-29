@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Resource Mailbox Details </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Resource Mailbox Details ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-resource-mailbox-details">Retrieve Resource Mailbox Details</h1>
+
+<p>Use this API to access and retrieve information of your resource mailboxes.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call the API.
+You must register the app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/smp/exchange/resourcemailboxes</code></td>
+<td>enpower.data.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section provides details on the HTTP method and endpoint used to retrieve general information of your resource mailboxes.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/smp/exchange/resourcemailboxes</code></td>
+<td>Retrieves your resource mailboxes' information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>The number of resource mailbox records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>The tenant in which data of resource mailboxes are retrieved. By default, data of all tenants are retrieved.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>resourceMailboxType</td>
+<td>The type of resource mailboxes to retrieve. <br> Valid values: <br> <ul><li> <strong>0</strong> for <strong>Both</strong> <br> </li><li> <strong>1</strong> for <strong>Room</strong> <br> </li><li> <strong>2</strong> for <strong>Equipment</strong>.</li></ul> By default, both types of resource mailboxes are retrieved.</td>
+<td>enum</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the resource mailboxes retrieved. Each resource mailbox in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resourceMailboxes</td>
+<td>A list containing resource mailboxes with detailed information. For the detailed list of responses, refer to <a href="#resource-mailbox-details">Resource Mailbox Details</a>.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>Total number of resource mailboxes retrieved.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Reference to the next page of results</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resource-mailbox-details">Resource Mailbox Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>The unique identifier of the resource mailbox in PowerShell.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>The unique identifier of the resource mailbox in Microsoft 365.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>principalName</td>
+<td>The user principal name of the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>emailAddress</td>
+<td>The email address of the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>recipientType</td>
+<td>The recipient type of the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status of the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>hiddenFromAddressListsEnabled</td>
+<td>Indicates whether this mailbox is hidden from the address list. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>The time when the resource was created.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>modifiedTime</td>
+<td>The latest time when the resource was modified.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier of the tenant that the resource belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantDomain</td>
+<td>The domain of the tenant that the resource belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>container</td>
+<td>The container that the resource is in.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>containerId</td>
+<td>The unique identifier of the container that the resource is in.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>itemCount</td>
+<td>The number of items in the resource mailbox.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>storageUsed</td>
+<td>The used storage size of the resource mailbox.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>issueWarningQuota</td>
+<td>The maximum storage limit before a warning is issued. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>prohibitSendQuota</td>
+<td>The prohibit send limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>prohibitSendReceiveQuota</td>
+<td>The prohibit send and receive limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>deletedItemCount</td>
+<td>The number of items in the Deleted items folder of the resource mailbox.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>deletedItemSize</td>
+<td>The size of Deleted items folder of the resource mailbox.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>firstScanTime</td>
+<td>The time when the resource was initially scanned into EnPower.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>officeLocation</td>
+<td>The office location of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>businessPhones</td>
+<td>The business phone number of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>department</td>
+<td>The department of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>The company name of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>streetAddress</td>
+<td>The street address of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The state of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>postalCode</td>
+<td>The postal code of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>countryOrRegion</td>
+<td>The country or region of the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>resourceCapacity</td>
+<td>The capacity of the resource.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>addressBookPolicy</td>
+<td>The address book policy of the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttributes</td>
+<td>Extension attributes added to the resource mailbox. For the detailed list of the custom attributes, refer to <a href="#custom-attribute-details">Custom Attribute Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>The notes added to the resource.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>primaryContact</td>
+<td>The Cloud Governance primary contact of the resource mailbox. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>secondaryContact</td>
+<td>The Cloud Governance secondary contact of the resource mailbox. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>The Cloud Governance metadata associated with the resource mailbox. For the detailed metadata properties, refer to <a href="#cloud-governance-metadata-details">Cloud Governance Metadata Details</a>.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>isRegistered</td>
+<td>Indicates if the resource mailbox has been imported to Cloud Governance. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>phase</td>
+<td>The current phase of the resource mailbox in Cloud Governance.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>claimStatus</td>
+<td>The Cloud Governance claim status of the resource mailbox.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="custom-attribute-details">Custom Attribute Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customAttribute1</td>
+<td>The value of custom attribute 1 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute2</td>
+<td>The value of custom attribute 2 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute3</td>
+<td>The value of custom attribute 3 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute4</td>
+<td>The value of custom attribute 4 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute5</td>
+<td>The value of custom attribute 5 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute6</td>
+<td>The value of custom attribute 6 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute7</td>
+<td>The value of custom attribute 7 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute8</td>
+<td>The value of custom attribute 8 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute9</td>
+<td>The value of custom attribute 9 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute10</td>
+<td>The value of custom attribute 10 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute11</td>
+<td>The value of custom attribute 11 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute12</td>
+<td>The value of custom attribute 12 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute13</td>
+<td>The value of custom attribute 13 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute14</td>
+<td>The value of custom attribute 14 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customAttribute15</td>
+<td>The value of custom attribute 15 added to the resource mailbox.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-details">User Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier for the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier for the tenant where the user is hosted.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>userPrincipalName</td>
+<td>The user principal name of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>objectId</td>
+<td>The unique object ID for the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>jobTitle</td>
+<td>The job title associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>department</td>
+<td>The department associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>The company name associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>office</td>
+<td>The office location associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>countryOrRegion</td>
+<td>The country or region associated with the user.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-governance-metadata-details">Cloud Governance Metadata Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metadataType</td>
+<td>The type of metadata. <br> Valid values: <br> <ul><li> <strong>0</strong> for none <br> </li><li> <strong>1</strong> for single line of text <br></li><li> <strong>2</strong> for multiple lines of text <br></li><li> <strong>3</strong> for yes/no <br></li><li> <strong>4</strong> for choice <br></li><li> <strong>5</strong> for people picker filter profile <br></li><li> <strong>6</strong> for managed metadata <br></li><li> <strong>7</strong> for hyperlink <br></li><li> <strong>8</strong> for user profile property <br></li><li> <strong>9</strong> for Microsoft Entra property <br></li><li> <strong>10</strong> for lookup </li></ul></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>value</td>
+<td>The metadata value.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The unique identifier for the metadata.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The metadata name.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>metadataSetting</td>
+<td>The custom metadata.</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/smp/exchange/resourcemailboxes
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HTTP Status Code</a>.</p>
+<pre><code class="lang-json">{
+    &quot;resourceMailboxes&quot;: [
+        {
+            &quot;id&quot;: &quot;73669ae7-55fe-4b47-8fc4-47324c01d5d2&quot;,//The unique identifier of the resource mailbox in PowerShell
+            &quot;userId&quot;: &quot;&quot;,// The unique identifier of the resource mailbox in Microsoft 365
+            &quot;principalName&quot;: &quot;&quot;,// The user principal name of the resource mailbox
+            &quot;name&quot;: &quot;&quot;,// The name of the resource mailbox in PowerShell
+            &quot;emailAddress&quot;: &quot;&quot;,// The email address of the resource mailbox
+            &quot;displayName&quot;: &quot;Sample resource&quot;,// The display name of the resource
+            &quot;recipientType&quot;: &quot;Room mailbox&quot;, // The recipient type of the resource mailbox
+            &quot;status&quot;: &quot;Normal&quot;, // The status of the resource mailbox.
+            &quot;hiddenFromAddressListsEnabled&quot;: false, // Indicates whether this mailbox is hidden from the address list
+            &quot;createTime&quot;: &quot;2025-01-13 02:32:52&quot;, // The time when the resource was created
+            &quot;modifiedTime&quot;: &quot;2025-01-22 23:26:10&quot;, // The latest time when the resource was modified
+            &quot;tenantId&quot;: &quot;&quot;,// The unique identifier of the tenant that the resource belongs to
+            &quot;tenantDomain&quot;: &quot;&quot;, // The domain of the tenant that the resource belongs to
+            &quot;container&quot;: &quot;Default Exchange mailbox container&quot;,// The container that the resource is in
+            &quot;containerId&quot;: &quot;&quot;, // The unique identifier of the container that the resource is in
+            &quot;itemCount&quot;: 56, // The number of items in the resource mailbox
+            &quot;storageUsed&quot;: 0,// The used storage size of the resource mailbox
+            &quot;issueWarningQuota&quot;: 0, // The maximum storage limit before a warning is issued. If the mailbox size reaches or exceeds the value specified, Exchange sends a warning message to the user
+            &quot;prohibitSendQuota&quot;: 0, // The prohibit send limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the user from sending new messages and displays a descriptive error message 
+            &quot;prohibitSendReceiveQuota&quot;: 0, // The prohibit send and receive limit for the mailbox. If the mailbox size reaches or exceeds the specified limit, Exchange prevents the mailbox user from sending new messages and won't deliver any new messages to the mailbox. Any messages sent to the mailbox are returned to the sender with a descriptive error message
+            &quot;deletedItemCount&quot;: 0, // The number of items in the Deleted items folder of the resource mailbox
+            &quot;deletedItemSize&quot;: 0, // The size of Deleted items folder of the resource mailbox
+            &quot;firstScanTime&quot;: &quot;2025-01-13 02:35:03&quot;,// The time when the resource was initially scanned into EnPower
+            &quot;officeLocation&quot;: &quot;Sample data&quot;,// The office location of the resource
+            &quot;businessPhones&quot;: &quot;[\&quot;0000000\&quot;]&quot;,// The business phone number of the resource
+            &quot;department&quot;: &quot;Sample department&quot;,// The department of the resource
+            &quot;companyName&quot;: &quot;Sample company&quot;,// The company name of the resource
+            &quot;streetAddress&quot;: &quot;Sample address&quot;,// The street address of the resource
+            &quot;city&quot;: &quot;Sample city&quot;,// The city of the resource
+            &quot;state&quot;: &quot;Sample state&quot;,// The state of the resource
+            &quot;postalCode&quot;: &quot;&quot;,// The postal code of the resource
+            &quot;countryOrRegion&quot;: &quot;Sample country&quot;,// The country or region of the resource
+            &quot;resourceCapacity&quot;: 9999,// The capacity of the resource
+            &quot;addressBookPolicy&quot;: null,// The address book policy of the resource mailbox
+            &quot;customAttributes&quot;: {//Custom Attributes // Extension attributes added to the resource mailbox
+                &quot;customAttribute1&quot;: &quot;&quot;, // The value of custom attribute 1 added to the resource mailbox
+                &quot;customAttribute2&quot;: &quot;&quot;, // The value of custom attribute 2 added to the resource mailbox
+                &quot;customAttribute3&quot;: &quot;&quot;, // The value of custom attribute 3 added to the resource mailbox
+                &quot;customAttribute4&quot;: &quot;&quot;, // The value of custom attribute 4 added to the resource mailbox
+                &quot;customAttribute5&quot;: &quot;&quot;, // The value of custom attribute 5 added to the resource mailbox
+                &quot;customAttribute6&quot;: &quot;&quot;, // The value of custom attribute 6 added to the resource mailbox
+                &quot;customAttribute7&quot;: &quot;&quot;, // The value of custom attribute 7 added to the resource mailbox
+                &quot;customAttribute8&quot;: &quot;&quot;, // The value of custom attribute 8 added to the resource mailbox
+                &quot;customAttribute9&quot;: &quot;&quot;, // The value of custom attribute 9 added to the resource mailbox
+                &quot;customAttribute10&quot;: &quot;&quot;, // The value of custom attribute 10 added to the resource mailbox
+                &quot;customAttribute11&quot;: &quot;&quot;, // The value of custom attribute 11 added to the resource mailbox
+                &quot;customAttribute12&quot;: &quot;&quot;, // The value of custom attribute 12 added to the resource mailbox
+                &quot;customAttribute13&quot;: &quot;&quot;, // The value of custom attribute 13 added to the resource mailbox
+                &quot;customAttribute14&quot;: &quot;&quot;, // The value of custom attribute 14 added to the resource mailbox
+                &quot;customAttribute15&quot;: &quot;&quot; // The value of custom attribute 15 added to the resource mailbox
+            },
+            &quot;notes&quot;: &quot;&quot;, // The notes added to the resource
+            &quot;primaryContact&quot;: null, // The Cloud Governance primary contact of the resource mailbox
+            &quot;secondaryContact&quot;: null,// The Cloud Governance secondary contact of the resource mailbox
+            &quot;metadata&quot;: [],// The Cloud Governance metadata associated with the resource mailbox
+            &quot;isRegistered&quot;: false,// Indicates if the resource mailbox has been imported to Cloud Governance
+            &quot;phase&quot;: &quot;&quot;,// The current phase of the resource mailbox in Cloud Governance
+            &quot;claimStatus&quot;: &quot;&quot;// The Cloud Governance claim status of the resource mailbox
+        }
+    ],
+    &quot;totalCount&quot;: 1,
+    &quot;nextLink&quot;: &quot;&quot;
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

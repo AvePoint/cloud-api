@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve User Signin Actions </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve User Signin Actions ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-user-signin-actions">Retrieve User Signin Actions</h1>
+
+<p>Use this API to retrieve user signin actions information of a customer tenant in AvePoint Online Services.</p>
+<h2 id="permissions">Permissions</h2>
+<p>The following permission is required to call the API.<br>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/signins/batch</code></td>
+<td>elements.um.user.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve risk signins users information of a customer tennants.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/signins/batch</code></td>
+<td>Retrieve signin actions information of a customer tennant in AvePoint Online Services.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="url-parameters">URL Parameters</h2>
+<p>This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve risk signin according to your specific requirements and preferences.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customerId</td>
+<td>The customer ID of the customer.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The specific tenant ID of the customer.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>This section outlines the parameters optional required to specify paging information about the users you want to retrieve.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pageIndex</td>
+<td>The page number of the data which will be retrieve, the default value is 1.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>The number of users API will retrieved in a time, the default value is 100.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>risky</td>
+<td>Filter for only risky signins.</td>
+<td>bool</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response">Response</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested user information displayed in the response body.</p>
+<table>
+<thead>
+<tr>
+<th>Response</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The id of the user signin record.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>loginTime</td>
+<td>The login time of the user signin record.</td>
+<td>long</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>The userId of the user signin record.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>userDisplayName</td>
+<td>The user DisplayName of the user signin record.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>userPrincipalName</td>
+<td>The user PrincipalName of the user signin record.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>The ip address of the user signin record.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lat</td>
+<td>The lat of the user signin record.</td>
+<td>double</td>
+</tr>
+<tr>
+<td>lon</td>
+<td>The lon of the user signin record.</td>
+<td>double</td>
+</tr>
+<tr>
+<td>country</td>
+<td>The country of the user signin record.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city of the user signin record.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>isRisk</td>
+<td>The risk status of the user signin record.</td>
+<td>bool</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/signins/batch
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;001f0090-5daf-4ea3-b540-b2c060e52500&quot;,
+            &quot;loginTime&quot;: 638907426550000000,
+            &quot;userId&quot;: &quot;4140b563-7c45-4a8a-b0bf-5f44dadcf0fd&quot;,
+            &quot;userDisplayName&quot;: &quot;Bob Mark&quot;,
+            &quot;userPrincipalName&quot;: &quot;mark@element.onmicrosoft.com&quot;,
+            &quot;ip&quot;: &quot;74.207.240.85&quot;,
+            &quot;lat&quot;: 37.56699,
+            &quot;lon&quot;: -121.9827,
+            &quot;country&quot;: &quot;US&quot;,
+            &quot;city&quot;: &quot;Fremont&quot;,
+            &quot;isRisk&quot;: false
+        },
+    ],
+     &quot;metadata&quot;: {
+        &quot;pageIndex&quot;: 1,
+        &quot;pageSize&quot;: 50,
+        &quot;totalCount&quot;: 1
+    }
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

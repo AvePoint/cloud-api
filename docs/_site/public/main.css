@@ -1,0 +1,14 @@
+.navbar-brand {
+  font-size: 16px;
+  padding: 0;
+  margin-right: 0px;
+}
+.navbar-brand #logo {
+  margin-right: 3px;
+  width: 35px;
+  padding-right: 12px;
+  border-right: 2px solid black;
+}
+.navbar {
+  font-weight: 600;
+}

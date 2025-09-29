@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Get Detail Information of A Specific User </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Get Detail Information of A Specific User ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="get-detail-information-of-a-specific-user">Get Detail Information of A Specific User</h1>
+
+<p>Use this API to retrieve detail informations of specific users of a customer tenant in AvePoint Online Services.</p>
+<h2 id="permissions">Permissions</h2>
+<p>The following permission is required to call the API.<br>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}</code></td>
+<td>elements.um.user.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve information about a user.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}</code></td>
+<td>Retrieves basic information for specific users of a customer tenant in AvePoint Online Services.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="url-parameters">URL Parameters</h2>
+<p>This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve user information according to your specific requirements and preferences.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customerId</td>
+<td>The customer ID of the customer.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The specific tenant ID of the customer.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>Unique identifier for the specific user whose details are being requested.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response">Response</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested user information displayed in the response body.</p>
+<table>
+<thead>
+<tr>
+<th>Response</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The ID of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>manager</td>
+<td>The manager of the user</td>
+<td>string</td>
+</tr>
+<tr>
+<td>firstName</td>
+<td>The first name of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>The last name of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name of the user</td>
+<td>string</td>
+</tr>
+<tr>
+<td>jobTitle</td>
+<td>The job title of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>employeeId</td>
+<td>The employeeId of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>alternativeEmailAddress</td>
+<td>The alternate email address or the user.</td>
+<td>string[]</td>
+</tr>
+<tr>
+<td>company</td>
+<td>The company of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>department</td>
+<td>The department  of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>location</td>
+<td>The location of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>passwordNeverExpire</td>
+<td>Indicates whether the user's password is set to never expire.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>lastChangeDate</td>
+<td>The date and time when the user account was last modified.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>age</td>
+<td>The calculated age of the user based on their birthday.</td>
+<td>int</td>
+</tr>
+<tr>
+<td>isTestUser</td>
+<td>Indicates whether this is a test user account for development purposes.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>officePhone</td>
+<td>The business phone number of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>The mobile phone number of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>The birthday of the user</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mail</td>
+<td>The primary email address of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>usageLocation</td>
+<td>The usage location for the user account, typically a country code.(AF: Afghanistan)</td>
+<td>string</td>
+</tr>
+<tr>
+<td>preferredLanguage</td>
+<td>The preferred language setting for the user interface.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>enforceStart</td>
+<td>Indicates whether account enforcement start date is enabled.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>enforceStartDateTime</td>
+<td>The date and time when account enforcement begins.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>enforceEnd</td>
+<td>Indicates whether account enforcement end date is enabled.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>enforceEndDateTime</td>
+<td>The date and time when account enforcement ends.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>postalCode</td>
+<td>The postal code of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>countryRegion</td>
+<td>The country or region where the user is located.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The state or province where the user is located.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address</td>
+<td>The street address of the user's location.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>loginName</td>
+<td>The login name or user principal name used for authentication.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The current status of the user account (Expire, Inactive, etc.). <ul><li><strong>0</strong> - MFA disabled</li><li><strong>1</strong> - Sign-in blocked</li><li><strong>2</strong> - Password expired</li><li><strong>3</strong> - High risk</li><li><strong>4</strong> - Medium risk</li><li><strong>5</strong> - Compliance</li><li><strong>6</strong> - Inactive</li><li><strong>7</strong> - Pending deletion</li><li><strong>8</strong> - Test user</li></ul></td>
+<td>integer[]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-fb26-4353-8dbd-5725fa9edc3f
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<pre><code class="lang-json">{
+    &quot;id&quot;: &quot;7c18fd6f-fb26-4353-8dbd-5725fa9edc3f&quot;,
+    &quot;manager&quot;: &quot;jack@element.onmicrosoft.com&quot;,
+    &quot;firstName&quot;: &quot;Kevin&quot;,
+    &quot;lastName&quot;: &quot;Mark&quot;,
+    &quot;displayName&quot;: &quot;Kevin Mark&quot;,
+    &quot;jobTitle&quot;: &quot;IT&quot;,
+    &quot;employeeId&quot;: &quot;099999&quot;,
+    &quot;alternativeEmailAddress&quot;: [
+        &quot;kevin_Al@element.onmicrosoft.com&quot;
+    ],
+    &quot;company&quot;: &quot;BK Company&quot;,
+    &quot;department&quot;: &quot;DEV&quot;,
+    &quot;location&quot;: &quot;2298&quot;,
+    &quot;passwordNeverExpire&quot;: true,
+    &quot;lastChangeDate&quot;: &quot;1970-01-01T00:00:00Z&quot;,
+    &quot;age&quot;: 37,
+    &quot;isTestUser&quot;: true,
+    &quot;officePhone&quot;: &quot;2323111dsd&quot;,
+    &quot;mobile&quot;: &quot;323111dsd&quot;,
+    &quot;birthday&quot;: 0,
+    &quot;mail&quot;: &quot;kevin@element.onmicrosoft.com&quot;,
+    &quot;usageLocation&quot;: &quot;AF&quot;,
+    &quot;preferredLanguage&quot;: &quot;af-NA&quot;,
+    &quot;enforceStart&quot;: false,
+    &quot;enforceStartDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,
+    &quot;enforceEnd&quot;: false,
+    &quot;enforceEndDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,
+    &quot;postalCode&quot;: &quot;2121&quot;,
+    &quot;countryRegion&quot;: &quot;Antarctica&quot;,
+    &quot;state&quot;: &quot;British Antarctic Territory&quot;,
+    &quot;address&quot;: &quot;Rothera Research Station&quot;,
+    &quot;loginName&quot;: &quot;kevin@element.onmicrosoft.com&quot;,
+    &quot;status&quot;:  [
+        0, 
+        1
+    ],
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

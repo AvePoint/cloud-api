@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Power App Details </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Power App Details ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-power-app-details">Retrieve Power App Details</h1>
+
+<p>Use this API to access and retrieve information of your Power Apps.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call the API.
+You must register the app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/smp/powerplatform/powerapps</code></td>
+<td>enpower.data.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section provides details on the HTTP method and endpoint used to retrieve general information of your Power Apps.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/smp/powerplatform/powerapps</code></td>
+<td>Retrieves your Power Apps' information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>The number of Power App records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>The tenant in which data of Power Apps are retrieved. By default, Power Apps of all tenants are retrieved.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the Power Apps retrieved. Each app in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>powerApps</td>
+<td>A list containing Power Apps with detailed information. For the detailed list of responses, refer to <a href="#power-app-details">Power App Details</a>.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>Total number of apps retrieved.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Reference to the next page of results</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="power-app-details">Power App Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier for the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>appId</td>
+<td>The unique application identifier within Power Platform.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier for the tenant that the Power App belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantDomain</td>
+<td>The domain name associated with the tenant.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>containerId</td>
+<td>The unique identifier for the container that the Power App belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>container</td>
+<td>The name of the container.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>environment</td>
+<td>The Power Platform environment ID that the Power App belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>environmentName</td>
+<td>The display name of the environment.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ownerDisplayName</td>
+<td>The display name of the Power App owner.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ownerStatus</td>
+<td>The status of the Power App owner</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createdOn</td>
+<td>The date and time when the Power App was created</td>
+<td>string</td>
+</tr>
+<tr>
+<td>modifiedOn</td>
+<td>The date and time when the Power App was last modified</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastLaunchedOn</td>
+<td>The latest date and time when the Power App was launched</td>
+<td>string</td>
+</tr>
+<tr>
+<td>sharedUsers</td>
+<td>The number of users with shared access to the Power App.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>sharedGroups</td>
+<td>The number of groups with shared access to the Power App.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>sharedOrganization</td>
+<td>Indicates whether the Power App is shared with the organization. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>appType</td>
+<td>The type of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>appTypeDetail</td>
+<td>Power App’s type details.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>siteUrl</td>
+<td>The URL where the Power App can be accessed.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>backgroundImageUri</td>
+<td>The URI of the background image for the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>The background color of the Power App's user interface.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>hasContextDetail</td>
+<td>Indicates if the Power App has context-related details. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>coOwnerCount</td>
+<td>The number of co-owners of the Power App.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>shadowUserCount</td>
+<td>The number of shadow users of the Power App.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>guestUserCount</td>
+<td>The number of guest users who have access to the Power App.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>ownerUserType</td>
+<td>The user type of the Power App's owner.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>connectorCount</td>
+<td>The number of connectors the Power App is using.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>hasPremiumConnection</td>
+<td>Indicates if the Power App uses a premium connector. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>environmentType</td>
+<td>The type of the environment that the Power App belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>environmentHasSecurityGroup</td>
+<td>Indicates whether the environment has a security group attached. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>creatorDepartment</td>
+<td>The department of the Power App creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorDisplayName</td>
+<td>The display name of the Power App creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorCountry</td>
+<td>The country of the creator of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorId</td>
+<td>The ID of the creator of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorJobTitle</td>
+<td>The job title of the creator of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastActivityDate</td>
+<td>The latest app activity date.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>connectorTier</td>
+<td>The tier of the connector being used in the Power App</td>
+<td>string</td>
+</tr>
+<tr>
+<td>withBusinessContextRequest</td>
+<td>Indicates if the Power App has business context requested via EnPower. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>withBusinessContextResponse</td>
+<td>Indicates if the Power App has responded EnPower’s business context request. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>businessContextLastResponseTime</td>
+<td>The last time an EnPower business context request was responded.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastActivityD7</td>
+<td>The activity count in the last 7 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>appLaunchedCount</td>
+<td>The number of times the Power App has been launched.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>lastPublishOn</td>
+<td>The date and time when the Power App was last published.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quarantineState</td>
+<td>The quarantine status of the canvas app.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The current status of the model-driven app.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>solutionCount</td>
+<td>The number of solutions associated with the Power App.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>solutionNames</td>
+<td>The names of solutions associated with the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>backgroundModelDrivenImageUri</td>
+<td>URI of the background image for model-driven Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>componentState</td>
+<td>The status of the Power App’s components.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>isManaged</td>
+<td>Indicates whether the Power App is managed or unmanaged. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>The number of actions associated with the Power App.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>ownerUserPrincipalName</td>
+<td>The user principal name of the Power App owner in the directory.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorUserPrincipalName</td>
+<td>The user principal name of the Power App creator in the directory</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorOfficeLocation</td>
+<td>The office location of the Power App creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>primaryContact</td>
+<td>The Cloud Governance primary contact of the Power App. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>secondaryContact</td>
+<td>The Cloud Governance secondary contact of the Power App. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>phase</td>
+<td>The current phase of the Power App in Cloud Governance.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>phaseAssignees</td>
+<td>The assignee of the current Cloud Governance phase. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>lastRenewalTime</td>
+<td>The last time the Power App was renewed.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>phaseStartTime</td>
+<td>The renewal start time of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>renewalDueDate</td>
+<td>The renewal due date of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>nextRenewalDate</td>
+<td>The next renewal date of the Power App.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastRenewalBy</td>
+<td>The latest user who renewed the Power App. For the detailed user properties, refer to <a href="#user-details">User Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>renewalProfileApplied</td>
+<td>Indicates if a Cloud Governance renewal profile has been applied to the Power App. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>isRegistered</td>
+<td>Indicates if the Power App was imported to Cloud Governance. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>renewProfile</td>
+<td>The Cloud Governance renewal profile applied to the Power App. For the detailed profile properties, refer to <a href="#cloud-governance-profile-details">Cloud Governance Profile Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>The Cloud Governance metadata associated with the Power App. For the detailed metadata properties, refer to <a href="#cloud-governance-metadata-details">Cloud Governance Metadata Details</a>.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>electionProfileApplied</td>
+<td>Indicates if a Cloud Governance contact election profile was applied to the Power App. <br> Valid values: <br> <ul><li> <strong>true</strong> for yes <br> </li><li> <strong>false</strong> for no <br></li></ul></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>electionProfile</td>
+<td>The Cloud Governance contact election profile applied to the Power App. For the detailed profile properties, refer to <a href="#cloud-governance-profile-details">Cloud Governance Profile Details</a>.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>claimStatus</td>
+<td>The Cloud Governance claim status for the Power App.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-details">User Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier for the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The email address associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier for the tenant where the user is hosted.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>userPrincipalName</td>
+<td>The user principal name of the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>objectId</td>
+<td>The unique object ID for the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>jobTitle</td>
+<td>The job title associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>department</td>
+<td>The department associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>The company name associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>office</td>
+<td>The office location associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>city</td>
+<td>The city associated with the user.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>countryOrRegion</td>
+<td>The country or region associated with the user.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-governance-metadata-details">Cloud Governance Metadata Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metadataType</td>
+<td>The type of metadata. <br> Valid values: <br> <ul><li> <strong>0</strong> for none <br> </li><li> <strong>1</strong> for single line of text <br></li><li> <strong>2</strong> for multiple lines of text <br></li><li> <strong>3</strong> for yes/no <br></li><li> <strong>4</strong> for choice <br></li><li> <strong>5</strong> for people picker filter profile <br></li><li> <strong>6</strong> for managed metadata <br></li><li> <strong>7</strong> for hyperlink <br></li><li> <strong>8</strong> for user profile property <br></li><li> <strong>9</strong> for Microsoft Entra property <br></li><li> <strong>10</strong> for lookup </li></ul></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>value</td>
+<td>The metadata value.</td>
+<td>object</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The unique identifier for the metadata.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The metadata name.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>metadataSetting</td>
+<td>The custom metadata.</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-governance-profile-details">Cloud Governance Profile Details</h3>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier for the profile.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name for the profile.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/smp/powerplatform/powerapps
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HTTP Status Code</a>.</p>
+<pre><code class="lang-json">{
+  &quot;powerApps&quot;: [
+    {
+      &quot;id&quot;: &quot;89508bda-8f4f-48ef-8363-c8890e5dfee4_4ec0fd45-0e35-4f8d-973f-10e45a334c17_default-4ec0fd45-0e35-4f8d-973f-10e45a334c17&quot;, // The unique identifier for the Power app
+      &quot;appId&quot;: &quot;89508bda-8f4f-48ef-8363-c8890e5dfee4&quot;, // The unique application identifier within Power Platform
+      &quot;displayName&quot;: &quot;0613-Ci data01_Restored202410010619_Restored202411120345&quot;, // The display name of the Power app
+      &quot;tenantId&quot;: &quot;&quot;, // The unique identifier for the tenant that the Power App belongs to
+      &quot;tenantDomain&quot;: &quot;Sample&quot;, // The domain name associated with the tenant
+      &quot;containerId&quot;: &quot;&quot;, // The unique identifier for the container that the Power App belongs to
+      &quot;container&quot;: &quot;Sample-Apps&quot;, // The name of the container
+      &quot;environment&quot;: &quot;&quot;, // The Power Platform environment ID that the Power App belongs to
+      &quot;environmentName&quot;: &quot;Sample environment&quot;, // The display name of the environment
+      &quot;ownerDisplayName&quot;: &quot;Sample Owner&quot;, // The display name of the Power App owner
+      &quot;ownerStatus&quot;: &quot;Enable&quot;, // The status of the Power App owner
+      &quot;createdOn&quot;: &quot;2024-06-13 03:19:48&quot;, // The date and time when the Power App was created
+      &quot;modifiedOn&quot;: &quot;2024-12-26 03:58:17&quot;, // The date and time when the Power App was last modified
+      &quot;lastLaunchedOn&quot;: &quot;2024-06-13 03:31:12&quot;, // The latest date and time when the Power App was launched
+      &quot;sharedUsers&quot;: 2, // The number of users with shared access to the Power App
+      &quot;sharedGroups&quot;: 1, // The number of groups with shared access to the Power App
+      &quot;sharedOrganization&quot;: false, // Indicates whether the Power App is shared with the organization
+      &quot;appType&quot;: &quot;Canvas&quot;, // The type of the Power App
+      &quot;appTypeDetail&quot;: &quot;Standard&quot;, // Power App’s type details
+      &quot;siteUrl&quot;: null, // The URL where the Power App can be accessed
+      &quot;backgroundImageUri&quot;: &quot;&quot;, // The URI of the background image of the Power App
+      &quot;backgroundColor&quot;: &quot;RGBA(0,176,240,1)&quot;, // The background color of the Power App's user interface
+      &quot;hasContextDetail&quot;: false, // Indicates if the Power App has context-related details 
+      &quot;coOwnerCount&quot;: 1, // The number of co-owners of the Power App
+      &quot;shadowUserCount&quot;: 0, // The number of shadow users of the Power App
+      &quot;guestUserCount&quot;: 0, // The number of guest users who have access to the Power App
+      &quot;ownerUserType&quot;: &quot;Member&quot;, // The user type of the Power App's owner
+      &quot;connectorCount&quot;: 3, // The number of connectors the Power App is using
+      &quot;hasPremiumConnection&quot;: false, // Indicates if the Power App uses a premium connector 
+      &quot;environmentType&quot;: &quot;Default&quot;, // The type of the environment that the Power App belongs to
+      &quot;environmentHasSecurityGroup&quot;: false, // Indicates whether the environment has a security group attached
+      &quot;creatorDepartment&quot;: &quot;01&quot;, // The department of the Power App creator
+      &quot;creatorDisplayName&quot;: &quot;Sample User&quot;, // The display name of the Power App creator
+      &quot;creatorCountry&quot;: &quot;&quot;, // The country of the creator of the Power App
+      &quot;creatorId&quot;: &quot;&quot;, // The ID of the creator of the Power App
+      &quot;creatorJobTitle&quot;: &quot;&quot;, // The job title of the creator of the Power App
+      &quot;lastActivityDate&quot;: &quot;&quot;, // The latest app activity date
+      &quot;connectorTier&quot;: &quot;Standard&quot;, // The tier of the connector being used in the Power App
+      &quot;withBusinessContextRequest&quot;: false, // Indicates if the Power App has business context requested via EnPower
+      &quot;withBusinessContextResponse&quot;: false, // Indicates if the Power App has responded EnPower’s business context request
+      &quot;businessContextLastResponseTime&quot;: &quot;&quot;, // The last time an EnPower business context request was responded
+      &quot;lastActivityD7&quot;: 0, // The activity count in the last 7 days
+      &quot;appLaunchedCount&quot;: 0, // The number of times the Power app has been launched
+      &quot;lastPublishOn&quot;: &quot;2024-12-26 03:58:11&quot;, // The date and time when the Power app was last published
+      &quot;quarantineState&quot;: &quot;Quarantined&quot;, // The quarantine status of the Power App
+      &quot;status&quot;: &quot;None&quot;, // The current status of the Power App
+      &quot;solutionCount&quot;: 0, // The number of solutions associated with the Power App
+      &quot;solutionNames&quot;: null, // The names of solutions associated with the Power App
+      &quot;backgroundModelDrivenImageUri&quot;: &quot;&quot;, // URI of the background image for model-driven Power Apps
+      &quot;componentState&quot;: &quot;&quot;, // The status of the Power App’s components
+      &quot;isManaged&quot;: null, // Indicates whether the Power App is managed or unmanaged 
+      &quot;actions&quot;: 0, // The number of actions associated with the Power App
+      &quot;ownerUserPrincipalName&quot;: &quot;&quot;, // The user principal name of the Power App owner in the directory
+      &quot;creatorUserPrincipalName&quot;: &quot;&quot;, // The user principal name of the Power App creator in the directory
+      &quot;creatorOfficeLocation&quot;: null, // The office location of the Power App creator
+      &quot;primaryContact&quot;: null, // The Cloud Governance primary contact of the Power App
+      &quot;secondaryContact&quot;: null, // The Cloud Governance secondary contact of the Power App
+      &quot;phase&quot;: null, // The current phase of the Power App in Cloud Governance
+      &quot;phaseAssignees&quot;: null, // The assignee of the current Cloud Governance phase
+      &quot;lastRenewalTime&quot;: &quot;&quot;, // The last time the Power App was renewed
+      &quot;phaseStartTime&quot;: &quot;&quot;, // The renewal start time of the Power App
+      &quot;renewalDueDate&quot;: &quot;&quot;, // The renewal due date of the Power App
+      &quot;nextRenewalDate&quot;: &quot;&quot;, // The next renewal date of the Power App
+      &quot;lastRenewalBy&quot;: null, // The latest user who renewed the Power App
+      &quot;renewProfileApplied&quot;: null, // Indicates if a Cloud Governance renewal profile has been applied to the Power App
+      &quot;isRegistered&quot;: false, // Indicates if the Power App was imported to Cloud Governance 
+      &quot;renewProfile&quot;: null, // The Cloud Governance renewal profile applied to the Power App
+      &quot;metadata&quot;: [], // The Cloud Governance metadata associated with the Power App
+      &quot;electionProfileApplied&quot;: null, // Indicates if a Cloud Governance contact election profile was applied to the Power App 
+      &quot;electionProfile&quot;: null, // The Cloud Governance contact election profile applied to the Power App
+      &quot;claimStatus&quot;: null // The Cloud Governance claim status for the Power App
+    }
+  ],
+  &quot;totalCount&quot;: 1,
+  &quot;nextLink&quot;: &quot;&quot;
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

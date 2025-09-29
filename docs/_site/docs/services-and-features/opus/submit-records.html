@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Submit Records </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Submit Records ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="submit-records">Submit Records</h1>
+
+<p>Use this API to submit records to AvePoint Opus.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You need to download the JSON file of each connection from AvePoint Opus &gt; Settings &gt; Connector to prepare the record information; you can submit up to 15 records to AvePoint Opus at a time.</p>
+</div>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call this API.<br>
+You must register an app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/records/connector/records</code></td>
+<td>records.readwrite.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to submit records to AvePoint Opus.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/records/connector/records</code></td>
+<td>Submits records to AvePoint Opus.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-parameters">Request Parameters</h2>
+<p>The API requires multiple parameters to submit records to AvePoint Opus.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The ID of the connection.</td>
+<td>GUID</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>conflictOption</td>
+<td>The conflict resolution when there are records with the same unique key.<ul><li> <strong>Overwrite</strong> to overwrite the record information in AvePoint Opus.</li><li> <strong>Skip</strong> to skip submitting the record to AvePoint Opus. </li></ul></td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>rowKey</td>
+<td>The unique key of the record.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>leafName</td>
+<td>The internal name of the built-in <strong>Name</strong> column in the connection.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>termFullPath</td>
+<td>The internal name of the built-in <strong>Classification</strong>  column in the connection. The value must be the full path of a term in AvePoint Opus.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>timeCreated</td>
+<td>The internal name of the built-in <strong>Created time</strong> column in the connection.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>timeModified</td>
+<td>The internal name of the built-in <strong>Modified time</strong> column in the connection.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>The internal name of the built-in <strong>Created by</strong> column in the connection.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>modifiedBy</td>
+<td>The internal name of the built-in <strong>Modified by</strong> column in the connection.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>AvePoint Opus supports creating custom columns of different types to meet your requirements for variable record properties. When submitting records with custom columns, enter the internal name of each custom column you have defined in the connection. Values of custom columns are optional. For details, refer to <a href="https://cdn.avepoint.com/assets/webhelp/avepoint-opus/index.htm#!Documents/createconnections.htm">Create Connections</a>.</p>
+<ul>
+<li>For the <strong>Single line of text</strong> type of column, value should be a single of text.</li>
+<li>For the <strong>Multiple lines of text</strong> type of column, value should be multiple lines of text.</li>
+<li>For the <strong>Date and Time</strong> type of column, value should be a date and/or time.</li>
+<li>For the <strong>Choice (single selection)</strong> type of column, value should be the numerical order of the correct option.</li>
+<li>For the <strong>Choice (multiple selections)</strong> type of column, value should be the numerical orders of the correct options separated by commas in square brackets.</li>
+<li>For the <strong>Person or Group</strong> type of column, value should be the full email address of users and/or groups separated by commas in square brackets. If the user or group does not exist in AvePoint Opus, AvePoint Opus will query it in the Microsoft Entra that is authorized via the app profile in AvePoint Online Services.</li>
+<li>For the <strong>Number</strong> type of column, value should be a number.</li>
+</ul>
+</div>
+<h2 id="response">Response</h2>
+<p>The API response provides the outcome of the request.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>statusCode</td>
+<td>The request status code.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>message</td>
+<td>The request outcome.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>failedItems</td>
+<td>If some records failed to be submitted to AvePoint Opus, this parameter would appear, displaying the records failed in the request.</td>
+<td>Arrary</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a <code>POST</code> request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the AvePoint Opus environment in the US - East region.</p>
+<p><strong>URL</strong></p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/records/connector/records
+</code></pre>
+<p><strong>Body (raw-JSON)</strong></p>
+<pre><code class="lang-json">{  
+    &quot;id&quot;: &quot;d9da492f-cc67-4920-99f9-6fbaae1f1410&quot;, // The ID of the connection.
+      &quot;conflictOption&quot;: &quot;Overwrite&quot;, // The conflict resolution when there are records with the same unique key. Overwrite is to overwrite the record information in AvePoint Opus.
+      &quot;data&quot;: [
+          {
+          &quot;rowKey&quot;: &quot;SingleText&quot;, // The unique key of the record.
+          &quot;leafName&quot;: &quot;SingleText&quot;, // The internal name of the built-in Name column in the connection.
+          &quot;termFullPath&quot;: &quot;Taxonomy&quot;, // The internal name of the built-in Classification column in the connection.
+          &quot;timeCreated&quot;: &quot;DateTime&quot;, // The internal name of the built-in Created time column in the connection. 
+          &quot;timeModified&quot;: &quot;DateTime&quot;, // The internal name of the built-in Modified time column in the connection.
+          &quot;createdBy&quot;: &quot;SingleText&quot;, // The internal name of the built-in Created by column in the connection.
+          &quot;modifiedBy&quot;: &quot;SingleText&quot;, // The internal name of the built-in Modified by column in the connection.
+          }
+      ]
+ }
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 201 response code will be returned.<br>
+For details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<pre><code class="lang-json">{
+    &quot;statusCode&quot;: 201, // The request status code.
+    &quot;message&quot;: null // This message appears when the request has been successfully processed.
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

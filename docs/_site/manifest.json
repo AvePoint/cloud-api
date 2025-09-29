@@ -1,0 +1,1835 @@
+{
+  "source_base_path": "C:/Users/avepoint_admin/Desktop/New folder (2)/api-docs/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/Overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/Use-AvePoint-Graph-API.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/Use-AvePoint-Graph-API.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/Use-Cases.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/Use-Cases.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/change-log.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/change-log.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/register-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/register-app.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/aos/aos.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/aos/aos.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/aos/jobs.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/aos/jobs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/aos/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/aos/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/aos/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/d365/d365.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/d365/d365.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/d365/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/d365/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/d365/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/customers/all-customers.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/customers/all-customers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/customers/specific-customers.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/customers/specific-customers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/elements/customers/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/customers/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/elements/customers/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/data-protection/customers-protected.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/data-protection/customers-protected.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/elements/data-protection/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/data-protection/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/elements/data-protection/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/jobs/all-backup-jobs.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/jobs/all-backup-jobs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/jobs/specific-backup-jobs.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/jobs/specific-backup-jobs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/elements/jobs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/jobs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/elements/jobs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/scan-profiles/all-scan-profiles.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/scan-profiles/all-scan-profiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/scan-profiles/daily-scan-profile-change-details.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/scan-profiles/daily-scan-profile-change-details.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/scan-profiles/daily-scan-profile-changes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/scan-profiles/daily-scan-profile-changes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/scan-profiles/specific-scan-profiles.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/scan-profiles/specific-scan-profiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/elements/scan-profiles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/scan-profiles/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/elements/scan-profiles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/services/service-subscription-customer.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/services/service-subscription-customer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/elements/services/service-subscription.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/services/service-subscription.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/elements/services/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/services/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/elements/services/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/elements/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/elements/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/elements/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/connections.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/connections.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/copilotstudio/activities.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/copilotstudio/activities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/copilotstudio/agents.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/copilotstudio/agents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/enpower/copilotstudio/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/copilotstudio/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/enpower/copilotstudio/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/enpower.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/enpower.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/environments.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/environments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/exchange/resourcemailboxes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/exchange/resourcemailboxes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/enpower/exchange/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/exchange/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/enpower/exchange/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/exchange/userandsharedmailboxes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/exchange/userandsharedmailboxes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/flows/activities.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/flows/activities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/flows/cloudflows.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/flows/cloudflows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/flows/cloudrunhistories.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/flows/cloudrunhistories.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/flows/connectionusage.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/flows/connectionusage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/flows/desktopflows.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/flows/desktopflows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/flows/desktoprunhistories.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/flows/desktoprunhistories.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/enpower/flows/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/flows/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/enpower/flows/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerapps/activities.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerapps/activities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerapps/applaunches.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerapps/applaunches.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerapps/launchedusers.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerapps/launchedusers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerapps/powerapps.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerapps/powerapps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/enpower/powerapps/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerapps/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/enpower/powerapps/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/activeusers.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/activeusers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/artifacts.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/artifacts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/datasourcecount.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/datasourcecount.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/datasourcedetails.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/datasourcedetails.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/semanticmodelbydatasource.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/semanticmodelbydatasource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/semanticmodels.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/semanticmodels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/enpower/powerbi/workspaces.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/powerbi/workspaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/enpower/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/enpower/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/enpower/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/google/google.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/google/google.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/google/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/google/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/google/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/iaas-paas/iaas-paas.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/iaas-paas/iaas-paas.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/iaas-paas/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/iaas-paas/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/iaas-paas/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/drives/drivePermissionsExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/drives/drivePermissionsExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/drives/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/drives/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/drives/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/exportJobs/exportJobFile.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/exportJobs/exportJobFile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/exportJobs/exportJobStatus.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/exportJobs/exportJobStatus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/exportJobs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/exportJobs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/exportJobs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/groups/googleGroupAccessReport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/groups/googleGroupAccessReport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/groups/groupAccessReport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/groups/groupAccessReport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/groups/groupSummary.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/groups/groupSummary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/groups/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/groups/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/groups/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/objects/googleObjectActivities.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/objects/googleObjectActivities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/objects/objectActivities.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/objects/objectActivities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/objects/setTag.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/objects/setTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/objects/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/objects/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/objects/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sharingLinks/googleLinkExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sharingLinks/googleLinkExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sharingLinks/linkExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sharingLinks/linkExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sharingLinks/linkSummary.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sharingLinks/linkSummary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/sharingLinks/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sharingLinks/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/sharingLinks/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sites/siteDetailRecords.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sites/siteDetailRecords.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sites/siteId.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sites/siteId.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sites/siteOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sites/siteOverview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sites/sitePermissionsExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sites/sitePermissionsExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/sites/sitePermissionsGet.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sites/sitePermissionsGet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/sites/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/sites/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/sites/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/users/googleUserActivitiesExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/users/googleUserActivitiesExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/users/googleUserPermissionsExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/users/googleUserPermissionsExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/insights/users/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/users/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/insights/users/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/users/userActivitiesExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/users/userActivitiesExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/users/userPermissions.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/users/userPermissions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/users/userPermissionsExport.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/users/userPermissionsExport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/insights/users/userSummary.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/insights/users/userSummary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/m365/jobs.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/m365/jobs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/m365/subscription.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/m365/subscription.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/m365/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/m365/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/m365/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/m365/unusual-activities.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/m365/unusual-activities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/opus/destroy-records.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/opus/destroy-records.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/opus/retrieve-due-records.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/opus/retrieve-due-records.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/services-and-features/opus/submit-records.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/opus/submit-records.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/opus/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/opus/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/opus/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/services-and-features/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/services-and-features/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/services-and-features/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/Overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/Overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/Use-AvePoint-Graph-API.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/Use-AvePoint-Graph-API.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/baseline-management/create-baseline.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/baseline-management/create-baseline.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/baseline-management/query-baselines.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/baseline-management/query-baselines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/baseline-management/query-create-baseline-job-report-detail.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/baseline-management/query-create-baseline-job-report-detail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/baseline-management/query-job.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/baseline-management/query-job.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/baseline-management/query-tenant.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/baseline-management/query-tenant.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/baseline-management/tenant-action.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/baseline-management/tenant-action.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/baseline-management/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/baseline-management/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/baseline-management/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/customer/get-all-customers.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/customer/get-all-customers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/customer/get-single-customer.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/customer/get-single-customer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/customer/onboard-customer.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/customer/onboard-customer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/general/customer/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/customer/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/general/customer/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/job/get-customer-cloud-backup-m365-overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/get-customer-cloud-backup-m365-overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/job/get-customer-jobs.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/get-customer-jobs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/job/get-customer-scan-profile-detail.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/get-customer-scan-profile-detail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/job/get-customer-scan-profile-v2-detail.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/get-customer-scan-profile-v2-detail.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/job/get-customer-scan-profile-v2.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/get-customer-scan-profile-v2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/job/get-customer-scan-profiles.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/get-customer-scan-profiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/general/job/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/general/job/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/service subscription/add-service.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/service subscription/add-service.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/service subscription/get-all-services.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/service subscription/get-all-services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/service subscription/get-single-customer-service.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/service subscription/get-single-customer-service.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/general/service subscription/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/service subscription/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/general/service subscription/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/tenant/get-3rd-party-products-overview-type.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/tenant/get-3rd-party-products-overview-type.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/tenant/get-3rd-party-products-users-type.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/tenant/get-3rd-party-products-users-type.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/tenant/get-avpt-products-overview-type.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/tenant/get-avpt-products-overview-type.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/general/tenant/get-cloud-backup-m365-users-batch.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/tenant/get-cloud-backup-m365-users-batch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/general/tenant/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/tenant/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/general/tenant/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/general/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/general/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/register-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/register-app.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/risk-management/all-data-source-match-risk-rule.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/risk-management/all-data-source-match-risk-rule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/risk-management/specific-rule-detail-hit-items.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/risk-management/specific-rule-detail-hit-items.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/risk-management/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/risk-management/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/risk-management/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/dashboard_public_api/dashboard_public_api.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/dashboard_public_api/dashboard_public_api.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/user-management/dashboard_public_api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/dashboard_public_api/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/user-management/dashboard_public_api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/risky_public_api/get-compliance-category.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/risky_public_api/get-compliance-category.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/risky_public_api/get-risk-action.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/risky_public_api/get-risk-action.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/risky_public_api/get-risk-analyze-workflow.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/risky_public_api/get-risk-analyze-workflow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/risky_public_api/get-sign-in.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/risky_public_api/get-sign-in.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/user-management/risky_public_api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/risky_public_api/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/user-management/risky_public_api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/user-management/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/user-management/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/get-information-user.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/get-information-user.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/get-multi-information-users.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/get-multi-information-users.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/language.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/language.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/user-management/user_public_api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/user-management/user_public_api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-account-information.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-account-information.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-birthday.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-birthday.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-contact-information.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-contact-information.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-email-address.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-email-address.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-general-information.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-general-information.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-istest.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-istest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-manager.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-manager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-office-information.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-office-information.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-office.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-office.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/update-password-setting.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/update-password-setting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/user-management/user_public_api/usage_location.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/user-management/user_public_api/usage_location.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "elements/workspace-management/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "elements/workspace-management/toc.html"
+        },
+        ".json": {
+          "relative_path": "elements/workspace-management/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/workspace-management/total-of-workspace-dspm.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/workspace-management/total-of-workspace-dspm.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/workspace-management/total-of-workspace-ransomware-detection.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/workspace-management/total-of-workspace-ransomware-detection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/workspace-management/total-of-workspaces-incompliance.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/workspace-management/total-of-workspaces-incompliance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "elements/workspace-management/total-of-workspaces.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/workspace-management/total-of-workspaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

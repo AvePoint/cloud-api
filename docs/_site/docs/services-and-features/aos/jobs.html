@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Scan Job Information </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Scan Job Information ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-scan-job-information">Retrieve Scan Job Information</h1>
+
+<p>Get the scan job information (<code>/aos/jobs</code> navigation property) from AvePoint Online Services.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call the API. You must register an app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/aos/jobs</code></td>
+<td>autodiscovery.readwrite.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint that is used to retrieve scan jobs.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/aos/jobs</code></td>
+<td>Gets the scan job information of AvePoint Online Services.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>Sets the number of jobs to display on one page. The default value is 100. You can enter a number from 1 to 1000.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>skip</td>
+<td>Specifies the number of items to skip in the queried collection before retrieving the results. The default value is 0.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>orderby</td>
+<td>Sets the order in which items are returned. By default, the returned items are ordered by jobs' startTime values.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>sortorder</td>
+<td>Sets a custom order (sort by time) for returned items in the results.<br> Valid values:<br> <ul><li> <strong>0</strong> (oldest on top)</li><li> <strong>1</strong> (newest on top) </li></ul></td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>search</td>
+<td>Specifies Job ID values to search jobs.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response">Response</h2>
+<p>The API response provides detailed information about the jobs retrieved. Each job in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jobs</td>
+<td>A list containing jobs with detailed information.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>Total number of retrieved jobs.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>nextLink</td>
+<td>Reference to the next page of results.</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Job details</strong></p>
+<p>Each job retrieved through the API includes detailed attributes that offer insights into its execution and outcome. These attributes assist in evaluating the performance, status, and specifics of each job, facilitating effective management and analysis.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Unique identifier for the scan job.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Type of the scan job. <br> Valid values:<br> <ul><li> <strong>0</strong> (scan job for Microsoft 365 or Power Platform objects)</li><li> <strong>10</strong> (scan job for Google objects) </li><li> <strong>11</strong> (batch import job) </li></ul></td>
+<td>enum</td>
+</tr>
+<tr>
+<td>state</td>
+<td>Status of the scan job.<br> Valid values:<br> <ul><li> <strong>1</strong> for Running </li><li> <strong>2</strong> for Finished </li><li><strong>3</strong> for Failed</li><li><strong>4</strong> for Finished with exception</li><li><strong>5</strong> for Skipped</li><li><strong>10</strong> for Stopped</li></ul></td>
+<td>enum</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>The start time of the job in ISO 8601 format.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>finishTime</td>
+<td>The end time of the job in ISO 8601 format.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>scanProfileName</td>
+<td>The name of the scan profile used to run the scan job.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>category</td>
+<td>The scan profile category for the scan job.<br> Valid values:<br> <ul><li> <strong>0</strong> (Microsoft 365) </li><li> <strong>1</strong> (Power Platform) </li><li> <strong>2</strong> (Active Directory) </li><li> <strong>3</strong> (Google) </li></ul></td>
+<td>enum</td>
+</tr>
+<tr>
+<td>extension</td>
+<td>This parameter is for adding extension later. The current value is <strong>null</strong>.</td>
+<td>Object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>The following request structure is designed to query a collection of jobs with flexible parameters, allowing you to refine your search based on various criteria. This request supports pagination and filtering to efficiently manage and retrieve job data. This request sample is an API call to the AvePoint Online Services environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/aos/jobs?top=2&amp;orderby=StartTime&amp;sortorder=1
+
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If successful, this method returns a 200 OK response code and a collection of jobs in the response body. For details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HTTP Status Code</a>.</p>
+<pre><code class="lang-json">{
+    &quot;jobs&quot;: [
+        {
+            &quot;id&quot;: &quot;Scan20240926055840723067&quot;, // A scan job ID
+            &quot;type&quot;: 0, // Type of the job is to scan Microsoft 365 or Power Platform objects
+            &quot;state&quot;: 2, // Status of the job is Finished
+            &quot;startTime&quot;: &quot;2024-09-26T05:58:40.4092427+00:00&quot;, // UTC timestamp for the start time of the job
+            &quot;finishTime&quot;: &quot;2024-09-26T05:59:12.2300688+00:00&quot;, // UTC timestamp for the finished time of the job       
+            &quot;scanProfileName&quot;: &quot;scan sharepoint sites&quot;, // The name of the scan profile used to run the scan job
+            &quot;category&quot;: 0, // The scan profile category is Microsoft 365
+            &quot;extension&quot;: null, // No extension
+        },
+        {
+            &quot;id&quot;: &quot;Scan20240926051311702920&quot;, // A scan job ID
+            &quot;type&quot;: 0, // Type of the job is to scan Microsoft 365 or Power Platform objects 
+            &quot;state&quot;: 2, // Status of the job is Finished
+            &quot;startTime&quot;: &quot;2024-09-26T05:13:11.0634642+00:00&quot;, // UTC timestamp for the start time of the job
+            &quot;finishTime&quot;: &quot;2024-09-26T05:13:42.3793844+00:00&quot;, // UTC timestamp for the finished time of the job
+            &quot;scanProfileName&quot;: &quot;scan power platform&quot;, // The name of the scan profile used to run the scan job
+            &quot;category&quot;: 0, // The scan profile category is Microsoft 365
+            &quot;extension&quot;: null, // No extension
+        }
+    ],
+    &quot;nextLink&quot;: &quot;https://graph-us.avepointonlineservices.com/aos/jobs?orderby=StartTime&amp;sortorder=1&amp;top=2&amp;skip=1&quot;, // Link to the next page of results
+    &quot;totalCount&quot;: 2, // The total number of retrieved jobs
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

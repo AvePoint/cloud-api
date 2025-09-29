@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Use AvePoint Graph API  </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Use AvePoint Graph API  ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="use-avepoint-graph-api-">Use AvePoint Graph API <!-- omit in toc --></h1>
+
+<p><strong>In this article</strong></p>
+<!-- TOC -->
+<ul>
+<li><a href="#authentication-and-authorization">Authentication and Authorization</a></li>
+<li><a href="#call-an-api-method">Call an API Method</a>
+<ul>
+<li><a href="#request-components">Request Components</a></li>
+<li><a href="#response-components">Response Components</a></li>
+</ul>
+</li>
+<li><a href="#http-methods">HTTP Methods</a></li>
+<li><a href="#http-status-code">HTTP Status Code</a></li>
+<li><a href="#resource">Resource</a></li>
+</ul>
+<!-- /TOC -->
+<p>Welcome to the AvePoint Graph API, your gateway to accessing and managing the AvePoint Confidence Platform with efficiency and security. This API is designed to streamline your data management and backup monitoring processes, providing IT professionals with robust tools and insights.</p>
+<h2 id="authentication-and-authorization">Authentication and Authorization</h2>
+<p>To access the resources of AvePoint Cloud Services via the AvePoint Graph API, you must configure the app registration and grant the necessary permissions. This process involves:</p>
+<ul>
+<li><strong>Registering an app</strong>: Set up your app in AvePoint Online Services.</li>
+<li><strong>Permissions</strong>: Assign the appropriate permissions for your app.</li>
+<li><strong>Authentication</strong>: Use the generated application (client) ID for secure access.</li>
+</ul>
+<p>For a step-by-step guide on creating an app registration for API authentication, refer to the <a href="register-app.html">Register an App for Modern API</a> section in the AvePoint Online Services User Guide.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For partner operations, go to Elements for app registration. See <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration in the Elements User Guide</a>.</p>
+</div>
+<h2 id="call-an-api-method">Call an API Method</h2>
+<p>To interact with resources, construct a request as follows:</p>
+<pre><code>{HTTP method} https://graph-{dc}.avepointonlineservices.com/{resource}?{query-parameters}  
+</code></pre>
+<h3 id="request-components">Request Components</h3>
+<ul>
+<li>{HTTP method} – The HTTP method used for the request.</li>
+<li>{resource} – The referenced resource.</li>
+<li>{query-parameters} – Optional parameters to customize the response.</li>
+</ul>
+<h3 id="response-components">Response Components</h3>
+<p>After making a request, a response is returned that includes:</p>
+<ul>
+<li><p>Status code – An HTTP status code that indicates success or failure.</p>
+</li>
+<li><p>Response message – The data that you requested or the result of the operation. The response message can be empty for some operations.</p>
+</li>
+<li><p>nextLink – If your request returns a lot of data, you need to page through it by using the URL returned in nextLink.</p>
+</li>
+<li><p>Response headers – Additional information about the response, such as the type of content returned and the request-id that you can use to correlate the response to the request.</p>
+</li>
+</ul>
+<h2 id="http-methods">HTTP Methods</h2>
+<p>The API uses the HTTP methods to specify the action being performed on a request. Currently, the API documented here only supports:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read data from a resource.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create data in a resource.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete data from a resource.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-status-code">HTTP Status Code</h2>
+<p>HTTP status codes indicate the outcome of a request. Common codes include:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK – The request was successful, and the response contains the requested data.</td>
+</tr>
+<tr>
+<td>201</td>
+<td>OK – The request was successful, and the response contains the requested data. <br> *<strong>Note</strong>: This status code is used by the AvePoint Opus API for submitting records to Opus.</td>
+</tr>
+<tr>
+<td>204</td>
+<td>No Content – The request was successful, but there is no content returned. <br> *<strong>Note</strong>: This status code is used by the AvePoint Opus APIs for retrieving due records and destroying records.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request – The request could not be processed due to invalid parameters.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>Exist Failed Data Operation – The request was processed with exceptions. <br> *<strong>Note</strong>: This status code is used by the AvePoint Opus APIs for submitting records to Opus and destroying records.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error – An unexpected server error occurred.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resource">Resource</h2>
+<p>A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as <code>customers</code>, <code>services</code>, and <code>jobs</code>. Methods can also be used to perform operations on these resources.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

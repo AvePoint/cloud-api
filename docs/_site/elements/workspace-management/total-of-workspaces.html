@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Workspace Overview </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Workspace Overview ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-workspace-overview">Retrieve Workspace Overview</h1>
+
+<p>Use this API to retrieve the workspace overview statistics of a specific tenant in Elements.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call the API.<br>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace</code></td>
+<td>elements.wm.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section outlines the HTTP method and endpoint used to retrieve the workspace overview statistics. It provides a concise description of the action performed by the API call.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace</code></td>
+<td>Retrieves statistics of workspcaes for a specific tenant.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="url-parameters">URL Parameters</h2>
+<p>This section outlines the parameters required to specify which tenant's workspace overview statistics you want to retrieve.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customerId</td>
+<td>The customer ID</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The tenant ID of the customer</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response">Response</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.</p>
+<table>
+<thead>
+<tr>
+<th>Response</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>workspaces</td>
+<td>The total number of workspaces.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>teams</td>
+<td>The number of Teams.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>sharePointSites</td>
+<td>The number of SharePoint sites.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>oneDrives</td>
+<td>The number of OneDrives.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>The number of Groups.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>exchangeMailboxes</td>
+<td>The number of Exchange mailboxes.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>activeWorkspaces</td>
+<td>The number of active workspaces.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>inactiveWorkspaces</td>
+<td>The number of inactive workspaces.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>orphanedWorkspaces</td>
+<td>The total number of orphaned workspaces.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>orphanedTeams</td>
+<td>The number of orphaned Teams.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>orphanedSharePointSites</td>
+<td>The number of orphaned SharePoint sites.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>orphanedOneDrives</td>
+<td>The number of orphaned OneDrives.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>orphanedGroups</td>
+<td>The number of orphaned Groups.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>workspacesWithGuestUsers</td>
+<td>The total number of workspaces with guest users.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>teamsWithGuestUsers</td>
+<td>The number of Teams with guest users.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>sharePointSitesWithGuestUsers</td>
+<td>The number of SharePoint sites with guest users.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>oneDrivesWithGuestUsers</td>
+<td>The number of OneDrives with guest users.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>groupsWithGuestUsers</td>
+<td>The number of Groups with guest users.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>reachingStorageLimitWorkspaces</td>
+<td>The total number of workspaces that have reached 90% of their storage limits.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>reachingStorageLimitTeams</td>
+<td>The number of Teams that have reached 90% of their storage limits.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>reachingStorageLimitSharePointSites</td>
+<td>The number of SharePoint sites that have reached 90% of their storage limits.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>reachingStorageLimitOneDrives</td>
+<td>The number of OneDrives that have reached 90% of their storage limits.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>reachingStorageLimitGroups</td>
+<td>The number of Groups that have reached 90% of their storage limits.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>reachingStorageLimitMailboxes</td>
+<td>The number of mailboxes that have reached 90% of their storage limits.</td>
+<td>integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/workspace
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/elements/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<pre><code class="lang-json">{
+    &quot;workspaces&quot;: 4285,
+    &quot;teams&quot;: 171,
+    &quot;sharePointSites&quot;: 865,
+    &quot;oneDrives&quot;: 12,
+    &quot;groups&quot;: 2989,
+    &quot;exchangeMailboxes&quot;: 248,
+    &quot;activeWorkspaces&quot;: 159,
+    &quot;inactiveWorkspaces&quot;: 399,
+    &quot;orphanedWorkspaces&quot;: 264,
+    &quot;orphanedTeams&quot;: 56,
+    &quot;orphanedGroups&quot;: 192,
+    &quot;orphanedSharePointSites&quot;: 15,
+    &quot;workspacesWithGuestUsers&quot;: 88,
+    &quot;orphanedOneDrives&quot;: 1,
+    &quot;teamsWithGuestUsers&quot;: 13,
+    &quot;sharePointSitesWithGuestUsers&quot;: 37,
+    &quot;oneDrivesWithGuestUsers&quot;: 0,
+    &quot;groupsWithGuestUsers&quot;: 38,
+    &quot;reachingStorageLimitWorkspaces&quot;: 0,
+    &quot;reachingStorageLimitTeams&quot;: 0,
+    &quot;reachingStorageLimitSharePoint&quot;: 0,
+    &quot;reachingStorageLimitOneDrives&quot;: 0,
+    &quot;reachingStorageLimitGroups&quot;: 0,
+    &quot;reachingStorageLimitMailboxes&quot;: 0,
+    &quot;reachingStorageLimitSharePointSites&quot;: 0
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

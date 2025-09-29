@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Retrieve Agent Details </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Retrieve Agent Details ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="retrieve-agent-details">Retrieve Agent Details</h1>
+
+<p>Use this API to access and retrieve information of your Copilot Studio agents.</p>
+<h2 id="permission">Permission</h2>
+<p>The following permission is required to call the API.
+You must register the app through AvePoint Online Services &gt; App registrations to authenticate and authorize your access to AvePoint Graph API.
+For details, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization">Authentication and Authorization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/smp/powerplatform/bot</code></td>
+<td>enpower.data.read.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section provides details on the HTTP method and endpoint used to retrieve general information of your agents.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/smp/powerplatform/bot</code></td>
+<td>Retrieves your agents' information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>The API supports several query parameters to refine and customize the data retrieval process.</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>The number of agent records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>The tenant in which data of dagents are retrieved. By default, agents of all tenants are retrieved.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="responses">Responses</h2>
+<p>The API response provides detailed information about the agents retrieved. Each agent in the response includes various attributes that describe its properties and status.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>botId</td>
+<td>The unique identifier for the agent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantId</td>
+<td>The unique identifier of the tenant that the agent belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>tenantName</td>
+<td>The name of the tenant that the agent belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>containerId</td>
+<td>The unique identifier of the container that the agent belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>container</td>
+<td>The name of the container that the agent belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>environmentId</td>
+<td>The unique identifier of the environment that the agent belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>environment</td>
+<td>The name of the environment that the agent belongs to.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The display name of the agent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>description</td>
+<td>The description of the agent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ownerId</td>
+<td>The unique identifier of the agent owner.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>ownerUserPrincipalName</td>
+<td>The user principal name of the agent owner.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorId</td>
+<td>The unique identifier of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorDisplayName</td>
+<td>The display name of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorUserPrincipalName</td>
+<td>The user principal name of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorDepartment</td>
+<td>The department of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorOffice</td>
+<td>The office of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorCountry</td>
+<td>The country of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorJobTitle</td>
+<td>The job title of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>creatorEmail</td>
+<td>The email of the agent creator.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>createdTime</td>
+<td>The created time of the agent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastModifiedTime</td>
+<td>The latest agent modification time.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastPublishedTime</td>
+<td>The latest published time of the agent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>activityCountLast7D</td>
+<td>The number of activities in the last 7 days.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>lastActivityTime</td>
+<td>The latest agent activity date.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>primaryLanguage</td>
+<td>The primary language of the agent.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>sharedWithOrganization</td>
+<td>Indicates whether the agent is shared with the organization.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>sharedUsers</td>
+<td>Number of users this agent was shared with.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>sharedGroups</td>
+<td>Number of groups this agent was shared with.</td>
+<td>integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/smp/powerplatform/bot
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HTTP Status Code</a>.</p>
+<pre><code class="lang-json">{
+  &quot;bots&quot;: [
+    {
+      &quot;botId&quot;: &quot;&quot;, // The unique identifier for the agent
+      &quot;tenantId&quot;: &quot;&quot;, // The unique identifier of the tenant that the agent belongs to
+      &quot;tenantName&quot;: &quot;&quot;, // The name of the tenant that the agent belongs to
+      &quot;containerId&quot;: &quot;&quot;, // The unique identifier of the container that the agent belongs to
+      &quot;container&quot;: &quot;&quot;, // The name of the container that the agent belongs to
+      &quot;environmentId&quot;: &quot;&quot;, // The unique identifier of the environment that the agent belongs to
+      &quot;environment&quot;: &quot;&quot;, // The name of the environment that the agent belongs to
+      &quot;displayName&quot;: &quot;&quot;, // The display name of the agent
+      &quot;description&quot;: &quot;&quot;, // The description of the agent
+      &quot;ownerId&quot;: &quot;&quot;, // The unique identifier of the agent owner
+      &quot;ownerUserPrincipalName&quot;: &quot;&quot;, // The user principal name of the agent owner
+      &quot;creatorId&quot;: &quot;&quot;, // The unique identifier of the agent creator
+      &quot;creatorDisplayName&quot;: &quot;&quot;, // The display name of the agent creator
+      &quot;creatorUserPrincipalName&quot;: &quot;&quot;, // The user principal name of the agent creator
+      &quot;creatorDepartment&quot;: &quot;&quot;, // The department of the agent creator
+      &quot;creatorOffice&quot;: &quot;&quot;, // The office of the agent creator
+      &quot;creatorCountry&quot;: &quot;&quot;, // The country of the agent creator
+      &quot;creatorJobTitle&quot;: &quot;&quot;, // The job title of the agent creator
+      &quot;creatorEmail&quot;: &quot;&quot;, // The email of the agent creator
+      &quot;createdTime&quot;: &quot;&quot;, // The created time of the agent
+      &quot;lastModifiedTime&quot;: &quot;&quot;, // The latest agent modification time
+      &quot;lastPublishedTime&quot;: &quot;&quot;, // The latest published time of the agent
+      &quot;activityCountLast7D&quot;: 0, // The number of activities in the last 7 days
+      &quot;lastActivityTime&quot;: &quot;&quot;, // The latest agent activity date
+      &quot;primaryLanguage&quot;: &quot;&quot;, // The primary language of the agent
+      &quot;sharedWithOrganization&quot;: false, // Indicates whether the agent is shared with the organization
+      &quot;sharedUsers&quot;: 0, // Number of users this agent was shared with
+      &quot;sharedGroups&quot;: 0 // Number of groups this agent was shared with
+    }
+  ],
+  &quot;totalCount&quot;: 1,
+  &quot;nextLink&quot;: &quot;&quot;
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

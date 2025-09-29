@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Add a service to a customer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Add a service to a customer ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="add-a-service-to-a-customer">Add a service to a customer</h1>
+
+<p>Use this API to add a service to a customer.</p>
+<h2 id="permissions">Permissions</h2>
+<p>The following permission is required to call the API.<br>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/partner/external/v3/general/customers/{customerId}/services</code></td>
+<td>elements.license.readwrite.all</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request">Request</h2>
+<p>This section provides details on the HTTP method and endpoint used to add a service to a customer.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/services</code></td>
+<td>Add a service to a customer.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-body-parameters">Request Body Parameters</h2>
+<p>You can provide a customer basic information in the request body to onboard a customer. This field is required.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product</td>
+<td>The product name of the service.  <ul><li><strong>2048</strong> - Cloud Backup for Microsoft 365</li><li><strong>270</strong> - Cloud Backup for Exchange Online &amp; OneDrive</li><li><strong>274</strong> - Cloud Backup Express</li><li><strong>40</strong> - Baseline management</li><li><strong>42</strong> - Workspace management</li><li><strong>49</strong> - User and device management</li><li><strong>65</strong> - Workspace management - Storage optimization</li></ul></td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseType</td>
+<td>The license type of the service.  <ul><li><strong>0</strong> - Trial</li><li><strong>1</strong> - Enterprise</li></ul></td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>avepointStorageType</td>
+<td>The storage type of the service.<ul><li><strong>0</strong> - AvepointStorageAzure</li><li><strong>1</strong> - AvepointStorageS3</li><li><strong>2</strong> - AvepointStorageGCP</li></ul></td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>retentionYear</td>
+<td>The retention year of the service.</td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>byos</td>
+<td>The byos of the service.</td>
+<td>bool</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>userSeat</td>
+<td>The user seat of the service.</td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>expirationTime</td>
+<td>The expiration time of the service.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.Resource</td>
+<td>The resource of the service.   <ul><li><strong>Office365Backup</strong> - Microsoft 365 pool</li><li><strong>Office365PPBackup</strong> - PowerPlatform pool</li><li><strong>Office365EXODBackup</strong> - Exchange Online &amp; OneDrive pool</li><li><strong>PartnerTenantSettingManagement</strong> - Baseline management pool</li><li><strong>PartnerWorkspaceOnboarding</strong> - Workspace management pool</li><li><strong>PartnerUserManagement</strong> - User and device management pool</li><li><strong>PartnerStorageOptimization</strong> - Workspace management - Storage optimization pool</li></ul></td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.SubscriptionSourceType</td>
+<td>The source of the service. <ul><li><strong>1</strong> - AvepointPool</li><li><strong>2</strong> - MarketplacePool</li><li><strong>6</strong> - LarsAvepointPool</li></ul></td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.IsSameAsPool</td>
+<td>The is same as pool of the service.</td>
+<td>bool</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.ExpireTime</td>
+<td>The is expire time of the service.</td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.SaleType</td>
+<td>The sale type of the service. <ul><li><strong>0</strong> - Capacity Tier</li><li><strong>1</strong> - Unlimited Users</li><li><strong>2</strong> - Unlimited Organization</li></ul></td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.PackageType</td>
+<td>The package type of the service. <ul><li><strong>0</strong> - Standard</li><li><strong>1</strong> - Core</li><li><strong>2</strong> - Flex</li></ul></td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.CustomerSize</td>
+<td>The customer size of the service.</td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems.ContractEndDate</td>
+<td>The contract end date of the service.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>licenseItems.PaymentType</td>
+<td>The payment type of the service. <ul><li><strong>0</strong> - Prepaid</li><li><strong>1</strong> - PayAsYouGo</li></ul></td>
+<td>int</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="response">Response</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the created status and customer id and product displayed in the response body.</p>
+<table>
+<thead>
+<tr>
+<th>Response</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customerId</td>
+<td>The customer id of the added service.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>product</td>
+<td>The product of the added service.</td>
+<td>int</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status of the created customer.<ul><li><strong>1</strong> - SaveSuccessful</li><li><strong>2</strong> - SaveFailed</li><li><strong>3</strong> - PartnerNoLicense</li><li><strong>4</strong> - UserSeatNotEnough</li><li><strong>5</strong> - ExceededExpiredTime</li><li><strong>6</strong> - CheckFailed</li><li><strong>7</strong> - LicenseExists</li><li><strong>11</strong> - LessThanCurrentTime</li><li><strong>12</strong> - HasSameLicense</li><li><strong>13</strong> - AlreadyAcceptOtherLicense</li><li><strong>16</strong> - CheckSuccessful</li><li><strong>17</strong> - PremiumProductReachLimit</li><li><strong>18</strong> - ExpiredTimeLessThanOneMonth</li><li><strong>19</strong> - ReduceUserSeatFailed</li><li><strong>20</strong> - AssignEXODForCB365ActiveFailed</li></ul></td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-sample">Request Sample</h2>
+<p>To use this API, send a POST request to the specified endpoint.</p>
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/services
+
+Add Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online &amp; OneDrive Trial license request:
+{
+  &quot;product&quot;: 2048,
+  &quot;licenseType&quot;: 0,
+  &quot;byos&quot;: false,
+  &quot;avepointStorageType&quot;: 0,
+  &quot;retentionYear&quot;: 1,
+  &quot;expirationTime&quot;: &quot;2025-10-18T00:00:00Z&quot;
+}
+Add other products Trial license request:
+{
+  &quot;product&quot;: 42,
+  &quot;licenseType&quot;: 0,
+  &quot;expirationTime&quot;: &quot;2025-10-18T00:00:00Z&quot;
+}
+Add Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup for Exchange Online &amp; OneDrive pool license request:
+{
+  &quot;product&quot;: 2048,
+  &quot;licenseType&quot;: 1,
+  &quot;byos&quot;: false,
+  &quot;avepointStorageType&quot;: 0,
+  &quot;storageProfileId&quot;: &quot;&quot;,
+  &quot;retentionYear&quot;: 1,
+  &quot;licenseItems&quot;: [
+    {
+      &quot;expireTime&quot;: &quot;2025-09-26T00:00:00Z&quot;,
+      &quot;userSeat&quot;: 1,
+      &quot;resource&quot;: &quot;Office365Backup&quot;,
+      &quot;isSameAsPool&quot;: true,
+      &quot;subscriptionSourceType&quot;: 1,
+      &quot;paymentType&quot;: 0,
+      &quot;saleType&quot;: 0,
+      &quot;customerSize&quot;: 5,
+      &quot;packageType&quot;: 0
+    },
+    {
+      &quot;expireTime&quot;: &quot;2025-09-26T00:00:00Z&quot;,
+      &quot;userSeat&quot;: 1,
+      &quot;resource&quot;: &quot;Office365PPBackup&quot;,
+      &quot;isSameAsPool&quot;: true,
+      &quot;subscriptionSourceType&quot;: 6,
+      &quot;paymentType&quot;: 1,
+      &quot;saleType&quot;: 2,
+    }
+  ]
+}
+Add other products pool license request:
+{
+    &quot;product&quot;: 42,
+    &quot;licenseType&quot;: 1,
+    &quot;licenseItems&quot;: [
+      {
+        &quot;expireTime&quot;: &quot;2025-09-30T00:00:00Z&quot;,
+        &quot;userSeat&quot;: 1,
+        &quot;resource&quot;: &quot;PartnerTenantSettingManagement&quot;,
+        &quot;isSameAsPool&quot;: true,
+        &quot;subscriptionSourceType&quot;: 1,
+        &quot;paymentType&quot;: 0
+      }
+    ]
+  }
+</code></pre>
+<h2 id="response-sample">Response Sample</h2>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the created customer id and status displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<pre><code class="lang-json">{
+    &quot;customerId&quot;:&quot;7e4ffcae-xxxx-xxxx-xxxx-c6efa0b250d5&quot;,
+    &quot;product&quot;:&quot;Office365Backup&quot;,
+    &quot;status&quot;:1
+}
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2025 AvePoint® Inc. All Rights Reserved.<br>Generated with <strong>AvePoint, Inc.</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
