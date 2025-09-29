@@ -1,23 +1,23 @@
-# Get a scan profile information configured in Avepoint Online Services for a customer
+# Retrieve Details of a Scan Profile for a Customer
 
-Use this API to get a scan profile information configured in Avepoint Online Services for a customer. 
+Use this API to retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer. 
 
  ## Permissions
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../../elements/register-app.md).
 
 | API | Permission  |
 |-----------|--------|
-| `partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail`|elements.scanprofiles.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail`|elements.scanprofiles.read.all|  
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to get a scan profile information configured in Avepoint Online Services for a customer.
+This section outlines the details of the HTTP method and endpoint used to retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail` | Get a scan profile information configured in Avepoint Online Services for a customer.|
+| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail` | Retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.|
 
 ## Response
 
@@ -25,62 +25,58 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| profileName               | The profile name of the profile.                 | string |
-| profileId     | The profile id of the profile.       | string |
-| description       | The description of the profile.      | string |
-| tenantId | The tenant id of the profile. | string |
-| tenantDomain | The tenant domain of the profile. | string |
-| scanMode | The scan mode of the profile. | integer |
-| modifiedTime | The modify time of the profile. | string |
-| createdTime | The create time of the profile. | string |
-| lastUpdateTime | The last update time of the profile. | string |
-| impersonationAccount | The impersonation account of the profile. | string |
-| scanInplaceArchivedMailboxes | The scan inplace archive mailboxes of the profile. | boolean |
-| ignoreTheLockedObjectsWhenUpdatingTheJobStatus | The ignore lock object status of the profile. | bool |
-| isIgnoreLockedSiteEnabled | The ignore lock site of the profile. | boolean |
-| enableDailyScan | The enable daily scan of the profile. | string |
-| isSendOutOfPolicyNotification | The send oop notification status of the profile. | boolean |
-| containers | The container information of the container. | list |
+| profileName               | The name of the scan profile.                 | string |
+| profileId     | The ID of the scan profile.       | string |
+| description       | The description of the scan profile.      | string |
+| tenantId | The tenant ID of the scan profile. | string |
+| tenantDomain | The tenant domain of the scan profile. | string |
+| scanMode | The scan mode of the scan profile. <ul><li>**0** - Express mode</li><li>**1** - Advanced mode</li></ul> | integer |
+| modifiedTime | The last modified time of the scan profile. | string |
+| createdTime | The created time of the scan profile. | string |
+| lastUpdateTime | The last updated time of the scan profile. | string |
+| impersonationAccount | The impersonation account configured in the scan profile. | string |
+| scanInplaceArchivedMailboxes | Whether the **Scan in-place archived mailboxes** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |
+| isIgnoreLockedSiteEnabled | Whether the **Ignore the locked objects when updating the job status** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |
+| enableDailyScan | Whether the **Enable daily scan** setting is enabled in the scan profile: <ul><li>**No** - Disabled</li><li>**hh:mm** - The time of the daily scan, for example, 01:59</li></ul> | string |
+| isSendOutOfPolicyNotification | Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul>  | boolean |
+| containers | The information of the container. | list |
 
-### The container information:
+**Container information:**
 | Field | Description | Type |
 | --- | --- | --- |
-| containersName | The container name of the container. | string |
-| objectType | The object type of the container. | integer |
-
-
+| containersName | The name of the container. | string |
+| objectType | The object type of the container.<ul><li>**0** - Site Collection</li><li>**1** - Mailbox</li><li>**2** - OneDrive</li><li>**5** - Microsoft 365 Group</li><li>**6** - Project Online</li><li>**7** - Public Folder</li><li>**9** - Channel</li><li>**10** - User</li><li>**11** - None Unified Group</li><li>**12** - Power Platform Environment</li><li>**13** - Power Platform Connection</li><li>**14** - Power Apps</li><li>**15** - Power Automate</li><li>**16** - Power BI Workspace</li><li>**17** - ActiveDirectoryMailbox</li><li>**18** - Active Directory User</li><li>**19** - Active Directory Group</li><li>**20** - Power Platform Solution</li><li>**21** - Power Copilot Studio</li><li>**22** - Power Page</li><li>**23** - Loop Container</li><li>**24** - SharePoint Agent</li><li>**25** - Azure AI Foundry Agent</li><li>**100** - Google User</li><li>**101** - Google Shared Drive</li><li>**102** - Google Classroom</li><li>**103** - Google Mailbox</li><li>**104** - Google Group</li><li>**105** - Google Vault Matter</li></ul> | integer |
 
 
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{caf9****-2cc6-****-b04b-794c****5ea3}/scan-profiles/{47db****-1004-****-b2ce-8f5e****842d}/detail
 ```
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
-    "profileId": "47dba9a1-1004-4c2d-b2ce-8f5e66f5842d",
-    "profileName": "Default Microsoft 365 Scan Profile",
-    "description": "This is a partner-configured scan profile.",
-    "tenantId": "c2350b99-c7a2-4605-b7d4-79e8646f66c3",
-    "tenantDomain": "v0s40",
-    "scanMode": 0,
-    "modifiedTime": "2025-09-11T03:19:14Z",
-    "createdTime": "2025-09-11T03:19:14Z",
-    "lastUpdateTime": "2025-09-11T03:19:14Z",
-    "scanInplaceArchivedMailboxes": false,
-    "ignoreTheLockedObjectsWhenUpdatingTheJobStatus": false,
-    "isIgnoreLockedSiteEnabled": false,
-    "enableDailyScan": "15:19",
-    "isSendOutOfPolicyNotification": false,
+    "profileId": "47db****-1004-****-b2ce-8f5e****842d",// The ID of the scan profile.
+    "profileName": "Default Microsoft 365 Scan Profile", // The name of the scan profile.
+    "description": "This is a partner-configured scan profile.", // The description of the scan profile.
+    "tenantId": "c235****-c7a2-****-b7d4-79e8****66c3", // The tenant ID of the scan profile.
+    "tenantDomain": "domain", // The tenant domain of the scan profile.
+    "scanMode": 0, // The scan mode of the scan profile: 0 represents the Express mode.
+    "modifiedTime": "2025-09-11T03:19:14Z",  // The last modified time of the scan profile.
+    "createdTime": "2025-09-11T03:19:14Z", // The created time of the scan profile.
+    "lastUpdateTime": "2025-09-11T03:19:14Z", // The last updated time of the scan profile.
+    "scanInplaceArchivedMailboxes": false, // Whether to scan in-place archived mailboxes configured in the scan profile: False represents Do not scan in-place archived mailbox
+    "isIgnoreLockedSiteEnabled": false, // Whether to ignore the locked sites in the scan profile: false represents Disabled.
+    "enableDailyScan": "15:19", // The time of the daily scan.
+    "isSendOutOfPolicyNotification": false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: false represents Disabled
     "containers": [
         {
-            "containersName": "Default_ProjectOnline_Sites_Group",
-            "objectType": 6
+            "containersName": "Default_ProjectOnline_Sites_Group", // The container name
+            "objectType": 6 // The object type: 6 represents Project Online
         },
         {
             "containersName": "Default OneDrive for Business Group",

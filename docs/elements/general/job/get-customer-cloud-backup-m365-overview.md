@@ -1,15 +1,15 @@
-# Get the customer's protected data information of Cloud Backup for Microsoft 365
+# Get Customer's Protected Data Information of Cloud Backup for Microsoft 365
 
-Use this API to get the customer's protected data information of Cloud Backup for Microsoft 365. 
+Use this API to  the customer's protected data information of Cloud Backup for Microsoft 365.
 
- ## Permissions
+ ## Permission
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../../elements/register-app.md).
 
 | API | Permission  |
 |-----------|--------|
-| `partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview`|elements.cbprotected.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview`|elements.cbprotected.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to get th
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview` | Get the customer's protected data information of Cloud Backup for Microsoft 365.|
+| GET | `/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview` | Get the customer's protected data information of Cloud Backup for Microsoft 365.|
 
 ## Response
 
@@ -25,39 +25,39 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| customerId               | The id of the customer.                 | string |
-| customer     | The email of the customer.       | string |
+| customerId               | The ID of the customer.                 | string |
+| customer     | The email address of the customer.       | string |
 | serviceType       | The name of the service.      | string |
-| serviceModule | The module of the module. | string |
-| totalScannedObjects | The total scan objects of the module. | long |
-| totalProtectedObjects | The total protect count of the module. | long |
-| dataSizeStoredInAvePoint | The avepoint storage data size of the module. | string |
-| dataSizeStoredInBYOS | The byos storage data size of the module. | string |
+| serviceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | string |
+| totalScannedObjects | The number of the scanned objects of the module. | long |
+| totalProtectedObjects | The number of the backed-up objects of the module. | long |
+| dataSizeStoredInAvePoint | The size of the backed-up objects stored in the AvePoint storage. | string |
+| dataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | string |
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/cloud-backup-m365/overview
 ```
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../../elements/Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 [
     {
-        "customerId": "f1626c49-****-****-****-97dbdc55fc15",
-        "customer": "test_****@avepoint.com",
+        "customerId": "f1626c49-****-****-****-97db****fc15", // The customer ID
+        "customer": "userA@domain.com", // The email address of the customer
         "serviceType": "Cloud Backup for Microsoft 365",
-        "serviceModule": "Exchange Online",
-        "totalScannedObjects": 25,
-        "totalProtectedObjects": 25,
-        "dataSizeStoredInAvePoint": "0 GB",
-        "dataSizeStoredInBYOS": "N/A"
+        "serviceModule": "Exchange Online", // The module of Cloud Backup for Microsoft 365
+        "totalScannedObjects": 25, // The number of scanned objects of the module
+        "totalProtectedObjects": 25, // The number of backed-up objects of the module
+        "dataSizeStoredInAvePoint": "0 GB", // The size of the backed-up objects stored in AvePoint storage
+        "dataSizeStoredInBYOS": "N/A" // The size of the backed-up objects stored in BYOS 
     },
     {
-        "customerId": "f1626c49-****-****-****-97dbdc55fc15",
-        "customer": "test_****@avepoint.com",
+        "customerId": "f1626c49-****-****-****-97db****fc15",
+        "customer": "userB@domain.com",
         "serviceType": "Cloud Backup for Microsoft 365",
         "serviceModule": "Microsoft 365 Group",
         "totalScannedObjects": 7,

@@ -1,8 +1,6 @@
-- name: Add Service
+- name: Add a Service
   href: add-service.md
-- name: Get All Services
+- name: Retrieve All Services of Customers
   href: get-all-services.md
-- name: Get Customer Service of a Customer
-  href: get-single-customer-service.md
 
    

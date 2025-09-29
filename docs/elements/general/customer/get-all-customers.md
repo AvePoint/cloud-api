@@ -2,7 +2,7 @@
 
 Use this API to retrieve customers managed by the current partner.
 
- ## Permissions
+ ## Permission
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../../elements/register-app.md).
@@ -66,7 +66,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers/b
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
     "data": [

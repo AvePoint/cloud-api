@@ -1,13 +1,14 @@
-- name: Get Cloud Backup Overview
+- name: Retrieve Cloud Backup for Microsoft 365 Overview
   href: get-customer-cloud-backup-m365-overview.md
-- name: Get Customer Jobs
+- name: Retrieve Customer Jobs
   href: get-customer-jobs.md
-- name: Get Customer Scan Profile Details
-  href: get-customer-scan-profile-detail.md
-- name: Get Customer Scan Profiles
+- name: Retrieve Customer Scan Profiles
   href: get-customer-scan-profiles.md
-- name: Get Customer Scan Profile Details v2
-  href: get-customer-scan-profile-v2-detail.md
-- name: Get Customer Scan Profiles v2
-  href: get-customer-scan-profile-v2.md
+- name: Retrieve Customer Scan Profile Details
+  href: get-customer-scan-profile-detail.md
+- name: Retrieve Daily Scan Profile Changes
+  href: get-customer-scan-profile-daily-summary.md
+- name: Retrieve Daily Scan Profile Change Details
+  href: get-customer-scan-profile-daily-summary-detail.md
+
    
