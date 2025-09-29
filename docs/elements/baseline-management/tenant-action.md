@@ -1,6 +1,6 @@
 # Monitor Tenants
 
-Use this API to monitor tenants by performing actions to the tenants.
+Use this API to monitor tenants by performing specific actions to the tenants. Currently, you can use this API to apply baselines to tenant.
 
 ## Permissions  
 
@@ -13,7 +13,7 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to monitor tenants by performing actions on the tenants.
+This section provides details on the HTTP method and endpoint used to monitor tenants by performing specific actions on the tenants.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
@@ -25,12 +25,12 @@ You can provide a object about the action.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|actionType| The action that you want to perform on the tenant. (More actions will be supported in the future) <ul><li>**1** - Apply baseline to tenant</li></ul> |integer|Yes|
+|actionType| The action that you want to perform on the tenant. (More actions will be supported in the future) <ul><li>**1** - Apply baselines to tenant</li></ul> |integer|Yes|
 |data| The parameters of the action. |object|Yes|
 
 ### Apply Action Data Parameters
 
-For the "Apply baseline to tenant" action, the parameters of the data object are as follows.
+For the "Apply baselines to tenant" action, the parameters of the data object are as follows.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
@@ -39,8 +39,8 @@ For the "Apply baseline to tenant" action, the parameters of the data object are
 
 
 > [!NOTE]  
-> Tenants in the following status cannot perform the "Apply baseline to tenant" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
-> Baselines in the following status cannot be used for the "Apply baseline to tenant" action.<ul><li>**1** - Retrieving settings</li><li>**4** - Settings retrieval failed</li><li>**6** - Draft</li></ul>
+> Tenants in the following status cannot perform the "Apply baselines to tenant" action.<ul><li>**3** - Deploying</li><li>**6** - Expired</li><li>**11** - Restoring</li><li>**12** Retrieving setting</li></ul>
+> Baselines in the following status cannot be used for the "Apply baselines to tenant" action.<ul><li>**1** - Retrieving settings</li><li>**4** - Settings retrieval failed</li><li>**6** - Draft</li></ul>
 
 ## Response
 
@@ -48,7 +48,7 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| jobId | The ID of the job to apply baseline to tenant. | string |
+| jobId | The ID of the job to apply baselines to tenant. | string |
 
 ## Request Sample
 
@@ -59,7 +59,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
 
 //Apply baseline action
 {
-    "actionType": "1", // The action that you want to perform on the tenant. 1 represents "Apply baseline to tenant"
+    "actionType": "1", // The action that you want to perform on the tenant. 1 represents "Apply baselines to tenant"
     "data": 
     [
         {
