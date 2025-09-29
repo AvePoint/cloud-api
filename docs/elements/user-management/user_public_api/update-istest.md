@@ -1,8 +1,8 @@
-# Update IsTest property of userId
+# Update the IsTestUser Property of a Specific User
 
-Use this API to update is test of specific users of a customer tenant in AvePoint Online Services. 
+Use this API to update the isTestUser property of a specific user in a customer's tenant. 
 
-## Permissions
+## Permission
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
@@ -13,30 +13,30 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to update is test
-about a user.
+This section outlines the details of the HTTP method and endpoint used to update the isTestUser property of
+a specific user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/istest` | update is test about a user of a customer tenant in AvePoint Online Services.|
+| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/istest` | Updates the isTestUser property of a specific user in a customer's tenant.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update is test about a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the isTestUser property of a user according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
-| customerId | The customer ID of the customer. | string | Yes |
-| tenantId | The specific tenant ID of the customer. | string | Yes |
-| userId | Unique identifier for the specific user whose details are being requested. | string | Yes |
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
+| userId | The unique identifier of the specific user whose details are being requested. | string | Yes |
 
 ## Request Body
 
-This section outlines the required fields to update theis test of a user.
+This section outlines the required fields to update the isTestUser property of a specific user in a customer's tenant.
 
 | Parameter | Description | Type | Required
 | --- | --- | --- | ---
-| isTestUser | The is test user of the user. | bool | Yes |
+| isTestUser | Indicates whether a user account is a test user for development purposes. | bool | Yes |
 
 ## Response
 
@@ -47,12 +47,12 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-fb26-4353-8dbd-5725fa9edc3f/istest
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/istest
 ```
 ## Request Body Sample
 
 ```json
 {
-    "isTestUser" : true
+    "isTestUser" : true // Indicates whether a user account is a test user for development purposes
 }
 ```

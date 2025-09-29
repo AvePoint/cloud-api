@@ -8,7 +8,7 @@
   href: query-job.md
 - name: Retrieve Tenant Information
   href: query-tenant.md
-- name: Monitor Tenants
+- name: Monitor Tenant
   href: tenant-action.md
    
    

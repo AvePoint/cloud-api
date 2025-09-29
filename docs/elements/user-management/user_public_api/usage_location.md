@@ -1,6 +1,6 @@
-### Usage Location
+### Usage Locations
 
-The meaning of each Usage Location key corresponding to the following values.
+The meaning of each usage location key corresponding to the following values.
 
 ```json
 {

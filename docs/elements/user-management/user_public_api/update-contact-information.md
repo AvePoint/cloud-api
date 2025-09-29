@@ -1,6 +1,6 @@
-# Update Contact Information A Specific User
+# Update Contact Information of a Specific User
 
-Use this API to update contact information of specific users of a customer tenant in AvePoint Online Services. 
+Use this API to update the contact information of a specific user in a customer's tenant. 
 
 ## Permissions
 
@@ -13,30 +13,30 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to update contact information about a user.
+This section outlines the details of the HTTP method and endpoint used to update the contact information of a specific user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/contact-information` | Update contact information about a user of a customer tenant in AvePoint Online Services.|
+| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/contact-information` | Updates he contact information of a specific user in a customer's tenant.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update contact information about a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the contact information of a user according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
-| customerId | The customer ID of the customer. | string | Yes |
-| tenantId | The specific tenant ID of the customer. | string | Yes |
-| userId | Unique identifier for the specific user whose details are being requested. | string | Yes |
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
+| userId | The unique identifier of the specific user whose details are being requested. | string | Yes |
 
 ## Request Body
 
-This section outlines the required fields to update the contact information of a user.
+This section outlines the required fields to update the contact information of a specific user in a cutomer's tenant.
 
-| Parameter | Description | Type | Required | MaxLength
-| --- | --- | --- | --- | ---|
-| phone | The business phone of the user. | string | Yes | 64 character |
-| mobile | The mobile of the user. | string | Yes | 64 character|
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| phone | The business phone of the user. The maximum length is 64 characters.| string | Yes |
+| mobile | The mobile of the user. The maximum length is 64 characters.| string | Yes |
 
 ## Response
 
@@ -47,13 +47,13 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-fb26-4353-8dbd-5725fa9edc3f/contact-information
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/contact-information
 ```
 ## Request Body Sample
 
 ```json
 {
-  "officePhone": "323-333-111",
-  "mobile": "323-344-409"
+  "officePhone": "323-333-111", // The business phone number of the user
+  "mobile": "323-344-409" // The mobile phone number of the user
 }
 ```

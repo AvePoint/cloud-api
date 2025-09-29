@@ -1,5 +1,5 @@
-## Preferred Language
-The meaning of each Preferred Language key corresponding to the following values.
+## Preferred Languages
+The meaning of each preferred language key corresponding to the following values.
 ```json
 {
   "aa-DJ": "Afar (Djibouti)",
