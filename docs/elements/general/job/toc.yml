@@ -7,8 +7,6 @@
 - name: Retrieve Customer Scan Profile Details
   href: get-customer-scan-profile-detail.md
 - name: Retrieve Daily Scan Profile Changes
-  href: get-customer-scan-profile-daily-summary.md
-- name: Retrieve Daily Scan Profile Change Details
-  href: get-customer-scan-profile-daily-summary-detail.md
+  href: get-customer-scan-profile-changes.md
 
    
