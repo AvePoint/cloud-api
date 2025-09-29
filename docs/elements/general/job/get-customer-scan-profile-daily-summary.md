@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/daily/summary`|elements.scanprofiles.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/changes`|elements.scanprofiles.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/daily/summary` | Retrieve the daily scan profile changes in AvePoint Online Services for a customer.|
+| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/changes` | Retrieve the daily scan profile changes in AvePoint Online Services for a customer.|
 
 ## Response
 

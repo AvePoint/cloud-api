@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/external/v3/general/customers/{customerId}/scan-profiles`|elements.scanprofiles.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/scan-profiles/batch`|elements.scanprofiles.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles` | Retrieve all scan profiles configured for a specific customer in AvePoint Online Services|
+| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/batch` | Retrieve all scan profiles configured for a specific customer in AvePoint Online Services|
 
 ## Query Parameters
 
@@ -42,7 +42,7 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{caf9****-2cc6-****-b04b-794c****5ea3}/scan-profiles
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{caf9****-2cc6-****-b04b-794c****5ea3}/scan-profiles/batch
 ```
  
 ## Response Sample

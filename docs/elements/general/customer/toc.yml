@@ -1,6 +1,6 @@
-- name: Get All Customers
+- name: Retrieve All Customers
   href: get-all-customers.md
-- name: Onboard Customer
+- name: Onboard a Customer
   href: onboard-customer.md
 
 

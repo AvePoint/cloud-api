@@ -1,6 +1,6 @@
 - name: Retrieve Cloud Backup for Microsoft 365 Overview
   href: get-customer-cloud-backup-m365-overview.md
-- name: Retrieve Customer Jobs
+- name: Retrieve Jobs
   href: get-customer-jobs.md
 - name: Retrieve Customer Scan Profiles
   href: get-customer-scan-profiles.md

@@ -1,6 +1,6 @@
-# Add a Service to a Customer
+# Add a Service
 
-Use this API to add a service to a customer.
+Use this API to add a service for a customer.
 
 ## Permission 
 
@@ -13,15 +13,15 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to add a service to a customer.
+This section provides details on the HTTP method and endpoint used to add a service for a customer.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/general/customers/{customerId}/services` | Add a service to a customer. |
+| POST | `/partner/external/v3/general/customers/{customerId}/services` | Add a service for a customer. |
 
 ## Request Body Parameters
 
-You can provide a customer basic information in the request body to add a service to a customer. This field is required.
+You can provide a customer basic information in the request body to add a service for a customer.
 
 #### Add a Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive trial subscription:
 
@@ -29,18 +29,19 @@ You can provide a customer basic information in the request body to add a servic
 |---|---|---|---|
 |product                             |The name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
 |licenseType                         |The subscription type of the service.  <ul><li>**0** - Trial</li></ul>                |integer      |Yes|
-|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Azure</li><li>**1** - AvePoint Storage S3</li></ul>   |integer         |Yes (No)|
+|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint Storage - Amazon S3</li></ul>   |integer         |Yes (No)|
 |retentionYear                       |The retention year of the service.                |integer         |Yes (No)|
-|byos                                |The storage of the service for BYOS.                          |boolean        |No (Yes) |
+|byos                                |The storage of the service for BYOS.  <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is not BYOS.</li></ul>                        |boolean        |No (Yes) |
+|storageProfileId                    |The storage profile for BYOS when BYOS is used.                          |boolean        |No (Yes) |
 
 > [!NOTE]  
-Either **avepointStorageType** and **retentionYear** must be provided, or **byos** must be provided; at least one option is required.
+> Either **avepointStorageType** and **retentionYear** must be provided, or **byos** must be provided; at least one option is required.
 
 #### Add a Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - storage optimization trial subcription:
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|product                             |The name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
+|product                             |The name of the service.  <ul><li>**274** - Cloud Backup Express</li><li>**40** - Baseline management</li><li>**42** - Workspace management</li><li>**49** - User and device management</li><li>**65** - Workspace management - storage optimization</li></ul>                 |integer    |Yes|
 |licenseType                         |The subscription type of the service.  <ul><li>**0** - Trial</li></ul>                |integer      |Yes|
 
 #### Add a Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup for Exchange Online & OneDrive pooled subscription:
@@ -49,15 +50,14 @@ Either **avepointStorageType** and **retentionYear** must be provided, or **byos
 |---|---|---|---|
 |product                             |The name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
 |licenseType                         |The subscription type of the service.  <ul><li>**1** - Enterprise</li></ul>                |integer      |Yes|
-|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Azure</li><li>**1** - AvePoint storage - S3</li></ul>     |integer         |Yes (No)|
+|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint storage - Amazon S3</li></ul>     |integer         |Yes (No)|
 |retentionYear                       |The retention year of the service.                |integer     |Yes (No)|
 |byos                                |Whether the storage of the service is Bring your own storage.       <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is not BYOS.</li></ul>                                 |boolean        |No (Yes)|
-|licenseItems                        |The subscription items of the service.                  |list        |Yes|
+|storageProfileId                    |The storage profile for BYOS when BYOS is used.                          |boolean        |No (Yes) ||licenseItems                        |The subscription items of the service.                  |list        |Yes|
 
 > [!NOTE]  
-Either **avepointStorageType** and **retentionYear** must be provided, or **byos** must be provided; at least one option is required. If **byos** is **true**, a **"storageProfileId"** parameter is required to specify the ID of your storage profile.
-If **isSameAsPool** is **false**, **expireTime** must be provided. If **expireTime** is provided, **isSameAsPool** is not required.
-**PackageType** and **customerSize** are only for Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive.
+>Either **avepointStorageType** and **retentionYear** must be provided, or **byos** must be provided; at least one option is required.
+
 
 **Subscription items:**
 
@@ -73,7 +73,9 @@ If **isSameAsPool** is **false**, **expireTime** must be provided. If **expireTi
 |contractEndDate        |The contract end date of the service.             |string      |No |
 |paymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - Pay as you go</li></ul>    |integer         |Yes|
 
-
+> [!NOTE]  
+>If **isSameAsPool** is **false**, **expireTime** must be provided. If **expireTime** is provided, **isSameAsPool** is not required.
+>**PackageType** and **customerSize** are only for Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive.
 
 #### Add a Baseline management/Workspace management/User and device management/Workspace management - Storage optimization pooled subscription:
 
@@ -105,7 +107,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | customerId     | The customer ID of the added service.     | string |
 | product        | The name of the added service.         | integer    |
-| status | The status of adding the service.<ul><li>**1** - Save successful</li><li>**2** - Save failed</li><li>**3** - Partner has no subscription</li><li>**4** - User seat not sufficient</li><li>**5** - Exceeded expiration time</li><li>**6** - Check failed</li><li>**7** - Subscription already exists</li><li>**11** - Expiration time earlier than current time</li><li>**12** - Has same subscription</li><li>**13** - Already accepted other subscription</li><li>**16** - Check successful</li><li>**17** - Premium service reached limit</li><li>**18** - Expiration time less than one month</li><li>**19** - Failed to reduce user seats</li><li>**20** - Failed to assign Exchange Online & OneDrive </li></ul> | integer |
+| status | The status of adding the service.<ul><li>**1** - Successful</li><li>**2** - Failed</li><li>**3** - Partner has no subscription</li><li>**4** - User seat insufficient</li><li>**5** - Exceeded expiration time</li><li>**6** - Check failed</li><li>**7** - Subscription already exists</li><li>**11** - Expiration time earlier than current time</li><li>**12** - Has same subscription</li><li>**16** - Check successful</li><li>**17** - Premium service reached limit</li><li>**18** - Expiration time less than one month</li><li>**19** - Failed to reduce user seats</li><li>**20** - Failed to assign Exchange Online & OneDrive subscription </li></ul> | integer |
 
 ## Request Sample
 
@@ -117,9 +119,9 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/general/customer
 Add a Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive trial subscription request:
 {
   "product": 2048, // The name of the service: 2048 represents Cloud Backup for Microsoft 365
-  "licenseType": 0, // The subscription type of the service: 0 represents Trial
-  "avepointStorageType": 0, // The storage type of the service: 0 represents the AvePoint storage - Azure
-  "retentionYear": // The retention year of the service
+  "licenseType": 0, // The subscription type of the service: 0 represents trial
+  "avepointStorageType": 0, // The storage type of the service: 0 represents the AvePoint storage - Microsft Azure Blob
+  "retentionYear": // The retention year of the service; not applicable here
 }
 
 Add a Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - storage optimization trial subscription request:
@@ -140,7 +142,7 @@ Add a Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backu
       "userSeat": 1, // The number of user seats for the service
       "resource": "Office365Backup", // The resource of the service: Office365Backup represents Cloud Backup for Microsoft 365 pool
       "isSameAsPool": true, // Whether the expiration time of the service is the same as the pool: true represents the expiration time are the same
-      "subscriptionSourceType": 1, // The source of the service: 1 represents AvePoint pool
+      "subscriptionSourceType": 1, // The source of the service: 1 represents AvePoint Pool
       "paymentType": 0, // The payment type of the service: 0 represents Prepaid
       "saleType": 0, // The type of the service: 0 represents Capacity tier
       "customerSize": 5, // The customer's size of the service
