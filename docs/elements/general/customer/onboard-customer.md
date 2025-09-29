@@ -43,7 +43,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | id     | The ID of the onboarded customer.     | string |
-| status | The status of the customer.<ul><li>**1** - Successful</li><li>**2** - Failed to add to current partner</li><li>**3** - Customer does not exist</li><li>**4** - Failed to register customer</li><li>**5** - Customer is managed by current partner</li><li>**6** - Customer is the same as current partner</li><li>**7** - Customer already exists</li></ul> | integer |
+| status | The status of the customer.<ul><li>**1** - Successful</li><li>**2** - Failed</li><li>**3** - Customer does not exist</li><li>**4** - Failed to register customer</li><li>**5** - Customer is managed by current partner</li><li>**6** - Customer is the same as current partner</li><li>**7** - Customer already exists</li></ul> | integer |
 
 ## Request Sample
 
@@ -70,6 +70,6 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json
 {
-    "status":1, //The status of the customer: 1 represents Successful
+    "status":1, //The status of onboarding the customer: 1 represents Successful
     "id":"76f5dc9e-****-****-****-d7ef****36i5" //The ID of the customer
 }

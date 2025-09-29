@@ -1,4 +1,4 @@
-# Get Customer's Protected Data Information of Cloud Backup for Microsoft 365
+# Retrieve Cloud Backup for Microsoft 365 Overview
 
 Use this API to  the customer's protected data information of Cloud Backup for Microsoft 365.
 
@@ -48,12 +48,12 @@ For more details on the HTTP status code, refer to [Http Status Code](../../../e
     {
         "customerId": "f1626c49-****-****-****-97db****fc15", // The customer ID
         "customer": "userA@domain.com", // The email address of the customer
-        "serviceType": "Cloud Backup for Microsoft 365",
+        "serviceType": "Cloud Backup for Microsoft 365", // The service name
         "serviceModule": "Exchange Online", // The module of Cloud Backup for Microsoft 365
         "totalScannedObjects": 25, // The number of scanned objects of the module
         "totalProtectedObjects": 25, // The number of backed-up objects of the module
         "dataSizeStoredInAvePoint": "0 GB", // The size of the backed-up objects stored in AvePoint storage
-        "dataSizeStoredInBYOS": "N/A" // The size of the backed-up objects stored in BYOS 
+        "dataSizeStoredInBYOS": "N/A" // The size of the backed-up objects stored in BYOS: N/A represents not applicable here 
     },
     {
         "customerId": "f1626c49-****-****-****-97db****fc15",

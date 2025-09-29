@@ -1,6 +1,6 @@
 - name: Customers
   href: customer/toc.yml
-- name: Service Subscription
+- name: Service Subscriptions
   href: service subscription/toc.yml
 - name: Tenants
   href: tenant/toc.yml

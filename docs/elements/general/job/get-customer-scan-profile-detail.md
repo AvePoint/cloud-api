@@ -1,4 +1,4 @@
-# Retrieve Details of a Scan Profile for a Customer
+# Retrieve Customer Scan Profile Details
 
 Use this API to retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer. 
 
@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail`|elements.scanprofiles.read.all|  
+| `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}`|elements.scanprofiles.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail` | Retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.|
+| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/` | Retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.|
 
 ## Response
 
@@ -45,14 +45,14 @@ If the request has been successfully processed, a 200 OK response will be return
 | Field | Description | Type |
 | --- | --- | --- |
 | containersName | The name of the container. | string |
-| objectType | The object type of the container.<ul><li>**0** - Site Collection</li><li>**1** - Mailbox</li><li>**2** - OneDrive</li><li>**5** - Microsoft 365 Group</li><li>**6** - Project Online</li><li>**7** - Public Folder</li><li>**9** - Channel</li><li>**10** - User</li><li>**11** - None Unified Group</li><li>**12** - Power Platform Environment</li><li>**13** - Power Platform Connection</li><li>**14** - Power Apps</li><li>**15** - Power Automate</li><li>**16** - Power BI Workspace</li><li>**17** - ActiveDirectoryMailbox</li><li>**18** - Active Directory User</li><li>**19** - Active Directory Group</li><li>**20** - Power Platform Solution</li><li>**21** - Power Copilot Studio</li><li>**22** - Power Page</li><li>**23** - Loop Container</li><li>**24** - SharePoint Agent</li><li>**25** - Azure AI Foundry Agent</li><li>**100** - Google User</li><li>**101** - Google Shared Drive</li><li>**102** - Google Classroom</li><li>**103** - Google Mailbox</li><li>**104** - Google Group</li><li>**105** - Google Vault Matter</li></ul> | integer |
+| objectType | The object type of the container.<ul><li>**0** - Site Collection</li><li>**1** - Mailbox</li><li>**2** - OneDrive</li><li>**5** - Microsoft 365 Group</li><li>**6** - Project Online</li><li>**7** - Public Folder</li><li>**9** - Channel</li><li>**10** - User</li><li>**11** - None Unified Group</li><li>**12** - Power Platform Environment</li><li>**13** - Power Platform Connection</li><li>**14** - Power Apps</li><li>**15** - Power Automate</li><li>**16** - Power BI Workspace</li><li>**17** - Active Directory Mailbox</li><li>**18** - Active Directory User</li><li>**19** - Active Directory Group</li><li>**20** - Power Platform Solution</li><li>**21** - Power Copilot Studio</li><li>**22** - Power Page</li><li>**23** - Loop Container</li><li>**24** - SharePoint Agent</li><li>**25** - Azure AI Foundry Agent</li><li>**100** - Google User</li><li>**101** - Google Shared Drive</li><li>**102** - Google Classroom</li><li>**103** - Google Mailbox</li><li>**104** - Google Group</li><li>**105** - Google Vault Matter</li></ul> | integer |
 
 
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{caf9****-2cc6-****-b04b-794c****5ea3}/scan-profiles/{47db****-1004-****-b2ce-8f5e****842d}/detail
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/47db****-1004-****-b2ce-8f5e****842d
 ```
  
 ## Response Sample

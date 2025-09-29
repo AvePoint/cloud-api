@@ -17,17 +17,17 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| POST | `/partner/external/v3/general/customers/services/batch` | Retrieve the services of customers managed by the current partner..|
+| POST | `/partner/external/v3/general/customers/services/batch` | Retrieve the services of customers managed by the current partner.|
  
 
 ## Query Parameters
 
-This section outlines the parameters optional required to specify paging information about the service you want to retrieve.
+This section outlines the parameters that allow users to specify pagination.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of customers API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The starting number of the page to get the violated objects. The default value is 1. | integer | No |
+| pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
 
 ## Request Body Parameters
 
@@ -35,7 +35,7 @@ This section outlines the request body required to specify which customers you w
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The ID of the customer to be retrieved | string | No |
+| customerId | The ID of the customer to be retrieved. | string | No |
 
 ## Response
 
@@ -49,6 +49,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | products          | The service subscription information of the customer.               | list |
 
 **Service subscriptions:**
+
 | Field | Description | Type |
 | --- | --- | --- |
 | service | The service that the customer has subscriptions for. | string |
@@ -78,7 +79,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers/s
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
     "data": [
