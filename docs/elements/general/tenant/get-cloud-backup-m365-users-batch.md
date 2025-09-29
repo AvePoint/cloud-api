@@ -1,6 +1,6 @@
-# Retrieve customer tenant protected user status
+# Retrieve User Protected Status for Customer
 
-Use this API to get customer tenant protected user status.
+Use this API to retrieve the protected status of users in the customer's tenant by Cloud Backup for Microsoft 365.
 
  ## Permissions
 
@@ -13,20 +13,20 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to get customer tenant protected user status.
+This section outlines the details of the HTTP method and endpoint used to retrieve the protected status.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| POST | `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch` | Get customer tenant protected user status.|
+| POST | `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch` | Retrieve the protected status.|
 
 ## Query Parameters
 
-This section outlines the parameters optional required to specify paging information about the data you want to retrieve.
+This section outlines the parameters that allow users to specify pagination.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of customers API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The starting number of the page to get the violated objects. The default value is 1. | integer | No |
+| pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
  
 ## URL Parameters
 
@@ -37,9 +37,9 @@ This section outlines the parameters required to specify which customer tenant y
 | customerId | The ID of the customer.    | string | Yes |
 | tenantId | The tenant ID of the customer.        | string | Yes |
 
-## Request Body
+## Request Body Parameters
 
-This section outlines the request body required to specify which tenant user you want to retrieve.
+This section outlines the request body required to specify which tenant user's protected status you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
@@ -64,7 +64,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers/f
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
     "data": [
@@ -75,7 +75,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
             [
                 {
                     "module":0, // The module of the tenant user: 0 represents mailbox
-                    "isProtected": false // Whether the tenant is protected by Cloud Backup for Microsoft 265: false represents not protected
+                    "isProtected": false // Whether the tenant is protected by Cloud Backup for Microsoft 365: false represents not protected
                 },
                 {
                     "module":2,

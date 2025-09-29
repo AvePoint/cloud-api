@@ -1,6 +1,6 @@
-# Retrieve customer tenant assigned user seats
+# Retrieve Customer Tenant User Seats
 
-Use this API to get customer tenant assigned user seats. 
+Use this API to retrieve the numbers of assigned and available user seats of customer's tenant.
 
  ## Permission
 
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to get customer tenant assigned user seats.
+This section outlines the details of the HTTP method and endpoint used to retrieve the user seat details of customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| POST | `/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users` | Get customer M365 assigned user seats.|
+| POST | `/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users` | Retrieve the user seat details of customer's tenant|
  
 ## URL Parameters
 
@@ -26,11 +26,11 @@ This section outlines the parameters required to specify which customer tenant y
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | customerId | The ID of the customer.    | string | Yes |
-| type | The specific tenant type of the customer.<ul><li>**0** - Microsoft 365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics 365</li></ul> | integer    | Yes |
+| type | The tenant type of the customer.<ul><li>**0** - Microsoft 365</li><li>**1** - Salesforce</li><li>**2** - Google</li><li>**3** - Dynamics 365</li></ul> | integer    | Yes |
 
 ## Request Body Parameters
 
-This section outlines the request body required to specify which customers you want to retrieve.
+This section outlines the request body required to specify type of user seats you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
@@ -55,7 +55,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers/f
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 [
     {
