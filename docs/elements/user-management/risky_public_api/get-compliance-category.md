@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}/batch`|elements.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}`|elements.um.user.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}/batch` | 	Retrieve compliances category information of a customer tennant in AvePoint Online Services.
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}` | 	Retrieve compliances category information of a customer tennant in AvePoint Online Services.
 
 ## URL Parameters
 
@@ -59,7 +59,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/workflows/4dbd4e4e-f657-44bc-a47d-2e224d38b0c4/batch
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/workflows/4dbd4e4e-f657-44bc-a47d-2e224d38b0c4
 ```
 
 ## Response Sample

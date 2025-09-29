@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/batch`|elements.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows`|elements.um.user.read.all|  
 
 ## Request
 
@@ -18,7 +18,7 @@ of a customer.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/batch` | 	Retrieves risk analyze workflow detail of a customer tenant in AvePoint Online Services.
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows` | 	Retrieves risk analyze workflow detail of a customer tenant in AvePoint Online Services.
 
 ## URL Parameters
 
@@ -54,7 +54,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://aostestpartnergcc.sharepointguild.com:5000/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/workflows/batch
+https://aostestpartnergcc.sharepointguild.com:5000/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/workflows
 ```
 
 ## Response Sample

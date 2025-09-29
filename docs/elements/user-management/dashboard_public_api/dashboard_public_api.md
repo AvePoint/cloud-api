@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users/batch`|elements.um.user.read.all|  
+| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users`|elements.um.user.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users/batch` | Retrieves overview information of security users of a customer's tenant.|
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users` | Retrieves overview information of security users of a customer's tenant.|
  
 ## URL Parameters
 
@@ -70,7 +70,7 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/users/batch
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/users
 ```
  
 ## Response Sample
