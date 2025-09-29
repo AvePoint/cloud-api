@@ -1,6 +1,6 @@
-# Get Detail Information of A Specific User
+# Retrieve Information of a Specific User
 
-Use this API to retrieve detail informations of specific users of a customer tenant in AvePoint Online Services. 
+Use this API to retrieve detailed information of a specific user in a customer's tenant. 
 
 ## Permissions
 
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve information about a user.
+This section outlines the details of the HTTP method and endpoint used to retrieve detailed information of a specific user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}` | 	Retrieves basic information for specific users of a customer tenant in AvePoint Online Services.|
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}` | 	Retrieves detailed information of a specific user in a customer's tenant.|
 
 ## URL Parameters
 
@@ -25,9 +25,9 @@ This section describes the query parameters that can be added to the URL when se
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
-| customerId | The customer ID of the customer. | string | Yes |
-| tenantId | The specific tenant ID of the customer. | string | Yes |
-| userId | Unique identifier for the specific user whose details are being requested. | string | Yes |
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
+| userId | The unique identifier of the user to retrieve the detailed information. | string | Yes |
 
 ## Response
 
@@ -36,13 +36,13 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | id |  The ID of the user. | string |
-| manager | The manager of the user | string |
+| manager | The manager of the user. | string |
 | firstName | The first name of the user. | string |
 | lastName | The last name of the user. | string |
 | displayName | The display name of the user | string |
 | jobTitle | The job title of the user. | string |
-| employeeId |The employeeId of the user. | string |
-| alternativeEmailAddress | The alternate email address or the user. | string[] |
+| employeeId |The employee ID of the user. | string |
+| alternativeEmailAddress | The alternate email address of the user. | string[] |
 | company | The company of the user. | string |
 | department | The department  of the user. | string |
 | location | The location of the user. | string |
@@ -52,9 +52,9 @@ If the request has been successfully processed, a 200 OK response will be return
 | isTestUser | Indicates whether this is a test user account for development purposes. | boolean |
 | officePhone | The business phone number of the user. | string |
 | mobile | The mobile phone number of the user. | string |
-| birthday | The birthday of the user | string |
+| birthday | The birthday of the user. | string |
 | mail | The primary email address of the user. | string |
-| usageLocation | The usage location for the user account, typically a country code.(AF: Afghanistan) | string |
+| usageLocation | The usage location for the user account, typically a country code (AF: Afghanistan). | string |
 | preferredLanguage | The preferred language setting for the user interface. | string |
 | enforceStart | Indicates whether account enforcement start date is enabled. | boolean |
 | enforceStartDateTime | The date and time when account enforcement begins. | string |
@@ -65,14 +65,14 @@ If the request has been successfully processed, a 200 OK response will be return
 | state | The state or province where the user is located. | string |
 | address | The street address of the user's location. | string |
 | loginName | The login name or user principal name used for authentication. | string |
-| status | The current status of the user account (Expire, Inactive, etc.). <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[] |
+| status | The current status of the user account. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[] |
 
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-fb26-4353-8dbd-5725fa9edc3f
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f
 ```
 
 ## Response Sample
@@ -82,41 +82,41 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 
 ```json
 {
-    "id": "7c18fd6f-fb26-4353-8dbd-5725fa9edc3f",
-    "manager": "jack@element.onmicrosoft.com",
-    "firstName": "Kevin",
-    "lastName": "Mark",
-    "displayName": "Kevin Mark",
-    "jobTitle": "IT",
-    "employeeId": "099999",
+    "id": "7c18fd6f-****-****-****-5725fa9edc3f", // The ID of the user
+    "manager": "user@element.onmicrosoft.com", // The manager of the user
+    "firstName": "Tony", // The first name of the user
+    "lastName": "Brown", // The last name of the user
+    "displayName": "Tony Brown", // The display name of the user
+    "jobTitle": "IT", // The job title of the user
+    "employeeId": "099999", // The employee ID of the user
     "alternativeEmailAddress": [
-        "kevin_Al@element.onmicrosoft.com"
+        "Tony_Al@element.onmicrosoft.com" // The alternate email address of the user
     ],
-    "company": "BK Company",
-    "department": "DEV",
-    "location": "2298",
-    "passwordNeverExpire": true,
-    "lastChangeDate": "1970-01-01T00:00:00Z",
-    "age": 37,
-    "isTestUser": true,
-    "officePhone": "2323111dsd",
-    "mobile": "323111dsd",
-    "birthday": 0,
-    "mail": "kevin@element.onmicrosoft.com",
-    "usageLocation": "AF",
-    "preferredLanguage": "af-NA",
-    "enforceStart": false,
-    "enforceStartDateTime": "1970-01-01T00:00:00Z",
-    "enforceEnd": false,
-    "enforceEndDateTime": "1970-01-01T00:00:00Z",
-    "postalCode": "2121",
-    "countryRegion": "Antarctica",
-    "state": "British Antarctic Territory",
-    "address": "Rothera Research Station",
-    "loginName": "kevin@element.onmicrosoft.com",
-    "status":  [
-        0, 
-        1
+    "company": "Organization ABC", // The company of the user
+    "department": "DEV", // The department of the user
+    "location": "2298", // The location of the user
+    "passwordNeverExpire": true, // Indicates whether the user's password is set to never expire
+    "lastChangeDate": "1970-01-01T00:00:00Z", // The date and time when the user account was last modified
+    "age": 37, // The calculated age of the user based on their birthday
+    "isTestUser": true, // Indicates whether this is a test user account for development purposes
+    "officePhone": "232****9754", // The business phone number of the user
+    "mobile": "323****76", // The mobile phone number of the user.
+    "birthday": 0, // The birthday of the user
+    "mail": "tony@element.onmicrosoft.com", // The primary email address of the user
+    "usageLocation": "AF", // The usage location for the user account, typically a country code
+    "preferredLanguage": "af-NA", // The preferred language setting for the user interface
+    "enforceStart": false, // Indicates whether account enforcement start date is enabled
+    "enforceStartDateTime": "1970-01-01T00:00:00Z", // The date and time when account enforcement begins
+    "enforceEnd": false, // Indicates whether account enforcement end date is enabled
+    "enforceEndDateTime": "1970-01-01T00:00:00Z", // The date and time when account enforcement ends
+    "postalCode": "2121", // The postal code of the user
+    "countryRegion": "United States", // The country or region where the user is located
+    "state": "Los Angeles", // The state or province where the user is located
+    "address": "Rothera Research Station", // The street address of the user's location
+    "loginName": "tony@element.onmicrosoft.com", // The login name or user principal name used for authentication
+    "status":  [ 
+        0, // The current status of the user. 0 represents "MFA disabled"
+        1 // // The current status of the user. 1 represents "Sign-in blocked"
     ],
 }
 ```

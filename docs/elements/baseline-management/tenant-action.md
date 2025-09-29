@@ -1,8 +1,8 @@
-# Monitor Tenants
+# Monitor Tenant
 
-Use this API to monitor tenants by performing specific actions to the tenants. Currently, you can use this API to apply baselines to tenant.
+Use this API to monitor a tenant by performing specific actions to the tenant. Currently, you can use this API to apply baselines to a tenant.
 
-## Permissions  
+## Permission  
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).  
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section provides details on the HTTP method and endpoint used to monitor tenants by performing specific actions on the tenants.
+This section provides details on the HTTP method and endpoint used to monitor a tenant by performing specific actions on the tenant.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Monitors tenants by performing actions on the tenants. |
+| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Monitors a tenant by performing actions on the tenant. |
 
 ## Request Body Parameters
 
@@ -25,7 +25,7 @@ You can provide a object about the action.
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|actionType| The action that you want to perform on the tenant. (More actions will be supported in the future) <ul><li>**1** - Apply baselines to tenant</li></ul> |integer|Yes|
+|actionType| The action that you want to perform on a tenant. (More actions will be supported in the future) <ul><li>**1** - Apply baselines to tenant</li></ul> |integer|Yes|
 |data| The parameters of the action. |object|Yes|
 
 ### Apply Action Data Parameters
@@ -76,10 +76,10 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the ID of the applying baselines to tenant job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {
-    "jobId": "7f3b241b-****-****-****-3a1c395524t6"
+    "jobId": "7f3b241b-****-****-****-3a1c395524t6" // The ID of the applying baselines to tenant job 
 }
 ```

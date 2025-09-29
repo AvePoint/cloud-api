@@ -35,7 +35,7 @@ This section outlines the optional parameters used to specify the information fo
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| catagory | The array value includes the category you want to retrieve. <ul><li>**1** - Network security</li><li>**2** - Endpoint security</li><li>**3** - Identity access</li><li>**4** - Configuration security</li></ul> | integer[] | No |
+| catagory | The array value includes the category you want to retrieve. <ul><li>**1** - Network security</li><li>**2** - Endpoint security</li><li>**3** - Identity access</li><li>**4** - Configuration security</li></ul> | integer | No |
 | pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
 | pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
 
