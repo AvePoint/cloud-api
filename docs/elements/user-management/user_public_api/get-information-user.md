@@ -1,8 +1,8 @@
 # Retrieve Information of a Specific User
 
-Use this API to retrieve detailed information of a specific user in a customer's tenant. 
+Use this API to retrieve information of a specific user in a customer's tenant. 
 
-## Permissions
+## Permission
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
@@ -13,21 +13,21 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve detailed information of a specific user in a customer's tenant.
+This section outlines the details of the HTTP method and endpoint used to retrieve information of a specific user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}` | 	Retrieves detailed information of a specific user in a customer's tenant.|
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}` | 	Retrieves information of a specific user in a customer's tenant.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve user information according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve information of a user according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the user to retrieve the detailed information. | string | Yes |
+| userId | The unique identifier of the user. | string | Yes |
 
 ## Response
 
@@ -42,13 +42,13 @@ If the request has been successfully processed, a 200 OK response will be return
 | displayName | The display name of the user | string |
 | jobTitle | The job title of the user. | string |
 | employeeId |The employee ID of the user. | string |
-| alternativeEmailAddress | The alternate email address of the user. | string[] |
+| alternateEmailAddress | The alternate email address of the user. | string |
 | company | The company of the user. | string |
 | department | The department  of the user. | string |
 | location | The location of the user. | string |
 | passwordNeverExpire | Indicates whether the user's password is set to never expire. | boolean |
 | lastChangeDate | The date and time when the user account was last modified. | string |
-| age | The calculated age of the user based on their birthday. | int |
+| age | The calculated age of the user based on their birthday. | integer |
 | isTestUser | Indicates whether this is a test user account for development purposes. | boolean |
 | officePhone | The business phone number of the user. | string |
 | mobile | The mobile phone number of the user. | string |
@@ -65,7 +65,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | state | The state or province where the user is located. | string |
 | address | The street address of the user's location. | string |
 | loginName | The login name or user principal name used for authentication. | string |
-| status | The current status of the user account. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[] |
+| status | The current status of the user account. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer |
 
 ## Request Sample
 
@@ -89,7 +89,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "displayName": "Tony Brown", // The display name of the user
     "jobTitle": "IT", // The job title of the user
     "employeeId": "099999", // The employee ID of the user
-    "alternativeEmailAddress": [
+    "alternateEmailAddress": [
         "Tony_Al@element.onmicrosoft.com" // The alternate email address of the user
     ],
     "company": "Organization ABC", // The company of the user

@@ -1,6 +1,6 @@
-# Update Office Information of a Specific User
+# Update Office Location Information of a Specific User
 
-Use this API to update the office information of a specific user in a customer's tenant. 
+Use this API to update the office location information of a specific user in a customer's tenant. 
 
 ## Permission
 
@@ -13,25 +13,25 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to update the office information of a specific user in a cutomer's tenant.
+This section outlines the details of the HTTP method and endpoint used to update the office location information of a specific user in a cutomer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information` | Updates the office information of a specific user in a customer's tenant.|
+| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information` | Updates the office location information of a specific user in a customer's tenant.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the office information of a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the office location information of a user according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the specific user whose details are being requested. | string | Yes |
+| userId | The unique identifier of the user. | string | Yes |
 
 ## Request Body
 
-This section outlines the required fields to update the office information of a user.
+This section outlines the required fields to update the office location information of a user.
 
 | Parameter | Description | Type | Required | MaxLength
 | --- | --- | --- | --- | ---|

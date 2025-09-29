@@ -27,7 +27,7 @@ This section describes the query parameters that can be added to the URL when se
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the specific user whose details are being requested. | string | Yes |
+| userId | The unique identifier of the user. | string | Yes |
 
 ## Request Body
 
@@ -35,7 +35,7 @@ This section outlines the required fields to update the password setting of a us
 
 | Parameter | Description | Type | Required
 | --- | --- | --- | ---
-| passwordNeverExpire | Indicates whether the user's password nerver expires. | bool | Yes |
+| passwordNeverExpire | Indicates whether the user's password is set to nerver expire. | bool | Yes |
 
 ## Response
 
@@ -52,6 +52,6 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 
 ```json
 {
-    "passwordNeverExpire" : true // Indicates whether the user's password nerver expires
+    "passwordNeverExpire" : true // Indicates whether the user's password is set to nerver expire
 }
 ```

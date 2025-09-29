@@ -2,7 +2,7 @@
 
 Use this API to retrieve risk analyze workflow detail of a customer tenant in AvePoint Online Services.
 
-## Permissions
+## Permission
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
@@ -26,8 +26,8 @@ This section describes the query parameters that can be added to the URL when se
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
-| customerId | The customer ID of the customer. | string | Yes |
-| tenantId | The specific tenant ID of the customer. | string | Yes |
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
 
 ## Query Parameters
 
@@ -45,16 +45,15 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| id |  The ID of risk security | string |
-| WorkflowId |  The workflow ID of the customer. | string |
-| WorkflowDisplayName |  The workflow display name of the customer. | string |
+| WorkflowId |  The workflow ID. | string |
+| WorkflowDisplayName |  The workflow display name. | string |
 
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://aostestpartnergcc.sharepointguild.com:5000/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/workflows
+https://aostestpartnergcc.sharepointguild.com:5000/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/overview/security/compliances/workflows
 ```
 
 ## Response Sample
@@ -66,15 +65,14 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 {
     "data": [
         {
-            "id": "83545853-9408-4d0b-902e-79b0beb5dac5",
             "workflowId": "8fc933ed-5d54-41fe-909c-afbf326f27ff",
             "workflowDisplayName": "User MFA disabled"
         }
     ],
     "metadata": {
-        "pageIndex": 1,
-        "pageSize": 50,
-        "totalCount": 1
+        "pageIndex": 1, // The page index of current request
+        "pageSize": 50, // The number will be retrieved in one request
+        "totalCount": 1 // The total number count that matches the request
     }
 }
 ```
