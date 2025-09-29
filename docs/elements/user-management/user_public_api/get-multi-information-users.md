@@ -1,8 +1,8 @@
 # Retrieve Information of Multiple Users
 
-Use this API to retrieve basic information of multiple users in a customer's tenant.  
+Use this API to retrieve information of multiple users in a customer's tenant.  
 
-## Permissions  
+## Permission  
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
@@ -13,20 +13,20 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to retrieve basic information of multiple users in a customer's tenant.
+This section outlines the HTTP method and endpoint used to retrieve information of multiple users in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|POST|`/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch`|Retrieves basic information for specific users of a customer tenant in AvePoint Online Services.|
+|POST|`/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch`|Retrieves information of multiple users in a customer's tenant.|
 
 ## URL Parameters
 
-This section outlines the parameters required to specify which customer tenant you want to retrieve.
+This section outlines the parameters required to specify which customer's tenant you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The customer ID of the customer. | string | Yes |
-| tenantId | The specific tenant ID of the customer. | string | Yes |
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
 
 ## Query Parameters
 
@@ -43,7 +43,7 @@ This section outlines the request body required to specify which users you want 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| userIds | The IDs of the users to be retrived. | string | No |
+| userIds | The unique identifiers of users. | string | No |
 
 ## Response
 
@@ -63,13 +63,13 @@ If the request has been successfully processed, a 200 OK response will be return
 | department | The department of the user. | string |
 | mobile | The mobile of the user. | string |
 | jobTitle | The job title of the user. | string |
-| isTestUser | Indicates whether the user account is a test user for decelopment purposes. | bool |
+| isTestUser | Indicates whether the user account is a test user for development purposes. | bool |
 | age | The password age of the user. | integer |
-| startDate | The start date when the user account can sign in Microsoft 365.| string |
+| startDate | The start date when the user account can sign in to Microsoft 365.| string |
 | endDate | The date when the user account will be blocked from signing in.| string |
 | officePhone | The office phone of the user. | string |
 | countryOrRegion | The country or region of the user. | string |
-| status | The current status of the user account. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer[] |
+| status | The current status of the user account. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer |
 | pageIndex | The page index of current request. | integer |
 | pageSize | The user number will be retrieved in one request. | integer |
 | totalCount | The total number count that match the request. | integer |
@@ -111,8 +111,8 @@ If the request has been successfully processed, a 200 OK response will be return
         }
     ],
     "metadata": {
-        "pageIndex": 1,// The page index of current request
-        "pageSize": 50,// The user number will be retrieved in one request
-        "totalCount": 1// The total number count that match the request
+        "pageIndex": 1, // The page index of current request
+        "pageSize": 50, // The user number will be retrieved in one request
+        "totalCount": 1 // The total number count that matches the request
     }
 }

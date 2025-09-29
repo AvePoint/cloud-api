@@ -87,8 +87,8 @@ If the request has been successfully processed, a 200 OK response will be return
         }
     ],
     "metadata": {
-        "pageIndex": 1,
-        "pageSize": 50,
-        "totalCount": 2
+        "pageIndex": 1, // The page index of current request
+        "pageSize": 50, // The baseline number will be retrieved in one request
+        "totalCount": 2 // The total number count that match the request
     }
 }

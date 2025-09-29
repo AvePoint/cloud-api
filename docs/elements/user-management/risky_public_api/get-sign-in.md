@@ -2,7 +2,7 @@
 
 Use this API to retrieve user signin actions information of a customer tenant in AvePoint Online Services. 
 
-## Permissions
+## Permission
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
@@ -25,8 +25,8 @@ This section describes the query parameters that can be added to the URL when se
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
-| customerId | The customer ID of the customer. | string | Yes |
-| tenantId | The specific tenant ID of the customer. | string | Yes |
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
 
 ## Query Parameters
 
@@ -87,9 +87,9 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
         },
     ],
      "metadata": {
-        "pageIndex": 1,
-        "pageSize": 50,
-        "totalCount": 1
+        "pageIndex": 1, // The page index of current request
+        "pageSize": 50, // The number will be retrieved in one request
+        "totalCount": 1 // The total number count that matches the request
     }
 }
 ```

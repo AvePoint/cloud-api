@@ -28,7 +28,7 @@ This section describes the query parameters that can be added to the URL when se
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the specific user whose details are being requested. | string | Yes |
+| userId | The unique identifier of the user. | string | Yes |
 
 ## Request Body
 

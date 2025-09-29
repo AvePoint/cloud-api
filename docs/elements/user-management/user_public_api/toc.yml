@@ -12,13 +12,13 @@
   href: update-email-address.md
 - name: Update General Information of a Specific User
   href: update-general-information.md
-- name: Update the isTestUser Property of a Specific User
+- name: Update the Test User Property of a Specific User
   href: update-istest.md
 - name: Update Manager of a Specific User
   href: update-manager.md
-- name: Update Office of a Specific User
-  href: update-office.md
 - name: Update Office Information of a Specific User
+  href: update-office.md
+- name: Update Office Location Information of a Specific User
   href: update-office-information.md
 - name: Update the Password Setting of a Spceific User
   href: update-password-setting.md

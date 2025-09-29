@@ -2,7 +2,7 @@
 
 Use this API to update information of a specific user in a customer's tenant. 
 
-## Permissions
+## Permission
 
 The following permission is required to call the API.  
 You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
@@ -27,11 +27,11 @@ This section describes the query parameters that can be added to the URL when se
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the user to update the information. | string | Yes |
+| userId | The unique identifier of the user. | string | Yes |
 
 ## Request Body
 
-This section outlines the required fields to update the information of a specific user.
+This section outlines the required fields to update the information of a specific user in a cutomer's tenant.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
