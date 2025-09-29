@@ -1,11 +1,11 @@
-# Retrieve Data Security Posture
+# Retrieve Data Security Posture of Tenant
 
 Use this API to retrieve the data security posture statistics of a specific tenant in Elements.  
 
 ## Permission  
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../register-app.md).
 
 | API | Permission |
 |-----------|-----------|
@@ -36,10 +36,10 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Response | Description | Type |
 | --- | --- | --- |
-| sensitiveItemsSharedWithEveryOne | The number of sensitive items that are shared with the Everyone group. | integer |
-| sensitiveItemsSharedWithEveryOneExceptExternalUsers | The number of sensitive items that are shared with the Everyone except external users group. | integer |
-| sensitiveItemsSharedViaAnonynousLink | The number of sensitive items that are shared via anyone links.  | integer |
-| sensitiveItemsSharedViaLinkForSpecificExternalUsers | The number Of sensitive items that are shared via links for specific external users. | integer |
+| sensitiveItemsSharedWithEveryone | The number of sensitive items that are shared with the Everyone group. | integer |
+| sensitiveItemsSharedWithEveryoneExceptExternalUsers | The number of sensitive items that are shared with the Everyone except external users group. | integer |
+| sensitiveItemsSharedViaAnyoneLink | The number of sensitive items that are shared via anyone links.  | integer |
+| sensitiveItemsSharedViaLinkForSpecificExternalUsers | The number of sensitive items that are shared via links for specific external users. | integer |
 | sensitiveItemsSharedViaOrganizationLink | The number of sensitive items that are shared via organization links. | integer |
 
 
@@ -53,13 +53,13 @@ https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-**
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md/#http-status-code).
 
 ```json 
 {
-    "sensitiveItemsSharedWithEveryOne": 1,
-    "sensitiveItemsSharedWithEveryOneExceptExternalUsers": 2,
-    "sensitiveItemsSharedViaAnonynousLink": 3,
-    "sensitiveItemsSharedViaLinkForSpecificExternalUsers": 4,
-    "sensitiveItemsSharedViaOrganizationLink": 5
+    "sensitiveItemsSharedWithEveryone": 1, // The number of sensitive items that are shared with the Everyone group
+    "sensitiveItemsSharedWithEveryoneExceptExternalUsers": 2, // The number of sensitive items that are shared with the Everyone except external users group
+    "sensitiveItemsSharedViaAnyoneLink": 3, // The number of sensitive items that are shared via anyone links
+    "sensitiveItemsSharedViaLinkForSpecificExternalUsers": 4, // The number of sensitive items that are shared via links for specific external users
+    "sensitiveItemsSharedViaOrganizationLink": 5 // The number of sensitive items that are shared via organization links
 }

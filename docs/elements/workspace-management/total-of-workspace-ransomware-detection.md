@@ -1,11 +1,11 @@
-# Retrieve Data Protection Statistics
+# Retrieve Data Protection Statistics of Tenant
 
 Use this API to retrieve the data protection statistics of a specific tenant in Elements.  
 
-## Permissions  
+## Permission  
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../register-app.md).
 
 | API | Permission |
 |-----------|-----------|
@@ -60,20 +60,20 @@ https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-**
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md/#http-status-code).
 
 ```json 
 {
-    "teamsUnderPotentialRansomwareAttack": 10,
-    "sharePointSitesUnderPotentialRansomwareAttack": 0,
-    "oneDrivesUnderPotentialRansomwareAttack": 0,
-    "groupsUnderPotentialRansomwareAttack": 16,
-    "geamsWithUnusualActivities": 0,
-    "sharePointSitesWithUnusualActivities": 1,
-    "oneDrivesWithUnusualActivities": 22,
-    "groupsWithUnusualActivities": 0,
-    "teamsWithSuspiciousObjects": 12,
-    "sharePointSitesWithSuspiciousObjects": 0,
-    "oneDrivesWithSuspiciousObjects": 0,
-    "groupsWithSuspiciousObjects": 1
+    "teamsUnderPotentialRansomwareAttack": 10, // The number of Teams under potential ransomware attack over the last 7 days
+    "sharePointSitesUnderPotentialRansomwareAttack": 0, // The number of SharePoint sites under potential ransomware attack over the last 7 days
+    "oneDrivesUnderPotentialRansomwareAttack": 0, // The number of OneDrives under potential ransomware attack over the last 7 days
+    "groupsUnderPotentialRansomwareAttack": 16, // The number of Groups under potential ransomware attack over the last 7 days
+    "teamsWithUnusualActivities": 0, // The number of Teams with unusual activities over the last 7 days
+    "sharePointSitesWithUnusualActivities": 1, // The number of SharePoint sites with unusual activities over the last 7 days
+    "oneDrivesWithUnusualActivities": 22, // The number of OneDrives with unusual activities over the last 7 days
+    "groupsWithUnusualActivities": 0, // The number of Groups with unusual activities over the last 7 days
+    "teamsWithSuspiciousObjects": 12, // The number of Teams with suspicious objects over the last 7 days
+    "sharePointSitesWithSuspiciousObjects": 0, // The number of SharePoint sites with suspicious objects over the last 7 days
+    "oneDrivesWithSuspiciousObjects": 0, // The number of OneDrives with suspicious objects over the last 7 days
+    "groupsWithSuspiciousObjects": 1 // The number of Groups with suspicious objects over the last 7 days
 }

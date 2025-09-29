@@ -1,4 +1,4 @@
-# Retrieve Matched Risk Rules
+# Retrieve Matched Risk Rules of Tenant
 
 Use this API to retrieve all matched risk rules for a specific tenant in Elements.  
 
@@ -27,8 +27,8 @@ This section outlines the parameters required to specify which tenant's risk det
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The customer ID. | string | Yes |
-| tenantId | The tenant ID of the customer. | string | Yes |
+| customerId | The customer ID | string | Yes |
+| tenantId | The tenant ID of the customer | string | Yes |
 
 
 ## Query Parameters
@@ -66,28 +66,28 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d92
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md/#http-status-code).
 
 ```json 
 {
     "result": [
         {
             "ruleId": "00000002-****-****-****-0000001A",
-            "ruleName": "Users without MFA enabled",
-            "setting": null,
-            "tenantId": "be4cdf40-****-****-****-ab967eb78246",
-            "customerId": "292b68c5-****-****-****-28650d407eaf",
-            "dataSource": 6,
-            "hitItemCount": 161
+                        "ruleName": "Users without MFA enabled", // The display name of the rule
+                        "setting": null, // The parameter value configured for the rule
+                        "tenantId": "be4cdf40-****-****-****-ab967eb78246", // The tenant ID
+                        "customerId": "292b68c5-****-****-****-28650d407eaf", // The customer ID
+                        "dataSource": 6, // The data source of the matched objects, Users
+                        "hitItemCount": 161 // The number of objects that match the risk rule
         },
         {
-            "ruleId": "00000002-****-****-****-00000023",
-            "ruleName": "Global administrator without a password expiration date",
-            "setting": null,
-            "tenantId": "be4cdf40-****-****-****-ab967eb78246",
-            "customerId": "292b68c5-****-****-****-28650d407eaf",
-            "dataSource": 6,
-            "hitItemCount": 1
+                        "ruleId": "00000002-****-****-****-00000023", // The ID of the rule
+                        "ruleName": "Global administrator without a password expiration date", // The display name of the rule
+                        "setting": null, // The parameter value configured for the rule
+                        "tenantId": "be4cdf40-****-****-****-ab967eb78246", // The tenant ID
+                        "customerId": "292b68c5-****-****-****-28650d407eaf", // The customer ID
+                        "dataSource": 6, // The data source of the matched objects, Users
+                        "hitItemCount": 1 // The number of objects that match the risk rule
         }
     ]
 }

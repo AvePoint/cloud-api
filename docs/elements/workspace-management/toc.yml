@@ -1,6 +1,6 @@
 - name: Retrieve Workspace Overview
   href: total-of-workspaces.md
-- name: Retrieve Workspace Compliance Statistics  
+- name: Retrieve Workspace Compliance  
   href: total-of-workspaces-incompliance.md
 - name: Retrieve Data Security Posture
   href: total-of-workspace-dspm.md
