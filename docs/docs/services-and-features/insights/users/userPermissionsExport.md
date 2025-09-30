@@ -28,7 +28,6 @@ The API supports several query parameters to refine and customize the data expor
 | Parameter  | Description                                                                 | Type   | Required? |
 |------------|-----------------------------------------------------------------------------|--------|-----------|
 | email| Sets the email addresses or loginName of users for which you want to export the permission report. | string | Yes |
-| exportOptionType | Export options: <ul><li>**1** for summary and site collection level access report</li><li> **2** for summary and access report to all objects</li> <li>**3** for summary report only</li> | integer | Yes | 
 | siteUrls | Sets the URLs of site collections for which you want to export the permission report | list | No | 
 | dataSources | Sets the workspace in which you want to export the access report of users. Multiple values are allowed. (e.g., **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**) | list | Yes |
 
