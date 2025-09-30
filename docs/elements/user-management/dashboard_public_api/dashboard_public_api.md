@@ -5,7 +5,7 @@ Use this API to retrieve overview information of security users in a customer's 
  ## Permission
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../../register-app.md).
 
 | API | Permission  |
 |-----------|--------|
@@ -75,35 +75,35 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md/#http-status-code).
 ```json
 {
     "data": [
         {
-            "id": "c2aa00d3-ef87-40aa-a80a-9e9c79232bff",// The ID of the user
-            "userPrincipalName": "kevin@element.onmicrosoft.com",// The user principle name
-            "displayName": "Kevin Mark",// The display name of the user
-            "firstName": "Kevin",// The first name of the user
-            "lastName": "Mark",// The last name of the user
-            "department": "DEV",// The department of the user
-            "mobile": "11122",// The mobile of the user
-            "jobTitle": "Software developer",// The job title of the user
+            "id": "c2aa00d3-ef87-40aa-a80a-9e9c79232bff", // The ID of the user
+            "userPrincipalName": "kevin@element.onmicrosoft.com", // The user principle name
+            "displayName": "Kevin Mark", // The display name of the user
+            "firstName": "Kevin", // The first name of the user
+            "lastName": "Mark", // The last name of the user
+            "department": "DEV", // The department of the user
+            "mobile": "11122", // The mobile of the user
+            "jobTitle": "Software developer", // The job title of the user
             "status": [
                     0, 
                     1
-            ],// The status of the user
-            "isTestUser": false,// If the user is a test user or not
-            "age": 12,// The password age of the user
-            "startDate": "1970-01-01T00:00:00Z",// The start date when the user account can sign in Microsoft 365
-            "endDate": "1970-01-01T00:00:00Z",// The date when the user account will be blocked from signing in
-            "company": "BK Company",// The company of the user
-            "countryOrRegion": "Slovenia"// The country or region of the user
+            ], // The status of the user
+            "isTestUser": false, // If the user is a test user or not
+            "age": 12, // The password age of the user
+            "startDate": "1970-01-01T00:00:00Z", // The start date when the user account can sign in Microsoft 365
+            "endDate": "1970-01-01T00:00:00Z", // The date when the user account will be blocked from signing in
+            "company": "BK Company", // The company of the user
+            "countryOrRegion": "Slovenia" // The country or region of the user
         }
     ],
     "metadata": {
-        "pageIndex": 1,// The page index of current request
-        "pageSize": 50,// The user number will be retrieved in one request
-        "totalCount": 1// The total number count that match the request
+        "pageIndex": 1, // The page index of current request
+        "pageSize": 50, // The user number will be retrieved in one request
+        "totalCount": 1 // The total number count that match the request
     }
 }
 ```

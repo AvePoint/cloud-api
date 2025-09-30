@@ -101,7 +101,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "isTestUser": true, // Indicates whether this is a test user account for development purposes
     "officePhone": "232****9754", // The business phone number of the user
     "mobile": "323****76", // The mobile phone number of the user.
-    "birthday": 0, // The birthday of the user
+    "birthday": "1970-01-01T00:00:00Z", // The birthday of the user
     "mail": "tony@element.onmicrosoft.com", // The primary email address of the user
     "usageLocation": "AF", // The usage location for the user account, typically a country code
     "preferredLanguage": "af-NA", // The preferred language setting for the user interface

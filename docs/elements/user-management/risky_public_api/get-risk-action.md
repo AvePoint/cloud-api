@@ -1,6 +1,6 @@
-# Retrieve Risk Action Count
+# Retrieve Risky Action Count
 
-Use this API to retrieve risk action count of a customer tenant in AvePoint Online Services.
+Use this API to retrieve the risky action count in a customer's tenant.
 
 ## Permission
 
@@ -13,16 +13,16 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve risk action
-of a customer.
+This section outlines the details of the HTTP method and endpoint used to retrieve the risky action count in 
+a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions` | 	Retrieves risk action count of a customer tenant in AvePoint Online Services.
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions` | 	Retrieves the risky action count in a customer's tenant.
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve risk action according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve the risky action count in a customer's tenant according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
@@ -35,7 +35,7 @@ This section outlines the optional parameters used to specify the information fo
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| types | The array value includes the types you want to retrieve. <ul><li>**0** - Normal action</li><li>**1** - Risk action</li></ul> | integer[]| No |
+| types | The types of actions that you want to retrieve. <ul><li>**0** - Normal action</li><li>**1** - Risky action</li></ul> | integer| No |
 
 
 ## Response
@@ -44,8 +44,8 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| riskActionCount |  The risk action count of the customer. | interger |
-| normalActionCount |  The normal action count of the customer. | interger |
+| riskyActionCount |  The count of the risky actions in the tenant. | interger |
+| normalActionCount |  The count of normal actions in the tenant. | interger |
 
 
 ## Request Sample
@@ -63,7 +63,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 
 ```json
 {
-    "riskActionCount": 10,
-    "normalActionCount": 20
+    "riskyActionCount": 10, // The count of the risky actions in the tenant
+    "normalActionCount": 20 // The count of normal actions in the tenant
 }
 ```

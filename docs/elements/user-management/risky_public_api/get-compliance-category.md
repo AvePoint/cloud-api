@@ -1,6 +1,6 @@
 # Retrieve Compliance Information
 
-Use this API to retrieve compliance information of a customer's tenant. 
+Use this API to retrieve compliance information of a specific workflow in a customer's tenant. 
 
 ## Permission
 
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve compliance information of a customer's tennant.
+This section outlines the details of the HTTP method and endpoint used to retrieve compliance information of a specific workflow in a customer's tennant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}` | 	Retrieves compliances information of a customer's tenant.
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}` | 	Retrieves compliances information of a specific workflow in a customer's tenant.
 
 ## URL Parameters
 
@@ -43,15 +43,15 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| riskUserCount |  The number of users triggers the risk based on the workflow. | integer |
-| last7DayFixCount |  The number of fixed risky action in the last 7 days. | integer |
+| riskUserCount |  The number of users who trigger the risk based on the workflow. | integer |
+| last7DayFixCount |  The number of fixed risky actions in last 7 days. | integer |
 | userDisplayName |  The display name of the risky user. | string |
 | userPrincipalName |  The user principal name of the risky user. | string |
 | userId |  The unique identifier of the risky user. | string |
-| loginIP |  The IP address when user signs in to Microsoft 365 trigger the risky workflow. | string |
-| loginTime |  The sign-in time when user signs in to Microsoft 365 trigger the risky workflow flow. | string |
-| deviceName |  The name of device. | string |  
-| accessedFileName |  The name of file accessed. | string |
+| loginIP |  The IP address in which a user signs in to Microsoft 365. | string |
+| loginTime |  The sign-in time when user signs in to Microsoft 365. | string |
+| deviceName |  The name of the device that user uses to sign in to Microsoft 365. | string |  
+| accessedFileName |  The name of the file that has been accessed. | string |
 | sensitiveInformation |  The sensitive information of the file. | string |
 | accessTime |  The time when the user accesses the file. | string |
 ## Request Sample
@@ -59,7 +59,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/workflows/4dbd4e4e-f657-44bc-a47d-2e224d38b0c4
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/overview/security/compliances/workflows/4dbd4e4e-****-****-****-2e224d38b0c4
 ```
 
 ## Response Sample
@@ -70,30 +70,30 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 
 ```json
 {
-  "last7DayFixCount": 8,
-  "riskUserCount": 12,
+  "last7DayFixCount": 8, // The number of fixed risky actions in last 7 days
+  "riskUserCount": 12, // The number of users who trigger the risk based on the workflow
   "riskUsers": {
     "items": [
       {
-        "userDisplayName": "Mark Kevin",
-        "userPrincipalName": "mark@element.onmicrosoft.com",
-        "userId": "c2aa00d3-ef87-40aa-a80a-9e9c79232bfe",
+        "userDisplayName": "Mark Kevin", // The display name of the risky user
+        "userPrincipalName": "mark@element.onmicrosoft.com", // The user principal name of the risky user
+        "userId": "c2aa00d3-ef87-40aa-a80a-9e9c79232bfe", // The unique identifier of the risky user
         "loginIps": [
           {
-            "loginIP": "23.98.122.140",
-            "loginTime": "1970-01-01T00:00:00Z"
+            "loginIP": "23.98.122.140", // The IP address in which a user signs in to Microsoft 365
+            "loginTime": "1970-01-01T00:00:00Z" // The sign-in time when user signs in to Microsoft 365
           }
         ],
         "files": [
           {
-            "accessedFileName": "report.docx",
-            "accessTime": "1970-01-01T00:00:00Z",
-            "sensitiveInformation": "Personal Data"
+            "accessedFileName": "report.docx", // The name of the file that has been accessed
+            "accessTime": "1970-01-01T00:00:00Z", // The time when the user accesses the file
+            "sensitiveInformation": "Personal Data" // The sensitive information of the file
           }
         ],
         "devices": [
           {
-            "deviceName": "DESKTOP-ABC123"
+            "deviceName": "DESKTOP-ABC123" // The name of the device that user uses to sign into Microsoft 365
           }
         ]
       }

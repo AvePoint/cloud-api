@@ -5,7 +5,7 @@ Use this API to retrieve the general information of baselines.
 ## Permission  
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).  
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../register-app.md).  
 
 | API  | Permission  |
 |-----------|--------|
@@ -66,7 +66,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/bat
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md/#http-status-code).
 
 ```json
 {
@@ -89,6 +89,6 @@ If the request has been successfully processed, a 200 OK response will be return
     "metadata": {
         "pageIndex": 1, // The page index of current request
         "pageSize": 50, // The baseline number will be retrieved in one request
-        "totalCount": 2 // The total number count that match the request
+        "totalCount": 2 // The total number count that matches the request
     }
 }
