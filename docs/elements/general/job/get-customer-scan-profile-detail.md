@@ -38,10 +38,11 @@ If the request has been successfully processed, a 200 OK response will be return
 | scanInplaceArchivedMailboxes | Whether the **Scan in-place archived mailboxes** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |
 | isIgnoreLockedSiteEnabled | Whether the **Ignore the locked objects when updating the job status** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |
 | enableDailyScan | Whether the **Enable daily scan** setting is enabled in the scan profile: <ul><li>**No** - Disabled</li><li>**hh:mm** - The time of the daily scan, for example, 01:59</li></ul> | string |
-| isSendOutOfPolicyNotification | Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul>  | boolean |
-| containers | The information of the container. | list |
+| isSendOutOfPolicyNotification | Whether the **Send an email notification to the following recipients when objects are moved to other containers or removed from any containers** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul>  | boolean |
+| containers | The information of the containers. | list |
 
 **Container information:**
+
 | Field | Description | Type |
 | --- | --- | --- |
 | containersName | The name of the container. | string |

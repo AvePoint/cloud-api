@@ -44,7 +44,7 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/{47db****-1004-****-b2ce-8f5e****842d}/changes
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/47db****-1004-****-b2ce-8f5e****842d/changes
 ```
  
 ## Response Sample
@@ -52,21 +52,21 @@ If the request has been successfully processed, a 200 OK response will be return
 For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
-    "profileName": "Default Microsoft 365 Scan Profile", // The name of the scan profile. 
-    "profileId": "47db****-1004-****-b2ce-8f5e****842d", // The ID of the scan profile. 
-    "tenantDomain": "Domain", // The tenant domain of the scan profile. 
-    "tenantId": "c235****-c7a2-****-b7d4-79e8****66c3", // The tenant ID of the scan profile. 
-    "description": "This is a partner-configured scan profile.", // The description of the scan profile. 
-    "scanMode": 0, // The scan mode of the profile: 0 represents the Express mode. 
-    "modifiedTime": "2025-09-11T03:19:14Z", // The last modified time of the scan profile. 
-    "lastUpdateTime": "2025-09-11T03:19:14Z", // The last updated time of the scan profile. 
-    "lastScanStatus": 2, // The last scan job status of the scan profile: 2 represents finished. 
-    "newRegisteredContentCount": 0, // The number of newly registered objects in the daily report of the scan profile. 
-    "movedToAnotherContainer": 0, // The number of objects moved to another container in the daily report of the scan profile. 
-    "removedFromMicrosoft365OrOutofPolicy": 0, // The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile.
-    "newRegisteredContent": [], // The information of the newly registered object in the daily report
-    "removedFromMicrosoft365OrOutOfPolicyObjects": [], // The objects removed from Microsoft 365 or out of policy in the daily report
-    "movedToAnotherContainerObjects": [] // The information of the objects moved to another container in the daily report
+    "profileName": "Default Microsoft 365 Scan Profile", // The name of the scan profile
+    "profileId": "47db****-1004-****-b2ce-8f5e****842d", // The ID of the scan profile
+    "tenantDomain": "Domain", // The tenant domain of the scan profile
+    "tenantId": "c235****-c7a2-****-b7d4-79e8****66c3", // The tenant ID of the scan profile 
+    "description": "This is a partner-configured scan profile.", // The description of the scan profile
+    "scanMode": 0, // The scan mode of the profile: 0 represents the Express mode.
+    "modifiedTime": "2025-09-11T03:19:14Z", // The last modified time of the scan profile
+    "lastUpdateTime": "2025-09-11T03:19:14Z", // The last updated time of the scan profile 
+    "lastScanStatus": 2, // The last scan job status of the scan profile: 2 represents finished
+    "newRegisteredContentCount": 0, // The number of newly registered objects in the daily report of the scan profile
+    "movedToAnotherContainer": 0, // The number of objects moved to another container in the daily report of the scan profile
+    "removedFromMicrosoft365OrOutofPolicy": 0, // The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
+    "newRegisteredContent": [], // The information of the newly registered object in the daily report; No data here
+    "removedFromMicrosoft365OrOutOfPolicyObjects": [], // The objects removed from Microsoft 365 or out of policy in the daily report; No data here
+    "movedToAnotherContainerObjects": [] // The information of the objects moved to another container in the daily report; No data here
     
 }
 ```
