@@ -12,15 +12,15 @@ Built on a foundation of security and scalability, the Elements APIs ensure that
 
 ## Key Features  
 
-- **Customer Insights**: Access detailed information about your customers, including organizational data and subscription details, to drive informed decision-making.
+- **Common Features**: Provide comprehensive capabilities for customer onboarding, service management, subscription tracking, tenant resource monitoring, and backup job reporting, which enables partners to streamline customer related operations and enhance visibility into service usage.
 
-- **Data Protection Monitoring**: Track and manage protected data within Cloud Backup for Microsoft 365, ensuring compliance and data integrity.
+- **Baseline Management**: Create baselines from your golden tenants to establish benchmarks for tenant configurations and apply baselines to tenants to monitor configuration deviations.
 
-- **Details for Scan and Backup**: View comprehensive job details, including auto-discovery scans, backup services, and changes in their subscription consumption, to maintain optimal service levels.
+- **Risk Management**: Retrieve the matched risk rules of a specific tenant and view all objects that violate a specific risk rule within a tenant.
 
-- **Advanced Query Capabilities**: Retrieve specific data points with precision using structured query parameters, allowing for detailed analysis and reporting.
+- **User Management**: Manage users in your customer's tenants, including retrieving user inforamtion, update user information, and retrieving risk and compliance details of your customer's tenant.
 
-- **Real-Time Responses**: Gain instant access to the data you need with efficient, real-time API responses, ensuring timely insights and actions.
+- **Workspace Management**: View workspace statistics for a specific tenant, including workspace overview, workspace compliance statistics, data security posture, and data protection statistics.
 
 ## Get Started Now! 
 
