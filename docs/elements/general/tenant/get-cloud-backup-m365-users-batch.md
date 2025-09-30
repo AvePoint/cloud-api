@@ -51,7 +51,8 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| id                        | The ID of the tenant user.                          | string || email                     | The email address of the tenant user.                       | string |
+| id                        | The ID of the tenant user.                          | string |
+| email                     | The email address of the tenant user.                       | string |
 | displayName               | The display name of the tenant user.                 | string |
 | moduleStatus              | The protected module information of the tenant user.| list |
 

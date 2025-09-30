@@ -95,7 +95,8 @@ You can provide the service detailed information in the request body to add a se
 |subscriptionSourceType |The source of the service. <ul><li>**1** - AvePoint pool</li><li>**2** - Marketplace pool</li><li>**6** - LARS AvePoint pool</li></ul>               |integer         |Yes|
 |isSameAsPool           |Whether the expiration time of the service is the same as the pool. <ul><li>**true** - Same as the pool</li><li>**false** - Different from the pool</li></ul>|boolean        |Yes (No)|
 |expireTime             |The expiration time of the service.                |string      |No (Yes)|
-|userSeat               |The number of user seats of the service to assign to the customer.                     |integer         |Yes||contractEndDate        |The contract end date of the service.             |string      |No |
+|userSeat               |The number of user seats of the service to assign to the customer.                     |integer         |Yes|
+|contractEndDate        |The contract end date of the service.             |string      |No |
 |paymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - Pay as you go</li></ul>    |integer         |Yes|
 
 > [!NOTE]  
