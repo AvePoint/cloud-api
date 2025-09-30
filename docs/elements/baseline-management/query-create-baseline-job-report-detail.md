@@ -5,7 +5,7 @@ Use this API to retrieve the report details of a baseline creation job.
 ## Permission  
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).  
+You must register an app through Elements > API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to [App Registration](../register-app.md).  
 
 | API  | Permission  |
 |-----------|--------|
@@ -49,7 +49,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/233
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the report details of the queried baseline creation job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the report details of the queried baseline creation job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md/#http-status-code).
 
 ```json
 {

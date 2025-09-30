@@ -1,6 +1,6 @@
-# Retrieve Risk Analyze Workflow Detail
+# Retrieve Workflow Information
 
-Use this API to retrieve risk analyze workflow detail of a customer tenant in AvePoint Online Services.
+Use this API to retrieve inforamtion of workflows in a customer's tenant.
 
 ## Permission
 
@@ -13,16 +13,15 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve risk analyze workflow detail
-of a customer.
+This section outlines the details of the HTTP method and endpoint used to retrieve information of workflows in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows` | 	Retrieves risk analyze workflow detail of a customer tenant in AvePoint Online Services.
+| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows` | 	Retrieves information of workflows in a customer's tenant.
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve risk analyze workflow detail according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve information of workflows in a customer's tenant according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
@@ -35,7 +34,7 @@ This section outlines the optional parameters used to specify the information fo
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| catagory | The array value includes the category you want to retrieve. <ul><li>**1** - Network security</li><li>**2** - Endpoint security</li><li>**3** - Identity access</li><li>**4** - Configuration security</li></ul> | integer | No |
+| catagory | The category of the risky actions. <ul><li>**1** - Network security</li><li>**2** - Endpoint security</li><li>**3** - Identity access</li><li>**4** - Configuration security</li></ul> | integer | No |
 | pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
 | pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
 
@@ -45,8 +44,8 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| WorkflowId |  The workflow ID. | string |
-| WorkflowDisplayName |  The workflow display name. | string |
+| WorkflowId |  The ID of the workflow. | string |
+| WorkflowDisplayName |  The display name of the workflow. | string |
 
 ## Request Sample
 
@@ -65,8 +64,8 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 {
     "data": [
         {
-            "workflowId": "8fc933ed-5d54-41fe-909c-afbf326f27ff",
-            "workflowDisplayName": "User MFA disabled"
+            "workflowId": "8fc933ed-5d54-41fe-909c-afbf326f27ff", // The ID of the workflow
+            "workflowDisplayName": "User MFA disabled" // The display name of the workflow
         }
     ],
     "metadata": {

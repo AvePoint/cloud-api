@@ -1,9 +1,9 @@
-- name: Risk Analysis
+- name: Retrieve Workflow Information
   href: get-risk-analyze-workflow.md
-- name: Risk Actions
+- name: Retrieve Risky Action Count
   href: get-risk-action.md
-- name: Compliance Category
+- name: Retrieve Compliance Information
   href: get-compliance-category.md
-- name: Sign In
+- name: Retrieve Sign-in Information
   href: get-sign-in.md
    
