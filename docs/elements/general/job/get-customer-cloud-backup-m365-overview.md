@@ -1,6 +1,6 @@
 # Retrieve Cloud Backup for Microsoft 365 Overview
 
-Use this API to  the customer's protected data information of Cloud Backup for Microsoft 365.
+Use this API to retrieve the customer's protected data information of Cloud Backup for Microsoft 365.
 
  ## Permission
 
