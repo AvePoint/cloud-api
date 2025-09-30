@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/` | Retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.|
+| GET | `/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}` | Retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.|
 
 ## Response
 
