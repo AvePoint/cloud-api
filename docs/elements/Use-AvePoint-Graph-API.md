@@ -18,22 +18,20 @@ Welcome to the AvePoint Graph API, your gateway to accessing and managing the Av
 
 ## Authentication and Authorization
 
-To access the resources of AvePoint Cloud Services via the AvePoint Graph API, you must configure the app registration and grant the necessary permissions. This process involves:  
+To access the resources of Elements services via the AvePoint Graph API, you must configure the app registration and grant the necessary permissions. This process involves:  
 
-- **Registering an app**: Set up your app in AvePoint Online Services.  
+- **Registering an app**: Set up your app in Elements.  
 - **Permissions**: Assign the appropriate permissions for your app.
 - **Authentication**: Use the generated application (client) ID for secure access.  
 
-For a step-by-step guide on creating an app registration for API authentication, refer to the [Register an App for Modern API](register-app.md) section in the AvePoint Online Services User Guide.  
+For a step-by-step guide on creating an app registration for API authentication, refer to [Register an App for API Access](register-app.md).  
 
-> [!NOTE]  
-> For partner operations, go to Elements for app registration. See [App Registration in the Elements User Guide](https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm).
 
 ## Call an API Method
 
 To interact with resources, construct a request as follows:  
 
-    {HTTP method} https://graph-{dc}.avepointonlineservices.com/{resource}?{query-parameters}  
+    {HTTP method} https://graph.avepointonlineservices.com/{resource}?{query-parameters}  
 
 ### Request Components
 
@@ -59,7 +57,7 @@ The API uses the HTTP methods to specify the action being performed on a request
 |------|------|  
 |GET|Read data from a resource.|  
 |POST| Create data in a resource. |
-|DELETE| Delete data from a resource. | 
+|PUT| Update data in a resource. | 
 
 ## HTTP Status Code
 
@@ -76,4 +74,4 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 
 ## Resource  
 
-A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `services`, and `jobs`. Methods can also be used to perform operations on these resources.
+A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `tenatns`, and `services`. Methods can also be used to perform operations on these resources.

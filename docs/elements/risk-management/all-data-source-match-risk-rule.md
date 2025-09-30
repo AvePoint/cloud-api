@@ -66,7 +66,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d92
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../../elements/Use-AvePoint-Graph-API.md/#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json 
 {
