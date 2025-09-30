@@ -42,6 +42,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | containers | The information of the container. | list |
 
 **Container information:**
+
 | Field | Description | Type |
 | --- | --- | --- |
 | containersName | The name of the container. | string |

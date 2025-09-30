@@ -44,7 +44,7 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/{47db****-1004-****-b2ce-8f5e****842d}/changes
+https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/47db****-1004-****-b2ce-8f5e****842d/changes
 ```
  
 ## Response Sample
@@ -64,9 +64,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
     "newRegisteredContentCount": 0, // The number of newly registered objects in the daily report of the scan profile. 
     "movedToAnotherContainer": 0, // The number of objects moved to another container in the daily report of the scan profile. 
     "removedFromMicrosoft365OrOutofPolicy": 0, // The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile.
-    "newRegisteredContent": [], // The information of the newly registered object in the daily report
-    "removedFromMicrosoft365OrOutOfPolicyObjects": [], // The objects removed from Microsoft 365 or out of policy in the daily report
-    "movedToAnotherContainerObjects": [] // The information of the objects moved to another container in the daily report
+    "newRegisteredContent": [], // The information of the newly registered object in the daily report; No data here
+    "removedFromMicrosoft365OrOutOfPolicyObjects": [], // The objects removed from Microsoft 365 or out of policy in the daily report; No data here
+    "movedToAnotherContainerObjects": [] // The information of the objects moved to another container in the daily report; No data here
     
 }
 ```

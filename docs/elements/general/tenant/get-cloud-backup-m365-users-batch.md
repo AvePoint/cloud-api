@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve the protected status.
+This section outlines the details of the HTTP method and endpoint used to retrieve the user protected status.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| POST | `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch` | Retrieve the protected status.|
+| POST | `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch` | Retrieve the user protected status.|
 
 ## Query Parameters
 
@@ -53,8 +53,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | email                     | The email address of the tenant user.                       | string |
 | displayName               | The display name of the tenant user.                 | string |
-| moduleStatus.Module       | The module of the tenant user.  <ul><li>**0** - Mailbox</li><li>**2** - OneDrive</li></ul>               | integer |
-| moduleStatus.IsProtected  | The protected status of the module.   <ul><li>**true** - Protected</li><li>**false** - Not protected</li></ul>                | boolean |
+| Module       | The module of the tenant user.  <ul><li>**0** - Mailbox</li><li>**2** - OneDrive</li></ul>               | integer |
+| IsProtected  | The protected status of the module.   <ul><li>**true** - Protected</li><li>**false** - Not protected</li></ul>                | boolean |
 
 ## Request Sample
 To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.
@@ -69,13 +69,13 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
 {
     "data": [
         {
-            "email": "user@domain.onmicrosoft.com",
-            "displayName":"UserA",
+            "email": "user@domain.onmicrosoft.com", // The email address of the tenant user.
+            "displayName":"UserA", // The display name of the tenant user.
             "moduleStatus":
             [
                 {
                     "module":0, // The module of the tenant user: 0 represents mailbox
-                    "isProtected": false // Whether the tenant is protected by Cloud Backup for Microsoft 365: false represents not protected
+                    "isProtected": false // Whether the user is protected by Cloud Backup for Microsoft 365: false represents not protected
                 },
                 {
                     "module":2,
@@ -85,9 +85,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
         }
     ],
     "metadata": {
-        "pageIndex": 1,
-        "pageSize": 50,
-        "totalCount": 2
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 2 // The total number of objects matching the query parameters
     }
 }
 ```

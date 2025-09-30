@@ -64,7 +64,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | retention     | The data retention period of the customer.                 | string |
 | consumedStorage     | The consumed storage size of the customer.                 | string |
 | expirationDate     | The expiration date of the customer’s service.                 | string |
-| change     | The user seats changes in the pooled license compared with the first day of the current month.                 | string |
+| change     | The changes in the pooled license compared with the first day of the current month.                 | string |
 | source     | The source of the subscription.                 | string |
 | paymentType     | The payment type of the subscription.               | string |
 | subscriptionName     | The subscription name. This parameter is intended specifically for the Fly service.                 | string |
@@ -84,9 +84,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
 {
     "data": [
         {
-            "customerId": "1c10525c-****-****-****-2e641bc13421",
-            "organization": "OrganizationABC",
-            "customer": "user@domain.com",
+            "customerId": "1c10525c-****-****-****-2e641bc13421", // The ID of the customer
+            "organization": "OrganizationABC", // The organization name of the customer
+            "customer": "user@domain.com", The email address of the customer.
             "products": [
                 {
                     "service": "Cloud Backup for IaaS + PaaS - Unit", // The service that the customer has subscriptions for
@@ -101,7 +101,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
                     "retention": "N/A", // The data retention period of the customer; not applicable here
                     "consumedStorage": "N/A", // The consumed storage size of the customer; not applicable here
                     "expirationDate": "2025-09-26T00:00:00Z", // The expiration date of the customer’s service
-                    "change": "N/A", // The user seats changes in the pooled license compared with the first day of the current month; not applicable here
+                    "change": "N/A", // The changes in the pooled license compared with the first day of the current month; no changes here
                     "source": "AvePoint pooled subscription", // The source of the subscription
                     "paymentType": "Prepaid", // The payment type of the subscription; not applicable here
                     "subscriptionName": "N/A", // The subscription name; not applicable here
@@ -132,9 +132,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
         },
     ],
     "metadata": {
-        "pageIndex": 1,
-        "pageSize": 50,
-        "totalCount": 1
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 1 // The total number of objects matching the query parameters
     }
 }
 ```

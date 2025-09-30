@@ -21,7 +21,7 @@ This section provides details on the HTTP method and endpoint used to add a serv
 
 ## Request Body Parameters
 
-You can provide a customer basic information in the request body to add a service for a customer.
+You can provide the service detailed information in the request body to add a service for a customer.
 
 #### Add a Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive trial subscription:
 
@@ -31,13 +31,13 @@ You can provide a customer basic information in the request body to add a servic
 |licenseType                         |The subscription type of the service.  <ul><li>**0** - Trial</li></ul>                |integer      |Yes|
 |avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint Storage - Amazon S3</li></ul>   |integer         |Yes (No)|
 |retentionYear                       |The retention year of the service.                |integer         |Yes (No)|
-|byos                                |The storage of the service for BYOS.  <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is not BYOS.</li></ul>                        |boolean        |No (Yes) |
-|storageProfileId                    |The storage profile for BYOS when BYOS is used.                          |boolean        |No (Yes) |
+|byos                                |The storage of the service for BYOS.  <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is AvePoint storage.</li></ul>                        |boolean        |No (Yes) |
+|storageProfileId                    |The storage profile when BYOS is used.                          |boolean        |No (Yes) |
 
 > [!NOTE]  
 > Either **avepointStorageType** and **retentionYear** must be provided, or **byos** must be provided; at least one option is required.
 
-#### Add a Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - storage optimization trial subcription:
+#### Add a Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - storage optimization trial subscription:
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
@@ -52,8 +52,9 @@ You can provide a customer basic information in the request body to add a servic
 |licenseType                         |The subscription type of the service.  <ul><li>**1** - Enterprise</li></ul>                |integer      |Yes|
 |avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint storage - Amazon S3</li></ul>     |integer         |Yes (No)|
 |retentionYear                       |The retention year of the service.                |integer     |Yes (No)|
-|byos                                |Whether the storage of the service is Bring your own storage.       <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is not BYOS.</li></ul>                                 |boolean        |No (Yes)|
-|storageProfileId                    |The storage profile for BYOS when BYOS is used.                          |boolean        |No (Yes) ||licenseItems                        |The subscription items of the service.                  |list        |Yes|
+|byos                                |Whether the storage of the service is Bring your own storage.       <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is AvePoint storage.</li></ul>                |boolean        |No (Yes)|
+|storageProfileId                    |The storage profile for BYOS when BYOS is used.                          |boolean        |No (Yes) |
+|licenseItems                        |The subscription items of the service.                  |list        |Yes|
 
 > [!NOTE]  
 >Either **avepointStorageType** and **retentionYear** must be provided, or **byos** must be provided; at least one option is required.
@@ -101,11 +102,11 @@ If **isSameAsPool** is **false**, **expireTime** must be provided. If **expireTi
 
 ## Response
 
-If the request has been successfully processed, a 200 OK response will be returned along with the created status and customer id and product displayed in the response body.
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information in the response body.
 
 | Response | Description | Type |
 | --- | --- | --- |
-| customerId     | The customer ID of the added service.     | string |
+| customerId     | The ID of the customer.     | string |
 | product        | The name of the added service.         | integer    |
 | status | The status of adding the service.<ul><li>**1** - Successful</li><li>**2** - Failed</li><li>**3** - Partner has no subscription</li><li>**4** - User seat insufficient</li><li>**5** - Exceeded expiration time</li><li>**6** - Check failed</li><li>**7** - Subscription already exists</li><li>**11** - Expiration time earlier than current time</li><li>**12** - Has same subscription</li><li>**16** - Check successful</li><li>**17** - Premium service reached limit</li><li>**18** - Expiration time less than one month</li><li>**19** - Failed to reduce user seats</li><li>**20** - Failed to assign Exchange Online & OneDrive subscription </li></ul> | integer |
 
@@ -120,7 +121,7 @@ Add a Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive
 {
   "product": 2048, // The name of the service: 2048 represents Cloud Backup for Microsoft 365
   "licenseType": 0, // The subscription type of the service: 0 represents trial
-  "avepointStorageType": 0, // The storage type of the service: 0 represents the AvePoint storage - Microsft Azure Blob
+  "avepointStorageType": 0, // The storage type of the service: 0 represents the AvePoint storage - Microsoft Azure Blob
   "retentionYear": // The retention year of the service; not applicable here
 }
 
@@ -179,7 +180,7 @@ Add Baseline management/Workspace management/User and device management/Workspac
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the created customer id and status displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {

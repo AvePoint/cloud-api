@@ -99,9 +99,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
         }
     ],
     "metadata": {
-        "pageIndex": 1,
-        "pageSize": 50,
-        "totalCount": 2
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 2 // The total number of objects matching the query parameters
     }
 }
 ```

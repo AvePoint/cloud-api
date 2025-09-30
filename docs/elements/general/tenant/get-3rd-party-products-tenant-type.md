@@ -30,7 +30,7 @@ This section outlines the parameters required to specify which customer tenant y
 
 ## Request Body Parameters
 
-This section outlines the request body required to specify type of user seats you want to retrieve.
+This section outlines the request body required to specify the type of user seats you want to retrieve.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
