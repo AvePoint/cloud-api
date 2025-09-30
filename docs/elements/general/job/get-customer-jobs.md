@@ -34,8 +34,8 @@ This section outlines the request body required to specify which backup service 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| jobType | The service type of the job to be retrieved. | integer | No |
-| jobModule | The module of the job to be retrieved. | integer | No |
+| jobType | The service type of the job to be retrieved. <ul><li>**0** - Microsoft 365 Scan</li><li>**7** - Microsoft 365</li><li>**10** - Google Workspace Scan</li><li>**11** - Google Workspace</li><li>**12** - IaaS + PaaS</li><li>**15** - Salesforce</li><li>**16** - Dynamics 365</li></ul>| integer | No |
+| jobModule | The module of the job to be retrieved. <ul><li>**0** - None</li><li>**8** - Archiver</li><li>**10** - Retention</li><li>**302** - SharePoint Online</li><li>**303** - Exchange Online</li><li>**304** - Microsoft 365 Groups</li><li>**305** - OneDrive</li><li>**306** - Project Online</li><li>**307** - Exchange Online Public Folder</li><li>**308** - Microsoft Teams</li><li>**309** - Archiver</li><li>**310** - Power BI</li><li>**311** - Power Automate</li><li>**312** - Power Apps</li><li>**355** - Cloud Backup for Azure</li><li>**356** - Azure Virtual Machine</li><li>**357** - Disk</li><li>**358** - Microsoft Entra ID</li><li>**359** - Storage</li><li>**360** - Admin Portal Settings</li><li>**361** - Amazon EC2</li><li>**362** - Azure SQL</li><li>**363** - Dev Ops</li><li>**364** - Microsoft Entra ID B2C</li><li>**365** - Azure SQL Backup</li><li>**366** - Google Virtual Machine Instance</li><li>**401** - Dynamics 365</li><li>**402** - Viva Engage</li><li>**501** - Gmail</li><li>**502** - Calendar</li><li>**503** - Contacts</li><li>**504** - Drive</li><li>**505** - Shared Drives</li><li>**506** - Google Classroom</li><li>**507** - Chat</li><li>**508** - Google Directory</li><li>**550** - Dynamics CRM Backup</li><li>**551** - Dynamics Unified Operations Backup</li></ul>      | integer | No |
 
 ## Response
 
