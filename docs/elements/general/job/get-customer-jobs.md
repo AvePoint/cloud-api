@@ -1,6 +1,6 @@
 # Retrieve Job Details of Backup Services for a Customer
 
-Use this API to retrieve the job details of the backup services for a specific customer.
+Use this API to retrieve the job details job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS + PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.
 
  ## Permission
 
@@ -74,8 +74,8 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
             "jobType": 7, // The type of the job: 7 represents Microsoft 365
             "jobModule": 304, // The module of the job: 304 represents Microsoft 365 Groups
             "status": 3, // The status of the job. 3 represents failed
-            "jobId": "FB20250911032116214502", // The ID of the job
-            "name": "N/A", // The name of the job
+            "jobId": "FB20****1103****214502", // The ID of the job
+            "name": "N/A", // The name of the job; not applicable here
             "totalCount": "2323", // The number of the objects that have been processed by the job
             "failedCount": "0", // The number of failed objects
             "successfulCount": "2323", // The number of successful objects

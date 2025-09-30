@@ -29,9 +29,9 @@ You can provide the service detailed information in the request body to add a se
 |---|---|---|---|
 |product                             |The name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
 |licenseType                         |The subscription type of the service.  <ul><li>**0** - Trial</li></ul>                |integer      |Yes|
-|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint Storage - Amazon S3</li></ul>   |integer         |Yes (No)|
-|retentionYear                       |The retention year of the service.                |integer         |Yes (No)|
-|byos                                |The storage of the service for BYOS.  <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is AvePoint storage.</li></ul>                        |boolean        |No (Yes) |
+|avepointStorageType                 |The AvePoint storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint storage - Amazon S3</li></ul>   |integer         |Yes (No)|
+|retentionYear                       |The retention year for the data of the service.                |integer         |Yes (No)|
+|byos                                |Whether the storage of the service is Bring your own storage.  <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is AvePoint storage.</li></ul>                        |boolean        |No (Yes) |
 |storageProfileId                    |The storage profile when BYOS is used.                          |boolean        |No (Yes) |
 
 > [!NOTE]  
@@ -50,7 +50,7 @@ You can provide the service detailed information in the request body to add a se
 |---|---|---|---|
 |product                             |The name of the service.  <ul><li>**2048** - Cloud Backup for Microsoft 365</li></ul>                |integer    |Yes|
 |licenseType                         |The subscription type of the service.  <ul><li>**1** - Enterprise</li></ul>                |integer      |Yes|
-|avepointStorageType                 |The storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint storage - Amazon S3</li></ul>     |integer         |Yes (No)|
+|avepointStorageType                 |The AvePoint storage type of the service.<ul><li>**0** - AvePoint storage - Microsoft Azure Blob</li><li>**1** - AvePoint storage - Amazon S3</li></ul>     |integer         |Yes (No)|
 |retentionYear                       |The retention year of the service.                |integer     |Yes (No)|
 |byos                                |Whether the storage of the service is Bring your own storage.       <ul><li>**true** - The storage is BYOS.</li><li>**false** - The storage is AvePoint storage.</li></ul>                |boolean        |No (Yes)|
 |storageProfileId                    |The storage profile for BYOS when BYOS is used.                          |boolean        |No (Yes) |
@@ -71,6 +71,7 @@ You can provide the service detailed information in the request body to add a se
 |saleType               |The type of the service. <ul><li>**0** - Capacity tier</li><li>**1** - Unlimited users</li><li>**2** - Unlimited organization</li></ul>         |integer         |Yes|
 |packageType            |The package type of the service. <ul><li>**0** - Standard</li><li>**1** - Core</li><li>**2** - Flex</li></ul>                                      |integer         |Yes|
 |customerSize           |The customer's size of the service.                 |integer         |Yes|
+|userSeat               |The number of user seats of the service to assign to the customer.                     |integer         |Yes|
 |contractEndDate        |The contract end date of the service.             |string      |No |
 |paymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - Pay as you go</li></ul>    |integer         |Yes|
 
@@ -91,14 +92,14 @@ You can provide the service detailed information in the request body to add a se
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
 |resource               |The resource of the service.   <ul><li>**PartnerTenantSettingManagement** - Baseline management pool</li><li>**PartnerWorkspaceOnboarding** - Workspace management pool</li><li>**PartnerUserManagement** - User and device management pool</li><li>**PartnerStorageOptimization** - Workspace management - storage optimization pool</li></ul>      |string      |Yes|
-|subscriptionSourceType |The source of the service. <ul><li>**1** - AvePoint Pool</li><li>**2** - Marketplace Pool</li><li>**6** - LARS AvePoint Pool</li></ul>               |integer         |Yes|
+|subscriptionSourceType |The source of the service. <ul><li>**1** - AvePoint pool</li><li>**2** - Marketplace pool</li><li>**6** - LARS AvePoint pool</li></ul>               |integer         |Yes|
 |isSameAsPool           |Whether the expiration time of the service is the same as the pool. <ul><li>**true** - Same as the pool</li><li>**false** - Different from the pool</li></ul>|boolean        |Yes (No)|
 |expireTime             |The expiration time of the service.                |string      |No (Yes)|
-|contractEndDate        |The contract end date of the service.             |string      |No |
+|userSeat               |The number of user seats of the service to assign to the customer.                     |integer         |Yes||contractEndDate        |The contract end date of the service.             |string      |No |
 |paymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - Pay as you go</li></ul>    |integer         |Yes|
 
 > [!NOTE]  
-If **isSameAsPool** is **false**, **expireTime** must be provided. If **expireTime** is provided, **isSameAsPool** is not required.
+>If **isSameAsPool** is **false**, **expireTime** must be provided. If **expireTime** is provided, **isSameAsPool** is not required.
 
 ## Response
 
@@ -115,14 +116,14 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a POST request to the specified endpoint.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/general/customers/{caf9****-2cc6-****-b04b-794c****5ea3}/services
+https://graph-us.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/services
 
 Add a Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online & OneDrive trial subscription request:
 {
   "product": 2048, // The name of the service: 2048 represents Cloud Backup for Microsoft 365
   "licenseType": 0, // The subscription type of the service: 0 represents trial
   "avepointStorageType": 0, // The storage type of the service: 0 represents the AvePoint storage - Microsoft Azure Blob
-  "retentionYear": // The retention year of the service; not applicable here
+  "retentionYear": 1, // The retention year of the service
 }
 
 Add a Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - storage optimization trial subscription request:
@@ -136,14 +137,14 @@ Add a Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backu
   "product": 2048,
   "licenseType": 1,
   "byos": true, // The storage type of the service: true represents Bring your own storage
-  "storageProfileId": "96c5****-c6cb-****-9792-b1a1****aeae", // The ID of your storage profile
+  "storageProfileId": "96c5****-c6cb-****-9792-b1a1****aeae", // The ID of the storage profile
   "licenseItems": [
     {
       "expireTime": "2025-09-26T00:00:00Z", // The expiration time of the service
-      "userSeat": 1, // The number of user seats for the service
+      "userSeat": 1, // The number of user seats to assign to the customer
       "resource": "Office365Backup", // The resource of the service: Office365Backup represents Cloud Backup for Microsoft 365 pool
       "isSameAsPool": true, // Whether the expiration time of the service is the same as the pool: true represents the expiration time are the same
-      "subscriptionSourceType": 1, // The source of the service: 1 represents AvePoint Pool
+      "subscriptionSourceType": 1, // The source of the service: 1 represents AvePoint pool
       "paymentType": 0, // The payment type of the service: 0 represents Prepaid
       "saleType": 0, // The type of the service: 0 represents Capacity tier
       "customerSize": 5, // The customer's size of the service

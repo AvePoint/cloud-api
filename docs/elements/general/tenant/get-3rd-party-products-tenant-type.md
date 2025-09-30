@@ -1,6 +1,6 @@
 # Retrieve Customer Tenant User Seats
 
-Use this API to retrieve the numbers of assigned and available user seats of customer's tenant.
+Use this API to retrieve the numbers of assigned and available user seats of the customer's tenant.
 
  ## Permission
 

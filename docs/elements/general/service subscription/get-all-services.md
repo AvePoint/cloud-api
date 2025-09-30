@@ -86,7 +86,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
         {
             "customerId": "1c10525c-****-****-****-2e641bc13421", // The ID of the customer
             "organization": "OrganizationABC", // The organization name of the customer
-            "customer": "user@domain.com", The email address of the customer.
+            "customer": "user@domain.com", //The email address of the customer
             "products": [
                 {
                     "service": "Cloud Backup for IaaS + PaaS - Unit", // The service that the customer has subscriptions for

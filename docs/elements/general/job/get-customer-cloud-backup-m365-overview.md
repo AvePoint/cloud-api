@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to get the customer's protected data information of Cloud Backup for Microsoft 365.
+This section outlines the details of the HTTP method and endpoint used to retrieve the customer's protected data information of Cloud Backup for Microsoft 365.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview` | Get the customer's protected data information of Cloud Backup for Microsoft 365.|
+| GET | `/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview` | Retrieve the customer's protected data information of Cloud Backup for Microsoft 365.|
 
 ## Response
 

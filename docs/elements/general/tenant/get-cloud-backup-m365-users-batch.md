@@ -51,9 +51,15 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Field | Description | Type |
 | --- | --- | --- |
-| email                     | The email address of the tenant user.                       | string |
+| id                        | The ID of the tenant user.                          | string || email                     | The email address of the tenant user.                       | string |
 | displayName               | The display name of the tenant user.                 | string |
-| Module       | The module of the tenant user.  <ul><li>**0** - Mailbox</li><li>**2** - OneDrive</li></ul>               | integer |
+| moduleStatus              | The protected module information of the tenant user.| list |
+
+**Protected module information**
+
+| Field | Description | Type |
+| --- | --- | --- |
+| Module       | The protected module of the tenant user.  <ul><li>**0** - Mailbox</li><li>**2** - OneDrive</li></ul>               | integer |
 | IsProtected  | The protected status of the module.   <ul><li>**true** - Protected</li><li>**false** - Not protected</li></ul>                | boolean |
 
 ## Request Sample
@@ -69,8 +75,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
 {
     "data": [
         {
-            "email": "user@domain.onmicrosoft.com", // The email address of the tenant user.
-            "displayName":"UserA", // The display name of the tenant user.
+            "id": "96c5a607-****-****-****-b1a112d7aeae", // The ID of the tenant user
+            "email": "user@domain.onmicrosoft.com", // The email address of the tenant user
+            "displayName":"UserA", // The display name of the tenant user
             "moduleStatus":
             [
                 {
