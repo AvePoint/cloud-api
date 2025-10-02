@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch` | elements.um.user.read.all |  
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch` | elements.um.user.read.all |  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve information 
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|POST|`/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch`|Retrieves information of multiple users in a customer's tenant.|
+|POST|`/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch`|Retrieves information of multiple users in a customer's tenant.|
 
 ## URL Parameters
 

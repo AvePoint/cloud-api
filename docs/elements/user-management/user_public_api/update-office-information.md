@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information`|elements.um.user.readwrite.all|  
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information`|elements.um.user.readwrite.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to update
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information` | Updates the office location information of a specific user in a customer's tenant.|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information` | Updates the office location information of a specific user in a customer's tenant.|
 
 ## URL Parameters
 
