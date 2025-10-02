@@ -36,7 +36,7 @@ This section outlines the required fields to update the alternate email address 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-|alternateEmailAddress | The alternate email address of the user. | string | Yes |
+|alternateEmailAddress | The alternate email address of the user. | string[] | Yes |
 
 ## Response
 

@@ -43,7 +43,7 @@ This section outlines the request body required to specify which users you want 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| userIds | The unique identifiers of users. | string | No |
+| userIds | The unique identifiers of users. | string[] | No |
 
 ## Response
 
