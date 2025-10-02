@@ -44,8 +44,8 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| WorkflowId |  The ID of the workflow. | string |
-| WorkflowDisplayName |  The display name of the workflow. | string |
+| workflowId |  The ID of the workflow. | string |
+| workflowDisplayName |  The display name of the workflow. | string |
 
 ## Request Sample
 
