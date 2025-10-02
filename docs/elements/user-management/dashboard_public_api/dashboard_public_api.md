@@ -87,6 +87,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
             "department": "DEV", // The department of the user
             "mobile": "11122", // The mobile of the user
             "jobTitle": "Software developer", // The job title of the user
+			"mail": "tony@element.onmicrosoft.com",// The mail of the user
+			"location": "location",// The office location of the user
+			"employeeId": "643477",// The employee id of the user
             "status": [
                     0, 
                     1
