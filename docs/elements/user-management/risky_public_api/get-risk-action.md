@@ -44,8 +44,8 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| riskyActionCount |  The count of the risky actions in the tenant. | interger |
-| normalActionCount |  The count of normal actions in the tenant. | interger |
+| riskyActionCount |  The count of the risky actions in the tenant. | integer |
+| normalActionCount |  The count of normal actions in the tenant. | integer |
 
 
 ## Request Sample
