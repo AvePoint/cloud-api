@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions`|elements.um.user.read.all|  
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions`|elements.um.user.read.all|  
 
 ## Request
 
@@ -18,7 +18,7 @@ a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions` | 	Retrieves the risky action count in a customer's tenant.
+| GET | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions` | 	Retrieves the risky action count in a customer's tenant.
 
 ## URL Parameters
 
@@ -44,8 +44,8 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| riskyActionCount |  The count of the risky actions in the tenant. | interger |
-| normalActionCount |  The count of normal actions in the tenant. | interger |
+| riskyActionCount |  The count of the risky actions in the tenant. | integer |
+| normalActionCount |  The count of normal actions in the tenant. | integer |
 
 
 ## Request Sample

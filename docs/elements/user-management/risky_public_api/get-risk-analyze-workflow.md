@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows`|elements.um.user.read.all|  
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows`|elements.um.user.read.all|  
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows` | 	Retrieves information of workflows in a customer's tenant.
+| GET | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows` | 	Retrieves information of workflows in a customer's tenant.
 
 ## URL Parameters
 
@@ -44,8 +44,8 @@ If the request has been successfully processed, a 200 OK response will be return
  
 | Response | Description | Type |
 | --- | --- | --- |
-| WorkflowId |  The ID of the workflow. | string |
-| WorkflowDisplayName |  The display name of the workflow. | string |
+| workflowId |  The ID of the workflow. | string |
+| workflowDisplayName |  The display name of the workflow. | string |
 
 ## Request Sample
 

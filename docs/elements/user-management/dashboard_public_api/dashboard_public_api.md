@@ -60,7 +60,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | age | The password age of the user. | integer |
 | startDate | The start date when the user account can sign in Microsoft 365. | string |
 | endDate | The date when the user account will be blocked from signing in. | string |
-| officePhone | The office phone of the user. | string |
 | countryOrRegion | The country or region of the user. | string |
 | status | The current status of the user. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer |
 | pageIndex | The page index of current request. | integer |
@@ -88,6 +87,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
             "department": "DEV", // The department of the user
             "mobile": "11122", // The mobile of the user
             "jobTitle": "Software developer", // The job title of the user
+			"mail": "tony@element.onmicrosoft.com",// The mail of the user
+			"location": "location",// The office location of the user
+			"employeeId": "643477",// The employee id of the user
             "status": [
                     0, 
                     1

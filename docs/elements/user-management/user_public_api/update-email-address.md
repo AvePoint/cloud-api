@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/alternate-email-address`|elements.um.user.readwrite.all|  
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/alternate-email-address`|elements.um.user.readwrite.all|  
 
 ## Request
 
@@ -18,7 +18,7 @@ of a specific user in a cutomer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/alternate-email-address` | Updates the alternate email address of a specific user in a customer's tenant.|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/alternate-email-address` | Updates the alternate email address of a specific user in a customer's tenant.|
 
 ## URL Parameters
 
@@ -36,7 +36,7 @@ This section outlines the required fields to update the alternate email address 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-|alternateEmailAddress | The alternate email address of the user. | string | Yes |
+|alternateEmailAddress | The alternate email address of the user. | string[] | Yes |
 
 ## Response
 
