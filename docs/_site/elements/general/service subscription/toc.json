@@ -1,2 +1,2 @@
 
-{"order":100,"items":[{"name":"Add Service","href":"add-service.html","topicHref":"add-service.html"},{"name":"Get All Services","href":"get-all-services.html","topicHref":"get-all-services.html"},{"name":"Get Customer Service of a Customer","href":"get-single-customer-service.html","topicHref":"get-single-customer-service.html"}],"pdf":false,"pdfFileName":"AvePoint Graph API Documentation.pdf","pdfTocPage":true}
+{"order":100,"items":[{"name":"Add a Service","href":"add-service.html","topicHref":"add-service.html"},{"name":"Retrieve All Services of Customers","href":"get-all-services.html","topicHref":"get-all-services.html"}],"pdf":false,"pdfFileName":"AvePoint Graph API Documentation.pdf","pdfTocPage":true}

@@ -87,10 +87,10 @@
         <article data-uid="">
 <h1 id="create-baseline">Create Baseline</h1>
 
-<p>Use this API to create Baseline.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to create a baseline from a tenant to establish benchmarks for tenant configurations.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -106,7 +106,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section provides details on the HTTP method and endpoint used to create a baseline to establish benchmarks for tenant configurations.</p>
+<p>This section provides details on the HTTP method and endpoint used to create a baseline from a tenant to establish benchmarks for tenant configurations.</p>
 <table>
 <thead>
 <tr>
@@ -119,12 +119,12 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>POST</td>
 <td><code>/partner/external/v3/bm/baselines</code></td>
-<td>Create a baseline to establish benchmarks for tenant configurations.</td>
+<td>Creates a baseline from a tenant to establish benchmarks for tenant configurations.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-body-parameters">Request Body Parameters</h2>
-<p>The API requires multiple parameters to create baseline.</p>
+<p>The API requires multiple parameters to create a baseline from a tenant to establish benchmarks for tenant configurations.</p>
 <table>
 <thead>
 <tr>
@@ -137,7 +137,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>name</td>
-<td>The ID of the baseline.</td>
+<td>The name of the baseline.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
@@ -155,13 +155,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>customerId</td>
-<td>The id of the <strong>Customer</strong>.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The id of the <strong>Tenant</strong>.</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
@@ -169,10 +169,10 @@ You must register an app through Elements &gt; API app registration to authentic
 </table>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Tenants in the following status cannot be used to create baseline.<ul><li><strong>3</strong> - Deploying</li><li><strong>6</strong> - Expired</li><li><strong>11</strong> - Restoring</li></ul>
+<p>Tenants in the following status cannot be used to create a baseline.<ul><li><strong>3</strong> - Deploying</li><li><strong>6</strong> - Expired</li><li><strong>11</strong> - Restoring</li></ul>
 </div>
 <h2 id="response">Response</h2>
-<p>If the request has been successfully processed, a 201 OK response will be returned along with the created baseline id displayed in the response body.</p>
+<p>If the request has been successfully processed, a 201 OK response will be returned along with the ID of the newly created baseline displayed in the response body.</p>
 <table>
 <thead>
 <tr>
@@ -184,7 +184,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>baselineId</td>
-<td>The Id of the new baseline.</td>
+<td>The ID of the newly created baseline.</td>
 <td>string</td>
 </tr>
 </tbody>
@@ -194,17 +194,17 @@ You must register an app through Elements &gt; API app registration to authentic
 <pre><code class="lang-json">https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines
 
 {
-    name: &quot;baseline1&quot;,
-    color:&quot;0&quot;,
-    description:&quot;baseline1 description&quot;,
-    customerId:&quot;ce43e186-****-****-****-86b51b0aef92&quot;,
-    tenantId:&quot;af83b8e1-****-****-****-970f92192dc5&quot;
+    name: &quot;baseline A&quot;, // The name of the baseline
+    color:&quot;0&quot;, // The color of the baseline
+    description:&quot;baseline A's description&quot;, // The description of the baseline
+    customerId:&quot;ce43e186-****-****-****-86b51b0aef92&quot;, // The ID of the customer
+    tenantId:&quot;af83b8e1-****-****-****-970f92192dc5&quot; // The ID of the tenant
 }
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 201 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<p>If the request has been successfully processed, a 201 OK response will be returned along with the created baseline ID displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.md/#http-status-code">HttpStatusCode</a>.</p>
 <pre><code class="lang-json">{
-    &quot;baselineId&quot;: &quot;606f30c0-****-****-****-3a1c3a823ab5&quot;
+    &quot;baselineId&quot;: &quot;606f30c0-****-****-****-3a1c3a823ab5&quot; // The ID of the newly created baseline
 }
 </code></pre>
 

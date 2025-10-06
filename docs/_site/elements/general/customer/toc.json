@@ -1,2 +1,2 @@
 
-{"order":100,"items":[{"name":"Get All Customers","href":"get-all-customers.html","topicHref":"get-all-customers.html"},{"name":"Onboard Customer","href":"onboard-customer.html","topicHref":"onboard-customer.html"},{"name":"Get Single Customer","href":"get-single-customer.html","topicHref":"get-single-customer.html"}],"pdf":false,"pdfFileName":"AvePoint Graph API Documentation.pdf","pdfTocPage":true}
+{"order":100,"items":[{"name":"Retrieve All Customers","href":"get-all-customers.html","topicHref":"get-all-customers.html"},{"name":"Onboard a Customer","href":"onboard-customer.html","topicHref":"onboard-customer.html"}],"pdf":false,"pdfFileName":"AvePoint Graph API Documentation.pdf","pdfTocPage":true}

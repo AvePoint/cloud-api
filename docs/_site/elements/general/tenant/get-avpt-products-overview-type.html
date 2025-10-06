@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Get customer avepoint user seats </title>
+      <title>Retrieve AvePoint Product Overview </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Get customer avepoint user seats ">
+      <meta name="title" content="Retrieve AvePoint Product Overview ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="get-customer-avepoint-user-seats">Get customer avepoint user seats</h1>
+<h1 id="retrieve-avepoint-product-overview">Retrieve AvePoint Product Overview</h1>
 
-<p>Use this API to get customer avepoint user seats.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to retrieve the number of purchased user seats for AvePoint products of the customer.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/partner/external/v3/general/customers/{customerId}/avpt-products/overview/type/{productType}</code></td>
+<td><code>/partner/external/v3/general/customers/{customerId}/avpt-products/type/{productType}/overview</code></td>
 <td>elements.license.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to get customer avepoint user seats.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve the purchased user seats for AvePoint products of the customer.</p>
 <table>
 <thead>
 <tr>
@@ -118,13 +118,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>/partner/external/v3/general/customers/{customerId}/avpt-products/overview/type/{productType}</code></td>
-<td>Get customer avepoint user seats.</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/avpt-products/type/{productType}/overview</code></td>
+<td>Retrieve the purchased user seats for AvePoint products of the customer.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="url-parameters">URL Parameters</h2>
-<p>This section outlines the parameters required to specify which customer you want to retrieve.</p>
+<p>This section outlines the parameters required to specify which customer and product you want to retrieve.</p>
 <table>
 <thead>
 <tr>
@@ -137,14 +137,14 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer id of the customer.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>productType</td>
-<td>The specific product type.<ul><li><strong>2048</strong> - Office 365</li></ul></td>
-<td>int</td>
+<td>The product type.<ul><li><strong>1</strong> - DocAve Online</li><li><strong>4</strong> - Cloud Governance</li><li><strong>32</strong> - Cloud Backup for Salesforce</li><li><strong>40</strong> - Baseline management</li><li><strong>41</strong> - Risk management</li><li><strong>42</strong> - Workspace management</li><li><strong>49</strong> - User management</li><li><strong>60</strong> - MyHub</li><li><strong>65</strong> - WorkSpace management - storage optimization</li><li><strong>257</strong> - TyGraph</li><li><strong>2048</strong> - Cloud Backup for Microsoft 365</li><li><strong>4096</strong> - Cloud Management</li><li><strong>8192</strong> - Cloud Archiving</li><li><strong>65536</strong> - Opus</li><li><strong>131072</strong> - Cloud Backup for Dynamics 365</li><li><strong>4194304</strong> - Insights</li><li><strong>8388608</strong> - Policies for Microsoft 365</li><li><strong>16777216</strong> - Fly</li><li><strong>33554432</strong> - Cloud Backup for Google Workspace</li><li><strong>67108864</strong> - Cense</li><li><strong>134217728</strong> - Enpower</li><li><strong>1073741824</strong> - Cloud Backup for IaaS + PaaS</li></ul></td>
+<td>integer</td>
 <td>Yes</td>
 </tr>
 </tbody>
@@ -162,26 +162,26 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>productType</td>
-<td>The product type.<ul><li><strong>2048</strong> - Office 365</li></ul></td>
+<td>The product type.<ul><li><strong>1</strong> - DocAve Online</li><li><strong>4</strong> - Cloud Governance</li><li><strong>32</strong> - Cloud Backup for Salesforce</li><li><strong>40</strong> - Baseline management</li><li><strong>41</strong> - Risk management</li><li><strong>42</strong> - Workspace management</li><li><strong>49</strong> - User management</li><li><strong>60</strong> - MyHub</li><li><strong>65</strong> - WorkSpace management - storage optimization</li><li><strong>257</strong> - TyGraph</li><li><strong>2048</strong> - Cloud Backup for Microsoft 365</li><li><strong>4096</strong> - Cloud Management</li><li><strong>8192</strong> - Cloud Archiving</li><li><strong>65536</strong> - Opus</li><li><strong>131072</strong> - Cloud Backup for Dynamics 365</li><li><strong>4194304</strong> - Insights</li><li><strong>8388608</strong> - Policies for Microsoft 365</li><li><strong>16777216</strong> - Fly</li><li><strong>33554432</strong> - Cloud Backup for Google Workspace</li><li><strong>67108864</strong> - Cense</li><li><strong>134217728</strong> - Enpower</li><li><strong>1073741824</strong> - Cloud Backup for IaaS + PaaS</li></ul></td>
 <td>string</td>
 </tr>
 <tr>
-<td>availableUserSeat</td>
-<td>The availableUserSeat of the product.</td>
-<td>int</td>
+<td>purchasedUserSeat</td>
+<td>The number of purchased user seats of the product.</td>
+<td>integer</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}//avpt-products/overview/type/{productType}
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/f162****-b9d4-****-a165-97db****fc15/avpt-products/type/2048/overview
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json"> {
-        &quot;productType&quot;: 2048,
-        &quot;availableUserSeat&quot;: 25
+        &quot;productType&quot;: 2048, // The product type: 2048 represents Cloud Backup for Microsoft 365
+        &quot;purchasedUserSeat&quot;: 25 // The number of purchased user seats of the customer
 }
 </code></pre>
 

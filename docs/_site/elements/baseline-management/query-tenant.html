@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Query Tenants </title>
+      <title>Retrieve Tenant Information </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Query Tenants ">
+      <meta name="title" content="Retrieve Tenant Information ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="query-tenants">Query Tenants</h1>
+<h1 id="retrieve-tenant-information">Retrieve Tenant Information</h1>
 
-<p>Use this API to query tenants registered in the Baseline Management module. Supports optional filtering by tenant IDs and pagination.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to retireve the general information of tenants added to the Baseline Management module.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -106,7 +106,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section provides details on the HTTP method and endpoint used to query baselines.</p>
+<p>This section provides details on the HTTP method and endpoint used to retireve the general information of tenants added to the Baseline Management module.</p>
 <table>
 <thead>
 <tr>
@@ -119,7 +119,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>POST</td>
 <td><code>/partner/external/v3/bm/tenants/batch</code></td>
-<td>Query all tenants with optional filtering and pagination.</td>
+<td>Retireves the general information of tenants added to the Baseline Management module.</td>
 </tr>
 </tbody>
 </table>
@@ -150,7 +150,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request-body-parameters">Request Body Parameters</h2>
-<p>You can provide a list of tenant id in the request body to filter the results. This field is optional.</p>
+<p>You can provide a list of tenant IDs in the request body to filter the results. This is optional.</p>
 <table>
 <thead>
 <tr>
@@ -164,13 +164,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>tenantIds</td>
 <td>The ID of the tenant.</td>
-<td>string[]</td>
+<td>string</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
 <h2 id="response">Response</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the general information of tenants added to the Baseline Management module  displayed in the response body.</p>
 <table>
 <thead>
 <tr>
@@ -182,62 +182,62 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>tenantName</td>
-<td>The <strong>Name</strong> of the tenant.</td>
+<td>The name of the tenant.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>status</td>
-<td>The <strong>Status</strong> of the baseline.<ul><li><strong>1</strong> Connected</li><li><strong>2</strong> Deployed with exception</li><li><strong>3</strong> Deploying</li><li><strong>4</strong> Deployment draft saved</li><li><strong>5</strong> Deployment failed </li><li><strong>6</strong> Expired</li><li><strong>7</strong> Deployed </li><li><strong>8</strong> Restore failed </li><li><strong>19</strong> Restored</li><li><strong>10</strong> Restored with exception</li><li><strong>11</strong> Restoring</li><li><strong>12</strong> Retrieving setting</li><li><strong>13</strong> Review deployment</li><li><strong>14</strong> Review restore</li><li><strong>15</strong> Scheduled deployment </li><li><strong>16</strong> Schedule restore</li><li><strong>17</strong> Settings retrieval failed</li></ul></td>
+<td>The status of the tenant.<ul><li><strong>1</strong> - Connected</li><li><strong>2</strong> - Deployed with exception</li><li><strong>3</strong> - Deploying</li><li><strong>4</strong> - Deployment draft saved</li><li><strong>5</strong> - Deployment failed </li><li><strong>6</strong> - Expired</li><li><strong>7</strong> - Deployed </li><li><strong>8</strong> - Restore failed </li><li><strong>19</strong> - Restored</li><li><strong>10</strong> - Restored with exception</li><li><strong>11</strong> - Restoring</li><li><strong>12</strong> - Retrieving setting</li><li><strong>13</strong> - Review deployment</li><li><strong>14</strong> - Review restore</li><li><strong>15</strong> - Scheduled deployment </li><li><strong>16</strong> - Schedule restore</li><li><strong>17</strong> - Settings retrieval failed</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>driftDetected</td>
-<td>The count of drift detected.</td>
+<td>The number of configuration deviations that have been detected for the tenant.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>driftDetectedTime</td>
-<td>The last drift detected date (UTC).</td>
+<td>The time (UTC) when configuration deviations were detected.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastDeployedTime</td>
-<td>The last deploy date (UTC).</td>
+<td>The time (UTC) when the baseline was deployed to the tenant.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>customerId</td>
-<td>The Id of customer.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The Id of tenant.</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>autoAlignmentStatus</td>
-<td>The status of Auto-Alignment. <ul><li><strong>0</strong> Disable</li><li><strong>1</strong> Enable</li></ul></td>
+<td>autoAlignment</td>
+<td>The status of the auto-alignment setting. <ul><li><strong>0</strong> - Disabled</li><li><strong>1</strong> - Enabled</li></ul></td>
 <td>string</td>
 </tr>
 <tr>
 <td>appliedBaselines</td>
-<td>The baselines that applied to the tenant.</td>
+<td>The baselines that have been deployed to the tenant.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>baselineId</td>
-<td>The id of baseline.</td>
+<td>The ID of the baseline.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>baselineName</td>
-<td>The name of baseline.</td>
+<td>The name of the baseline.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>version</td>
-<td>The version of baseline.</td>
+<td>The version of the baseline.</td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -247,30 +247,30 @@ You must register an app through Elements &gt; API app registration to authentic
 <pre><code class="lang-json">https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/batch?pageIndex=1&amp;pageSize=50
 
 {
-    &quot;tenantIds&quot;: 
+    &quot;tenantIds&quot;: // The ID of the tenant
     [
       &quot;af83b8e1-****-****-****-970f92192dc5&quot;
     ]
 }
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the general information of tenants added to the Baseline Management module displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.md/#http-status-code">HttpStatusCode</a>.</p>
 <pre><code class="lang-json">{
     &quot;data&quot;: [
         {
-            &quot;tenantName&quot;: &quot;2****l&quot;,
-            &quot;status&quot;: 5,
-            &quot;driftDetected&quot;: 51,
-            &quot;driftDetectedTime&quot;: &quot;2025-09-05T10:30:00Z&quot;,
-            &quot;customerId&quot;: &quot;ce43e186-****-****-****-86b51b0aef92&quot;,
-            &quot;tenantId&quot;: &quot;af83b8e1-****-****-****-970f92192dc5&quot;,
-            &quot;autoAlignmentStatus&quot;: 1,
-            &quot;lastDeployedTime&quot;: &quot;2025-09-11T02:26:34Z&quot;,
+            &quot;tenantName&quot;: &quot;2****l&quot;, // The name of the tenant
+            &quot;status&quot;: 5, // The status of the tenant. 5 represents &quot;Deployment failed&quot;
+            &quot;driftDetected&quot;: 51, // The number of configuration deviations that have been detected for the tenant
+            &quot;driftDetectedTime&quot;: &quot;2025-09-05T10:30:00Z&quot;, // The time (UTC) when configuration deviations were detected
+            &quot;customerId&quot;: &quot;ce43e186-****-****-****-86b51b0aef92&quot;, // The ID of the customer
+            &quot;tenantId&quot;: &quot;af83b8e1-****-****-****-970f92192dc5&quot;, // The ID of the tenant
+            &quot;autoAlignment&quot;: 1, // The status of the auto-alignment setting. 1 represents &quot;Enabled&quot;
+            &quot;lastDeployedTime&quot;: &quot;2025-09-11T02:26:34Z&quot;, // The time (UTC) when the baseline was deployed to the tenant
             &quot;appliedBaselines&quot;: [
                 {
-                    &quot;baselineId&quot;: &quot;de473862-****-****-****-3a1c20398d55&quot;,
-                    &quot;baselineName&quot;: &quot;baseline1&quot;,
-                    &quot;version&quot;: &quot;4&quot;
+                    &quot;baselineId&quot;: &quot;de473862-****-****-****-3a1c20398d55&quot;, // The ID of the baseline
+                    &quot;baselineName&quot;: &quot;baseline1&quot;, // The name of the baseline
+                    &quot;version&quot;: &quot;4&quot; // The version of the baseline
                 }
             ]
         }

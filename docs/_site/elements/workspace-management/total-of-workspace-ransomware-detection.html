@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Retrieve Data Protection Statistics </title>
+      <title>Retrieve Data Protection Statistics of Tenant </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Retrieve Data Protection Statistics ">
+      <meta name="title" content="Retrieve Data Protection Statistics of Tenant ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="retrieve-data-protection-statistics">Retrieve Data Protection Statistics</h1>
+<h1 id="retrieve-data-protection-statistics-of-tenant">Retrieve Data Protection Statistics of Tenant</h1>
 
 <p>Use this API to retrieve the data protection statistics of a specific tenant in Elements.</p>
-<h2 id="permissions">Permissions</h2>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,7 +100,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion</code></td>
+<td><code>/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detection</code></td>
 <td>elements.wm.read.all</td>
 </tr>
 </tbody>
@@ -118,7 +118,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion</code></td>
+<td><code>/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detection</code></td>
 <td>Retrieves the data protection statistics.</td>
 </tr>
 </tbody>
@@ -224,23 +224,23 @@ You must register an app through Elements &gt; API app registration to authentic
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/data-protection/ransomware-detetion
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/wm/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/data-protection/ransomware-detection
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
-    &quot;teamsUnderPotentialRansomwareAttack&quot;: 10,
-    &quot;sharePointSitesUnderPotentialRansomwareAttack&quot;: 0,
-    &quot;oneDrivesUnderPotentialRansomwareAttack&quot;: 0,
-    &quot;groupsUnderPotentialRansomwareAttack&quot;: 16,
-    &quot;geamsWithUnusualActivities&quot;: 0,
-    &quot;sharePointSitesWithUnusualActivities&quot;: 1,
-    &quot;oneDrivesWithUnusualActivities&quot;: 22,
-    &quot;groupsWithUnusualActivities&quot;: 0,
-    &quot;teamsWithSuspiciousObjects&quot;: 12,
-    &quot;sharePointSitesWithSuspiciousObjects&quot;: 0,
-    &quot;oneDrivesWithSuspiciousObjects&quot;: 0,
-    &quot;groupsWithSuspiciousObjects&quot;: 1
+    &quot;teamsUnderPotentialRansomwareAttack&quot;: 10, // The number of Teams under potential ransomware attack over the last 7 days
+    &quot;sharePointSitesUnderPotentialRansomwareAttack&quot;: 0, // The number of SharePoint sites under potential ransomware attack over the last 7 days
+    &quot;oneDrivesUnderPotentialRansomwareAttack&quot;: 0, // The number of OneDrives under potential ransomware attack over the last 7 days
+    &quot;groupsUnderPotentialRansomwareAttack&quot;: 16, // The number of Groups under potential ransomware attack over the last 7 days
+    &quot;teamsWithUnusualActivities&quot;: 0, // The number of Teams with unusual activities over the last 7 days
+    &quot;sharePointSitesWithUnusualActivities&quot;: 1, // The number of SharePoint sites with unusual activities over the last 7 days
+    &quot;oneDrivesWithUnusualActivities&quot;: 22, // The number of OneDrives with unusual activities over the last 7 days
+    &quot;groupsWithUnusualActivities&quot;: 0, // The number of Groups with unusual activities over the last 7 days
+    &quot;teamsWithSuspiciousObjects&quot;: 12, // The number of Teams with suspicious objects over the last 7 days
+    &quot;sharePointSitesWithSuspiciousObjects&quot;: 0, // The number of SharePoint sites with suspicious objects over the last 7 days
+    &quot;oneDrivesWithSuspiciousObjects&quot;: 0, // The number of OneDrives with suspicious objects over the last 7 days
+    &quot;groupsWithSuspiciousObjects&quot;: 1 // The number of Groups with suspicious objects over the last 7 days
 }
 </code></pre>
 

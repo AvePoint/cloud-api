@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Get a scan profile information configured in Avepoint Online Services for a customer </title>
+      <title>Retrieve Customer Scan Profile Details </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Get a scan profile information configured in Avepoint Online Services for a customer ">
+      <meta name="title" content="Retrieve Customer Scan Profile Details ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="get-a-scan-profile-information-configured-in-avepoint-online-services-for-a-customer">Get a scan profile information configured in Avepoint Online Services for a customer</h1>
+<h1 id="retrieve-customer-scan-profile-details">Retrieve Customer Scan Profile Details</h1>
 
-<p>Use this API to get a scan profile information configured in Avepoint Online Services for a customer.</p>
+<p>Use this API to retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.</p>
 <h2 id="permissions">Permissions</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail</code></td>
+<td><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}</code></td>
 <td>elements.scanprofiles.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to get a scan profile information configured in Avepoint Online Services for a customer.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.</p>
 <table>
 <thead>
 <tr>
@@ -118,8 +118,8 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail</code></td>
-<td>Get a scan profile information configured in Avepoint Online Services for a customer.</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}</code></td>
+<td>Retrieve the details of a specific scan profile configured in AvePoint Online Services for a customer.</td>
 </tr>
 </tbody>
 </table>
@@ -136,111 +136,128 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>profileName</td>
-<td>The profile name of the profile.</td>
+<td>The name of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>profileId</td>
-<td>The profile id of the profile.</td>
+<td>The ID of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>description</td>
-<td>The description of the profile.</td>
+<td>The description of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The tenant id of the profile.</td>
+<td>The tenant ID of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>tenantDomain</td>
-<td>The tenant domain of the profile.</td>
+<td>The tenant domain of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>scanMode</td>
-<td>The scan mode of the profile.</td>
-<td>int</td>
+<td>The scan mode of the scan profile. <ul><li><strong>0</strong> - Express mode</li><li><strong>1</strong> - Advanced mode</li></ul></td>
+<td>integer</td>
 </tr>
 <tr>
 <td>modifiedTime</td>
-<td>The modify time of the profile.</td>
+<td>The last modified time of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>createdTime</td>
-<td>The create time of the profile.</td>
+<td>The created time of the scan profile.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastUpdateTime</td>
+<td>The last updated time of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>impersonationAccount</td>
-<td>The impersonation account of the profile.</td>
+<td>The impersonation account configured in the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>scanInplaceArchivedMailboxes</td>
-<td>The scan inplace archive mailboxes of the profile.</td>
-<td>bool</td>
-</tr>
-<tr>
-<td>ignoreTheLockedObjectsWhenUpdatingTheJobStatus</td>
-<td>The ignore lock object status of the profile.</td>
-<td>bool</td>
+<td>Whether the <strong>Scan in-place archived mailboxes</strong> setting is enabled in the scan profile: <ul><li><strong>true</strong> - Enabled</li><li><strong>false</strong> - Disabled</li></ul></td>
+<td>boolean</td>
 </tr>
 <tr>
 <td>isIgnoreLockedSiteEnabled</td>
-<td>The ignore lock site of the profile.</td>
-<td>bool</td>
+<td>Whether the <strong>Ignore the locked objects when updating the job status</strong> setting is enabled in the scan profile: <ul><li><strong>true</strong> - Enabled</li><li><strong>false</strong> - Disabled</li></ul></td>
+<td>boolean</td>
 </tr>
 <tr>
 <td>enableDailyScan</td>
-<td>The enable daily scan of the profile.</td>
+<td>Whether the <strong>Enable daily scan</strong> setting is enabled in the scan profile: <ul><li><strong>No</strong> - Disabled</li><li><strong>hh:mm</strong> - The time of the daily scan, for example, 01:59</li></ul></td>
 <td>string</td>
 </tr>
 <tr>
 <td>isSendOutOfPolicyNotification</td>
-<td>The send oop notification status of the profile.</td>
-<td>bool</td>
+<td>Whether the <strong>Send an email notification to the following recipients when objects are moved to other containers or removed from any containers</strong> setting is enabled in the scan profile: <ul><li><strong>true</strong> - Enabled</li><li><strong>false</strong> - Disabled</li></ul></td>
+<td>boolean</td>
 </tr>
 <tr>
-<td>containers.ContainersName</td>
-<td>The container name of the container.</td>
+<td>containers</td>
+<td>The information of the containers.</td>
+<td>list</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Container information:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>containersName</td>
+<td>The name of the container.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>containers.ObjectType</td>
-<td>The object type of the container.</td>
-<td>int</td>
+<td>objectType</td>
+<td>The object type of the container.<ul><li><strong>0</strong> - Site Collection</li><li><strong>1</strong> - Mailbox</li><li><strong>2</strong> - OneDrive</li><li><strong>5</strong> - Microsoft 365 Group</li><li><strong>6</strong> - Project Online</li><li><strong>7</strong> - Public Folder</li><li><strong>9</strong> - Channel</li><li><strong>10</strong> - User</li><li><strong>11</strong> - None Unified Group</li><li><strong>12</strong> - Power Platform Environment</li><li><strong>13</strong> - Power Platform Connection</li><li><strong>14</strong> - Power Apps</li><li><strong>15</strong> - Power Automate</li><li><strong>16</strong> - Power BI Workspace</li><li><strong>17</strong> - Active Directory Mailbox</li><li><strong>18</strong> - Active Directory User</li><li><strong>19</strong> - Active Directory Group</li><li><strong>20</strong> - Power Platform Solution</li><li><strong>21</strong> - Power Copilot Studio</li><li><strong>22</strong> - Power Page</li><li><strong>23</strong> - Loop Container</li><li><strong>24</strong> - SharePoint Agent</li><li><strong>25</strong> - Azure AI Foundry Agent</li><li><strong>100</strong> - Google User</li><li><strong>101</strong> - Google Shared Drive</li><li><strong>102</strong> - Google Classroom</li><li><strong>103</strong> - Google Mailbox</li><li><strong>104</strong> - Google Group</li><li><strong>105</strong> - Google Vault Matter</li></ul></td>
+<td>integer</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/detail
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/47db****-1004-****-b2ce-8f5e****842d
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
-    &quot;profileId&quot;: &quot;47dba9a1-1004-4c2d-b2ce-8f5e66f5842d&quot;,
-    &quot;profileName&quot;: &quot;Default Microsoft 365 Scan Profile&quot;,
-    &quot;description&quot;: &quot;This is a partner-configured scan profile.&quot;,
-    &quot;tenantId&quot;: &quot;c2350b99-c7a2-4605-b7d4-79e8646f66c3&quot;,
-    &quot;tenantDomain&quot;: &quot;v0s40&quot;,
-    &quot;scanMode&quot;: 0,
-    &quot;modifiedTime&quot;: &quot;2025-09-11T03:19:14Z&quot;,
-    &quot;createdTime&quot;: &quot;2025-09-11T03:19:14Z&quot;,
-    &quot;scanInplaceArchivedMailboxes&quot;: false,
-    &quot;ignoreTheLockedObjectsWhenUpdatingTheJobStatus&quot;: false,
-    &quot;isIgnoreLockedSiteEnabled&quot;: false,
-    &quot;enableDailyScan&quot;: &quot;15:19&quot;,
-    &quot;isSendOutOfPolicyNotification&quot;: false,
+    &quot;profileId&quot;: &quot;47db****-1004-****-b2ce-8f5e****842d&quot;,// The ID of the scan profile.
+    &quot;profileName&quot;: &quot;Default Microsoft 365 Scan Profile&quot;, // The name of the scan profile.
+    &quot;description&quot;: &quot;This is a partner-configured scan profile.&quot;, // The description of the scan profile.
+    &quot;tenantId&quot;: &quot;c235****-c7a2-****-b7d4-79e8****66c3&quot;, // The tenant ID of the scan profile.
+    &quot;tenantDomain&quot;: &quot;domain&quot;, // The tenant domain of the scan profile.
+    &quot;scanMode&quot;: 0, // The scan mode of the scan profile: 0 represents the Express mode.
+    &quot;modifiedTime&quot;: &quot;2025-09-11T03:19:14Z&quot;,  // The last modified time of the scan profile.
+    &quot;createdTime&quot;: &quot;2025-09-11T03:19:14Z&quot;, // The created time of the scan profile.
+    &quot;lastUpdateTime&quot;: &quot;2025-09-11T03:19:14Z&quot;, // The last updated time of the scan profile.
+    &quot;scanInplaceArchivedMailboxes&quot;: false, // Whether to scan in-place archived mailboxes configured in the scan profile: False represents Do not scan in-place archived mailbox
+    &quot;isIgnoreLockedSiteEnabled&quot;: false, // Whether to ignore the locked sites in the scan profile: false represents Disabled.
+    &quot;enableDailyScan&quot;: &quot;15:19&quot;, // The time of the daily scan.
+    &quot;isSendOutOfPolicyNotification&quot;: false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: false represents Disabled
     &quot;containers&quot;: [
         {
-            &quot;containersName&quot;: &quot;Default_ProjectOnline_Sites_Group&quot;,
-            &quot;objectType&quot;: 6
+            &quot;containersName&quot;: &quot;Default_ProjectOnline_Sites_Group&quot;, // The container name
+            &quot;objectType&quot;: 6 // The object type: 6 represents Project Online
         },
         {
             &quot;containersName&quot;: &quot;Default OneDrive for Business Group&quot;,

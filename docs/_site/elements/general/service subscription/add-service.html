@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Add a service to a customer </title>
+      <title>Add a Service </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Add a service to a customer ">
+      <meta name="title" content="Add a Service ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="add-a-service-to-a-customer">Add a service to a customer</h1>
+<h1 id="add-a-service">Add a Service</h1>
 
-<p>Use this API to add a service to a customer.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to add a service for a customer.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -106,7 +106,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section provides details on the HTTP method and endpoint used to add a service to a customer.</p>
+<p>This section provides details on the HTTP method and endpoint used to add a service for a customer.</p>
 <table>
 <thead>
 <tr>
@@ -119,12 +119,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>POST</td>
 <td><code>/partner/external/v3/general/customers/{customerId}/services</code></td>
-<td>Add a service to a customer.</td>
+<td>Add a service for a customer.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-body-parameters">Request Body Parameters</h2>
-<p>You can provide a customer basic information in the request body to onboard a customer. This field is required.</p>
+<p>You can provide the service detailed information in the request body to add a service for a customer.</p>
+<h4 id="add-a-cloud-backup-for-microsoft-365cloud-backup-for-exchange-online--onedrive-trial-subscription">Add a Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online &amp; OneDrive trial subscription:</h4>
 <table>
 <thead>
 <tr>
@@ -137,104 +138,300 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>product</td>
-<td>The product name of the service.  <ul><li><strong>2048</strong> - Cloud Backup for Microsoft 365</li><li><strong>270</strong> - Cloud Backup for Exchange Online &amp; OneDrive</li><li><strong>274</strong> - Cloud Backup Express</li><li><strong>40</strong> - Baseline management</li><li><strong>42</strong> - Workspace management</li><li><strong>49</strong> - User and device management</li><li><strong>65</strong> - Workspace management - Storage optimization</li></ul></td>
-<td>int</td>
+<td>The name of the service.  <ul><li><strong>2048</strong> - Cloud Backup for Microsoft 365</li></ul></td>
+<td>integer</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>licenseType</td>
-<td>The license type of the service.  <ul><li><strong>0</strong> - Trial</li><li><strong>1</strong> - Enterprise</li></ul></td>
-<td>int</td>
+<td>The subscription type of the service.  <ul><li><strong>0</strong> - Trial</li></ul></td>
+<td>integer</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>avepointStorageType</td>
-<td>The storage type of the service.<ul><li><strong>0</strong> - AvepointStorageAzure</li><li><strong>1</strong> - AvepointStorageS3</li><li><strong>2</strong> - AvepointStorageGCP</li></ul></td>
-<td>int</td>
+<td>The AvePoint storage type of the service.<ul><li><strong>0</strong> - AvePoint storage - Microsoft Azure Blob</li><li><strong>1</strong> - AvePoint storage - Amazon S3</li></ul></td>
+<td>integer</td>
+<td>Yes (No)</td>
+</tr>
+<tr>
+<td>retentionYear</td>
+<td>The retention year for the data of the service.</td>
+<td>integer</td>
+<td>Yes (No)</td>
+</tr>
+<tr>
+<td>byos</td>
+<td>Whether the storage of the service is Bring your own storage.  <ul><li><strong>true</strong> - The storage is BYOS.</li><li><strong>false</strong> - The storage is AvePoint storage.</li></ul></td>
+<td>boolean</td>
+<td>No (Yes)</td>
+</tr>
+<tr>
+<td>storageProfileId</td>
+<td>The storage profile when BYOS is used.</td>
+<td>boolean</td>
+<td>No (Yes)</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Either <strong>avepointStorageType</strong> and <strong>retentionYear</strong> must be provided, or <strong>byos</strong> must be provided; at least one option is required.</p>
+</div>
+<h4 id="add-a-cloud-backup-expressbaseline-managementworkspace-managementuser-and-device-managementworkspace-management---storage-optimization-trial-subscription">Add a Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - storage optimization trial subscription:</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product</td>
+<td>The name of the service.  <ul><li><strong>274</strong> - Cloud Backup Express</li><li><strong>40</strong> - Baseline management</li><li><strong>42</strong> - Workspace management</li><li><strong>49</strong> - User and device management</li><li><strong>65</strong> - Workspace management - storage optimization</li></ul></td>
+<td>integer</td>
 <td>Yes</td>
+</tr>
+<tr>
+<td>licenseType</td>
+<td>The subscription type of the service.  <ul><li><strong>0</strong> - Trial</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="add-a-cloud-backup-for-microsoft-365cloud-backup-for-power-platformcloud-backup-for-exchange-online--onedrive-pooled-subscription">Add a Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup for Exchange Online &amp; OneDrive pooled subscription:</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product</td>
+<td>The name of the service.  <ul><li><strong>2048</strong> - Cloud Backup for Microsoft 365</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseType</td>
+<td>The subscription type of the service.  <ul><li><strong>1</strong> - Enterprise</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>avepointStorageType</td>
+<td>The AvePoint storage type of the service.<ul><li><strong>0</strong> - AvePoint storage - Microsoft Azure Blob</li><li><strong>1</strong> - AvePoint storage - Amazon S3</li></ul></td>
+<td>integer</td>
+<td>Yes (No)</td>
 </tr>
 <tr>
 <td>retentionYear</td>
 <td>The retention year of the service.</td>
-<td>int</td>
-<td>Yes</td>
+<td>integer</td>
+<td>Yes (No)</td>
 </tr>
 <tr>
 <td>byos</td>
-<td>The byos of the service.</td>
+<td>Whether the storage of the service is Bring your own storage.       <ul><li><strong>true</strong> - The storage is BYOS.</li><li><strong>false</strong> - The storage is AvePoint storage.</li></ul></td>
+<td>boolean</td>
+<td>No (Yes)</td>
+</tr>
+<tr>
+<td>storageProfileId</td>
+<td>The storage profile for BYOS when BYOS is used.</td>
+<td>boolean</td>
+<td>No (Yes)</td>
+</tr>
+<tr>
+<td>licenseItems</td>
+<td>The subscription items of the service.</td>
+<td>list</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Either <strong>avepointStorageType</strong> and <strong>retentionYear</strong> must be provided, or <strong>byos</strong> must be provided; at least one option is required.</p>
+</div>
+<p><strong>Subscription items:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resource</td>
+<td>The resource of the service.   <ul><li><strong>Office365Backup</strong> - Cloud Backup for Microsoft 365 pool</li><li><strong>Office365PPBackup</strong> - Cloud Backup for Power Platform pool</li><li><strong>Office365EXODBackup</strong> - Cloud Backup for Exchange Online &amp; OneDrive pool</li></ul></td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>subscriptionSourceType</td>
+<td>The source of the service. <ul><li><strong>1</strong> - AvePoint pool</li><li><strong>2</strong> - Marketplace pool</li><li><strong>6</strong> - LARS AvePoint pool</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>isSameAsPool</td>
+<td>Whether the expiration time of the service is the same as the pool. <ul><li><strong>true</strong> - Same as the pool</li><li><strong>false</strong> - Different from the pool</li></ul></td>
 <td>bool</td>
+<td>Yes (No)</td>
+</tr>
+<tr>
+<td>expireTime</td>
+<td>The expiration time of the service.</td>
+<td>string</td>
+<td>No (Yes)</td>
+</tr>
+<tr>
+<td>saleType</td>
+<td>The type of the service. <ul><li><strong>0</strong> - Capacity tier</li><li><strong>1</strong> - Unlimited users</li><li><strong>2</strong> - Unlimited organization</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>packageType</td>
+<td>The package type of the service. <ul><li><strong>0</strong> - Standard</li><li><strong>1</strong> - Core</li><li><strong>2</strong> - Flex</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>customerSize</td>
+<td>The customer's size of the service.</td>
+<td>integer</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>userSeat</td>
-<td>The user seat of the service.</td>
-<td>int</td>
+<td>The number of user seats of the service to assign to the customer.</td>
+<td>integer</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td>expirationTime</td>
-<td>The expiration time of the service.</td>
-<td>string</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.Resource</td>
-<td>The resource of the service.   <ul><li><strong>Office365Backup</strong> - Microsoft 365 pool</li><li><strong>Office365PPBackup</strong> - PowerPlatform pool</li><li><strong>Office365EXODBackup</strong> - Exchange Online &amp; OneDrive pool</li><li><strong>PartnerTenantSettingManagement</strong> - Baseline management pool</li><li><strong>PartnerWorkspaceOnboarding</strong> - Workspace management pool</li><li><strong>PartnerUserManagement</strong> - User and device management pool</li><li><strong>PartnerStorageOptimization</strong> - Workspace management - Storage optimization pool</li></ul></td>
-<td>string</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.SubscriptionSourceType</td>
-<td>The source of the service. <ul><li><strong>1</strong> - AvepointPool</li><li><strong>2</strong> - MarketplacePool</li><li><strong>6</strong> - LarsAvepointPool</li></ul></td>
-<td>int</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.IsSameAsPool</td>
-<td>The is same as pool of the service.</td>
-<td>bool</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.ExpireTime</td>
-<td>The is expire time of the service.</td>
-<td>string</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.SaleType</td>
-<td>The sale type of the service. <ul><li><strong>0</strong> - Capacity Tier</li><li><strong>1</strong> - Unlimited Users</li><li><strong>2</strong> - Unlimited Organization</li></ul></td>
-<td>int</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.PackageType</td>
-<td>The package type of the service. <ul><li><strong>0</strong> - Standard</li><li><strong>1</strong> - Core</li><li><strong>2</strong> - Flex</li></ul></td>
-<td>int</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.CustomerSize</td>
-<td>The customer size of the service.</td>
-<td>int</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>licenseItems.ContractEndDate</td>
+<td>contractEndDate</td>
 <td>The contract end date of the service.</td>
 <td>string</td>
 <td>No</td>
 </tr>
 <tr>
-<td>licenseItems.PaymentType</td>
-<td>The payment type of the service. <ul><li><strong>0</strong> - Prepaid</li><li><strong>1</strong> - PayAsYouGo</li></ul></td>
-<td>int</td>
+<td>paymentType</td>
+<td>The payment type of the service. <ul><li><strong>0</strong> - Prepaid</li><li><strong>1</strong> - Pay as you go</li></ul></td>
+<td>integer</td>
 <td>Yes</td>
 </tr>
 </tbody>
 </table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If <strong>isSameAsPool</strong> is <strong>false</strong>, <strong>expireTime</strong> must be provided. If <strong>expireTime</strong> is provided, <strong>isSameAsPool</strong> is not required.
+<strong>PackageType</strong> and <strong>customerSize</strong> are only for Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online &amp; OneDrive.</p>
+</div>
+<h4 id="add-a-baseline-managementworkspace-managementuser-and-device-managementworkspace-management---storage-optimization-pooled-subscription">Add a Baseline management/Workspace management/User and device management/Workspace management - Storage optimization pooled subscription:</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product</td>
+<td>The name of the service.  <ul><li><strong>40</strong> - Baseline management</li><li><strong>42</strong> - Workspace management</li><li><strong>49</strong> - User and device management</li><li><strong>65</strong> - Workspace management - storage optimization</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseType</td>
+<td>The subscription type of the service.  <ul><li><strong>1</strong> - Enterprise</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>licenseItems</td>
+<td>The subscription items of the service.</td>
+<td>list</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Subscription items:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resource</td>
+<td>The resource of the service.   <ul><li><strong>PartnerTenantSettingManagement</strong> - Baseline management pool</li><li><strong>PartnerWorkspaceOnboarding</strong> - Workspace management pool</li><li><strong>PartnerUserManagement</strong> - User and device management pool</li><li><strong>PartnerStorageOptimization</strong> - Workspace management - storage optimization pool</li></ul></td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>subscriptionSourceType</td>
+<td>The source of the service. <ul><li><strong>1</strong> - AvePoint pool</li><li><strong>2</strong> - Marketplace pool</li><li><strong>6</strong> - LARS AvePoint pool</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>isSameAsPool</td>
+<td>Whether the expiration time of the service is the same as the pool. <ul><li><strong>true</strong> - Same as the pool</li><li><strong>false</strong> - Different from the pool</li></ul></td>
+<td>boolean</td>
+<td>Yes (No)</td>
+</tr>
+<tr>
+<td>expireTime</td>
+<td>The expiration time of the service.</td>
+<td>string</td>
+<td>No (Yes)</td>
+</tr>
+<tr>
+<td>userSeat</td>
+<td>The number of user seats of the service to assign to the customer.</td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>contractEndDate</td>
+<td>The contract end date of the service.</td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>paymentType</td>
+<td>The payment type of the service. <ul><li><strong>0</strong> - Prepaid</li><li><strong>1</strong> - Pay as you go</li></ul></td>
+<td>integer</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If <strong>isSameAsPool</strong> is <strong>false</strong>, <strong>expireTime</strong> must be provided. If <strong>expireTime</strong> is provided, <strong>isSameAsPool</strong> is not required.</p>
+</div>
 <h2 id="response">Response</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the created status and customer id and product displayed in the response body.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information in the response body.</p>
 <table>
 <thead>
 <tr>
@@ -246,59 +443,56 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer id of the added service.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>product</td>
-<td>The product of the added service.</td>
-<td>int</td>
+<td>The name of the added service.</td>
+<td>integer</td>
 </tr>
 <tr>
 <td>status</td>
-<td>The status of the created customer.<ul><li><strong>1</strong> - SaveSuccessful</li><li><strong>2</strong> - SaveFailed</li><li><strong>3</strong> - PartnerNoLicense</li><li><strong>4</strong> - UserSeatNotEnough</li><li><strong>5</strong> - ExceededExpiredTime</li><li><strong>6</strong> - CheckFailed</li><li><strong>7</strong> - LicenseExists</li><li><strong>11</strong> - LessThanCurrentTime</li><li><strong>12</strong> - HasSameLicense</li><li><strong>13</strong> - AlreadyAcceptOtherLicense</li><li><strong>16</strong> - CheckSuccessful</li><li><strong>17</strong> - PremiumProductReachLimit</li><li><strong>18</strong> - ExpiredTimeLessThanOneMonth</li><li><strong>19</strong> - ReduceUserSeatFailed</li><li><strong>20</strong> - AssignEXODForCB365ActiveFailed</li></ul></td>
-<td>int</td>
+<td>The status of adding the service.<ul><li><strong>1</strong> - Successful</li><li><strong>2</strong> - Failed</li><li><strong>3</strong> - Partner has no subscription</li><li><strong>4</strong> - User seat insufficient</li><li><strong>5</strong> - Exceeded expiration time</li><li><strong>6</strong> - Check failed</li><li><strong>7</strong> - Subscription already exists</li><li><strong>11</strong> - Expiration time earlier than current time</li><li><strong>12</strong> - Has same subscription</li><li><strong>16</strong> - Check successful</li><li><strong>17</strong> - Premium service reached limit</li><li><strong>18</strong> - Expiration time less than one month</li><li><strong>19</strong> - Failed to reduce user seats</li><li><strong>20</strong> - Failed to assign Exchange Online &amp; OneDrive subscription </li></ul></td>
+<td>integer</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a POST request to the specified endpoint.</p>
-<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/services
+<pre><code class="lang-json">https://graph-us.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/services
 
-Add Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online &amp; OneDrive Trial license request:
+Add a Cloud Backup for Microsoft 365/Cloud Backup for Exchange Online &amp; OneDrive trial subscription request:
 {
-  &quot;product&quot;: 2048,
-  &quot;licenseType&quot;: 0,
-  &quot;byos&quot;: false,
-  &quot;avepointStorageType&quot;: 0,
-  &quot;retentionYear&quot;: 1,
-  &quot;expirationTime&quot;: &quot;2025-10-18T00:00:00Z&quot;
+  &quot;product&quot;: 2048, // The name of the service: 2048 represents Cloud Backup for Microsoft 365
+  &quot;licenseType&quot;: 0, // The subscription type of the service: 0 represents trial
+  &quot;avepointStorageType&quot;: 0, // The storage type of the service: 0 represents the AvePoint storage - Microsoft Azure Blob
+  &quot;retentionYear&quot;: 1, // The retention year of the service
 }
-Add other products Trial license request:
+
+Add a Cloud Backup Express/Baseline management/Workspace management/User and device management/Workspace management - storage optimization trial subscription request:
 {
   &quot;product&quot;: 42,
-  &quot;licenseType&quot;: 0,
-  &quot;expirationTime&quot;: &quot;2025-10-18T00:00:00Z&quot;
+  &quot;licenseType&quot;: 0
 }
-Add Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup for Exchange Online &amp; OneDrive pool license request:
+
+Add a Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup for Exchange Online &amp; OneDrive pool subscription request:
 {
   &quot;product&quot;: 2048,
   &quot;licenseType&quot;: 1,
-  &quot;byos&quot;: false,
-  &quot;avepointStorageType&quot;: 0,
-  &quot;storageProfileId&quot;: &quot;&quot;,
-  &quot;retentionYear&quot;: 1,
+  &quot;byos&quot;: true, // The storage type of the service: true represents Bring your own storage
+  &quot;storageProfileId&quot;: &quot;96c5****-c6cb-****-9792-b1a1****aeae&quot;, // The ID of the storage profile
   &quot;licenseItems&quot;: [
     {
-      &quot;expireTime&quot;: &quot;2025-09-26T00:00:00Z&quot;,
-      &quot;userSeat&quot;: 1,
-      &quot;resource&quot;: &quot;Office365Backup&quot;,
-      &quot;isSameAsPool&quot;: true,
-      &quot;subscriptionSourceType&quot;: 1,
-      &quot;paymentType&quot;: 0,
-      &quot;saleType&quot;: 0,
-      &quot;customerSize&quot;: 5,
-      &quot;packageType&quot;: 0
+      &quot;expireTime&quot;: &quot;2025-09-26T00:00:00Z&quot;, // The expiration time of the service
+      &quot;userSeat&quot;: 1, // The number of user seats to assign to the customer
+      &quot;resource&quot;: &quot;Office365Backup&quot;, // The resource of the service: Office365Backup represents Cloud Backup for Microsoft 365 pool
+      &quot;isSameAsPool&quot;: true, // Whether the expiration time of the service is the same as the pool: true represents the expiration time are the same
+      &quot;subscriptionSourceType&quot;: 1, // The source of the service: 1 represents AvePoint pool
+      &quot;paymentType&quot;: 0, // The payment type of the service: 0 represents Prepaid
+      &quot;saleType&quot;: 0, // The type of the service: 0 represents Capacity tier
+      &quot;customerSize&quot;: 5, // The customer's size of the service
+      &quot;packageType&quot;: 0 // The package type of the service; 0 represents Standard
     },
     {
       &quot;expireTime&quot;: &quot;2025-09-26T00:00:00Z&quot;,
@@ -311,7 +505,8 @@ Add Cloud Backup for Microsoft 365/Cloud Backup for Power Platform/Cloud Backup 
     }
   ]
 }
-Add other products pool license request:
+
+Add Baseline management/Workspace management/User and device management/Workspace management - storage optimization pooled subscription request:
 {
     &quot;product&quot;: 42,
     &quot;licenseType&quot;: 1,
@@ -328,11 +523,11 @@ Add other products pool license request:
   }
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the created customer id and status displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
-    &quot;customerId&quot;:&quot;7e4ffcae-xxxx-xxxx-xxxx-c6efa0b250d5&quot;,
-    &quot;product&quot;:&quot;Office365Backup&quot;,
-    &quot;status&quot;:1
+    &quot;customerId&quot;:&quot;caf9****-2cc6-****-b04b-794c****5ea3&quot;, // The ID of the customer
+    &quot;product&quot;:2048, // The added service: 2048 represents Cloud Backup for Microsoft 365
+    &quot;status&quot;:1 // The status of adding the service: 1 represents successful
 }
 </code></pre>
 

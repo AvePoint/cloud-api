@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Get all customers managed by current partner </title>
+      <title>Retrieve All Customers Managed by Current Partner </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Get all customers managed by current partner ">
+      <meta name="title" content="Retrieve All Customers Managed by Current Partner ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="get-all-customers-managed-by-current-partner">Get all customers managed by current partner</h1>
+<h1 id="retrieve-all-customers-managed-by-current-partner">Retrieve All Customers Managed by Current Partner</h1>
 
-<p>Use this API to get all customers managed by current partner.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to retrieve the information of all customers managed by the current partner.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.md">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>partner/external/v3/general/customers</code></td>
+<td><code>/partner/external/v3/general/customers/batch</code></td>
 <td>elements.customers.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to get all customers managed by current partner.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve customers managed by the current partner.</p>
 <table>
 <thead>
 <tr>
@@ -117,14 +117,14 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td><code>partner/external/v3/general/customers</code></td>
-<td>Get all customers managed by current partner.</td>
+<td>POST</td>
+<td><code>/partner/external/v3/general/customers/batch</code></td>
+<td>Retrieve customers managed by the current partner.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="query-parameters">Query Parameters</h2>
-<p>This section outlines the parameters optional required to specify paging information about the users you want to retrieve.</p>
+<p>This section outlines the parameters that allow users to specify pagination.</p>
 <table>
 <thead>
 <tr>
@@ -137,15 +137,35 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>pageIndex</td>
-<td>The page number of the data which will be retrieve, the default value is 1.</td>
+<td>The starting number of the page to get the violated objects. The default value is 1.</td>
 <td>integer</td>
-<td>False</td>
+<td>No</td>
 </tr>
 <tr>
 <td>pageSize</td>
-<td>The number of customers API will retrieved in a time, the default value is 100.</td>
+<td>The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100.</td>
 <td>integer</td>
-<td>False</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-body-parameters">Request Body Parameters</h2>
+<p>This section outlines the request body parameters required to specify the customers you want to retrieve.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customerId</td>
+<td>The ID of the customer to be retrieved.</td>
+<td>string</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
@@ -167,7 +187,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>organization</td>
-<td>The organization of the customer.</td>
+<td>The organization name of the customer.</td>
 <td>string</td>
 </tr>
 <tr>
@@ -177,60 +197,89 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>jobStatus</td>
-<td>The job status of the customer.<ul><li><strong>0</strong> - N/A</li><li><strong>1</strong> - Working</li><li><strong>2</strong> - Failed</li><li><strong>3</strong> - Waiting for Configuration</li><li><strong>4</strong> - Multiple Issues Found</li><li><strong>5</strong> - Finished with Exception</li><li><strong>6</strong> - No Backup Update</li></ul></td>
-<td>string</td>
+<td>The status of the customer's tenant.<ul><li><strong>0</strong> - N/A</li><li><strong>1</strong> - Working</li><li><strong>2</strong> - Failed</li><li><strong>3</strong> - Waiting for configuration</li><li><strong>4</strong> - Multiple issues found</li><li><strong>5</strong> - Finished with exception</li><li><strong>6</strong> - No backup updates</li></ul></td>
+<td>integer</td>
 </tr>
 <tr>
 <td>countryOrRegion</td>
-<td>The country of the customer.</td>
+<td>The country or region of the customer.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>managementMode</td>
-<td>The management mode of the user.</td>
-<td>int</td>
+<td>The management mode of the customer.<ul><li><strong>0</strong> - Customer management of tenant</li><li><strong>1</strong> - Partner management of tenant</li><li><strong>2</strong> - To be configured</li></ul></td>
+<td>integer</td>
 </tr>
 <tr>
-<td>tenants.Id</td>
-<td>The id of the tenant.</td>
+<td>tenants</td>
+<td>The tenant information of the customer.</td>
+<td>list</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tenant information</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>tenants.Name</td>
+<td>name</td>
 <td>The name of the tenant.</td>
 <td>string</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
-<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers
+<p>To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.</p>
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/batch
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: &quot;03f7382e-xxxx-xxxx-xxxx-dd9af05974f0&quot;,
-            &quot;organization&quot;: &quot;test_fly_license_06&quot;,
-            &quot;ownerEmail&quot;: &quot;test_xxx@163.com&quot;,
-            &quot;jobStatus&quot;: &quot;N/A&quot;,
-            &quot;countryOrRegion&quot;: &quot;Afghanistan&quot;,
-            &quot;managementMode&quot;: 1,
+            &quot;id&quot;: &quot;03f7382e-****-****-****-dd9af05974f0&quot;, //The customer ID
+            &quot;organization&quot;: &quot;OrganizationABC&quot;, //The organization name of the customer
+            &quot;ownerEmail&quot;: &quot;user@domain.com&quot;, //The email address of the customer
+            &quot;jobStatus&quot;: 0, //The status of the customer's tenant: 0 represents N/A
+            &quot;countryOrRegion&quot;: &quot;Afghanistan&quot;, //The country or region of the customer
+            &quot;managementMode&quot;: 1, //The management mode of the customer: 1 represents the partner management mode of tenant.
             &quot;tenants&quot;:
             [
                 {
-                    &quot;id&quot;:&quot;03f7382e-xxxx-xxxx-xxxx-dd9af05974f0&quot;,
-                    &quot;name&quot;:&quot;v40t&quot;
+                    &quot;id&quot;:&quot;03f7382e-xxxx-xxxx-xxxx-dd9af05974f0&quot;, //The ID of the tenant
+                    &quot;name&quot;:&quot;Tenant ABC&quot; //The name of the tenant
                 }
             ]
         },
+        {
+            &quot;id&quot;: &quot;03f7382e-****-****-****-dd9adcs974f0&quot;,
+            &quot;organization&quot;: &quot;OrganizationDEF&quot;,
+            &quot;ownerEmail&quot;: &quot;userA@domain.com&quot;,
+            &quot;jobStatus&quot;: 0,
+            &quot;countryOrRegion&quot;: &quot;Afghanistan&quot;,
+            &quot;managementMode&quot;: 2,
+            &quot;tenants&quot;:
+            [
+
+            ]
+        }
     ],
     &quot;metadata&quot;: {
-        &quot;pageIndex&quot;: 1,
-        &quot;pageSize&quot;: 50,
-        &quot;totalCount&quot;: 1
+        &quot;pageIndex&quot;: 1, // The current display page
+        &quot;pageSize&quot;: 50, // The number of objects on the display page
+        &quot;totalCount&quot;: 2 // The total number of objects matching the query parameters
     }
 }
 </code></pre>

@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Update General Information A Specific User </title>
+      <title>Update General Information of a Specific User </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Update General Information A Specific User ">
+      <meta name="title" content="Update General Information of a Specific User ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="update-general-information-a-specific-user">Update General Information A Specific User</h1>
+<h1 id="update-general-information-of-a-specific-user">Update General Information of a Specific User</h1>
 
-<p>Use this API to update general information of specific users of a customer tenant in AvePoint Online Services.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to update the general information of a specific user in a customer's tenant.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,14 +100,14 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/general-information</code></td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/general-information</code></td>
 <td>elements.um.user.readwrite.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to update general information
-about a user.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to update the general information
+of a user in a customer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -119,13 +119,13 @@ about a user.</p>
 <tbody>
 <tr>
 <td>PUT</td>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/general-information</code></td>
-<td>Update general information about a user of a customer tenant in AvePoint Online Services.</td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/general-information</code></td>
+<td>Updates the general information of a specific user in a customer's tenant.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="url-parameters">URL Parameters</h2>
-<p>This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update general information about a user according to your specific requirements and preferences.</p>
+<p>This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the general information of a user according to your specific requirements and preferences.</p>
 <table>
 <thead>
 <tr>
@@ -138,19 +138,19 @@ about a user.</p>
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer ID of the customer.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The specific tenant ID of the customer.</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>Unique identifier for the specific user whose details are being requested.</td>
+<td>The unique identifier of the user.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
@@ -165,44 +165,38 @@ about a user.</p>
 <th>Description</th>
 <th>Type</th>
 <th>Required</th>
-<th>MaxLength</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>firstName</td>
-<td>The first name of the user.</td>
+<td>The first name of the user. The maximum length is 64 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>64 character</td>
 </tr>
 <tr>
 <td>lastName</td>
-<td>The last name of the user.</td>
+<td>The last name of the user. The maximum length is 64 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>64 character</td>
 </tr>
 <tr>
 <td>displayName</td>
-<td>The display name of the user</td>
+<td>The display name of the user. The maximum length is 256 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>256 character</td>
 </tr>
 <tr>
 <td>jobTitle</td>
 <td>The job title of the user.</td>
 <td>string</td>
 <td>Yes</td>
-<td></td>
 </tr>
 <tr>
 <td>employeeId</td>
-<td>The employeeId of the user.</td>
+<td>The employee ID of the user. The maximum length is 16 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>16 character</td>
 </tr>
 </tbody>
 </table>
@@ -210,15 +204,15 @@ about a user.</p>
 <p>If the request has been successfully processed, a 204 No Content response will be returned</p>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-fb26-4353-8dbd-5725fa9edc3f/general-information
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/general-information
 </code></pre>
 <h2 id="request-body-sample">Request Body Sample</h2>
 <pre><code class="lang-json">{
-  &quot;firstName&quot;: &quot;Bob&quot;,
-  &quot;lastName&quot;: &quot;Mark&quot;,
-  &quot;displayName&quot;: &quot;Bob Mark&quot;,
-  &quot;jobTitle&quot; : &quot;IT&quot;,
-  &quot;employeeId&quot; : &quot;e3f1a9b8-4d2c&quot;
+  &quot;firstName&quot;: &quot;Tony&quot;, // The first name of the user
+  &quot;lastName&quot;: &quot;Brown&quot;, // The last name of the user
+  &quot;displayName&quot;: &quot;Tony Brown&quot;, // The display name of the user
+  &quot;jobTitle&quot; : &quot;IT&quot;, // The job title of the user
+  &quot;employeeId&quot; : &quot;e3f1a9b8-4d2c&quot; // The employee ID of the user
 }
 </code></pre>
 

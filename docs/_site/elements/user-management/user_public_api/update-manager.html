@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Update Manager of A Specific User </title>
+      <title>Update Manager of a Specific User </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Update Manager of A Specific User ">
+      <meta name="title" content="Update Manager of a Specific User ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="update-manager-of-a-specific-user">Update Manager of A Specific User</h1>
+<h1 id="update-manager-of-a-specific-user">Update Manager of a Specific User</h1>
 
-<p>Use this API to update manager of specific user of a customer tenant in AvePoint Online Services.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to update the manager of a specific user in a customer's tenant.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/manager</code></td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/manager</code></td>
 <td>elements.um.user.readwrite.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to update manager about a user.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to update the manager of a specific user in a customer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -118,13 +118,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>PUT</td>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/manager</code></td>
-<td>Update manager about a user of a customer tenant in AvePoint Online Services.</td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/manager</code></td>
+<td>Updates the manager of a specific user in a customer's tenant.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="url-parameters">URL Parameters</h2>
-<p>This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update manager about a user according to your specific requirements and preferences.</p>
+<p>This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the manager of a user according to your specific requirements and preferences.</p>
 <table>
 <thead>
 <tr>
@@ -137,26 +137,26 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer ID of the customer.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The specific tenant ID of the customer.</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>Unique identifier for the specific user whose details are being requested.</td>
+<td>The unique identifier of the user.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-body">Request Body</h2>
-<p>This section outlines the required fields to update the manager of a user.</p>
+<p>This section outlines the required fields to update the manager of a specific user in a customer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -164,23 +164,20 @@ You must register an app through Elements &gt; API app registration to authentic
 <th>Description</th>
 <th>Type</th>
 <th>Required</th>
-<th>MaxLength</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
-<td>The ID of the manager.</td>
+<td>The ID of the manager. The maximum length is 40 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>40 character</td>
 </tr>
 <tr>
 <td>userPrincipalName</td>
-<td>The user PrincipalName of the manager.</td>
+<td>The user principal name of the manager. The maximum length is 1024 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>1024 character</td>
 </tr>
 </tbody>
 </table>
@@ -192,8 +189,8 @@ You must register an app through Elements &gt; API app registration to authentic
 </code></pre>
 <h2 id="request-body-sample">Request Body Sample</h2>
 <pre><code class="lang-json">{
-  &quot;id&quot;: &quot;631b0def-f500-482d-a4cd-5811518ebbea&quot;,
-  &quot;userPrincipalName&quot;: &quot;Jackson@element.onmicrosoft.com&quot;
+  &quot;id&quot;: &quot;631b0def-****-****-****-5811518ebbea&quot;, // The ID of the manager
+  &quot;userPrincipalName&quot;: &quot;tony@element.onmicrosoft.com&quot; // The user principal name of the manager
 }
 </code></pre>
 

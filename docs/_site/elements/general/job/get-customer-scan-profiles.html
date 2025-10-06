@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Get the information of all scan profile changes in Avepoint Online Services for a customer </title>
+      <title>Retrieve All Scan Profiles for a Customer </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Get the information of all scan profile changes in Avepoint Online Services for a customer ">
+      <meta name="title" content="Retrieve All Scan Profiles for a Customer ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="get-the-information-of-all-scan-profile-changes-in-avepoint-online-services-for-a-customer">Get the information of all scan profile changes in Avepoint Online Services for a customer</h1>
+<h1 id="retrieve-all-scan-profiles-for-a-customer">Retrieve All Scan Profiles for a Customer</h1>
 
-<p>Use this API to get the information of all scan profile changes in Avepoint Online Services for a customer.</p>
+<p>Use this API to retrieve all scan profiles configured for a specific customer in AvePoint Online Services.</p>
 <h2 id="permissions">Permissions</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>partner/external/v3/general/customers/{customerId}/scan-profiles</code></td>
+<td><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/batch</code></td>
 <td>elements.scanprofiles.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to get the information of all scan profile changes in Avepoint Online Services for a customer.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve all scan profiles configured for a specific customer in AvePoint Online Services.</p>
 <table>
 <thead>
 <tr>
@@ -117,9 +117,55 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td><code>partner/external/v3/general/customers/{customerId}/scan-profiles</code></td>
-<td>Get the information of all scan profile changes in Avepoint Online Services for a customer.</td>
+<td>POST</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/batch</code></td>
+<td>Retrieve all scan profiles configured for a specific customer in AvePoint Online Services</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query-parameters">Query Parameters</h2>
+<p>This section outlines the parameters optional required to specify paging information about the profile you want to retrieve.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pageIndex</td>
+<td>The page number of the data which will be retrieve, the default value is 1.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>The number of customers API will retrieved in a time, the default value is 100.</td>
+<td>integer</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-body-parameters">Request Body Parameters</h2>
+<p>This section outlines the request body required to specify which scan profiles you want to retrieve.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scanProfileIds</td>
+<td>The IDs of the scan profiles to be retrieved</td>
+<td>string[]</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
@@ -136,41 +182,49 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>profileName</td>
-<td>The profile name of the profile.</td>
+<td>The name of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>profileId</td>
-<td>The profile id of the profile.</td>
+<td>The ID of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>scanMode</td>
-<td>The scan mode of the profile.</td>
-<td>int</td>
+<td>The scan mode of the scan profile. <ul><li><strong>0</strong> - Express mode</li><li><strong>1</strong> - Advanced mode</li></ul></td>
+<td>integer</td>
 </tr>
 <tr>
 <td>modifiedTime</td>
-<td>The modify time of the profile.</td>
+<td>The last modified time of the scan profile.</td>
 <td>string</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/{customerId}/scan-profiles
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/batch
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
-<pre><code class="lang-json">[
-    {
-        &quot;profileName&quot;: &quot;Default Microsoft 365 Scan Profile&quot;,
-        &quot;profileId&quot;: &quot;47dba9a1-1004-4c2d-b2ce-8f5e66f5842d&quot;,
-        &quot;scanMode&quot;: 0,
-        &quot;modifiedTime&quot;: &quot;2025-09-11T03:19:14Z&quot;
+For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<pre><code class="lang-json">
+{
+    &quot;data&quot;: [
+        {
+            &quot;profileName&quot;: &quot;Default Microsoft 365 Scan Profile&quot;, // The name of the scan profile
+            &quot;profileId&quot;: &quot;47db****-1004-****-b2ce-8f5e****842d&quot;, // The ID of the scan profile
+            &quot;scanMode&quot;: 0, // The scan mode of the scan profile: 0 represents Express mode
+            &quot;modifiedTime&quot;: &quot;2025-09-11T03:19:14Z&quot; // The last modified time of the scan profile
+        }
+    ],
+    &quot;metadata&quot;: {
+        &quot;pageIndex&quot;: 1, // The current display page
+        &quot;pageSize&quot;: 50, // The number of objects on the display page
+        &quot;totalCount&quot;: 1 // The total number of objects matching the query parameters
     }
-]
+}
 </code></pre>
 
 </article>

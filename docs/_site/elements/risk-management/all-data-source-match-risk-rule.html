@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Retrieve Matched Risk Rules </title>
+      <title>Retrieve Matched Risk Rules of Tenant </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Retrieve Matched Risk Rules ">
+      <meta name="title" content="Retrieve Matched Risk Rules of Tenant ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,7 +85,7 @@
         </div>
 
         <article data-uid="">
-<h1 id="retrieve-matched-risk-rules">Retrieve Matched Risk Rules</h1>
+<h1 id="retrieve-matched-risk-rules-of-tenant">Retrieve Matched Risk Rules of Tenant</h1>
 
 <p>Use this API to retrieve all matched risk rules for a specific tenant in Elements.</p>
 <h2 id="permission">Permission</h2>
@@ -137,13 +137,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer ID.</td>
+<td>The customer ID</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The tenant ID of the customer.</td>
+<td>The tenant ID of the customer</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
@@ -228,26 +228,26 @@ You must register an app through Elements &gt; API app registration to authentic
 <pre><code class="lang-json">https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d926b068-****-4830-****-fd2a****4e99/tenants/0eaab044-****-4a92-****-93c6****711e/detection/rules
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
     &quot;result&quot;: [
         {
-            &quot;ruleId&quot;: &quot;00000002-****-****-****-0000001A&quot;,
-            &quot;ruleName&quot;: &quot;Users without MFA enabled&quot;,
-            &quot;setting&quot;: null,
-            &quot;tenantId&quot;: &quot;be4cdf40-****-****-****-ab967eb78246&quot;,
-            &quot;customerId&quot;: &quot;292b68c5-****-****-****-28650d407eaf&quot;,
-            &quot;dataSource&quot;: 6,
-            &quot;hitItemCount&quot;: 161
+            &quot;ruleId&quot;: &quot;00000002-****-****-****-0000001A&quot;, // The ID of the rule
+            &quot;ruleName&quot;: &quot;Users without MFA enabled&quot;, // The display name of the rule
+            &quot;setting&quot;: null, // The parameter value configured for the rule
+            &quot;tenantId&quot;: &quot;be4cdf40-****-****-****-ab967eb78246&quot;, // The tenant ID
+            &quot;customerId&quot;: &quot;292b68c5-****-****-****-28650d407eaf&quot;, // The customer ID
+            &quot;dataSource&quot;: 6, // The data source of the matched objects, Users
+            &quot;hitItemCount&quot;: 161 // The number of objects that match the risk rule
         },
         {
-            &quot;ruleId&quot;: &quot;00000002-****-****-****-00000023&quot;,
-            &quot;ruleName&quot;: &quot;Global administrator without a password expiration date&quot;,
-            &quot;setting&quot;: null,
-            &quot;tenantId&quot;: &quot;be4cdf40-****-****-****-ab967eb78246&quot;,
-            &quot;customerId&quot;: &quot;292b68c5-****-****-****-28650d407eaf&quot;,
-            &quot;dataSource&quot;: 6,
-            &quot;hitItemCount&quot;: 1
+            &quot;ruleId&quot;: &quot;00000002-****-****-****-00000023&quot;, 
+            &quot;ruleName&quot;: &quot;Global administrator without a password expiration date&quot;, 
+            &quot;setting&quot;: null, 
+            &quot;tenantId&quot;: &quot;be4cdf40-****-****-****-ab967eb78246&quot;, 
+            &quot;customerId&quot;: &quot;292b68c5-****-****-****-28650d407eaf&quot;, 
+            &quot;dataSource&quot;: 6, 
+            &quot;hitItemCount&quot;: 1 
         }
     ]
 }
