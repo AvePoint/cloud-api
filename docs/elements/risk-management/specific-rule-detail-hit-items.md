@@ -52,10 +52,10 @@ If the request has been successfully processed, a 200 OK response will be return
 | pageIndex | The current display page. | integer |
 | pageSize | The number of objects on the display page.  | integer |
 | totalCount | The total number of objects matching the query parameters. | integer |
-| id | The record ID. | integer |
-| objectId | The object ID. | integer |
-| tenantId | The tenant ID. | integer |
-| customerId | The customer ID.| integer |
+| id | The record ID. | string |
+| objectId | The object ID. | string |
+| tenantId | The tenant ID. | string |
+| customerId | The customer ID.| string |
 | dataSource | The object's data source. <ul><li>**1** - Exchange</li><li>**2** - Groups</li><li>**3** - Teams</li><li>**4** - SharePoint</li><li>**5** - OneDrive</li><li>**6** - Users</li><li>**8** - Environments</li><li>**9** - Connections</li><li>**10** - Power Apps</li><li>**11** - Power Automate</li><li>**12** - Power BI</li></ul>| integer |
 | detail | The detailed information of the object. | object |
 
@@ -128,7 +128,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | displayName | The display name of the OneDrive. | string |
 | url | The OneDrive URL. | string |
-| adminCount | The number of admins. | string |
+| adminCount | The number of admins. | integer |
 | storageUsed | The used storage of the OneDrive. The unit is MB. | integer |
 | storageLimit | The storage limit of the OneDrive. The unit is MB.| integer |
 | changeFileCount | The number of file modifications. | integer |
@@ -150,7 +150,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | mark |  The status of the environment whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | creatorName | The creator name of the environment. | string |
 | creatorEmail | The email address of the creator. | string |
-| adminCount | The number of admins in the environment.| string |
+| adminCount | The number of admins in the environment.| integer |
 
 
 **Connection details:**
@@ -206,7 +206,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | artifactName | The artifact name. | string |
 | workspace | The parent workspace name. | string |
 | sensitivity | The sensitivity level of the Power BI workspace/report. | string |
-| adminCount | The number of admins. | string |
+| adminCount | The number of admins. | integer |
 | lastActivityDate | The date and time of the last activity in the Power BI workspace/report. | string |
 | createdDate | The created date and time of the Power BI workspace/report. | string |
 | guestUserCount | The number of guest users. | integer |
@@ -256,11 +256,6 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ```json 
 {
-    "metaData": {
-    "pageIndex": 1, // The current display page
-    "pageSize": 50, // The number of objects on the display page
-    "totalCount": 37 // The total number of objects matching the query parameters
-    },
     "data": [
         {
             "detail": {
@@ -281,5 +276,10 @@ If the request has been successfully processed, a 200 OK response will be return
             "customerId": "292b68c5-****-****-****-28650d407eaf", // The customer ID
             "dataSource": 2 // The object's data source, Groups
         }
-    ]
+    ],
+    "metaData": {
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 37 // The total number of objects matching the query parameters
+    }
 }

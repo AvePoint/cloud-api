@@ -50,8 +50,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | ruleId | The ID of the rule. | string |
 | ruleName | The display name of the rule. | string |
 | setting | The paramerter value configured for the rule.  | string |
-| tenantId | The tenant ID. | integer |
-| customerId | The customer ID. | integer |
+| tenantId | The tenant ID. | string |
+| customerId | The customer ID. | string |
 | dataSource | The data source of the matched objects. <ul><li>**1** - Exchange</li><li>**2** - Groups</li><li>**3** - Teams</li><li>**4** - SharePoint</li><li>**5** - OneDrive</li><li>**6** - Users</li><li>**8** - Environments</li><li>**9** - Connections</li><li>**10** - Power Apps</li><li>**11** - Power Automate</li><li>**12** - Power BI</li></ul>| integer |
 | hitItemCount | The number of objects that match the risk rule. | integer |
 
