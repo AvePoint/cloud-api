@@ -111,114 +111,60 @@
 <ol>
 <li><p>Create an application. This application is only used for Azure Key Vault.</p>
 <blockquote>
-<p>a. In the Microsoft Entra admin center (or Microsoft Azure portal), navigate to <strong>Identity &gt; Applications &gt; App registrations</strong> (or <strong>Microsoft Entra ID &gt; App registrations</strong>).</p>
-</blockquote>
-<blockquote>
-<p>b. Click <strong>New registration</strong>.</p>
-</blockquote>
-<blockquote>
-<p>c. On the <strong>Register an application</strong> page, configure the application settings.</p>
-</blockquote>
-<blockquote>
-<p>d. Click <strong>Register</strong> to create your application.</p>
-</blockquote>
-<blockquote>
-<p>e. After the application is created, copy the application ID.</p>
+<p>a. In the Microsoft Entra admin center (or Microsoft Azure portal), navigate to <strong>Identity &gt; Applications &gt; App registrations</strong> (or <strong>Microsoft Entra ID &gt; App registrations</strong>).<br>
+b. Click <strong>New registration</strong>.<br>
+c. On the <strong>Register an application</strong> page, configure the application settings.<br>
+d. Click <strong>Register</strong> to create your application.<br>
+e. After the application is created, copy the application ID.</p>
 </blockquote>
 </li>
 <li><p>Add a client secret for the application.</p>
 <blockquote>
-<p>a. After creating the application, click <strong>Certificates &amp; secrets</strong> in the left menu.</p>
-</blockquote>
-<blockquote>
-<p>b. In the <strong>Client secrets</strong> field, click <strong>New client secret</strong>.</p>
-</blockquote>
-<blockquote>
-<p>c. In the <strong>Add a client secret</strong> pane, enter a description for the client secret and select a duration.</p>
-</blockquote>
-<blockquote>
-<p>d. Click <strong>Add</strong>. The value of the client secret is automatically generated and displayed.</p>
-</blockquote>
-<blockquote>
-<p>e.  Copy the client secret value. You will need to provide the value when configuring the encryption profile.</p>
-</blockquote>
-<blockquote>
-<p><strong>Note:</strong>
+<p>a. After creating the application, click <strong>Certificates &amp; secrets</strong> in the left menu.<br>
+b. In the <strong>Client secrets</strong> field, click <strong>New client secret</strong>.<br>
+c. In the <strong>Add a client secret</strong> pane, enter a description for the client secret and select a duration.<br>
+d. Click <strong>Add</strong>. The value of the client secret is automatically generated and displayed.<br>
+e.  Copy the client secret value. You will need to provide the value when configuring the encryption profile.<br>
+    <strong>Note:</strong>
 The value will be hidden after you leave or refresh the page.</p>
 </blockquote>
 </li>
 <li><p>Create a key vault.</p>
 <blockquote>
-<p>a. In the Microsoft Azure portal, enter <strong>Key vaults</strong> in the search box on the top, and then select the first result to access the <strong>Key vaults</strong> page.</p>
-</blockquote>
+<p>a. In the Microsoft Azure portal, enter <strong>Key vaults</strong> in the search box on the top, and then select the first result to access the <strong>Key vaults</strong> page.<br>
+b. Click <strong>Create</strong>. The <strong>Create a key vault</strong> page appears.<br>
+c. In the <strong>Basics</strong> tab, provide the basic information for the key vault, and then click the <strong>Access configuration</strong> tab.<br>
+d. In the <strong>Access policies</strong> section, click <strong>Create</strong>.<br>
+e. The <strong>Create an access policy</strong> pane appears. In the <strong>Permissions</strong> tab, select the following <strong>Key permissions</strong>:</p>
 <blockquote>
-<p>b. Click <strong>Create</strong>. The <strong>Create a key vault</strong> page appears.</p>
+<p>i. In the <strong>Key Management Operations</strong> field, select <strong>Get</strong>.<br>
+ii. In the <strong>Cryptographic Operations</strong> field, select <strong>Decrypt</strong> and <strong>Encrypt</strong>.<br></p>
 </blockquote>
-<blockquote>
-<p>c. In the <strong>Basics</strong> tab, provide the basic information for the key vault, and then click the <strong>Access configuration</strong> tab.</p>
 </blockquote>
-<blockquote>
-<p>d. In the <strong>Access policies</strong> section, click <strong>Create</strong>.</p>
-</blockquote>
-<blockquote>
-<p>e. The <strong>Create an access policy</strong> pane appears. In the <strong>Permissions</strong> tab, select the following <strong>Key permissions</strong>:</p>
-</blockquote>
-<ul>
-<li>In the <strong>Key Management Operations</strong> field, select <strong>Get</strong>.</li>
-<li>In the <strong>Cryptographic Operations</strong> field, select <strong>Decrypt</strong> and <strong>Encrypt</strong>.</li>
-</ul>
 <blockquote>
 <p>f. Click <strong>Next</strong> to go to the <strong>Principal</strong> tab.</p>
 <blockquote>
-<p>i. In the <strong>Principal</strong> pane, complete the following steps:</p>
+<p>i. In the <strong>Principal</strong> pane, complete the following steps:<br>
+ii. Enter the application name or application ID in the search box.<br>
+iii. Select the application and click <strong>Select</strong> at the bottom.<br>
+iv. Click <strong>Next</strong> at the bottom.<br></p>
 </blockquote>
 </blockquote>
 <blockquote>
-<blockquote>
-<p>ii. Enter the application name or application ID in the search box.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>iii. Select the application and click <strong>Select</strong> at the bottom.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>iv. Click <strong>Next</strong> at the bottom.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>g. Click <strong>Create</strong> to add the access policy.</p>
-</blockquote>
-<blockquote>
-<p>h. Click the <strong>Networking</strong> tab.</p>
-</blockquote>
-<blockquote>
-<p>i. Select <strong>Enable public access</strong> which allows all networks to connect to this key vault.</p>
-</blockquote>
-<blockquote>
-<p>j. Click the <strong>Tags</strong> tab and you can add tags to categorize your key vault.</p>
-</blockquote>
-<blockquote>
-<p>k. Click <strong>Review + create</strong> to review all of your configurations first, and then click <strong>Create</strong> at the bottom to create the key vault.</p>
-</blockquote>
-<blockquote>
-<p><strong>Note:</strong> If you need to change some settings before creating the key vault, you can click the &lt; Previous button to change previous settings.*</p>
+<p>g. Click <strong>Create</strong> to add the access policy.<br>
+h. Click the <strong>Networking</strong> tab.<br>
+i. Select <strong>Enable public access</strong> which allows all networks to connect to this key vault.<br>
+j. Click the <strong>Tags</strong> tab and you can add tags to categorize your key vault.<br>
+k. Click <strong>Review + create</strong> to review all of your configurations first, and then click <strong>Create</strong> at the bottom to create the key vault.<br>
+    <strong>Note:</strong> If you need to change some settings before creating the key vault, you can click the &lt; Previous button to change previous settings.*</p>
 </blockquote>
 </li>
 <li><p>Create a key.</p>
 <blockquote>
-<p>a. On the <strong>Key vaults</strong> page, click the newly created key vault.</p>
-</blockquote>
-<blockquote>
-<p>b. Click <strong>Keys</strong> in <strong>Settings</strong>. In the <strong>Keys</strong> pane, click <strong>Generate/Import</strong> and create a key.</p>
-</blockquote>
-<blockquote>
-<p>c. In the <strong>Keys</strong> pane, click the key name, and then click the current version. The key properties are displayed.</p>
-</blockquote>
-<blockquote>
-<p>d. Copy the key identifier. You will need to provide the key identifier when configuring the encryption profile.</p>
+<p>a. On the <strong>Key vaults</strong> page, click the newly created key vault.<br>
+b. Click <strong>Keys</strong> in <strong>Settings</strong>. In the <strong>Keys</strong> pane, click <strong>Generate/Import</strong> and create a key.<br>
+c. In the <strong>Keys</strong> pane, click the key name, and then click the current version. The key properties are displayed.<br>
+d. Copy the key identifier. You will need to provide the key identifier when configuring the encryption profile.</p>
 </blockquote>
 </li>
 </ol>
@@ -244,10 +190,8 @@ The value will be hidden after you leave or refresh the page.</p>
  Export-PfxCertificate -Password $(Read-Host -AsSecureString -Prompt &quot;Enter a password to protect the certificate&quot;) -PFXData $(Get-PfxData -FilePath $pfxPath) -FilePath $pfxPath
 </code></pre>
 <blockquote>
-<p>b. Press <strong>Enter</strong> to execute the script.</p>
-</blockquote>
-<blockquote>
-<p><strong>Note:</strong> The <code>.pfx</code> file contains your private key.</p>
+<p>b. Press <strong>Enter</strong> to execute the script.<br>
+    <strong>Note:</strong> The <code>.pfx</code> file contains your private key.</p>
 </blockquote>
 </li>
 </ol>
