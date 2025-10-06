@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Get Detail Information of A Specific User </title>
+      <title>Retrieve Information of a Specific User </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Get Detail Information of A Specific User ">
+      <meta name="title" content="Retrieve Information of a Specific User ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,10 +85,10 @@
         </div>
 
         <article data-uid="">
-<h1 id="get-detail-information-of-a-specific-user">Get Detail Information of A Specific User</h1>
+<h1 id="retrieve-information-of-a-specific-user">Retrieve Information of a Specific User</h1>
 
-<p>Use this API to retrieve detail informations of specific users of a customer tenant in AvePoint Online Services.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to retrieve information of a specific user in a customer's tenant.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
 You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
 <table>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}</code></td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}</code></td>
 <td>elements.um.user.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to retrieve information about a user.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve information of a specific user in a customer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -118,13 +118,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}</code></td>
-<td>Retrieves basic information for specific users of a customer tenant in AvePoint Online Services.</td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}</code></td>
+<td>Retrieves information of a specific user in a customer's tenant.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="url-parameters">URL Parameters</h2>
-<p>This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve user information according to your specific requirements and preferences.</p>
+<p>This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve information of a user according to your specific requirements and preferences.</p>
 <table>
 <thead>
 <tr>
@@ -137,19 +137,19 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer ID of the customer.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The specific tenant ID of the customer.</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>Unique identifier for the specific user whose details are being requested.</td>
+<td>The unique identifier of the user.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
@@ -173,7 +173,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>manager</td>
-<td>The manager of the user</td>
+<td>The manager of the user.</td>
 <td>string</td>
 </tr>
 <tr>
@@ -198,13 +198,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>employeeId</td>
-<td>The employeeId of the user.</td>
+<td>The employee ID of the user.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>alternativeEmailAddress</td>
-<td>The alternate email address or the user.</td>
-<td>string[]</td>
+<td>alternateEmailAddress</td>
+<td>The alternate email address of the user.</td>
+<td>string</td>
 </tr>
 <tr>
 <td>company</td>
@@ -234,7 +234,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>age</td>
 <td>The calculated age of the user based on their birthday.</td>
-<td>int</td>
+<td>integer</td>
 </tr>
 <tr>
 <td>isTestUser</td>
@@ -253,7 +253,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>birthday</td>
-<td>The birthday of the user</td>
+<td>The birthday of the user.</td>
 <td>string</td>
 </tr>
 <tr>
@@ -263,7 +263,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>usageLocation</td>
-<td>The usage location for the user account, typically a country code.(AF: Afghanistan)</td>
+<td>The usage location for the user account, typically a country code (AF: Afghanistan).</td>
 <td>string</td>
 </tr>
 <tr>
@@ -318,54 +318,54 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>status</td>
-<td>The current status of the user account (Expire, Inactive, etc.). <ul><li><strong>0</strong> - MFA disabled</li><li><strong>1</strong> - Sign-in blocked</li><li><strong>2</strong> - Password expired</li><li><strong>3</strong> - High risk</li><li><strong>4</strong> - Medium risk</li><li><strong>5</strong> - Compliance</li><li><strong>6</strong> - Inactive</li><li><strong>7</strong> - Pending deletion</li><li><strong>8</strong> - Test user</li></ul></td>
-<td>integer[]</td>
+<td>The current status of the user account. <ul><li><strong>0</strong> - MFA disabled</li><li><strong>1</strong> - Sign-in blocked</li><li><strong>2</strong> - Password expired</li><li><strong>3</strong> - High risk</li><li><strong>4</strong> - Medium risk</li><li><strong>5</strong> - Compliance</li><li><strong>6</strong> - Inactive</li><li><strong>7</strong> - Pending deletion</li><li><strong>8</strong> - Test user</li></ul></td>
+<td>integer</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-fb26-4353-8dbd-5725fa9edc3f
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
 For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
-    &quot;id&quot;: &quot;7c18fd6f-fb26-4353-8dbd-5725fa9edc3f&quot;,
-    &quot;manager&quot;: &quot;jack@element.onmicrosoft.com&quot;,
-    &quot;firstName&quot;: &quot;Kevin&quot;,
-    &quot;lastName&quot;: &quot;Mark&quot;,
-    &quot;displayName&quot;: &quot;Kevin Mark&quot;,
-    &quot;jobTitle&quot;: &quot;IT&quot;,
-    &quot;employeeId&quot;: &quot;099999&quot;,
-    &quot;alternativeEmailAddress&quot;: [
-        &quot;kevin_Al@element.onmicrosoft.com&quot;
+    &quot;id&quot;: &quot;7c18fd6f-****-****-****-5725fa9edc3f&quot;, // The ID of the user
+    &quot;manager&quot;: &quot;user@element.onmicrosoft.com&quot;, // The manager of the user
+    &quot;firstName&quot;: &quot;Tony&quot;, // The first name of the user
+    &quot;lastName&quot;: &quot;Brown&quot;, // The last name of the user
+    &quot;displayName&quot;: &quot;Tony Brown&quot;, // The display name of the user
+    &quot;jobTitle&quot;: &quot;IT&quot;, // The job title of the user
+    &quot;employeeId&quot;: &quot;099999&quot;, // The employee ID of the user
+    &quot;alternateEmailAddress&quot;: [
+        &quot;Tony_Al@element.onmicrosoft.com&quot; // The alternate email address of the user
     ],
-    &quot;company&quot;: &quot;BK Company&quot;,
-    &quot;department&quot;: &quot;DEV&quot;,
-    &quot;location&quot;: &quot;2298&quot;,
-    &quot;passwordNeverExpire&quot;: true,
-    &quot;lastChangeDate&quot;: &quot;1970-01-01T00:00:00Z&quot;,
-    &quot;age&quot;: 37,
-    &quot;isTestUser&quot;: true,
-    &quot;officePhone&quot;: &quot;2323111dsd&quot;,
-    &quot;mobile&quot;: &quot;323111dsd&quot;,
-    &quot;birthday&quot;: 0,
-    &quot;mail&quot;: &quot;kevin@element.onmicrosoft.com&quot;,
-    &quot;usageLocation&quot;: &quot;AF&quot;,
-    &quot;preferredLanguage&quot;: &quot;af-NA&quot;,
-    &quot;enforceStart&quot;: false,
-    &quot;enforceStartDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,
-    &quot;enforceEnd&quot;: false,
-    &quot;enforceEndDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,
-    &quot;postalCode&quot;: &quot;2121&quot;,
-    &quot;countryRegion&quot;: &quot;Antarctica&quot;,
-    &quot;state&quot;: &quot;British Antarctic Territory&quot;,
-    &quot;address&quot;: &quot;Rothera Research Station&quot;,
-    &quot;loginName&quot;: &quot;kevin@element.onmicrosoft.com&quot;,
-    &quot;status&quot;:  [
-        0, 
-        1
+    &quot;company&quot;: &quot;Organization ABC&quot;, // The company of the user
+    &quot;department&quot;: &quot;DEV&quot;, // The department of the user
+    &quot;location&quot;: &quot;2298&quot;, // The location of the user
+    &quot;passwordNeverExpire&quot;: true, // Indicates whether the user's password is set to never expire
+    &quot;lastChangeDate&quot;: &quot;1970-01-01T00:00:00Z&quot;, // The date and time when the user account was last modified
+    &quot;age&quot;: 37, // The calculated age of the user based on their birthday
+    &quot;isTestUser&quot;: true, // Indicates whether this is a test user account for development purposes
+    &quot;officePhone&quot;: &quot;232****9754&quot;, // The business phone number of the user
+    &quot;mobile&quot;: &quot;323****76&quot;, // The mobile phone number of the user.
+    &quot;birthday&quot;: &quot;1970-01-01T00:00:00Z&quot;, // The birthday of the user
+    &quot;mail&quot;: &quot;tony@element.onmicrosoft.com&quot;, // The primary email address of the user
+    &quot;usageLocation&quot;: &quot;AF&quot;, // The usage location for the user account, typically a country code
+    &quot;preferredLanguage&quot;: &quot;af-NA&quot;, // The preferred language setting for the user interface
+    &quot;enforceStart&quot;: false, // Indicates whether account enforcement start date is enabled
+    &quot;enforceStartDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;, // The date and time when account enforcement begins
+    &quot;enforceEnd&quot;: false, // Indicates whether account enforcement end date is enabled
+    &quot;enforceEndDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;, // The date and time when account enforcement ends
+    &quot;postalCode&quot;: &quot;2121&quot;, // The postal code of the user
+    &quot;countryRegion&quot;: &quot;United States&quot;, // The country or region where the user is located
+    &quot;state&quot;: &quot;Los Angeles&quot;, // The state or province where the user is located
+    &quot;address&quot;: &quot;Rothera Research Station&quot;, // The street address of the user's location
+    &quot;loginName&quot;: &quot;tony@element.onmicrosoft.com&quot;, // The login name or user principal name used for authentication
+    &quot;status&quot;:  [ 
+        0, // The current status of the user. 0 represents &quot;MFA disabled&quot;
+        1 // // The current status of the user. 1 represents &quot;Sign-in blocked&quot;
     ],
 }
 </code></pre>

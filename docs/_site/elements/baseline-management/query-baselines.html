@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Query Baselines </title>
+      <title>Retrieve Baseline Information </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Query Baselines ">
+      <meta name="title" content="Retrieve Baseline Information ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="query-baselines">Query Baselines</h1>
+<h1 id="retrieve-baseline-information">Retrieve Baseline Information</h1>
 
-<p>Use this API to query baselines with optional filtering by baseline id and pagination support.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to retrieve the general information of baselines.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -106,7 +106,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section provides details on the HTTP method and endpoint used to query baselines.</p>
+<p>This section provides details on the HTTP method and endpoint used to retrieve the general information of baselines.</p>
 <table>
 <thead>
 <tr>
@@ -119,7 +119,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>POST</td>
 <td><code>/partner/external/v3/bm/baselines/batch</code></td>
-<td>Query all baselines with optional filtering and pagination.</td>
+<td>Retrieves the general information of baselines.</td>
 </tr>
 </tbody>
 </table>
@@ -150,7 +150,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request-body-parameters">Request Body Parameters</h2>
-<p>You can provide a list of baseline id in the request body to filter the results. This field is optional.</p>
+<p>You can provide a list of baseline IDs in the request body to filter the results. This is optional.</p>
 <table>
 <thead>
 <tr>
@@ -164,13 +164,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>baselineIds</td>
 <td>The ID of the baseline.</td>
-<td>string[]</td>
+<td>string</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
 <h2 id="response">Response</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines displayed in the response body.</p>
 <table>
 <thead>
 <tr>
@@ -182,27 +182,27 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>baselineId</td>
-<td>The <strong>Id</strong> of the baseline.</td>
+<td>The ID of the baseline.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>baselineName</td>
-<td>The <strong>Name</strong> of the baseline.</td>
+<td>The name of the baseline.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>createTime</td>
-<td>The create time of the baseline (UTC).</td>
+<td>createdTime</td>
+<td>The created time (UTC) of the baseline.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>modifyTime</td>
-<td>The last modify time of the baseline (UTC).</td>
+<td>modifiedTime</td>
+<td>The last modified time (UTC) of the baseline.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>status</td>
-<td>The <strong>Status</strong> of the baseline.<ul><li><strong>1</strong> - Retrieving settings</li><li><strong>2</strong> - Unused</li><li><strong>3</strong> - Active</li><li><strong>4</strong> - Settings retrieval failed</li><li><strong>5</strong> - Retrieved with exception</li><li><strong>6</strong> - Draft</li></ul></td>
+<td>The status of the baseline.<ul><li><strong>1</strong> - Retrieving settings</li><li><strong>2</strong> - Unused</li><li><strong>3</strong> - Active</li><li><strong>4</strong> - Settings retrieval failed</li><li><strong>5</strong> - Retrieved with exception</li><li><strong>6</strong> - Draft</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -214,34 +214,34 @@ You must register an app through Elements &gt; API app registration to authentic
 {
     &quot;baselineIds&quot;: 
     [
-      &quot;0f0cb41b-****-****-****-3a1c39554d0c&quot;,
+      &quot;0f0cb41b-****-****-****-3a1c39554d0c&quot;, // The ID of the baseline
       &quot;5aec2275-****-****-****-3a1c307a28fa&quot;
     ]
 }
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.md/#http-status-code">HttpStatusCode</a>.</p>
 <pre><code class="lang-json">{
     &quot;data&quot;: [
         {
-            &quot;baselineId&quot;: &quot;0f0cb41b-****-****-****-3a1c39554d0c&quot;,
-            &quot;baselineName&quot;: &quot;Baseline1&quot;,
-            &quot;createTime&quot;: &quot;2025-09-04T10:30:00Z&quot;,
-            &quot;modifyTime&quot;: &quot;2025-09-05T10:30:00Z&quot;,
-            &quot;status&quot;: 1
+            &quot;baselineId&quot;: &quot;0f0cb41b-****-****-****-3a1c39554d0c&quot;, // The ID of the baseline
+            &quot;baselineName&quot;: &quot;Baseline1&quot;, // The name of the baseline
+            &quot;createdTime&quot;: &quot;2025-09-04T10:30:00Z&quot;, // The created time (UTC) of the baseline
+            &quot;modifiedTime&quot;: &quot;2025-09-05T10:30:00Z&quot;, // The last modified time (UTC) of the baseline
+            &quot;status&quot;: 1 // The status of the baseline. 1 represents &quot;Retrieving settings&quot;
         },
         {
             &quot;baselineId&quot;: &quot;5aec2275-****-****-****-3a1c307a28fa&quot;,
             &quot;name&quot;: &quot;Baseline2&quot;,
-            &quot;createTime&quot;: &quot;2025-09-06T10:30:00Z&quot;,
-            &quot;modifyTime&quot;: &quot;2025-09-07T10:30:00Z&quot;,
+            &quot;createdTime&quot;: &quot;2025-09-06T10:30:00Z&quot;,
+            &quot;modifiedTime&quot;: &quot;2025-09-07T10:30:00Z&quot;,
             &quot;status&quot;: 2
         }
     ],
     &quot;metadata&quot;: {
-        &quot;pageIndex&quot;: 1,
-        &quot;pageSize&quot;: 50,
-        &quot;totalCount&quot;: 2
+        &quot;pageIndex&quot;: 1, // The page index of current request
+        &quot;pageSize&quot;: 50, // The baseline number will be retrieved in one request
+        &quot;totalCount&quot;: 2 // The total number count that matches the request
     }
 }
 </code></pre>

@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Query process center job </title>
+      <title>Retrieve Job Information from Process Center </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Query process center job ">
+      <meta name="title" content="Retrieve Job Information from Process Center ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="query-process-center-job">Query process center job</h1>
+<h1 id="retrieve-job-information-from-process-center">Retrieve Job Information from Process Center</h1>
 
-<p>Use this API to query process center jobs with optional filtering and pagination support.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to retrieve job information from the <strong>Process center</strong> page.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -106,7 +106,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section provides details on the HTTP method and endpoint used to query job.</p>
+<p>This section provides details on the HTTP method and endpoint used to retrieve job information from the <strong>Process center</strong> page.</p>
 <table>
 <thead>
 <tr>
@@ -119,7 +119,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tr>
 <td>POST</td>
 <td><code>/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/process-center/jobs/batch</code></td>
-<td>Query all jobs with optional filtering and pagination.</td>
+<td>Retrieves job information from the <strong>Process center</strong> page.</td>
 </tr>
 </tbody>
 </table>
@@ -150,7 +150,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tbody>
 </table>
 <h2 id="request-body-parameters">Request Body Parameters</h2>
-<p>You can provide a list of baselineIds in the request body to filter the results. This field is optional.</p>
+<p>You can provide a list of job IDs in the request body to filter the results. This is optional.</p>
 <table>
 <thead>
 <tr>
@@ -163,14 +163,14 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>jobIds</td>
-<td>The job ID of the job.</td>
-<td>string[]</td>
+<td>The ID of the job.</td>
+<td>string</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
 <h2 id="response">Response</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the job info in the response body.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the retrieved job information displayed in the response body.</p>
 <table>
 <thead>
 <tr>
@@ -182,7 +182,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>jobId</td>
-<td>The job id of the job.</td>
+<td>The ID of the job.</td>
 <td>string</td>
 </tr>
 <tr>
@@ -192,7 +192,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>status</td>
-<td>The <strong>Status</strong> of the baseline.<ul><li><strong>0</strong> - Waiting</li><li><strong>1</strong> - In progress</li><li><strong>2</strong> - Finished</li><li><strong>3</strong> - Failed</li><li><strong>4</strong> - Skipped</li><li><strong>5</strong> - Finished with exception</li></ul></td>
+<td>The status of the job.<ul><li><strong>0</strong> - Waiting</li><li><strong>1</strong> - In progress</li><li><strong>2</strong> - Finished</li><li><strong>3</strong> - Failed</li><li><strong>4</strong> - Skipped</li><li><strong>5</strong> - Finished with exception</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -205,18 +205,18 @@ You must register an app through Elements &gt; API app registration to authentic
 {
     &quot;jobIds&quot;: 
     [
-      &quot;a7bd3e1b-****-****-****-243c4df89a2d&quot;
+      &quot;a7bd3e1b-****-****-****-243c4df89a2d&quot; // The ID of the job
     ]
 }
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the created baseline id displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">HttpStatusCode</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the job statuses retrieved from the <strong>Process center</strong> page displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.md/#http-status-code">HttpStatusCode</a>.</p>
 <pre><code class="lang-json">{
     &quot;data&quot;: [
         {
-            &quot;jobId&quot;: &quot;a7bd3e1b-****-****-****-243c4df89a2d&quot;,
-            &quot;type&quot;: 1,
-            &quot;status&quot;: 2
+            &quot;jobId&quot;: &quot;a7bd3e1b-****-****-****-243c4df89a2d&quot;, // The ID of the job
+            &quot;type&quot;: 1, // The type of the job
+            &quot;status&quot;: 2  // The status of the job
         }
     ],
     &quot;metadata&quot;: {

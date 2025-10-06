@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/avepoint_admin/Desktop/New folder (2)/api-docs/docs",
+  "source_base_path": "C:/Users/avepoint_admin/Desktop/API doc 106/api-docs/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1229,20 +1229,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "elements/general/customer/get-all-customers.md",
+      "source_relative_path": "elements/change-log.md",
       "output": {
         ".html": {
-          "relative_path": "elements/general/customer/get-all-customers.html"
+          "relative_path": "elements/change-log.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "elements/general/customer/get-single-customer.md",
+      "source_relative_path": "elements/general/customer/get-all-customers.md",
       "output": {
         ".html": {
-          "relative_path": "elements/general/customer/get-single-customer.html"
+          "relative_path": "elements/general/customer/get-all-customers.html"
         }
       },
       "version": ""
@@ -1292,30 +1292,20 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "elements/general/job/get-customer-scan-profile-changes.md",
+      "output": {
+        ".html": {
+          "relative_path": "elements/general/job/get-customer-scan-profile-changes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "elements/general/job/get-customer-scan-profile-detail.md",
       "output": {
         ".html": {
           "relative_path": "elements/general/job/get-customer-scan-profile-detail.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "elements/general/job/get-customer-scan-profile-v2-detail.md",
-      "output": {
-        ".html": {
-          "relative_path": "elements/general/job/get-customer-scan-profile-v2-detail.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "elements/general/job/get-customer-scan-profile-v2.md",
-      "output": {
-        ".html": {
-          "relative_path": "elements/general/job/get-customer-scan-profile-v2.html"
         }
       },
       "version": ""
@@ -1364,16 +1354,6 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "elements/general/service subscription/get-single-customer-service.md",
-      "output": {
-        ".html": {
-          "relative_path": "elements/general/service subscription/get-single-customer-service.html"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Toc",
       "source_relative_path": "elements/general/service subscription/toc.yml",
       "output": {
@@ -1388,20 +1368,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "elements/general/tenant/get-3rd-party-products-overview-type.md",
+      "source_relative_path": "elements/general/tenant/get-3rd-party-products-tenant-type.md",
       "output": {
         ".html": {
-          "relative_path": "elements/general/tenant/get-3rd-party-products-overview-type.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "elements/general/tenant/get-3rd-party-products-users-type.md",
-      "output": {
-        ".html": {
-          "relative_path": "elements/general/tenant/get-3rd-party-products-users-type.html"
+          "relative_path": "elements/general/tenant/get-3rd-party-products-tenant-type.html"
         }
       },
       "version": ""

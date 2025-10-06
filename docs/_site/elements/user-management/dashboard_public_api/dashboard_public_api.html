@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Get Overview Security Users </title>
+      <title>Retrieve Overview Information of Security Users </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Get Overview Security Users ">
+      <meta name="title" content="Retrieve Overview Information of Security Users ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="get-overview-security-users">Get Overview Security Users</h1>
+<h1 id="retrieve-overview-information-of-security-users">Retrieve Overview Information of Security Users</h1>
 
-<p>Use this API to retrieve overview information for security users of a customer tenant in AvePoint Online Services.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to retrieve overview information of security users in a customer's tenant.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users/batch</code></td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users</code></td>
 <td>elements.um.user.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to retrieve information about a user.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve overview information of security users in a customer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -118,13 +118,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users/batch</code></td>
-<td>Retrieves overview information for security users of a customer tenant in AvePoint Online Services.</td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users</code></td>
+<td>Retrieves overview information of security users of a customer's tenant.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="url-parameters">URL Parameters</h2>
-<p>This section outlines the parameters required to specify which customer tenant you want to retrieve.</p>
+<p>This section outlines the parameters required to specify the customer's tenant to retrieve its secuirty users.</p>
 <table>
 <thead>
 <tr>
@@ -137,13 +137,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer ID of the customer.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The specific tenant ID of the customer.</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
@@ -175,8 +175,8 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>status</td>
-<td>An array containing the statuses that the user wants to retrieve. <ul><li><strong>0</strong> - MFA disabled</li><li><strong>1</strong> - Sign-in blocked</li><li><strong>2</strong> - Password expired</li><li><strong>3</strong> - High risk</li><li><strong>4</strong> - Medium risk</li><li><strong>5</strong> - Compliance</li><li><strong>6</strong> - Inactive</li><li><strong>7</strong> - Pending deletion</li><li><strong>8</strong> - Test user</li></ul></td>
-<td>integer[]</td>
+<td>The status of the user that you want to retrieve. <ul><li><strong>0</strong> - MFA disabled</li><li><strong>1</strong> - Sign-in blocked</li><li><strong>2</strong> - Password expired</li><li><strong>3</strong> - High risk</li><li><strong>4</strong> - Medium risk</li><li><strong>5</strong> - Compliance</li><li><strong>6</strong> - Inactive</li><li><strong>7</strong> - Pending deletion</li><li><strong>8</strong> - Test user</li></ul></td>
+<td>integer</td>
 <td>No</td>
 </tr>
 </tbody>
@@ -199,7 +199,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>userPrincipalName</td>
-<td>The user principle name of the user.</td>
+<td>The user principle name.</td>
 <td>string</td>
 </tr>
 <tr>
@@ -209,22 +209,22 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>displayName</td>
-<td>The displayName of the user.</td>
+<td>The display name of the user.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>firstName</td>
-<td>The firstName of the user.</td>
+<td>The first name of the user.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastName</td>
-<td>The lastName of the user.</td>
+<td>The last name of the user.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>employeeId</td>
-<td>The employeeId of the user.</td>
+<td>The employee ID of the user.</td>
 <td>string</td>
 </tr>
 <tr>
@@ -249,12 +249,12 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>jobTitle</td>
-<td>The jobTitle of the user.</td>
+<td>The job title of the user.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>isTestUser</td>
-<td>If the user is test or not.</td>
+<td>If the user is a test user or not.</td>
 <td>bool</td>
 </tr>
 <tr>
@@ -264,28 +264,23 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>startDate</td>
-<td>The enforce start date of the user.</td>
+<td>The start date when the user account can sign in Microsoft 365.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>endDate</td>
-<td>The enforce end date of the user.</td>
-<td>string</td>
-</tr>
-<tr>
-<td>officePhone</td>
-<td>The office phone of the user.</td>
+<td>The date when the user account will be blocked from signing in.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>countryOrRegion</td>
-<td>The country region of the user.</td>
+<td>The country or region of the user.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>status</td>
-<td>The current status of the user account (Expire, Inactive, etc.). <ul><li><strong>0</strong> - MFA disabled</li><li><strong>1</strong> - Sign-in blocked</li><li><strong>2</strong> - Password expired</li><li><strong>3</strong> - High risk</li><li><strong>4</strong> - Medium risk</li><li><strong>5</strong> - Compliance</li><li><strong>6</strong> - Inactive</li><li><strong>7</strong> - Pending deletion</li><li><strong>8</strong> - Test user</li></ul></td>
-<td>integer[]</td>
+<td>The current status of the user. <ul><li><strong>0</strong> - MFA disabled</li><li><strong>1</strong> - Sign-in blocked</li><li><strong>2</strong> - Password expired</li><li><strong>3</strong> - High risk</li><li><strong>4</strong> - Medium risk</li><li><strong>5</strong> - Compliance</li><li><strong>6</strong> - Inactive</li><li><strong>7</strong> - Pending deletion</li><li><strong>8</strong> - Test user</li></ul></td>
+<td>integer</td>
 </tr>
 <tr>
 <td>pageIndex</td>
@@ -306,38 +301,41 @@ You must register an app through Elements &gt; API app registration to authentic
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/users/batch
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/users
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.md/#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: &quot;c2aa00d3-ef87-40aa-a80a-9e9c79232bff&quot;,// The ID of the user
-            &quot;userPrincipalName&quot;: &quot;kevin@element.onmicrosoft.com&quot;,// The user principle name of the user
-            &quot;displayName&quot;: &quot;Kevin Mark&quot;,// The displayname of the user
-            &quot;firstName&quot;: &quot;Kevin&quot;,// The firstName of the user
-            &quot;lastName&quot;: &quot;Mark&quot;,// The lastName of the user
-            &quot;department&quot;: &quot;DEV&quot;,// The department of the user
-            &quot;mobile&quot;: &quot;11122&quot;,// The mobile of the user
-            &quot;jobTitle&quot;: &quot;Software developer&quot;,// The jobTitle of the user
+            &quot;id&quot;: &quot;c2aa00d3-ef87-40aa-a80a-9e9c79232bff&quot;, // The ID of the user
+            &quot;userPrincipalName&quot;: &quot;kevin@element.onmicrosoft.com&quot;, // The user principle name
+            &quot;displayName&quot;: &quot;Kevin Mark&quot;, // The display name of the user
+            &quot;firstName&quot;: &quot;Kevin&quot;, // The first name of the user
+            &quot;lastName&quot;: &quot;Mark&quot;, // The last name of the user
+            &quot;department&quot;: &quot;DEV&quot;, // The department of the user
+            &quot;mobile&quot;: &quot;11122&quot;, // The mobile of the user
+            &quot;jobTitle&quot;: &quot;Software developer&quot;, // The job title of the user
+			&quot;mail&quot;: &quot;tony@element.onmicrosoft.com&quot;,// The mail of the user
+			&quot;location&quot;: &quot;location&quot;,// The office location of the user
+			&quot;employeeId&quot;: &quot;643477&quot;,// The employee id of the user
             &quot;status&quot;: [
                     0, 
                     1
-            ],// The status of the user
-            &quot;isTestUser&quot;: false,// If the user is test or not
-            &quot;age&quot;: 12,// The password age of the user
-            &quot;startDate&quot;: &quot;1970-01-01T00:00:00Z&quot;,// The enforce start date of the user
-            &quot;endDate&quot;: &quot;1970-01-01T00:00:00Z&quot;,// The enforce end date of the user
-            &quot;company&quot;: &quot;BK Company&quot;,// The company of the user
-            &quot;countryOrRegion&quot;: &quot;Slovenia&quot;// The country region of the user
+            ], // The status of the user
+            &quot;isTestUser&quot;: false, // If the user is a test user or not
+            &quot;age&quot;: 12, // The password age of the user
+            &quot;startDate&quot;: &quot;1970-01-01T00:00:00Z&quot;, // The start date when the user account can sign in Microsoft 365
+            &quot;endDate&quot;: &quot;1970-01-01T00:00:00Z&quot;, // The date when the user account will be blocked from signing in
+            &quot;company&quot;: &quot;BK Company&quot;, // The company of the user
+            &quot;countryOrRegion&quot;: &quot;Slovenia&quot; // The country or region of the user
         }
     ],
     &quot;metadata&quot;: {
-        &quot;pageIndex&quot;: 1,// The page index of current request
-        &quot;pageSize&quot;: 50,// The user number will be retrieved in one request
-        &quot;totalCount&quot;: 1// The total number count that match the request
+        &quot;pageIndex&quot;: 1, // The page index of current request
+        &quot;pageSize&quot;: 50, // The user number will be retrieved in one request
+        &quot;totalCount&quot;: 1 // The total number count that match the request
     }
 }
 </code></pre>

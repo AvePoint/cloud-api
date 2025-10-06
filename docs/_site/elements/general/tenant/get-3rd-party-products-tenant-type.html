@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Retrieve Workflow Information </title>
+      <title>Retrieve Customer Tenant User Seats </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Retrieve Workflow Information ">
+      <meta name="title" content="Retrieve Customer Tenant User Seats ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="retrieve-workflow-information">Retrieve Workflow Information</h1>
+<h1 id="retrieve-customer-tenant-user-seats">Retrieve Customer Tenant User Seats</h1>
 
-<p>Use this API to retrieve inforamtion of workflows in a customer's tenant.</p>
+<p>Use this API to retrieve the numbers of assigned and available user seats of the customer's tenant.</p>
 <h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows</code></td>
-<td>elements.um.user.read.all</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users</code></td>
+<td>elements.license.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to retrieve information of workflows in a customer's tenant.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve the user seat details of customer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -117,14 +117,14 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows</code></td>
-<td>Retrieves information of workflows in a customer's tenant.</td>
+<td>POST</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users</code></td>
+<td>Retrieve the user seat details of customer's tenant</td>
 </tr>
 </tbody>
 </table>
 <h2 id="url-parameters">URL Parameters</h2>
-<p>This section describes the query parameters that can be added to the URL when sending a GET request, allowing you to retrieve information of workflows in a customer's tenant according to your specific requirements and preferences.</p>
+<p>This section outlines the parameters required to specify which customer tenant you want to retrieve.</p>
 <table>
 <thead>
 <tr>
@@ -142,15 +142,15 @@ You must register an app through Elements &gt; API app registration to authentic
 <td>Yes</td>
 </tr>
 <tr>
-<td>tenantId</td>
-<td>The ID of the tenant.</td>
-<td>string</td>
+<td>type</td>
+<td>The tenant type of the customer.<ul><li><strong>0</strong> - Microsoft 365</li><li><strong>1</strong> - Salesforce</li><li><strong>2</strong> - Google</li><li><strong>3</strong> - Dynamics 365</li></ul></td>
+<td>integer</td>
 <td>Yes</td>
 </tr>
 </tbody>
 </table>
-<h2 id="query-parameters">Query Parameters</h2>
-<p>This section outlines the optional parameters used to specify the information for the type you want to retrieve.</p>
+<h2 id="request-body-parameters">Request Body Parameters</h2>
+<p>This section outlines the request body required to specify the type of user seats you want to retrieve.</p>
 <table>
 <thead>
 <tr>
@@ -162,20 +162,8 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td>catagory</td>
-<td>The category of the risky actions. <ul><li><strong>1</strong> - Network security</li><li><strong>2</strong> - Endpoint security</li><li><strong>3</strong> - Identity access</li><li><strong>4</strong> - Configuration security</li></ul></td>
-<td>integer</td>
-<td>No</td>
-</tr>
-<tr>
-<td>pageIndex</td>
-<td>The page number of the data which will be retrieve, the default value is 1.</td>
-<td>integer</td>
-<td>No</td>
-</tr>
-<tr>
-<td>pageSize</td>
-<td>The number of users API will retrieved in a time, the default value is 100.</td>
+<td>licenseAssignedStatus</td>
+<td>The type of the user seats.<ul><li><strong>0</strong> - Available user seats</li><li><strong>1</strong> - Assigned user seats</li></ul></td>
 <td>integer</td>
 <td>No</td>
 </tr>
@@ -186,44 +174,49 @@ You must register an app through Elements &gt; API app registration to authentic
 <table>
 <thead>
 <tr>
-<th>Response</th>
+<th>Field</th>
 <th>Description</th>
 <th>Type</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>workflowId</td>
-<td>The ID of the workflow.</td>
+<td>id</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>workflowDisplayName</td>
-<td>The display name of the workflow.</td>
+<td>name</td>
+<td>The name of the tenant.</td>
 <td>string</td>
+</tr>
+<tr>
+<td>availableUserSeat</td>
+<td>The number of available user seats of the tenant.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>assignedUserSeat</td>
+<td>The number of assigned user seats of the tenant.</td>
+<td>integer</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
-<p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://aostestpartnergcc.sharepointguild.com:5000/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/overview/security/compliances/workflows
+<p>To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.</p>
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/f162****-b9d4-****-a165-97db****fc15/3rd-party-products/type/0/users
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
-<pre><code class="lang-json">{
-    &quot;data&quot;: [
-        {
-            &quot;workflowId&quot;: &quot;8fc933ed-5d54-41fe-909c-afbf326f27ff&quot;, // The ID of the workflow
-            &quot;workflowDisplayName&quot;: &quot;User MFA disabled&quot; // The display name of the workflow
-        }
-    ],
-    &quot;metadata&quot;: {
-        &quot;pageIndex&quot;: 1, // The page index of current request
-        &quot;pageSize&quot;: 50, // The number will be retrieved in one request
-        &quot;totalCount&quot;: 1 // The total number count that matches the request
+For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<pre><code class="lang-json">[
+    {
+        &quot;id&quot;: &quot;f04d7aee-****-****-****-65215f92e596&quot;, // The ID of the tenant
+        &quot;name&quot;:&quot;TenantABC&quot;, // The name of the tenant
+        &quot;availableUserSeat&quot;: 25, // The number of available user seats of the tenant
+        &quot;assignedUserSeat&quot;: 25 // The number of assigned user seats of the tenant
     }
-}
+]
 </code></pre>
 
 </article>

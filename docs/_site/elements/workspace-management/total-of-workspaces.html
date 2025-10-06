@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Retrieve Workspace Overview </title>
+      <title>Retrieve Workspace Overview of Tenant </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Retrieve Workspace Overview ">
+      <meta name="title" content="Retrieve Workspace Overview of Tenant ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="retrieve-workspace-overview">Retrieve Workspace Overview</h1>
+<h1 id="retrieve-workspace-overview-of-tenant">Retrieve Workspace Overview of Tenant</h1>
 
 <p>Use this API to retrieve the workspace overview statistics of a specific tenant in Elements.</p>
 <h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,7 +100,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace</code></td>
+<td><code>/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace</code></td>
 <td>elements.wm.read.all</td>
 </tr>
 </tbody>
@@ -118,7 +118,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace</code></td>
+<td><code>/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace</code></td>
 <td>Retrieves statistics of workspcaes for a specific tenant.</td>
 </tr>
 </tbody>
@@ -182,7 +182,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>groups</td>
-<td>The number of Groups.</td>
+<td>The number of groups.</td>
 <td>integer</td>
 </tr>
 <tr>
@@ -222,7 +222,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>orphanedGroups</td>
-<td>The number of orphaned Groups.</td>
+<td>The number of orphaned groups.</td>
 <td>integer</td>
 </tr>
 <tr>
@@ -247,7 +247,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>groupsWithGuestUsers</td>
-<td>The number of Groups with guest users.</td>
+<td>The number of groups with guest users.</td>
 <td>integer</td>
 </tr>
 <tr>
@@ -272,7 +272,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>reachingStorageLimitGroups</td>
-<td>The number of Groups that have reached 90% of their storage limits.</td>
+<td>The number of groups that have reached 90% of their storage limits.</td>
 <td>integer</td>
 </tr>
 <tr>
@@ -284,36 +284,36 @@ You must register an app through Elements &gt; API app registration to authentic
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/workspace
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/wm/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/workspace
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/elements/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
-    &quot;workspaces&quot;: 4285,
-    &quot;teams&quot;: 171,
-    &quot;sharePointSites&quot;: 865,
-    &quot;oneDrives&quot;: 12,
-    &quot;groups&quot;: 2989,
-    &quot;exchangeMailboxes&quot;: 248,
-    &quot;activeWorkspaces&quot;: 159,
-    &quot;inactiveWorkspaces&quot;: 399,
-    &quot;orphanedWorkspaces&quot;: 264,
-    &quot;orphanedTeams&quot;: 56,
-    &quot;orphanedGroups&quot;: 192,
-    &quot;orphanedSharePointSites&quot;: 15,
-    &quot;workspacesWithGuestUsers&quot;: 88,
-    &quot;orphanedOneDrives&quot;: 1,
-    &quot;teamsWithGuestUsers&quot;: 13,
-    &quot;sharePointSitesWithGuestUsers&quot;: 37,
-    &quot;oneDrivesWithGuestUsers&quot;: 0,
-    &quot;groupsWithGuestUsers&quot;: 38,
-    &quot;reachingStorageLimitWorkspaces&quot;: 0,
-    &quot;reachingStorageLimitTeams&quot;: 0,
-    &quot;reachingStorageLimitSharePoint&quot;: 0,
-    &quot;reachingStorageLimitOneDrives&quot;: 0,
-    &quot;reachingStorageLimitGroups&quot;: 0,
-    &quot;reachingStorageLimitMailboxes&quot;: 0,
-    &quot;reachingStorageLimitSharePointSites&quot;: 0
+    &quot;workspaces&quot;: 4285, // The total number of workspaces
+    &quot;teams&quot;: 171, // The number of Teams
+    &quot;sharePointSites&quot;: 865, // The number of SharePoint sites
+    &quot;oneDrives&quot;: 12, // The number of OneDrives
+    &quot;groups&quot;: 2989, // The number of groups
+    &quot;exchangeMailboxes&quot;: 248, // The number of Exchange mailboxes
+    &quot;activeWorkspaces&quot;: 159, // The number of active workspaces
+    &quot;inactiveWorkspaces&quot;: 399, // The number of inactive workspaces
+    &quot;orphanedWorkspaces&quot;: 264, // The total number of orphaned workspaces
+    &quot;orphanedTeams&quot;: 56, // The number of orphaned Teams
+    &quot;orphanedGroups&quot;: 192, // The number of orphaned groups
+    &quot;orphanedSharePointSites&quot;: 15, // The number of orphaned SharePoint sites
+    &quot;workspacesWithGuestUsers&quot;: 88, // The total number of workspaces with guest users
+    &quot;orphanedOneDrives&quot;: 1, // The number of orphaned OneDrives
+    &quot;teamsWithGuestUsers&quot;: 13, // The number of Teams with guest users
+    &quot;sharePointSitesWithGuestUsers&quot;: 37, // The number of SharePoint sites with guest users
+    &quot;oneDrivesWithGuestUsers&quot;: 0, // The number of OneDrives with guest users
+    &quot;groupsWithGuestUsers&quot;: 38, // The number of groups with guest users
+    &quot;reachingStorageLimitWorkspaces&quot;: 0, // The total number of workspaces that have reached 90% of their storage limits
+    &quot;reachingStorageLimitTeams&quot;: 0, // The number of Teams that have reached 90% of their storage limits
+    &quot;reachingStorageLimitSharePoint&quot;: 0, // The number of SharePoint sites that have reached 90% of their storage limits
+    &quot;reachingStorageLimitOneDrives&quot;: 0, // The number of OneDrives that have reached 90% of their storage limits
+    &quot;reachingStorageLimitGroups&quot;: 0, // The number of groups that have reached 90% of their storage limits
+    &quot;reachingStorageLimitMailboxes&quot;: 0, // The number of mailboxes that have reached 90% of their storage limits
+    &quot;reachingStorageLimitSharePointSites&quot;: 0 // The number of SharePoint sites that have reached 90% of their storage limits
 }
 </code></pre>
 

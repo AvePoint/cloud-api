@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Retrieve Cloud Backup for Microsoft 365 Overview </title>
+      <title>Retrieve Daily Scan Profile Changes in AvePoint Online Services for a Customer </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Retrieve Cloud Backup for Microsoft 365 Overview ">
+      <meta name="title" content="Retrieve Daily Scan Profile Changes in AvePoint Online Services for a Customer ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,9 +85,9 @@
         </div>
 
         <article data-uid="">
-<h1 id="retrieve-cloud-backup-for-microsoft-365-overview">Retrieve Cloud Backup for Microsoft 365 Overview</h1>
+<h1 id="retrieve-daily-scan-profile-changes-in-avepoint-online-services-for-a-customer">Retrieve Daily Scan Profile Changes in AvePoint Online Services for a Customer</h1>
 
-<p>Use this API to retrieve the customer's protected data information of Cloud Backup for Microsoft 365.</p>
+<p>Use this API to retrieve the daily scan profile changes in AvePoint Online Services for a customer.</p>
 <h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
 You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview</code></td>
-<td>elements.cbprotected.read.all</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/changes</code></td>
+<td>elements.scanprofiles.read.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to retrieve the customer's protected data information of Cloud Backup for Microsoft 365.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to retrieve the daily scan profile changes in AvePoint Online Services for a customer.</p>
 <table>
 <thead>
 <tr>
@@ -118,8 +118,8 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview</code></td>
-<td>Retrieve the customer's protected data information of Cloud Backup for Microsoft 365.</td>
+<td><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/changes</code></td>
+<td>Retrieve the daily scan profile changes in AvePoint Online Services for a customer.</td>
 </tr>
 </tbody>
 </table>
@@ -135,76 +135,107 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td>customerId</td>
-<td>The ID of the customer.</td>
+<td>profileName</td>
+<td>The name of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>customer</td>
-<td>The email address of the customer.</td>
+<td>profileId</td>
+<td>The ID of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>serviceType</td>
-<td>The name of the service.</td>
+<td>description</td>
+<td>The description of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>serviceModule</td>
-<td>The module of the customer’s Cloud Backup for Microsoft 365 service.</td>
+<td>tenantId</td>
+<td>The tenant ID of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>totalScannedObjects</td>
-<td>The number of the scanned objects of the module.</td>
-<td>long</td>
-</tr>
-<tr>
-<td>totalProtectedObjects</td>
-<td>The number of the backed-up objects of the module.</td>
-<td>long</td>
-</tr>
-<tr>
-<td>dataSizeStoredInAvePoint</td>
-<td>The size of the backed-up objects stored in the AvePoint storage.</td>
+<td>tenantDomain</td>
+<td>The tenant domain of the scan profile.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>dataSizeStoredInBYOS</td>
-<td>The size of the backed-up objects stored in BYOS.</td>
+<td>scanMode</td>
+<td>The scan mode of the profile. <ul><li><strong>0</strong> - Express mode</li><li><strong>1</strong> - Advanced mode</li></ul></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>modifiedTime</td>
+<td>The last modified time of the scan profile.</td>
 <td>string</td>
+</tr>
+<tr>
+<td>lastUpdateTime</td>
+<td>The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>lastScanStatus</td>
+<td>The last scan job status of the scan profile. <ul><li><strong>0</strong> - None</li><li><strong>1</strong> - Running</li><li><strong>2</strong> - Finished</li><li><strong>3</strong> - Failed</li><li><strong>4</strong> - Finished with exception</li><li><strong>5</strong> - Skipped</li><li><strong>6</strong> - Pending</li><li><strong>7</strong> - Failed to tart</li><li><strong>8</strong> - Canceled</li><li><strong>9</strong> - Rejected</li><li><strong>10</strong> - Stopped</li><li><strong>11</strong> - Not scanned</li><li><strong>12</strong> - Disabled</li><li><strong>13</strong> - Not started</li><li><strong>14</strong> - Wait for configuration</li></ul></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>newRegisteredContentCount</td>
+<td>The number of newly registered objects in the daily report of the scan profile.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>movedToAnotherContainer</td>
+<td>The number of objects moved to another container in the daily report of the scan profile.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>removedFromMicrosoft365OrOutofPolicy</td>
+<td>The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>newRegisteredContent</td>
+<td>The information of the newly registered objects in the daily report of the scan profile.</td>
+<td>list</td>
+</tr>
+<tr>
+<td>removedFromMicrosoft365OrOutOfPolicyObjects</td>
+<td>The objects removed from Microsoft 365 or out of policy in the daily report of the scan profile.</td>
+<td>string[]</td>
+</tr>
+<tr>
+<td>movedToAnotherContainerObjects</td>
+<td>The information of the objects moved to another container in the daily report of the scan profile.</td>
+<td>list</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/cloud-backup-m365/overview
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/general/customers/caf9****-2cc6-****-b04b-794c****5ea3/scan-profiles/47db****-1004-****-b2ce-8f5e****842d/changes
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
 <p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
 For more details on the HTTP status code, refer to <a href="../../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
-<pre><code class="lang-json">[
-    {
-        &quot;customerId&quot;: &quot;f1626c49-****-****-****-97db****fc15&quot;, // The customer ID
-        &quot;customer&quot;: &quot;userA@domain.com&quot;, // The email address of the customer
-        &quot;serviceType&quot;: &quot;Cloud Backup for Microsoft 365&quot;, // The service name
-        &quot;serviceModule&quot;: &quot;Exchange Online&quot;, // The module of Cloud Backup for Microsoft 365
-        &quot;totalScannedObjects&quot;: 25, // The number of scanned objects of the module
-        &quot;totalProtectedObjects&quot;: 25, // The number of backed-up objects of the module
-        &quot;dataSizeStoredInAvePoint&quot;: &quot;0 GB&quot;, // The size of the backed-up objects stored in AvePoint storage
-        &quot;dataSizeStoredInBYOS&quot;: &quot;N/A&quot; // The size of the backed-up objects stored in BYOS: N/A represents not applicable here 
-    },
-    {
-        &quot;customerId&quot;: &quot;f1626c49-****-****-****-97db****fc15&quot;,
-        &quot;customer&quot;: &quot;userB@domain.com&quot;,
-        &quot;serviceType&quot;: &quot;Cloud Backup for Microsoft 365&quot;,
-        &quot;serviceModule&quot;: &quot;Microsoft 365 Group&quot;,
-        &quot;totalScannedObjects&quot;: 7,
-        &quot;totalProtectedObjects&quot;: 7,
-        &quot;dataSizeStoredInAvePoint&quot;: &quot;0 GB&quot;,
-        &quot;dataSizeStoredInBYOS&quot;: &quot;N/A&quot;
-    }
-]
+<pre><code class="lang-json">{
+    &quot;profileName&quot;: &quot;Default Microsoft 365 Scan Profile&quot;, // The name of the scan profile
+    &quot;profileId&quot;: &quot;47db****-1004-****-b2ce-8f5e****842d&quot;, // The ID of the scan profile
+    &quot;tenantDomain&quot;: &quot;Domain&quot;, // The tenant domain of the scan profile
+    &quot;tenantId&quot;: &quot;c235****-c7a2-****-b7d4-79e8****66c3&quot;, // The tenant ID of the scan profile 
+    &quot;description&quot;: &quot;This is a partner-configured scan profile.&quot;, // The description of the scan profile
+    &quot;scanMode&quot;: 0, // The scan mode of the profile: 0 represents the Express mode.
+    &quot;modifiedTime&quot;: &quot;2025-09-11T03:19:14Z&quot;, // The last modified time of the scan profile
+    &quot;lastUpdateTime&quot;: &quot;2025-09-11T03:19:14Z&quot;, // The last updated time of the scan profile 
+    &quot;lastScanStatus&quot;: 2, // The last scan job status of the scan profile: 2 represents finished
+    &quot;newRegisteredContentCount&quot;: 0, // The number of newly registered objects in the daily report of the scan profile
+    &quot;movedToAnotherContainer&quot;: 0, // The number of objects moved to another container in the daily report of the scan profile
+    &quot;removedFromMicrosoft365OrOutofPolicy&quot;: 0, // The number of objects removed from Microsoft 365 or out of policy in the daily report of the scan profile
+    &quot;newRegisteredContent&quot;: [], // The information of the newly registered object in the daily report; No data here
+    &quot;removedFromMicrosoft365OrOutOfPolicyObjects&quot;: [], // The objects removed from Microsoft 365 or out of policy in the daily report; No data here
+    &quot;movedToAnotherContainerObjects&quot;: [] // The information of the objects moved to another container in the daily report; No data here
+    
+}
 </code></pre>
 
 </article>

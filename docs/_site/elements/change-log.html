@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Explore Elements API </title>
+      <title>Change Log </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Explore Elements API ">
+      <meta name="title" content="Change Log ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -85,28 +85,45 @@
         </div>
 
         <article data-uid="">
-<h1 id="explore-elements-api">Explore Elements API</h1>
+<h1 id="change-log">Change Log</h1>
 
-<p>Unleash the full potential of customer management with AvePoint's Elements APIs. Designed for seamless integration and robust performance, these APIs empower partners and developers to manage, secure, and optimize cloud services with precision and ease.</p>
-<h2 id="comprehensive-partner-operations">Comprehensive Partner Operations</h2>
-<p>Leverage our APIs to streamline partner-related workflows, enhance operational efficiency, and improve collaboration. Automate processes, manage customers, and integrate seamlessly with existing systems to deliver exceptional service and value.</p>
-<h2 id="secure-and-scalable">Secure and Scalable</h2>
-<p>Built on a foundation of security and scalability, the Elements APIs ensure that your data interactions are both safe and efficient. With advanced authentication and granular permissions, you have precise control over access, ensuring sensitive information is always protected. Our scalable infrastructure supports growing demands, providing consistent performance as your needs evolve.</p>
-<h2 id="key-features">Key Features</h2>
+<p>This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API for Elements. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.</p>
+<h2 id="october-2025">October 2025</h2>
+<h3 id="added">Added</h3>
 <ul>
-<li><p><strong>Common Features</strong>: Provide comprehensive capabilities for customer onboarding, service management, subscription tracking, tenant resource monitoring, and backup job reporting, which enables partners to streamline customer related operations and enhance visibility into service usage.</p>
+<li>Introduced new endpoints for common features.
+<ul>
+<li><code>/partner/external/v3/general/customers/batch</code> for retrieving the information of all customers managed by the current partner.</li>
+<li><code>/partner/external/v3/general/customers</code> for onboarding a customer to the current partner.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/services</code> for adding a service for a customer.</li>
+<li><code>/partner/external/v3/general/customers/services/batch</code> for retrieving the services of customers managed by the current partner.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/3rd-party-products/type/{type}/users</code> for retrieving the numbers of assigned and available user seats of customer's tenant.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/avpt-products/type/{productType}/overview</code> for retrieving the purchased user seats for AvePoint products of the customer.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/cloud-backup-m365/users/batch</code> for retrieving the protected status of users in the customer's tenant by Cloud Backup for Microsoft 365.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview</code> for retrieving the customer's protected data information of Cloud Backup for Microsoft 365.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/avpt-products/jobs/batch</code> for retrieving the job details of the backup services for a specific customer.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/batch</code> for retrieving all scan profiles configured for a specific customer in AvePoint Online Services.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}</code> for retrieving the details of a specific scan profile configured in AvePoint Online Services for a customer.</li>
+<li><code>/partner/external/v3/general/customers/{customerId}/scan-profiles/{scanProfileId}/changes</code> for retrieving the daily scan profile changes in AvePoint Online Services for a customer.</li>
+</ul>
 </li>
-<li><p><strong>Baseline Management</strong>: Create baselines from your golden tenants to establish benchmarks for tenant configurations and apply baselines to tenants to monitor configuration deviations.</p>
+<li>Introduced new endpoints for baseline management.</li>
+<li>Introduced new endpoints for risk management.
+<ul>
+<li><code>/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules</code> for retrieving all matched risk rules for a specific tenant.</li>
+<li><code>/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules/{ruleId}/hit-items</code> for retrieving the objects that violate a specific risk rule.</li>
+</ul>
 </li>
-<li><p><strong>Risk Management</strong>: Retrieve the matched risk rules of a specific tenant and view all objects that violate a specific risk rule within a tenant.</p>
-</li>
-<li><p><strong>User Management</strong>: Manage users in your customer's tenants, including retrieving user inforamtion, update user information, and retrieving risk and compliance details of your customer's tenant.</p>
-</li>
-<li><p><strong>Workspace Management</strong>: View workspace statistics for a specific tenant, including workspace overview, workspace compliance statistics, data security posture, and data protection statistics.</p>
+<li>Introduced new endpoints for user management.</li>
+<li>Introduced new endpoints for workspace management.
+<ul>
+<li><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace</code>	for retrieving the workspace overview statistics of a specific tenant.</li>
+<li><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/compliance-rate</code> for retrieving the compliance statistics of workspaces for a specific tenant.</li>
+<li><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights</code> for retrieving the data security posture statistics of a specific tenant.</li>
+<li><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion</code> for retrieving the data protection statistics of a specific tenant.</li>
+</ul>
 </li>
 </ul>
-<h2 id="get-started-now">Get Started Now!</h2>
-<p>Harness the power of Elements APIs to drive your business forward. With our cutting-edge technology and expert support, you'll transform the way you manage customers, ensuring seamless monitoring of backup protection and precise tracking of subscription usage. Detect and adapt to Auto Discovery scan changes with unparalleled efficiency. Our comprehensive resources, including in-depth documentation, coupled with expert support, provide everything you need to embark on a successful integration journey today.</p>
 
 </article>
 

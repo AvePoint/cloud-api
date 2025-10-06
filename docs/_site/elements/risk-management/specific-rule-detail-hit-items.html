@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Retrieve Matched Objects </title>
+      <title>Retrieve Matched Objects of Specific Risk Rule </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Retrieve Matched Objects ">
+      <meta name="title" content="Retrieve Matched Objects of Specific Risk Rule ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="retrieve-matched-objects">Retrieve Matched Objects</h1>
+<h1 id="retrieve-matched-objects-of-specific-risk-rule">Retrieve Matched Objects of Specific Risk Rule</h1>
 
 <p>Use this API to retrieve the objects that violate a specific risk rule within a specific tenant in Elements.</p>
 <h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="register-app.md">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -266,32 +266,37 @@ You must register an app through Elements &gt; API app registration to authentic
 </tr>
 <tr>
 <td>storageUsed</td>
-<td>The storage usage of the mailbox. The unit is MB.</td>
+<td>The used storage of the mailbox. The unit is MB.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>prohibitSendReceiveQuota</td>
-<td>The record's prohibit send and recieve limit in Megabytes (MB).</td>
+<td>The prohibit send and recieve quota of the mailbox. The unit is MB.</td>
 <td>integer</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>recipientType</td>
+<td>The recipient type of the mailbox. <ul><li>1 - User mailbox</li><li>2 - Shared mailbox</li><li>4 - Room mailbox</li><li>8 - Equipment mailbox</li><li>16 - Mail contact</li><li>32 - Mail user</li><li>64 - Guest mail user</li><li>128 - Discovery mailbox</li><li>256 - Legacy mailbox</li><li>512 - Linked mailbox</li><li>1024 - Linked room mailbox</li><li>2048 - Team mailbox</li><li>4096 - Dynamic distribution group</li><li>8192 - Group mailbox</li><li>16384 - Mail forest contact</li><li>32768 - Mail-enabled non-universal group</li><li>65536 - Universal distribution group</li><li>131072 - Universal security group</li><li>262144 - Public folder</li><li>524288 - Public folder mailbox</li><li>1048576 - Remote equipment mailbox</li><li>2097152 - Remote room mailbox</li><li>4194304 - Remote shared mailbox</li><li>8388608 - Remote Team mailbox</li><li>16777216 - Remote user mailbox</li><li>33554432 - Room list</li><li>67108864 - Scheduling mailbox</li></ul></td>
+<td>integer</td>
+</tr>
+<tr>
+<td>createdDate</td>
+<td>The created date and time of the mailbox.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and time of the mailbox's last activity.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>prohibitSendQuota</td>
-<td>The record's prohibit send limit in Megabytes (MB).</td>
+<td>The prohibit send quota of the mailbox. The unit is MB.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the mailbox whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -308,52 +313,52 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>groupName</td>
-<td>The Microsoft 365 Group's display name.</td>
+<td>The display name of the group.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>groupEmailAddress</td>
-<td>The Microsoft 365 Group's email address</td>
+<td>The email address of the group.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>createdBy</td>
-<td>The record's creator name</td>
+<td>The creator name of the group.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>groupType</td>
-<td>The type of group. <ul><li><strong>1</strong> - Microsoft365 groups</li><li><strong>2</strong> - Security groups</li><li><strong>4</strong> - Distribution groups</li><li><strong>8</strong> - Mail Enabled Security groups</li><li><strong>-1</strong> - Unknown</li></ul></td>
+<td>The type of group. <ul><li><strong>1</strong> - Microsoft 365 Group</li><li><strong>2</strong> - Security group</li><li><strong>4</strong> - Distribution group</li><li><strong>8</strong> - Mail-enabled security group</li><li><strong>-1</strong> - Unknown</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>ownerCount</td>
-<td>The number of owners in the record.</td>
+<td>The number of owners in the group.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>memberCount</td>
-<td>The number of members in the record.</td>
+<td>The number of members in the group.</td>
 <td>integer</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the group.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and tiem of the group's last activity.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the group whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>sourceType</td>
-<td>The source type of the record. <ul><li><strong>0</strong> - None</li><li><strong>1</strong> - Cloud</li><li><strong>2</strong> - On premise</li><li><strong>4</strong> - Hybrid</li></ul></td>
+<td>The source type of the group. <ul><li><strong>0</strong> - None</li><li><strong>1</strong> - Cloud</li><li><strong>2</strong> - On-premises</li><li><strong>4</strong> - Hybrid</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -370,42 +375,42 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>teamsName</td>
-<td>The Microsoft Teams's display name.</td>
+<td>The display name of the Team.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>teamsUrl</td>
-<td>The Microsoft Teams's URL.</td>
+<td>The URL of the Team site.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>createdBy</td>
-<td>The record's creator name</td>
+<td>The creator name of the Team.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>ownerCount</td>
-<td>The number of owners in the record.</td>
+<td>The number of owners in the Team.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>memberCount</td>
-<td>The number of members in the record.</td>
+<td>The number of members in the Team.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and time of the Team's last activity.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the Team whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>latestCampaignInfo</td>
-<td>The detail informations about record's campaign.</td>
+<td>The detailed information about the Team's campaign.</td>
 <td>string</td>
 </tr>
 </tbody>
@@ -422,57 +427,57 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>siteName</td>
-<td>The Microsoft Sharepoint's display name.</td>
+<td>The display name of the site.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>siteUrl</td>
-<td>The Microsoft Sharepoint's URL.</td>
+<td>The site URL.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>createdBy</td>
-<td>The record's creator name</td>
+<td>The creator name of the site.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>storageUsed</td>
-<td>The record's storage usage in Megabytes (MB).</td>
+<td>The used storage of the site. The unit is MB.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>ownerCount</td>
-<td>The number of owners in the record.</td>
+<td>The number of owners in the site.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>memberCount</td>
-<td>The number of members in the record.</td>
+<td>The number of members in the site.</td>
 <td>integer</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the site.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and time of the site's last activity.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the site whether it is marked as fixed.  <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>latestCampaignInfo</td>
-<td>The detail informations about record's campaign.</td>
+<td>The detailed information about the site's campaign.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lockState</td>
-<td>The record's lock state. <ul><li><strong>0</strong> - Unknown</li><li><strong>1</strong> - Unlock</li><li><strong>2</strong> - ReadOnly</li><li><strong>3</strong> - NoAccess</li></ul></td>
+<td>The lock status of the site. <ul><li><strong>0</strong> - Unknown</li><li><strong>1</strong> - Unlocked</li><li><strong>2</strong> - Read only</li><li><strong>3</strong> - No access</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -489,47 +494,47 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>displayName</td>
-<td>The Microsoft OneDrive's display name.</td>
+<td>The display name of the OneDrive.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>url</td>
-<td>The Microsoft OneDrive's URL.</td>
+<td>The OneDrive URL.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>adminCount</td>
-<td>The record's admin count</td>
+<td>The number of admins.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>storageUsed</td>
-<td>The record's storage usage in Megabytes (MB).</td>
+<td>The used storage of the OneDrive. The unit is MB.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>storageLimit</td>
-<td>The record's storage limit in Megabytes (MB).</td>
+<td>The storage limit of the OneDrive. The unit is MB.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>changeFileCount</td>
-<td>The record's number of files changed.</td>
+<td>The number of file modifications.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>guestsCount</td>
-<td>The record's number of guests.</td>
+<td>The number of guests in the OneDrive.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the OneDrive whether it is marked as fixed.  <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Power Platform Environment details:</strong></p>
+<p><strong>Environment details:</strong></p>
 <table>
 <thead>
 <tr>
@@ -541,67 +546,62 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>environmentName</td>
-<td>The Microsoft Power Platform Environment's display name.</td>
+<td>The display name of the environment.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>environmentMakerCount</td>
-<td>The Microsoft Power Platform Environment's environment makers count.</td>
+<td>The number of environment makers.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>region</td>
-<td>The Power Platform Environment's region. <ul><li><strong>-1</strong> - none</li><li><strong>0</strong> - United States</li><li><strong>1</strong> - Europe</li><li><strong>2</strong> - Asia</li><li><strong>3</strong> - Australia</li><li><strong>4</strong> - India</li><li><strong>5</strong> - Japan</li><li><strong>6</strong> - Canada</li><li><strong>7</strong> - United Kingdom</li><li><strong>8</strong> - United States First Release</li><li><strong>9</strong> - South America</li><li><strong>10</strong> - France</li><li><strong>11</strong> - Switzerland</li><li><strong>12</strong> - Germany</li><li><strong>13</strong> - Korea</li><li><strong>14</strong> - Norway</li><li><strong>15</strong> - United Arab Emirates</li><li><strong>16</strong> - usgov</li><li><strong>17</strong> - South Africa</li><li><strong>18</strong> - Sweden</li><li><strong>19</strong> - usgovhigh</li></ul></td>
-<td>integer</td>
-</tr>
-<tr>
-<td>recipientType</td>
-<td>The recipient type of a Microsoft Exchange's mail. <ul><li>1 - UserMailbox</li><li>2 - SharedMailbox</li><li>4 - RoomMailbox</li><li>8 - EquipmentMailbox</li><li>16 - MailContact</li><li>32 - MailUser</li><li>64 - GuestMailUser</li><li>128 - DiscoveryMailbox</li><li>256 - LegacyMailbox</li><li>512 - LinkedMailbox</li><li>1024 - LinkedRoomMailbox</li><li>2048 - TeamMailbox</li><li>4096 - DynamicDistributionGroup</li><li>8192 - GroupMailbox</li><li>16384 - MailForestContact</li><li>32768 - MailNonUniversalGroup</li><li>65536 - MailUniversalDistributionGroup</li><li>131072 - MailUniversalSecurityGroup</li><li>262144 - PublicFolder</li><li>524288 - PublicFolderMailbox</li><li>1048576 - RemoteEquipmentMailbox</li><li>2097152 - RemoteRoomMailbox</li><li>4194304 - RemoteSharedMailbox</li><li>8388608 - RemoteTeamMailbox</li><li>16777216 - RemoteUserMailbox</li><li>33554432 - RoomList</li><li>67108864 - SchedulingMailbox</li></ul></td>
+<td>The environment's region. <ul><li><strong>-1</strong> - None</li><li><strong>0</strong> - United States</li><li><strong>1</strong> - Europe</li><li><strong>2</strong> - Asia</li><li><strong>3</strong> - Australia</li><li><strong>4</strong> - India</li><li><strong>5</strong> - Japan</li><li><strong>6</strong> - Canada</li><li><strong>7</strong> - United Kingdom</li><li><strong>8</strong> - United States</li><li><strong>9</strong> - South America</li><li><strong>10</strong> - France</li><li><strong>11</strong> - Switzerland</li><li><strong>12</strong> - Germany</li><li><strong>13</strong> - Korea</li><li><strong>14</strong> - Norway</li><li><strong>15</strong> - United Arab Emirates</li><li><strong>16</strong> - US Gov</li><li><strong>17</strong> - South Africa</li><li><strong>18</strong> - Sweden</li><li><strong>19</strong> - US Gov High</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>type</td>
-<td>The Power Platform Environment's environment type. <ul><li><strong>1</strong> - Default</li><li><strong>2</strong> - Trial</li><li><strong>4</strong> - Sandbox</li><li><strong>8</strong> - Production</li><li><strong>16</strong> - Teams</li><li><strong>32</strong> - Subscription Based Trial</li><li><strong>64</strong> - Developer</li></ul></td>
+<td>The environment type. <ul><li><strong>1</strong> - Default</li><li><strong>2</strong> - Trial</li><li><strong>4</strong> - Sandbox</li><li><strong>8</strong> - Production</li><li><strong>16</strong> - Teams</li><li><strong>32</strong> - Trial (subscription-based)</li><li><strong>64</strong> - Developer</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the environment.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and time of the environment's last activity.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>totalUsage</td>
-<td>The Microsoft Power Platform Environment's total usage in Bytes (B).</td>
+<td>The environment's total usage. The unit is Bytes.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the environment whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>creatorName</td>
-<td>The record's creator name.</td>
+<td>The creator name of the environment.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>creatorEmail</td>
-<td>The record's creator email.</td>
+<td>The email address of the creator.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>adminCount</td>
-<td>The record's admin count</td>
+<td>The number of admins in the environment.</td>
 <td>string</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Power Platform Connection details:</strong></p>
+<p><strong>Connection details:</strong></p>
 <table>
 <thead>
 <tr>
@@ -613,27 +613,27 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>connectionName</td>
-<td>The Microsoft Power Platform Environment's display name.</td>
+<td>The display name of the connection.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>parentEnvironment</td>
-<td>The Microsoft Power Platform Environment's parent environment.</td>
+<td>The parent environment of the connection.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>createdBy</td>
-<td>The record's creator name</td>
+<td>The creator name of the connection</td>
 <td>string</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the connection.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the connection whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -650,57 +650,57 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>appName</td>
-<td>The Microsoft Power Platform App's display name.</td>
+<td>The display name of the Power App.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>environment</td>
-<td>The Microsoft Power Platform App/Flow's environment.</td>
+<td>The environment of the Power App.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>createdBy</td>
-<td>The record's creator name</td>
+<td>The creator name of the Power App.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>guestUserCount</td>
-<td>The record's number of guest users.</td>
+<td>The number of guest users in the Power App.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>includedInSolutions</td>
-<td>Indicates whether the Flow/App is included in a Power Platform solution. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status whether the Power App is included in a solution. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>coOwnerCount</td>
-<td>The number of co-owners in the record.</td>
+<td>The number of co-owners in the app.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>lastSignIn</td>
-<td>The time when users last sign in to the app/flow.</td>
+<td>The time when users last signed in to the app.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastLaunchTime</td>
-<td>The time when users last launch the app.</td>
+<td>The time when users last launched the app.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the app.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the app whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Power Automate details:</strong></p>
+<p><strong>Flow details:</strong></p>
 <table>
 <thead>
 <tr>
@@ -712,57 +712,57 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>flowName</td>
-<td>The Microsoft Power Automate's display name.</td>
+<td>The display name of flow.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>environment</td>
-<td>The Microsoft Power Platform App/Flow's environment.</td>
+<td>The environment of the flow.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>guestsCount</td>
-<td>The record's number of guests.</td>
+<td>The number of guests in the flow.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>creatorName</td>
-<td>The record's creator name.</td>
+<td>The creator name of the flow.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>type</td>
-<td>The Power Automate's flow type. <ul><li><strong>0</strong> - Unknown</li><li><strong>1</strong> - Instant</li><li><strong>2</strong> - Automated</li><li><strong>4</strong> - Scheduled</li><li><strong>8</strong> - DesktopFlow</li></ul></td>
+<td>The flow type. <ul><li><strong>0</strong> - Unknown</li><li><strong>1</strong> - Instant</li><li><strong>2</strong> - Automated</li><li><strong>4</strong> - Scheduled</li><li><strong>8</strong> - Desktop flow</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>includedInSolutions</td>
-<td>Indicates whether the Flow/App is included in a Power Platform solution. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status whether the flow is included in a solution. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>coOwnerCount</td>
-<td>The number of co-owners in the record.</td>
+<td>The number of co-owners in the flow.</td>
 <td>integer</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the flow.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and time of the flow's last activity.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastSignIn</td>
-<td>The time when users last sign in to the app/flow.</td>
+<td>The time when users last signed in to the flow.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the flow whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -779,94 +779,62 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>workspaceName</td>
-<td>The Microsoft Power BI's workspace name.</td>
+<td>The display name of the Power BI workspace/report.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>capacityName</td>
-<td>The Microsoft Power BI's capacity name.</td>
+<td>The capacity name of the Power BI workspace.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>artifactName</td>
-<td>The Microsoft Power BI's artifact name.</td>
+<td>The artifact name.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>workspace</td>
-<td>The Microsoft Power BI's workspace.</td>
+<td>The parent workspace name.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>sensitivity</td>
-<td>The Microsoft Power BI's sensitivity.</td>
+<td>The sensitivity level of the Power BI workspace/report.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>adminCount</td>
-<td>The record's admin count</td>
+<td>The number of admins.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and time of the last activity in the Power BI workspace/report.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the Power BI workspace/report.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>guestUserCount</td>
-<td>The record's number of guest users.</td>
+<td>The number of guest users.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>reportCount</td>
-<td>The Microsoft Power BI's number of reports.</td>
+<td>The number of Power BI reports.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the workspace/report whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>userCount</td>
-<td>The record's number of users.</td>
-<td>integer</td>
-</tr>
-</tbody>
-</table>
-<p><strong>License details:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Response</th>
-<th>Description</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>licenseCount</td>
-<td>The record's number of license pool count.</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>licenseDisplayName</td>
-<td>The license's display name.</td>
-<td>string</td>
-</tr>
-<tr>
-<td>licenseKeyName</td>
-<td>The license's key name.</td>
-<td>string</td>
-</tr>
-<tr>
-<td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The number of users in the Power BI workspace/report.</td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -883,62 +851,94 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>userName</td>
-<td>The User's display name.</td>
+<td>The user's display name.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>userEmailAddress</td>
-<td>The User's email address.</td>
+<td>The user's email address.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>userRoles</td>
-<td>The User's user role.</td>
+<td>The user role.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>upn</td>
-<td>The User's User Principal Name.</td>
+<td>The User Principal Name of the user.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>userType</td>
-<td>The user's type. <ul><li><strong>1</strong> - Guest</li><li><strong>2</strong> - Member</li></ul></td>
+<td>The user type. <ul><li><strong>1</strong> - Guest</li><li><strong>2</strong> - Member</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>MFAControlledViaCap</td>
-<td>The User's MFA status.</td>
+<td>The user's MFA status.</td>
 <td>bool</td>
 </tr>
 <tr>
 <td>lastSignIn</td>
-<td>The time when users last sign in to the app/flow.</td>
+<td>The time when the user last signed in to Microsoft 365.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>lastActivityDate</td>
-<td>The record's last activity date.</td>
+<td>The date and time of the user's last activity.</td>
 <td>string</td>
 </tr>
 <tr>
-<td>createDate</td>
-<td>The record's create date.</td>
+<td>createdDate</td>
+<td>The created date and time of the user.</td>
 <td>string</td>
 </tr>
 <tr>
 <td>signInCount</td>
-<td>The User's number of sign in.</td>
+<td>The number of the user's sign-ins.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>mark</td>
-<td>Indicates whether the record is mark as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
+<td>The status of the user whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 <tr>
 <td>sourceType</td>
-<td>The source type of the record. <ul><li><strong>0</strong> - None</li><li><strong>1</strong> - Cloud</li><li><strong>2</strong> - On premise</li><li><strong>4</strong> - Hybrid</li></ul></td>
+<td>The source type of the user. <ul><li><strong>0</strong> - None</li><li><strong>1</strong> - Cloud</li><li><strong>2</strong> - On-premises</li><li><strong>4</strong> - Hybrid</li></ul></td>
+<td>integer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>License details:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Response</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>licenseCount</td>
+<td>The license count.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>licenseDisplayName</td>
+<td>The license display name.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>licenseKeyName</td>
+<td>The license key name.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mark</td>
+<td>The status of the license whether it is marked as fixed. <ul><li><strong>0</strong> - No</li><li><strong>1</strong> - Yes</li></ul></td>
 <td>integer</td>
 </tr>
 </tbody>
@@ -948,32 +948,32 @@ You must register an app through Elements &gt; API app registration to authentic
 <pre><code class="lang-json">https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d926b068-****-4830-****-fd2a****4e99/tenants/0eaab044-****-4a92-****-93c6****711e/detection/rules/00000002-****-4A52-****-00000036/hit-items
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="Use-AvePoint-Graph-API.md#http-status-code">Http Status Code</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
     &quot;metaData&quot;: {
-        &quot;pageIndex&quot;: 1,
-        &quot;pageSize&quot;: 50,
-        &quot;totalCount&quot;: 37
+    &quot;pageIndex&quot;: 1, // The current display page
+    &quot;pageSize&quot;: 50, // The number of objects on the display page
+    &quot;totalCount&quot;: 37 // The total number of objects matching the query parameters
     },
     &quot;data&quot;: [
         {
             &quot;detail&quot;: {
-                &quot;groupName&quot;: &quot;20240820 teamsite&quot;,
-                &quot;groupEmailAddress&quot;: &quot;2024********@vrmhv.onmicrosoft.com&quot;,
-                &quot;groupType&quot;: 1,
-                &quot;ownerCount&quot;: 1,
-                &quot;memberCount&quot;: 4,
-                &quot;createDate&quot;: &quot;2024-08-20T10:55:29.0000000Z&quot;,
-                &quot;lastActivityDate&quot;: &quot;2025-07-10T00:00:00.0000000Z&quot;,
-                &quot;mark&quot;: 0,
-                &quot;sourceType&quot;: 1
+                &quot;groupName&quot;: &quot;20240820 teamsite&quot;, // The display name of the group
+                &quot;groupEmailAddress&quot;: &quot;2024****@****.onmicrosoft.com&quot;, // The email address of the group
+                &quot;groupType&quot;: 1, // The type of group, Microsoft 365 Group
+                &quot;ownerCount&quot;: 1, // The number of owners in the group
+                &quot;memberCount&quot;: 4, // The number of members in the group
+                &quot;createDate&quot;: &quot;2024-08-20T10:55:29.0000000Z&quot;, // The created date and time of the group
+                &quot;lastActivityDate&quot;: &quot;2025-07-10T00:00:00.0000000Z&quot;, // The date and time of the group's last activity
+                &quot;mark&quot;: 0, // The status of the group whether it is marked as fixed, not fixed
+                &quot;sourceType&quot;: 1 // The source type of the group, Cloud
             },
-            &quot;id&quot;: &quot;5824e186-****-****-****-e2aa9a60ac16&quot;,
-            &quot;objectid&quot;: &quot;e6950ad1-****-****-****-151a1a060d1f&quot;,
-            &quot;ruleId&quot;: &quot;00000002-****-****-****-00000007&quot;,
-            &quot;tenantId&quot;: &quot;be4cdf40-****-****-****-ab967eb78246&quot;,
-            &quot;customerId&quot;: &quot;292b68c5-****-****-****-28650d407eaf&quot;,
-            &quot;dataSource&quot;: 2
+            &quot;id&quot;: &quot;5824e186-****-****-****-e2aa9a60ac16&quot;, // The record ID
+            &quot;objectid&quot;: &quot;e6950ad1-****-****-****-151a1a060d1f&quot;, // The object ID
+            &quot;ruleId&quot;: &quot;00000002-****-****-****-00000007&quot;, // The ID of the risk rule
+            &quot;tenantId&quot;: &quot;be4cdf40-****-****-****-ab967eb78246&quot;, // The tenant ID
+            &quot;customerId&quot;: &quot;292b68c5-****-****-****-28650d407eaf&quot;, // The customer ID
+            &quot;dataSource&quot;: 2 // The object's data source, Groups
         }
     ]
 }

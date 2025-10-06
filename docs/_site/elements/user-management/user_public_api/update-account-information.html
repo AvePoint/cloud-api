@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Update Account Information A Specific User </title>
+      <title>Update Information of a Specific User </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Update Account Information A Specific User ">
+      <meta name="title" content="Update Information of a Specific User ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="update-account-information-a-specific-user">Update Account Information A Specific User</h1>
+<h1 id="update-information-of-a-specific-user">Update Information of a Specific User</h1>
 
-<p>Use this API to update account information of specific users of a customer tenant in AvePoint Online Services.</p>
-<h2 id="permissions">Permissions</h2>
+<p>Use this API to update information of a specific user in a customer's tenant.</p>
+<h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,13 +100,13 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/account-information</code></td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/account-information</code></td>
 <td>elements.um.user.readwrite.all</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request">Request</h2>
-<p>This section outlines the details of the HTTP method and endpoint used to update account information about a user.</p>
+<p>This section outlines the details of the HTTP method and endpoint used to update information of a specific user in a customer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -118,13 +118,13 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>PUT</td>
-<td><code>/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/account-information</code></td>
-<td>Update account information about a user of a customer tenant in AvePoint Online Services.</td>
+<td><code>/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/account-information</code></td>
+<td>Updates information of a specific user in a customer's tenant.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="url-parameters">URL Parameters</h2>
-<p>This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update account information about a user according to your specific requirements and preferences.</p>
+<p>This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update information of a user according to your specific requirements and preferences.</p>
 <table>
 <thead>
 <tr>
@@ -137,26 +137,26 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>customerId</td>
-<td>The customer ID of the customer.</td>
+<td>The ID of the customer.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>tenantId</td>
-<td>The specific tenant ID of the customer.</td>
+<td>The ID of the tenant.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>Unique identifier for the specific user whose details are being requested.</td>
+<td>The unique identifier of the user.</td>
 <td>string</td>
 <td>Yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="request-body">Request Body</h2>
-<p>This section outlines the required fields to update the account information of a user.</p>
+<p>This section outlines the required fields to update the information of a specific user in a cutomer's tenant.</p>
 <table>
 <thead>
 <tr>
@@ -164,58 +164,50 @@ You must register an app through Elements &gt; API app registration to authentic
 <th>Description</th>
 <th>Type</th>
 <th>Required</th>
-<th>MaxLength</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>mail</td>
-<td>The mail of the user.</td>
+<td>The mail of the user. The maximum length is 256 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>256 character</td>
 </tr>
 <tr>
 <td>usageLocation</td>
-<td>The usage location of the user.</td>
+<td>The usage location of the user. The maximum length is 128 characters.</td>
 <td>string</td>
 <td>Yes</td>
-<td>128 character</td>
 </tr>
 <tr>
 <td>preferredLanguage</td>
-<td>The preferred language of the user</td>
+<td>The preferred language of the user.</td>
 <td>string</td>
 <td>Yes</td>
-<td></td>
 </tr>
 <tr>
 <td>enforceStart</td>
-<td>The enforce start of the user.</td>
+<td>Indicates whether account enforcement start date is enabled.</td>
 <td>bool</td>
 <td>Yes</td>
-<td></td>
 </tr>
 <tr>
 <td>enforceStartDateTime</td>
-<td>The enforce start dateTime of the user.</td>
+<td>The date and time when account enforcement begins.</td>
 <td>string</td>
 <td>Yes</td>
-<td></td>
 </tr>
 <tr>
 <td>enforceEnd</td>
-<td>The enforceEnd of the user.</td>
+<td>Indicates whether account enforcement end date is enabled.</td>
 <td>bool</td>
 <td>Yes</td>
-<td></td>
 </tr>
 <tr>
 <td>enforceEndDateTime</td>
-<td>The enforceEndDateTime of the user.</td>
+<td>The date and time when account enforcement ends.</td>
 <td>string</td>
 <td>Yes</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -223,17 +215,17 @@ You must register an app through Elements &gt; API app registration to authentic
 <p>If the request has been successfully processed, a 204 No Content response will be returned</p>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/users/7c18fd6f-fb26-4353-8dbd-5725fa9edc3f/account-information
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/account-information
 </code></pre>
 <h2 id="request-body-sample">Request Body Sample</h2>
 <pre><code class="lang-json">{
-  &quot;mail&quot;: &quot;Mark@element.onmicrosoft.com&quot;,
-  &quot;usageLocation&quot;: &quot;AF&quot;,
-  &quot;preferredLanguage&quot;: &quot;af-NA&quot;,
-  &quot;enforceStart&quot;: true,
-  &quot;enforceStartDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;,
-  &quot;enforceEnd&quot;: true,
-  &quot;enforceEndDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;
+  &quot;mail&quot;: &quot;tony@element.onmicrosoft.com&quot;, // The mail of the user
+  &quot;usageLocation&quot;: &quot;AF&quot;, // The usage location of the user
+  &quot;preferredLanguage&quot;: &quot;af-NA&quot;, // The preferred language of the user
+  &quot;enforceStart&quot;: true, // Indicates whether account enforcement start date is enabled
+  &quot;enforceStartDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot;, // The date and time when account enforcement begins
+  &quot;enforceEnd&quot;: true, // Indicates whether account enforcement end date is enabled
+  &quot;enforceEndDateTime&quot;: &quot;1970-01-01T00:00:00Z&quot; // The date and time when account enforcement ends
 }
 </code></pre>
 

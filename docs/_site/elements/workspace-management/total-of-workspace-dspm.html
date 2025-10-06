@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Retrieve Data Security Posture </title>
+      <title>Retrieve Data Security Posture of Tenant </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Retrieve Data Security Posture ">
+      <meta name="title" content="Retrieve Data Security Posture of Tenant ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,12 +85,12 @@
         </div>
 
         <article data-uid="">
-<h1 id="retrieve-data-security-posture">Retrieve Data Security Posture</h1>
+<h1 id="retrieve-data-security-posture-of-tenant">Retrieve Data Security Posture of Tenant</h1>
 
 <p>Use this API to retrieve the data security posture statistics of a specific tenant in Elements.</p>
 <h2 id="permission">Permission</h2>
 <p>The following permission is required to call the API.<br>
-You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="https://cdn.avepoint.com/assets/apelements-webhelp/avepoint-elements-for-partners/index.htm#!Documents/appregistration.htm">App Registration</a>.</p>
+You must register an app through Elements &gt; API app registration to authenticate and authorize your access to AvePoint Graph API. For details, refer to <a href="../register-app.html">App Registration</a>.</p>
 <table>
 <thead>
 <tr>
@@ -100,7 +100,7 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights</code></td>
+<td><code>/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights</code></td>
 <td>elements.wm.read.all</td>
 </tr>
 </tbody>
@@ -118,7 +118,7 @@ You must register an app through Elements &gt; API app registration to authentic
 <tbody>
 <tr>
 <td>GET</td>
-<td><code>/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights</code></td>
+<td><code>/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights</code></td>
 <td>Retrieves the data security posture statistics.</td>
 </tr>
 </tbody>
@@ -161,23 +161,23 @@ You must register an app through Elements &gt; API app registration to authentic
 </thead>
 <tbody>
 <tr>
-<td>sensitiveItemsSharedWithEveryOne</td>
+<td>sensitiveItemsSharedWithEveryone</td>
 <td>The number of sensitive items that are shared with the Everyone group.</td>
 <td>integer</td>
 </tr>
 <tr>
-<td>sensitiveItemsSharedWithEveryOneExceptExternalUsers</td>
+<td>sensitiveItemsSharedWithEveryoneExceptExternalUsers</td>
 <td>The number of sensitive items that are shared with the Everyone except external users group.</td>
 <td>integer</td>
 </tr>
 <tr>
-<td>sensitiveItemsSharedViaAnonynousLink</td>
+<td>sensitiveItemsSharedViaAnyoneLink</td>
 <td>The number of sensitive items that are shared via anyone links.</td>
 <td>integer</td>
 </tr>
 <tr>
 <td>sensitiveItemsSharedViaLinkForSpecificExternalUsers</td>
-<td>The number Of sensitive items that are shared via links for specific external users.</td>
+<td>The number of sensitive items that are shared via links for specific external users.</td>
 <td>integer</td>
 </tr>
 <tr>
@@ -189,16 +189,16 @@ You must register an app through Elements &gt; API app registration to authentic
 </table>
 <h2 id="request-sample">Request Sample</h2>
 <p>To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.</p>
-<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/dspm/insights
+<pre><code class="lang-json">https://graph.avepointonlineservices.com/partner/external/v3/wm/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/dspm/insights
 </code></pre>
 <h2 id="response-sample">Response Sample</h2>
-<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
+<p>If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to <a href="../Use-AvePoint-Graph-API.html#http-status-code">Http Status Code</a>.</p>
 <pre><code class="lang-json">{
-    &quot;sensitiveItemsSharedWithEveryOne&quot;: 1,
-    &quot;sensitiveItemsSharedWithEveryOneExceptExternalUsers&quot;: 2,
-    &quot;sensitiveItemsSharedViaAnonynousLink&quot;: 3,
-    &quot;sensitiveItemsSharedViaLinkForSpecificExternalUsers&quot;: 4,
-    &quot;sensitiveItemsSharedViaOrganizationLink&quot;: 5
+    &quot;sensitiveItemsSharedWithEveryone&quot;: 1, // The number of sensitive items that are shared with the Everyone group
+    &quot;sensitiveItemsSharedWithEveryoneExceptExternalUsers&quot;: 2, // The number of sensitive items that are shared with the Everyone except external users group
+    &quot;sensitiveItemsSharedViaAnyoneLink&quot;: 3, // The number of sensitive items that are shared via anyone links
+    &quot;sensitiveItemsSharedViaLinkForSpecificExternalUsers&quot;: 4, // The number of sensitive items that are shared via links for specific external users
+    &quot;sensitiveItemsSharedViaOrganizationLink&quot;: 5 // The number of sensitive items that are shared via organization links
 }
 </code></pre>
 
