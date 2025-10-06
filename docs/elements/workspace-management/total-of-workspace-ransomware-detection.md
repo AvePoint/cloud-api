@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 |-----------|-----------|
-| `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion` | elements.wm.read.all |  
+| `/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detection` | elements.wm.read.all |  
 
 
 ## Request
@@ -18,7 +18,7 @@ This section outlines the HTTP method and endpoint used to retrieve the data pro
 
 | Method | Endpoint | Description |
 |-----------|-----------|-----------|
-|GET|`/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion`|Retrieves the data protection statistics.|
+|GET|`/partner/external/v3/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detection`|Retrieves the data protection statistics.|
 
 ## URL Parameters
 
@@ -55,7 +55,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph.avepointonlineservices.com/partner/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/data-protection/ransomware-detetion
+https://graph.avepointonlineservices.com/partner/external/v3/wm/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/data-protection/ransomware-detection
 ```
 
 ## Response Sample
