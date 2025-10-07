@@ -55,7 +55,7 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "datasourceDetails": [
     {
-      "datasourceId": "b7b83ae1-a3be-4553-b948-ba289d97cbdb", // Data source unique identifier
+      "datasourceId": "b7b83ae1-a3be-4553-****-ba289d97cbdb", // Data source unique identifier
       "datasourceType": "Extension", // Data source type
       "connectionDetails": "{\"ExtensionDataSourceKind\":\"Goals\",\"ExtensionDataSourcePath\":\"Goals\"}", // Connection details
     }

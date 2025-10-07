@@ -156,7 +156,7 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "resourceMailboxes": [
         {
-            "id": "73669ae7-55fe-4b47-8fc4-47324c01d5d2",//The unique identifier of the resource mailbox in PowerShell
+            "id": "73669ae7-55fe-4b47-****-47324c01d5d2",//The unique identifier of the resource mailbox in PowerShell
             "userId": "",// The unique identifier of the resource mailbox in Microsoft 365
             "principalName": "",// The user principal name of the resource mailbox
             "name": "",// The name of the resource mailbox in PowerShell

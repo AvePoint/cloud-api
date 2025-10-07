@@ -88,14 +88,14 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "connections": [
     {
-      "id": "62f0d4b761ea43fda97b0cdfbd1981fd", // The unique identifier for the connection
+      "id": "62f0d4b761ea43fda9*****fbd1981fd", // The unique identifier for the connection
       "tenantId": "", // The unique identifier for the tenant that the connection belongs to
       "tenantName": "Sample", // The name for the tenant that the connection belongs to
       "containerId": "", // The unique identifier for the container that the connection belongs to
       "containerName": "Sample-Connections", // The name for the container that the connection belongs to
-      "displayName": "365 Training", // The display name of the connection
+      "displayName": "Sample Connection", // The display name of the connection
       "iconUri": "", // The URI of the icon for the connection
-      "connectorId": "shared_365training", // The unique identifier for the connector
+      "connectorId": "shared_***training", // The unique identifier for the connector
       "connectorDisplayName": "365 Training", // The name of the connector
       "connectorIconBrandColor": "#175497", // The color of the connector icon
       "environmentId": "", // The unique identifier for the Power Platform environment that the connection belongs to

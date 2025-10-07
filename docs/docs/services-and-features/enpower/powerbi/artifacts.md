@@ -86,7 +86,7 @@ Each artifact retrieved through the API includes detailed attributes that provid
 | datasource                 | The data source associated with the artifact.                              | string  |
 | numberOfRefreshHistories   | The number of refresh histories of the artifact.                           | integer |
 | creatorDisplayName             | The display name of artifact's creator.                       | string |
-| creatorDepartment              | The display name of artifact's creator                       | string |
+| creatorDepartment              | The department of artifact's creator                       | string |
 | viewsOfLast7Days              | Artifact view count in last 7 days.                       | integer |
 | uniqueViewersOfLast7Days              | Artifact unique viewer count in last 7 days.                       | integer |
 | viewsOfLast30Days              | Artifact view count in last 30 days.                       | integer |
@@ -148,8 +148,8 @@ If the request has been successfully processed, a 200 OK response will be return
       "numberOfDirectShares": null, // The number of direct shares for the Power BI artifact
       "lastViewedTime": "", // The last time the Power BI artifact was viewed
       "datasource": null, // The data source associated with the Power BI artifact
-      "creatorDisplayName": "" // Display name of artifact creator
-      "creatorDepartment": "" // Department of artifact creator
+      "creatorDisplayName": "" // The display name of artifact's creator
+      "creatorDepartment": "" // The department of artifact's creator
       "viewsOfLast7Days": 0 // View count in last 7 days
       "uniqueViewersOfLast7Days": 0 // Viewer count in last 7 days
       "viewsOfLast30Days": 0 // View count in last 30 days

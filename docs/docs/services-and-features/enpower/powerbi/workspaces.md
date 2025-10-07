@@ -151,8 +151,8 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "workspaces": [
     {
-      "id": "83985b94-9fd0-4614-8ead-aeef875fd6e0", // The unique identifier of the Power BI workspace
-      "name": "0716ci-02", // The name of the Power BI workspace
+      "id": "83985b94-9fd0-4614-****-aeef875fd6e0", // The unique identifier of the Power BI workspace
+      "name": "Sample Workspace", // The name of the Power BI workspace
       "description": null, // A brief description of the Power BI workspace
       "tenantId": "", // The unique identifier for the tenant where the workspace is hosted
       "tenantName": "Sample", // The name of the tenant where the workspace is hosted

@@ -81,8 +81,8 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "desktopFlows": [
     {
-      "flowId": "dbca27a4-c6dc-42e5-9c6f-cac9f4d9b2ea", // The unique identifier of the flow
-      "displayName": "FlowName", // The display name of the flow
+      "flowId": "dbca27a4-c6dc-42e5-****-cac9f4d9b2ea", // The unique identifier of the flow
+      "displayName": "Sample Flow", // The display name of the flow
       "tenantId": "", // The unique identifier of the tenant that the flow belongs to
       "tenantDomain": "sampledomain.com", // The domain name associated with the tenant
       "containerId": "", // The unique identifier of the container that the flow belongs to
