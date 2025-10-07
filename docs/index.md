@@ -32,7 +32,7 @@ Unlock the full potential of AvePoint Cloud services with our comprehensive API 
       <li><b>Baseline Management</b>: Create baselines to define configuration standard and apply baselines to tenants for monitoring configuration deviations.
 </li>
       <li><b>Risk Management</b>: Retrieve the matched risk rules of a tenant and view all objects that violate a specific risk rule.</li>
-      <li><b>User Management</b>: Manage users in your customer's tenants, including retrieving user inforamtion, update user information, and retrieving risk and compliance details of your customer's tenants.</li>
+      <li><b>User Management</b>: Manage users in your customer's tenants, including retrieving user information, updating user information, and retrieving risk and compliance details of your customer's tenants.</li>
       <li><b>Workspace Management</b>: View workspace statistics from different perspectives for a specific tenant.</li>
     </ul>
     <div style="text-align: right;">

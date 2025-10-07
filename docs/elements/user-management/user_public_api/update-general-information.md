@@ -14,7 +14,7 @@ You must register an app through Elements > API app registration to authenticate
 ## Request
 
 This section outlines the details of the HTTP method and endpoint used to update the general information
-of a user in a customer's tenant.
+of a specific user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|

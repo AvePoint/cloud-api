@@ -64,7 +64,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the job statuses retrieved from the **Process center** page displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md/#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the job statuses retrieved from the **Process center** page displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {
@@ -76,8 +76,8 @@ If the request has been successfully processed, a 200 OK response will be return
         }
     ],
     "metadata": {
-        "pageIndex": 1,
-        "pageSize": 5,
-        "totalCount": 1
+        "pageIndex": 1, // The page index of the current request
+        "pageSize": 5, // The number of jobs to be retrieved in one request
+        "totalCount": 1 // The total number count that matches the request
     }
 }

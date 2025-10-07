@@ -33,12 +33,12 @@ This section describes the query parameters that can be added to the URL when se
 
 This section outlines the required fields to update the office location information of a user.
 
-| Parameter | Description | Type | Required | MaxLength
-| --- | --- | --- | --- | ---|
-| postalCode | The postal code of the office. | string | Yes | 40 character |
-| countryRegion | The country or region of the office. | string | Yes | 255 character|
-| state | The state of the office. | string | Yes | 128 character|
-| address | The address of the office. | string | Yes | 1024 character|
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| postalCode | The postal code of the office. The maximum length is 40 characters.| string | Yes |
+| countryRegion | The country or region of the office. The maximum length is 255 characters. | string | Yes |
+| state | The state of the office. The maximum length is 128 characters. | string | Yes |
+| address | The address of the office. The maximum length is 1024 characters. | string | Yes |
 
 ## Response
 
