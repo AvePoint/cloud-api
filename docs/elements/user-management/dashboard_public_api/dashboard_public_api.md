@@ -1,6 +1,6 @@
-# Retrieve Overview Information of Security Users
+# Retrieve Information of Security Users
 
-Use this API to retrieve overview information of security users in a customer's tenant. 
+Use this API to retrieve information of security users in a customer's tenant. 
 
  ## Permission
 
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve overview information of security users in a customer's tenant.
+This section outlines the details of the HTTP method and endpoint used to retrieve information of security users in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users` | Retrieves overview information of security users of a customer's tenant.|
+| GET | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users` | Retrieves information of security users of a customer's tenant.|
  
 ## URL Parameters
 
@@ -34,8 +34,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The page number of the data which will be retrieved. The default value is 1. | integer | No |
+| pageSize | The number of users API that will retrieved in a time. The default value is 100. | integer | No |
 | status | The status of the user that you want to retrieve. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer  | No |
 
 ## Response
@@ -56,7 +56,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | department | The department of the user. | string |
 | mobile | The mobile of the user. | string |
 | jobTitle | The job title of the user. | string |
-| isTestUser | If the user is a test user or not. | bool |
+| isTestUser | Indicates whether this is a test user account for development purposes. | bool |
 | age | The password age of the user. | integer |
 | startDate | The start date when the user account can sign in Microsoft 365. | string |
 | endDate | The date when the user account will be blocked from signing in. | string |

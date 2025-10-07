@@ -17,7 +17,7 @@ This section provides details on the HTTP method and endpoint used to monitor a 
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Monitors a tenant by performing actions on the tenant. |
+| POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Monitors a tenant by performing specific actions on the tenant. |
 
 ## Request Body Parameters
 
@@ -35,7 +35,7 @@ For the "Apply baselines to tenant" action, the parameters of the data object ar
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
 |baselineId| The ID of the baseline. |integer|Yes|
-|order| The ranking order of the baseline among all applied baselines. |integer|Yes|
+|rankingOrder| The ranking order of the baseline among all applied baselines. |integer|Yes|
 
 
 > [!NOTE]  
@@ -64,11 +64,11 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
     [
         {
             "baselineId": "e12922f4-****-****-****-3a1c162b4cf2", // The ID of the baseline
-            "order": 1 // The ranking order of the baseline among all applied baselines
+            "rankingOrder": 1 // The ranking order of the baseline among all applied baselines
         },
         {
             "baselineId": "b4c84bff-****-****-****-3a1c16243555",
-            "order": 2
+            "rankingOrder": 2
         }
     ]
 }
@@ -76,7 +76,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the ID of the applying baselines to tenant job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md/#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the ID of the applying baselines to tenant job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {

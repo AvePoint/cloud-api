@@ -18,7 +18,7 @@ Built on a foundation of security and scalability, the Elements APIs ensure that
 
 - **Risk Management**: Retrieve the matched risk rules of a specific tenant and view all objects that violate a specific risk rule within a tenant.
 
-- **User Management**: Manage users in your customer's tenants, including retrieving user inforamtion, update user information, and retrieving risk and compliance details of your customer's tenant.
+- **User Management**: Manage users in your customer's tenants, including retrieving user inforamtion, updating user information, and retrieving risk and compliance details of your customer's tenant.
 
 - **Workspace Management**: View workspace statistics for a specific tenant, including workspace overview, workspace compliance statistics, data security posture, and data protection statistics.
 

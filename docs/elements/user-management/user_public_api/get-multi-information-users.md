@@ -113,8 +113,8 @@ If the request has been successfully processed, a 200 OK response will be return
         }
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of current request
-        "pageSize": 50, // The user number will be retrieved in one request
+        "pageIndex": 1, // The page index of the current request
+        "pageSize": 50, // The number of users to be retrieved in one request
         "totalCount": 1 // The total number count that matches the request
     }
 }

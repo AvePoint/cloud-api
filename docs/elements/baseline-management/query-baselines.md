@@ -34,7 +34,7 @@ You can provide a list of baseline IDs in the request body to filter the results
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|baselineIds|The ID of the baseline. |string|No|
+|baselineIds|The ID of the baseline. |string[]|No|
 
 ## Response
 
@@ -66,7 +66,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/bat
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md/#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the general information of the queried baselines in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {
@@ -87,8 +87,8 @@ If the request has been successfully processed, a 200 OK response will be return
         }
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of current request
-        "pageSize": 50, // The baseline number will be retrieved in one request
+        "pageIndex": 1, // The page index of the current request
+        "pageSize": 50, // The number of baselines to be retrieved in one request
         "totalCount": 2 // The total number count that matches the request
     }
 }
