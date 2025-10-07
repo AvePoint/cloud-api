@@ -49,7 +49,7 @@ The API response provides detailed information about the users retrieved. Each r
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/smp/powerplatform/powerapps/8A40E648-FD97-4FBA-9B47-66AD1A8BE89A/launched-users
+https://graph-us.avepointonlineservices.com/smp/powerplatform/powerapps/8A40E648-FD97-4FBA-****-66AD1A8BE89A/launched-users
 ```
 ## Response Sample
 
@@ -63,7 +63,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "userId": "", // The UPN (User Principal Name) of the user who launched the app
       "userKey": "", // An alternative ID for the user identified in the UserId property
       "userType": "", // The type of user that performed the operation
-      "lauchedTimes": "", //The number of times that the user launched the app
+      "lauchedTimes": "0", //The number of times that the user launched the app
     }
   ],
   "totalCount": 1,

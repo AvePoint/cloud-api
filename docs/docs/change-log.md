@@ -48,14 +48,14 @@ This document provides a detailed log of changes, updates, and enhancements made
   - Added the following properties to the response of the `/smp/powerplatform/connections` endpoint:
     - `connectorCreatedTime`
     - `ownerCountry`
-  - Added the following properties to the response of the `/smp/powerplatform/connections` endpoint:
+  - Added the following properties to the response of the `/smp/powerplatform/powerbi/artifacts` endpoint:
     - `lastRenewNotifyTime`
     - `creatorDisplayName`
     - `viewsOfLast7Days`
     - `uniqueViewersOfLast7Days`
     - `viewsOfLast30Days`
     - `uniqueViewersOfLast30Days`
-     - `viewsOfLast90Days`
+    - `viewsOfLast90Days`
     - `uniqueViewersOfLast90Days`
 
 

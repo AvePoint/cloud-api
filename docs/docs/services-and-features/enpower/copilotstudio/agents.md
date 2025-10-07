@@ -60,7 +60,7 @@ The API response provides detailed information about the agents retrieved. Each 
 | activityCountLast7D    | The number of activities in the last 7 days.               | integer |
 | lastActivityTime        | The latest agent activity date.                             | string  |
 | primaryLanguage         | The primary language of the agent.                          | string  |
-| sharedWithOrganization  | Indicates whether the agent is shared with the organization. | boolean |
+| sharedWithOrganization  | Indicates whether the agent is shared with the organization. <br> Valid values: <br> <ul><li> true for yes <br> </li><li> false for no <br> | boolean |
 | sharedUsers             | Number of users this agent was shared with.                | integer |
 | sharedGroups            | Number of groups this agent was shared with.               | integer |
 

@@ -157,7 +157,7 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "cloudFlows": [
     {
-      "flowId": "dbca27a4-c6dc-42e5-9c6f-cac9f4d9b2ea", // The unique identifier of the flow
+      "flowId": "dbca27a4-c6dc-42e5-****-cac9f4d9b2ea", // The unique identifier of the flow
       "displayName": "FlowName", // The display name of the flow
       "environmentId": "", // The unique identifier of the environment that the flow belongs to
       "environment": "", // The environment that the flow belongs to

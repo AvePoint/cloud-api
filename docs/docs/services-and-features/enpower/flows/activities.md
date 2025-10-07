@@ -53,7 +53,7 @@ The API response provides detailed information about the cloud flows' activities
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant object details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the EnPower environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/smp/powerplatform/powerautomate/cloudflows/8A40E648-FD97-4FBA-9B47-66AD1A8BE89A/activities
+https://graph-us.avepointonlineservices.com/smp/powerplatform/powerautomate/cloudflows/8A40E648-FD97-4FBA-****-66AD1A8BE89A/activities
 ```
 ## Response Sample
 

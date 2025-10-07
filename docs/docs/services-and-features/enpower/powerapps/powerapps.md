@@ -166,9 +166,9 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "powerApps": [
     {
-      "id": "89508bda-8f4f-48ef-8363-c8890e5dfee4_4ec0fd45-0e35-4f8d-973f-10e45a334c17_default-4ec0fd45-0e35-4f8d-973f-10e45a334c17", // The unique identifier for the Power app
-      "appId": "89508bda-8f4f-48ef-8363-c8890e5dfee4", // The unique application identifier within Power Platform
-      "displayName": "0613-Ci data01_Restored202410010619_Restored202411120345", // The display name of the Power app
+      "id": "89508bda-8f4f-48ef-8363-************_4ec0fd45-0e35-4f8d-973f-10e45a334c17_default-4ec0fd45-0e35-4f8d-973f-10e45a334c17", // The unique identifier for the Power app
+      "appId": "89508bda-8f4f-48ef-8363-************", // The unique application identifier within Power Platform
+      "displayName": "Sample App", // The display name of the Power app
       "tenantId": "", // The unique identifier for the tenant that the Power App belongs to
       "tenantDomain": "Sample", // The domain name associated with the tenant
       "containerId": "", // The unique identifier for the container that the Power App belongs to

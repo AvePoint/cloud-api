@@ -188,7 +188,7 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "environments": [
         {
-            "id": "32f8937b-64f4-e443-8dd5-06ed83f1bc82", // The unique identifier of the environment
+            "id": "32f8937b-64f4-e443-****-06ed83f1bc82", // The unique identifier of the environment
             "name": "Environment name", // The name of the environment
             "dataverseInstanceUrl": "", // The Dataverse instance Url of the environment
             "displayName": "0613-Ci data02", // The display name of the environment
@@ -241,7 +241,7 @@ If the request has been successfully processed, a 200 OK response will be return
                 "securityEnabled": true, // Indicates whether the group member has security enabled
                 "mailEnabled": true, // Indicates whether the group member is mail-enabled
                 "accountEnabled": null, // Indicates whether the group member account is enabled
-                "mailNickname": "0613-Cidata02", // The alias of the group member
+                "mailNickname": "Sample Alias", // The alias of the group member
                 "email": "", // The email address of the group member
                 "type": 0, // The group member type
                 "userType": null, // The user type of the group member

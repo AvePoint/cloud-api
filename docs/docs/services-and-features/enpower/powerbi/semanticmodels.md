@@ -57,9 +57,9 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "semanticModelDetails": [
     {
-      "id": "2ab3012e-3952-4cd0-9e9f-40289dd3da05", // The semantic model unique identifier      
+      "id": "2ab3012e-3952-4cd0-****-40289dd3da05", // The semantic model unique identifier      
       "name": "" // The semantic model name
-      "datasourceId": "b7b83ae1-a3be-4553-b948-ba289d97cbdb" // The data source's unique identifier
+      "datasourceId": "b7b83ae1-a3be-4553-****-ba289d97cbdb" // The data source's unique identifier
       "datasourceType": "Extension" // The data source type
       "isRefreshable": false // Whether the semantic model is refreshable.
     }

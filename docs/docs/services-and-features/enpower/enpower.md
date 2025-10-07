@@ -47,8 +47,8 @@ Currently, Power BI details can be retrieved via the following API Methods.
 |--- | --- | --- |
 | GET  | `/smp/powerplatform/powerbi/workspaces` | [Workspaces](../enpower/powerbi/workspaces.md) |
 | GET | `/smp/powerplatform/powerbi/artifacts` | [Artifacts](../enpower/powerbi/artifacts.md) |
-| GET | `/smp/powerplatform/powerbi/datasourcecountbydatasourcetype` | [Data Source Counts](../enpower/powerbi/datasourceount.md) |
-| GET | `/smp/powerplatform/powerbi/datasourcedetails` | [Data Source Details](../enpower/powerbi/datasourcecount.md) |
+| GET | `/smp/powerplatform/powerbi/datasourcecountbydatasourcetype` | [Data Source Counts](../enpower/powerbi/datasourcecount.md) |
+| GET | `/smp/powerplatform/powerbi/datasourcedetails` | [Data Source Details](../enpower/powerbi/datasourcedetails.md) |
 | GET | `/smp/powerplatform/powerbi/semanticemodeldetails` | [Semantic Model Details](../enpower/powerbi/semanticmodels.md) |
 | GET | `/smp/powerplatform/powerbi/semanticmodelcountbydatasourcetype` | [Semantic Models by Data Sources](../enpower/powerbi/semanticmodelbydatasource.md) |
 | GET | `/smp/powerplatform/powerbi/powerbiactiveusers` | [Active Users](../enpower/powerbi/activeusers.md) |

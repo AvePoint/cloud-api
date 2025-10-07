@@ -62,14 +62,14 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "powerBIActiveUsers": [
     {
-      "userId": "cedd159a-620e-4a8c-8373-7966c8beb45e", // The unique identifier of the user
+      "userId": "cedd159a-620e-4a8c-****-7966c8beb45e", // The unique identifier of the user
       "userPrincipalName": "" //The user principal name      
       "displayName": "" // The user display name
       "department": "" // The department of user
       "operation": "CreateFolder" // The operation of the audit record
       "activityTime": "2025-08-13 02:01:32" // The activity time of audit record
       "isSuccess": true // Whether the operation succeeded
-      "pbiObjectId": "de44dd0f-687c-4f8a-ab39-53edd31f7ac1" // The unique identifier of the Power BI object
+      "pbiObjectId": "de44dd0f-687c-4f8a-****-53edd31f7ac1" // The unique identifier of the Power BI object
       "pbiObjectName": "" // The Power BI object name
       "pbiObjectType": "Workspace" // The Power BI object type
     }

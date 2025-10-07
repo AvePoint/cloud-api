@@ -162,7 +162,7 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "mailboxes": [
         {
-            "id": "f78625f8-3ec3-4665-835a-3502484af738", // The unique identifier of the mailbox
+            "id": "f78625f8-3ec3-4665-****-3502484af738", // The unique identifier of the mailbox
             "userId": "",// The unique identifier of the mailbox in Microsft 365
             "principalName": "", // The user principal name of the mailbox
             "name": "",// The name of the mailbox in PowerShell.
