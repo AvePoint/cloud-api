@@ -39,7 +39,7 @@ This section outlines the required fields to update the birthday of a specific u
 
 ## Response
 
-If the request has been successfully processed, a 204 No Content response will be returned
+If the request has been successfully processed, a 204 No Content response will be returned.
 
 ## Request Sample
 

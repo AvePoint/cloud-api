@@ -30,7 +30,7 @@ This document provides a detailed log of changes, updates, and enhancements made
     - `/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules` for retrieving all matched risk rules for a specific tenant.
     - `/partner/external/v3/rm/customers/{customerId}/tenants/{tenantId}/detection/rules/{ruleId}/hit-items` for retrieving the objects that violate a specific risk rule.
   - Introduced new endpoints for user management.
-    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users` for retrieving overview information of security users in a customer's tenant.
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/users` for retrieving information of security users in a customer's tenant.
     - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}` for retrieving information of a specific user in a customer's tenant.
     - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/batch` for retrieving information of multiple users in a customer's tenant.
     - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/account-information` for updating information of a specific user in a customer's tenant.

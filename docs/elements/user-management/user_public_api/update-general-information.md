@@ -44,7 +44,7 @@ This section outlines the required fields to update the general information of a
 
 ## Response
 
-If the request has been successfully processed, a 204 No Content response will be returned
+If the request has been successfully processed, a 204 No Content response will be returned. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 
 ## Request Sample
 
