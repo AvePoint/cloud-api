@@ -12,7 +12,7 @@ Built on a foundation of security and scalability, the Elements APIs ensure that
 
 ## Key Features  
 
-- **Common Features**: Provide comprehensive capabilities for customer onboarding, service management, subscription tracking, tenant resource monitoring, and backup job reporting, which enables partners to streamline customer related operations and enhance visibility into service usage.
+- **Common Features**: Provide comprehensive capabilities for customer onboarding, service management, subscription tracking, tenant resource monitoring, and backup job reporting, which enable partners to streamline customer related operations and enhance visibility into service usage.
 
 - **Baseline Management**: Create baselines from your golden tenants to establish benchmarks for tenant configurations and apply baselines to tenants to monitor configuration deviations.
 

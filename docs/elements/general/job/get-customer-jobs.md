@@ -53,6 +53,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | successfulCount | The number of successful objects. | string |
 | skippedCount | The number of skipped objects. | string |
 | warningCount | The number of warning objects. | string |
+| backupSize | The size of the backed-up objects. |string|
 | startTime | The start time of the job. | string |
 | endTime | The end time of the job. | string |
 | jobDuration | The duration of the job. | string |
