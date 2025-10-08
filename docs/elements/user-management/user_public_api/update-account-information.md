@@ -45,7 +45,7 @@ This section outlines the required fields to update the information of a specifi
 
 ## Response
 
-If the request has been successfully processed, a 204 No Content response will be returned
+If the request has been successfully processed, a 204 No Content response will be returned. For more details on the HTTP status code, refer to Http Status Code.
 
 ## Request Sample
 

@@ -76,7 +76,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the ID of the applying baselines to tenant job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the ID of the applying baselines to tenant job displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {

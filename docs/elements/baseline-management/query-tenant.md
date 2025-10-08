@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve (starting from 1). |integer|No|
-|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|integer|No|
+|pageIndex|The index of the page to retrieve. The default value is 1. |integer|No|
+|pageSize|The number of records to return per page. The default value is 50, and the acceptable range is from 1 to 100.|integer|No|
 
 ## Request Body Parameters
 
@@ -34,7 +34,7 @@ You can provide a list of tenant IDs in the request body to filter the results. 
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|tenantIds|The ID of the tenant. |string |No|
+|tenantIds|The IDs of the tenants. |string[] |No|
 
 ## Response
 
@@ -72,7 +72,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/bat
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the general information of tenants added to the Baseline Management module displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the general information of tenants added to the Baseline Management module displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {

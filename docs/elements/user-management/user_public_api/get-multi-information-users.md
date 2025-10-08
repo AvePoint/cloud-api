@@ -34,8 +34,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The page number of the data to retrieve. The default value is 1. | integer | No |
+| pageSize | The number of users that will be retrieved in one time. The default value is 100. | integer | No |
 
 ## Request Body
 
@@ -83,23 +83,23 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md/#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json 
 {
     "data": [
         {
-            "id": "c2aa00d3-****-****-****-9e9c79232bff",// The ID of the user
-            "userPrincipalName": "tony@element.onmicrosoft.com",// The user principle name
-            "displayName": "Kevin Mark",// The display name of the user
-            "firstName": "Kevin",// The first name of the user
-            "lastName": "Mark",// The last name of the user
-            "department": "DEV",// The department of the user
-            "mobile": "11122",// The mobile of the user
-            "jobTitle": "Software developer",// The job title of the user
-			"mail": "tony@element.onmicrosoft.com",// The mail of the user
-			"location": "location",// The office location of the user
-			"employeeId": "643477",// The employee id of the user
+            "id": "c2aa00d3-****-****-****-9e9c79232bff", // The ID of the user
+            "userPrincipalName": "tony@element.onmicrosoft.com", // The user principle name
+            "displayName": "Kevin Mark", // The display name of the user
+            "firstName": "Kevin", // The first name of the user
+            "lastName": "Mark", // The last name of the user
+            "department": "DEV", // The department of the user
+            "mobile": "11122", // The mobile of the user
+            "jobTitle": "Software developer", // The job title of the user
+			"mail": "tony@element.onmicrosoft.com", // The mail of the user
+			"location": "location", // The office location of the user
+			"employeeId": "643477", // The employee id of the user
             "status": [
                     0, 
                     1

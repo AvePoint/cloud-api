@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve (starting from 1). |integer|No|
-|pageSize|The number of records to return per page. The default value is 50. Acceptable range is from 1 to 100.|integer|No|
+|pageIndex|The index of the page to retrieve. The default value is 1. |integer|No|
+|pageSize|The number of records to return per page. The default value is 50, and the acceptable range is from 1 to 100.|integer|No|
 
 ## Response
 
@@ -49,7 +49,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/233
 
 ## Response Sample  
 
-If the request has been successfully processed, a 200 OK response will be returned along with the report details of the queried baseline creation job displayed in the response body. For more details on the HTTP status code, refer to [HttpStatusCode](../Use-AvePoint-Graph-API.md#http-status-code).
+If the request has been successfully processed, a 200 OK response will be returned along with the report details of the queried baseline creation job displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {
@@ -70,7 +70,7 @@ If the request has been successfully processed, a 200 OK response will be return
     ],
     "metadata": {
         "pageIndex": 1, // The page index of thecurrent request
-        "pageSize": 50, // The number of data to be retrieved in one request
+        "pageSize": 50, // The number of baseline creation jobs to be retrieved in one request
         "totalCount": 109 // The total number count that matches the request
     }
 }

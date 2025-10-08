@@ -34,8 +34,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieved. The default value is 1. | integer | No |
-| pageSize | The number of users API that will retrieved in a time. The default value is 100. | integer | No |
+| pageIndex | The page number of the data to retrieve. The default value is 1. | integer | No |
+| pageSize | The number of users to be retrieved in one time. The default value is 100. | integer | No |
 | status | The status of the user that you want to retrieve. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer  | No |
 
 ## Response
@@ -74,7 +74,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
  
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md/#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
     "data": [

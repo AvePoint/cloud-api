@@ -48,7 +48,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | location | The location of the user. | string |
 | passwordNeverExpire | Indicates whether the user's password is set to never expire. | boolean |
 | lastChangeDate | The date and time when the user account was last modified. | string |
-| age | The calculated age of the user based on their birthday. | integer |
+| age | The calculated age of the user based on birthday. | integer |
 | isTestUser | Indicates whether this is a test user account for development purposes. | boolean |
 | officePhone | The business phone number of the user. | string |
 | mobile | The mobile phone number of the user. | string |
@@ -78,7 +78,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 ## Response Sample
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 
 ```json
 {
@@ -97,7 +97,7 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
     "location": "2298", // The location of the user
     "passwordNeverExpire": true, // Indicates whether the user's password is set to never expire
     "lastChangeDate": "1970-01-01T00:00:00Z", // The date and time when the user account was last modified
-    "age": 37, // The calculated age of the user based on their birthday
+    "age": 37, // The calculated age of the user based on birthday
     "isTestUser": true, // Indicates whether this is a test user account for development purposes
     "officePhone": "232****9754", // The business phone number of the user
     "mobile": "323****76", // The mobile phone number of the user.
