@@ -66,11 +66,15 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 | Code | Description |
 | ---- | ----------- |
 | 200 | OK – The request was successful, and the response contains the requested data. |
-| 201 | OK – The request was successful, and the response contains the requested data. <br> ***Note**: This status code is used by the AvePoint Opus API for submitting records to Opus.|
-| 204 | No Content – The request was successful, but there is no content returned. <br> ***Note**: This status code is used by the AvePoint Opus APIs for retrieving due records and destroying records.|
+| 201 | Created – The request was successful and a new resource was created as a result.  |
+| 204 | No Content – The request was successful, but the response body contains no content. |
 | 400 | Bad Request – The request could not be processed due to invalid parameters. |
-| 418 | Exist Failed Data Operation – The request was processed with exceptions. <br> ***Note**: This status code is used by the AvePoint Opus APIs for submitting records to Opus and destroying records.|
+| 401 | Unauthorized – The request requires user authentication.  |
+| 403 | Forbidden – The server understood the request but refuses to authorize it.  |
+| 404 | Not Found – The requested resource could not be found on the server.  |
+| 429 | Too Many Requests – The client has exceeded the rate limit defined by the server.  |
 | 500 | Internal Server Error – An unexpected server error occurred. |
+| 503 | Service Unavailable – The server is temporarily unable to handle the request due to maintenance or overload. |
 
 ## Resource  
 
