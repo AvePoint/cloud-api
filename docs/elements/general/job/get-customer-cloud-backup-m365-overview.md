@@ -29,8 +29,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | customer     | The email address of the customer.       | string |
 | serviceType       | The name of the service.      | string |
 | serviceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | string |
-| totalScannedObjects | The number of the scanned objects of the module. | long |
-| totalProtectedObjects | The number of the backed-up objects of the module. | long |
+| totalScannedObjects | The number of the scanned objects of the module. | integer |
+| totalProtectedObjects | The number of the backed-up objects of the module. | integer |
 | dataSizeStoredInAvePoint | The size of the backed-up objects stored in the AvePoint storage. | string |
 | dataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | string |
 
