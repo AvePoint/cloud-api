@@ -36,7 +36,7 @@ This section outlines the required fields to update the office location informat
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | postalCode | The postal code of the office. The maximum length is 40 characters.| string | Yes |
-| countryRegion | The country or region of the office. The maximum length is 255 characters. | string | Yes |
+| countryRegion | The country or region of the office. The maximum length is 255 characters. For details, refer to [Countries or Regions](../../../elements/user-management/user_public_api/countryorregion.md).| string | Yes |
 | state | The state of the office. The maximum length is 128 characters. | string | Yes |
 | address | The address of the office. The maximum length is 1024 characters. | string | Yes |
 

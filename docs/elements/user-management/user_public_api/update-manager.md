@@ -36,7 +36,7 @@ This section outlines the required fields to update the manager of a specific us
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | id | The ID of the manager. The maximum length is 40 characters.| string | Yes |
-| userPrincipalName | The user principal name of the manager. The maximum length is 1024 characters.| string | Yes |
+| userPrincipalName | The user principal name of the manager. The maximum length is 1024 characters. For user types other than cloud users, the userPrincipalName property contains the distinguished name (DN) of the manager. Example: "userPrincipalName": "CN=Terry Gu,DC=dev1,DC=com".| string | Yes |
 
 ## Response
 
@@ -54,6 +54,6 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 ```json
 {
   "id": "631b0def-****-****-****-5811518ebbea", // The ID of the manager
-  "userPrincipalName": "tony@element.onmicrosoft.com" // The user principal name of the manager
+  "userPrincipalName": "tony@element.onmicrosoft.com" // The user principal name of the manager.
 }
 ```

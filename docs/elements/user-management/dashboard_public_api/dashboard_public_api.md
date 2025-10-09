@@ -69,7 +69,7 @@ If the request has been successfully processed, a 200 OK response will be return
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/users
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/overview/security/users
 ```
  
 ## Response Sample
@@ -94,7 +94,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
                     0, 
                     1
             ], // The status of the user
-            "isTestUser": false, // If the user is a test user or not
+            "isTestUser": false, // Indicates whether this is a test user account for development purposes
             "age": 12, // The password age of the user
             "startDate": "1970-01-01T00:00:00Z", // The start date when the user account can sign in Microsoft 365
             "endDate": "1970-01-01T00:00:00Z", // The date when the user account will be blocked from signing in
@@ -103,9 +103,9 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
         }
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of current request
-        "pageSize": 50, // The user number will be retrieved in one request
-        "totalCount": 1 // The total number count that match the request
+        "pageIndex": 1, // The page index of the current request
+        "pageSize": 50, // The number of users to be retrieved in one request
+        "totalCount": 1 // The total number count that matches the request
     }
 }
 ```
