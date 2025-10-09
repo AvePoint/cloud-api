@@ -21,7 +21,7 @@ This section outlines the details of the HTTP method and endpoint used to update
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update information of a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update information of a specific user in a customer's tenant according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
@@ -36,8 +36,8 @@ This section outlines the required fields to update the information of a specifi
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | mail | The mail of the user. The maximum length is 256 characters. | string | Yes |
-| usageLocation | The usage location of the user. The maximum length is 128 characters.| string | Yes |
-| preferredLanguage |  The preferred language of the user. | string | Yes | 
+| usageLocation | The usage location of the user. The maximum length is 128 characters. For details, refer to [Usage Locations](../../../elements/user-management/user_public_api/usage_location.md).| string | Yes |
+| preferredLanguage |  The preferred language of the user. For details, refer to [Preferred Languages](../../../elements/user-management/user_public_api/language.md). | string | Yes | 
 | enforceStart | Indicates whether account enforcement start date is enabled. | bool | Yes | 
 | enforceStartDateTime |The date and time when account enforcement begins.| string | Yes | 
 | enforceEnd |Indicates whether account enforcement end date is enabled. | bool | Yes | 
@@ -45,7 +45,7 @@ This section outlines the required fields to update the information of a specifi
 
 ## Response
 
-If the request has been successfully processed, a 204 No Content response will be returned. For more details on the HTTP status code, refer to Http Status Code.
+If the request has been successfully processed, a 204 No Content response will be returned. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 
 ## Request Sample
 

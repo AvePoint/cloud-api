@@ -50,11 +50,11 @@ To use this API, send a POST request to the specified endpoint.
 https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines
 
 {
-    name: "baseline A", // The name of the baseline
-    color:"0", // The color of the baseline
-    description:"baseline A's description", // The description of the baseline
-    customerId:"ce43e186-****-****-****-86b51b0aef92", // The ID of the customer
-    tenantId:"af83b8e1-****-****-****-970f92192dc5" // The ID of the tenant
+    "name": "baseline A", // The name of the baseline
+    "color":"0", // The color of the baseline
+    "description":"baseline A's description", // The description of the baseline
+    "customerId":"ce43e186-****-****-****-86b51b0aef92", // The ID of the customer
+    "tenantId":"af83b8e1-****-****-****-970f92192dc5" // The ID of the tenant
 }
 ```
 

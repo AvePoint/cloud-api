@@ -1,6 +1,6 @@
 # Monitor Tenant
 
-Use this API to monitor a tenant by performing specific actions to the tenant. Currently, you can use this API to apply baselines to a tenant.
+Use this API to monitor a tenant by performing specific actions on the tenant. Currently, you can use this API to apply baselines to a tenant.
 
 ## Permission  
 
@@ -18,6 +18,15 @@ This section provides details on the HTTP method and endpoint used to monitor a 
 | Method | Endpoint | Description |
 | --- | --- | --- |
 | POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/actions` | Monitors a tenant by performing specific actions on the tenant. |
+
+## URL Parameters
+
+This section describes the query parameters that can be added to the URL when sending a POST request.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- |---|
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
 
 ## Request Body Parameters
 

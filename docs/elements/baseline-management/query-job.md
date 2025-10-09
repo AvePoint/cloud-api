@@ -19,6 +19,15 @@ This section provides details on the HTTP method and endpoint used to retrieve j
 | --- | --- | --- |
 | POST | `/partner/external/v3/bm/customers/{customerId}/tenants/{tenantId}/process-center/jobs/batch` | Retrieves job information from the **Process center** page. |
 
+## URL Parameters
+
+This section describes the query parameters that can be added to the URL when sending a POST request.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- |---|
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
+
 ## Query Parameters
 
 You can use the following optional query parameters in the URL to control pagination:
@@ -53,7 +62,6 @@ To use this API, send a POST request to the specified endpoint.
 ```json
 https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c6a73d-****-****-****-75b0f1959474/tenants/a2145aa5-****-****-****-7fffd6e0cc68/process-center/jobs/batch?pageIndex=1&pageSize=50
 
-//filter by job ids
 {
     "jobIds": 
     [

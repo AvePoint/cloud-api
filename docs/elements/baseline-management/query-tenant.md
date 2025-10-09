@@ -63,9 +63,9 @@ To use this API, send a POST request to the specified endpoint.
 https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/batch?pageIndex=1&pageSize=50
 
 {
-    "tenantIds": // The ID of the tenant
+    "tenantIds": 
     [
-      "af83b8e1-****-****-****-970f92192dc5"
+      "af83b8e1-****-****-****-970f92192dc5" // The ID of the tenant
     ]
 }
 ```

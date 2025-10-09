@@ -116,7 +116,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
     "loginName": "tony@element.onmicrosoft.com", // The login name or user principal name used for authentication
     "status":  [ 
         0, // The current status of the user. 0 represents "MFA disabled"
-        1 // // The current status of the user. 1 represents "Sign-in blocked"
+        1 // The current status of the user. 1 represents "Sign-in blocked"
     ],
 }
 ```

@@ -101,15 +101,15 @@ If the request has been successfully processed, a 200 OK response will be return
 			"location": "location", // The office location of the user
 			"employeeId": "643477", // The employee id of the user
             "status": [
-                    0, 
-                    1
-            ],// The status of the user
-            "isTestUser": false,// Indicates whether the user abbount is a test user for development purposes
-            "age": 12,// The password age of the user
-            "startDate": "1970-01-01T00:00:00Z",// The start date when the user account can sign in to Microsoft 365
-            "endDate": "1970-01-01T00:00:00Z",// The date when the user account will be blocked from signing in
-            "company": "Organization ABC",// The company of the user
-            "countryOrRegion": "Slovenia"// The country or region of the user
+                    0, // The status of the user. 0 represents "MFA disabled"
+                    1 // The status of the user. 1 represents "Sign-in blocked"
+            ], 
+            "isTestUser": false, // Indicates whether the user abbount is a test user for development purposes
+            "age": 12, // The password age of the user
+            "startDate": "1970-01-01T00:00:00Z", // The start date when the user account can sign in to Microsoft 365
+            "endDate": "1970-01-01T00:00:00Z", // The date when the user account will be blocked from signing in
+            "company": "Organization ABC", // The company of the user
+            "countryOrRegion": "Slovenia" // The country or region of the user
         }
     ],
     "metadata": {

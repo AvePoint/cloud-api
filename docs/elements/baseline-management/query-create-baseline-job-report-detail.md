@@ -19,6 +19,14 @@ This section provides details on the HTTP method and endpoint used to retrieve t
 | --- | --- | --- |
 | GET | `/partner/external/v3/bm/baselines/{baselineId}/reports` | Retrieves the report details of a baseline creation job. |
 
+## URL Parameters
+
+This section describes the query parameters that can be added to the URL when sending a GET request.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- |---|
+| baselineId | The ID of the baseline. | string | Yes |
+
 ## Query Parameters
 
 You can use the following optional query parameters in the URL to control pagination:
@@ -70,7 +78,7 @@ If the request has been successfully processed, a 200 OK response will be return
     ],
     "metadata": {
         "pageIndex": 1, // The page index of thecurrent request
-        "pageSize": 50, // The number of baseline creation jobs to be retrieved in one request
+        "pageSize": 50, // The number of report data to be retrieved in one request
         "totalCount": 109 // The total number count that matches the request
     }
 }
