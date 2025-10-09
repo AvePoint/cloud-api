@@ -33,7 +33,6 @@ If the request has been successfully processed, a 200 OK response will be return
 | scanMode | The scan mode of the scan profile. <ul><li>**0** - Express mode</li><li>**1** - Advanced mode</li></ul> | integer |
 | modifiedTime | The last modified time of the scan profile. | string |
 | createdTime | The created time of the scan profile. | string |
-| lastUpdateTime | The last updated time of the scan profile. | string |
 | impersonationAccount | The impersonation account configured in the scan profile. | string |
 | scanInplaceArchivedMailboxes | Whether the **Scan in-place archived mailboxes** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |
 | isIgnoreLockedSiteEnabled | Whether the **Ignore the locked objects when updating the job status** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |
@@ -61,18 +60,18 @@ If the request has been successfully processed, a 200 OK response will be return
 For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 {
-    "profileId": "47db****-1004-****-b2ce-8f5e****842d",// The ID of the scan profile.
-    "profileName": "Default Microsoft 365 Scan Profile", // The name of the scan profile.
-    "description": "This is a partner-configured scan profile.", // The description of the scan profile.
-    "tenantId": "c235****-c7a2-****-b7d4-79e8****66c3", // The tenant ID of the scan profile.
-    "tenantDomain": "domain", // The tenant domain of the scan profile.
-    "scanMode": 0, // The scan mode of the scan profile: 0 represents the Express mode.
-    "modifiedTime": "2025-09-11T03:19:14Z",  // The last modified time of the scan profile.
-    "createdTime": "2025-09-11T03:19:14Z", // The created time of the scan profile.
-    "lastUpdateTime": "2025-09-11T03:19:14Z", // The last updated time of the scan profile.
+    "profileId": "47db****-1004-****-b2ce-8f5e****842d",// The ID of the scan profile
+    "profileName": "Default Microsoft 365 Scan Profile", // The name of the scan profile
+    "description": "This is a partner-configured scan profile.", // The description of the scan profile
+    "tenantId": "c235****-c7a2-****-b7d4-79e8****66c3", // The tenant ID of the scan profile
+    "tenantDomain": "domain", // The tenant domain of the scan profile
+    "scanMode": 0, // The scan mode of the scan profile: 0 represents the Express mode
+    "modifiedTime": "2025-09-11T03:19:14Z",  // The last modified time of the scan profile
+    "createdTime": "2025-09-11T03:19:14Z", // The created time of the scan profile
+    "impersonationAccount": "user@domain.com", // The impersonation account configured in the scan profile
     "scanInplaceArchivedMailboxes": false, // Whether to scan in-place archived mailboxes configured in the scan profile: False represents Do not scan in-place archived mailbox
-    "isIgnoreLockedSiteEnabled": false, // Whether to ignore the locked sites in the scan profile: false represents Disabled.
-    "enableDailyScan": "15:19", // The time of the daily scan.
+    "isIgnoreLockedSiteEnabled": false, // Whether to ignore the locked sites in the scan profile: false represents Disabled
+    "enableDailyScan": "15:19", // The time of the daily scan
     "isSendOutOfPolicyNotification": false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: false represents Disabled
     "containers": [
         {
