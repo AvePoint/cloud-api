@@ -150,7 +150,7 @@ If you want to get the access token with a client secret in an app registration,
 
 **Certificate**
 
-Once you have the application (client) ID, get the access token via the application (client) ID to authenticate with Elements APIs.
+Once you have the application (client) ID, get the access token via the application (client) ID to authenticate with Elements API.
 
 The following information is required to get an access token:
 

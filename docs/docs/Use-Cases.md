@@ -15,7 +15,7 @@ IT administrators can retrieve audit records from AvePoint Online Services to fa
 Service providers can manage their customers more efficiently via Elements, leveraging the API to integrate and automate customer-related workflows, and enhance collaboration and operational efficiency between the organization and its customers.  
 
 >[!NOTE]
-> A new set of endpoints are now available for the Elements API, enhancing the existing common features and introducing new functionalities for premium services. For more information, refer to [Explorer Elements API](https://learn.avepoint.com/elements/Overview.html).
+> A new set of endpoints are now available for the Elements API since October 12, 2025, enhancing the existing common features and introducing new functionalities for premium services. [Explore Elements API](https://learn.avepoint.com/elements/Overview.html) for more details.
 ## Comprehensive Backup Management  
 
 IT professionals can monitor backup status, performance, and issues by accessing detailed job information from various AvePoint Cloud Backup services.  

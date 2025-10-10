@@ -13,7 +13,7 @@ Unlock the full potential of AvePoint Cloud services with our comprehensive API 
 
 <div style="display: flex; justify-content: center; gap: 32px; margin-bottom: 32px;">
   <div style="border:1px solid #ccc; padding:24px; border-radius:8px; box-shadow:2px 2px 12px #aaa; width: 30%;">
-    <h3 style="margin-bottom: 24px;"> Key Features of AvePoint Confidence Platform</h3>
+    <h3 style="margin-bottom: 24px;"> Key Features of Confidence Platform</h3>
     <ul>
       <li><b>Robust Endpoints</b>: Harness a wide range of functionalities with our well-structured endpoints.</li>
       <li><b>Real-Time Data</b>: Access and manipulate data seamlessly with real-time updates.</li>
