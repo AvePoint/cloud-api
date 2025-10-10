@@ -6,6 +6,10 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Added  
 
+- **Elements**
+  - A new set of endpoints are now available for the Elements API, enhancing the existing common features and introducing new functionalities for premium services. For more information, refer to [Explorer Elements API](https://learn.avepoint.com/elements/Overview.html). 
+
+
 - **Insights**
   - Introduced the new endpoint `/insights/google/activities/object/{id}/export` for exporting activities performed on a specific Google object.  
   - Introduced the new endpoint `/insights/google/users/{email}/activities/export` for exporting activity data for a specific Google user.  

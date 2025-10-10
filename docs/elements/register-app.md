@@ -1,6 +1,6 @@
 # Register an App for API Access
 
-Complete the following steps to register an app for the AvePoint Graph API:
+Complete the following steps to register an app for the Elements API:
 
 1. Sign in to Elements with your account.
 2. Go to the **Settings** page and select **API app registration** in the **Additional** area.

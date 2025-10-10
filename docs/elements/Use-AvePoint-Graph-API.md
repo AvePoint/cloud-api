@@ -1,4 +1,4 @@
-# Use AvePoint Graph API <!-- omit in toc -->
+# Use Elements API <!-- omit in toc -->
 
 **In this article**
 
@@ -14,17 +14,17 @@
 
 <!-- /TOC -->
 
-Welcome to the AvePoint Graph API, your gateway to accessing and managing the AvePoint Confidence Platform with efficiency and security. This API is designed to streamline your data management and backup monitoring processes, providing IT professionals with robust tools and insights.  
+Welcome to the Elements API, your gateway to accessing and managing the Elements Platform with efficiency and security. This API is designed to streamline your data management and monitoring processes, providing IT professionals with robust tools and insights.  
 
 ## Authentication and Authorization
 
-To access the resources of Elements services via the AvePoint Graph API, you must configure the app registration and grant the necessary permissions. This process involves:  
+To access the resources of Elements services via the Elements API, you must configure the app registration and grant the necessary permissions. This process involves:  
 
 - **Registering an app**: Set up your app in Elements.  
 - **Permissions**: Assign the appropriate permissions for your app.
 - **Authentication**: Use the generated application (client) ID for secure access.  
 
-For a step-by-step guide on creating an app registration for API authentication, refer to [Register an App for API Access](register-app.md).  
+For a step-by-step guide on creating an app registration for API authentication, refer to [Register an App](register-app.md).  
 
 
 ## Call an API Method
