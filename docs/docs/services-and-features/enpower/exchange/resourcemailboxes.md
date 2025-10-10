@@ -139,6 +139,13 @@ The API response provides detailed information about the resource mailboxes retr
 | name                 | The metadata name.                               | string  |
 | metadataSetting      | The custom metadata.                             | object  |
 
+### Cloud Governance Profile Details
+
+| Elements             | Description                                      | Type    |
+|----------------------|--------------------------------------------------|---------|
+| id                   | The unique identifier for the profile.           | string  |
+| name                 | The name for the profile.                        | string  |
+
 
 ## Request Sample
 
