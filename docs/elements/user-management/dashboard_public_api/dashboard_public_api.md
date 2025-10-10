@@ -87,13 +87,13 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
             "department": "DEV", // The department of the user
             "mobile": "11122", // The mobile of the user
             "jobTitle": "Software developer", // The job title of the user
-			"mail": "tony@element.onmicrosoft.com",// The mail of the user
-			"location": "location",// The office location of the user
-			"employeeId": "643477",// The employee id of the user
+            "mail": "tony@element.onmicrosoft.com", // The mail of the user
+            "location": "location", // The office location of the user
+            "employeeId": "643477", // The employee ID of the user
             "status": [
-                    0, 
-                    1
-            ], // The status of the user
+                    0, // The status of the user. 0 represents "MFA disabled"
+                    1 // The status of the user. 1 represents "Sign-in blocked"
+            ], 
             "isTestUser": false, // Indicates whether this is a test user account for development purposes
             "age": 12, // The password age of the user
             "startDate": "1970-01-01T00:00:00Z", // The start date when the user account can sign in Microsoft 365
