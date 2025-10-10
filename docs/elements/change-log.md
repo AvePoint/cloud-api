@@ -1,6 +1,6 @@
 # Change Log
 
-This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API for Elements. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
+This document provides a detailed log of changes, updates, and enhancements made to the Elements API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
 ## October 2025
 
