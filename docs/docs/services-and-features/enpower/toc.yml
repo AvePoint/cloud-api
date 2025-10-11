@@ -1,6 +1,16 @@
 - name: Overview
   href: enpower.md
-- name: Power Platform Objects
-  href: powerplatform/toc.yml
-- name: Exchange Objects
+- name: Environments
+  href: environments.md
+- name: Connections
+  href: connections.md
+- name: Power Apps
+  href: powerapps/toc.yml
+- name: Power Automate
+  href: flows/toc.yml
+- name: Power BI
+  href: powerbi/toc.yml
+- name: Copilot Studio Agents
+  href: copilotstudio/toc.yml
+- name: Exchange Mailboxes
   href: exchange/toc.yml

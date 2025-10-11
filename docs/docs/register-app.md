@@ -46,7 +46,7 @@ See the table below for the services and permissions that can be used for access
 | **Cloud Backup for Google Workspace**   | gsuite.graph.read.all                 | Get job information from Cloud Backup for Google Workspace.   
 | **AvePoint Opus**                  | records.readwrite.all                        |  Submit records to AvePoint Opus, retrieve due records, and destroy records.           |
 | **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower.                                                                             |
-| **Insights**     | insights.graph.readwrite.all                 | Retrieve or export data insights from Microsoft 365 environment.                     |
+| **Insights**     | insights.graph.readwrite.all                 | Retrieve or export data from Insights.                     |
 | **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
 | **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernanceapi.htm) |
 
@@ -62,8 +62,6 @@ To obtain an access token using a client secret in an app registration, follow t
    | --------------------------- | --------------------------------------------------------------- |
    | Commercial Environment      | `https://identity.avepointonlineservices.com/connect/token`     |
    | U.S. Government Environment | `https://identity-gov.avepointonlineservices.com/connect/token` |
-    | AOS2 | `https://identity-aos2.avepointonlineservices.com/connect/token` |  
-    | FedRAMP Cloud (Project Hosts) | `https://identity.online15.net/connect/token` |
 
 2. **Set the Header**  
    - `Content-Type: application/x-www-form-urlencoded`
@@ -230,9 +228,7 @@ To obtain an access token using a certificate in an app registration, follow the
     > |---|---|
     > |Commercial Environment| `https://identity.avepointonlineservices.com`|
     > |U.S. Government Environment|`https://identity-gov.avepointonlineservices.com`|
-    > |AOS2 | `https://identity-aos2.avepointonlineservices.com/connect/token` |  
-    > |FedRAMP Cloud (Project Hosts) | `https://identity.online15.net/connect/token` |
-    
+
 1. Execute the following command to run the project.  
    `dotnet run`
 2. Access token output. The console will display:  

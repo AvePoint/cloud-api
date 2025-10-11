@@ -28,7 +28,6 @@ The API supports several query parameters to refine and customize the data expor
 | Parameter  | Description                                                                 | Type   | Required? |
 |------------|-----------------------------------------------------------------------------|--------|-----------|
 | email| Sets the email addresses or loginName of users for which you want to export the permission report. | string | Yes |
-| exportOptionType | Export options: <ul><li>**1** for summary and site collection level access report</li><li> **2** for summary and access report to all objects</li> <li>**3** for summary report only</li> | integer | Yes | 
 | siteUrls | Sets the URLs of site collections for which you want to export the permission report | list | No | 
 | dataSources | Sets the workspace in which you want to export the access report of users. Multiple values are allowed. (e.g., **Microsoft Teams**, **SharePoint Online**, **OneDrive**, **Microsoft 365 Group**) | list | Yes |
 
@@ -45,7 +44,7 @@ The API response provides the export job ID and its operation status. You can us
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/insights******001_j*****insightstest.onmicrosoft.com%2523ext%2523%2540m3********.onmicrosoft.com/access/export?exportOptionType=2&siteUrls=https%3A%2F%2Fm******.sharepoint.com%2Fsites%2Fjuly2022public****01&dataSources=microsoft%20teams&dataSources=sharepoint%20online

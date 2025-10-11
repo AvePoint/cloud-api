@@ -44,7 +44,7 @@ The API response provides detailed information about the export job. You can use
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the export job ID and operation status. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the export job ID and operation status. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/insights****001_j***insightstest.onmicrosoft.com%2523ext%2523%2540m*****.onmicrosoft.com/activities/export?startTime=2023-01-01T01%3A37%3A57&finishTime=2023-04-01T01%3A37%3A57&eventTypes=ListViewed&eventTypes=ListItemViewed
@@ -52,7 +52,7 @@ https://graph-us.avepointonlineservices.com/insights/users/insights****001_j***i
 
 ## Response Sample  
 
-The following is a sample response for this API method, which includes export job ID of the user activity report and its operation status 
+The following is a sample response for this API method, which includes export job ID of the user activity report and its operation status. 
 
 ```json
 {
