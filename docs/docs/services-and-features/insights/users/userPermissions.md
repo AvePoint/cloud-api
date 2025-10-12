@@ -59,12 +59,12 @@ The API response provides detailed information about the user permissions retrie
 | sensitivityLevel   | The sensitivity level of the object.               | string  |
 | sensitiveInfoType  | Types of sensitive information contained in the file. |string  |
 | isDirect           | Indicates whether the permission is direct or inherited.               | boolean |
-| sensitivityLabel   | The sensitivity label applied to the object          | string  |
+| sensitivityLabel   | The sensitivity label applied to the object.          | string  |
 | inheritedFrom      | The source from which the permissions are inherited.                     | string  |
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user permissions in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user permissions in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/access?siteUrls=https%3A%2F%2Fm********.sharepoint.com%2Fsites%2Fj*******m01&siteUrls=https%3A%2F%2Fm*****.sharepoint.com%2Fsites%2Fjuly2022publict****&emails=insights****001_j***insightstest.onmicrosoft.com%23ext%23%40m******.onmicrosoft.com&emails=insights******003_j****insightstest.onmicrosoft.com%23ext%23%40m********.onmicrosoft.com

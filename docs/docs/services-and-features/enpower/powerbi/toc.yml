@@ -1,0 +1,14 @@
+- name: Workspaces
+  href: workspaces.md
+- name: Artifacts
+  href: artifacts.md
+- name: Active Users
+  href: activeusers.md
+- name: Data Source Counts
+  href: datasourcecount.md
+- name: Data Source Details
+  href: datasourcedetails.md
+- name: Semantic Models
+  href: semanticmodels.md
+- name: Semantic Models by Data Sources
+  href: semanticmodelbydatasource.md

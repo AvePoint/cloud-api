@@ -52,12 +52,12 @@ The API response provides detailed information about the users retrieved. Each g
 | trustStatus    | The trust status of the user in Insights for Microsoft 365 (e.g., **Trusted**, **Not Trusted**)                     | string|
 | sensitiveItems | The number of sensitive items associated with the user                      |integer|
 | lastSignIn     | The time range of the user's last sign-in (e.g., **Less than 90 Days**, **More than 90 Days**, **More than 180 Days**, **None**, **N/A**)            |string|
-| createdOn      | The date and time when the user account was created in Microsoft Entra     | string|
+| createdOn      | The date and time when the user account was created in Microsoft Entra ID    | string|
 
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user summary details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/users/summary?startPage=1&pageSize=50

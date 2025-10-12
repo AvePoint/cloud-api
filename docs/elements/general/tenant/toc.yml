@@ -1,0 +1,6 @@
+- name: Retrieve Customer Tenant User Seats
+  href: get-3rd-party-products-tenant-type.md
+- name: Retrieve AvePoint Product Overview
+  href: get-avpt-products-overview-type.md
+- name: Retrieve User Protected Status for Customer
+  href: get-cloud-backup-m365-users-batch.md

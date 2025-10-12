@@ -73,7 +73,7 @@ The API response provides detailed information about the site detail records ret
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site detail records in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights for Microsoft 365 environment in the US - East region.
+To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site detail records in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
 https://graph-us.avepointonlineservices.com/insights/sites/0d6c1549-cd2d-4dd2-94b5-28df6da1f7e2/detailrecords?nextLink=1312312

@@ -1,6 +1,6 @@
 # Retrieve Job Information
 
-Get the job-related information (`/backup/m365/jobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/backup/m365/jobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
+Get the job-related information (`/backup/m365/cloudbackupjobs` navigation property) from Cloud Backup for Microsoft 365. By invoking the `/backup/m365/cloudbackupjobs` endpoint, users can gain comprehensive insights and granular access to job reports, enhancing the ability to manage, analyze, and optimize backup operations with precision and efficiency.  
 
 ## Permission
 
@@ -9,8 +9,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API   | Permission |
 |-------------------|---------------|
-|`/backup/m365/jobs` | microsoft365backup.jobInfo.read.all | 
-
+|`/backup/m365/cloudbackupjobs` | microsoft365backup.jobInfo.read.all |
 
 ## Request
 
@@ -18,13 +17,11 @@ This section outlines the HTTP method and endpoint used to retrieve job informat
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/backup/m365/jobs` | Gets the job information of Cloud Backup for Microsoft 365. |
+| GET | `/backup/m365/cloudbackupjobs` | Gets the job information of Cloud Backup for Microsoft 365. |
 
 ## Query Parameters
 
 The API supports several query parameters to refine and customize the data retrieval process. These parameters allow uses to specify pagination, job types, time ranges, and other criteria to filter the results effectively.  
-
-[comment Please confirm the Required? info]: #
 
 | Parameter | Description | Type | Required? |
 | --- | --- | --- | --- |
@@ -34,8 +31,8 @@ The API supports several query parameters to refine and customize the data retri
 | objectType | Sets the service type of the jobs to get. <br>  Valid values: <br> <ul><li> **0** for All <br> </li><li>**1** for Exchange Online <br> </li><li>**2** for  SharePoint Online <br> </li><li>**3** for OneDrive <br> </li><li>**4** for Microsoft 365 Groups <br> </li><li>**5** for Project Online <br> </li><li>**6** for Public Folder <br> </li><li>**7** for Teams <br> </li><li>**8** for Viva Engage <br> </li><li>**9** for Teams Chat <br> </li><li>**10** for Power BI <br> </li><li>**11** for Power Automate <br> </li><li>**12** for Power Apps</li></ul> | enum <br>  | No |
 | jobState | Sets the job status. <br> Valid values: <br> <ul><li>**0** for All <br> </li><li>**1** for In Progress <br> </li><li>**2** for Finished <br> </li><li>**3** for Failed <br> </li><li>**4** for Finished with Exception <br> </li><li>**5** for Partially Finished </li></ul>|enum | No |
 | location   | This parameter is only available for AOS tenants that support Multi-Geo. If no value is set for this parameter, this method retrieves the unusual activities from all locations in your AOS tenant. To get unusual activities from specific data centers, use the following values: <ul><li>**PrimaryGeoLocation** (Central AOS location)</li> <li>**NAM** (North America)</li> <li>**EUR** (Europe/Middle East/Africa)</li> <li>**GBR** (United Kingdom)</li> <li>**JPN** (Japan)</li> <li>**APC** (Asia-Pacific)</li> <li>**AUS** (Australia)</li> <li>**CAN** (Canada)</li> <li>**IND** (India)</li> <li>**FRA** (France)</li>    <li>**ARE** (United Arab Emirates)</li> <li>**ZAF** (South Africa)</li> <li>**CHE** (Switzerland)</li> <li>**KOR** (Korea)</li> <li>**DEU** (Germany)</li> <li>**BRA** (Brazil)</li> <li>**NOR** (Norway)</li> <li>**SWE** (Sweden)</li> <li>**QAT** (Qatar)</li> <li>**POL** (Poland)</li> <li>**ITA** (Italy)</li></ul>     | string | No |
-| pageIndex|	Sets the starting number of the page to get the jobs. <br> The default value is 0.| integer | No |
-| pageSize|	Sets the number of jobs to display on one page. <br> The default value is 10. | integer | No |
+| pageIndex| Sets the starting number of the page to get the jobs. <br> The default value is 0.| integer | No |
+| pageSize| Sets the number of jobs to display on one page. <br> The default value is 10. | integer | No |
 
 ## Responses
 
@@ -45,9 +42,14 @@ The API response provides detailed information about the jobs retrieved. Each jo
 
 | Elements | Description | Type |
 | --- | --- | --- |
-| totalNumber | The total count of the retrieved jobs | integer |
-| jobs | A list of jobs | list |
-| nextLink | Reference to the next page of results | string |
+| statusCode | Http Response Status Code | integer |
+| message | Error message | string |
+| errors | API error | ApiError |
+| data | A list of jobs | jobs |
+| requestId | API Request ID | string |
+| timestamp | API request time | string |
+| metadata | API response metadata | ResponseMetadata |
+| traceId | API Trace ID | string |
 
 **Job summary:**
 
@@ -58,7 +60,7 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | startTime | Job started time | string |
 | finishTime | Job finished time | string |
 | duration | Duration in hours | string |
-| backupDetails | Job details.  | module |
+| backupDetails | Job details | module |
 | jobErrors|A list of job errors| list|
 
 **Backup details:**
@@ -75,17 +77,23 @@ The API response provides detailed information about the jobs retrieved. Each jo
 | Elements | Description | Type |
 | --- | --- | --- |
 | isErrorCode | Whether this error has an error code associated. | boolean |
-| value | error message | string |
-| url | error code URL | string |
-| number| Occurrences of the error in this job. | long |
+| value | Error message | string |
+| url | Error code URL | string |
+| number| Occurrences of the error in this job | long |
 
+**Response metadata:**
+
+| Elements | Description | Type |
+| --- | --- | --- |
+| totalNumber | The total count of the retrieved jobs | integer |
+| nextLink | Reference to the next page of results | string |
 
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant job details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Cloud Backup for Microsoft 365 environment in the US - East region.  
 
 ```json
-https://graph-us.avepointonlineservices.com/backup/m365/jobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1&Location=NAM
+https://graph-us.avepointonlineservices.com/backup/m365/cloudbackupjobs?StartTime=2024-10-24&FinishTime=2024-12-25&ObjectType=0&PageSize=50&PageIndex=1&Location=NAM
 ```
 
 ## Response Sample
@@ -95,9 +103,10 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
 
 ```json
 {
-    "totalCount": 2, //Total number of the retrieved jobs
-    "jobs": [
-        {
+    "statusCode": 200, //Http Response Status Code
+    "message": "", //Error message
+    "data": [
+         {
             "id": FB20241015105312327583, //Job ID
             "state": Finished, // Job status
             "startTime": "2024-12-02T07:52:25Z", // The start time of the job in ISO 8601 format. UTC time.
@@ -126,5 +135,11 @@ For details on the HTTP status code, refer to [HttpStatusCode](https://learn.ave
             "jobErrors": []
         }
     ],
-    "nextLink": "" // no left results.
+    "requestId": "0HNEVHLNSPSEJ:00000002", //API Request ID
+    "timestamp": "2025-08-20T03:25:12.304891Z", //API request time
+    "metadata": {
+        "totalCount": 2,  //Total number of the retrieved jobs
+        "nextLink": "" // No left results
+    },
+    "traceId": "00-f33571c212e19c7bad36b255e18b7df2-97d26a62bd4a5b70-00" //API Trace ID
 }

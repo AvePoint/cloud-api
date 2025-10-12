@@ -1,0 +1,4 @@
+- name: Agent Details
+  href: agents.md
+- name: Agent Activities
+  href: activities.md

@@ -1,0 +1,25 @@
+- name: Retrieve Information of a Specific User
+  href: get-information-user.md
+- name: Retrieve Information of Multiple Users
+  href: get-multi-information-users.md
+- name: Update Information of a Specific User
+  href: update-account-information.md
+- name: Update Birthday of a Specific User
+  href: update-birthday.md
+- name: Update Contact Information of a Specific User
+  href: update-contact-information.md
+- name: Update Alternate Email Address of a Specific User
+  href: update-email-address.md
+- name: Update General Information of a Specific User
+  href: update-general-information.md
+- name: Update the Test User Property of a Specific User
+  href: update-istest.md
+- name: Update Manager of a Specific User
+  href: update-manager.md
+- name: Update Office Information of a Specific User
+  href: update-office.md
+- name: Update Office Location Information of a Specific User
+  href: update-office-information.md
+- name: Update the Password Setting of a Spceific User
+  href: update-password-setting.md
+   
