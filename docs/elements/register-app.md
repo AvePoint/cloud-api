@@ -140,9 +140,10 @@ If you want to get the access token with a client secret in an app registration,
 1. Set the access token URL: `https://identity.avepointonlineservices.com/connect/token`.
 2. Set the header to `Content-Type: application/x-www-form-urlencoded`.
 3. Set the following parameters in the request body:
-   - `grant_type` – Set this value to `client_credentials`.
    - `client_id` – Copy the Application (Client) ID value from the app registration details page and paste the value here.
    - `client_secret` – Copy the Client Secret value that has been saved upon the creation of the app registration, and paste the value here.
+   - `scope` – Set the scope, which is the assigned permission.
+   - `grant_type` – Set this value to `client_credentials`.
 4. In the response:
    - The `access_token` node represents the token value.
    - The `expires_in` node represents how many seconds until the token expires.

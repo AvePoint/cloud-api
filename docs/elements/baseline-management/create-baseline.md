@@ -47,7 +47,7 @@ If the request has been successfully processed, a 201 OK response will be return
 To use this API, send a POST request to the specified endpoint.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines
+https://graph.avepointonlineservices.com/partner/external/v3/bm/baselines
 
 {
     "name": "baseline A", // The name of the baseline
