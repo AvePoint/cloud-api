@@ -78,4 +78,4 @@ HTTP status codes indicate the outcome of a request. Common codes include:
 
 ## Resource  
 
-A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `tenatns`, and `services`. Methods can also be used to perform operations on these resources.
+A resource can be an entity or complex type, commonly defined with properties.  Your URL will include the resource you are interacting with in the request, such as `customers`, `tenants`, and `services`. Methods can also be used to perform operations on these resources.
