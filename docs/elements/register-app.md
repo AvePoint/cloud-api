@@ -142,7 +142,7 @@ If you want to get the access token with a client secret in an app registration,
 3. Set the following parameters in the request body:
    - `client_id` – Copy the Application (Client) ID value from the app registration details page and paste the value here.
    - `client_secret` – Copy the Client Secret value that has been saved upon the creation of the app registration, and paste the value here.
-   - `scope` – Set the scope, which is the assigned permission.
+   - `scope` – Set the scope, which is the assigned permissions. Please ensure the permissions have been configured in the app registration.
    - `grant_type` – Set this value to `client_credentials`.
 4. In the response:
    - The `access_token` node represents the token value.
