@@ -62,6 +62,8 @@ To obtain an access token using a client secret in an app registration, follow t
    | --------------------------- | --------------------------------------------------------------- |
    | Commercial Environment      | `https://identity.avepointonlineservices.com/connect/token`     |
    | U.S. Government Environment | `https://identity-gov.avepointonlineservices.com/connect/token` |
+   | AOS2 | `https://identity- aos2.avepointonlineservices.com/connect/token`|
+   | FedRAMP Cloud (Project Hosts)| `https://identity.online15.net/connect/token`|
 
 2. **Set the Header**  
    - `Content-Type: application/x-www-form-urlencoded`
@@ -228,6 +230,8 @@ To obtain an access token using a certificate in an app registration, follow the
     > |---|---|
     > |Commercial Environment| `https://identity.avepointonlineservices.com`|
     > |U.S. Government Environment|`https://identity-gov.avepointonlineservices.com`|
+    > | AOS2 | `https://identity- aos2.avepointonlineservices.com/connect/token`|
+    > | FedRAMP Cloud (Project Hosts)| `https://identity.online15.net/connect/token`|
 
 1. Execute the following command to run the project.  
    `dotnet run`
