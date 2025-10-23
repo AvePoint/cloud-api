@@ -25,8 +25,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of customers API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The starting number of the page to retrieve the scan profiles. The default value is 1. | integer | No |
+| pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
 
 ## Request Body Parameters
 
@@ -34,7 +34,7 @@ This section outlines the request body required to specify which scan profiles y
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| scanProfileIds | The IDs of the scan profiles to be retrieved | string[] | No |
+| scanProfileIds | The IDs of the scan profiles to be retrieved. | string[] | No |
 
 ## Response
 
@@ -45,7 +45,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | profileName               | The name of the scan profile.                 | string |
 | profileId     | The ID of the scan profile.       | string |
 | scanMode       | The scan mode of the scan profile. <ul><li>**0** - Express mode</li><li>**1** - Advanced mode</li></ul>     | integer |
-| modifiedTime | The last modified time of the scan profile. | string |
+| modifiedTime | The last modified time of the scan profile in ISO 8601 format. | string |
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.

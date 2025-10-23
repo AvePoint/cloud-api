@@ -1,6 +1,6 @@
 # Retrieve Job Details of Backup Services for a Customer
 
-Use this API to retrieve the job details job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS + PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.
+Use this API to retrieve the job details for a specific job type and module of backup services, including Cloud Backup for Microsoft 365, Cloud Backup for Google Workspace, Cloud Backup for IaaS + PaaS, Cloud Backup for Dynamics 365, and Cloud Backup for Salesforce.
 
  ## Permission
 
@@ -25,7 +25,7 @@ This section outlines the parameters that allow users to specify pagination.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The starting number of the page to get the violated objects. The default value is 1. | integer | No |
+| pageIndex | The starting number of the page to get the job details. The default value is 1. | integer | No |
 | pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
 
 ## Request Body Parameters
@@ -54,10 +54,10 @@ If the request has been successfully processed, a 200 OK response will be return
 | skippedCount | The number of skipped objects. | string |
 | warningCount | The number of warning objects. | string |
 | backupSize | The size of the backed-up objects. |string|
-| startTime | The start time of the job. | string |
-| endTime | The end time of the job. | string |
+| startTime | The start time of the job in ISO 8601 format. | string |
+| endTime | The end time of the job in ISO 8601 format. | string |
 | jobDuration | The duration of the job. | string |
-| lastModifyTime | The last modified time of the job. | string |
+| lastModifyTime | The last modified time of the job in ISO 8601 format. | string |
 
 ## Request Sample
 To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.

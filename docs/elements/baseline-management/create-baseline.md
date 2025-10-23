@@ -53,8 +53,8 @@ https://graph.avepointonlineservices.com/partner/external/v3/bm/baselines
     "name": "baseline A", // The name of the baseline
     "color":"0", // The color of the baseline
     "description":"baseline A's description", // The description of the baseline
-    "customerId":"ce43e186-****-****-****-86b51b0aef92", // The ID of the customer
-    "tenantId":"af83b8e1-****-****-****-970f92192dc5" // The ID of the tenant
+    "customerId":"ce43e186-****-98b4-****-86b51b0aef92", // The ID of the customer
+    "tenantId":"af83b8e1-****-8b70-****-970f92192dc5" // The ID of the tenant
 }
 ```
 
@@ -64,5 +64,5 @@ If the request has been successfully processed, a 201 OK response will be return
 
 ```json
 {
-    "baselineId": "606f30c0-****-****-****-3a1c3a823ab5" // The ID of the newly created baseline
+    "baselineId": "606f30c0-****-47b8-****-3a1c3a823ab5" // The ID of the newly created baseline
 }

@@ -25,7 +25,7 @@ This section outlines the parameters that allow users to specify pagination.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The starting number of the page to get the violated objects. The default value is 1. | integer | No |
+| pageIndex | The starting number of the page to get the numbers of assigned and available user seats. The default value is 1. | integer | No |
 | pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
 
 ## URL Parameters
@@ -39,11 +39,11 @@ This section outlines the parameters required to specify which customer tenant y
 
 ## Request Body Parameters
 
-This section outlines the request body required to specify the type of user seats you want to retrieve.
+This section outlines the request body required to specify the tenants for which you want to retrieve the user seats.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| licenseAssignedStatus | The type of the user seats.<ul><li>**0** - Available user seats</li><li>**1** - Assigned user seats</li></ul> | integer    | No |
+| tenantIds | The ID of the tenant. | integer    | No |
 
 ## Response
 
@@ -67,18 +67,20 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers/f
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
 For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 ```json
-[
-    {
-        "type": 0, // The type of the tenant; 0 represents the Microsoft 365 tenant
-        "tenantId": "f04d7aee-****-****-****-65215f92e596", // The ID of the tenant
-        "tenantName":"TenantABC", // The name of the tenant
-        "availableUserSeat": 25, // The number of available user seats of the tenant
-        "assignedUserSeat": 25 // The number of assigned user seats of the tenant
-    }
+{
+    "data": [
+        {
+            "type": 0, // The type of the tenant; 0 represents the Microsoft 365 tenant
+            "tenantId": "f04d7aee-****-5f92-****-6521****e596", // The ID of the tenant
+            "tenantName":"TenantABC", // The name of the tenant
+            "availableUserSeat": 25, // The number of available user seats of the tenant
+            "assignedUserSeat": 25 // The number of assigned user seats of the tenant
+        }
+    ],
     "metadata": {
         "pageIndex": 1, // The current display page
         "pageSize": 50, // The number of objects on the display page
         "totalCount": 1 // The total number of objects matching the query parameters
     }
-]
+}
 ```

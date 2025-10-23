@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The starting number of the page to retrieve. The default value is 1. |integer|No|
-|pageSize|The number of records to return per page. The default value is 50, and the acceptable range is from 1 to 100.|integer|No|
+|pageIndex|The starting number of the page to retrieve baselines. The default value is 1. |integer|No|
+|pageSize|The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100.|integer|No|
 
 ## Request Body Parameters
 
@@ -44,8 +44,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | --- | --- | --- |
 | baselineId | The ID of the baseline. | string |
 | baselineName | The name of the baseline. | string |
-| createdTime | The created time (UTC) of the baseline. | string |
-| modifiedTime | The last modified time (UTC) of the baseline. | string |
+| createdTime | The created time of the baseline in ISO 8601 format. | string |
+| modifiedTime | The last modified time of the baseline in ISO 8601 format. | string |
 | status | The status of the baseline.<ul><li>**1** - Retrieving settings</li><li>**2** - Unused</li><li>**3** - Active</li><li>**4** - Settings retrieval failed</li><li>**5** - Retrieved with exception</li><li>**6** - Draft</li></ul> | integer |
 
 ## Request Sample
@@ -58,8 +58,8 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/bat
 {
     "baselineIds": 
     [
-      "0f0cb41b-****-****-****-3a1c39554d0c", // The ID of the baseline
-      "5aec2275-****-****-****-3a1c307a28fa"
+      "0f0cb41b-****-98b6-****-3a1c39554d0c", // The ID of the baseline
+      "5aec2275-****-78n6-****-3a1c307a28fa"
     ]
 }
 ```
@@ -72,14 +72,14 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "data": [
         {
-            "baselineId": "0f0cb41b-****-****-****-3a1c39554d0c", // The ID of the baseline
+            "baselineId": "0f0cb41b-****98b6-****-3a1c39554d0c", // The ID of the baseline
             "baselineName": "Baseline1", // The name of the baseline
-            "createdTime": "2025-09-04T10:30:00Z", // The created time (UTC) of the baseline
-            "modifiedTime": "2025-09-05T10:30:00Z", // The last modified time (UTC) of the baseline
+            "createdTime": "2025-09-04T10:30:00Z", // The created time of the baseline in ISO 8601 format
+            "modifiedTime": "2025-09-05T10:30:00Z", // The last modified time of the baseline in ISO 8601 format
             "status": 1 // The status of the baseline. 1 represents "Retrieving settings"
         },
         {
-            "baselineId": "5aec2275-****-****-****-3a1c307a28fa",
+            "baselineId": "5aec2275-****-78n6-****-3a1c307a28fa",
             "name": "Baseline2",
             "createdTime": "2025-09-06T10:30:00Z",
             "modifiedTime": "2025-09-07T10:30:00Z",
@@ -87,8 +87,8 @@ If the request has been successfully processed, a 200 OK response will be return
         }
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of the current request
-        "pageSize": 50, // The number of baselines to be retrieved in one request
-        "totalCount": 2 // The total number count that matches the request
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 2 // The total number of objects matching the query parameters
     }
 }

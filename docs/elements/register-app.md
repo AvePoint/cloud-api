@@ -137,7 +137,16 @@ Based on the credentials of an app registration in Elements, refer to the follow
 
 If you want to get the access token with a client secret in an app registration, follow the instructions below to send a POST request:
 
-1. Set the access token URL: `https://identity.avepointonlineservices.com/connect/token`.
+1. Set the access token URL.
+ 
+ 	Choose the URL based on your organization's environment:
+
+   | Elements Environment             | Access Token URL                                                |
+   | --------------------------- | --------------------------------------------------------------- |
+   | Commercial       | `https://identity.avepointonlineservices.com/connect/token`     |
+   | U.S. Government  | `https://identity-gov.avepointonlineservices.com/connect/token` |
+   | AOS2 | `https://identity-aos2.avepointonlineservices.com/connect/token`|
+   | FedRAMP Cloud (Project Hosts)| `https://identity.online15.net/connect/token`|
 2. Set the header to `Content-Type: application/x-www-form-urlencoded`.
 3. Set the following parameters in the request body:
    - `client_id` – Copy the Application (Client) ID value from the app registration details page and paste the value here.
@@ -157,7 +166,7 @@ The following information is required to get an access token:
 
 | Element                  | Description                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
-| Identity Service URL     | `https://identity.avepointonlineservices.com`                                 |
+| Identity Service URL     | `https://identity.avepointonlineservices.com/connect/token`                                 |
 | Application (Client) ID  | The application (client) ID you have retrieved.                             |
 | Certificate              | The corresponding `.pfx` certificate file of the `.cer` certificate you used when registering the app. |
 
@@ -165,8 +174,18 @@ To get the access token using the above information, create a JSON web token usi
 
 Below is an example for getting the access token:
 
+> [!NOTE]
+> Adjust the `identityServiceUrl` based on your Elements environment.  
+>
+> |Elements Environment| Identity Service URL|
+> |---|---|
+> |Commercial | `https://identity.avepointonlineservices.com/connect/token`|
+> |U.S. Government |`https://identity-gov.avepointonlineservices.com/connect/token`|
+> |AOS2 | `https://identity-aos2.avepointonlineservices.com/connect/token`|
+> |FedRAMP Cloud (Project Hosts)| `https://identity.online15.net/connect/token`|
+
 ```json
-var identityServiceUrl = "{https://identity.avepointonlineservices.com}";
+var identityServiceUrl = "{https://identity.avepointonlineservices.com/connect/token}";
 var client = new HttpClient();
 var disco = await client.GetDiscoveryDocumentAsync(identityServiceUrl);
 if (disco.IsError)

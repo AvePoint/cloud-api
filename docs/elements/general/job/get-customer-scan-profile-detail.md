@@ -31,8 +31,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | tenantId | The tenant ID of the scan profile. | string |
 | tenantDomain | The tenant domain of the scan profile. | string |
 | scanMode | The scan mode of the scan profile. <ul><li>**0** - Express mode</li><li>**1** - Advanced mode</li></ul> | integer |
-| modifiedTime | The last modified time of the scan profile. | string |
-| createdTime | The created time of the scan profile. | string |
+| modifiedTime | The last modified time of the scan profile in ISO 8601 format. | string |
+| createdTime | The created time of the scan profile in ISO 8601 format. | string |
 | impersonationAccount | The impersonation account configured in the scan profile. | string |
 | scanInplaceArchivedMailboxes | Whether the **Scan in-place archived mailboxes** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |
 | isIgnoreLockedSiteEnabled | Whether the **Ignore the locked objects when updating the job status** setting is enabled in the scan profile: <ul><li>**true** - Enabled</li><li>**false** - Disabled</li></ul> | boolean |

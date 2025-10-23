@@ -59,7 +59,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/general/customers
     "RegistrationAccount": "user@domain.com", // The registration account of the customer
     "password":"**********", // The password of the customer
     "countryCode":"AF", // The country code of the customer
-    "dataCenter":"7e4ffcae-****-****-****-c6ef****50d5", // The data center ID of the customer
+    "dataCenter":"0d4a9846-97ad-4c09-bb1c-8fbe93eaf3c6", // The data center ID of the customer
     "tags":["tagA"] // The tags of the customer
 }
 ```

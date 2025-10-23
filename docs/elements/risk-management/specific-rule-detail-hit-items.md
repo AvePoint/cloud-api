@@ -69,8 +69,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | storageUsed | The used storage of the mailbox. The unit is MB. | integer |
 | prohibitSendReceiveQuota | The prohibit send and recieve quota of the mailbox. The unit is MB.| integer |
 | recipientType | The recipient type of the mailbox. <ul><li>**1** - User mailbox</li><li>**2** - Shared mailbox</li><li>**4** - Room mailbox</li><li>**8** - Equipment mailbox</li><li>**16** - Mail contact</li><li>**32** - Mail user</li><li>**64** - Guest mail user</li><li>**128** - Discovery mailbox</li><li>**256** - Legacy mailbox</li><li>**512** - Linked mailbox</li><li>**1024** - Linked room mailbox</li><li>**2048** - Team mailbox</li><li>**4096** - Dynamic distribution group</li><li>**8192** - Group mailbox</li><li>**16384** - Mail forest contact</li><li>**32768** - Mail-enabled non-universal group</li><li>**65536** - Universal distribution group</li><li>**131072** - Universal security group</li><li>**262144** - Public folder</li><li>**524288** - Public folder mailbox</li><li>**1048576** - Remote equipment mailbox</li><li>**2097152** - Remote room mailbox</li><li>**4194304** - Remote shared mailbox</li><li>**8388608** - Remote Team mailbox</li><li>**16777216** - Remote user mailbox</li><li>**33554432** - Room list</li><li>**67108864** - Scheduling mailbox</li></ul> | integer |
-| createdDate | The created date and time of the mailbox. | string |
-| lastActivityDate | The date and time of the mailbox's last activity. | string |
+| createdDate | The created date and time of the mailbox in ISO 8601 format. | string |
+| lastActivityDate | The date and time of the mailbox's last activity in ISO 8601 format. | string |
 | prohibitSendQuota | The prohibit send quota of the mailbox. The unit is MB.| integer |
 | mark | The status of the mailbox whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 
@@ -85,8 +85,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | groupType | The type of group. <ul><li>**1** - Microsoft 365 Group</li><li>**2** - Security group</li><li>**4** - Distribution group</li><li>**8** - Mail-enabled security group</li><li>**-1** - Unknown</li></ul> | integer |
 | ownerCount | The number of owners in the group. | integer |
 | memberCount | The number of members in the group. | integer |
-| createdDate | The created date and time of the group. | string |
-| lastActivityDate | The date and tiem of the group's last activity. | string |
+| createdDate | The created date and time of the group in ISO 8601 format. | string |
+| lastActivityDate | The date and tiem of the group's last activity in ISO 8601 format. | string |
 | mark | The status of the group whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | sourceType | The source type of the group. <ul><li>**0** - None</li><li>**1** - Cloud</li><li>**2** - On-premises</li><li>**4** - Hybrid</li></ul> | integer |
 
@@ -100,7 +100,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | createdBy | The creator name of the Team. | string |
 | ownerCount | The number of owners in the Team. | integer |
 | memberCount | The number of members in the Team. | integer |
-| lastActivityDate | The date and time of the Team's last activity. | string |
+| lastActivityDate | The date and time of the Team's last activity in ISO 8601 format. | string |
 | mark | The status of the Team whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | latestCampaignInfo | The detailed information about the Team's campaign. | string |
 
@@ -115,8 +115,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | storageUsed | The used storage of the site. The unit is MB.| integer |
 | ownerCount | The number of owners in the site. | integer |
 | memberCount | The number of members in the site. | integer |
-| createdDate | The created date and time of the site. | string |
-| lastActivityDate | The date and time of the site's last activity. | string |
+| createdDate | The created date and time of the site in ISO 8601 format. | string |
+| lastActivityDate | The date and time of the site's last activity in ISO 8601 format. | string |
 | mark | The status of the site whether it is marked as fixed.  <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | latestCampaignInfo | The detailed information about the site's campaign. | string |
 | lockState | The lock status of the site. <ul><li>**0** - Unknown</li><li>**1** - Unlocked</li><li>**2** - Read only</li><li>**3** - No access</li></ul> | integer |
@@ -144,8 +144,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | environmentMakerCount | The number of environment makers. | integer |
 | region | The environment's region. <ul><li>**-1** - None</li><li>**0** - United States</li><li>**1** - Europe</li><li>**2** - Asia</li><li>**3** - Australia</li><li>**4** - India</li><li>**5** - Japan</li><li>**6** - Canada</li><li>**7** - United Kingdom</li><li>**8** - United States</li><li>**9** - South America</li><li>**10** - France</li><li>**11** - Switzerland</li><li>**12** - Germany</li><li>**13** - Korea</li><li>**14** - Norway</li><li>**15** - United Arab Emirates</li><li>**16** - US Gov</li><li>**17** - South Africa</li><li>**18** - Sweden</li><li>**19** - US Gov High</li></ul> | integer |
 | type | The environment type. <ul><li>**1** - Default</li><li>**2** - Trial</li><li>**4** - Sandbox</li><li>**8** - Production</li><li>**16** - Teams</li><li>**32** - Trial (subscription-based)</li><li>**64** - Developer</li></ul> | integer |
-| createdDate | The created date and time of the environment. | string |
-| lastActivityDate | The date and time of the environment's last activity. | string |
+| createdDate | The created date and time of the environment in ISO 8601 format. | string |
+| lastActivityDate | The date and time of the environment's last activity in ISO 8601 format. | string |
 | totalUsage | The environment's total usage. The unit is Bytes. | integer |
 | mark |  The status of the environment whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | creatorName | The creator name of the environment. | string |
@@ -160,7 +160,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | connectionName | The display name of the connection. | string |
 | parentEnvironment | The parent environment of the connection. | string |
 | createdBy | The creator name of the connection | string |
-| createdDate | The created date and time of the connection. | string |
+| createdDate | The created date and time of the connection in ISO 8601 format. | string |
 | mark | The status of the connection whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 
 
@@ -174,9 +174,9 @@ If the request has been successfully processed, a 200 OK response will be return
 | guestUserCount | The number of guest users in the Power App. | integer |
 | includedInSolutions | The status whether the Power App is included in a solution. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | coOwnerCount | The number of co-owners in the app. | integer |
-| lastSignIn | The time when users last signed in to the app. | string |
-| lastLaunchTime | The time when users last launched the app. | string |
-| createdDate | The created date and time of the app. | string |
+| lastSignIn | The time when users last signed in to the app in ISO 8601 format. | string |
+| lastLaunchTime | The time when users last launched the app in ISO 8601 format. | string |
+| createdDate | The created date and time of the app in ISO 8601 format. | string |
 | mark | The status of the app whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 
 
@@ -191,8 +191,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | type | The flow type. <ul><li>**0** - Unknown</li><li>**1** - Instant</li><li>**2** - Automated</li><li>**4** - Scheduled</li><li>**8** - Desktop flow</li></ul> | integer |
 | includedInSolutions |The status whether the flow is included in a solution. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | coOwnerCount | The number of co-owners in the flow. | integer |
-| createdDate | The created date and time of the flow. | string |
-| lastActivityDate | The date and time of the flow's last activity. | string |
+| createdDate | The created date and time of the flow in ISO 8601 format. | string |
+| lastActivityDate | The date and time of the flow's last activity in ISO 8601 format. | string |
 | lastSignIn | The time when users last signed in to the flow. | string |
 | mark | The status of the flow whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 
@@ -207,8 +207,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | workspace | The parent workspace name. | string |
 | sensitivity | The sensitivity level of the Power BI workspace/report. | string |
 | adminCount | The number of admins. | integer |
-| lastActivityDate | The date and time of the last activity in the Power BI workspace/report. | string |
-| createdDate | The created date and time of the Power BI workspace/report. | string |
+| lastActivityDate | The date and time of the last activity in the Power BI workspace/report in ISO 8601 format. | string |
+| createdDate | The created date and time of the Power BI workspace/report in ISO 8601 format. | string |
 | guestUserCount | The number of guest users. | integer |
 | reportCount | The number of Power BI reports. | integer |
 | mark | The status of the workspace/report whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
@@ -226,9 +226,9 @@ If the request has been successfully processed, a 200 OK response will be return
 | upn | The User Principal Name of the user. | string |
 | userType | The user type. <ul><li>**1** - Guest</li><li>**2** - Member</li></ul> | integer |
 | MFAControlledViaCap | The user's MFA status. | bool |
-| lastSignIn | The time when the user last signed in to Microsoft 365. | string |
-| lastActivityDate | The date and time of the user's last activity. | string |
-| createdDate | The created date and time of the user. | string |
+| lastSignIn | The time when the user last signed in to Microsoft 365 in ISO 8601 format. | string |
+| lastActivityDate | The date and time of the user's last activity in ISO 8601 format. | string |
+| createdDate | The created date and time of the user in ISO 8601 format. | string |
 | signInCount | The number of the user's sign-ins. | integer |
 | mark | The status of the user whether it is marked as fixed. <ul><li>**0** - No</li><li>**1** - Yes</li></ul> | integer |
 | sourceType | The source type of the user. <ul><li>**0** - None</li><li>**1** - Cloud</li><li>**2** - On-premises</li><li>**4** - Hybrid</li></ul> | integer |
@@ -269,11 +269,11 @@ If the request has been successfully processed, a 200 OK response will be return
                 "mark": 0, // The status of the group whether it is marked as fixed, not fixed
                 "sourceType": 1 // The source type of the group, Cloud
             },
-            "id": "5824e186-****-****-****-e2aa9a60ac16", // The record ID
-            "objectid": "e6950ad1-****-****-****-151a1a060d1f", // The object ID
-            "ruleId": "00000002-****-****-****-00000007", // The ID of the risk rule
-            "tenantId": "be4cdf40-****-****-****-ab967eb78246", // The tenant ID
-            "customerId": "292b68c5-****-****-****-28650d407eaf", // The customer ID
+            "id": "5824e186-****-9a60-****-e2aa****ac16", // The record ID
+            "objectid": "e6950ad1-****-1a06-****-151a****0d1f", // The object ID
+            "ruleId": "00000002-****-4A52-****-00000036", // The ID of the risk rule
+            "tenantId": "0eaab044-****-4a92-****-93c6****711e", // The tenant ID
+            "customerId": "d926b068-****-4830-****-fd2a****4e99", // The customer ID
             "dataSource": 2 // The object's data source, Groups
         }
     ],

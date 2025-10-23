@@ -33,8 +33,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve. The default value is 1. |integer|No|
-|pageSize|The number of records to return per page. The default value is 50, and the acceptable range is from 1 to 100.|integer|No|
+|pageIndex|The starting number of the page to get the report details. The default value is 1|integer|No|
+|pageSize|The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100.|integer|No|
 
 ## Response
 
@@ -52,7 +52,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/23351ee7-****-****-****-e8e3ffc29cd7/reports?pageIndex=1&pageSize=50
+https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/23351ee7-****-78n6-****-e8e3ffc29cd7/reports?pageIndex=1&pageSize=50
 ```
 
 ## Response Sample  
@@ -77,8 +77,8 @@ If the request has been successfully processed, a 200 OK response will be return
         ...
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of thecurrent request
-        "pageSize": 50, // The number of report data to be retrieved in one request
-        "totalCount": 109 // The total number count that matches the request
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 109 // The total number of objects matching the query parameters
     }
 }

@@ -96,6 +96,7 @@ Refer to the data center endpoints in the table below:
 |                       | Switzerland North (Zurich)                                  | `https://graph-ch.avepointonlineservices.com/`     |
 |                       | UK South (London)                                           | `https://graph-uk.avepointonlineservices.com/`     |
 |                       | US - East                                                   | `https://graph-us.avepointonlineservices.com/`     |
+|                       | United Arab Emirates (Dubai)                                | `https://graph-uae.avepointonlineservices.com/`    |
 |                       | AOS-US Gov                                                  | `https://graph-gov.avepointonlineservices.com/`    |
 |                       | AOS2                     | `https://graph-aos2.avepointonlineservices.com/`    |
 |                       | FedRAMP Cloud (Project Hosts)                                                  | `https://graphusgovapi.online15.net/`    |

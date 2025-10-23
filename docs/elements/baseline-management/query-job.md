@@ -34,8 +34,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve. The default value is 1. |integer|No|
-|pageSize|The number of records to return per page. The default value is 50, and the acceptable range is from 1 to 100.|integer|No|
+|pageIndex|The starting number of the page to get job information. The default value is 1. |integer|No|
+|pageSize|The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100.|integer|No|
 
 ## Request Body Parameters
 
@@ -60,12 +60,12 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a POST request to the specified endpoint.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c6a73d-****-****-****-75b0f1959474/tenants/a2145aa5-****-****-****-7fffd6e0cc68/process-center/jobs/batch?pageIndex=1&pageSize=50
+https://graph-us.avepointonlineservices.com/partner/external/v3/bm/customers/38c6a73d-****-98b6-****-75b0f1959474/tenants/a2145aa5-****-76b8-****-7fffd6e0cc68/process-center/jobs/batch?pageIndex=1&pageSize=50
 
 {
     "jobIds": 
     [
-      "a7bd3e1b-****-****-****-243c4df89a2d" // The ID of the job
+      "a7bd3e1b-****-97d6-****-243c4df89a2d" // The ID of the job
     ]
 }
 ```
@@ -78,14 +78,14 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "data": [
         {
-            "jobId": "a7bd3e1b-****-****-****-243c4df89a2d", // The ID of the job
+            "jobId": "a7bd3e1b-****-97d6-****-243c4df89a2d", // The ID of the job
             "type": 1, // The type of the job
             "status": 2  // The status of the job
         }
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of the current request
-        "pageSize": 5, // The number of jobs to be retrieved in one request
-        "totalCount": 1 // The total number count that matches the request
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 1 // The total number of objects matching the query parameters
     }
 }

@@ -31,8 +31,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | tenantId | The tenant ID of the scan profile. | string |
 | tenantDomain | The tenant domain of the scan profile. | string |
 | scanMode | The scan mode of the profile. <ul><li>**0** - Express mode</li><li>**1** - Advanced mode</li></ul> | integer |
-| modifiedTime | The last modified time of the scan profile. | string |
-| lastUpdateTime | The time the daily report for the scan profile was generated. If no daily report has been generated, the time will be the last modified time of the scan profile. | string |
+| modifiedTime | The last modified time of the scan profile in ISO 8601 format. | string |
+| lastUpdateTime | The time the daily report for the scan profile was generated in ISO 8601 format. If no daily report has been generated, the time will be the last modified time of the scan profile. | string |
 | lastScanStatus | The last scan job status of the scan profile. <ul><li>**0** - None</li><li>**1** - Running</li><li>**2** - Finished</li><li>**3** - Failed</li><li>**4** - Finished with exception</li><li>**5** - Skipped</li><li>**6** - Pending</li><li>**7** - Failed to tart</li><li>**8** - Canceled</li><li>**9** - Rejected</li><li>**10** - Stopped</li><li>**11** - Not scanned</li><li>**12** - Disabled</li><li>**13** - Not started</li><li>**14** - Wait for configuration</li></ul> | integer |
 | newRegisteredContentCount | The number of newly registered objects in the daily report of the scan profile. | integer |
 | movedToAnotherContainer | The number of objects moved to another container in the daily report of the scan profile. | integer |

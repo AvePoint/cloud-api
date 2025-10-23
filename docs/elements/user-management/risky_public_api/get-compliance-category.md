@@ -34,8 +34,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The starting number of the page to get objects. The default value is 1.| integer | No |
+| pageSize | The default value is 50 and the maximum value allowed is 100.| integer | No |
 
 ## Response
 
@@ -49,44 +49,41 @@ If the request has been successfully processed, a 200 OK response will be return
 | userPrincipalName |  The user principal name of the risky user. | string |
 | userId |  The unique identifier of the risky user. | string |
 | loginIP |  The IP address in which a user signs in to Microsoft 365. | string |
-| loginTime |  The sign-in time when user signs in to Microsoft 365. | string |
+| loginTime |  The sign-in time in ISO 8601 format when user signs in to Microsoft 365. | string |
 | deviceName |  The name of the device that user uses to sign in to Microsoft 365. | string |  
 | accessedFileName |  The name of the file that has been accessed. | string |
 | sensitiveInformation |  The sensitive information of the file. | string |
-| accessTime |  The time when the user accesses the file. | string |
+| accessTime |  The time in ISO 8601 format when the user accesses the file. | string |
 ## Request Sample
 
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/overview/security/compliances/workflows/4dbd4e4e-****-****-****-2e224d38b0c4
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4dcf-****-f363****acec/overview/security/compliances/workflows/4dbd4e4e-****-4d38-****-2e22****b0c4
 ```
 
 ## Response Sample
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
 
-### Response Sample Multiple IP Login & Multiple Login Failed & External IP Login & Guest User Login
-
 ```json
 {
   "last7DayFixCount": 8, // The number of fixed risky actions in last 7 days
   "riskUserCount": 12, // The number of users who trigger the risk based on the workflow
-  "riskUsers": {
-    "items": [
+   "items": [
       {
         "userDisplayName": "Mark Kevin", // The display name of the risky user
-        "userPrincipalName": "mark@element.onmicrosoft.com", // The user principal name of the risky user
-        "userId": "c2aa00d3-ef87-40aa-a80a-9e9c79232bfe", // The unique identifier of the risky user
+        "userPrincipalName": "mark@domain.onmicrosoft.com", // The user principal name of the risky user
+        "userId": "c2aa00d3-****-40aa-****-9e9c79232bfe", // The unique identifier of the risky user
         "loginIps": [
           {
-            "loginIP": "23.98.122.140", // The IP address in which a user signs in to Microsoft 365
-            "loginTime": "1970-01-01T00:00:00Z" // The sign-in time when user signs in to Microsoft 365
+            "loginIP": "23.98.***.140", // The IP address in which a user signs in to Microsoft 365
+            "loginTime": "1970-01-01T00:00:00Z" // The sign-in time in ISO 8601 format when user signs in to Microsoft 365
           }
         ],
         "files": [
           {
             "accessedFileName": "report.docx", // The name of the file that has been accessed
-            "accessTime": "1970-01-01T00:00:00Z", // The time when the user accesses the file
+            "accessTime": "1970-01-01T00:00:00Z", // The in time in ISO 8601 format when the user accesses the file
             "sensitiveInformation": "Personal Data" // The sensitive information of the file
           }
         ],
@@ -97,9 +94,8 @@ If the request has been successfully processed, a 200 OK response will be return
         ]
       }
     ],
-    "totalCount": 1, // The page index of current request
-    "pageSize": 50, // The user number will be retrieved in one request
-    "pageIndex": 1 // The total number count that matches the request
-  }
+    "totalCount": 1, // The current display page
+    "pageSize": 50, // The number of objects on the display page
+    "pageIndex": 1 // The total number of objects matching the query parameters
 }
 ```

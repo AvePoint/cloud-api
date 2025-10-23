@@ -26,7 +26,7 @@ This section outlines the parameters that allow users to specify pagination.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The starting number of the page to get the violated objects. The default value is 1. | integer | No |
+| pageIndex | The starting number of the page to retrieve the customers. The default value is 1. | integer | No |
 | pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
 
 ## Request Body Parameters
@@ -35,7 +35,7 @@ This section outlines the request body parameters required to specify the custom
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The ID of the customer to be retrieved. | string | No |
+| customerIds | The ID of the customer to be retrieved. | string[] | No |
 
 ## Response
 
@@ -71,7 +71,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
 {
     "data": [
         {
-            "id": "03f7382e-****-****-****-dd9af05974f0", //The customer ID
+            "id": "03f7382e-****-1cda-****-dd9a****74f0", //The customer ID
             "organization": "OrganizationABC", //The organization name of the customer
             "ownerEmail": "user@domain.com", //The email address of the customer
             "jobStatus": 0, //The status of the customer's tenant: 0 represents N/A
@@ -80,13 +80,13 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
             "tenants":
             [
                 {
-                    "id":"03f7382e-xxxx-xxxx-xxxx-dd9af05974f0", //The ID of the tenant
+                    "id":"03f7382e-****-1bcd-****-dd9a****74f0", //The ID of the tenant
                     "name":"Tenant ABC" //The name of the tenant
                 }
             ]
         },
         {
-            "id": "03f7382e-****-****-****-dd9adcs974f0",
+            "id": "03f7382e-****-1bac-****-dd9a****74f0",
             "organization": "OrganizationDEF",
             "ownerEmail": "userA@domain.com",
             "jobStatus": 0,

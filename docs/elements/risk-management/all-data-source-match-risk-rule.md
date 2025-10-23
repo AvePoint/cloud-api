@@ -72,20 +72,20 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "result": [
         {
-            "ruleId": "00000002-****-****-****-0000001A", // The ID of the rule
+            "ruleId": "00000002-****-4830-****-00000019", // The ID of the rule
             "ruleName": "Users without MFA enabled", // The display name of the rule
             "setting": null, // The parameter value configured for the rule
-            "tenantId": "be4cdf40-****-****-****-ab967eb78246", // The tenant ID
-            "customerId": "292b68c5-****-****-****-28650d407eaf", // The customer ID
+            "tenantId": "be4cdf40-****-4830-****-ab96****8246", // The tenant ID
+            "customerId": "292b68c5-****-0d40-****-2865****7eaf", // The customer ID
             "dataSource": 6, // The data source of the matched objects, Users
             "hitItemCount": 161 // The number of objects that match the risk rule
         },
         {
-            "ruleId": "00000002-****-****-****-00000023", 
+            "ruleId": "00000002-****-4A52-****-00000023", 
             "ruleName": "Global administrator without a password expiration date", 
             "setting": null, 
-            "tenantId": "be4cdf40-****-****-****-ab967eb78246", 
-            "customerId": "292b68c5-****-****-****-28650d407eaf", 
+            "tenantId": "be4cdf40-****-7eb7-****-ab96****8246", 
+            "customerId": "292b68c5-****-0d40-****-2865****7eaf", 
             "dataSource": 6, 
             "hitItemCount": 1 
         }

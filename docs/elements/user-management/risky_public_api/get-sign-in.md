@@ -34,8 +34,8 @@ This section outlines the parameters optional required to specify paging informa
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The starting number of the page to get bjects. The default value is 1. | integer | No |
+| pageSize | The default value is 50 and the maximum value allowed is 100. | integer | No |
 | risky | Indicate whether you want to retrieve only risky sign-ins. | bool | No |
 
 ## Response
@@ -45,7 +45,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | id |  The unique identifier of the sign-in record. | string |
-| loginTime |  The sign-in time. | long |
+| loginTime |  The sign-in time in ISO 8601 format. | long |
 | userId |  The unique identifier of the user. | string |
 | userDisplayName |  The display name of the user. | string |
 | userPrincipalName |  The user principal name. | string |
@@ -61,7 +61,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-61f4-4070-819c-25cdbcf82a07/tenants/0c7715b3-bc2f-4c4c-a8a0-f3634dcfacec/overview/security/compliances/signins
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-4070-****-25cd****2a07/tenants/0c7715b3-****-4c4c-****-f363****acec/overview/security/compliances/signins
 ```
 
 ## Response Sample
@@ -72,11 +72,11 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "data": [
         {
-            "id": "001f0090-****-****-****-b2c060e52500", // The unique identifier of the sign-in record
-            "loginTime": 638907426550000000, //  The sign-in time
-            "userId": "4140b563-****-****-****-5f44dadcf0fd", // The unique identifier of the user
+            "id": "001f0090-****-60e5-****-b2c0****2500", // The unique identifier of the sign-in record
+            "loginTime": "1970-01-01T00:00:00Z", //  The sign-in time in ISO 8601 format
+            "userId": "4140b563-****-dadc-****-5f44****f0fd", // The unique identifier of the user
             "userDisplayName": "Bob Mark", // The display name of the user.
-            "userPrincipalName": "mark@element.onmicrosoft.com", //  The user principal name
+            "userPrincipalName": "Bob@domain.com", //  The user principal name
             "ip": "74.207.240.85", // The IP address of the sign-in record
             "lat": 37.56699, // The latitude of the sign-in record
             "lon": -121.9827, // The longitude of the sign-in record
@@ -86,9 +86,9 @@ If the request has been successfully processed, a 200 OK response will be return
         },
     ],
      "metadata": {
-        "pageIndex": 1, // The page index of current request
-        "pageSize": 50, // The number will be retrieved in one request
-        "totalCount": 1 // The total number count that matches the request
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 1 // The total number of objects matching the query parameters
     }
 }
 ```
