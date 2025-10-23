@@ -26,7 +26,7 @@ This section outlines the parameters that allow users to specify pagination.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The starting number of the page to get the violated objects. The default value is 1. | integer | No |
+| pageIndex | The starting number of the page to retrieve the services. The default value is 1. | integer | No |
 | pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
 
 ## Request Body Parameters
@@ -35,7 +35,7 @@ This section outlines the request body required to specify which customers you w
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| customerId | The ID of the customer to be retrieved. | string | No |
+| customerIds | The ID of the customer to be retrieved. | string[] | No |
 
 ## Response
 
@@ -63,7 +63,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | storage     | The storage of the service.                 | string |
 | retention     | The data retention period of the customer.                 | string |
 | consumedStorage     | The consumed storage size of the customer.                 | string |
-| expirationDate     | The expiration date of the customer’s service.                 | string |
+| expirationDate     | The expiration time of the customer’s service in ISO 8601 format.                 | string |
 | change     | The changes in the pooled license compared with the first day of the current month.                 | string |
 | source     | The source of the subscription.                 | string |
 | paymentType     | The payment type of the subscription.               | string |
@@ -100,7 +100,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
                     "storage": "Bring your own storage", // The storage of the service
                     "retention": "N/A", // The data retention period of the customer; not applicable here
                     "consumedStorage": "N/A", // The consumed storage size of the customer; not applicable here
-                    "expirationDate": "2025-09-26T00:00:00Z", // The expiration date of the customer’s service
+                    "expirationDate": "2025-09-26T00:00:00Z", // The expiration time of the customer’s service
                     "change": "N/A", // The changes in the pooled license compared with the first day of the current month; no changes here
                     "source": "AvePoint pooled subscription", // The source of the subscription
                     "paymentType": "Prepaid", // The payment type of the subscription; not applicable here

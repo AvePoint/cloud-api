@@ -47,7 +47,7 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/alternate-email-address
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-5902-****-25cd****2a07/tenants/0c7715b3-****-4dcf-****-f363****acec/users/7c18fd6f-****-fa9e-****-5725****dc3f/alternate-email-address
 ```
 
 ## Request Body Sample
@@ -55,8 +55,8 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 ```json
 {
   "alternateEmailAddress": [
-    "Tony@element.onmicrosoft.com", // The alternate email address of the user
-    "Tony_mark@element.onmicrosoft.com"
+    "Tony@domain.com", // The alternate email address of the user
+    "Tony_alternate@domain.com"
   ]
 }
 ```

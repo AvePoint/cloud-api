@@ -35,7 +35,7 @@ This section outlines the required fields to update the birthday of a specific u
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| birthday | The birthday of the user. | string | Yes |
+| birthday | The birthday of the user in ISO 8601 format. | string | Yes |
 
 ## Response
 
@@ -46,12 +46,12 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/birthday
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-36v6-****-25cdbcf82a07/tenants/0c7715b3-****-18a7-****-f3634dcfacec/users/7c18fd6f-****-26c3-****-5725fa9edc3f/birthday
 ```
 ## Request Body Sample
 
 ```json
 {
-  "birthday": "1970-01-01T00:00:00Z" // The birthday of the user
+  "birthday": "1970-01-01T00:00:00Z" // The birthday of the user in ISO 8601 format
 }
 ```

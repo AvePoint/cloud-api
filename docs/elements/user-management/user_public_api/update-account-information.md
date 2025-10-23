@@ -39,9 +39,9 @@ This section outlines the required fields to update the information of a specifi
 | usageLocation | The usage location of the user. The maximum length is 128 characters. For details, refer to [Usage Locations](../../../elements/user-management/user_public_api/usage_location.md).| string | Yes |
 | preferredLanguage |  The preferred language of the user. For details, refer to [Preferred Languages](../../../elements/user-management/user_public_api/language.md). | string | Yes | 
 | enforceStart | Indicates whether account enforcement start date is enabled. | bool | Yes | 
-| enforceStartDateTime |The date and time when account enforcement begins.| string | Yes | 
+| enforceStartDateTime |The date and time in ISO 8601 format when account enforcement begins.| string | Yes | 
 | enforceEnd |Indicates whether account enforcement end date is enabled. | bool | Yes | 
-| enforceEndDateTime |The date and time when account enforcement ends. | string | Yes | 
+| enforceEndDateTime |The date and time in ISO 8601 format when account enforcement ends. | string | Yes | 
 
 ## Response
 
@@ -52,18 +52,18 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/account-information
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-57v8-****-25cdbcf82a07/tenants/0c7715b3-****-25x9-****-f3634dcfacec/users/7c18fd6f-****-24v6-****-5725fa9edc3f/account-information
 ```
 ## Request Body Sample
 
 ```json
 {
-  "mail": "tony@element.onmicrosoft.com", // The mail of the user
+  "mail": "tony@domain.com", // The mail of the user
   "usageLocation": "AF", // The usage location of the user
   "preferredLanguage": "af-NA", // The preferred language of the user
   "enforceStart": true, // Indicates whether account enforcement start date is enabled
-  "enforceStartDateTime": "1970-01-01T00:00:00Z", // The date and time when account enforcement begins
+  "enforceStartDateTime": "1970-01-01T00:00:00Z", // The date and time in ISO 8601 format when account enforcement begins
   "enforceEnd": true, // Indicates whether account enforcement end date is enabled
-  "enforceEndDateTime": "1970-01-01T00:00:00Z" // The date and time when account enforcement ends
+  "enforceEndDateTime": "1970-01-01T00:00:00Z" // The date and time in ISO 8601 format when account enforcement ends
 }
 ```

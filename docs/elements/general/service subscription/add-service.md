@@ -67,7 +67,7 @@ You can provide the service detailed information in the request body to add a se
 |resource               |The resource of the service.   <ul><li>**Office365Backup** - Cloud Backup for Microsoft 365 pool</li><li>**Office365PPBackup** - Cloud Backup for Power Platform pool</li><li>**Office365EXODBackup** - Cloud Backup for Exchange Online & OneDrive pool</li></ul>      |string      |Yes|
 |subscriptionSourceType |The source of the service. <ul><li>**1** - AvePoint pool</li><li>**2** - Marketplace pool</li><li>**6** - LARS AvePoint pool</li></ul>               |integer         |Yes|
 |isSameAsPool           |Whether the expiration time of the service is the same as the pool. <ul><li>**true** - Same as the pool</li><li>**false** - Different from the pool</li></ul>              |bool        |Yes (No)|
-|expireTime             |The expiration time of the service.                |string      |No (Yes)|
+|expireTime             |The expiration time of the service in ISO 8601 format.                |string      |No (Yes)|
 |saleType               |The type of the service. <ul><li>**0** - Capacity tier</li><li>**1** - Unlimited users</li><li>**2** - Unlimited organization</li></ul>         |integer         |Yes|
 |packageType            |The package type of the service. <ul><li>**0** - Standard</li><li>**1** - Core</li><li>**2** - Flex</li></ul>                                      |integer         |Yes|
 |customerSize           |The customer's size of the service.                 |integer         |Yes|
@@ -94,7 +94,7 @@ You can provide the service detailed information in the request body to add a se
 |resource               |The resource of the service.   <ul><li>**PartnerTenantSettingManagement** - Baseline management pool</li><li>**PartnerWorkspaceOnboarding** - Workspace management pool</li><li>**PartnerUserManagement** - User and device management pool</li><li>**PartnerStorageOptimization** - Workspace management - storage optimization pool</li></ul>      |string      |Yes|
 |subscriptionSourceType |The source of the service. <ul><li>**1** - AvePoint pool</li><li>**2** - Marketplace pool</li><li>**6** - LARS AvePoint pool</li></ul>               |integer         |Yes|
 |isSameAsPool           |Whether the expiration time of the service is the same as the pool. <ul><li>**true** - Same as the pool</li><li>**false** - Different from the pool</li></ul>|boolean        |Yes (No)|
-|expireTime             |The expiration time of the service.                |string      |No (Yes)|
+|expireTime             |The expiration time of the service in ISO 8601 format.                |string      |No (Yes)|
 |userSeat               |The number of user seats of the service to assign to the customer.                     |integer         |Yes|
 |contractEndDate        |The contract end date of the service.             |string      |No |
 |paymentType            |The payment type of the service. <ul><li>**0** - Prepaid</li><li>**1** - Pay as you go</li></ul>    |integer         |Yes|

@@ -47,7 +47,7 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/users/7c18fd6f-****-****-****-5725fa9edc3f/istest
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-78d4-****-25cdbcf82a07/tenants/0c7715b3-****-89v1-****-f3634dcfacec/users/7c18fd6f-****-86c9-****-5725fa9edc3f/istest
 ```
 ## Request Body Sample
 

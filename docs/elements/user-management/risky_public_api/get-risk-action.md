@@ -53,7 +53,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/overview/security/compliances/actions
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-87b1-****-25cdbcf82a07/tenants/0c7715b3-****-88b2-****-f3634dcfacec/overview/security/compliances/actions
 ```
 
 ## Response Sample

@@ -25,7 +25,7 @@ This section outlines the parameters that allow users to specify pagination.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| pageIndex | The starting number of the page to get the violated objects. The default value is 1. | integer | No |
+| pageIndex | The starting number of the page to get the protected status of users. The default value is 1. | integer | No |
 | pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
  
 ## URL Parameters
@@ -43,7 +43,7 @@ This section outlines the request body required to specify which tenant user's p
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| email | The email address of the tenant user to be retrieved | string | No |
+| userEmails | The email address of the tenant user to be retrieved. | string[] | No |
 
 ## Response
 
@@ -76,7 +76,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
 {
     "data": [
         {
-            "id": "96c5a607-****-****-****-b1a112d7aeae", // The ID of the tenant user
+            "id": "96c5a607-****-12d7-****-b1a1****aeae", // The ID of the tenant user
             "email": "user@domain.onmicrosoft.com", // The email address of the tenant user
             "displayName":"UserA", // The display name of the tenant user
             "moduleStatus":
@@ -95,7 +95,7 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
     "metadata": {
         "pageIndex": 1, // The current display page
         "pageSize": 50, // The number of objects on the display page
-        "totalCount": 2 // The total number of objects matching the query parameters
+        "totalCount": 1// The total number of objects matching the query parameters
     }
 }
 ```

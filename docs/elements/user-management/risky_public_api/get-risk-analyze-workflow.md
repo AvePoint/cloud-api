@@ -35,8 +35,8 @@ This section outlines the optional parameters used to specify the information fo
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | catagory | The category of the risky actions. <ul><li>**1** - Network security</li><li>**2** - Endpoint security</li><li>**3** - Identity access</li><li>**4** - Configuration security</li></ul> | integer | No |
-| pageIndex | The page number of the data which will be retrieve, the default value is 1. | integer | No |
-| pageSize | The number of users API will retrieved in a time, the default value is 100. | integer | No |
+| pageIndex | The starting number of the page to get objects. The default value is 1. | integer | No |
+| pageSize | The default value is 50 and the maximum value allowed is 100.| integer | No |
 
 ## Response
 
@@ -52,7 +52,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://aostestpartnergcc.sharepointguild.com:5000/external/v3/um/customers/966f35cc-****-****-****-25cdbcf82a07/tenants/0c7715b3-****-****-****-f3634dcfacec/overview/security/compliances/workflows
+https://aostestpartnergcc.sharepointguild.com:5000/external/v3/um/customers/966f35cc-****-47vb-****-25cdbcf82a07/tenants/0c7715b3-****-91n4-****-f3634dcfacec/overview/security/compliances/workflows
 ```
 
 ## Response Sample
@@ -63,14 +63,14 @@ If the request has been successfully processed, a 200 OK response will be return
 {
     "data": [
         {
-            "workflowId": "8fc933ed-5d54-41fe-909c-afbf326f27ff", // The ID of the workflow
+            "workflowId": "8fc933ed-****-41fe-****-afbf326f27ff", // The ID of the workflow
             "workflowDisplayName": "User MFA disabled" // The display name of the workflow
         }
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of the current request
-        "pageSize": 50, // The number of workflows to be retrieved in one request
-        "totalCount": 1 // The total number count that matches the request
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 1 // The total number of objects matching the query parameters
     }
 }
 ```

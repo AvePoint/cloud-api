@@ -25,8 +25,8 @@ You can use the following optional query parameters in the URL to control pagina
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
-|pageIndex|The index of the page to retrieve. The default value is 1. |integer|No|
-|pageSize|The number of records to return per page. The default value is 50, and the acceptable range is from 1 to 100.|integer|No|
+|pageIndex|The starting number of the page to get tenants. The default value is 1. |integer|No|
+|pageSize|The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100.|integer|No|
 
 ## Request Body Parameters
 
@@ -45,8 +45,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | tenantName | The name of the tenant. | string |
 | status | The status of the tenant.<ul><li>**1** - Connected</li><li>**2** - Deployed with exception</li><li>**3** - Deploying</li><li>**4** - Deployment draft saved</li><li>**5** - Deployment failed </li><li>**6** - Expired</li><li>**7** - Deployed </li><li>**8** - Restore failed </li><li>**19** - Restored</li><li>**10** - Restored with exception</li><li>**11** - Restoring</li><li>**12** - Retrieving setting</li><li>**13** - Review deployment</li><li>**14** - Review restore</li><li>**15** - Scheduled deployment </li><li>**16** - Schedule restore</li><li>**17** - Settings retrieval failed</li></ul> | integer |
 | driftDetected | The number of configuration deviations that have been detected for the tenant. | integer |
-| driftDetectedTime | The time (UTC) when configuration deviations were detected. | string |
-| lastDeployedTime | The time (UTC) when the baseline was deployed to the tenant. | string |
+| driftDetectedTime | The time in ISO 8601 format when configuration deviations were detected. | string |
+| lastDeployedTime | The time in ISO 8601 format when the baseline was deployed to the tenant. | string |
 | customerId | The ID of the customer. | string |
 | tenantId | The ID of the tenant. | string |
 | autoAlignment | The status of the auto-alignment setting. <ul><li>**0** - Disabled</li><li>**1** - Enabled</li></ul>| string |
@@ -65,7 +65,7 @@ https://graph-us.avepointonlineservices.com/partner/external/v3/bm/baselines/bat
 {
     "tenantIds": 
     [
-      "af83b8e1-****-****-****-970f92192dc5" // The ID of the tenant
+      "af83b8e1-****-98a7-****-970f92192dc5" // The ID of the tenant
     ]
 }
 ```
@@ -81,14 +81,14 @@ If the request has been successfully processed, a 200 OK response will be return
             "tenantName": "2****l", // The name of the tenant
             "status": 5, // The status of the tenant. 5 represents "Deployment failed"
             "driftDetected": 51, // The number of configuration deviations that have been detected for the tenant
-            "driftDetectedTime": "2025-09-05T10:30:00Z", // The time (UTC) when configuration deviations were detected
-            "customerId": "ce43e186-****-****-****-86b51b0aef92", // The ID of the customer
-            "tenantId": "af83b8e1-****-****-****-970f92192dc5", // The ID of the tenant
+            "driftDetectedTime": "2025-09-05T10:30:00Z", // The time in ISO 8601 format when configuration deviations were detected
+            "customerId": "ce43e186-****-67v8-****-86b51b0aef92", // The ID of the customer
+            "tenantId": "af83b8e1-****-98a7-****-970f92192dc5", // The ID of the tenant
             "autoAlignment": 1, // The status of the auto-alignment setting. 1 represents "Enabled"
-            "lastDeployedTime": "2025-09-11T02:26:34Z", // The time (UTC) when the baseline was deployed to the tenant
+            "lastDeployedTime": "2025-09-11T02:26:34Z", // The time in ISO 8601 format when the baseline was deployed to the tenant
             "appliedBaselines": [
                 {
-                    "baselineId": "de473862-****-****-****-3a1c20398d55", // The ID of the baseline
+                    "baselineId": "de473862-****-45s6-****-3a1c20398d55", // The ID of the baseline
                     "baselineName": "baseline1", // The name of the baseline
                     "version": "4" // The version of the baseline
                 }
@@ -96,8 +96,8 @@ If the request has been successfully processed, a 200 OK response will be return
         }
     ],
     "metadata": {
-        "pageIndex": 1, // The page index of the current request
-        "pageSize": 50, // The number of tenants to be retrieved in one request
-        "totalCount": 1 // The total number count that matches the request
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 1 // The total number of objects matching the query parameters
     }
 }
