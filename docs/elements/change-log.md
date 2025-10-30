@@ -43,8 +43,12 @@ This document provides a detailed log of changes, updates, and enhancements made
     - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office` for updating the office information of a specific user in a customer's tenant.
     - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information` for updating the office location information of a specific user in a customer's tenant.
     - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/password-setting` for updating the password setting of a specific user in a customer's tenant.
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows` for retrieving information of workflows in a customer's tenant.
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/actions` for retrieving the risky action count in a customer's tenant.
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/workflows/{workflowId}` for retrieving compliance information of a specific workflow in a customer's tenant. 
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/overview/security/compliances/signins` for retrieving users' sign-in information in a customer's tenant.
   - Introduced new endpoints for workspace management.
     - `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/workspace`	for retrieving the workspace overview statistics of a specific tenant.
     - `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/compliance-rate` for retrieving the compliance statistics of workspaces for a specific tenant.
     - `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/dspm/insights` for retrieving the data security posture statistics of a specific tenant.
-    - `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detetion` for retrieving the data protection statistics of a specific tenant.
+    - `/partner/external/wm/customers/{customerId}/tenants/{tenantId}/overview/data-protection/ransomware-detection` for retrieving the data protection statistics of a specific tenant.

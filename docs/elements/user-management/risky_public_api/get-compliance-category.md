@@ -69,7 +69,7 @@ If the request has been successfully processed, a 200 OK response will be return
 {
   "last7DayFixCount": 8, // The number of fixed risky actions in last 7 days
   "riskUserCount": 12, // The number of users who trigger the risk based on the workflow
-   "items": [
+   "data": [
       {
         "userDisplayName": "Mark Kevin", // The display name of the risky user
         "userPrincipalName": "mark@domain.onmicrosoft.com", // The user principal name of the risky user
@@ -94,8 +94,10 @@ If the request has been successfully processed, a 200 OK response will be return
         ]
       }
     ],
-    "totalCount": 1, // The current display page
-    "pageSize": 50, // The number of objects on the display page
-    "pageIndex": 1 // The total number of objects matching the query parameters
+    "metadata": {
+        "pageIndex": 1, // The total number of objects matching the query parameters
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 5 // The current display page
+    }
 }
 ```

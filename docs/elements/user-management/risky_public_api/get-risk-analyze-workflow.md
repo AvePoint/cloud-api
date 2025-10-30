@@ -1,6 +1,6 @@
 # Retrieve Workflow Information
 
-Use this API to retrieve inforamtion of workflows in a customer's tenant.
+Use this API to retrieve information of workflows in a customer's tenant.
 
 ## Permission
 
