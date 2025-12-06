@@ -62,6 +62,15 @@ Currently, details of agents in Copilot Studio can be retrieved via the followin
 | GET | `/smp/powerplatform/bot` | [Agent Details](../enpower/copilotstudio/agents.md) |
 | GET | `/smp/powerplatform/bot/{botId}/activities` | [Agent Activities](../enpower/copilotstudio/activities.md) |
 
+## API Methods for Power Pages Retrieval
+
+Currently, details of Power Pages sites can be retrieved via the following API Methods.
+
+| API Method | Endpoint | Documentation | 
+|--- | --- | --- |
+| GET | `/smp/powerplatform/powerpages` | [Site Details](../enpower/powerpages/pagedetails.md) |
+| GET | `/smp/powerplatform/powerpages/{powerPageId}/activities` | [Site Activities](../enpower/powerpages/pageactivities.md) |
+
 
 ## API Methods for Exchange Data Retrieval
 

@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to retrieve user permiss
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/insights/users/access` | Retrieves the user permissions. |
+| POST | `/insights/users/access` | Retrieves the user permissions. |
 
 
 ## Query Parameters
@@ -28,7 +28,8 @@ The API supports several query parameters to refine and customize the data retri
 | Parameter  | Description                                                                 | Type   | Required? |
 |------------|-----------------------------------------------------------------------------|--------|-----------|
 | siteUrls | Sets the URLs of site collections for which you want to get the permission related information. | list  | No        |
-| emails | Sets the email addresses or logonName of users for which you want to export the permission report. | list  | Yes        |
+| emails | Sets the email addresses or user principal names of the users for whom you want to export the permission report. | list  | Yes        |
+| pageSize | Sets the number of objects to display on one page. The default value is 100. | integer | No        |
 | nextLink | Sets whether to get the remaining results of a request of which the results are more than 100. | string | No        |
 
 
@@ -45,7 +46,7 @@ The API response provides detailed information about the user permissions retrie
 | nextLink | The token to be used to get the remaining results of this request | string  |
 | values   | A list of user permission objects               | list   |
 
-**User permission**
+**User Permission**
 
 | Property           | Description            | Type    |
 |--------------------|------------------|---------|
@@ -57,17 +58,28 @@ The API response provides detailed information about the user permissions retrie
 | inheritType        | Indicates whether the permissions are unique to this object.      | string  |
 | permission         | The level of permission granted.                    | string  |
 | sensitivityLevel   | The sensitivity level of the object.               | string  |
-| sensitiveInfoType  | Types of sensitive information contained in the file. |string  |
+| sensitiveInfoType  | The sensitive info types the file matches. |string  |
 | isDirect           | Indicates whether the permission is direct or inherited.               | boolean |
 | sensitivityLabel   | The sensitivity label applied to the object.          | string  |
 | inheritedFrom      | The source from which the permissions are inherited.                     | string  |
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user permissions in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
+To use this API, send a `POST` request to the specified endpoint, including necessary parameters as defined. This will return the relevant user permissions in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/insights/users/access?siteUrls=https%3A%2F%2Fm********.sharepoint.com%2Fsites%2Fj*******m01&siteUrls=https%3A%2F%2Fm*****.sharepoint.com%2Fsites%2Fjuly2022publict****&emails=insights****001_j***insightstest.onmicrosoft.com%23ext%23%40m******.onmicrosoft.com&emails=insights******003_j****insightstest.onmicrosoft.com%23ext%23%40m********.onmicrosoft.com
+https://graph-us.avepointonlineservices.com/insights/users/access
+{
+  "siteUrls": [
+"https://******.sharepoint.com/sites/Retail",
+"https://*****.sharepoint.com/sites/SalesandMarketing"
+  ],
+  "emails": [
+    "insights****001_****insightstest.onmicrosoft.com",
+    "insights******003_*****insightstest.onmicrosoft.com"
+  ],
+  "nextLink": "1231"
+}
 ```
 
 ## Response Sample  
@@ -81,15 +93,15 @@ The following is a sample response for this API method, which includes the permi
             "module": "Microsoft Teams",  // The module where the file is located.
             "siteName": "AutoC************Team",  // The name of the site where the file is stored.
             "name": "U.S. Personally Identifiable Information (PII) Data-High.docx",  // The name of the file.
-            "location": "https://m365x******.sharepoint.com/sites/autocreated********team/shared documents/general/u.s. personally identifiable information (pii) data-high.docx",  // The URL where the file is located. 
+            "location": "https://m365*******.sharepoint.com/sites/autocreated********team/shared documents/general/u.s. personally identifiable information (pii) data-high.docx",  // The URL where the file is located. 
             "objectType": "File",  // The type of object, which is a file in this case.
             "inheritType": "Unique",  // Indicates that the permissions are unique to this file.
             "permission": "Contribute",  // The level of permission granted.
             "sensitivityLevel": "High",  // The sensitivity level of the file.
-            "sensitiveInfoType": "U.S. Individual Taxpayer Identification Number (ITIN), U.S. Social Security Number (SSN), U.S. / U.K. Passport Number",  // Types of sensitive information contained in the file.
+            "sensitiveInfoType": "U.S. Individual Taxpayer Identification Number (ITIN), U.S. Social Security Number (SSN), U.S. / U.K. Passport Number",  // The sensitive info types the file matches.
             "isDirect": false,  // Indicates whether the permission is direct or inherited.
             "sensitivityLabel": "",  // The sensitivity label applied to the file, which is empty in this case.
-            "inheritedFrom": "sharinglinks.2nnn3-5nnn-46nn7-bc32-8nnnnnnnnn.flexible.8nnnnnnnnn-c62b0-c62b0-c62b0-c62b0"  // The source from which the permissions are inherited.
+            "inheritedFrom": "sharinglinks.2nn3-****-46n7-****-8nnn****m64n.flexible.8nf56mnn-****-c62b-****-c78f****8760"  // The source from which the permissions are inherited.
         }
     ],
     "status": 200,  // The status code of the response, indicating success.

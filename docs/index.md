@@ -28,7 +28,7 @@ Unlock the full potential of AvePoint Cloud services with our comprehensive API 
   <div style="border:1px solid #ccc; padding:24px; border-radius:8px; box-shadow:2px 2px 12px #aaa; width: 30%;">
     <h3 style="margin-bottom: 24px;"> Key Features of Elements</h3>
     <ul>
-      <li><b>Customer Features</b>: Enable efficient management for customers, customer jobs,  service subscriptions, and tenant resources.</li>
+      <li><b>Common Features</b>: Enable efficient management for customers, customer jobs,  service subscriptions, and tenant resources.</li>
       <li><b>Baseline Management</b>: Create baselines to define configuration standard and apply baselines to tenants for monitoring configuration deviations.
 </li>
       <li><b>Risk Management</b>: Retrieve the matched risk rules of a tenant and view all objects that violate a specific risk rule.</li>

@@ -1,6 +1,6 @@
 # Retrieve Site Detail Records
 
-This API method (`/insights/sites/{siteId}/detailRecords` navigation property) allows users to retrieve detailed records for a specific SharePoint site. This method is useful for obtaining comprehensive information about the site content's properties and activities.
+This API method (`/insights/sites/detailRecords` navigation property) allows users to retrieve detailed records for a specific SharePoint site. This method is useful for obtaining comprehensive information about the site content's properties and activities.
 
 [Detail record? site content? ]: #
 
@@ -11,7 +11,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API     | Permission required | 
 |-------------------|---------------|
-| `/insights/sites/{siteId}/detailRecords` | insights.graph.readwrite.all  |
+| `/insights/sites/detailRecords` | insights.graph.readwrite.all  |
 
 ## Request
 
@@ -19,7 +19,7 @@ This section outlines the HTTP method and endpoint used to retrieve the detail r
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/insights/sites/{siteId}/detailRecords` | Retrieves the detail records within a site. |
+| POST | `/insights/sites/detailRecords` | Retrieves the detail records within a site. |
 
 
 
@@ -30,6 +30,7 @@ The API supports several query parameters to refine and customize the data retri
 | Parameter | Description | Type    | Required? |
 |-----------|-------------|---------|-----------|
 | siteId    | SharePoint site ID | string  | Yes       |
+| pageSize | Sets the number of objects to display on one page. The default value is 100. | integer | No        |
 | nextLink  | Sets whether to get the remaining results of a request of which the results are more than 100 | string  | No        |
 
 ## Responses
@@ -43,7 +44,7 @@ The API response provides detailed information about the site detail records ret
 | nextLink | The token to be used to get the remaining results of this request | string  |
 | values   | A list of detail records in the site          | list   |
 
-**Detail record**
+**Detailed Records**
 
 | Elements          | Description                                                                 |Type |
 |-------------------|-----------------------------------------------------------------------------|----|
@@ -73,10 +74,14 @@ The API response provides detailed information about the site detail records ret
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site detail records in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
+To use this API, send a `POST` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site detail records in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/insights/sites/0d6c1549-cd2d-4dd2-94b5-28df6da1f7e2/detailrecords?nextLink=1312312
+https://graph-us.avepointonlineservices.com/insights/sites/detailrecords
+{
+  "siteId": "0d6c1549-****-4dd2-****-28df****f7e2",
+  "nextLink": "1231"
+}
 ```
 
 ## Response Sample
@@ -87,11 +92,11 @@ The following response returns a list of detail records in the queried site with
 {
   "values": [
     {
-      "id": "b68d7583-7583-7583-7583-7583758375837583", // Unique identifier for the object
+      "id": "b68d7583-****-7583-****-7583****7583", // Unique identifier for the object
       "name": "7583.xlsx", // Name of the object
       "location": "https://alita*******market7583.sharepoint.com/sites/7583teams-7583channel/shared documents/7583.xlsx", // URL where the object is stored
       "objectType": "object", // Type of object, in this case, a object
-      "createdBy": "alita ******7583Rename", // User who created the object
+      "createdBy": "user08", // User who created the object
       "module": "Microsoft Teams", // Module or application where the object is used
       "inheritType": "Unique", // Indicates if the object inherits permissions from its parent
       "siteName": "7583Teams-7583channel", // Name of the SharePoint site where the object is stored
@@ -109,15 +114,15 @@ The following response returns a list of detail records in the queried site with
       "sensitivityLabel": "******object Only Label", // Sensitivity label applied to the object
       "tagName": "", // Tag associated with the object
       "retentionLabel": null, // Retention label applied to the object
-      "creatorEmail": "admin@alita***market7583.onmicrosoft.com" // Email of the user who created the object
+      "creatorEmail": "user08@domain.com" // Email of the user who created the object
        "webUrl": "https://alita*******market7583.sharepoint.com/sites/7583teams-7583channel" // URl of the SharePoint site where the object is stored
     },
     {
-      "id": "d5ccd5cc-d5cc-d5cc-d5cc-d5ccd5ccd5cc", // Unique identifier for the object
+      "id": "d5ccd5cc-****-d5cc-****-d5cc****d5cc", // Unique identifier for the object
       "name": "d5ccPP.pptx", // Name of the object
       "location": "https://alita*******market7583.sharepoint.com/sites/7583teams-7583channel/shared documents/d5ccp.pptx", // URL where the object is stored
       "objectType": "object", // Type of object, in this case, a object
-      "createdBy": "alita************", // User who created the object
+      "createdBy": "user12", // User who created the object
       "module": "Microsoft Teams", // Module or application where the object is used
       "inheritType": "Inheritance", // Indicates if the object inherits permissions from its parent
       "siteName": "******Teams-****channel", // Name of the SharePoint site where the object is stored
@@ -133,7 +138,7 @@ The following response returns a list of detail records in the queried site with
       "sensitivityLabel": null, // Sensitivity label applied to the object
       "tagName": "", // Tag associated with the object
       "retentionLabel": "", // Retention label applied to the object
-      "creatorEmail": "a***@alita***.onmicrosoft.com" // Email of the user who created the object
+      "creatorEmail": "user12@domain.com" // Email of the user who created the object
       "webUrl": "https://alita*******market7583.sharepoint.com/sites/7583teams-7583channel" // URl of the SharePoint site where the object is stored
     }
   ],

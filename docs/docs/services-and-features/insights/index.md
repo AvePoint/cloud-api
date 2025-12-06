@@ -35,11 +35,11 @@ In addition to the export methods, the Insights API provides several methods tha
 | `/insights/users/access`| [Retrieve User Permissions](users/userPermissions.md)  | Retrieves the permission-related information for specific users. | 
 |`/insights/users/summary`| [Retrieve User Summary](users/userSummary.md)  |Retrieves the user summary information.|
 | `/insights/groups/summary`| [Retrieve Group Summary](groups/groupSummary.md)  | Retrieves group summary. |
-| `/insights/sharingLinks/{siteUrl}/summary`| [Retrieve Sharing Links Summary](sharingLinks/linkSummary.md)  | Retrieves link summaries. |
+| `/insights/sharingLinks/summary`| [Retrieve Sharing Links Summary](sharingLinks/linkSummary.md)  | Retrieves link summaries. |
 | `/insights/sites/permission`| [Retrieve Site Permissions](sites/sitePermissionsGet.md)  | Retrieves site Permissions. |
 | `/insights/sites/overview` | [Retrieve Site Overview](sites/siteOverview.md) | Retrieves site overview. |  
 | `/insights/sites/{siteUrl}/siteId`| [Retrieve Site ID](sites/siteId.md)  | Retrieves site ID. |
-| `insights/sites/{siteId}/detailRecords`| [Retrieve Site Detail Records](sites/siteDetailRecords.md)| Retrieves site detail records.|
+| `insights/sites/detailRecords`| [Retrieve Site Detail Records](sites/siteDetailRecords.md)| Retrieves site detail records.|
 | `/insights/sharingLinks/{siteUrl}/summary`| [Retrieve Permission-Related Information for Sharing Links](sharingLinks/linkSummary.md)  | Retrieves the link summaries. |
 
 ## API Methods for Direct Action

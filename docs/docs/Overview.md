@@ -46,6 +46,7 @@ The AvePoint Graph API employs advanced authentication methods to ensure secure 
 - EnPower data retrieval: Access and manage Exchange mailboxes and Power Platform data.
 - Insights data retrieval: Access detailed reports and data insights from Insights for Microsoft 365.
 - AvePoint Opus data management: Submit records to AvePoint Opus, retrieve due records, and destroy records.
+- AvePoint Confide user management: Import users to Confide share center and manage user permissions in bulk.
 
 ### Key Features
 
@@ -56,6 +57,7 @@ The AvePoint Graph API employs advanced authentication methods to ensure secure 
 - EnPower Data Retrieval: Manage and retrieve data for Exchange mailboxes and Power Platform environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts.
 - Insights Data Retrieval: Export and retrieve detailed reports and data insights for Microsoft 365.
 - AvePoint Opus Data Management: Submit, retrieve, or destroy records to ensure the records are managed according to their lifecycle and compliance requirements.
+- AvePoint Confide Privileged User Management: Batch import users into Confide share center and grant user permissions.
 
 For more features and use cases, visit the [Use Cases](Use-Cases.md).
 
@@ -97,7 +99,8 @@ Refer to the data center endpoints in the table below:
 |                       | UK South (London)                                           | `https://graph-uk.avepointonlineservices.com/`     |
 |                       | US - East                                                   | `https://graph-us.avepointonlineservices.com/`     |
 |                       | United Arab Emirates (Dubai)                                | `https://graph-uae.avepointonlineservices.com/`    |
-| | South Africa North (Johannesburg)| `https://graph-za.avepointonlineservices.com` |
+|                       | South Africa North (Johannesburg)                           | `https://graph-za.avepointonlineservices.com/`     |
+|                       | Qatar Central (Doha)                                        | `https://graph-qa.avepointonlineservices.com/`     |
 |                       | AOS-US Gov                                                  | `https://graph-gov.avepointonlineservices.com/`    |
 |                       | AOS2                     | `https://graph-aos2.avepointonlineservices.com/`    |
 |                       | FedRAMP Cloud (Project Hosts)                                                  | `https://graphusgovapi.online15.net/`    |

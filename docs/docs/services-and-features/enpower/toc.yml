@@ -12,5 +12,7 @@
   href: powerbi/toc.yml
 - name: Copilot Studio Agents
   href: copilotstudio/toc.yml
+- name: Power Pages
+  href: pages/toc.yml
 - name: Exchange Mailboxes
   href: exchange/toc.yml

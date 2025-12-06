@@ -2,6 +2,83 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## December 2025
+
+### Added
+
+- **Cloud Backup for Salesforce®**
+  - Introduced new endpoints to AvePoint Graph API for Cloud Backup for Salesforce®:
+    - `/backup/sfbapi/jobs` for retrieving job-related information.
+    - `/backup/sfbapi/monitor-alerts` for retrieving the basic information of alert records.
+    - `/backup/sfbapi/unusual-activities` for retrieving the basic information of unusual activities.
+
+    
+- **EnPower**
+  - Introduced the following new endpoints for Power Pages data retrieval:
+    - `/smp/powerplatform/powerpages` for site details.
+    - `/smp/powerplatform/powerpages/{powerPageId}/activities` for site activities.
+  - Added the following properties to the response of the `/smp/powerplatform/powerapps` endpoint:
+    - `lastActivityD30`
+    - `lastActivityD90`
+    - `lastActivityD180`
+    - `appLaunchesLast7Days`
+    - `appLaunchesLast30Days`
+    - `appLaunchesLast90Days`
+    - `appLaunchesLast180Days`
+    - `launchedUsersLast7Days`
+    - `launchedUsersLast30Days`
+    - `launchedUsersLast90Days`
+    - `launchedUsersLast180Days`
+  - Added the following properties to the response of the `/smp/powerplatform/powerautomate/cloudflows` endpoint:
+    - `runsLast7Days`
+    - `runsLast30Days`
+    - `runsLast90Days`
+    - `runsLast180Days`
+    - `activitiesLast30Days`
+    - `activitiesLast90Days`
+    - `activitiesLast180Days`
+  - Added the following properties to the response of the `/smp/powerplatform/powerautomate/desktopflows` endpoint:
+    - `runsLast7Days`
+    - `runsLast30Days`
+    - `runsLast90Days`
+    - `runsLast180Days`
+  - Added the following properties to the response of the `/smp/powerplatform/bot` endpoint:
+    - `activityCountLast30D`
+    - `activityCountLast90D`
+    - `activityCountLast180D`
+    - `instructions`
+    - `useAIGeneralKnowledge`
+    - `useGenAIOrchestration`
+    - `knowledgeSourceCount`
+    - `promptCount`
+    - `skillCount`
+    - `toolCount`
+    - `restAPIToolCount`
+    - `useWebSearch`
+  - **User property** Cloud Governance metadata can now be retrieved via the following endpoints:
+    - `/smp/powerplatform/environments`
+    - `/smp/powerplatform/powerapps`
+    - `/smp/powerplatform/powerbi/workspaces`
+    - `/smp/powerplatform/powerautomate/cloudflows`
+    - `/smp/exchange/mailboxes`
+    - `/smp/exchange/resourcemailboxes`
+
+
+
+- **Confide**
+  - Introduced the following new endpoints for sharing privileged users import:
+    - `/admin/shareSetting/import-users` for importing users to Confide share center and manage user permissions in bulk.
+    - `/admin/shareSetting/import-users/{id}` for retrieving import users status.
+    
+### Changed
+
+- **Insights**
+   - Updated the `/insights/sharingLinks/{siteUrl}/summary` endpoint to `/insights/sharingLinks/summary`, updated the `HTTP Method` to `POST`, and improved the request sample.
+   - Updated the `/insights/sites/{siteId}/detailRecords` endpoint to `/insights/sites/detailRecords`, updated the `HTTP Method` to `POST`, and improved the request sample.
+   - Updated the `HTTP Method` of the `/insights/users/access` endpoint to `POST` and improved the request sample.
+   - Updated the `HTTP Method` of the `/insights/sites/permission` endpoint to `POST` and improved the request sample.
+   - Updated the `HTTP Method` of the `/insights/sites/overview` endpoint to `POST` and improved the request sample.
+
 ## October 2025
 
 ### Added  

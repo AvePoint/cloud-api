@@ -10,9 +10,13 @@
   href: iaas-paas/toc.yml
 - name: Cloud Backup for Google Workspace
   href: google/toc.yml
+- name: Cloud Backup for Salesforce®
+  href: salesforcebackup/toc.yml  
 - name: EnPower
   href: enpower/toc.yml
 - name: Insights
   href: insights/toc.yml
 - name: AvePoint Opus
   href: opus/toc.yml
+- name: AvePoint Confide
+  href: confide/toc.yml
