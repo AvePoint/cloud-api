@@ -19,6 +19,15 @@ This section outlines the details of the HTTP method and endpoint used to retrie
 |-----------|--------|------------|
 | GET | `/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview` | Retrieve the customer's protected data information of Cloud Backup for Microsoft 365.|
 
+## Query Parameters
+
+This section outlines the parameters that allow users to specify pagination.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| pageIndex | The starting number of the page to retrieve the customer's protected data information. The default value is 1. | integer | No |
+| pageSize | The number of objects to display on one page. The default value is 50 and the maximum value allowed is 100. | integer | No |
+
 ## Response
 
 If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
@@ -45,25 +54,32 @@ If the request has been successfully processed, a 200 OK response will be return
 For more details on the HTTP status code, refer to [Http Status Code](../../../elements/Use-AvePoint-Graph-API.md#http-status-code).
 ```json
 [
-    {
-        "customerId": "f1626c49-****-****-****-97db****fc15", // The customer ID
-        "customer": "userA@domain.com", // The email address of the customer
-        "serviceType": "Cloud Backup for Microsoft 365", // The service name
-        "serviceModule": "Exchange Online", // The module of Cloud Backup for Microsoft 365
-        "totalScannedObjects": 25, // The number of scanned objects of the module
-        "totalProtectedObjects": 25, // The number of backed-up objects of the module
-        "dataSizeStoredInAvePoint": "0 GB", // The size of the backed-up objects stored in AvePoint storage
-        "dataSizeStoredInBYOS": "N/A" // The size of the backed-up objects stored in BYOS: N/A represents not applicable here 
-    },
-    {
-        "customerId": "f1626c49-****-****-****-97db****fc15",
-        "customer": "userB@domain.com",
-        "serviceType": "Cloud Backup for Microsoft 365",
-        "serviceModule": "Microsoft 365 Group",
-        "totalScannedObjects": 7,
-        "totalProtectedObjects": 7,
-        "dataSizeStoredInAvePoint": "0 GB",
-        "dataSizeStoredInBYOS": "N/A"
+    "data": [
+        {
+            "customerId": "f1626c49-****-****-****-97db****fc15", // The customer ID
+            "customer": "userA@domain.com", // The email address of the customer
+            "serviceType": "Cloud Backup for Microsoft 365", // The service name
+            "serviceModule": "Exchange Online", // The module of Cloud Backup for Microsoft 365
+            "totalScannedObjects": 25, // The number of scanned objects of the module
+            "totalProtectedObjects": 25, // The number of backed-up objects of the module
+            "dataSizeStoredInAvePoint": "0 GB", // The size of the backed-up objects stored in AvePoint storage
+            "dataSizeStoredInBYOS": "N/A" // The size of the backed-up objects stored in BYOS: N/A represents not applicable here 
+        },
+        {
+            "customerId": "f1626c49-****-****-****-97db****fc15",
+            "customer": "userB@domain.com",
+            "serviceType": "Cloud Backup for Microsoft 365",
+            "serviceModule": "Microsoft 365 Group",
+            "totalScannedObjects": 7,
+            "totalProtectedObjects": 7,
+            "dataSizeStoredInAvePoint": "0 GB",
+            "dataSizeStoredInBYOS": "N/A"
+        }
+    ],
+    "metadata": {
+        "pageIndex": 1, // The current display page
+        "pageSize": 50, // The number of objects on the display page
+        "totalCount": 2 // The total number of objects matching the query parameters
     }
 ]
 ```

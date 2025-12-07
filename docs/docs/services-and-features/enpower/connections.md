@@ -8,7 +8,7 @@ The following permission is required to call the API.
 You must register the app through AvePoint Online Services > App registrations to authenticate and authorize your access to AvePoint Graph API.  
 For details, refer to [Authentication and Authorization](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#authentication-and-authorization).
 
-| API   | Permission |
+| API    | Permission |
 |-------------------|---------------|
 |`/smp/powerplatform/connections` | enpower.data.read.all | 
 

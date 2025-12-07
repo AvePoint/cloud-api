@@ -159,7 +159,7 @@ claimStatus | The Cloud Governance claim status of this environment. | string
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
-| metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup </li></ul> | integer | 
+| metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup <br></li><li> **11** for user property </li></ul> | integer | 
 | value                   | The metadata value.                                                         | object  |
 | id                      | The unique identifier for the metadata.                                     | string  |
 | name                    | The metadata name.                                                          | string  |

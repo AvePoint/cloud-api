@@ -60,6 +60,10 @@ The API response provides detailed information about the Power Automate desktop 
 | lastRunTime          | The latest flow running time.                              | string  |
 | lastRunStatus        | The latest flow running status.                            | string  |
 | flowRuns             | The number of times that the flow has run.                | integer |
+| runsLast7Days   | The number of runs in the last 7 days   | integer |
+| runsLast30Days  | The number of runs in the last 30 days  | integer |
+| runsLast90Days  | The number of runs in the last 90 days  | integer |
+| runsLast180Days | The number of runs in the last 180 days | integer |
 | createdTime          | The flow created time.                                    | string  |
 | modifiedTime         | The latest flow modification time.                         | string  |
 | solutionCount        | The number of solutions related to this flow.              | integer |
@@ -106,6 +110,10 @@ If the request has been successfully processed, a 200 OK response will be return
       "lastRunTime": "", // The latest flow running time
       "lastRunStatus": "", // The latest flow running status
       "flowRuns": 0, // The number of times that the flow has run
+      "runsLast7Days": 0, // The number of runs in the last 7 days
+      "runsLast30Days": 0, // The number of runs in the last 30 days
+      "runsLast90Days": 0, // The number of runs in the last 90 days
+      "runsLast180Days": 0, // The number of runs in the last 180 days
       "createdTime": "", // The flow created time
       "modifiedTime": "", // The latest flow modification time
       "solutionCount": 0, // The number of solutions related to this flow

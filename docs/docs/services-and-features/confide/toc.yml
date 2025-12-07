@@ -1,0 +1,4 @@
+- name: Import Confide Sharing Users
+  href: ImportConfideSharingUser.md
+- name: Retrieve Import Users Status
+  href: GetConfideImportUsersStatus.md

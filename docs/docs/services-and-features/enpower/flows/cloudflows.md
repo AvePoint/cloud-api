@@ -61,7 +61,14 @@ The API response provides detailed information about the Power Automate cloud fl
 | lastActivityDate            | The latest flow activity date.                                              | string  |
 | lastRunTime                 | The latest flow running time.                                               | string  |
 | flowRuns                    | The number that the flow has run.                                           | integer |
-| activitiesLast7Days         | The number of flow activities in the last 7 days.                           | integer |
+| runsLast7Days        | The number of runs in the last 7 days         | integer |
+| runsLast30Days       | The number of runs in the last 30 days        | integer |
+| runsLast90Days       | The number of runs in the last 90 days        | integer |
+| runsLast180Days      | The number of runs in the last 180 days       | integer |
+| activitiesLast7Days  | The number of activities in the last 7 days   | integer |
+| activitiesLast30Days | The number of activities in the last 30 days  | integer |
+| activitiesLast90Days | The number of activities in the last 90 days  | integer |
+| activitiesLast180Days| The number of activities in the last 180 days | integer |
 | creator                     | The creator of this flow.                                                   | string  |
 | creatorDepartment           | The department of the flow creator.                                         | string  |
 | creatorOffice               | The office of the flow creator.                                             | string  |
@@ -129,7 +136,7 @@ The API response provides detailed information about the Power Automate cloud fl
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
-| metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup </li></ul> | integer | 
+| metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup <br></li><li> **11** for user property </li></ul> | integer | 
 | value                   | The metadata value.                                                         | object  |
 | id                      | The unique identifier for the metadata.                                     | string  |
 | name                    | The metadata name.                                                          | string  |
@@ -175,7 +182,14 @@ If the request has been successfully processed, a 200 OK response will be return
       "lastActivityDate": "", // The latest flow activity date
       "lastRunTime": "", // The latest flow running time
       "flowRuns": 0, // The number that the flow has run
-      "activitiesLast7Days": 0, // The number of flow activities in the last 7 days
+      "runsLast7Days": 0, // The number of runs in the last 7 days
+      "runsLast30Days": 0, // The number of runs in the last 30 days
+      "runsLast90Days": 0, // The number of runs in the last 90 days
+      "runsLast180Days": 0, // The number of runs in the last 180 days
+      "activitiesLast7Days": 0, // The number of activities in the last 7 days
+      "activitiesLast30Days": 0, // The number of activities in the last 30 days
+      "activitiesLast90Days": 0, // The number of activities in the last  90 days
+      "activitiesLast180Days": 0, // The number of activities in the last 180 days
       "creator": "", // The creator of this flow
       "creatorDepartment": "Sample Department", // The department of the flow creator
       "creatorOffice": null, // The office of the flow creator

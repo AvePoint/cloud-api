@@ -86,7 +86,18 @@ The API response provides detailed information about the Power Apps retrieved. E
 | withBusinessContextResponse | Indicates if the Power App has responded EnPower’s business context request. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | businessContextLastResponseTime | The last time an EnPower business context request was responded.            | string  |
 | lastActivityD7                  | The activity count in the last 7 days.                                      | integer |
-| appLaunchedCount                | The number of times the Power App has been launched.                        | integer |
+| lastActivityD30         | The number of activities in the last 30 days                | integer |
+| lastActivityD90         | The number of activities in the last 90 days                | integer |
+| lastActivityD180        | The number of activities in the last 180 days               | integer |
+| appLaunchesLast7Days    | The number of times the app has been launched in the last 7 days  | integer |
+| appLaunchesLast30Days   | The number of times the app has been launched in the last 30 days | integer |
+| appLaunchesLast90Days   | The number of times the app has been launched in the last 90 days | integer |
+| appLaunchesLast180Days  | The number of times the app has been launched in the last 180 days| integer |
+| appLaunchedCount        | The number of times the app has been launched.              | integer |
+| launchedUsersLast7Days  | The number of users who have launched the app in the last 7 days  | integer |
+| launchedUsersLast30Days | The number of users who have launched the app in the last 30 days | integer |
+| launchedUsersLast90Days | The number of users who have launched the app in the last 90 days | integer |
+| launchedUsersLast180Days| The number of users who have launched the app in the last 180 days| integer |
 | lastPublishOn                   | The date and time when the Power App was last published.                    | string  |
 | quarantineState                 | The quarantine status of the canvas app.                                     | string  |
 | status                          | The current status of the model-driven app.                                        | string  |
@@ -137,7 +148,7 @@ The API response provides detailed information about the Power Apps retrieved. E
 
 | Elements                | Description                                                                 | Type    |
 |-------------------------|-----------------------------------------------------------------------------|---------|
-| metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup </li></ul> | integer | 
+| metadataType | The type of metadata. <br> Valid values: <br> <ul><li> **0** for none <br> </li><li> **1** for single line of text <br></li><li> **2** for multiple lines of text <br></li><li> **3** for yes/no <br></li><li> **4** for choice <br></li><li> **5** for people picker filter profile <br></li><li> **6** for managed metadata <br></li><li> **7** for hyperlink <br></li><li> **8** for user profile property <br></li><li> **9** for Microsoft Entra property <br></li><li> **10** for lookup <br></li><li> **11** for user property </li></ul> | integer | 
 | value                   | The metadata value.                                                         | object  |
 | id                      | The unique identifier for the metadata.                                     | string  |
 | name                    | The metadata name.                                                          | string  |
@@ -208,8 +219,19 @@ If the request has been successfully processed, a 200 OK response will be return
       "withBusinessContextResponse": false, // Indicates if the Power App has responded EnPower’s business context request
       "businessContextLastResponseTime": "", // The last time an EnPower business context request was responded
       "lastActivityD7": 0, // The activity count in the last 7 days
-      "appLaunchedCount": 0, // The number of times the Power app has been launched
-      "lastPublishOn": "2024-12-26 03:58:11", // The date and time when the Power app was last published
+      "lastActivityD30": 0, // The number of activities in the last 30 days	
+      "lastActivityD90": 0, // The number of activities in the last  90 days	
+      "lastActivityD180": 0, // The number of activities in the last 180 days	
+      "appLaunchesLast7Days": 0, // The number of times the app has been launched in the last 7 days	
+      "appLaunchesLast30Days": 0, // The number of times the app has been launched in the last 30 days	
+      "appLaunchesLast90Days": 0, // The number of times the app has been launched in the last 90 days	
+      "appLaunchesLast180Days": 0, // The number of times the app has been launched in the last 180 days	
+      "appLaunchedCount": 0, // The number of times the app has been launched.	
+      "launchedUsersLast7Days": 0, // The number of users who have launched the app in the last 7 days	
+      "launchedUsersLast30Days": 0, // The number of users who have launched the app in the last 30 days	
+      "launchedUsersLast90Days": 0, // The number of users who have launched the app in the last 90 days	
+      "launchedUsersLast180Days": 0, // The number of users who have launched the app in the last 180 days	
+      "lastPublishOn": "2024-12-26 03:58:11", // The date and time when the app was last published
       "quarantineState": "Quarantined", // The quarantine status of the Power App
       "status": "None", // The current status of the Power App
       "solutionCount": 0, // The number of solutions associated with the Power App

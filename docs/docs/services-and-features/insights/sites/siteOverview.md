@@ -19,7 +19,7 @@ This section outlines the HTTP method and endpoint used to retrieve the site ove
 
 | HTTP Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/insights/sites/overview` | Retrieves the site overview on risk levels. |
+| POST | `/insights/sites/overview` | Retrieves the site overview on risk levels. |
 
 
 
@@ -29,7 +29,8 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description                              | Type    | Required? |
 |-----------|------------------------------------------|---------|-----------|
-| riskLevel | Specifies the set of risk levels.            | list   | No        |
+| riskLevel | Specifies the set of risk levels. Valid values are: <ul><li>**0** for N/A</li><li> **1** for Low</li><li> **2** for Medium</li></li><li> **3** for High</li>     | integer   | No        |
+| pageSize | Sets the number of objects to display on one page. The default value is 100. | integer | No        |
 | nextLink  | Sets the number of results for one page. 100 results on one page at most. | string  | No        |
 
 ## Responses
@@ -43,7 +44,7 @@ The API response provides detailed information about the sites retrieved. Each s
 | nextLink | The token to be used to get the remaining results of this request | string  |
 | values   | A list of site overview objects | list   |
 
-**Site overview**
+**Site Overview**
 
 | Elements | Description                        | Type    |
 |----------|------------------------------------|---------|
@@ -55,10 +56,16 @@ The API response provides detailed information about the sites retrieved. Each s
 
 ## Request Sample
 
-To use this API, send a `GET` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site overview details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
+To use this API, send a `POST` request to the specified endpoint, including necessary parameters as defined in the references. This will return the relevant site overview details in a structured format, enabling easy integration with other systems or applications. The following request is an API call to the Insights environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/insights/sites/overview?riskLevel=1&riskLevel=2&riskLevel=3&nextLink=12313
+https://graph-us.avepointonlineservices.com/insights/sites/overview
+{
+  "riskLevel": [
+    2,3
+  ],
+  "nextLink": "1231"
+}
 ```
 
 ## Response Sample

@@ -58,11 +58,24 @@ The API response provides detailed information about the agents retrieved. Each 
 | lastModifiedTime        | The latest agent modification time.                         | string  |
 | lastPublishedTime       | The latest published time of the agent.                    | string  |
 | activityCountLast7D    | The number of activities in the last 7 days.               | integer |
+ activityCountLast30D    | The number of activities in the last 30 days         | integer |
+| activityCountLast90D    | The number of activities in the last 90 days         | integer |
+| activityCountLast180D   | The number of activities in the last 180 days        | integer |
 | lastActivityTime        | The latest agent activity date.                             | string  |
 | primaryLanguage         | The primary language of the agent.                          | string  |
 | sharedWithOrganization  | Indicates whether the agent is shared with the organization. <br> Valid values: <br> <ul><li> true for yes <br> </li><li> false for no <br> | boolean |
 | sharedUsers             | Number of users this agent was shared with.                | integer |
 | sharedGroups            | Number of groups this agent was shared with.               | integer |
+| instructions            | The instructions of the agent                        | string  |
+| useAIGeneralKnowledge   | Indicates whether the agent is using AI general knowledge | boolean |
+| useGenAIOrchestration   | Indicates whether the agent is using Gen AI orchestration | boolean |
+| knowledgeSourceCount    | The total knowledge source count of the agent        | integer |
+| promptCount             | The total prompt count of the agent                  | integer |
+| skillCount              | The total skill count of the agent                   | integer |
+| toolCount               | The total tool count of the agent                    | integer |
+| restAPIToolCount        | The total Rest API tool count of the agent           | integer |
+| useWebSearch            | Indicates whether the agent is using web search      | boolean |
+
 
 ## Request Sample
 
@@ -102,11 +115,23 @@ If the request has been successfully processed, a 200 OK response will be return
       "lastModifiedTime": "", // The latest agent modification time
       "lastPublishedTime": "", // The latest published time of the agent
       "activityCountLast7D": 0, // The number of activities in the last 7 days
+      "activityCountLast30D": 0, // The number of activities in the last 30 days
+      "activityCountLast90D": 0, // The number of activities in the last  90 days
+      "activityCountLast180D": 0, // The number of activities in the last 180 days
       "lastActivityTime": "", // The latest agent activity date
       "primaryLanguage": "", // The primary language of the agent
       "sharedWithOrganization": false, // Indicates whether the agent is shared with the organization
       "sharedUsers": 0, // Number of users this agent was shared with
       "sharedGroups": 0 // Number of groups this agent was shared with
+      "instructions": "" //The instructions of the agent
+      "useAIGeneralKnowledge": false //Indicates whether the agent is using AI general knowledge
+      "useGenAIOrchestration": false //Indicates whether the agent is using Gen AI orchestration
+      "knowledgeSourceCount": 0  //The total knowledge source count of the agent
+      "promptCount": 0  //The total prompt count of the agent
+      "skillCount": 0  //The total skill count of the agent
+      "toolCount": 0  //The total tool count of the agent
+      "restAPIToolCount": 0 //The total Rest API tool count of the agent
+      "useWebSearch": false //Indicates whether the agent is using web search
     }
   ],
   "totalCount": 1,

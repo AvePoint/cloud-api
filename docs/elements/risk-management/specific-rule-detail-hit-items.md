@@ -151,6 +151,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | creatorName | The creator name of the environment. | string |
 | creatorEmail | The email address of the creator. | string |
 | adminCount | The number of admins in the environment.| integer |
+| guestUserCount | The number of guest users in the environment.| integer |
 
 
 **Connection details:**
@@ -247,7 +248,7 @@ If the request has been successfully processed, a 200 OK response will be return
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
 
 ```json
-https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d926b068-****-4830-****-fd2a****4e99/tenants/0eaab044-****-4a92-****-93c6****711e/detection/rules/00000002-****-4A52-****-00000036/hit-items
+https://graph-us.avepointonlineservices.com/partner/external/v3/rm/customers/d926b068-****-4830-****-fd2a****4e99/tenants/0eaab044-****-4a92-****-93c6****711e/detection/rules/00000002-9E63-4A52-9946-00000036/hit-items
 ```
 
 ## Response Sample
@@ -261,6 +262,7 @@ If the request has been successfully processed, a 200 OK response will be return
             "detail": {
                 "groupName": "20240820 teamsite", // The display name of the group
                 "groupEmailAddress": "2024****@****.onmicrosoft.com", // The email address of the group
+                "createdBy": "", // The creator of the group
                 "groupType": 1, // The type of group, Microsoft 365 Group
                 "ownerCount": 1, // The number of owners in the group
                 "memberCount": 4, // The number of members in the group
@@ -280,6 +282,6 @@ If the request has been successfully processed, a 200 OK response will be return
     "metaData": {
         "pageIndex": 1, // The current display page
         "pageSize": 50, // The number of objects on the display page
-        "totalCount": 37 // The total number of objects matching the query parameters
+        "totalCount": 1 // The total number of objects matching the query parameters
     }
 }
