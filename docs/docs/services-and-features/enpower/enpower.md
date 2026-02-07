@@ -68,8 +68,8 @@ Currently, details of Power Pages sites can be retrieved via the following API M
 
 | API Method | Endpoint | Documentation | 
 |--- | --- | --- |
-| GET | `/smp/powerplatform/powerpages` | [Site Details](../enpower/powerpages/pagedetails.md) |
-| GET | `/smp/powerplatform/powerpages/{powerPageId}/activities` | [Site Activities](../enpower/powerpages/pageactivities.md) |
+| GET | `/smp/powerplatform/powerpages` | [Site Details](../enpower/pages/details.md) |
+| GET | `/smp/powerplatform/powerpages/{powerPageId}/activities` | [Site Activities](../enpower/pages/activities.md) |
 
 
 ## API Methods for Exchange Data Retrieval

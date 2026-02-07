@@ -41,8 +41,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | serviceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | string |
 | totalScannedObjects | The number of the scanned objects. | integer |
 | totalProtectedObjects | The number of the backed-up objects. | integer |
-| dataSizeStoredInAvePoint | The size of the backed-up objects stored in the AvePoint storage. | string |
-| dataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | string |
+| dataSizeStoredInAvePoint | The backup data size of objects in the last job (using AvePoint storage). | string |
+| dataSizeStoredInBYOS | The backup data size of objects in the last job (using AvePoint storage). | string |
 
 ## Request Sample  
 
@@ -67,8 +67,8 @@ If the request has been successfully processed, a 200 OK response will be return
             "serviceModule": "Exchange Online", // The module of the customer’s Cloud Backup for Microsoft 365 service
             "totalScannedObjects": 0, // The number of the scanned objects
             "totalProtectedObjects": 0, // The number of the backed-up objects
-            "dataSizeStoredInAvePoint": "0 GB", // The size of the backed-up objects stored in the AvePoint storage
-            "dataSizeStoredInBYOS": "N/A" // The size of the backed-up objects stored in BYOS
+            "dataSizeStoredInAvePoint": "0 GB", // The backup data size of objects in the last job (using AvePoint storage)
+            "dataSizeStoredInBYOS": "N/A" // The backup data size of objects in the last job (using BYOS); N/A represents not applicable here
         },
         {
             "customerId": "caf94a75-2cc6-43aa-b04b-794cb9af5ea3",

@@ -34,6 +34,7 @@ The API supports the following query parameters to define the users to be import
 | email                   | string  | Yes      | The email address of the user. |
 | isShareCoordinator      | boolean | No       | Can manage and share objects in the share center. |
 | canConfigureScan        | boolean | No       | Can skip anti-virus scan for files greater than 2 GB. |
+| canGenerateAccessCodeLinkInShareCenter      | boolean | No       | Can generate secure access links in the share center. |
 | canShareLink            | boolean | No       | Can generate anonymous download links in a project. |
 | canGenerateUploadLink   | boolean | No       | Can generate anonymous upload links in a project. |
 | canGenerateDownloadLinkInShareCenter      | boolean | No       | Can generate anonymous download links in the share center. |
