@@ -40,8 +40,8 @@ If the request has been successfully processed, a 200 OK response will be return
 | serviceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | string |
 | totalScannedObjects | The number of scanned objects of the module. | integer |
 | totalProtectedObjects | The number of backed-up objects of the module. | integer |
-| dataSizeStoredInAvePoint | The size of the backed-up objects stored in the AvePoint storage. | string |
-| dataSizeStoredInBYOS | The size of the backed-up objects stored in BYOS. | string |
+| dataSizeStoredInAvePoint | The backup data size of objects in the last job (using AvePoint storage). | string |
+| dataSizeStoredInBYOS | The backup data size of objects in the last job (using BYOS). | string |
 
 ## Request Sample
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined in the references.
@@ -62,8 +62,8 @@ For more details on the HTTP status code, refer to [Http Status Code](../../../e
             "serviceModule": "Exchange Online", // The module of Cloud Backup for Microsoft 365
             "totalScannedObjects": 25, // The number of scanned objects of the module
             "totalProtectedObjects": 25, // The number of backed-up objects of the module
-            "dataSizeStoredInAvePoint": "0 GB", // The size of the backed-up objects stored in AvePoint storage
-            "dataSizeStoredInBYOS": "N/A" // The size of the backed-up objects stored in BYOS: N/A represents not applicable here 
+            "dataSizeStoredInAvePoint": "0 GB", // The backup data size of objects in the last job (using AvePoint storage)
+            "dataSizeStoredInBYOS": "N/A" // The backup data size of objects in the last job (using BYOS): N/A represents not applicable here 
         },
         {
             "customerId": "f1626c49-****-****-****-97db****fc15",
