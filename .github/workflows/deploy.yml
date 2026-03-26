@@ -25,17 +25,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
     - name: Dotnet Setup
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 8.x
 
     - run: dotnet tool update -g docfx
     - run: docfx ./docs/docfx.json
 
+    - name: Upload docs to Storage
+      env:
+        AZCOPY_SAS_URL: ${{ secrets.AZCOPY_SAS_URL }}
+      run: |
+        if [ -z "$AZCOPY_SAS_URL" ]; then
+          echo "AZCOPY_SAS_URL is not set. Skip storage upload."
+          exit 0
+        fi
+
+        curl -sL https://aka.ms/downloadazcopy-v10-linux -o azcopy.tar.gz
+        tar -xzf azcopy.tar.gz
+        sudo cp ./azcopy_linux_amd64_*/azcopy /usr/local/bin/
+        azcopy --version
+
+        ls -la ./docs/_site
+        azcopy sync "${GITHUB_WORKSPACE}/docs/_site/" "$AZCOPY_SAS_URL" --recursive=true --delete-destination=true
+
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         # Upload entire repository
         path: './docs/_site'
