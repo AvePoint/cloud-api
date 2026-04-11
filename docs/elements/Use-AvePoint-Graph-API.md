@@ -39,6 +39,8 @@ To interact with resources, construct a request as follows:
 - {resource} – The referenced resource.
 - {query-parameters} – Optional parameters to customize the response.
 
+Set the header to `Content-Type: application/json`.
+
 ### Response Components
 
 After making a request, a response is returned that includes:

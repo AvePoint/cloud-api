@@ -57,7 +57,7 @@ The AvePoint Graph API employs advanced authentication methods to ensure secure 
 - EnPower Data Retrieval: Manage and retrieve data for Exchange mailboxes and Power Platform environments, connections, Power Apps, Power Automate Cloud Flows, and Power BI artifacts.
 - Insights Data Retrieval: Export and retrieve detailed reports and data insights for Microsoft 365.
 - AvePoint Opus Data Management: Submit, retrieve, or destroy records to ensure the records are managed according to their lifecycle and compliance requirements.
-- AvePoint Confide Privileged User Management: Batch import users into Confide share center and grant user permissions.
+- AvePoint Confide Privileged User Management: Batch import users into Confide share center and grant user permissions. Maintain flexibility with the ability to bulk update privileged user permissions anytime your needs change.
 
 For more features and use cases, visit the [Use Cases](Use-Cases.md).
 

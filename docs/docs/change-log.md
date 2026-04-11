@@ -2,6 +2,31 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## April 2026
+
+### Added
+
+- **Cloud Backup for Microsoft 365**
+  - Introduced the following new endpoints:
+    - `/backup/m365/settings/retention-policy` for retrieving the retention policy.
+    - `/backup/m365/settings/backup/frequency` for retrieving the backup frequency.
+  - Added the following new supported values for the `location` parameter:
+    - ISR (Israel)
+    - MEX (Mexico)
+    - NZL (New Zealand)
+    - ESP (Spain)
+    - TWN (Taiwan)
+  - Added an [Overview](./services-and-features/m365/overview.md) page covering all APIs and their common parameters and attributes.
+
+- **Confide**
+  - Introduced the following new endpoints for managing privileged user permissions:
+    - `/admin/shareSetting/update-users` for updating privileged user permissions in the Confide share center in bulk.
+    - `/admin/shareSetting/update-users/{taskId}` for retrieving update users status.
+
+- **Document Management System Online**
+  - Added the `/dmso/audits` endpoint to retrieve audit records.
+
+
 ## February 2026
 
 ### Added

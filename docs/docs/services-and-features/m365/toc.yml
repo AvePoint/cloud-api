@@ -1,6 +1,12 @@
+- name: Overview
+  href: overview.md
 - name: Jobs
   href: jobs.md
 - name: Subscriptions
   href: subscription.md
 - name: Unusual Activities
-  href: unusual-activities.md 
+  href: unusual-activities.md
+- name: Backup Frequency
+  href: backup-frequency.md
+- name: Retention Policy
+  href: retention-policy.md
