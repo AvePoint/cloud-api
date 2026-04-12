@@ -5,7 +5,7 @@ To register an app for the AvePoint Graph API, follow these steps:
 1. Access AvePoint Online Services  
    - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).
 2. Navigate to **Administration** > **App registrations**.
-3. Register a New App with Required Permissions:  
+3. Register a New App with Required Permissions. For more details, see [Configure App Registrations](https://learn.avepoint.com/configuration-and-deployment/administration/configure-app-registrations.html) in AvePoint Learn portal.  
    1. Click **Create** on the **App registrations** page.  
    2. On the **Create app registration** page, enter a name for the app.  
    3. Click **Add service and permission**.  
@@ -42,6 +42,7 @@ See the table below for the services and permissions that can be used for access
 | **Cloud Backup for IaaS + PaaS**   | platformbackup.readwrite.all                 | Get job information from Cloud Backup for IaaS + PaaS.                                                                                                                                                                                             |
 | **Cloud Backup for Microsoft 365** | microsoft365backup.jobInfo.read.all          | Get job information from Cloud Backup for Microsoft 365.                                                                                                                                                                                           |
 |                                    | microsoft365backup.subscriptionInfo.read.all | Get the subscription consumption information of Cloud Backup for Microsoft 365.                                                                                                                                                                    |
+|                                    | microsoft365backup.settings.read.all | Get the backup settings and retention period information of Cloud Backup for Microsoft 365.                                                                                                                                                                    |
 |                                    | microsoft365backup.unusualActivity.read.all | Get the basic information of unusual activities detected by Cloud Backup for Microsoft 365.                                                                                                                                                                    |
 | **Cloud Backup for Google Workspace**   | gsuite.graph.read.all                 | Get job information from Cloud Backup for Google Workspace.   
 | **AvePoint Opus**                  | records.readwrite.all                        |  Submit records to AvePoint Opus, retrieve due records, and destroy records.           |
@@ -49,7 +50,8 @@ See the table below for the services and permissions that can be used for access
 | **Insights**     | insights.graph.readwrite.all                 | Retrieve or export data from Insights.                     |
 | **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
 | **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernanceapi.htm) |
-
+| **Confide**               | confide.graph.readwrite.all              | Manage privileged users and permissions in Confide. |
+| **Document Management System Online** | dmso.graph.readwrite.all | Retrieve audit records. |
 
  ## Client Secret
 

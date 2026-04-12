@@ -1,7 +1,7 @@
 
 # Retrieve Import Users Status
 
-Use this API to query the status of a user import task (`/admin/shareSetting/import-users/{id}` navigation property). This article outlines the necessary permissions, available methods, and models used for interacting with the API.
+Use this API to query the status of a user import task (`/admin/shareSetting/import-users/{taskId}` navigation property). This article outlines the necessary permissions, available methods, and models used for interacting with the API.
 
 ---
 
@@ -12,7 +12,7 @@ You must register an app through AvePoint Online Services > App registration to 
 
 | API | Permission |
 |-----|------------|
-| `/admin/shareSetting/import-users/{id}` | confide.graph.readwrite.all |
+| `/admin/shareSetting/import-users/{taskId}` | confide.graph.readwrite.all |
 
 
 
@@ -21,14 +21,14 @@ This section outlines the HTTP method and endpoint used to retrieve import users
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/admin/shareSetting/import-users/{id}` | Retrieves import users task status. |
+| GET | `/admin/shareSetting/import-users/{taskId}` | Retrieves import users task status. |
 
 ## Query Parameters
 The API supports the following query parameter to specify the import task for which you want to view status.
 
 | Parameter | Description | Type | Required? |
 |-----------|-------------|------|----------|
-| id | The unique identifier (UUID) of the import users task. | string | Yes |
+| taskId | The unique identifier (UUID) of the import users task. | string | Yes |
 
 ## Response
 

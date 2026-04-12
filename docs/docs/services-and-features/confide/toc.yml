@@ -2,3 +2,7 @@
   href: ImportConfideSharingUser.md
 - name: Retrieve Import Users Status
   href: GetConfideImportUsersStatus.md
+- name: Update Confide Sharing Users
+  href: UpdateConfideSharingUser.md
+- name: Retrieve Update Users Status
+  href: GetConfideUpdateUsersStatus.md
