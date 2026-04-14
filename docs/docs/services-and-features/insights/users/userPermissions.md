@@ -58,9 +58,10 @@ The API response provides detailed information about the user permissions retrie
 | inheritType        | Indicates whether the permissions are unique to this object.      | string  |
 | permission         | The level of permission granted.                    | string  |
 | sensitivityLevel   | The sensitivity level of the object.               | string  |
-| sensitiveInfoType  | The sensitive info types the file matches. |string  |
+| dataType  | The data types the file matches. |string  |
 | isDirect           | Indicates whether the permission is direct or inherited.               | boolean |
 | sensitivityLabel   | The sensitivity label applied to the object.          | string  |
+| trainableClassifier  | The trainable classifier contained in the object.                                       |string|
 | inheritedFrom      | The source from which the permissions are inherited.                     | string  |
 
 ## Request Sample
@@ -98,9 +99,10 @@ The following is a sample response for this API method, which includes the permi
             "inheritType": "Unique",  // Indicates that the permissions are unique to this file.
             "permission": "Contribute",  // The level of permission granted.
             "sensitivityLevel": "High",  // The sensitivity level of the file.
-            "sensitiveInfoType": "U.S. Individual Taxpayer Identification Number (ITIN), U.S. Social Security Number (SSN), U.S. / U.K. Passport Number",  // The sensitive info types the file matches.
+            "dataType": "U.S. Individual Taxpayer Identification Number (ITIN), U.S. Social Security Number (SSN), U.S. / U.K. Passport Number",  // The data types the file matches.
             "isDirect": false,  // Indicates whether the permission is direct or inherited.
             "sensitivityLabel": "",  // The sensitivity label applied to the file, which is empty in this case.
+            "trainableClassifier": "",  // The trainable classifier contained in the object, which is empty in this case.
             "inheritedFrom": "sharinglinks.2nn3-****-46n7-****-8nnn****m64n.flexible.8nf56mnn-****-c62b-****-c78f****8760"  // The source from which the permissions are inherited.
         }
     ],

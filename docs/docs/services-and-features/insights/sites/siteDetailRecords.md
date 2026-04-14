@@ -64,8 +64,9 @@ The API response provides detailed information about the site detail records ret
 | channelName       | Name of the Microsoft Teams channel where the object is shared                |string|
 | riskLevel         | Risk level associated with the object                                         |string|
 | privacy           | Privacy setting of the object                                                 |string|
-| sensitiveInfoType | Types of sensitive information contained in the object                        |list|
+| dataType | Types of sensitive information contained in the object                        |list|
 | sensitivityLabel  | Sensitivity label applied to the object                                       |string|
+| trainableClassifier  | The trainable classifier contained in the object                                       |string|
 | tagName           | Tag associated with the object                                                |string|
 | retentionLabel    | Retention label applied to the object                                         |string|
 | creatorEmail      | Email of the user who created the object                                      |string|
@@ -108,10 +109,11 @@ The following response returns a list of detail records in the queried site with
       "channelName": "7583channel", // Name of the Microsoft Teams channel where the object is shared
       "riskLevel": "Low", // Risk level associated with the object
       "privacy": "Private", // Privacy setting of the object
-      "sensitiveInfoType": [
+      "dataType": [
         "Mi CR 2" // Types of sensitive information contained in the object
       ],
       "sensitivityLabel": "******object Only Label", // Sensitivity label applied to the object
+      "trainableClassifier": "Agreements", // The trainable classifier contained in the object
       "tagName": "", // Tag associated with the object
       "retentionLabel": null, // Retention label applied to the object
       "creatorEmail": "user08@domain.com" // Email of the user who created the object
@@ -126,7 +128,7 @@ The following response returns a list of detail records in the queried site with
       "module": "Microsoft Teams", // Module or application where the object is used
       "inheritType": "Inheritance", // Indicates if the object inherits permissions from its parent
       "siteName": "******Teams-****channel", // Name of the SharePoint site where the object is stored
-      "sensitivityLevel": "N/A", // Sensitivity level of the object
+      "sensitivityLevel": "Not sensitive", // Sensitivity level of the object
       "exposureLevel": "Medium", // Exposure level of the object
       "scannedTime": "2024-11-01T09:22:18Z", // Timestamp when the object was last scanned
       "createdTime": "2024-04-03T06:57:39Z", // Timestamp when the object was created
@@ -134,8 +136,9 @@ The following response returns a list of detail records in the queried site with
       "channelName": "**********channel", // Name of the Microsoft Teams channel where the object is shared
       "riskLevel": "N/A", // Risk level associated with the object
       "privacy": "Private", // Privacy setting of the object
-      "sensitiveInfoType": [], // Types of sensitive information contained in the object
+      "dataType": [], // Types of sensitive information contained in the object
       "sensitivityLabel": null, // Sensitivity label applied to the object
+      "trainableClassifier": null, // The trainable classifier contained in the object
       "tagName": "", // Tag associated with the object
       "retentionLabel": "", // Retention label applied to the object
       "creatorEmail": "user12@domain.com" // Email of the user who created the object

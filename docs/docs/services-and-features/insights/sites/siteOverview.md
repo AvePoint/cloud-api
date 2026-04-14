@@ -29,7 +29,7 @@ The API supports several query parameters to refine and customize the data retri
 
 | Parameter | Description                              | Type    | Required? |
 |-----------|------------------------------------------|---------|-----------|
-| riskLevel | Specifies the set of risk levels. Valid values are: <ul><li>**0** for N/A</li><li> **1** for Low</li><li> **2** for Medium</li></li><li> **3** for High</li>     | integer   | No        |
+| riskLevel | Specifies the set of risk levels. Valid values are: <ul><li>**0** for No risk</li><li> **1** for Low</li><li> **2** for Medium</li><li> **3** for High</li><li> **-2** for No sensitivity definition applied</li>     | integer   | No        |
 | pageSize | Sets the number of objects to display on one page. The default value is 100. | integer | No        |
 | nextLink  | Sets the number of results for one page. 100 results on one page at most. | string  | No        |
 

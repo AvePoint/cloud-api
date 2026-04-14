@@ -17,6 +17,8 @@ This document provides a detailed log of changes, updates, and enhancements made
     - ESP (Spain)
     - TWN (Taiwan)
   - Added an [Overview](./services-and-features/m365/overview.md) page covering all APIs and their common parameters and attributes.
+- EnPower
+  - Added the `owner` property to the response of the `/smp/powerplatform/powerautomate/cloudflows` endpoint to enable the retrieval of detailed cloud flow owner properties.
 
 - **Confide**
   - Introduced the following new endpoints for managing privileged user permissions:
@@ -25,6 +27,20 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 - **Document Management System Online**
   - Added the `/dmso/audits` endpoint to retrieve audit records.
+
+### Changed
+
+- **Insights**
+
+  - Added the `trainableClassifier` property to the response of the following endpoints:
+    - `/insights/sites/detailRecords`
+    - `/insights/users/access`
+
+  - Updated the `sensitiveInfoType` property to `dataType` in the response of the `/insights/users/access` endpoint and improved the response sample.
+
+  - Updated the `sensitiveItems` property to `sitesWithDirectAccess` in the response of the `/insights/users/summary` endpoint and improved the response sample.
+
+  - Updated the available values for the `riskLevel` property in the request of the `/insights/sites/overview` endpoint.
 
 
 ## February 2026

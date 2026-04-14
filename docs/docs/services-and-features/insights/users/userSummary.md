@@ -50,7 +50,7 @@ The API response provides detailed information about the users retrieved. Each g
 | email          | The email address of the user                                               | string|
 | userStatus     | The Sign-in status of the Microsoft 365 user (e.g., **Blocked**, **Active**)                   | string|
 | trustStatus    | The trust status of the user in Insights for Microsoft 365 (e.g., **Trusted**, **Not Trusted**)                     | string|
-| sensitiveItems | The number of sensitive items associated with the user                      |integer|
+| sitesWithDirectAccess | The number of site collections where the user has direct access                      |integer|
 | lastSignIn     | The time range of the user's last sign-in (e.g., **Less than 90 Days**, **More than 90 Days**, **More than 180 Days**, **None**, **N/A**)            |string|
 | createdOn      | The date and time when the user account was created in Microsoft Entra ID    | string|
 
@@ -76,7 +76,7 @@ The following is a sample response for this API method, which includes summary i
             "email": "AdeleV00606@m365x****63.onmicrosoft.com", // user email
             "userStatus": "Active", // current status of the user
             "trustStatus": "Not Trusted", // trust status of the user
-            "sensitiveItems": 87, // number of sensitive items associated with the user
+            "sitesWithDirectAccess": 87, // number of site collections where the user has direct access
             "LastSignIn": "Less than 90 Days", // last sign-in time frame
             "createdOn": "2021-08-23T03:39:55" // account creation date and time
         },
@@ -86,7 +86,7 @@ The following is a sample response for this API method, which includes summary i
             "email": "Insights********@***insightstest.onmicrosoft.com", // user email
             "userStatus": "Blocked", // current status of the user
             "trustStatus": "Trusted", // trust status of the user
-            "sensitiveItems": 55, // number of sensitive items associated with the user
+            "sitesWithDirectAccess": 55, // number of site collections where the user has direct access
             "LastSignIn": "Less than 90 Days", // last sign-in time frame
             "createdOn": "2021-08-24T06:12:55" // account creation date and time
         },
@@ -96,7 +96,7 @@ The following is a sample response for this API method, which includes summary i
             "email": "", // user email (empty in this case)
             "userStatus": "Blocked", // current status of the user
             "trustStatus": "Not Trusted", // trust status of the user
-            "sensitiveItems": 38, // number of sensitive items associated with the user
+            "sitesWithDirectAccess": 38, // number of site collections where the user has direct access
             "LastSignIn": "None", // last sign-in time frame
             "createdOn": "2022-04-06T06:40:21" // account creation date and time
         },
@@ -106,7 +106,7 @@ The following is a sample response for this API method, which includes summary i
             "email": "Tester003@***insightstest.onmicrosoft.com", // user email
             "userStatus": "Active", // current status of the user
             "trustStatus": "Trusted", // trust status of the user
-            "sensitiveItems": 36, // number of sensitive items associated with the user
+            "sitesWithDirectAccess": 36, // number of site collections where the user has direct access
             "LastSignIn": "More than 180 Days", // last sign-in time frame
             "createdOn": "2021-08-24T06:12:55" // account creation date and time
         }
