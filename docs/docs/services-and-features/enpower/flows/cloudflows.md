@@ -69,16 +69,17 @@ The API response provides detailed information about the Power Automate cloud fl
 | activitiesLast30Days | The number of activities in the last 30 days  | integer |
 | activitiesLast90Days | The number of activities in the last 90 days  | integer |
 | activitiesLast180Days| The number of activities in the last 180 days | integer |
+| owner | The owner and related properties of this flow. For detailed owner properties, refer to [Owner Details](#owner-details). | object |
 | creator                     | The creator of this flow.                                                   | string  |
-| creatorDepartment           | The department of the flow creator.                                         | string  |
-| creatorOffice               | The office of the flow creator.                                             | string  |
-| creatorStatus               | The status of the flow creator.                                             | string  |
-| creatorUserType             | The user type of the flow creator.                                          | string  |
-| creatorCountry             | The country of the flow creator.                                          | string  |
-| creatorEmail             | The email of the flow creator.                                          | string  |
-| creatorId             | The unique identifier of the flow creator.                                          | string  |
-| creatorJobTitle             | The job title of the flow creator.                                          | string  |
-| creatorUpn             | The user principal name of the flow creator.                                          | string  |
+|creatorDepartment|The department of the flow creator.|string|
+|creatorOffice|The office of the flow creator.|string|
+|creatorStatus|The account status of the flow creator.|string|
+|creatorUserType|The user type of the flow creator.|string|
+|creatorCountry|The country of the flow creator.|string|
+|creatorEmail|The email address of the flow creator.|string|
+|creatorId|The unique identifier of the flow creator.|string|
+|creatorJobTile|The job title of the flow creator.|string|
+|creatorUpn|The user principal name of the flow creator.|string|
 | coOwners                    | The number of flow co-owners.                                               | integer |
 | users                       | The number of users who have access to the flow.                            | integer |
 | guests                      | The number of guest users who have access to the flow.                      | integer |
@@ -103,6 +104,22 @@ The API response provides detailed information about the Power Automate cloud fl
 | electionProfileApplied | Indicates if any Cloud Governance contact election profile is applied to this flow. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | contactElectionProfile      | The Cloud Governance renewal profile applied to this flow. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).                  | object  |
 | claimStatus                 | The Cloud Governance claim status of this flow.                             | string  |
+
+### Owner Details
+
+| Elements | Description | Type |
+|-|-|-|
+|id|The unique identifier of the flow owner.|string|
+|name|The display name of the flow owner.|string|
+|department|The department of the flow owner.|string|
+|office|The office of the flow owner.|string|
+|status|The account status of the flow owner.|string|
+|userType|The user account type of the flow owner.|string|
+|country|The country of the flow owner.|string|
+|email|The email address of the flow owner.|string|
+|jobTitle|The job title of the flow owner.|string|
+|userPrincipalName|The user principal name of the flow owner.|string|
+
 
 ### Connection Details
 
@@ -190,8 +207,20 @@ If the request has been successfully processed, a 200 OK response will be return
       "activitiesLast30Days": 0, // The number of activities in the last 30 days
       "activitiesLast90Days": 0, // The number of activities in the last  90 days
       "activitiesLast180Days": 0, // The number of activities in the last 180 days
+      "owner": {
+        "id": "", // The unique identifier of the flow owner
+        "name": "", // The display name of the flow owner
+        "department": "", //The department of the flow owner
+        "office": "", //The office of the flow owner
+        "status": "", //The account status of the flow owner
+        "userType": "", //The user type of the flow owner
+        "country": "", //The country of the flow owner
+        "email": "", // The email address of the flow owner
+        "jobTitle": "", //The job title of the flow owner
+        "userPrincipalName": "", // The user principal name of the flow owner
+      },
       "creator": "", // The creator of this flow
-      "creatorDepartment": "Sample Department", // The department of the flow creator
+      "creatorDepartment": "PP_EnPower Department", // The department of the flow creator
       "creatorOffice": null, // The office of the flow creator
       "creatorStatus": "Enable", // The status of the flow creator
       "creatorUserType": "Member", // The user type of the flow creator
