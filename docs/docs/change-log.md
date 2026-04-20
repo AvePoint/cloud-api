@@ -133,7 +133,7 @@ This document provides a detailed log of changes, updates, and enhancements made
 ### Added  
 
 - **Elements**
-  - A new set of endpoints are now available for the Elements API, enhancing the existing common features and introducing new functionalities for premium services. [Explore Elements API](https://learn.avepoint.com/elements/Overview.html) for more details. 
+  - A new set of endpoints are now available for the Elements API, enhancing the existing common features and introducing new functionalities for premium services. [Explore Elements API](https://learn.avepoint.com/graphapi/elements/overview.html) for more details. 
 
 
 - **Insights**

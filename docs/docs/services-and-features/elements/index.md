@@ -24,7 +24,7 @@ Built on a foundation of security and scalability, the Elements APIs ensure that
 
 ## Deprecation Notice
 
-This API is slated for deprecation. We are upgrading to a new API for better user experience, stability, and easier integration. Transitioning to the [new API](https://learn.avepoint.com/elements/overview.html) is highly recommended to ensure continued support and access to the latest features. 
+This API is slated for deprecation. We are upgrading to a new API for better user experience, stability, and easier integration. Transitioning to the [new API](https://learn.avepoint.com/graphapi/elements/overview.html) is highly recommended to ensure continued support and access to the latest features. 
 
 ## Get Started Now! 
 
