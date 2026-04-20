@@ -3,7 +3,7 @@
 To register an app for the AvePoint Graph API, follow these steps:
 
 1. Access AvePoint Online Services  
-   - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/signintoavepointonlineservices.htm).
+   - Sign into AvePoint Online Services with your account. For details, refer to [Sign into AvePoint Online Services](https://learn.avepoint.com/getting-started/overview.html).
 2. Navigate to **Administration** > **App registrations**.
 3. Register a New App with Required Permissions. For more details, see [Configure App Registrations](https://learn.avepoint.com/configuration-and-deployment/administration/configure-app-registrations.html) in AvePoint Learn portal.  
    1. Click **Create** on the **App registrations** page.  
@@ -14,7 +14,7 @@ To register an app for the AvePoint Graph API, follow these steps:
    > [!NOTE]
    > For the services and permissions that you can grant to the app for using Graph API, refer to [Services and Permissions](#services-and-permissions).
 4. Use a certificate or client secret as the app credentials. Credentials enable application to identify themselves to the authentication service when receiving tokens at a web addressable location (using an HTTPS schema). For a higher level of assurance, we recommend using a certificate. Follow the instructions below to configure credentials:  
-     - The certificate serves as credentials that allow your application to authenticate itself, requiring no interaction from a user at runtime. Refer to [Prepare a Certificate for the Custom Azure App](https://cdn.avepoint.com/assets/webhelp/avepoint-online-services/index.htm#!Documents/prepareacertificateforthecustomazureapp.htm) section in AvePoint Online Services user guide to prepare a certificate.  
+     - The certificate serves as credentials that allow your application to authenticate itself, requiring no interaction from a user at runtime. Refer to [Prepare a Certificate for the Custom Azure App](https://learn.avepoint.com/configuration-and-deployment/app-management/manage-app-profiles-for-microsoft-tenants/configure-custom-azure-app-profiles/prepare-a-certificate-for-the-custom-azure-app.html) section in AvePoint Online Services user guide to prepare a certificate.  
      - If you choose to use the client secret, you can generate a client secret effective within 1 year, 2 years, or 3 years. Client secret values cannot be entirely shown once they are saved.  
 5. Obtain Application (Client) ID  
    - After you have created the app registration, you can click the Copy button to copy the **Application (client) ID** value which will be used to get an access token in the next step.  
@@ -48,8 +48,8 @@ See the table below for the services and permissions that can be used for access
 | **AvePoint Opus**                  | records.readwrite.all                        |  Submit records to AvePoint Opus, retrieve due records, and destroy records.           |
 | **EnPower**                        | enpower.data.read.all                        | Retrieve data from EnPower.                                                                             |
 | **Insights**     | insights.graph.readwrite.all                 | Retrieve or export data from Insights.                     |
-| **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)                                                                                                  |
-| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://avepointcdn.azureedge.net/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernanceapi.htm) |
+| **Fly**                            | fly.graph.readwrite.all                      | Perform migrations with Fly. For details, see [Fly Public API](https://learn.avepoint.com/fly-user-guide/fly-public-api.html)                                                                                                  |
+| **Cloud Governance**               | cloudgovernance.fullcontrol.all              | Manage data in Cloud Governance. For details, see [AvePoint Cloud Governance API](https://learn.avepoint.com/cloud-governance-administrator-guide/avepoint-cloud-governance-api.html) |
 | **Confide**               | confide.graph.readwrite.all              | Manage privileged users and permissions in Confide. |
 | **Document Management System Online** | dmso.graph.readwrite.all | Retrieve audit records. |
 

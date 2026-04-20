@@ -15,7 +15,7 @@ IT administrators can retrieve audit records from AvePoint Online Services to fa
 Service providers can manage their customers more efficiently via Elements, leveraging the API to integrate and automate customer-related workflows, and enhance collaboration and operational efficiency between the organization and its customers.  
 
 >[!NOTE]
-> A new set of endpoints are now available for the Elements API since October 12, 2025, enhancing the existing common features and introducing new functionalities for premium services. [Explore Elements API](https://learn.avepoint.com/elements/Overview.html) for more details.
+> A new set of endpoints are now available for the Elements API since October 12, 2025, enhancing the existing common features and introducing new functionalities for premium services. [Explore Elements API](https://learn.avepoint.com/graphapi/elements/overview.html) for more details.
 ## Comprehensive Backup Management  
 
 IT professionals can monitor backup status, performance, and issues by accessing detailed job information from various AvePoint Cloud Backup services.  
@@ -39,6 +39,6 @@ AvePoint Opus API methods allows organizations to efficiently manage their conte
 
 ## Use Cases for Additional Cloud Services on the Confidence Platform  
 
-- **Fly**: Execute migrations with Fly to seamlessly migrate data between systems. [See more](https://cdn.avepoint.com/assets/webhelp/fly/index.htm#!Documents/flypublicapi.htm)  
+- **Fly**: Execute migrations with Fly to seamlessly migrate data between systems. [See more](https://learn.avepoint.com/fly-user-guide/fly-public-api.html)  
 
-- **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. [See more](https://cdn.avepoint.com/assets/webhelp/avepoint-cloud-governance-administrator-guide/index.htm#!Documents/avepointcloudgovernanceapi.htm)
+- **Cloud Governance**: Manage data within Cloud Governance to streamline governance processes and data handling. [See more](https://learn.avepoint.com/cloud-governance-administrator-guide/avepoint-cloud-governance-api.html)
