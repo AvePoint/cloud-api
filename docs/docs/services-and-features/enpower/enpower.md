@@ -80,3 +80,17 @@ With the following API Methods, data of your resource mailboxes, shared mailboxe
 |--- | --- | --- |
 | GET | `/smp/exchange/resourcemailboxes` | [Resource Mailboxes](../enpower/exchange/resourcemailboxes.md) |
 | GET | `/smp/exchange/mailboxes` | [User or Shared Mailboxes](../enpower/exchange/userandsharedmailboxes.md) |
+
+## API Methods for End-of-Life Objects Retrieval
+
+With the following API Methods, data of your end-of-life Groups, SharePoint Online sites, and Teams can be retrieved.
+
+>[!NOTE]
+> Currently, only objects whose end-of-life operations were performed via MyHub can be retrieved via these API methods. For more information on MyHub or to request additional object retrieval, contact your Sales Representative.
+
+| API Method | Endpoint | Documentation |
+| --- | --- | --- |
+| GET | `smp/lifecycle/microsoft365/groups` | [Groups](../enpower/eol/groups.md) |
+| GET | `smp/lifecycle/microsoft365/viva-groups` | [Groups Connected to Viva Engage Communities](../enpower/eol/viva-groups.md) |
+| GET | `smp/lifecycle/microsoft365/sites` | [SharePoint Online Sites](../enpower/eol/sharepoint.md) |
+| GET | `smp/lifecycle/microsoft365/teams` | [Teams](../enpower/eol/teams.md) |

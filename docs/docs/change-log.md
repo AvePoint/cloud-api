@@ -2,6 +2,23 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## June 2026
+
+### Added
+
+- **EnPower**
+  - Introduced the following new endpoints:
+    - `smp/lifecycle/microsoft365/groups` for retrieving the Groups with end-of-life operation performed via MyHub.
+    - `smp/lifecycle/microsoft365/viva-groups` for retrieving the Groups connected to Viva Engage communities with end-of-life operation performed via MyHub.
+    - `smp/lifecycle/microsoft365/sites` for retrieving the SharePoint Online sites with end-of-life operation performed via MyHub.
+    - `smp/lifecycle/microsoft365/teams` for retrieving the Microsoft Teams with end-of-life operation performed via MyHub.
+  - The detailed Power Automate flow co-owner list can now be retrieved via the following endpoints:
+    - `/smp/powerplatform/powerautomate/cloudflows`
+    - `/smp/powerplatform/powerautomate/desktopflows`
+
+
+
+
 ## April 2026
 
 ### Added

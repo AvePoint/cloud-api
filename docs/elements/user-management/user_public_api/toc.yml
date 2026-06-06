@@ -1,25 +1,40 @@
-- name: Retrieve Information of a Specific User
-  href: get-information-user.md
-- name: Retrieve Information of Multiple Users
-  href: get-multi-information-users.md
-- name: Update Information of a Specific User
+- name: Retrieve Information of a User
+  href: get-information-of-user.md
+- name: Retrieve Information of Users
+  href: get-information-of-users.md
+- name: Update Information of a User
   href: update-account-information.md
-- name: Update Birthday of a Specific User
-  href: update-birthday.md
-- name: Update Contact Information of a Specific User
-  href: update-contact-information.md
-- name: Update Alternate Email Address of a Specific User
-  href: update-email-address.md
-- name: Update General Information of a Specific User
-  href: update-general-information.md
-- name: Update the Test User Property of a Specific User
-  href: update-istest.md
-- name: Update Manager of a Specific User
-  href: update-manager.md
-- name: Update Office Information of a Specific User
-  href: update-office.md
-- name: Update Office Location Information of a Specific User
-  href: update-office-information.md
-- name: Update the Password Setting of a Spceific User
-  href: update-password-setting.md
-   
+- name: Update Birthday of a User
+  href: update-birthday-of-user.md
+- name: Update Contact Information of a Cloud User
+  href: update-contact-information-of-cloud-user.md
+- name: Update Alternate Email Address of a User
+  href: update-alternate-email-address-of-user.md
+- name: Update General Information of a Cloud User
+  href: update-general-information-of-cloud-user.md
+- name: Update Test User Property of a User
+  href: update-is-test-user-property.md
+- name: Update Manager of a User
+  href: update-manager-of-user.md
+- name: Update Office Information of a Cloud User
+  href: update-office-information-of-cloud-user.md
+- name: Update Office Location Information of a Cloud User
+  href: update-office-location-information-of-cloud-user.md
+- name: Update Password Setting of a User
+  href: update-password-setting-of-user.md
+- name: Update Contact Information of a Hybrid/Local User
+  href: update-contact-information-of-local-user.md
+- name: Update General Information of a Hybrid/Local User
+  href: update-general-information-of-local-user.md
+- name: Update Office Location Information of a Hybrid/Local User
+  href: update-office-location-information-of-local-user.md
+- name: Update Office Information of a Hybrid/Local User
+  href: update-office-information-of-local-user.md
+- name: Update Sponsor of a User
+  href: update-sponsor-of-user.md
+- name: Update Notes of a Hybrid/Local User
+  href: update-notes-of-local-user.md
+- name: Update External User Property of a User
+  href: update-is-external-user-property.md
+- name: Update Profile of a Hybrid/Local User
+  href: update-profile-of-local-user.md

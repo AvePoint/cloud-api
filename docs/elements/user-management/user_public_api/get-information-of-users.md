@@ -1,4 +1,4 @@
-# Retrieve Information of Multiple Users
+# Retrieve Information of Users
 
 Use this API to retrieve information of multiple users in a customer's tenant.  
 
@@ -43,7 +43,7 @@ This section outlines the request body required to specify which users you want 
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| userIds | The unique identifiers of users. | string[] | No |
+| userIds | The unique identifiers of users whose information you want to update. | string[] | No |
 
 ## Response
 

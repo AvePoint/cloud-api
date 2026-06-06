@@ -1,0 +1,72 @@
+# Update General Information of a Hybrid/Local User
+
+Use this API to update the general information of a hybrid/local user in a customer's tenant. 
+
+## Permission
+
+The following permission is required to call the API.  
+You must register an app through Elements > API app registration to authenticate and authorize your access to Elements API. For details, refer to [App Registration](../../register-app.md).
+
+| API | Permission  |
+|-----------|--------|
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/general-information`|elements.um.user.readwrite.all|  
+
+## Request
+
+This section outlines the details of the HTTP method and endpoint used to update the general information
+of a hybrid/local user in a customer's tenant.
+
+| Method | Endpoint | Description |
+|-----------|--------|------------|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/general-information` | Updates the general information of a hybrid/local user in a customer's tenant.|
+
+## URL Parameters
+
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the general information of a hybrid/local user according to your specific requirements and preferences.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- |---|
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
+| userId | The unique identifier of the user whose information you want to update. | string | Yes |
+
+## Request Body
+
+This section outlines the required fields to update the general information of a hybrid/local user.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| firstName | The first name of the user. The maximum length is 64 characters. | string | Yes |
+| lastName | The last name of the user. The maximum length is 64 characters.| string | Yes |
+| displayName | The display name of the user. The maximum length is 256 characters.| string | Yes |
+| jobTitle | The job title of the user. | string | Yes |
+| employeeId | The employee ID of the user. The maximum length is 16 characters.| string | Yes |
+| middleName | The middle name of the user. The maximum length is 64 characters.| string | Yes |
+| initials | The initials of the user. The maximum length is 6 characters.| string | Yes |
+| comment | The comment of the user. The maximum length is 30 characters.| string | Yes |
+
+## Response
+
+If the request has been successfully processed, a 204 No Content response will be returned. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
+
+## Request Sample
+
+To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
+
+```json
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-86a8-****-25cdbcf82a07/tenants/0c7715b3-****-35c6-****-f3634dcfacec/local-users/7c18fd6f-****-98v3-****-5725fa9edc3f/general-information
+```
+## Request Body Sample
+
+```json
+{
+  "firstName": "Tony", // The first name of the user
+  "lastName": "Brown", // The last name of the user
+  "displayName": "Tony Brown", // The display name of the user
+  "jobTitle" : "IT", // The job title of the user
+  "employeeId" : "e3f1a9b8-****", // The employee ID of the user
+  "middleName" : "Alexander", // The middle name of the user
+  "initials" : "AJ", // The initials of the user
+  "comment" : "Sample user account" // The comment of the user
+}
+```

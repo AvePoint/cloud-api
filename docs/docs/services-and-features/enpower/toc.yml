@@ -16,3 +16,5 @@
   href: pages/toc.yml
 - name: Exchange Mailboxes
   href: exchange/toc.yml
+- name: End-of-Life Objects
+  href: eol/toc.yml

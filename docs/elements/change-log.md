@@ -2,6 +2,38 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the Elements API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## June 2026
+
+### Added 
+
+- Introduced new endpoints for common features.  
+
+   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}` for retrieving information of a Microsoft 365 tenant.
+
+   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/auth-link` for generating an authorization link to add a Microsoft 365 tenant to Elements.
+
+   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` for retrieving status of service apps.
+
+   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` for generating an authorization link to authorize or re-authorize service apps.
+
+- Introduced new endpoints for user management. 
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/contact-information` for updating the contact information of a hybrid/local user.
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/general-information` for updating the general information of a hybrid/local user.
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/isexternal` for updating the external user property of a user to indicate whether the user is an external user. 
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/notes` for updateing the notes of a hybrid/local user.
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/office` for updating the office information of a hybrid/local user.
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/office-information` for updating the office location information of a hybrid/local user.
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/profile` for updating the profile of a hybrid/local user.
+
+    - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/sponsor` for updating the sponsor of a user.
+
 ## April 2026
 
 ### Changed

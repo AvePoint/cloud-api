@@ -38,7 +38,7 @@ The API response provides the data retention configuration.
 | --- | --- | --- |
 | statusCode | Http Response Status Code | integer |
 | message | Error message | string |
-| errors | API error | ApiError |
+| errors | API error | Array of ApiError |
 | data | Retention policy | RetentionPolicy |
 | requestId | API request ID | string |
 | timestamp | API request time | string |

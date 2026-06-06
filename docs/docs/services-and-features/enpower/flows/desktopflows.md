@@ -53,6 +53,7 @@ The API response provides detailed information about the Power Automate desktop 
 | creatorJobTitle      | The job title of the flow creator.                          | string  |
 | creatorOffice        | The office of the flow creator.                             | string  |
 | coOwners             | The number of flow co-owners.                              | integer |
+| coOwnerDetails              | The list of co-owners of this flow. For the detailed co-owner properties, refer to [Co-Owner Details](#co-owner-details).                                         | list |
 | users                | The number of users who have access to the flow.           | integer |
 | type                 | The flow type.                                            | string  |
 | status               | The flow status.                                          | string  |
@@ -69,6 +70,13 @@ The API response provides detailed information about the Power Automate desktop 
 | solutionCount        | The number of solutions related to this flow.              | integer |
 | solutionDisplayNames  | The list of display names of the solutions related to this flow.| list<string>  |
 | schemaVersion        | The schema version of this flow.                           | string  |
+
+### Co-Owner Details
+
+|Elements|Description|Type|
+|-|-|-|
+|displayName|The display name of the co-owner|string|
+|userPrincipalName|The user principal name of the co-owner|string|
 
 ## Request Sample
 
@@ -103,6 +111,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "creatorJobTitle": "", // The job title of the flow creator
       "creatorOffice": "", // The office of the flow creator
       "coOwners": 0, // The number of flow co-owners
+      "coOwnerDetails": [],// The list of co-owners of this flow
       "users": 0, // The number of users who have access to the flow
       "type": "", // The flow type
       "status": "", // The flow status

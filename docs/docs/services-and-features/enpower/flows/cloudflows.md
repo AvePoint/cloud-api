@@ -81,6 +81,7 @@ The API response provides detailed information about the Power Automate cloud fl
 |creatorJobTile|The job title of the flow creator.|string|
 |creatorUpn|The user principal name of the flow creator.|string|
 | coOwners                    | The number of flow co-owners.                                               | integer |
+| coOwnerDetails              | The list of co-owners of this flow. For the detailed co-owner properties, refer to [Co-Owner Details](#co-owner-details).                                         | list |
 | users                       | The number of users who have access to the flow.                            | integer |
 | guests                      | The number of guest users who have access to the flow.                      | integer |
 | shadowUsers                 | The number of shadow users who have access to the flow.                     | integer |
@@ -120,6 +121,12 @@ The API response provides detailed information about the Power Automate cloud fl
 |jobTitle|The job title of the flow owner.|string|
 |userPrincipalName|The user principal name of the flow owner.|string|
 
+### Co-Owner Details
+
+|Elements|Description|Type|
+|-|-|-|
+|displayName|The display name of the co-owner|string|
+|userPrincipalName|The user principal name of the co-owner|string|
 
 ### Connection Details
 
@@ -230,6 +237,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "creatorJobTitle": "", // The job title of the flow creator
       "creatorUpn": "", // The user principal name of the flow creator
       "coOwners": 3, // The number of flow co-owners
+      "coOwnerDetails":[],//List of co-owners of this flow.
       "users": 0, // The number of users who have access to the flow
       "guests": 0, // The number of guest users who have access to the flow
       "shadowUsers": 0, // The number of shadow users who have access to the flow

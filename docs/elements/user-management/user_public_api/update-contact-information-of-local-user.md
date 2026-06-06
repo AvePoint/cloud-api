@@ -1,0 +1,67 @@
+# Update Contact Information of a Hybrid/Local User
+
+Use this API to update the contact information of a hybrid/local user in a customer's tenant. 
+
+## Permission
+
+The following permission is required to call the API.  
+You must register an app through Elements > API app registration to authenticate and authorize your access to Elements API. For details, refer to [App Registration](../../register-app.md).
+
+| API | Permission  |
+|-----------|--------|
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/contact-information`|elements.um.user.readwrite.all|  
+
+## Request
+
+This section outlines the details of the HTTP method and endpoint used to update the contact information of a hybrid/local user in a customer's tenant.
+
+| Method | Endpoint | Description |
+|-----------|--------|------------|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/contact-information` | Updates the contact information of a hybrid/local user in a customer's tenant.|
+
+## URL Parameters
+
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the contact information of a hybrid/local user according to your specific requirements and preferences.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- |---|
+| customerId | The ID of the customer. | string | Yes |
+| tenantId | The ID of the tenant. | string | Yes |
+| userId | The unique identifier of the user whose information you want to update. | string | Yes |
+
+## Request Body
+
+This section outlines the required fields to update the contact information of a hybrid/local user in a cutomer's tenant.
+
+| Parameter | Description | Type | Required |
+| --- | --- | --- | --- |
+| officePhone | The business phone number of the user. The maximum length is 64 characters.| string | Yes |
+| mobile | The mobile phone number of the user. The maximum length is 64 characters.| string | Yes |
+| fax | The fax of the user. The maximum length is 64 characters.| string | Yes |
+| ipPhone | The IP phone of the user. The maximum length is 30 characters.| string | Yes |
+| homePhone | The home phone of the user. The maximum length is 30 characters.| string | Yes |
+| pager | The pager of the user. The maximum length is 30 characters.| string | Yes |
+
+## Response
+
+If the request has been successfully processed, a 204 No Content response will be returned. For more details on the HTTP status code, refer to [Http Status Code](../../Use-AvePoint-Graph-API.md#http-status-code).
+
+## Request Sample
+
+To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
+
+```json
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-25v6-****-25cdbcf82a07/tenants/0c7715b3-****-46s7-****-f3634dcfacec/local-users/7c18fd6f-****-87c6-****-5725fa9edc3f/contact-information
+```
+## Request Body Sample
+
+```json
+{
+  "officePhone": "323-***-111", // The business phone number of the user
+  "mobile": "323-***-409", // The mobile phone number of the user
+  "fax": "686-***-6868", // The fax of the user
+  "ipPhone": "****", // The IP phone of the user.
+  "homePhone": "****", // The home phone of the user.
+  "pager": "688-***-6888" // The pager of the user.
+}
+```
