@@ -16,6 +16,25 @@ This document provides a detailed log of changes, updates, and enhancements made
     - `/smp/powerplatform/powerautomate/cloudflows`
     - `/smp/powerplatform/powerautomate/desktopflows`
 
+- **Cloud Backup for Microsoft 365**
+  - Introduced the following new endpoints:
+    - `/backup/m365/cloudbackupjobs/{jobId}` for retrieving job details.
+    - `/backup/m365/restore/jobs` for performing restore jobs.
+  - Reorganized the Jobs documentation into dedicated pages:
+    - `List Jobs`
+    - `Retrieve Job Details`
+    - `Perform Restore Job`
+
+### Changed
+
+- **Cloud Backup for IaaS + PaaS**
+  - Updated the descriptions and supported values of `serviceType` and `jobType` in `/backup/vm/jobs` to align with the latest workload coverage.
+  - Added support details for additional workload categories, including:
+    - Azure Cosmos Database
+    - Azure PostgreSQL
+    - Amazon S3
+    - Entra External ID
+
 
 
 
