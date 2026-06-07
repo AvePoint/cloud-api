@@ -1,11 +1,11 @@
-# Retrieve Information of a Specific User
+# Retrieve Information of a User
 
-Use this API to retrieve information of a specific user in a customer's tenant. 
+Use this API to retrieve information of a user in a customer's tenant. 
 
 ## Permission
 
 The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to Elements API. For details, refer to [App Registration](../../register-app.md)
+You must register an app through Elements > API app registration to authenticate and authorize your access to Elements API. For details, refer to [App Registration](../../register-app.md).
 
 | API | Permission  |
 |-----------|--------|
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to retrieve information of a specific user in a customer's tenant.
+This section outlines the details of the HTTP method and endpoint used to retrieve information of a user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| GET | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}` | 	Retrieves information of a specific user in a customer's tenant.|
+| GET | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}` | 	Retrieves information of a user in a customer's tenant.|
 
 ## URL Parameters
 
@@ -27,7 +27,7 @@ This section describes the query parameters that can be added to the URL when se
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the user. | string | Yes |
+| userId | The unique identifier of the user whose information you want to retrieve. | string | Yes |
 
 ## Response
 
@@ -66,6 +66,11 @@ If the request has been successfully processed, a 200 OK response will be return
 | address | The street address of the user's location. | string |
 | loginName | The login name or user principal name used for authentication. | string |
 | status | The current status of the user account. <ul><li>**0** - MFA disabled</li><li>**1** - Sign-in blocked</li><li>**2** - Password expired</li><li>**3** - High risk</li><li>**4** - Medium risk</li><li>**5** - Compliance</li><li>**6** - Inactive</li><li>**7** - Pending deletion</li><li>**8** - Test user</li></ul> | integer |
+| fax | The fax of the user. The maximum length is 64 characters.| string |
+| isExternal | Indicates whether this user is an external user. | boolean |
+| sponsor  | The sponsors of the user. | string |
+| template  | The template with which this user was created. | string |
+| city   | The city of the user's location. | string |
 
 ## Request Sample
 
@@ -118,5 +123,10 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
         0, // The current status of the user. 0 represents "MFA disabled"
         1 // The current status of the user. 1 represents "Sign-in blocked"
     ],
+    "isExternal": true, // Indicates whether this user is an external user
+    "fax": "123-***-7890", // The fax of the user
+    "sponsor": "jacksmith@domain.com", // The sponsor of the user
+    "template": "standard-template", // The template with which this user was created
+    "city": "New York" // The city of the user's location
 }
 ```

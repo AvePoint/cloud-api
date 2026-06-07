@@ -2,6 +2,42 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## June 2026
+
+### Added
+
+- **EnPower**
+  - Introduced the following new endpoints:
+    - `smp/lifecycle/microsoft365/groups` for retrieving the Groups with end-of-life operation performed via MyHub.
+    - `smp/lifecycle/microsoft365/viva-groups` for retrieving the Groups connected to Viva Engage communities with end-of-life operation performed via MyHub.
+    - `smp/lifecycle/microsoft365/sites` for retrieving the SharePoint Online sites with end-of-life operation performed via MyHub.
+    - `smp/lifecycle/microsoft365/teams` for retrieving the Microsoft Teams with end-of-life operation performed via MyHub.
+  - The detailed Power Automate flow co-owner list can now be retrieved via the following endpoints:
+    - `/smp/powerplatform/powerautomate/cloudflows`
+    - `/smp/powerplatform/powerautomate/desktopflows`
+
+- **Cloud Backup for Microsoft 365**
+  - Introduced the following new endpoints:
+    - `/backup/m365/cloudbackupjobs/{jobId}` for retrieving job details.
+    - `/backup/m365/restore/jobs` for performing restore jobs.
+  - Reorganized the Jobs documentation into dedicated pages:
+    - `List Jobs`
+    - `Retrieve Job Details`
+    - `Perform Restore Job`
+
+### Changed
+
+- **Cloud Backup for IaaS + PaaS**
+  - Updated the descriptions and supported values of `serviceType` and `jobType` in `/backup/vm/jobs` to align with the latest workload coverage.
+  - Added support details for additional workload categories, including:
+    - Azure Cosmos Database
+    - Azure PostgreSQL
+    - Amazon S3
+    - Entra External ID
+
+
+
+
 ## April 2026
 
 ### Added

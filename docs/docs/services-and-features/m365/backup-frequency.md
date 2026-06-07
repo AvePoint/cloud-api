@@ -38,7 +38,7 @@ The API response provides the backup frequency for all active services. Each ser
 | --- | --- | --- |
 | statusCode | Http Response Status Code | integer |
 | message | Error message | string |
-| errors | API error | ApiError |
+| errors | API error | Array of ApiError |
 | data | Backup frequency of all active services | Array of BackupFrequency |
 | requestId | API request ID | string |
 | timestamp | API request time | string |

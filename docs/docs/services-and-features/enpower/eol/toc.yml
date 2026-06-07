@@ -1,0 +1,8 @@
+- name: Groups
+  href: groups.md
+- name: Groups Connected to Viva Engage Communities
+  href: viva-groups.md
+- name: SharePoint Online Sites
+  href: sharepoint.md
+- name: Teams
+  href: teams.md  

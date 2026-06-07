@@ -1,0 +1,8 @@
+- name: Retrieve Microsoft 365 Tenant Information
+  href: get-m365-tenant-info.md
+- name: Generate Authorization Link to Add Microsoft 365 Tenant
+  href: create-auth-link-to-add-tenant-for-customer.md
+- name: Retrieve Status of Service Apps
+  href: get-m365-tenant-product-apps.md
+- name: Generate Authorization Link to Authorize Service Apps
+  href: create-auth-link-to-consent-app-for-customer.md

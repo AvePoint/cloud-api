@@ -1,6 +1,6 @@
-# Update Birthday of a Specific User
+# Update Birthday of a User
 
-Use this API to update the birthday of a specific user in a customer's tenant. 
+Use this API to update the birthday of a user in a customer's tenant. 
 
 ## Permission
 
@@ -13,11 +13,11 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to update the birthday of a specific user in a customer's tenant.
+This section outlines the details of the HTTP method and endpoint used to update the birthday of a user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/birthday` | Updates the birthday of a specific user in a customer's tenant.|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/birthday` | Updates the birthday of a user in a customer's tenant.|
 
 ## URL Parameters
 
@@ -27,11 +27,11 @@ This section describes the query parameters that can be added to the URL when se
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the user. | string | Yes |
+| userId | The unique identifier of the user whose information you want to update. | string | Yes |
 
 ## Request Body
 
-This section outlines the required fields to update the birthday of a specific user in a customer's tenant.
+This section outlines the required fields to update the birthday of a user in a customer's tenant.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |

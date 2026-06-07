@@ -1,5 +1,7 @@
 - name: Customers
   href: customer/toc.yml
+- name: Customer App Profiles
+  href: customer app profile/toc.yml
 - name: Service Subscriptions
   href: service subscription/toc.yml
 - name: Tenants

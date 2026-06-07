@@ -1,6 +1,6 @@
-# Update Contact Information of a Specific User
+# Update Contact Information of a Cloud User
 
-Use this API to update the contact information of a specific user in a customer's tenant. 
+Use this API to update the contact information of a cloud user in a customer's tenant. 
 
 ## Permission
 
@@ -13,30 +13,31 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to update the contact information of a specific user in a customer's tenant.
+This section outlines the details of the HTTP method and endpoint used to update the contact information of a cloud user in a customer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/contact-information` | Updates the contact information of a specific user in a customer's tenant.|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/contact-information` | Updates the contact information of a cloud user in a customer's tenant.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the contact information of a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the contact information of a cloud user according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the user. | string | Yes |
+| userId | The unique identifier of the user whose information you want to update. | string | Yes |
 
 ## Request Body
 
-This section outlines the required fields to update the contact information of a specific user in a cutomer's tenant.
+This section outlines the required fields to update the contact information of a cloud user in a cutomer's tenant.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | officePhone | The business phone number of the user. The maximum length is 64 characters.| string | Yes |
 | mobile | The mobile phone number of the user. The maximum length is 64 characters.| string | Yes |
+| fax | The fax of the user. The maximum length is 64 characters.| string | Yes |
 
 ## Response
 
@@ -53,7 +54,8 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 
 ```json
 {
-  "officePhone": "323-333-111", // The business phone number of the user
-  "mobile": "323-344-409" // The mobile phone number of the user
+  "officePhone": "323-***-111", // The business phone number of the user
+  "mobile": "323-***-409", // The mobile phone number of the user
+  "fax": "686-***-6868" // The fax of the user
 }
 ```

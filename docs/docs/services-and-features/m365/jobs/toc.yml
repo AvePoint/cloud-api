@@ -1,0 +1,6 @@
+- name: List Jobs
+  href: list-jobs.md
+- name: Retrieve Job Details
+  href: retrieve-job-details.md
+- name: Perform Restore Job
+  href: perform-restore-job.md

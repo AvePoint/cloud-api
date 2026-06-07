@@ -1,6 +1,6 @@
-# Update Office Information of a Specific User
+# Update Office Information of a Hybrid/Local User
 
-Use this API to update the office information of a specific user in a customer's tenant. 
+Use this API to update the office information of a hybrid/local user in a customer's tenant. 
 
 ## Permission
 
@@ -9,26 +9,26 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission  |
 |-----------|--------|
-| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office`|elements.um.user.readwrite.all|  
+| `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/office`|elements.um.user.readwrite.all|  
 
 ## Request
 
 This section outlines the details of the HTTP method and endpoint used to update the office
-information of a specific user in a cutomer's tenant.
+information of a hybird/local user in a cutomer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office` | Updates the office information of a specific user in a customer's tenant.|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/local-users/{userId}/office` | Updates the office information of a hybird/local user in a customer's tenant.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the office information of a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the office information of a hybrid/local user according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
 | customerId | The customer ID of the customer. | string | Yes |
 | tenantId | The specific tenant ID of the customer. | string | Yes |
-| userId | The unique identifier of the user. | string | Yes |
+| userId | The unique identifier of the user whose information you want to update. | string | Yes |
 
 ## Request Body
 
@@ -38,7 +38,8 @@ This section outlines the required fields to update the office information of a 
 | --- | --- | --- | --- |
 | company | The company of the user. The maximum length is 64 characters.| string | Yes |
 | department | The department of the user. The maximum length is 64 characters.| string | Yes |
-| location |  The location of the user. The maximum length is 64 characters. | string | Yes | 
+| location | The location of the user. The maximum length is 64 characters. | string | Yes | 
+| departmentNumber | The department number of the user. The maximum length is 10 characters. | string | Yes | 
 
 ## Response
 
@@ -49,7 +50,7 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-98b1-****-25cdbcf82a07/tenants/0c7715b3-****-16b5-****-f3634dcfacec/users/7c18fd6f-****-87b2-****-5725fa9edc3f/office
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-98b1-****-25cdbcf82a07/tenants/0c7715b3-****-16b5-****-f3634dcfacec/local-users/7c18fd6f-****-87b2-****-5725fa9edc3f/office
 ```
 ## Request Body Sample
 
@@ -57,6 +58,7 @@ https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35
 {
   "company": "Organization ABC", // The company of the user
   "department": "09", // The department of the user
-  "location": "0711" // The location of the user
+  "location": "0711", // The location of the user
+  "departmentNumber": "22332" // The department number of the user
 }
 ```

@@ -1,6 +1,6 @@
-# Update Office Location Information of a Specific User
+# Update Office Location Information of a Cloud User
 
-Use this API to update the office location information of a specific user in a customer's tenant. 
+Use this API to update the office location information of a cloud user in a customer's tenant. 
 
 ## Permission
 
@@ -13,25 +13,25 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used to update the office location information of a specific user in a cutomer's tenant.
+This section outlines the details of the HTTP method and endpoint used to update the office location information of a cloud user in a cutomer's tenant.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information` | Updates the office location information of a specific user in a customer's tenant.|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/office-information` | Updates the office location information of a cloud user in a customer's tenant.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the office location information of a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the office location information of a specific cloud user according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the user. | string | Yes |
+| userId | The unique identifier of the user whose information you want to update. | string | Yes |
 
 ## Request Body
 
-This section outlines the required fields to update the office location information of a user.
+This section outlines the required fields to update the office location information of a cloud user.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
@@ -39,6 +39,7 @@ This section outlines the required fields to update the office location informat
 | countryRegion | The country or region of the office. The maximum length is 255 characters. For details, refer to [Countries or Regions](../../../elements/user-management/user_public_api/countryorregion.md).| string | Yes |
 | state | The state of the office. The maximum length is 128 characters. | string | Yes |
 | address | The address of the office. The maximum length is 1024 characters. | string | Yes |
+| city | The city of the office. The maximum length is 128 characters. | string | Yes |
 
 ## Response
 
@@ -49,15 +50,16 @@ If the request has been successfully processed, a 204 No Content response will b
 To use this API, send a PUT request to the specified endpoint, including necessary parameters as defined in the references. 
 
 ```json
-https://graph.avepointonlineservices.com/partner/external/um/v3/customers/966f35cc-****-98b2-****-25cdbcf82a07/tenants/0c7715b3-****-16v8-****-f3634dcfacec/users/7c18fd6f-****-91c6-****-5725fa9edc3f/office-information
+https://graph.avepointonlineservices.com/partner/external/v3/um/customers/966f35cc-****-98b2-****-25cdbcf82a07/tenants/0c7715b3-****-16v8-****-f3634dcfacec/users/7c18fd6f-****-91c6-****-5725fa9edc3f/office-information
 ```
 ## Request Body Sample
 
 ```json
 {
-  "postalCode": "2121", // The postal code of the office
-  "countryRegion": " Angola", // The country or region of the office
-  "state": "Luanda", // The state of the office
-  "address": "Dande" // The address of the office
+  "postalCode": "10001", // The postal code of the office
+  "countryRegion": " United States", // The country or region of the office
+  "state": "NY", // The state of the office
+  "address": "ABC New Street", // The address of the office
+  "city": "New York" // The city of the office
 }
 ```

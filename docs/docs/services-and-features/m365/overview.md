@@ -6,7 +6,9 @@ The Cloud Backup for Microsoft 365 Public APIs provide programmatic access to yo
 
 | Method | Endpoint | Permission | Documentation |
 | --- | --- | --- | --- |
-| GET | `/backup/m365/cloudbackupjobs` | microsoft365backup.jobInfo.read.all | [Jobs](./jobs.md) |
+| GET | `/backup/m365/cloudbackupjobs` | microsoft365backup.jobInfo.read.all | [List Jobs](./jobs/list-jobs.md) |
+| GET | `/backup/m365/cloudbackupjobs/{jobId}` | microsoft365backup.jobInfo.read.all | [Retrieve Job Details](./jobs/retrieve-job-details.md) |
+| POST | `/backup/m365/restore/jobs` | microsoft365backup.restore.readwrite.all | [Perform Restore Job](./jobs/perform-restore-job.md) |
 | GET | `/backup/m365/cloudbackuplicenseconsumption` | microsoft365backup.subscriptionInfo.read.all | [Subscriptions](./subscription.md) |
 | GET | `/backup/m365/cloudbackupunusualactivitydata` | microsoft365backup.unusualActivity.read.all | [Unusual Activities](./unusual-activities.md) |
 | GET | `/backup/m365/settings/backup/frequency` | microsoft365backup.settings.read.all | [Backup Frequency](./backup-frequency.md) |

@@ -1,6 +1,6 @@
-# Update the Test User Property of a Specific User
+# Update Test User Property of a User
 
-Use this API to update the test user property of a specific user in a customer's tenant. 
+Use this API to update the test user property of a user in a customer's tenant to indicate whether the user account is a test user for development purposes. 
 
 ## Permission
 
@@ -14,21 +14,21 @@ You must register an app through Elements > API app registration to authenticate
 ## Request
 
 This section outlines the details of the HTTP method and endpoint used to update the test user property of
-a specific user in a customer's tenant.
+a user in a customer's tenant to indicate whether the user account is a test user for development purposes.
 
 | Method | Endpoint | Description |
 |-----------|--------|------------|
-| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/istest` | Updates the test user property of a specific user in a customer's tenant.|
+| PUT | `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/users/{userId}/istest` | Updates the test user property of a user in a customer's tenant to indicate whehter the user account is a test user for development purposes.|
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the test user property of a user according to your specific requirements and preferences.
+This section describes the query parameters that can be added to the URL when sending a PUT request, allowing you to update the test user property of a user to indicate whether the user account is a test user for development purposes according to your specific requirements and preferences.
 
 | Parameter | Description | Type | Required |
 | --- | --- | --- |---|
 | customerId | The ID of the customer. | string | Yes |
 | tenantId | The ID of the tenant. | string | Yes |
-| userId | The unique identifier of the user. | string | Yes |
+| userId | The unique identifier of the user whose information you want to update. | string | Yes |
 
 ## Request Body
 
