@@ -1,6 +1,6 @@
 # Generate Authorization Link to Authorize Service Apps
 
-Use this API to generate an authorization link to authorize or re-authorize service apps. Currently, only baseline management and other premium services are supported. For a complete list of services, refer to [Services](./services.md).
+Use this API to generate an authorization link. Customers can use this link to authorize or re-authorize their service apps for the Microsoft 365 tenant. Currently, only baseline management and other premium services are supported. For a complete list of services, refer to [Services](./services.md).
 
 ## Permissions
 
@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API   | Permission    |
 | ----------------- | ------------------------------- |
-| `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` | elements.customers.readwrite.all, partnerapi.customers.readwrite.all |
+| `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` | elements.customers.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the details of the HTTP method and endpoint used by this A
 
 | Method | Endpoint | Description  |
 | ------ | --------------------------------- | -------------------------------------------- |
-| POST   | `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` | Generates an authorization link to authorize or re-authorize service apps. |
+| POST   | `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` | Generates an authorization link that allows customers to authorize or re-authorize service apps. |
 
 ## URL Parameters
 
@@ -39,7 +39,7 @@ This section outlines the request body.
 | aadEnvironment | An enumeration value that specifies the Azure Active Directory (AAD) environment type associated with the tenant. For a complete list of valid values, refer to [AAD Environment Types](./aad-environment-types.md). | int | Yes |
 | platformEnvironmentType | An enumeration value that specifies the platform environment type associated with the tenant. For a complete list of valid values, refer to [Platform Environment Types](./platform-environment-types.md). | int | Yes |
 | productNames | Services whose apps you want to authorize or re-authorize. <ul><li>**PartnerTenantSettingManagement** - Baseline management</li><li>**PartnerWorkspaceOnboarding** - Other premium services</li></ul> | `List<string>` | Yes |
-| customRecipientEmails | The email address to which success notification emails for each app consent will be sent.  | List<string>| No |
+| customRecipientEmails | The email addresses to which a success notification email for each app consent will be sent.  | List<string>| No |
 
 ## Response
 
@@ -61,7 +61,7 @@ To use this API, send a POST request to the specified endpoint, including necess
   "aadEnvironment": 0, // An enumeration value that specifies the Azure Active Directory (AAD) environment type associated with the tenant
   "platformEnvironmentType": 0, // An enumeration value that specifies the platform environment type associated with the tenant
   "productNames": ["PartnerWorkspaceOnboarding", "PartnerTenantSettingManagement"], // The service apps that you want to authorize or reauthorize
-  "customRecipientEmails": ["Jack@OrganizationABC.com"] // The email address to which success notification emails for app consent will be sent
+  "customRecipientEmails": ["Jack@TenantABC.com"] // The email address to which success notification emails for app consent will be sent
 }
 ```
 
