@@ -10,11 +10,11 @@ This document provides a detailed log of changes, updates, and enhancements made
 
    - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}` for retrieving information of a Microsoft 365 tenant.
 
-   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/auth-link` for generating an authorization link to add a Microsoft 365 tenant to Elements.
+   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/auth-link` for generating an authorization link that can be used by customers to add their Microsoft 365 tenant to Elements.
 
-   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` for retrieving status of service apps.
+   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` for retrieving the status of a service app for a Microsoft 365 tenant.
 
-   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` for generating an authorization link to authorize or re-authorize service apps.
+   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` for generating an authorization link that can be used by customers to authorize or re-authorize their service apps for a Microsoft 365 tenant.
 
 - Introduced new endpoints for user management. 
 

@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permission |
 | ------------ | ------------ |
-| `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}` | elements.customers.read.all, partnerapi.customers.read.all |
+| `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}` | elements.customers.read.all |
 
 ## Request
 
@@ -34,8 +34,8 @@ If the request has been successfully processed, a 200 OK response will be return
 
 | Field | Description | Type |
 | ----- | -------------- | ------------------- |
-| id   | The tenant ID. | string |
-| name   | The tenant name. | string |
+| id   | The ID of the Microsoft 365 tenant. | string |
+| name   | The name of the Microsoft 365 tenant. | string |
 | aadEnvironment   | An enumeration value that specifies the Azure Active Directory (AAD) environment type associated with the tenant. For a complete list of valid values, refer to [AAD Environment Types](./aad-environment-types.md).| int |
 | platformEnvironmentType   | An enumeration value that specifies the platform environment type associated with the tenant. For a complete list of valid values, refer to [Platform Environment Types](./platform-environment-types.md).| int |
 
@@ -55,8 +55,8 @@ For more details on the HTTP status code, refer to [Http Status Code](https://le
 
 ```json
 {
-  "id": "d49c625b-****-****-****-77c8cbca3773", // The tenant ID
-  "name": "ym1w5", // The tenant name
+  "id": "d49c625b-****-****-****-77c8cbca3773", // The ID of the Microsoft 365 tenant
+  "name": "Tenant ABC", // The name of the Microsoft 365 tenant
   "aadEnvironment": 0, // An enumeration value that specifies the Azure Active Directory (AAD) environment type associated with the tenant
   "platformEnvironmentType": 1 // An enumeration value that specifies the platform environment type associated with the tenant
 }

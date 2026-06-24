@@ -1,6 +1,6 @@
 # Generate Authorization Link to Add Microsoft 365 Tenant
 
-Use this API to generate an authorization link that is used to add a Microsoft 365 tenant to Elements.
+Use this API to generate an authorization link. Customers can use this link to review and consent to the required permissions. Once the authorization process is complete, their Microsoft 365 tenant is added to Elements.
 
 ## Permissions
 
@@ -9,7 +9,7 @@ You must register an app through Elements > API app registration to authenticate
 
 | API | Permissin |
 | --- | --------- |
-| `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/auth-link` | elements.customers.readwrite.all, partnerapi.customers.readwrite.all |
+| `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/auth-link` | elements.customers.readwrite.all |
 
 ## Request
 
@@ -38,7 +38,7 @@ This section outlines the request body.
 | tenantFriendlyName | The tenant friendly name. | string | Yes |
 | tenantDescription        | The tenant description. | string | No |
 | tenantSharePointAdminUrl | The SharePoint admin center URL. | string | No |
-| customRecipientEmails    | The email address to which success notification emails for app consent will be sent. | `List<string>`  | No |
+| customRecipientEmails    | The email addresses to which a success notification email will be sent. | `List<string>`  | No |
 
 ## Response
 
@@ -56,11 +56,11 @@ To use this API, send a POST request to the specified endpoint, including necess
 ```json
 {
   "aadEnvironment": 0, // An enumeration value that specifies the Azure Active Directory (AAD) environment type associated with the tenant
-  "tenantFriendlyName": "Ogranization ABC", // The tenant friendly name
+  "tenantFriendlyName": "Tenant ABC", // The tenant friendly name
   "tenantDescription": "This tenant is to...", // The tenant description
-  "tenantSharePointAdminUrl": "https://organizationabc-admin.sharepoint.com", // The SharePoint admin center URL
+  "tenantSharePointAdminUrl": "https://tenantabc-admin.sharepoint.com", // The SharePoint admin center URL
   "customRecipientEmails": [
-    "Jack@OrganizationABC.com" // The email address to which success notification emails for each app consent will be sent
+    "Jack@TenantABC.com" // The email address to which success notification emails for each app consent will be sent
   ] 
 }
 ```
