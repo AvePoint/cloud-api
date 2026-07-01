@@ -1,0 +1,14 @@
+- name: Has Archived Site Collection Data
+  href: has-archived-site-collection-data.md
+- name: Has Archived Team/Group Data
+  href: has-archived-team-or-group-data.md
+- name: Restore Site Collection
+  href: restore-site-collection.md
+- name: Restore Team/Group
+  href: restore-team-or-group.md
+- name: Get Restore Job Status and Progress
+  href: get-restore-job-status-and-progress.md
+- name: Set Archived Data Retention Period After Site Collection Restore
+  href: set-grace-period-for-deleting-archived-site-collection-data.md
+- name: Set Archived Data Retention Period After Team/Group Restore
+  href: set-grace-period-for-deleting-archived-team-or-group-data.md
