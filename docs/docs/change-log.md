@@ -2,6 +2,20 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## July 1, 2026
+
+### Added
+
+- **Opus**
+  - Introduced the following new endpoints:
+    - `/api/restore/HasArchivedSiteCollectionData` for checking whether archived data exists for a site collection.
+    - `/api/restore/HasArchivedTeamsGroupData` for checking whether archived data exists for a Team/Group.
+    - `/api/restore/RestoreSiteCollection` for starting a job to restore the archived data of a site collection.
+    - `/api/restore/RestoreTeamsGroup` for starting a job to restore the archived data of a Team/Group.
+    - `/api/restore/GetRestoreJobStatus` for getting the status and progress of a restore job.
+    - `/api/restore/SetRestoreGracePeriodSiteCollection` for setting how long restored archived data of a site collection is retained before it is deleted from archive storage.
+    - `/api/restore/SetRestoreGracePeriodTeamsGroup` for setting how long restored archived data of a Team/Group is retained before it is deleted from archive storage.
+
 ## June 2026
 
 ### Added
@@ -15,25 +29,6 @@ This document provides a detailed log of changes, updates, and enhancements made
   - The detailed Power Automate flow co-owner list can now be retrieved via the following endpoints:
     - `/smp/powerplatform/powerautomate/cloudflows`
     - `/smp/powerplatform/powerautomate/desktopflows`
-
-- **Cloud Backup for Microsoft 365**
-  - Introduced the following new endpoints:
-    - `/backup/m365/cloudbackupjobs/{jobId}` for retrieving job details.
-    - `/backup/m365/restore/jobs` for performing restore jobs.
-  - Reorganized the Jobs documentation into dedicated pages:
-    - `List Jobs`
-    - `Retrieve Job Details`
-    - `Perform Restore Job`
-
-### Changed
-
-- **Cloud Backup for IaaS + PaaS**
-  - Updated the descriptions and supported values of `serviceType` and `jobType` in `/backup/vm/jobs` to align with the latest workload coverage.
-  - Added support details for additional workload categories, including:
-    - Azure Cosmos Database
-    - Azure PostgreSQL
-    - Amazon S3
-    - Entra External ID
 
 
 

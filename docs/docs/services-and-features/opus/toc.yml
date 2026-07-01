@@ -1,6 +1,6 @@
-- name: Submit Records
-  href: submit-records.md
-- name: Retrieve Due Records
-  href: retrieve-due-records.md
-- name: Destroy Records
-  href: destroy-records.md
+- name: Overview
+  href: overview.md
+- name: Use Connector
+  href: useconnector/toc.yml
+- name: Restore Archived Data
+  href: restorearchiveddata/toc.yml
