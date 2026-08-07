@@ -8,6 +8,10 @@
   href: "change-log.md"
 - name: Common Features
   href: "general/toc.yml"
+- name: Azure Cost Management
+  href: "azure-cost-management/toc.yml"
+- name: Azure Security Management
+  href: "azure-security-management/toc.yml"
 - name: Baseline Management
   href: "baseline-management/toc.yml"
 - name: Risk Management

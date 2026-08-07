@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/api/restore/RestoreTeamsGroup` | records.readwrite.all |
+| `/records/api/restore/RestoreTeamsGroup` | records.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to start a job for resto
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/api/restore/RestoreTeamsGroup` | Starts a job for restoring the archived data of a Team/Group. |
+| POST | `/records/api/restore/RestoreTeamsGroup` | Starts a job for restoring the archived data of a Team/Group. |
 
 ## Request Parameters
 
@@ -49,7 +49,7 @@ To use this API, send a `POST` request to the specified endpoint, including nece
 **URL**
 
 ```json
-https://graph-us.avepointonlineservices.com/api/restore/RestoreTeamsGroup
+https://graph-us.avepointonlineservices.com/records/api/restore/RestoreTeamsGroup
 ```
 **Body (raw-JSON)**
 

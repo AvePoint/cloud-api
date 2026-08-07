@@ -2,6 +2,26 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the Elements API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## August 2026
+
+### Added 
+
+- Introduced new endpoints for common features.  
+
+  - `/partner/external/v3/general/customers/{customerId}/m365/backup/modules/{module}/protected-objects` for retrieving customer's protected objects of Cloud Backup for Microsoft 365.
+
+- Introduced new endpoints for Azure cost management and Azure security management.
+
+  - `/partner/external/v3/acm/customers/{customerId}/tenants/{tenantId}/issues` for retrieving Azure cost issues in a customer's tenant.
+  
+  - `/partner/external/v3/asm/customers/{customerId}/tenants/{tenantId}/issues` for retrieving Azure risk issues in a customer's tenant.
+
+### Changed
+
+- Supported Azure security management and Cloud Backup for Microsoft 365 services for the `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` and `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` endpoints.
+
+- Added the identity provider type parameter to the `/partner/external/v3/general/customers` endpoint.
+
 ## June 2026
 
 ### Added 

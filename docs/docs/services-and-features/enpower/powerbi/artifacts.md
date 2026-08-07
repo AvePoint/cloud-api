@@ -28,6 +28,8 @@ The API supports several query parameters to refine and customize the data retri
 |--- | --- | --- | --- |
 | top | The number of artifact records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of artifacts are retrieved. By default, artifacts of all tenants are retrieved. | string | No |
+| $filter | Filter data retrieval scope. Supported filters include `type` and `parentSemanticModelId`. <br>For the `type` filter, the following options are available: <br> <ul><li> **dashboard** <br> </li><li> **semanticModel**<br>  </li><li> **report**<br>  </li><li> **dataflow**<br>  </li><li> **scorecard**<br>  </li><li> **datamart**<br>| string | No |
+| $expand | Retrieve Power BI reports with their semantic models. | string | No |
 
 ## Responses
 
@@ -76,7 +78,6 @@ Each artifact retrieved through the API includes detailed attributes that provid
 | numberOfGuests             | The number of guests users who have access to the artifact.                | integer |
 | hasRequest | Indicates if EnPower business context has been requested for this artifact. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 | hasResponse | Indicates if EnPower business context request for this flow has been responded. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
-| lastRenewNotifyTime              | The last time a renewal notification was sent for the Power BI artifact.                       | string |
 | numberOfUsers              | The number of users who have access to the artifact.                       | integer |
 | lastActivityD7             | The activity count in the last 7 days for the artifact.                    | integer |
 | lastActivityTime           | The date and time of the artifact’s latest activity.                       | string  |
@@ -93,6 +94,15 @@ Each artifact retrieved through the API includes detailed attributes that provid
 | uniqueViewersOfLast30Days              | Artifact unique viewer count in last 30 days.                       | integer |
 | viewsOfLast90Days              | Artifact view count in last 90 days.                       | integer |
 | uniqueViewersOfLast90Days              | Artifact unique viewer count in last 90 days.                       | integer |
+| semanticModel | Information of semantic models related to the retrieved Power BI report. For the detailed semantic model properties, refer to [Semantic Model Details](#semantic-model-details). | object |
+
+### Semantic Model Details
+
+| Elements | Description  | Type  |
+| - | - | - |
+| id | The unique identifier of the semantic model. | string |
+| name | The name of the semantic model. | string |
+| workspace | The Power BI workspace that the semantic model belongs to. | string |
 
 ## Request Sample
 
@@ -101,6 +111,18 @@ To use this API, send a GET request to the specified endpoint, including necessa
 ```json
 https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/artifacts
 ```
+To narrow artifacts to retrieve by artifact type: 
+
+  ```json
+  https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/artifacts?$filter type eq 'report' and parentSemanticModelId eq '1d014f97-****-****-****-498348e3b382'
+  ```
+
+To retrieve reports only and include their related semantic models:
+
+  ```json
+  https://graph.avepointonlineservices.com/smp/powerplatform/powerbi/artifacts?$filter type eq 'report'&expand=semanticModel
+  ```
+
 
 ## Response Sample
 
@@ -140,7 +162,6 @@ If the request has been successfully processed, a 200 OK response will be return
       "numberOfGuests": null, // The number of guests users who have access to the artifact
       "hasRequest": false, // Indicates if EnPower business context has been requested for this artifact
       "hasResponse": false, // Indicates if there is a response for the Power BI artifact
-      "lastRenewNotifyTime": "", // The last time a renewal notification was sent for the Power BI artifact
       "numberOfUsers": null, // The number of users who have access to the Power BI artifact
       "lastActivityD7": 0, // The activity count in the last 7 days for the Power BI artifact
       "lastActivityTime": "", // The date and time when the Power BI artifact had its last activity
@@ -156,6 +177,11 @@ If the request has been successfully processed, a 200 OK response will be return
       "uniqueViewersOfLast30Days": 0 // Viewer count in last 30 days
       "viewsOfLast90Days": 0 // View count in last 90 days
       "uniqueViewersOfLast90Days": 0 // Viewer count in last 90 days
+      "semanticModel": {
+        "id": b17e8130-****-****-****-c4f0059b0df9 // The unique identifier of the semantic model
+        "name": Sample semantic model // The name of the semantic model
+        "workspace": Sample workspace // The Power BI workspace that the semantic model belongs to
+      }
     }
   ],
   "totalCount": 1,

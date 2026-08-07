@@ -1,11 +1,14 @@
 # Generate Authorization Link to Authorize Service Apps
 
-Use this API to generate an authorization link. Customers can use this link to authorize or re-authorize their service apps for the Microsoft 365 tenant. Currently, only baseline management and other premium services are supported. For a complete list of services, refer to [Services](./services.md).
+Use this API to generate an authorization link that customers can use to authorize or re-authorize service apps for a Microsoft 365 tenant.
+
+This API currently supports the following services: baseline management, security and analysis premium services, Azure security management, and Cloud Backup for Microsoft 365. For the full list of services and their apps, see [Services](./services.md).
 
 ## Permissions
 
-The following permission is required to call the API.  
-You must register an app through Elements > API app registration to authenticate and authorize your access to Elements API. For details, refer to [App Registration](../../../elements/register-app.md).  
+The following permission is required to call this API.
+
+Before calling the API, register an app in Elements > API app registration so you can authenticate and authorize access to the Elements API. For details, see [App Registration](../../../elements/register-app.md).
 
 | API   | Permission    |
 | ----------------- | ------------------------------- |
@@ -13,7 +16,7 @@ You must register an app through Elements > API app registration to authenticate
 
 ## Request
 
-This section outlines the details of the HTTP method and endpoint used by this API.
+The following table lists the HTTP method and endpoint.
 
 | Method | Endpoint | Description  |
 | ------ | --------------------------------- | -------------------------------------------- |
@@ -21,7 +24,7 @@ This section outlines the details of the HTTP method and endpoint used by this A
 
 ## URL Parameters
 
-This section describes the query parameters that can be added to the URL when sending a POST request.
+The following URL parameters are required when you send the POST request.
 
 | Parameter  | Description   | Type   | Required |
 | ---------- | ----------------------------- | ------ | -------- |
@@ -30,20 +33,20 @@ This section describes the query parameters that can be added to the URL when se
 
 ## Request Body
 
-This section outlines the request body.
+The request body contains the following fields.
 
 | Field  | Description  | Type   | Required |
 | ------------------ | ---------------------- | --- | ----- |
 | consentMethod   | The consent method: <ul><li>**0** - Administrator consent</li><li>**1** - User consent</li></ul> | int  | Yes |
-| isReAuth | Indicates whether this is to re-authorize service apps. <ul><li>**true** - Reauthorize service apps</li><li>**false** - Create and authorize service apps</li></ul>| bool | Yes |
+| isReAuth | Indicates whether to re-authorize service apps. <ul><li>**true** - Re-authorize service apps</li><li>**false** - Create and authorize service apps</li></ul>| bool | Yes |
 | aadEnvironment | An enumeration value that specifies the Azure Active Directory (AAD) environment type associated with the tenant. For a complete list of valid values, refer to [AAD Environment Types](./aad-environment-types.md). | int | Yes |
 | platformEnvironmentType | An enumeration value that specifies the platform environment type associated with the tenant. For a complete list of valid values, refer to [Platform Environment Types](./platform-environment-types.md). | int | Yes |
-| productNames | Services whose apps you want to authorize or re-authorize. <ul><li>**PartnerTenantSettingManagement** - Baseline management</li><li>**PartnerWorkspaceOnboarding** - Other premium services</li></ul> | `List<string>` | Yes |
-| customRecipientEmails | The email addresses to which a success notification email for each app consent will be sent.  | List<string>| No |
+| productNames | The services whose apps you want to authorize or re-authorize. <ul><li>**PartnerTenantSettingManagement** - Baseline management</li><li>**PartnerWorkspaceOnboarding** - Security and analysis premium services</li><li>**PartnerAzureSecurityManagement** - Azure security management</li><li>**Office365Backup** - Cloud Backup for Microsoft 365</li></ul> | `List<string>` | Yes |
+| customRecipientEmails | Email addresses that receive success notifications for each app consent. | List<string> | No |
 
 ## Response
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+If the request is successful, the API returns `200 OK` and the response body contains the following fields.
 
 | Field | Description | Type  |
 | ----- | --------| --- |
@@ -52,24 +55,24 @@ If the request has been successfully processed, a 200 OK response will be return
 
 ## Request Sample
 
-To use this API, send a POST request to the specified endpoint, including necessary parameters as defined in the references.
+Send a POST request to the endpoint with the required parameters.
 
 ```json
 {
   "consentMethod": 0, // The consent method
-  "isReAuth": false, // Indicates whether this is to re-authorize service apps
+  "isReAuth": false, // Indicates whether to re-authorize service apps
   "aadEnvironment": 0, // An enumeration value that specifies the Azure Active Directory (AAD) environment type associated with the tenant
   "platformEnvironmentType": 0, // An enumeration value that specifies the platform environment type associated with the tenant
-  "productNames": ["PartnerWorkspaceOnboarding", "PartnerTenantSettingManagement"], // The service apps that you want to authorize or reauthorize
-  "customRecipientEmails": ["Jack@TenantABC.com"] // The email address to which success notification emails for app consent will be sent
+  "productNames": ["PartnerWorkspaceOnboarding", "PartnerTenantSettingManagement"], // The service apps you want to authorize or re-authorize
+  "customRecipientEmails": ["Jack@TenantABC.com"] // The email addresses that receive success notifications for app consent
 }
 ```
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
+If the request is successful, the API returns `200 OK` and the requested information in the response body.
 
-For more details on the HTTP status code, refer to [Http Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
+For details about HTTP status codes, see [HTTP Status Code](https://learn.avepoint.com/docs/Use-AvePoint-Graph-API.html#http-status-code).
 
 ```json
 {

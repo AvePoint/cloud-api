@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/api/restore/HasArchivedTeamsGroupData` | records.readwrite.all |
+| `/records/api/restore/HasArchivedTeamsGroupData` | records.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used for checking whether arc
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/api/restore/HasArchivedTeamsGroupData` | Checks whether archived data exists for a Team/Group. |
+| GET | `/records/api/restore/HasArchivedTeamsGroupData` | Checks whether archived data exists for a Team/Group. |
 
 ## Request Parameters
 
@@ -41,7 +41,7 @@ The API response provides the archived data check result.
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the AvePoint Opus environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/api/restore/HasArchivedTeamsGroupData?scope=finance-team@contoso.com
+https://graph-us.avepointonlineservices.com/records/api/restore/HasArchivedTeamsGroupData?scope=finance-team@contoso.com
 ```
 
 ## Response Sample
