@@ -28,6 +28,7 @@ The API supports several query parameters to refine and customize the data retri
 |--- | --- | --- | --- |
 | top | The number of workspace records retrieved and returned each page. The default number is 100. You can enter a number from 1 to 1000. | integer | No |
 | tenant | The tenant in which data of workspaces are retrieved. By default, workspaces of all tenants are retrieved. | string | No |
+| $filter | Filter data retrieval scope. Supported filter includes: <br> <ul><li> **workspaceCreator** <br> </li><li> **workspaceCreatorDepartment**<br> | string | No |
 
 ## Responses
 
@@ -100,6 +101,11 @@ The API response provides detailed information about the Power BI workspaces ret
 | electionProfile             | The Cloud Governance contact election profile applied to the workspace. For the detailed profile properties, refer to [Cloud Governance Profile Details](#cloud-governance-profile-details).                             | object  |
 | claimStatus                 | The Cloud Governance claim status of the workspace.                         | string  |
 | datasource                  | The data source of the workspace.                                           | string  |
+| numberOfTotalUsers | The total number of users in the workspace, including those in nested groups. | integer |
+| workspaceCreatorUPN | The user principal name of the workspace creator. | string |
+| workspaceCreatorDisplayName | The display name of the workspace creator. | string |
+| workspaceCreatorDepartment | The department of the workspace creator. | string |
+| isPremiumCapacity | Indicates if the workspace is using Premium capacity. <br> Valid values: <br> <ul><li> **true** for yes <br> </li><li> **false** for no <br> | boolean |
 
 ### User Details
 
@@ -142,6 +148,17 @@ To use this API, send a GET request to the specified endpoint, including necessa
 ```json
 https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/workspaces
 ```
+To narrow workspaces to retrieve by workspace creator: 
+
+  ```json
+  https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/workspaces&$filter=workspaceCreator eq 'admin@sample.com'
+  ```
+
+To narrow workspaces to retrieve by workspace creator's department:
+
+  ```json
+  https://graph-us.avepointonlineservices.com/smp/powerplatform/powerbi/workspaces&$filter=workspaceCreatorDepartment eq 'IT'
+  ```
 
 ## Response Sample
 
@@ -181,7 +198,7 @@ If the request has been successfully processed, a 200 OK response will be return
       "numberOfDatamarts": 0, // The number of datamarts in the workspace
       "numberOfAdmins": 0, // The number of administrators in the workspace
       "numberOfMembers": 0, // The number of members in the workspace
-      "numberOfContributors": 0, // The number of contributors in the workspace
+      "numberOfContributors": 0, // The number of contributors in the "workspace
       "numberOfViewers": 0, // The number of viewers in the workspace
       "isDeleted": false, // Indicates if the workspace has been deleted
       "numberOfGuests": 0, // The number of guests in the workspace
@@ -207,7 +224,12 @@ If the request has been successfully processed, a 200 OK response will be return
       "electionProfileApplied": null, // Indicates if a contact election profile has been applied to the workspace
       "electionProfile": null, // The Cloud Governance contact election profile applied to the workspace
       "claimStatus": null, // The Cloud Governance claim status of the workspace
-      "datasource": null // The data source of the workspace
+      "datasource": null, // The data source of the workspace
+      "numberOfTotalUsers": 25, // The total number of users in the workspace, including those in nested groups
+      "workspaceCreatorUPN": admin@sample.com, // The user principal name of the workspace creator
+      "workspaceCreatorDisplayName": John Doe, // The display name of the workspace creator
+      "workspaceCreatorDepartment": IT, // The department of the workspace creator
+      "isPremiumCapacity": No, // Indicates if the workspace is using Premium capacity
     }
   ],
   "totalCount": 1, 

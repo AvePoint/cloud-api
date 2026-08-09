@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/api/restore/GetRestoreJobStatus` | records.readwrite.all |
+| `/records/api/restore/GetRestoreJobStatus` | records.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to get the status or pro
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/api/restore/GetRestoreJobStatus` | Gets the status and progress of a restore job. |
+| GET | `/records/api/restore/GetRestoreJobStatus` | Gets the status and progress of a restore job. |
 
 ## Request Parameters
 
@@ -50,7 +50,7 @@ The API response provides the restore job details.
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the AvePoint Opus environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/api/restore/GetRestoreJobStatus?jobId=8f1678a9-****-****-****-745212ef3c2a
+https://graph-us.avepointonlineservices.com/records/api/restore/GetRestoreJobStatus?jobId=8f1678a9-****-****-****-745212ef3c2a
 ```
 
 ## Response Sample

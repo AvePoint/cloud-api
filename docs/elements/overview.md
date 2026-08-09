@@ -14,6 +14,10 @@ Built on a foundation of security and scalability, the Elements API ensures that
 
 - **Common Features**: Provide comprehensive capabilities for customer onboarding, service management, subscription tracking, tenant resource monitoring, and backup job reporting, which enable partners to streamline customer related operations and enhance visibility into service usage.
 
+- **Azure security management**: Retrieve the Azure risk issues of a specific tenant.
+
+- **Azure cost management**: Retrieve the Azure cost issues of a specific tenant.
+
 - **Baseline Management**: Create baselines from your golden tenants to establish benchmarks for tenant configurations and apply baselines to tenants to monitor configuration deviations.
 
 - **Risk Management**: Retrieve the matched risk rules of a specific tenant and view all objects that violate a specific risk rule within a tenant.

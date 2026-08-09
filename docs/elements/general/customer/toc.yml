@@ -2,5 +2,5 @@
   href: get-all-customers.md
 - name: Onboard a Customer
   href: onboard-customer.md
-
-
+- name: Retrieve Customer Protected Objects
+  href: retrieve-customer-protected-objects.md

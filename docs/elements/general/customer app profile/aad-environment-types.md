@@ -5,6 +5,7 @@ The following table lists the Azure Active Directory (AAD) environment types alo
 | AAD Environment Type | Enumeration Value| Description |
 | ---------- | ----- | -------------- |
 | AzureCloud | 0 | Global/public Azure cloud (default).|
+| AzureChinaCloud | 1 | Azure cloud operated by 21Vianet in China |
 | USGovernment | 2 | Azure Government (US GCC High) |
 | USGovernment_DoD | 4 | Azure Government for Department of Defense (DoD). |
 | AzureCloud_GCC | 5 | Azure Government Community Cloud (GCC) |

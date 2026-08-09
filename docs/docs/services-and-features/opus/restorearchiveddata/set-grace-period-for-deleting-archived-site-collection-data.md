@@ -15,7 +15,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/api/restore/SetRestoreGracePeriodSiteCollection` | records.readwrite.all |
+| `/records/api/restore/SetRestoreGracePeriodSiteCollection` | records.readwrite.all |
 
 ## Request
 
@@ -23,7 +23,7 @@ This section provides the HTTP method and endpoint for setting how long restored
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/api/restore/SetRestoreGracePeriodSiteCollection` | Sets the retention period for restored archived data before deletion from archive storage. |
+| POST | `/records/api/restore/SetRestoreGracePeriodSiteCollection` | Sets the retention period for restored archived data before deletion from archive storage. |
 
 ## Request Parameters
 
@@ -50,7 +50,7 @@ To use this API, send a `POST` request to the specified endpoint, including nece
 **URL**
 
 ```json
-https://graph-us.avepointonlineservices.com/api/restore/SetRestoreGracePeriodSiteCollection
+https://graph-us.avepointonlineservices.com/records/api/restore/SetRestoreGracePeriodSiteCollection
 ```
 
 **Body (raw-JSON)**

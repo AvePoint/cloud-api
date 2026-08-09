@@ -1,7 +1,6 @@
 # Onboard a Customer
 
 Use this API to onboard a customer to the current partner.
-Note that only local accounts are supported to be onboarded through this API.
 
 ## Permission
 
@@ -26,6 +25,7 @@ This section outlines the request body parameters required to onboard a customer
 
 |Parameter|Description | Type|Required?|
 |---|---|---|---|
+|identityProviderType | The identity provider type of the customer. <ul><li>**0** - Local</li><li>**6** - Microsoft 365</li></ul> | integer | Yes |
 |firstName            |The first name of the customer.                   |string      |Yes|
 |lastName             |The last name of the customer.                    |string      |Yes|
 |organizationName     |The organization name of the customer.            |string      |Yes|
@@ -44,7 +44,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | Response | Description | Type |
 | --- | --- | --- |
 | id     | The ID of the customer.     | string |
-| status | The status of the customer.<ul><li>**1** - Successful</li><li>**2** - Failed</li><li>**3** - Customer does not exist</li><li>**4** - Failed to register customer</li><li>**5** - Customer is managed by current partner</li><li>**6** - Customer is the same as current partner</li><li>**7** - Customer already exists</li></ul> | integer |
+| status | The status of the customer.<ul><li>**1** - Successful</li><li>**2** - Failed</li><li>**3** - Customer does not exist</li><li>**4** - Failed to register customer</li><li>**5** - Customer is managed by another partner</li><li>**6** - Customer is managed by current partner</li><li>**7** - Customer already exists</li></ul> | integer |
 
 ## Request Sample
 
@@ -54,6 +54,7 @@ To use this API, send a POST request to the specified endpoint.
 https://graph.avepointonlineservices.com/partner/external/v3/general/customers
 
 {
+    "identityProviderType":"0", // The identity provider type of the customer
     "firstName":"Tony", // The first name of the customer
     "lastName":"Brown", // The last name of the customer
     "organizationName":"OrganizationABC", // The organization name of the customer

@@ -1,6 +1,8 @@
 - name: Overview
   href: overview.md
-- name: Use Connector
-  href: useconnector/toc.yml
+- name: Integrate with Data Storage Systems
+  href: integratewithdatastoragesystems/toc.yml
 - name: Restore Archived Data
   href: restorearchiveddata/toc.yml
+- name: Generate Site Metrics Report
+  href: generatesitemetricsreport.md

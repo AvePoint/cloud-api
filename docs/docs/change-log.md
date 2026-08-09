@@ -2,19 +2,54 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## August 2026
+
+### Added
+
+- **Opus**
+  - Introduced the following new endpoint:
+    - `/records/api/OpusReport/GenerateReport` for generating a site metrics report for multiple site collections and saving it to a specified document library.
+
+- **EnPower**
+  - Enhanced the following Power BI endpoints with additional query capabilities:
+    - `/smp/powerplatform/powerbi/workspaces` now supports the `$filter` parameter for `workspaceCreator` and `workspaceCreatorDepartment`.
+
+    - `/smp/powerplatform/powerbi/artifacts` now supports the `$filter` parameter for filtering artifact type and the ID of report's parent semantic model. 
+    
+      The endpoint now also supports the `$expand=semanticModel` parameter for retrieving reports with their related semantic models.
+      
+  - Added the following properties to the response of the `/smp/powerplatform/powerbi/workspaces` endpoint:
+    - `numberOfTotalUsers`
+    - `workspaceCreatorUPN`
+    - `workspaceCreatorDisplayName`
+    - `workspaceCreatorDepartment`
+  
+  - Added the `semanticModel` property to the response of the `/smp/powerplatform/powerbi/artifacts` endpoint to enable retrieval of related semantic model details for Power BI reports.
+
+  - Optimized responses for the following properties of the `/smp/powerplatform/powerautomate/cloudflows` endpoint:
+    - `creatorDepartment`
+    - `creatorOffice`
+    - `creatorStatus`
+    - `creatorUserType`
+    - `creatorCountry`
+    - `creatorEmail`
+    - `creatorId`
+    - `creatorJobTitle`
+    - `creatorUpn`
+
 ## July 1, 2026
 
 ### Added
 
 - **Opus**
   - Introduced the following new endpoints:
-    - `/api/restore/HasArchivedSiteCollectionData` for checking whether archived data exists for a site collection.
-    - `/api/restore/HasArchivedTeamsGroupData` for checking whether archived data exists for a Team/Group.
-    - `/api/restore/RestoreSiteCollection` for starting a job to restore the archived data of a site collection.
-    - `/api/restore/RestoreTeamsGroup` for starting a job to restore the archived data of a Team/Group.
-    - `/api/restore/GetRestoreJobStatus` for getting the status and progress of a restore job.
-    - `/api/restore/SetRestoreGracePeriodSiteCollection` for setting how long restored archived data of a site collection is retained before it is deleted from archive storage.
-    - `/api/restore/SetRestoreGracePeriodTeamsGroup` for setting how long restored archived data of a Team/Group is retained before it is deleted from archive storage.
+    - `/records/api/restore/HasArchivedSiteCollectionData` for checking whether archived data exists for a site collection.
+    - `/records/api/restore/HasArchivedTeamsGroupData` for checking whether archived data exists for a Team/Group.
+    - `/records/api/restore/RestoreSiteCollection` for starting a job to restore the archived data of a site collection.
+    - `/records/api/restore/RestoreTeamsGroup` for starting a job to restore the archived data of a Team/Group.
+    - `/records/api/restore/GetRestoreJobStatus` for getting the status and progress of a restore job.
+    - `/records/api/restore/SetRestoreGracePeriodSiteCollection` for setting how long restored archived data of a site collection is retained before it is deleted from archive storage.
+    - `/records/api/restore/SetRestoreGracePeriodTeamsGroup` for setting how long restored archived data of a Team/Group is retained before it is deleted from archive storage.
 
 ## June 2026
 

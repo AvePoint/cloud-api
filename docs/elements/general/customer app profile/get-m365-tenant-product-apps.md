@@ -1,6 +1,8 @@
 # Retrieve Service App Status
 
-Use this API to retrieve the status of a service app for a Microsoft 365 tenant. Currently, only baseline management and other premium services are supported. For a complete list of services, refer to [Services](./services.md).
+Use this API to retrieve the status of a service app for a Microsoft 365 tenant.
+
+This API currently supports the following services: baseline management, security and analysis premium services, Azure security management, and Cloud Backup for Microsoft 365. For the full list of services and their apps, refer to [Services](./services.md).
 
 ## Permissions
 
@@ -27,7 +29,7 @@ This section describes the query parameters that can be added to the URL when se
 | ----------- | ---------------------------- | ------ | -------- |
 | customerId  | The customer ID. | string | Yes |
 | tenantId    | The Microsoft 365 tenant ID. | string | Yes |
-| productName | The service whose app status you want to retrieve. <ul><li>**PartnerTenantSettingManagement** - Baseline management</li><li>**PartnerWorkspaceOnboarding** - Other premium services</li></ul> | string | Yes |
+| productName | The service whose app status you want to retrieve. <ul><li>**PartnerTenantSettingManagement** - Baseline management</li><li>**PartnerWorkspaceOnboarding** - Security and analysis premium services</li><li>**PartnerAzureSecurityManagement** - Azure security management</li><li>**Office365Backup** - Cloud Backup for Microsoft 365</li></ul> | string | Yes |
 
 ## Response
 

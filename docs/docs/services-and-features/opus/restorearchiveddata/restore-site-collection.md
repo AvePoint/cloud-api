@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/api/restore/RestoreSiteCollection` | records.readwrite.all |
+| `/records/api/restore/RestoreSiteCollection` | records.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to start a job for resto
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/api/restore/RestoreSiteCollection` | Starts a job for restoring the archived data of a site collection. |
+| POST | `/records/api/restore/RestoreSiteCollection` | Starts a job for restoring the archived data of a site collection. |
 
 ## Request Parameters
 
@@ -48,7 +48,7 @@ To use this API, send a `POST` request to the specified endpoint, including nece
 
 **URL**
 ```json
-https://graph-us.avepointonlineservices.com/api/restore/RestoreSiteCollection
+https://graph-us.avepointonlineservices.com/records/api/restore/RestoreSiteCollection
 ```
 **Body (raw-JSON)**
 
