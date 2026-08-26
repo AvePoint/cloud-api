@@ -2,6 +2,29 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the Elements API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## August 26, 2026
+### Added 
+
+- Introduced new endpoints for common features:
+
+  - `/partner/external/v3/general/customers/connecttenant` for adding a customer's tenants to modules.
+
+- Introduced new endpoints for large account resellers (LAR):
+
+  - `/partner/external/v3/general/partners/t2-reseller/resellers/batch` for retrieving all resellers under the current LAR.
+
+  - `/partner/external/v3/general/partners/t2-reseller/licenses/batch` for retrieving all pooled subscriptions under the current LAR.
+
+  - `/partner/external/v3/general/partners/t2-reseller/licenses/{licenseId}/usage/batch` for retrieving allocation usage history of a pooled subscription.
+
+  -  `/partner/external/v3/general/partners/t2-reseller/resellers/{resellerId}/licenses` for adding a new pooled subscription to a reseller or updating an existing pooled subscription for a reseller.
+
+  - `/partner/external/v3/general/partners/t2-reseller/resellers/{resellerId}/licenses/batch` for retrieving all pooled subscriptions of a reseller under the current LAR.
+
+  - `/partner/external/v3/general/partners/t2-reseller/resellers/{resellerId}/licenses/accept` for accepting the pooled subscriptions assigned to a reseller.
+
+  - `/partner/external/v3/general/partners/t2-reseller/resellers/{resellerId}/licenses/reject` for rejecting the pooled subscriptions assigned to a reseller.
+
 ## August 2026
 
 ### Added 
@@ -18,7 +41,7 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 ### Changed
 
-- Supported Azure security management and Cloud Backup for Microsoft 365 services for the `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` and `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` endpoints.
+- Supported Azure security management and Cloud Backup for Microsoft 365 services for the `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` and `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` endpoints.
 
 - Added the identity provider type parameter to the `/partner/external/v3/general/customers` endpoint.
 
@@ -28,13 +51,13 @@ This document provides a detailed log of changes, updates, and enhancements made
 
 - Introduced new endpoints for common features.  
 
-   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}` for retrieving information of a Microsoft 365 tenant.
+   - `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}` for retrieving information of a Microsoft 365 tenant.
 
-   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/auth-link` for generating an authorization link that can be used by customers to add their Microsoft 365 tenant to Elements.
+   - `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/auth-link` for generating an authorization link that can be used by customers to add their Microsoft 365 tenant to Elements.
 
-   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` for retrieving the status of a service app for a Microsoft 365 tenant.
+   - `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/product/{productName}/apps` for retrieving the status of a service app for a Microsoft 365 tenant.
 
-   - `partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` for generating an authorization link that can be used by customers to authorize or re-authorize their service apps for a Microsoft 365 tenant.
+   - `/partner/external/v3/general/customers/{customerId}/tenants/{tenantId}/apps/auth-link` for generating an authorization link that can be used by customers to authorize or re-authorize their service apps for a Microsoft 365 tenant.
 
 - Introduced new endpoints for user management. 
 

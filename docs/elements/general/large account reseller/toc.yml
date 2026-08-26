@@ -1,0 +1,14 @@
+- name: Retrieve All Resellers under the Current LAR
+  href: get-all-resellers-under-the-current-t2-partner.md
+- name: Retrieve All Pooled Subscriptions under the Current LAR
+  href: get-all-licenses-under-the-current-t2-partner.md
+- name: Retrieve Allocation Usage History of a Pooled Subscription
+  href: get-allocation-usage-history-of-a-specific-license.md
+- name: Add or Edit a Pooled Subscription for a Reseller
+  href: add-or-edit-license-for-a-reseller.md
+- name: Retrieve All Pooled Subscriptions of a Reseller
+  href: get-all-licenses-of-a-specified-reseller.md
+- name: Accept Assigned Pooled Subscriptions
+  href: accept-assigned-licenses.md
+- name: Reject Assigned Pooled Subscriptions
+  href: reject-assigned-licenses.md
