@@ -6,3 +6,5 @@
   href: get-m365-tenant-product-apps.md
 - name: Generate Authorization Link to Authorize Service Apps
   href: create-auth-link-to-consent-app-for-customer.md
+- name: Add a Customer's Tenants to Modules
+  href: onboard-customer-tenants.md
