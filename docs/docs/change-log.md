@@ -2,6 +2,20 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the AvePoint Graph API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## September 10, 2026
+
+### Added
+
+- **Opus**
+  - Introduced the following new endpoints for restoring archived data:
+    - `/records/restore/site-collections` for checking whether archived data exists for a site collection.
+    - `/records/restore/teams` for checking whether archived data exists for a Team/Group.
+    - `/records/restore/site-collections` for starting a job to restore the archived data of a site collection.
+    - `/records/restore/teams` for starting a job to restore the archived data of a Team/Group.
+    - `/records/jobs/{jobId}/basic-info` for getting the basic information and progress of a restore job.
+    - `/records/restore/site-collections/grace-period` for setting how long restored archived data of a site collection is retained before it is deleted from archive storage.
+    - `/records/restore/teams/grace-period` for setting how long restored archived data of a Team/Group is retained before it is deleted from archive storage.
+
 ## August 2026
 
 ### Added

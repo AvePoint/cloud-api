@@ -6,3 +6,5 @@
   href: restorearchiveddata/toc.yml
 - name: Generate Site Metrics Report
   href: generatesitemetricsreport.md
+- name: Restore Archived Data (Legacy)
+  href: restorearchiveddatalegacy/toc.yml

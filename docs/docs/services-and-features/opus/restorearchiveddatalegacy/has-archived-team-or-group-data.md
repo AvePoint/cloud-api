@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/records/restore/teams` | records.readwrite.all |
+| `/records/api/restore/HasArchivedTeamsGroupData` | records.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used for checking whether arc
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/records/restore/teams` | Checks whether archived data exists for a Team/Group. |
+| GET | `/records/api/restore/HasArchivedTeamsGroupData` | Checks whether archived data exists for a Team/Group. |
 
 ## Request Parameters
 
@@ -27,20 +27,12 @@ This section outlines the HTTP method and endpoint used for checking whether arc
 
 ## Response
 
-The API response uses the standard Public API response format. The archived data check result is returned in `data`.
+The API response provides the archived data check result.
 
 | Parameter | Description | Type |
 |---|---|---|
-| statusCode | The HTTP status code. | integer |
+| success | Indicates whether the request was processed successfully. | boolean |
 | message | The result message. | string |
-| timestamp | The response timestamp. | string |
-| traceId | The request trace identifier. | string |
-| data | The archived data check result. | object |
-
-**Data Details**
-
-| Parameter | Description | Type |
-|---|---|---|
 | hasArchivedData | Indicates whether archived data exists for a Team/Group. | boolean |
 | scope | The group email address of the target Team/Group. | string |
 
@@ -49,22 +41,16 @@ The API response uses the standard Public API response format. The archived data
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the AvePoint Opus environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/records/restore/teams?scope=finance-team@contoso.com
+https://graph-us.avepointonlineservices.com/records/api/restore/HasArchivedTeamsGroupData?scope=finance-team@contoso.com
 ```
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-
 ```json
 {
-  "statusCode": 200, // The HTTP status code
-  "message": "OK", // The result message
-  "timestamp": "2026-06-29T08:31:12Z", // The response timestamp
-  "traceId": "00000000-****-****-****-000000000000", // The request trace identifier
-  "data": { // The archived data check result
-	"hasArchivedData": false, // Indicates whether archived data exists for a Team/Group
-	"scope": "finance-team@contoso.com" // The group email address of the target Team/Group
-  }
+  "success": true, // Indicates whether the request was processed successfully
+  "message": null, // The result message
+  "hasArchivedData": false, // Indicates whether archived data exists for a Team/Group
+  "scope": "finance-team@contoso.com" // The group email address of the target Team/Group
 }
 ```
