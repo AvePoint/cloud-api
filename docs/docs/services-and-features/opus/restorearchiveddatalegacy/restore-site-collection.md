@@ -9,7 +9,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/records/restore/site-collections` | records.readwrite.all |
+| `/records/api/restore/RestoreSiteCollection` | records.readwrite.all |
 
 ## Request
 
@@ -17,7 +17,7 @@ This section outlines the HTTP method and endpoint used to start a job for resto
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/records/restore/site-collections` | Starts a job for restoring the archived data of a site collection. |
+| POST | `/records/api/restore/RestoreSiteCollection` | Starts a job for restoring the archived data of a site collection. |
 
 ## Request Parameters
 
@@ -27,27 +27,19 @@ The API requires a JSON request body.
 |---|---|---|---|
 | scope | The URL of the target site collection. | string | Yes |
 | conflictResolution | The conflict resolution for primary content.<ul><li> **0** - Overwrite</li><li>**1** - Skip</li><li> **2** - Append</li></ul> | integer | No |
-| appsConflictResolution | The conflict resolution for app data.<ul><li> **0** - Overwrite</li><li>**1** - Skip</li><li> **2** - Append</li></ul> | integer | No |
+| appsConflictResolution | The conflict resolution for apps data.<ul><li> **0** - Overwrite</li><li>**1** - Skip</li><li> **2** - Append</li></ul> | integer | No |
 | includeWorkflowDefinition | Indicates whether to include workflow definitions in the restore operation. | boolean | No |
 | includeSharingLink | Indicates whether to include sharing links in the restore operation. | boolean | No |
 | siteAdministratorUserPrincipalName | The User Principal Name (UPN) of the Microsoft 365 account to assign to the Site admins group of the site collection being restored. | string | No |
 
 ## Response
 
-The API response uses the standard Public API response format. The restore job identifier is returned in `data`.
+The API response provides the restore execution result.
 
 | Parameter | Description | Type |
 |---|---|---|
-| statusCode | The HTTP status code. | integer |
+| success | Indicates whether the request was processed successfully. | boolean |
 | message | The result message. | string |
-| timestamp | The response timestamp. | string |
-| traceId | The request trace identifier. | string |
-| data | The restore execution result. | object |
-
-**Data Details**
-
-| Parameter | Description | Type |
-|---|---|---|
 | jobId | The ID of the restore job. You can use this job ID for tracking job status and progress. | string |
 
 ## Request Sample
@@ -56,7 +48,7 @@ To use this API, send a `POST` request to the specified endpoint, including nece
 
 **URL**
 ```json
-https://graph-us.avepointonlineservices.com/records/restore/site-collections
+https://graph-us.avepointonlineservices.com/records/api/restore/RestoreSiteCollection
 ```
 **Body (raw-JSON)**
 
@@ -64,7 +56,7 @@ https://graph-us.avepointonlineservices.com/records/restore/site-collections
 {
   "scope": "https://contoso.sharepoint.com/sites/Finance", // The URL of the target site collection
   "conflictResolution": 1, // The conflict resolution for primary content
-  "appsConflictResolution": 1, // The conflict resolution for app data
+  "appsConflictResolution": 1, // The conflict resolution for apps data
   "includeWorkflowDefinition": false, // Indicates whether to include workflow definitions in the restore operation
   "includeSharingLink": false, // Indicates whether to include sharing links in the restore operation
   "siteAdministratorUserPrincipalName": "admin@contoso.com", // The User Principal Name (UPN) of the Microsoft 365 account to assign to the Site admins group of the site collection being restored
@@ -73,16 +65,10 @@ https://graph-us.avepointonlineservices.com/records/restore/site-collections
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-
 ```json
 {
-  "statusCode": 200, // The HTTP status code
-  "message": "OK", // The result message
-  "timestamp": "2026-06-29T08:31:12Z", // The response timestamp
-  "traceId": "00000000-****-****-****-000000000000", // The request trace identifier
-  "data": { // The restore execution result
-	"jobId": "RS2026****************" // The ID of the restore job
-  }
+  "success": true, // Indicates whether the request was processed successfully
+  "message": null, // The result message
+  "jobId": "8f1678a9-****-****-****-745212ef3c2a" // The ID of the restore job
 }
 ```

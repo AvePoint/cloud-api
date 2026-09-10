@@ -1,10 +1,10 @@
-# Set Archived Data Retention Period after Team/Group Restore
+# Set Archived Data Retention Period After Team/Group Restore
 
 Use this API to set how long restored archived data of a Team/Group is retained before it is deleted from archive storage. This allows users to control how long the data remains available and helps to optimize storage usage after restoration.
 
 Note the following:
 
-- The retention period set by this API takes precedence over the one configured in Opus > **Content sources** > **Teams & Groups** > **Storage optimization** > **General settings**.
+- The retention period set by this API takes precedence over the one configured in Opus > **Storage Optimization** > **General settings**.
 
 - This API is applied only once. If a job for deleting archived data after restoration has already started, this API will no longer have any effect. Subsequent jobs will instead follow the retention period configured in the Opus UI.
 
@@ -15,7 +15,7 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/records/restore/teams/grace-period` | records.readwrite.all |
+| `/records/api/restore/SetRestoreGracePeriodTeamsGroup` | records.readwrite.all |
 
 ## Request
 
@@ -23,7 +23,7 @@ This section outlines the HTTP method and endpoint used to set the retention per
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| POST | `/records/restore/teams/grace-period` | Sets the retention period for restored archived data before deletion from archive storage. |
+| POST | `/records/api/restore/SetRestoreGracePeriodTeamsGroup` | Sets the retention period for restored archived data before deletion from archive storage. |
 
 ## Request Parameters
 
@@ -36,15 +36,12 @@ The API requires a JSON request body.
 
 ## Response
 
-The API response uses the standard Public API response format. A successful request returns `null` in `data`.
+The API response provides the operation result.
 
 | Parameter | Description | Type |
 |---|---|---|
-| statusCode | The HTTP status code. | integer |
+| success | Indicates whether the request was processed successfully. | boolean |
 | message | The result message. | string |
-| timestamp | The response timestamp. | string |
-| traceId | The request trace identifier. | string |
-| data | The API payload. | null |
 
 ## Request Sample
 
@@ -53,7 +50,7 @@ To use this API, send a `POST` request to the specified endpoint, including nece
 **URL**
 
 ```json
-https://graph-us.avepointonlineservices.com/records/restore/teams/grace-period
+https://graph-us.avepointonlineservices.com/records/api/restore/SetRestoreGracePeriodTeamsGrou
 ```
 
 **Body (raw-JSON)**
@@ -67,14 +64,9 @@ https://graph-us.avepointonlineservices.com/records/restore/teams/grace-period
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-
 ```json
 {
-  "statusCode": 200, // The HTTP status code
-  "message": "OK", // The result message
-  "timestamp": "2026-06-29T08:31:12Z", // The response timestamp
-  "traceId": "00000000-****-****-****-000000000000", // The request trace identifier
-  "data": null // The API payload
+  "success": true, // Indicates whether the request was processed successfully
+  "message": null // The result message
 }
 ```

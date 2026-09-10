@@ -1,6 +1,6 @@
-# Get Restore Job Basic Information and Progress
+# Get Restore Job Status and Progress
 
-Use this API to get the basic information and progress of a restore job.
+Use this API to get the status and progress of a restore job.
 
 ## Permission
 
@@ -9,15 +9,15 @@ You must register an app through AvePoint Online Services > App registrations to
 
 | API | Permission |
 |---|---|
-| `/records/jobs/{jobId}/basic-info` | records.readwrite.all |
+| `/records/api/restore/GetRestoreJobStatus` | records.readwrite.all |
 
 ## Request
 
-This section outlines the HTTP method and endpoint used to get the basic information and progress of a restore job.
+This section outlines the HTTP method and endpoint used to get the status or progress of a restore job.
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| GET | `/records/jobs/{jobId}/basic-info` | Gets the basic information and progress of a restore job. |
+| GET | `/records/api/restore/GetRestoreJobStatus` | Gets the status and progress of a restore job. |
 
 ## Request Parameters
 
@@ -27,15 +27,13 @@ This section outlines the HTTP method and endpoint used to get the basic informa
 
 ## Response
 
-The API response uses the standard Public API response format. The restore job details are returned in `data`.
+The API response provides the restore job details.
 
 | Parameter | Description | Type |
 |---|---|---|
-| statusCode | The HTTP status code. | integer |
+| success | Indicates whether the request was processed successfully. | boolean |
 | message | The result message. | string |
-| timestamp | The response timestamp. | string |
-| traceId | The request trace identifier. | string |
-| data | The restore job basic information and progress. | object |
+| job | Job details. | object |
 
 **Job Details**
 
@@ -52,21 +50,17 @@ The API response uses the standard Public API response format. The restore job d
 To use this API, send a GET request to the specified endpoint, including necessary parameters as defined. The following request is an API call to the AvePoint Opus environment in the US - East region.
 
 ```json
-https://graph-us.avepointonlineservices.com/records/jobs/RS2026****************/basic-info
+https://graph-us.avepointonlineservices.com/records/api/restore/GetRestoreJobStatus?jobId=8f1678a9-****-****-****-745212ef3c2a
 ```
 
 ## Response Sample
 
-If the request has been successfully processed, a 200 OK response will be returned along with the requested information displayed in the response body.
-
 ```json
 {
-  "statusCode": 200, // The HTTP status code
-  "message": "OK", // The result message
-  "timestamp": "2026-06-29T08:31:12Z", // The response timestamp
-  "traceId": "00000000-****-****-****-000000000000", // The request trace identifier
-  "data": { // The restore job basic information and progress result
-    "id": "RS2026****************", // The restore job ID
+  "success": true, // Indicates whether the request was processed successfully
+  "message": null, // The result message
+  "job": {
+    "id": "8f1678a9-****-****-****-745212ef3c2a", // The restore job ID
     "status": 2, // The restore job status
     "progress": 75, // The percentage of the restore job that has been completed
     "startTime": "2026-06-29T08:31:12Z", // The restore job start time
