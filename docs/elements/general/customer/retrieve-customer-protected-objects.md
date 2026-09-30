@@ -26,7 +26,7 @@ This section outlines the parameters required to specify which customer and modu
 | Parameter | Description | Type | Required |
 |---|---|---|---|
 | customerId | The ID of the customer. | string | Yes |
-| module | The value of the backup module. <ul><li>**0** - Exchange Online mailboxes</li><li>**1** - SharePoint Online</li><li>**2** - OneDrive</li><li>**3** - Microsoft 365 Groups</li><li>**4** - Project Online</li><li>**5** - Exchange Online Public Folders</li><li>**6** - Microsoft Teams</li><li>**9** - Viva Engage</li><li>**10** - Microsoft Teams chat</li><li>**11** - Power BI</li><li>**12** - Power Automate</li><li>**14** - Power Apps</li><li>**15** - Copilot Studio Agents</li></ul>| integer| Yes |
+| module | The value of the backup module. <ul><li>**0** - Exchange Online mailboxes</li><li>**1** - SharePoint Online</li><li>**2** - OneDrive</li><li>**3** - Microsoft 365 Groups</li><li>**5** - Exchange Online Public Folders</li><li>**6** - Microsoft Teams</li><li>**9** - Viva Engage</li><li>**10** - Microsoft Teams chat</li><li>**11** - Power BI</li><li>**12** - Power Automate</li><li>**14** - Power Apps</li><li>**15** - Copilot Studio Agents</li></ul>| integer| Yes |
 | pageSize | The page index for range paging. (1, 1000) | integer | Yes |
 | skipToken | The next page token. | string | No |
 
