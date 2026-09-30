@@ -45,7 +45,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | Field | Description | Type |
 | --- | --- | --- |
 | containersName | The name of the container. | string |
-| objectType | The object type of the container.<ul><li>**0** - Site Collection</li><li>**1** - Mailbox</li><li>**2** - OneDrive</li><li>**5** - Microsoft 365 Group</li><li>**6** - Project Online</li><li>**7** - Public Folder</li><li>**9** - Channel</li><li>**10** - User</li><li>**11** - None Unified Group</li><li>**12** - Power Platform Environment</li><li>**13** - Power Platform Connection</li><li>**14** - Power Apps</li><li>**15** - Power Automate</li><li>**16** - Power BI Workspace</li><li>**17** - Active Directory Mailbox</li><li>**18** - Active Directory User</li><li>**19** - Active Directory Group</li><li>**20** - Power Platform Solution</li><li>**21** - Power Copilot Studio</li><li>**22** - Power Page</li><li>**23** - Loop Container</li><li>**24** - SharePoint Agent</li><li>**25** - Azure AI Foundry Agent</li><li>**100** - Google User</li><li>**101** - Google Shared Drive</li><li>**102** - Google Classroom</li><li>**103** - Google Mailbox</li><li>**104** - Google Group</li><li>**105** - Google Vault Matter</li></ul> | integer |
+| objectType | The object type of the container.<ul><li>**0** - Site Collection</li><li>**1** - Mailbox</li><li>**2** - OneDrive</li><li>**5** - Microsoft 365 Group</li><li>**7** - Public Folder</li><li>**9** - Channel</li><li>**10** - User</li><li>**11** - None Unified Group</li><li>**12** - Power Platform Environment</li><li>**13** - Power Platform Connection</li><li>**14** - Power Apps</li><li>**15** - Power Automate</li><li>**16** - Power BI Workspace</li><li>**17** - Active Directory Mailbox</li><li>**18** - Active Directory User</li><li>**19** - Active Directory Group</li><li>**20** - Power Platform Solution</li><li>**21** - Power Copilot Studio</li><li>**22** - Power Page</li><li>**23** - Loop Container</li><li>**24** - SharePoint Agent</li><li>**25** - Azure AI Foundry Agent</li><li>**100** - Google User</li><li>**101** - Google Shared Drive</li><li>**102** - Google Classroom</li><li>**103** - Google Mailbox</li><li>**104** - Google Group</li><li>**105** - Google Vault Matter</li></ul> | integer |
 
 
 
@@ -75,12 +75,8 @@ For more details on the HTTP status code, refer to [Http Status Code](../../Use-
     "isSendOutOfPolicyNotification": false, // Whether the Send an email notification to the following recipients when objects are moved to other containers or removed from any containers setting is enabled in the scan profile: false represents Disabled
     "containers": [
         {
-            "containersName": "Default_ProjectOnline_Sites_Group", // The container name
-            "objectType": 6 // The object type: 6 represents Project Online
-        },
-        {
-            "containersName": "Default OneDrive for Business Group",
-            "objectType": 2
+            "containersName": "Default OneDrive for Business Group", // The container name
+            "objectType": 2 // The object type: 2 represents OneDrive for Business
         },
         {
             "containersName": "Default_ SharePoint Sites_ Group",
