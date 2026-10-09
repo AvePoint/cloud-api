@@ -1,9 +1,9 @@
 - name: Dashboard
-  href: dashboard_public_api/toc.yml
+  href: dashboard/toc.yml
 - name: Users
-  href: user_public_api/toc.yml
+  href: users/toc.yml
 - name: Risky Users
-  href: risky_public_api/toc.yml
+  href: risky/toc.yml
 - name: Agents
   href: agents/toc.yml
 

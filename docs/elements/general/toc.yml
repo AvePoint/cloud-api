@@ -1,17 +1,17 @@
 - name: Customers
   href: customer/toc.yml
 - name: Customer App Profiles
-  href: customer app profile/toc.yml
+  href: customer-app-profile/toc.yml
 - name: Service Subscriptions
-  href: service subscription/toc.yml
+  href: service-subscription/toc.yml
 - name: Tenants
   href: tenant/toc.yml
 - name: Jobs
   href: job/toc.yml
 - name: Storage Profiles
-  href: storage profiles/toc.yml
+  href: storage-profiles/toc.yml
 - name: Audit Logs
-  href: audit logs/toc.yml
+  href: audit-logs/toc.yml
 - name: Large Account Resellers (LAR)
-  href: large account reseller/toc.yml
+  href: large-account-reseller/toc.yml
    
