@@ -1,0 +1,2 @@
+- name: Retrieve Storage Profiles
+  href: get-all-storage-profile-under-the-current-partner.md

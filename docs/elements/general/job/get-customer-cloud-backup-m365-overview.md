@@ -35,9 +35,11 @@ If the request has been successfully processed, a 200 OK response will be return
 | Field | Description | Type |
 | --- | --- | --- |
 | customerId               | The ID of the customer.                 | string |
+| tenantId               | The ID of the tenant.                 | string |
 | customer     | The email address of the customer.       | string |
 | serviceType       | The name of the service.      | string |
 | serviceModule | The module of the customer’s Cloud Backup for Microsoft 365 service. | string |
+| lastRunTime       | The last run time in ISO 8601 format.      | long |
 | totalScannedObjects | The number of scanned objects of the module. | integer |
 | totalProtectedObjects | The number of backed-up objects of the module. | integer |
 | dataSizeStoredInAvePoint | The backup data size of objects in the last job (using AvePoint storage). | string |
@@ -57,9 +59,11 @@ For more details on the HTTP status code, refer to [Http Status Code](../../../e
     "data": [
         {
             "customerId": "f1626c49-****-****-****-97db****fc15", // The customer ID
+            "tenantId": "f04d7aee-****-5f92-****-6521****e596", // The tenant ID
             "customer": "userA@domain.com", // The email address of the customer
             "serviceType": "Cloud Backup for Microsoft 365", // The service name
             "serviceModule": "Exchange Online", // The module of Cloud Backup for Microsoft 365
+            "lastRunTime": "09/20/2026T13:00:00Z", // The last run time ISO 8601 format
             "totalScannedObjects": 25, // The number of scanned objects of the module
             "totalProtectedObjects": 25, // The number of backed-up objects of the module
             "dataSizeStoredInAvePoint": "0 GB", // The backup data size of objects in the last job (using AvePoint storage)

@@ -36,7 +36,7 @@ This section outlines the required fields to update the information of a user in
 | Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | mail | The mail of the user. The maximum length is 256 characters. | string | Yes |
-| usageLocation | The usage location of the user. The maximum length is 128 characters. For details, refer to [Usage Locations](../../../elements/user-management/user_public_api/usage_location.md).| string | Yes |
+| usageLocation | The usage location of the user. The maximum length is 128 characters. For details, refer to [Usage Locations](../../../elements/user-management/users/usage-location.md). | string | Yes |
 | preferredLanguage |  The preferred language of the user. For details, refer to [Preferred Languages](../../../elements/user-management/user_public_api/language.md). | string | Yes | 
 | enforceStart | Indicates whether account enforcement start date is enabled. | bool | Yes | 
 | enforceStartDateTime |The date and time in ISO 8601 format when account enforcement begins.| string | Yes | 
