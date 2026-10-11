@@ -1,6 +1,10 @@
 # Register an App for API Access
 
-Complete the following steps to register an app for the Elements API:
+Register an app to obtain credentials for accessing the Elements API. The registration process depends on your role: follow the steps for partners or large account resellers (LAR) below to configure the app and its access scope.
+
+**For Partners**
+
+As a partner, complete the following steps to register an app for the Elements API:
 
 1. Sign in to Elements with your account.
 2. Go to the **Settings** page and select **API app registration** in the **Additional** area.
@@ -14,6 +18,21 @@ Complete the following steps to register an app for the Elements API:
 
 When you finish the registration, click the app name and you can copy the generated Application (Client) ID on the **App registration details** page.
 
+**For Large Account Resellers**
+
+As a large account reseller (LAR), complete the following steps to register an app for the Elements API:
+
+1. Sign in to Elements with your account.
+2. Go to the **Settings** page and select **Public API**.
+3. On the **Public API** page, click **Create app registration**.
+4. In the **Basic information** step, enter a name for the app and select the corresponding permissions that you need to grant to this app.
+5. In the **Reseller scope** step, select **All resellers** or **Specific resellers** as the scope.
+6. In the **Certificates and secrets** step, configure the credentials. Credentials enable applications to identify themselves to the authentication service when receiving tokens at a web addressable location (using an HTTPS scheme). For a higher level of assurance, we recommend using a certificate (instead of a client secret) as a credential. Follow the instructions below to configure credentials:
+	- Select the **Certificate** tab, and then click **Upload certificate** to upload a certificate (`.cer` file). The certificate serves as credentials that allow your application to authenticate itself, requiring no interaction from a user at runtime. You can refer to [Prepare a Certificate](#prepare-a-certificate) to prepare a certificate.
+	- Select the **Client secret** tab, click **Add client secret**, set the effective duration to 1 year, 2 years, or 3 years, and then click **Add** to generate a client secret. Client secret values cannot be entirely shown once they are saved. To get a client secret value for later use, copy and save it upon creation.
+6. Click **Save** to save your configurations.
+
+When you finish the registration, click the app name and you can copy the generated Application (Client) ID on the **App registration details** page.
 
 ## Prepare a Certificate
 

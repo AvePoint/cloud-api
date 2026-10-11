@@ -1,0 +1,2 @@
+- name: Retrieve Common Audit Log Records
+  href: get-common-audit-log.md

@@ -12,3 +12,5 @@
   href: accept-assigned-licenses.md
 - name: Reject Assigned Pooled Subscriptions
   href: reject-assigned-licenses.md
+- name: Retrieve Audit Log Records
+  href: get-common-audit-log-T2-reseller.md

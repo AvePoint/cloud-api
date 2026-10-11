@@ -2,6 +2,30 @@
 
 This document provides a detailed log of changes, updates, and enhancements made to the Elements API. It includes information on newly introduced features, improvements to existing functionalities, and any fixes applied. Stay up-to-date with the latest modifications to ensure optimal integration and utilization of the API.
 
+## October 2026
+
+### Added 
+
+- Introduced new endpoints for common features.  
+
+  - `/external/v3/general/partners/storage-profile/batch` for retrieving storage profiles.
+
+  - `/partner/external/v3/general/customers/{customerId}/jobs/{jobId}/report-details` for retrieving the backup job report details of the Cloud Backup for Microsoft 365 service. 
+
+  - `/partner/external/v3/general/partners/report/auditlog/{date}` for retrieving common audit log records.
+
+  - `/partner/external/v3/general/partners/t2-reseller/report/auditlog/{date}` for retrieving audit log records under LAR.
+
+- Introduced new endpoints for User management.
+
+  - `/partner/external/v3/um/customers/{customerId}/tenants/{tenantId}/agents` for retrieving information of hybrid agents.
+
+### Changed
+
+- Added the `tenantId` and `lastRunTime` parameters to the  `/partner/external/v3/general/customers/{customerId}/cloud-backup-m365/overview` endpoint.
+
+- Supported Copilot Studio Agents as the value of the `jobModule` parameter in the `/partner/external/v3/general/customers/{customerId}/avpt-products/jobs/batch` endpoint.
+
 ## August 26, 2026
 ### Added 
 

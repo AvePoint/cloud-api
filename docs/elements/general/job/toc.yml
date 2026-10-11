@@ -2,6 +2,8 @@
   href: get-customer-cloud-backup-m365-overview.md
 - name: Retrieve Jobs
   href: get-customer-jobs.md
+- name: Retrieve Job Report Details
+  href: get-customer-job-reports.md
 - name: Retrieve Customer Scan Profiles
   href: get-customer-scan-profiles.md
 - name: Retrieve Customer Scan Profile Details
