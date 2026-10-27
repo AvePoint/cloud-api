@@ -1,5 +1,5 @@
 - name: Retrieve Hybrid Agent Information
-  href: get-agent-information-tenant.md
+  href: get-agent.md
   
 
    

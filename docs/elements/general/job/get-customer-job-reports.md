@@ -46,7 +46,7 @@ If the request has been successfully processed, a 200 OK response will be return
 | Field | Description | Type |
 | --- | --- | --- |
 | title    | The title of the job.            | string |
-| type     | The type of the job.<ul><li>**1** - Mailbox</li><li>**2** - Site Collection</li><li>**17** - User</li><li>**20** - Canvas</li><li>**21** - Workspace</li><li>**23** - Flow</li><li>**24** - Agent</li><li>**25** - Viva Engage Metadata</li><li>**26** - Office 365 Group Metadata</li><li>**27** - Teams Metadata</li></ul>       | integer |
+| type     | The type of the job.<ul><li>**1** - Mailbox</li><li>**2** - Site Collection</li><li>**17** - User</li><li>**20** - Canvas</li><li>**21** - Workspace</li><li>**23** - Flow</li><li>**24** - Agent</li><li>**25** - Viva Engage Metadata</li><li>**26** - Office 365 Group Metadata</li><li>**27** - Teams Metadata</li><li>**310** - Power BI</li><li>**311** - Power Automate</li><li>**312** - Power Apps</li>      | integer |
 | sourceObjectLocation       | The source object location of the job.      | string |
 | container | The container of the job. | string |
 | size | The size of the job. | integer |
